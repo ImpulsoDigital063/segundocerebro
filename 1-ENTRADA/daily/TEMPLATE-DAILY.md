@@ -1,0 +1,35 @@
+# Daily Note — [DATA]
+
+---
+
+## Foco do dia
+
+> O que precisa acontecer hoje pra o dia ser produtivo?
+
+- [ ] 
+- [ ] 
+- [ ] 
+
+---
+
+## Capturas do dia
+
+> Qualquer coisa que aprendeu, percebeu ou quer lembrar
+
+- 
+
+---
+
+## O que funcionou
+
+- 
+
+## O que não funcionou
+
+- 
+
+---
+
+## Amanhã
+
+- [ ] 
