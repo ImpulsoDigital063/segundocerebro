@@ -5,6 +5,14 @@
 
 ---
 
+## 🔗 Referências diretas
+
+- [[meta-ads-copy-topo]]
+- [[meta-ads-risco]]
+- [[criativo-rejeitado-2026-04-09]]
+
+---
+
 ## 1. Regras de Copy por Nível de Funil
 
 ### Topo de funil (público frio)
