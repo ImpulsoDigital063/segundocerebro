@@ -4,20 +4,63 @@
     "type": "split",
     "children": [
       {
-        "id": "6991ac95b63cc179",
+        "id": "e1a03cc9d861a288",
         "type": "tabs",
         "children": [
           {
-            "id": "25418e2b7984ff09",
+            "id": "cbb85f3eeb95f90a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1-ENTRADA/daily/2026-04-09.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "2026-04-09"
+            }
+          },
+          {
+            "id": "2994f35cc3cf8d78",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "4-EXPORTACAO/playbooks/META ADS - PLAYBOOK.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "META ADS - PLAYBOOK"
+            }
+          },
+          {
+            "id": "42e90a59e30cf6ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1-ENTRADA/daily/2026-04-09.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-09"
+            }
+          },
+          {
+            "id": "44512f50086b4953",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -173,9 +216,26 @@
       "daily-notes:Abrir a nota de hoje": false,
       "templates:Inserir modelo": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Criar nova base": false
+      "bases:Criar nova base": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "25418e2b7984ff09",
-  "lastOpenFiles": []
+  "active": "44512f50086b4953",
+  "lastOpenFiles": [
+    "3-RETENCAO/padroes/meta-ads-risco.md",
+    "3-RETENCAO/padroes/meta-ads-copy-topo.md",
+    "3-RETENCAO/casos/trafego/meta-ads/criativo-rejeitado-2026-04-09.md",
+    "3-RETENCAO/casos/trafego/meta-ads",
+    "3-RETENCAO/casos/vendas",
+    "3-RETENCAO/casos/trafego",
+    "3-RETENCAO/casos/criativos",
+    "3-RETENCAO/casos",
+    "1-ENTRADA/daily/2026-04-09.md",
+    "4-EXPORTACAO/playbooks/META ADS - PLAYBOOK.md",
+    "1-ENTRADA/1 criativo anuncio-rejeitado-2026-04-09.md",
+    "1-ENTRADA/daily/TEMPLATE-DAILY.md",
+    "2-PROCESSAMENTO/mpn-on/STATUS-MPN.md",
+    "_config/OBSIDIAN-CONFIG.md",
+    "1-ENTRADA/daily"
+  ]
 }

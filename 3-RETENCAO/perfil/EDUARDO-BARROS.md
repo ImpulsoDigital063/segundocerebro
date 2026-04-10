@@ -103,6 +103,10 @@
 
 ---
 
+**Ver também:** [[PADROES-VALIDADOS]] | [[ESTRATEGIAS-ATIVAS]] | [[STATUS-IMPULSO]] | [[STATUS-MPN]] | [[MEGA-CLAUDE]]
+
+---
+
 ## COMO USAR ESTE ARQUIVO
 
 - Consulte antes de criar qualquer copy, roteiro ou estratégia

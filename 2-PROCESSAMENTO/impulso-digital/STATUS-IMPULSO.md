@@ -32,4 +32,6 @@
 
 ---
 
-**Playbook completo:** `/4-EXPORTACAO/playbooks/PLAYBOOK-IMPULSO-DIGITAL-VENDA.md`
+**Ver também:** [[EDUARDO-BARROS]] | [[PADROES-VALIDADOS]] | [[ESTRATEGIAS-ATIVAS]]
+
+**Playbook completo:** [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]]

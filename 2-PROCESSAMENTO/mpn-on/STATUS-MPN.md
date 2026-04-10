@@ -35,5 +35,7 @@
 
 ---
 
-**Diagnóstico completo:** `/4-EXPORTACAO/playbooks/DIAGNOSTICO-MPN-ON-CONVERSAO.md`  
-**Roteiros:** `/2-PROCESSAMENTO/modulos/ROTEIROS-MODULOS-1-3-4.md`
+**Ver também:** [[EDUARDO-BARROS]] | [[PADROES-VALIDADOS]] | [[ESTRATEGIAS-ATIVAS]]
+
+**Diagnóstico completo:** [[DIAGNOSTICO-MPN-ON-CONVERSAO]]  
+**Roteiros:** [[ROTEIROS-MODULOS-1-3-4]]

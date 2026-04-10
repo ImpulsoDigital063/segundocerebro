@@ -74,3 +74,7 @@
 | Semana 2 | Consultoria + Gravar Módulo 1 | 1º cliente Impulso + Módulo 1 pronto |
 | Semana 3 | Teste A/B MPN + Gravar Módulo 3 | A/B ativo + Módulo 3 pronto |
 | Semana 4 | Escalar Impulso + Gravar Módulo 4 | 2–3 clientes + produto MPN completo |
+
+---
+
+**Ver também:** [[EDUARDO-BARROS]] | [[PADROES-VALIDADOS]] | [[STATUS-IMPULSO]] | [[STATUS-MPN]] | [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] | [[DIAGNOSTICO-MPN-ON-CONVERSAO]]
