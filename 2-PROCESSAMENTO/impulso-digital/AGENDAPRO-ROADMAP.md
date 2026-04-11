@@ -97,6 +97,15 @@
 
 ---
 
+## Decisão estratégica — 11/04/2026
+
+> **"Só vamos atrás de clientes quando o app estiver completo e funcional de verdade. Padrão Impulso Digital."**
+
+Ordem: construir → validar → prospectar. Não vender produto pela metade.
+O foco agora é completar o roadmap Fase 2 antes de qualquer prospecção.
+
+---
+
 ## Decisões de produto registradas
 
 | Data | Decisão | Motivo |
