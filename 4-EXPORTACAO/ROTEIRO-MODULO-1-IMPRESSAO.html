@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 1 — MPN-On | Roteiro de Gravação</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      line-height: 1.75;
+      color: #555;
+      background: #fff;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* CABEÇALHO */
+    .capa {
+      text-align: center;
+      padding: 40px 0 30px;
+      border-bottom: 2px solid #bbb;
+      margin-bottom: 30px;
+    }
+    .capa h1 {
+      font-size: 26px;
+      font-weight: bold;
+      color: #444;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .capa h2 {
+      font-size: 14px;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 16px;
+    }
+    .capa .info {
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* MAPA RÁPIDO */
+    .mapa {
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 36px;
+    }
+    .mapa h3 {
+      font-size: 13px;
+      font-weight: bold;
+      color: #555;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th {
+      background: #ddd;
+      color: #555;
+      padding: 7px 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+    td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #e0e0e0;
+      color: #555;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { font-weight: bold; white-space: nowrap; }
+
+    /* AULAS */
+    .aula {
+      margin-bottom: 48px;
+      page-break-inside: avoid;
+    }
+    .aula-header {
+      border-left: 4px solid #999;
+      padding: 10px 16px;
+      background: #f9f9f9;
+      margin-bottom: 20px;
+    }
+    .aula-header h2 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 2px;
+    }
+    .aula-header .duracao {
+      font-size: 11px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* SEÇÕES DENTRO DA AULA */
+    .secao {
+      margin-bottom: 20px;
+    }
+    .secao-titulo {
+      font-size: 11px;
+      font-weight: bold;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed #ccc;
+    }
+    .secao p {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    /* DESTAQUE — falas importantes */
+    .destaque {
+      background: #f0f0f0;
+      border-left: 3px solid #aaa;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-style: italic;
+      color: #555;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* BOLD */
+    strong { color: #444; }
+
+    /* SEPARADOR DE AULAS */
+    .separador {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 36px 0;
+    }
+
+    /* BADGE de encerramento */
+    .encerramento-badge {
+      display: inline-block;
+      background: #e8e8e8;
+      color: #555;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* RODAPÉ DO MÓDULO */
+    .fim-modulo {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+    .fim-modulo strong { display: block; font-size: 13px; color: #444; margin-bottom: 10px; }
+    .fim-modulo span { display: block; margin-bottom: 4px; }
+
+    /* PRINT */
+    @media print {
+      body { padding: 20px; font-size: 12px; }
+      .aula { page-break-inside: avoid; }
+      .aula-header { page-break-after: avoid; }
+      @page { margin: 1.5cm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="capa">
+    <h1>MÓDULO 1 — A Base do Seu Negócio Online</h1>
+    <h2>MPN-On &nbsp;|&nbsp; Eduardo Barros &nbsp;|&nbsp; meuprimeironegocio.online</h2>
+    <div class="info">
+      Para impressão e estudo antes da gravação &nbsp;·&nbsp;
+      7 aulas &nbsp;·&nbsp; ~50–60 minutos gravados
+    </div>
+  </div>
+
+  <!-- MAPA RÁPIDO -->
+  <div class="mapa">
+    <h3>Mapa Rápido — O que mencionar em cada aula</h3>
+    <table>
+      <tr>
+        <th>Aula</th>
+        <th>Palavra-chave</th>
+        <th>Lembre de falar</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Conexão + Mapa</td>
+        <td>UrbanFeet 1.600 pares, Impulso Digital (agência), 4 módulos, grupo de alunos</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Consistência + Subconsciente</td>
+        <td>Joseph Murphy, 90% desistem</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Erro = aprendizado</td>
+        <td>Carol Dweck, ser proativo</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Um método até funcionar</td>
+        <td>Objeto brilhante, Joseph Murphy</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Dois modelos + aceleração</td>
+        <td>Módulo 2 rápido, Módulo 3 longo prazo, Módulo 4 prospecção</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Dinheiro rápido</td>
+        <td>GB Nutrition Palmas, R$1.000, Impulso Digital como evolução, estou criando loja agora</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Construa seu ativo</td>
+        <td>UrbanFeet, 1.600 pares, 195 pedidos, R$37.705,24 em 90 dias, urgência real pra avançar</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- AULA 1 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 1 — Bem-vindo ao MPN-On + O Mapa</h2>
+      <div class="duracao">Duração estimada: 10–12 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura — olha direto pra câmera</div>
+      <p>Olha, você comprou esse curso por algum motivo.</p>
+      <p>Talvez esteja cansado de depender de salário. Talvez queira renda extra sem precisar aparecer todo dia nas redes. Talvez só queira provar pra você mesmo que dá pra fazer diferente.</p>
+      <p>Qualquer que seja o motivo — ele é válido. E esse curso foi feito pra isso.</p>
+      <p>A maioria das pessoas fala que quer mudar de vida. Poucos de fato abrem o curso.</p>
+      <p>Você abriu. E eu vou honrar isso.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Quem sou eu</div>
+      <p>Meu nome é Eduardo Barros. Sou de Palmas, Tocantins, e tenho dois negócios rodando online ao mesmo tempo.</p>
+      <p>O primeiro é a <strong>Impulso Digital</strong> — minha agência onde crio lojas profissionais para comércios locais e cobro entre R$600 e R$1.500 por projeto.</p>
+      <p>O segundo é a <strong>UrbanFeet</strong> — minha loja de calçados que já vendeu mais de 1.600 pares para todo o Brasil, sem eu tocar em uma única caixa de sapato.</p>
+      <p>Esses dois negócios são exatamente o que você vai aprender a construir aqui.</p>
+      <p><strong>Não sou guru. Não vivo de curso. Vivo do que ensino.</strong></p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">O que é o MPN-On</div>
+      <p>MPN significa Meu Primeiro Negócio Online.</p>
+      <p>A missão aqui é simples: te mostrar como ter um negócio digital real, sem precisar saber programar, sem precisar ter grana pra começar, e sem depender de seguidores ou algoritmo.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">O Mapa — visão geral do curso</div>
+      <p>Pensa comigo: você está no Módulo 1 agora. Aqui é a base. Mindset, visão geral, os dois modelos de negócio.</p>
+      <p>No <strong>Módulo 2</strong> você vai aprender a criar lojas Shopify para clientes reais e cobrar por isso. É o caminho mais rápido pro primeiro dinheiro.</p>
+      <p>No <strong>Módulo 3</strong> você vai montar seu próprio e-commerce de dropshipping nacional. Sem estoque, sem galpão. O modelo que eu uso na UrbanFeet.</p>
+      <p>No <strong>Módulo 4</strong> você vai aprender a construir um sistema de prospecção — anúncios, scripts, indicação, como escalar. É onde o negócio vira máquina.</p>
+      <p>Por que essa ordem? Você aprende criando pra outros — ganha experiência e dinheiro. Depois aplica no seu próprio negócio com muito mais segurança. E quando tiver os dois funcionando, o Módulo 4 te ensina a acelerar.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Comunidade e Suporte</div>
+      <p>Uma coisa importante: você não está sozinho nessa jornada.</p>
+      <p>Tem um grupo de alunos que você vai receber o acesso logo abaixo dessa aula. Entra lá, se apresenta, interage. Quem aprende junto avança mais rápido.</p>
+      <p>E se tiver dúvida técnica, usa o suporte — o contato também está aqui na área de membros.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>Assiste as aulas, aplica, não pula etapas.</p>
+      <p>Nos próximos vídeos eu vou te preparar mentalmente pra essa jornada. Porque antes de apertar qualquer botão, a gente precisa ter a cabeça certa.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 2 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 2 — A Verdade que Ninguém te Conta</h2>
+      <div class="duracao">Duração estimada: 7–9 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Eu preciso ser honesto com você logo de cara.</p>
+      <p>Porque se eu não for, você vai chegar lá na frente frustrado. E não é isso que eu quero.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">A Realidade do Digital</div>
+      <p>Ganhar dinheiro online é real. Eu provo isso todo mês. Mas não é o que os anúncios mostram.</p>
+      <p>Não é acordar às 10h, abrir o notebook e ver dinheiro na conta sem fazer nada. É um negócio de verdade.</p>
+      <p>A diferença entre quem consegue e quem desiste não é talento. Não é sorte. É consistência.</p>
+      <p>90% das pessoas que começam no digital desistem antes de ver resultado — não porque o método não funciona, mas porque esperavam resultado rápido.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">O Poder da Mente — Joseph Murphy</div>
+      <p>O Dr. Joseph Murphy, no livro <em>O Poder do Subconsciente</em>, ensina algo que mudou a minha vida:</p>
+      <div class="destaque">"O seu subconsciente aceita como verdade aquilo que você repete para ele."</div>
+      <p>Se você fica repetindo "isso não é pra mim", "eu não consigo" — seu subconsciente vai trabalhar pra confirmar exatamente isso.</p>
+      <p>Mas se você começa a repetir "eu estou aprendendo", "cada dia fico melhor nisso" — sua mente começa a buscar soluções ao invés de desculpas.</p>
+      <p>Não é papo de autoajuda. É ciência da mente. E eu vi isso funcionar na minha própria vida.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>Então antes de qualquer técnica, antes de qualquer ferramenta, eu preciso que você tome uma decisão agora:</p>
+      <p><strong>Você vai ser dos 10% que chegam até o fim.</strong></p>
+      <p>Repete isso pra você mesmo. Escreve se precisar. Porque a partir de agora, seu subconsciente começa a trabalhar.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 3 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 3 — Pense Como Empreendedor</h2>
+      <div class="duracao">Duração estimada: 7–8 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Existe uma diferença enorme entre a pessoa que tem emprego e a pessoa que tem negócio.</p>
+      <p>Não é o dinheiro. Não é o horário. É a forma de pensar.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Mentalidade Fixa vs. Crescimento</div>
+      <p>Carol Dweck estudou durante anos o que separa quem avança de quem trava. E ela descobriu que não é inteligência, não é talento, não é sorte.</p>
+      <p>É o que a pessoa acredita sobre si mesma.</p>
+      <p>Tem gente que olha pra tecnologia e pensa: "não nasci pra isso, não tenho jeito." Fecha o notebook e desiste.</p>
+      <p>Tem gente que olha pra mesma tela e pensa: "ainda não aprendi, mas vou aprender." Abre o próximo vídeo.</p>
+      <p>Parece simples. Mas essa diferença muda tudo.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Erros São Parte do Processo</div>
+      <p>Eu errei muito. Criei lojas que não venderam. Tive clientes difíceis. Perdi dinheiro testando.</p>
+      <p>E sabe o que aprendi com cada erro? Aprendi mais do que em qualquer curso.</p>
+      <p>Quando algo não der certo — e em algum momento não vai dar — não interpreta como fracasso.</p>
+      <p>Interpreta como uma aula que você acabou de pagar com tempo e atenção.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Seja Proativo</div>
+      <p>Empreendedor não espera tudo estar perfeito pra começar.</p>
+      <p>Você não precisa saber tudo antes de dar o primeiro passo. Você precisa dar o primeiro passo pra começar a aprender.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>Toda vez que você errar alguma coisa nesse curso, pensa: "Que bom, aprendi mais uma coisa."</p>
+      <p>Esse é o pensamento de quem chega lá.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 4 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 4 — Foco: O Seu Maior Ativo</h2>
+      <div class="duracao">Duração estimada: 6–7 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Sabe qual é o maior inimigo de quem está começando no digital?</p>
+      <p>Não é a concorrência. Não é a falta de grana. Não é a tecnologia.</p>
+      <p>É a falta de foco.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">O Perigo dos Objetos Brilhantes</div>
+      <p>Você vai começar esse curso e vai aparecer um anúncio de outro método. Um guru com um caminho mais fácil.</p>
+      <p>Isso tem nome: <strong>síndrome do objeto brilhante</strong>.</p>
+      <p>Você larga o que estava fazendo pra correr atrás da novidade — e nunca termina nada.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">A Regra de Ouro</div>
+      <p><strong>Um método. Até funcionar.</strong></p>
+      <p>Não dois ao mesmo tempo. Um. Até funcionar.</p>
+      <p>Joseph Murphy reforça isso:</p>
+      <div class="destaque">"A mente que se divide entre muitos objetivos não conquista nenhum. A mente que se concentra em um único objetivo tem o poder de mover montanhas."</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Como Usar Esse Curso</div>
+      <p>Siga o passo a passo. Não pula módulos.</p>
+      <p>Não mistura com outros cursos enquanto está aplicando esse.</p>
+      <p>Você já tem o mapa. Agora é só andar — sem desviar.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>Nas próximas aulas, eu vou te mostrar os dois modelos de negócio que esse curso oferece.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 5 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 5 — Os Dois Modelos + O que Vem Depois</h2>
+      <div class="duracao">Duração estimada: 6–7 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Agora que você tem a base mental, deixa eu te mostrar o que está te esperando nos próximos módulos.</p>
+      <p>Esse curso tem dois modelos de negócio — e um módulo inteiro dedicado a te ajudar a escalar os dois.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Modelo 1 — Prestação de Serviço (Módulo 2)</div>
+      <p>Você aprende a criar lojas Shopify para outros negócios e cobra por isso.</p>
+      <p>É o caminho mais rápido pro primeiro dinheiro. Baixo investimento. Alta demanda.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Modelo 2 — Sua Própria Loja (Módulo 3)</div>
+      <p>Você monta seu próprio e-commerce de dropshipping nacional.</p>
+      <p>Sem estoque. Sem galpão. É o caminho pra construir um ativo seu.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">E Depois — Prospecção e Escala (Módulo 4)</div>
+      <p>Quando você já tiver os dois andando, o Módulo 4 te ensina a construir um sistema de prospecção: anúncios, scripts de abordagem, como gerar indicação, como escalar sem depender só de você.</p>
+      <p>É o que eu uso hoje na Impulso Digital pra chegar em novos clientes. Vou te mostrar exatamente como faço — sem segredo.</p>
+      <p>É onde o negócio para de depender de sorte e começa a ter método.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Por que os Três se Complementam</div>
+      <p>Quem passa pelo Módulo 2 chega no Módulo 3 com uma vantagem enorme: já sabe criar lojas, já conhece as ferramentas.</p>
+      <p>E quem passa pelos dois chega no Módulo 4 com um negócio real pra colocar combustível.</p>
+      <p><strong>A ordem importa. Não pula etapa.</strong></p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>Nas próximas duas aulas eu vou detalhar os dois modelos.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 6 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 6 — Modelo 1: Dinheiro Rápido com Prestação de Serviço</h2>
+      <div class="duracao">Duração estimada: 7–8 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Esse é o caminho que eu recomendo pra quem está começando.</p>
+      <p>E não é à toa — foi o caminho que me deu os primeiros resultados.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Como Funciona</div>
+      <p>Você cria uma loja Shopify completa pra um cliente.</p>
+      <p>Configura o checkout, integra o pagamento, organiza os produtos, ajusta o visual.</p>
+      <p>E cobra por isso. Entre R$600 e R$1.500 por projeto.</p>
+      <p>O cliente não precisa entender de tecnologia. Ele só quer a loja funcionando. Você entrega isso.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Meu Case Real</div>
+      <p>Meu primeiro cliente foi a <strong>GB Nutrition</strong>, uma loja de suplementos aqui em Palmas.</p>
+      <p>Criei a loja, configurei tudo, entreguei em menos de uma semana.</p>
+      <p>Fechei por <strong>R$1.000</strong>.</p>
+      <p>Em menos de uma semana. Mais do que muita gente ganha num mês de CLT.</p>
+      <p>Não precisei de dinheiro pra começar. Só precisei de computador, internet e o conhecimento que você vai ter depois do Módulo 2.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Como Esse Conhecimento Mudou Minha Vida</div>
+      <p>Sabe o que aconteceu depois desse primeiro cliente?</p>
+      <p>Eu percebi que tinha algo valioso nas mãos. Um conhecimento que a maioria dos negócios locais não tem e precisa desesperadamente.</p>
+      <p>Fui fechando mais um. Depois mais outro. Cada loja que eu entregava, eu ficava melhor. Mais rápido. Mais confiante.</p>
+      <p>Em algum momento deixou de ser um bico e virou um negócio de verdade.</p>
+      <p>Hoje eu tenho minha própria agência — a <strong>Impulso Digital</strong>. Prospecção ativa, portfólio, clientes recorrentes. Vivo disso.</p>
+      <p>E olha — <strong>enquanto você está assistindo esse vídeo agora, eu estou criando loja pra cliente</strong>. Isso não é passado. É o que eu faço hoje.</p>
+      <p>Não foi da noite pro dia. Mas começou exatamente com o que você vai aprender no Módulo 2.</p>
+      <p>No Módulo 4 eu vou te mostrar como faço a prospecção — como chego no cliente, o que falo, como fecho. O sistema completo que uso na Impulso Digital.</p>
+      <p>Um cliente. Uma loja entregue. Um resultado real.</p>
+      <p>É isso que abre a porta.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Vantagens e Desvantagem</div>
+      <p><strong>Vantagens:</strong> Resultado rápido — pode fechar o primeiro cliente ainda nesse mês. Investimento inicial quase zero. Você aprende muito criando pra outros.</p>
+      <p><strong>Desvantagem:</strong> Depende do seu tempo. Não escala infinitamente. Mas é por onde você começa — quem precisa de dinheiro agora e quer aprender fazendo.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento</div>
+      <p>No Módulo 2 eu vou te ensinar cada passo desse processo.</p>
+      <p>Mas antes, deixa eu te mostrar o segundo modelo.</p>
+      <p>Vejo você na próxima.</p>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- AULA 7 -->
+  <div class="aula">
+    <div class="aula-header">
+      <h2>Aula 7 — Modelo 2: Construa Seu Ativo + Qual Caminho Seguir?</h2>
+      <div class="duracao">Duração estimada: 8–10 min</div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Abertura</div>
+      <p>Agora deixa eu te mostrar o segundo modelo. Esse aqui é diferente — não é sobre atender cliente, é sobre construir algo seu.</p>
+      <p>Algo que pode durar anos e trabalhar por você.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Como Funciona — Dropshipping Nacional</div>
+      <p>Você monta sua própria loja de e-commerce.</p>
+      <p>Quando o cliente compra, você repassa o pedido pro fornecedor — que embala e entrega direto pra ele.</p>
+      <p>Você nunca toca no produto. Sem estoque. Sem galpão.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Meu Case Real — UrbanFeet</div>
+      <p>A UrbanFeet é a minha loja de calçados.</p>
+      <p>Mais de <strong>1.600 pares vendidos</strong> pra todo o Brasil. Em 3 anos. Eu nunca toquei em uma caixa de sapato.</p>
+      <p>Só nos últimos 90 dias foram <strong>195 pedidos — R$37.705,24 faturados</strong>. Com a operação rodando em torno de 30 minutos por dia.</p>
+      <p>Tenho um fornecedor parceiro que cuida de toda a logística.</p>
+      <p>Esse é o modelo que eu vou te ensinar no Módulo 3.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Vantagens e Desvantagem</div>
+      <p><strong>Vantagens:</strong> Escalável — pode vender pra todo o Brasil. Constrói uma marca sua. Com o tempo opera quase no piloto automático.</p>
+      <p><strong>Desvantagem:</strong> Leva mais tempo pros primeiros resultados. Precisa de investimento em tráfego pra crescer. É pra quem tem visão de longo prazo.</p>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Qual Caminho Seguir?</div>
+      <p>Minha recomendação é direta: começa pelo Módulo 2. Depois vai pro Módulo 3.</p>
+      <p>No Módulo 2 você aprende a criar lojas, ganha dinheiro rápido e adquire experiência.</p>
+      <p>Com esse dinheiro e experiência, você entra no Módulo 3 com muito mais segurança.</p>
+      <p>Quem fez o Módulo 2 chega no Módulo 3 sabendo exatamente o que funciona.</p>
+    </div>
+
+    <div class="secao">
+      <div class="encerramento-badge">Encerramento do Módulo 1</div>
+      <p>Você acabou de concluir a base do seu negócio online.</p>
+      <p>Agora você sabe o que está pela frente, como pensar, e qual é a ordem certa de fazer as coisas.</p>
+      <p>Olha — <strong>quem começa o Módulo 2 essa semana já pode estar com o primeiro cliente esse mês</strong>. Não é promessa. É o tempo real que leva pra aprender, montar e fechar.</p>
+      <p>Cada dia que você atrasa é um cliente que você ainda não fechou.</p>
+      <p>A jornada é: <strong>Módulo 2 → Módulo 3 → Módulo 4</strong>. Cada um constrói em cima do anterior.</p>
+      <p><strong>Vai pro Módulo 2. Agora.</strong></p>
+      <p>Tamo junto.</p>
+    </div>
+  </div>
+
+  <!-- FIM DO MÓDULO -->
+  <div class="fim-modulo">
+    <strong>FIM DO MÓDULO 1</strong>
+    <span>Módulo 2 — Prestação de Serviço (29 aulas — já gravado)</span>
+    <span>Módulo 3 — UrbanFeet Dropshipping (a gravar)</span>
+    <span>Módulo 4 — Prospecção, Ads, Indicação e Scaling (a gravar)</span>
+  </div>
+
+</body>
+</html>

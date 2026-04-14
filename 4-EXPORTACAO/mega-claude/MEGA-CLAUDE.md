@@ -1,6 +1,6 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 1.0  
-**Data:** 09 de Abril de 2026  
+**Versão:** 1.2  
+**Data:** 12 de Abril de 2026  
 **Uso:** Cole este arquivo COMPLETO em cada novo chat  
 **Resultado:** IA sabe TUDO sobre seus projetos
 
@@ -17,34 +17,83 @@
 
 ---
 
-## 💼 SEUS 3 NEGÓCIOS + 4 PROJETOS
+## 💼 PRODUTOS E NEGÓCIOS ATIVOS
 
-### **NEGÓCIO 1: IMPULSO DIGITAL** (Agência de Lojas Shopify)
-- 🎯 Objetivo: Criar lojas para negócios locais Palmas
-- 💰 Preço: R$600-1.500 por loja
-- 📊 Meta: 7 lojas/mês = R$5k/mês
-- ⚠️ **STATUS: Ativo mas SEM renda ainda** (precisa vender)
-- 🔧 Stack: Shopify + Yampi + Mercado Pago + Melhor Envio + Tema MPN
-- 🎁 Diferencial: 4 tipos de frete simultâneos (motoboy local, Melhor Envio, grátis, retirada)
+### **PRODUTO 1: MPN-ON** (Curso Online)
+- 🎯 **Proposta:** Crie seu primeiro negócio online sem saber programar
+- 🧑‍🎓 **Para quem:** Quem quer renda digital do zero, sem audiência, sem código, sem guru
+- 💰 Preço: R$297 à vista (Pix) ou 3x R$105 (cartão) | Âncora: R$4.985
+- 📦 O que entrega: 2 modelos validados — prestação de serviço Shopify para negócios locais + dropshipping nacional
+- 🌐 Landing: https://www.meuprimeironegocio.online/
+- 🛒 Checkout: https://pay.kiwify.com.br/JNVhxLE
+- ⚠️ **STATUS: Campanhas ativas no Meta Ads — conversão baixa, em otimização**
+- 🔗 Plataforma: Kiwify (vendas) + Vercel (landing em Next.js)
+- 🏢 CNPJ: 64.585.949/0001-83
+
+**Estrutura do produto:**
+- Módulo 1: Mentalidade e base do negócio — 7 aulas (roteiro pronto, gravação pendente)
+- Módulo 2: Criação de loja Shopify — 29 aulas, 8+ horas (GRAVADO e publicado)
+- Módulo 3: UrbanFeet ao vivo — recriação da loja real (gravação pendente)
+- Módulo 4: Tráfego e prospecção (gravação pendente)
+
+**Bônus inclusos:**
+- Tema MPN exclusivo (4 tipos de frete, WhatsApp, otimizado) — R$1.000
+- Contato de fornecedor nacional validado
+- 29 PDFs de apoio (1 por aula) — R$197
+- Módulo UrbanFeet ao vivo (800+ imagens, 100+ modelos) — R$1.497
+- Scripts de prospecção para negócios locais
+
+---
+
+### **PRODUTO 2: IMPULSO DIGITAL** (Agência Digital)
+- 🎯 **Proposta:** LPs de alta conversão e presença digital para profissionais
 - 🌐 Site: impulsodigital063.com
+- ⚠️ **STATUS: Ativo — sem renda recorrente ainda, foco em fechar 1º cliente**
+
+**3 serviços oferecidos:**
+
+| Serviço | Para quem | Preço |
+|---------|-----------|-------|
+| **Landing Page de alta conversão** | Profissionais liberais, coaches, infoprodutores | R$600–1.000 |
+| **Loja Shopify completa** | Negócios locais que querem vender online | R$800–1.500 (Shopify: R$1/mês por 3 meses) |
+| **Site Next.js** | Quem precisa de site mais elaborado, rápido e profissional | R$1.200–1.500 |
+
 - **PLAYBOOK PRONTO:** /4-EXPORTACAO/playbooks/PLAYBOOK-IMPULSO-DIGITAL-VENDA.md
 
-### **NEGÓCIO 2: URBANFEET** (Loja Dropshipping)
-- 🎯 Modelo: Dropshipping nacional calçados
-- 💰 Faturamento: R$37.705,24 em 90 dias (195 pedidos)
-- 📈 Pares: +1.600 vendidos em 3 anos
-- 🎁 Diferencial: Fornecedor nacional 100%, zero estoque, zero galpão
-- 📊 Operação: ~30 min/dia (automática)
-- 🌐 Site: urbanfeetbr.store | Instagram: @urbanfeet.store
+---
 
-### **NEGÓCIO 3: MPN-ON** (Curso Online)
-- 🎯 Proposta: Ensinar 2 negócios reais (prestação + dropshipping)
-- 💰 Preço: R$297 (meta: aumentar R$397-497)
-- 📺 Estrutura: 4 módulos (Módulos 1,3,4 faltam gravar)
-- ⚠️ **STATUS: Campanhas ativas MAS conversão baixa**
-- 📊 Módulo 2: 29 aulas gravadas (8+ horas)
-- 🔗 Plataforma: Kiwify (vendas) + Netlify (landing)
-- 🎁 Incluso: Tema MPN (vale R$1.600), acesso fornecedor, 7 dias garantia
+### **PRODUTO 3: AGENDAPRO by Impulso Digital** (SaaS de Agendamento)
+- 🎯 **Proposta:** App para otimizar a agenda do profissional — chega de perder hora no WhatsApp
+- 🧑‍💼 **Para quem:** Qualquer profissional que trabalha com agendamento (barbeeiros, nail designers, psicólogos, personal trainers, etc.)
+- 💰 Plano Solo: R$800 setup + R$97/mês | Plano Equipe: R$800 setup + R$147/mês
+- 📊 Receita recorrente: 10 clientes = R$970–1.470/mês fixo
+- 🔧 Stack: Next.js 16 + Supabase + Resend + Vercel
+- ✅ **STATUS: V1 em produção — lapidando para 1º cliente**
+- 🌐 **Demo:** https://agenda-pro-seven.vercel.app
+- 🐙 **GitHub:** ImpulsoDigital063/AgendaPRO
+
+---
+
+### **NEGÓCIO BASE: URBANFEET** (operação de suporte)
+- Loja de dropshipping nacional — operação de ~30 min/dia, ~automática
+- Usada como prova de conceito no MPN-On (case real dentro do curso)
+- 🌐 urbanfeetbr.store | Instagram: @urbanfeet.store
+
+**Estrutura dos módulos:**
+- Módulo 1: Fundamentos e mentalidade — 4 aulas (NÃO GRAVADO)
+- Módulo 2: Criação de loja — 29 aulas, 8+ horas (GRAVADO)
+- Módulo 3: UrbanFeet ao vivo — recreação da loja real (NÃO GRAVADO)
+- Módulo 4: Tráfego e prospecção (NÃO GRAVADO)
+
+**Bônus inclusos:**
+- Tema MPN exclusivo (4 tipos de frete, WhatsApp, otimizado) — vale R$1.000
+- Contato fornecedor nacional validado (3 anos UrbanFeet)
+- 29 PDFs de apoio (1 por aula) — vale R$197
+- Módulo UrbanFeet ao vivo (800+ imagens, 100+ modelos) — vale R$1.497
+- Scripts de prospecção para negócios locais
+
+**Garantia:** 7 dias sem perguntas
+
 - **DIAGNÓSTICO PRONTO:** /4-EXPORTACAO/playbooks/DIAGNOSTICO-MPN-ON-CONVERSAO.md
 - **ROTEIROS FALTANTES:** /2-PROCESSAMENTO/modulos/ROTEIROS-MODULOS-1-3-4.md
 
@@ -113,6 +162,9 @@
 | **MPN Preço** | R$297 | Ancoragem R$4.985 |
 | **Meta Ads CPC** | R$2,00 | Estimado |
 | **Conversão esperada** | 3-5% | Visitante → venda |
+| **Clientes Impulso** | 60+ | Histórico total |
+| **Valor âncora MPN** | R$4.985 | vs R$297 lançamento |
+| **Valor bônus declarado** | R$2.694 | Tema + PDFs + UrbanFeet ao vivo |
 
 ---
 
@@ -310,7 +362,7 @@ segundo-cerebro-eduardo/
 ---
 
 **Criado:** 09 de Abril de 2026  
-**Versão:** 1.0  
-**Próxima atualização:** Quando conseguir primeiro cliente Impulso Digital
+**Versão:** 1.2 — Atualizado 12 de Abril de 2026  
+**Próxima atualização:** Quando fechar primeiro cliente AgendaPRO ou Impulso Digital
 
 **🔥 Pronto pra trabalhar. Cole este arquivo em todo novo chat.**

@@ -34,7 +34,7 @@
 - Ensina 2 negócios reais: prestação de serviço + dropshipping
 - Preço: R$297
 - Status: Campanhas ativas, conversão baixa
-- Plataforma: Kiwify + Netlify
+- Plataforma: Kiwify (vendas) + Vercel (landing em Next.js)
 - Módulos 1, 3 e 4 ainda não gravados
 
 ---
