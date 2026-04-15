@@ -353,11 +353,24 @@ segundo-cerebro-eduardo/
 │   ├── playbooks/
 │   │   ├── PLAYBOOK-IMPULSO-DIGITAL-VENDA.md
 │   │   ├── DIAGNOSTICO-MPN-ON-CONVERSAO.md
+│   │   ├── LP-DESIGN-PLAYBOOK.md   ← design de LP que converte (v2 AgendaPRO)
 │   │   └── ROTEIROS-MODULOS-1-3-4.md
 │   └── mega-claude/
 │       └── MEGA-CLAUDE.md (ESTE ARQUIVO)
 └── _config/
 ```
+
+## 🎨 Design de Landing Pages
+
+**Sempre que for criar/revisar uma LP** (minha ou de cliente), seguir:
+
+- **Playbook completo:** `/4-EXPORTACAO/playbooks/LP-DESIGN-PLAYBOOK.md`
+- **Padrão central:** `/3-RETENCAO/padroes/lp-product-ui-showcase.md`
+
+Resumo: cada card de feature mostra **mini-UI real do produto** (não ícone genérico).
+Funil de 13 blocos validado, paleta dark v2, anti-patterns documentados.
+Vale pra AgendaPRO, MPN-On, Impulso Digital, RadarPRO e clientes (Gabriel/GB Nutrition em diante).
+
 
 ---
 
