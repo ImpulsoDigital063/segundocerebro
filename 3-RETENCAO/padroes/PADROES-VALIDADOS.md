@@ -1,6 +1,6 @@
 # PADRÕES VALIDADOS — Eduardo Barros
 
-**Atualizado:** 09 de Abril de 2026  
+**Atualizado:** 16 de Abril de 2026  
 **Regra:** Só entra aqui o que foi testado na prática. Nada teórico.
 
 ---
@@ -172,6 +172,29 @@ Prazos e escassez reais criam decisão. Urgência inventada queima credibilidade
 
 ---
 
+## PADRÃO 9 — Auditoria de segurança em 3 frentes paralelas
+
+**O que é:**
+Antes de lançar qualquer SaaS que lida com dados, rodar 3 auditorias simultâneas: API routes, client-side, auth & data flow. Cobre 95% dos vetores de ataque reais.
+
+**Casos reais:**
+- AgendaPRO (16/04/2026): 15+ vulnerabilidades encontradas em uma sessão — HMAC com fallback previsível, XSS em emails, endpoint sem auth que permitia fraude de pontos, IDOR em 2 rotas, timing attack em token, overbooking por race condition
+
+**O que faz funcionar:**
+- 3 frentes em paralelo (não sequencial) — cada uma cobre um ângulo cego das outras
+- Pensar como atacante: "se eu quisesse roubar dados, por onde eu entraria?"
+- Corrigir imediatamente, não anotar pra depois
+- Build após cada correção — garante que o fix não quebrou nada
+
+**O que mata:**
+- Auditar só "quando tiver tempo" — lança vulnerável e descobre pelo prejuízo
+- Confiar em RLS sem testar — RLS silenciosamente retorna zero resultados se mal configurado
+- Assumir schema do banco sem verificar — migrations quebram
+
+**Padrão completo:** [[auditoria-seguranca-saas]]
+
+---
+
 ## COMO USAR ESTES PADRÕES
 
 Antes de tomar qualquer decisão estratégica, consulte aqui:
@@ -181,6 +204,7 @@ Antes de tomar qualquer decisão estratégica, consulte aqui:
 - Escolhendo parceiro/influenciador? → Padrão 6
 - Entrando em mercado novo? → Padrão 7
 - Fazendo briefing ou formulário? → Padrão 2
+- Lançando SaaS ou sistema web? → Padrão 9
 
 ---
 
