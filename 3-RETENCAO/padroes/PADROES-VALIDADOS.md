@@ -11,13 +11,11 @@
 Quando o cliente chega por indicação, ofereça consultoria grátis estruturada (máximo 8 perguntas). A taxa de fechamento é altíssima — desde que tenha follow-up.
 
 **Casos reais:**
-- GB Nutrition: veio por indicação → consultoria → fechou R$1.000 (05/03/2026)
+- GB Nutrition: veio atraveis da minha prospecção → consultoria → fechou R$1.000 (05/03/2026)
 - Irsnayra: veio por indicação → consultoria → NÃO fechou (faltou follow-up e urgência)
 
 **O que faz funcionar:**
-- Follow-up nos dias 1, 3, 5 e 7 após a consultoria
-- Prazo específico para decisão ("tenho 3 vagas em abril")
-- Preço transparente desde o início
+-
 
 **O que mata:**
 - Consultoria grátis sem prazo = cliente some
