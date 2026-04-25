@@ -78,6 +78,11 @@ Somando os 3 primeiros gaps, estimativa anual:
 
 **Diferença anual estimada: R$ [SOMA - 1.200 (custo Shopify Basic) = ECONOMIA]**
 
+**Por que não migrar sozinho ou com freelancer (3 referências de mercado):**
+- **Agência local de Palmas:** R$3.000-5.000 + mensalidade contínua. 30-60 dias pra entregar. Tu vira cliente nº 200 na fila.
+- **Freelancer Fiverr:** R$1.500-2.500. Sem motoboy local, sem suporte pós-entrega, redirect de SEO frequentemente quebrado.
+- **Sair sozinho da Nuvemshop:** R$0 em dinheiro, mas tu paga em **60h tuas** (importação, configuração, redirect, teste) + risco real de quebrar SEO já construído.
+
 ---
 
 ## 4. SE FIZER SENTIDO MIGRAR

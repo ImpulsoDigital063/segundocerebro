@@ -319,3 +319,54 @@ Os scripts gerados pelo `gerarScriptCompleto`, `gerarScriptVenda` e `gerarPlanoN
 ---
 
 **Última nota:** este manual é vivo. Quando uma técnica se mostrar inferior em campo (lead reagiu mal a Mirror, ou Award Frame afastou em vez de atrair), atualizar essa documentação + reverter no SYSTEM_PROMPT. Aprendizado real > teoria de livro.
+
+---
+
+# 📊 Calibração 2025-2026 (atualização 25/04/2026)
+
+Pesquisa de benchmarks de prospecção 2025-2026 trouxe 8 ajustes que se SOMAM aos 15 frameworks dos 5 livros. Aplicados em todos os SYSTEM prompts (`gemini.ts`, `claude.ts`, `openai.ts`) + `mensagens.ts` + `disparo-analises.ts`. Ver `PROSPECCAO-MANUAL-COMPLETO.md` (Partes XIII-XXIX) pra dados completos com fontes.
+
+## As 8 regras duras de copy 2025-2026
+
+| # | Regra | Fonte / dado | Aplicação |
+|---|---|---|---|
+| 1 | **Abertura <80 palavras** | Instantly 2026: short bate long em reply rate | Toda primeira mensagem WhatsApp |
+| 2 | **Timeline hook > Problem hook** | Digital Bloom 2025: 9.91% vs 3.90% reply | "Antes da Copa", "esta semana" > "você tem dor X?" |
+| 3 | **Bônus em 4 categorias Hormozi** | $100M Offers | AMPLIA / ACELERA / REMOVE ESFORÇO / REMOVE RISCO |
+| 4 | **3 pontos de ancoragem** | Triple anchor > dual anchor | Agência + Fiverr + DIY (cliente que faz sozinho) |
+| 5 | **Risk-Mitigation Close** | Klaff + Sendspark 2025 | Oferecer ver protótipo ANTES de pagar |
+| 6 | **Follow-up D+3 e D+7 obrigatório** | 42% reply em follow-up; 48% nunca mandam | Sequência pré-cadastrada por lead |
+| 7 | **Vídeo Loom 30-45s** | Sendspark 2025: lift 3.5x reply (8% → 28%) | Bônus opcional pós Msg 1 |
+| 8 | **Multichannel = +287% respostas** | Landbase 2025 | D-1 (Insta) → D+0 (WhatsApp) → D+3 → D+7 |
+
+## Achado-bomba 2025
+
+**WhatsApp em estética/beleza converte 20-28% no Brasil** (JestyCRM 2025).
+
+Esse é o nicho da Erlane (EV Suplementos Injetáveis) e dos 32 leads prospectados em 25/04 (esteticista, designer sobrancelhas, biomédica esteta, soroterapia, drip vitamínico, espaço injetável).
+
+**Implicação operacional:** vertical "saúde / estética autônoma em Palmas" tem matemática 2-3x melhor que outros nichos. Concentrar prospecção aí nos primeiros 90 dias.
+
+## Distinção crítica: testemunho vs publicidade institucional
+
+Caso Jeane (Manisha) trouxe à tona: vídeo de cliente real ≠ vídeo institucional com endossante.
+
+- **Testemunho:** ela é cliente real, conta o que viveu, pode dizer "uso há X meses". Legal e ético.
+- **Publicidade institucional:** ela é endossante (autoridade na categoria), apresenta o produto com script, NÃO finge uso. Legal SE identificado como #publi.
+
+Atravessar essa linha = publicidade enganosa (CDC + CONAR). Ver `cases-aprendizado/CASE-JEANE-MANISHA.md` pra detalhes.
+
+## Sincronização entre arquivos (25/04/2026)
+
+| Onde | O quê | Status |
+|---|---|---|
+| `lib/gemini.ts` SYSTEM_PROMPT | Arsenal compactado + Calibração 2025-2026 + Anti-IA enxuto | ✅ |
+| `lib/gemini.ts` SYSTEM_SCRIPT_VENDA | Arsenal + 8 regras 2025-2026 | ✅ |
+| `lib/gemini.ts` SYSTEM_PLANO_NEGOCIO | Arsenal + 5 regras formato PDF | ✅ |
+| `lib/claude.ts` SYSTEM_SCRIPT_VENDA | Arsenal + 10 regras 2025-2026 | ✅ |
+| `lib/claude.ts` SYSTEM_PLANO_NEGOCIO | Arsenal + 6 regras formato PDF | ✅ |
+| `lib/openai.ts` SYSTEM_SCRIPT_VENDA | Arsenal + 8 regras compactas | ✅ |
+| `lib/openai.ts` SYSTEM_PLANO_NEGOCIO | Arsenal + 5 regras formato PDF | ✅ |
+| `lib/mensagens.ts` | Pitches <80 palavras, 4 bônus, 3 ancoragens, Risk-Mitigation Close + Follow-up tem-site | ✅ |
+| `lib/disparo-analises.ts` | Aberturas + follow-ups D+3/D+7 + nota_interna separada | ✅ |
+| `app/disparo/page.tsx` | Banner refinado + Razão ranking como nota interna (cor amarela) + bloco Nota interna específico | ✅ |
