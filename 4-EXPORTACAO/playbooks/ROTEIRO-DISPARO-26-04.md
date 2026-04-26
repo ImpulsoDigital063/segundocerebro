@@ -1,7 +1,7 @@
 # 🎯 Roteiro Consolidado de Disparo — RadarPRO Pool (26/04/2026)
 
-**Status do pool:** 35 leads com playbook customizado pronto pra disparar
-**Última atualização:** 26/04/2026 manhã (pós batches CIC #1-#8)
+**Status do pool:** 40 leads com playbook customizado pronto pra disparar
+**Última atualização:** 26/04/2026 manhã (pós batches CIC #1-#9)
 
 > Este doc consolida TUDO que tu precisa saber antes de disparar — telefones, registros profissionais a confirmar, pendências, ordem de disparo. Sem precisar abrir 8 docs diferentes.
 
@@ -56,6 +56,26 @@
 | 1123 | Bruna Fiorini (dentista verified harmonização) | ✅ (63)99129-3828 | ✅ CRO 3326 | Pool |
 | 1140 | **Ana Luíza Duarte** (dentista Vizzoone) | ⚠️ via DM Insta | ✅ CRO TO 3556 | 🔴 PITCH RADICAL: "saída de Vizzoone genérico pra LP autoral" |
 | 1112 | Flávio Cavalcante (médico Mounjaro) | ✅ (63)99960-2353 | ⚠️ CRM NÃO validado | 🔴 Pre-checar CRM antes de disparar |
+
+---
+
+## 🛒 CLUSTER CLONE-GB NUTRITION (Shopify) — 5 leads NOVOS (batch #9)
+
+| ID | Lead | Tel status | Pendência crítica |
+|---|---|---|---|
+| **1141** | **Sabor da Terra Marmita Fit** (45.1k verified) | ✅ (63)99288-0204 confirmado | 🔴 **AÇÃO ESPECIAL**: pedir Gabriel pra fazer intro direta ANTES de disparar (ela é seguida por @gabribarros10). Pitch plano semanal recorrente |
+| **1142** | **Nutri+ Suplementos** (44.2k verified, 855 reviews) | ✅ (63)99982-8285 confirmado | 🔴 Concorrente DIRETO Gabriel mas seguida por ele. Perguntar Gabriel sobre relação pessoal antes |
+| **1143** | **BK Moda Fitness** (20.1k, Lives) | ✅ (63)99267-2610 confirmado | 🟢 PRONTO. Pitch "Live vende, Shopify fecha" |
+| **1144** | **DeLótus Moda Fitness** (nicho 34-60) | ✅ (63)99218-3631 confirmado | 🟢 PRONTO. Pitch filtro tamanho como categoria principal |
+| **1146** | **Sousa Fitness Equipamentos** (ticket R$200-2.500) | ✅ (63)99114-5676 confirmado | 🟢 PRONTO. Pitch ficha técnica + cálculo frete |
+
+### Pool batch #9 (sem análise customizada — observação rica)
+
+| ID | Lead | Score | Status |
+|---|---|---|---|
+| 1145 | PMW Moda Fitness | 9 | Pool — pode ganhar análise depois |
+| 1147 | Emporium Fitness | 8 | Pool — concorrente Sousa Fitness |
+| 1148 | Marmita Fit Palmas | 7.5 | 🔴 VALIDAR ATIVIDADE primeiro (Maps "temporariamente fechado") |
 
 ---
 
