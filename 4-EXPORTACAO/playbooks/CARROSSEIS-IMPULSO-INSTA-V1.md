@@ -53,12 +53,13 @@ Padrão de composição por slide:
 - Aspect ratio: 1:1 (1080×1080) para carrossel Insta
 - Margem segura: 80px de cada lado (texto não cola na borda)
 
-Cases reais Impulso pra usar como prova social:
-- EV Suplementos Injetáveis (evsuplementosinjetaveis.com) — saúde estética
-- Dra. Janaína Feitosa (dra-janaina.com.br) — médica
-- Criativos do Céu (criativosdoceu.com) — infoproduto
-- LocaJV (locajv.com.br) — locação
-- GB Nutrition (gbnutrition.online) — Shopify suplemento
+⚠️ Cases REAIS Impulso (apenas estes 4, nada além):
+- EV Suplementos Injetáveis (evsuplementosinjetaveis.com) — Erlane, saúde estética/injetáveis
+- GB Nutrition (gbnutrition.online) — Gabriel, Shopify suplemento + personal trainer
+- UrbanFeet — loja própria (1.600+ pares vendidos em 3 anos), prova de "agência que vende"
+- Criativos do Céu (criativosdoceu.com) — conteúdo cristão / membership
+
+NÃO USAR (não são clientes): Dra. Janaína Feitosa, Dra. Irsnayra Mildred, LocaJV
 
 Pricing oficial (todos "a partir de"):
 - LP: R$499 setup + R$99/mês manutenção
@@ -276,10 +277,10 @@ Slide 8 (CTA): "Em 20 min de call eu te mostro o protótipo da TUA loja rodando.
 **Subtexto:** Setup do AgendaPRO Solo (R$147) **GRÁTIS** pros 10 primeiros que fecham o combo. **Clube Fundador.**
 **Visual:** pricing card grande com "R$499 + R$47/mês" + selo amarelo "Setup R$147 GRÁTIS — 10 primeiros"
 
-### Slide 5 — Prova social (Janaína)
-**Texto principal:** "dra-janaina.com.br"
-**Subtexto:** Médica de Palmas-TO. Saiu do "manda WhatsApp pra agendar" pra paciente marcar sozinho 24/7. Agenda lotada sem secretária.
-**Visual:** mockup site dra-janaina + tela de agendamento pelo paciente
+### Slide 5 — Prova social (GB Nutrition / Gabriel)
+**Texto principal:** "gbnutrition.online"
+**Subtexto:** Gabriel Barros (personal trainer + atleta, Palmas-TO). LP profissional + loja Shopify rodando. Cliente vê portfolio profissional + agenda avaliação online sem mandar WhatsApp.
+**Visual:** mockup gbnutrition.online em mobile + foto Gabriel posando atleta (placeholder)
 
 ### Slide 6 — CTA
 **Texto principal:** "Restam X de 10 vagas do Clube Fundador. Setup R$147 grátis."
@@ -305,7 +306,7 @@ Slide 3: "Duas coisas que trabalham juntas." display. Infográfico 2 colunas:
 
 Slide 4: "LP R$499 (uma vez) + SmartAgenda R$47/mês" display destacado. Card pricing grande centro. Selo amarelo #F59E0B "Setup R$147 GRÁTIS — Clube Fundador 10 primeiros". Texto pequeno: "Setup do AgendaPRO Solo grátis pros 10 primeiros que fecham o combo."
 
-Slide 5: "dra-janaina.com.br" display. "Médica de Palmas-TO. Saiu do 'manda WhatsApp pra agendar' pra paciente marcar sozinho 24/7. Agenda lotada sem secretária." Mockup site dra-janaina + tela de agendamento.
+Slide 5: "gbnutrition.online" display. "Gabriel Barros (personal trainer + atleta, Palmas-TO). LP profissional + loja Shopify rodando. Cliente vê portfolio profissional + agenda avaliação online sem mandar WhatsApp." Mockup mobile gbnutrition.online + retrato masculino atleta (placeholder).
 
 Slide 6 (CTA): "Restam X de 10 vagas do Clube Fundador. Setup R$147 grátis." display. "WhatsApp (63) 99292-0080" em verde grande. Contador visual "vagas restantes" estilizado. Aurora saturado.
 ```
