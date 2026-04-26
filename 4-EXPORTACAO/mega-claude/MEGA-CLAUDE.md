@@ -1,8 +1,10 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.0
-**Data:** 17 de Abril de 2026 (sexta)
+**Versão:** 2.2
+**Data:** 26 de Abril de 2026 (domingo)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
+
+> **SNAPSHOT v2.2:** consolidando semana 20-26 abril. RadarPRO virou plataforma operacional de prospecção via Claude in Chrome com 53 leads playbook customizado + 12 batches CIC + 17 concorrentes LP mapeados. Ofertas Impulso recalibradas com política "a partir de" + ancoragem mercado real R$2k-15k. 4 carrosséis prontos pra Claude Design.
 
 ---
 
@@ -55,7 +57,94 @@ Não precisa que tudo dê certo. **Precisa que 2-3 desses acertem.** O ecossiste
 
 ---
 
-## 🏗 O ECOSSISTEMA IMPULSO DIGITAL (17/04/2026)
+## 📅 SEMANA 20-26 ABRIL 2026 — SNAPSHOT CONSOLIDADO
+
+A semana foi maratona estratégica. Saiu de prospecção manual no Maps pra **plataforma operacional de prospecção via Claude in Chrome com sistema calibrado em camadas**.
+
+### O que mudou
+
+**De → Para:**
+- 14 leads → **53 leads com playbook customizado**
+- 0 batches CIC → **12 batches rodados** (#1-#12)
+- 0 cases mapeados → **17 concorrentes LP locais identificados**
+- Pricing fixo R$499/R$599 → **Política "a partir de"** com tiers Padrão/Complexo/Premium + Combo LP+Shopify R$1.099
+- Sistema sem inteligência meta → **Sistema aprende em camadas** (vacina de pitch, persona-clone, sub-personas, métodos-ouro)
+
+### 2 métodos-ouro descobertos
+
+**🥇 Google IA Overview por REGISTRO PROFISSIONAL** (batches #11/#12)
+- Query: `"[REGISTRO]" "[REGIONAL]" [profissão] [cidade] instagram`
+- 100% pré-validados em 90 segundos
+- Aplicável: CRM-TO/RQE, CREF GO-TO, CRO-TO, OAB-TO, CRP-TO, CRBM-TO, CRFa, CREFITO
+
+**🥈 Vetor /following/ do case ATIVO** (batch #10)
+- Vasculhar lista /following/ do dono de case Impulso ativo
+- Densidade 2x maior que Maps (4.2% rede curada)
+
+### Lições META validadas
+
+1. **Soluções amadoras = SINAL DE COMPRA, não objeção** (Linktr.ee/bio.site/sandwiche.me/contate.me/Lovable/eksy.me/msha.ke/clique.ink/Vizzoone/Canva site/abre.ai)
+2. **Padrão >5k seg médicos = JÁ tem .com.br** — Tier S real é faixa 2k-4.5k
+3. **GEO TRAP IA Overview** — cross-validar SEMPRE DDD do bio link
+4. **Vacina de pitch** — toda recusa vira anti-pitch automático pros análogos
+5. **Sub-personas LP fitness** — Apresentador (R$499+R$99) vs Consultor Online Recorrente (R$799+R$199)
+6. **Hierarquia ICP Palmas DIFERE da nacional** — em cidade média Norte: Saúde Estética → Dentista → Médico RQE → Psi → Advogado → Fisio → Nutri (não infoproduto como nacional)
+7. **Proposta SHOWCASE R$200 desconto** pra primeiro fechado de cada nicho ainda sem case real → vira case real do nicho
+
+### Mapa de cases reais Impulso (CRÍTICO — só estes 4)
+
+✅ **EV Suplementos Injetáveis** (Erlane) — saúde estética
+✅ **GB Nutrition** (Gabriel) — Shopify + LP fitness
+✅ **UrbanFeet** — loja própria (1.600+ pares vendidos em 3 anos)
+✅ **Criativos do Céu** — infoproduto/membership
+
+❌ **NÃO usar como case** (foram corrigidos do sistema 26/04 noite):
+- Dra. Janaína Feitosa (não fechou)
+- Dra. Irsnayra Mildred (não fechou)
+- LocaJV (ainda não pronto)
+
+### Mapa de concorrência LP local (17 mapeados)
+
+| Nicho | Profissional | URL |
+|---|---|---|
+| Psicologia | Galvani Carvalho · Roberta Bazolli · Caroline Penido · Elda Milhomem · Vital Clínica | (5 domínios) |
+| Nutrição | Sara Verner | saraverner.com.br |
+| Dermatologia | Annalu Foganholo · Caio Formiga · Raquel Amashta | (3 domínios) |
+| Ginecologia/Obstetrícia | Pollyana Macedo | pollyanamacedo.com.br |
+| Endocrinologia | Marcela Pitaluga · Elaine Ferreira (cardio) | (2 domínios) |
+| Mastologia | Tatiana Ferrari Jacinto · Juliana Souza | (2 domínios) |
+| Urologia | Hamilton Franco | drhamiltonfranco.com.br |
+| Oftalmologia | Henrique de Deus | drhenriquededeus.com.br |
+| Ozônio/Injetáveis | Ozônioterapia Palmas | ozonioterapiapalmas.com.br |
+
+### Stack operacional fim da semana
+
+- **RadarPRO em produção** com /Painel + /disparo + /Lições + 53 leads playbook
+- **WhatsApp Business 63 99292-0080** ativo
+- **Auto-memory** com 3 memórias persistentes novas (método persona-clone, vacina de pitch, pipeline CIC consolidado)
+- **Roteiro consolidado de disparo** (`ROTEIRO-DISPARO-26-04.md`) com semáforo de pendências
+- **Perfil-base de marca Impulso v1** (`perfil-marca-impulso-digital.md`) pronto pra Claude Design
+- **4 carrosséis Insta briefados** (`CARROSSEIS-IMPULSO-INSTA-V1.md`) pra produzir hoje
+- **Template LP Personal/Nutri v1** (`TEMPLATE-LP-PERSONAL-NUTRI.md`) com sub-personas A vs B
+
+### Dailies da semana
+- [[2026-04-20]] — daily
+- [[2026-04-22]] — daily
+- [[2026-04-23]] — daily (história pessoal compartilhada)
+- [[2026-04-24]] — daily (RadarPRO sistema completo + Tally)
+- [[2026-04-25]] — daily (Arsenal Psicológico + 5 batches CIC iniciais + market intelligence)
+- [[2026-04-26]] — daily (sessão maratona: batches #6-#12 + correções + carrosséis)
+
+### Próximas 2 semanas (prioridade tática)
+
+1. **HOJE/AMANHÃ:** produzir 4 carrosséis no Claude Design + criar perfil @impulsodigital063
+2. **Semana 27/04 - 03/05:** disparar primeiros 5-10 leads PRONTOS do roteiro (Douglas, Monnaliza, Ricardo Linares, Pedro Maciel, Christiana, Ingrid Sales, Hollana, Ioana, Daniel Janczuk, Hugo Rossoni)
+3. **Aplicar IA Overview em outros nichos:** OAB advogados, CRP psicólogos, CRO dentistas (batch #13+)
+4. **Conversas pendentes Eduardo:** Erlane (permissão case + intros), Gabriel (intros pra Marcel Freitas, Sabor da Terra, Nutri+, Atila Santos)
+
+---
+
+## 🏗 O ECOSSISTEMA IMPULSO DIGITAL (atualizado 26/04/2026)
 
 A marca-mãe é **Impulso Digital**. Tudo orbita em volta dela.
 
@@ -76,14 +165,25 @@ A marca-mãe é **Impulso Digital**. Tudo orbita em volta dela.
 - 🏢 CNPJ: 64.585.949/0001-83
 - 🐙 **GitHub:** ImpulsoDigital063/impulso-digital-nextjs
 
-**4 ofertas na prateleira (tickets e entregáveis):**
+**Ofertas oficiais — política "a partir de" (atualizada 26/04/2026):**
 
-| Oferta | Ticket | Entregáveis | Prazo |
-|---|---|---|---|
-| **Landing page** | R$499-699 | LP Next.js otimizada, hospedagem vitalícia, blog SEO embutido (3 posts), integração WhatsApp | 5-7 dias |
-| **Loja Shopify** | R$599-899 | Loja Shopify configurada, integração motoboy (Melhor Envio), Yampi checkout, 20 produtos, tema MPN | 7-10 dias |
-| **Site Next.js** | R$1.200-1.500 | Site multi-página Next.js, CMS leve, blog, SEO on-page, analytics | 10-15 dias |
-| **Consultoria** | R$300-500 | 1-2 sessões estruturadas pra destravar lançamento/conversão | 1-2 sessões |
+| Oferta | Pricing oficial | Tiers internos |
+|---|---|---|
+| **Landing Page** | a partir de R$499 + R$99/mês | Padrão R$499 / Complexo R$799-999 / Premium R$1.297+ |
+| **Loja Shopify** | a partir de R$599 + R$99/mês | Padrão R$599 / Complexo R$899-1.199 / Premium R$1.497+ |
+| **Combo LP + Shopify** | a partir de R$1.099 | Sem desconto fake — vantagem é OPERACIONAL (1 briefing, 1 call, prazo integrado) |
+| **Combo LP + SmartAgenda** | R$499 + R$47/mês | Setup AgendaPRO Solo R$147 GRÁTIS pros 10 primeiros (Clube Fundador) |
+| **AgendaPRO Solo** | R$147 setup + R$47/mês | Sem fidelidade, sem taxa por venda |
+| **AgendaPRO Equipe** | R$197 setup + R$67/mês | Multi-prof + recepcionista |
+| **Site Next.js** | a partir de R$799 | Institucional/multi-página (entrega 10-15 dias) |
+
+**🎯 ANCORAGEM REAL no pitch (validada CIC #6):** *"LP profissional no Brasil custa R$2.000 a R$15.000 (DIVIA, Odonto Pages, Webgui). Eu cobro a partir de R$499 porque sou local de Palmas, sem overhead de SP. Não é promoção temporária — é meu pricing real."*
+
+**🚨 REGRA DE PRICING:** NUNCA cravar valor fixo em mensagem de venda. Use "a partir de" + chamar pra call pra cotação exata. Complexidade (catálogo, integrações, idiomas, ERP, automações) é avaliada na call de alinhamento e o valor final é cotado lá.
+
+**Bônus stack categorizado Hormozi com VALOR DE MERCADO REAL:**
+- **LP** — total bônus de mercado: ~R$2.400 (3 artigos SEO R$300, protótipo 20min R$500, hospedagem vitalícia R$600, garantia 7d R$300, suporte 30d R$200, etc)
+- **Shopify** — total bônus de mercado: ~R$3.600 (20 produtos R$300, tema MPN R$1.000, Yampi R$500, Melhor Envio R$300, etc)
 
 **Site próprio (prova viva — 16 componentes):**
 Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criativosdoceu) · Processo (4 passos) · Depoimentos · FAQ · Blog (3 posts SEO) · CTA WhatsApp · Footer · Planos · Garantia · Diferenciais · Time · Contato
@@ -211,13 +311,14 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
 
 ---
 
-### **RADARPRO** (Plataforma de prospecção — interno, potencial SaaS)
-- 🎯 **Proposta (hoje):** Sistema interno da Impulso Digital pra prospectar e fechar os primeiros clientes
-- 🎯 **Proposta (futuro):** Plataforma de vendas completa pra vendedores e infoprodutores
-- 🧑‍💼 **Por que existe:** Prospectar a frio é lento e desorganizado. O RadarPRO gera playbook completo por lead com IA e integra envio direto via WhatsApp.
-- 🔧 **Stack:** Next.js 16 + Turso (libSQL) + Gemini 2.5-flash (Google Generative AI) + Baileys (WhatsApp QR) + Playwright (scraping Gmaps)
-- 📊 **Estado:** 561 leads no banco, 144 classificados como quentes
-- 🐙 **GitHub:** ImpulsoDigital063/radar-pro
+### **RADARPRO** (Plataforma de prospecção operacional — interno, potencial SaaS)
+- 🎯 **Proposta (hoje):** Sistema interno + plataforma de prospecção via Claude in Chrome com 53 leads playbook customizado pronto pra disparar
+- 🎯 **Proposta (futuro):** SaaS público pra agências/vendedores/infoprodutores
+- 🧑‍💼 **Por que existe:** Prospectar a frio é lento e desorganizado. RadarPRO orquestra (a) Claude in Chrome pra inteligência externa qualificada, (b) Gemini/Claude/OpenAI pra geração de mensagens, (c) banco com leads + análises customizadas, (d) UI /disparo com playbook pronto + botão WhatsApp + botão DM Insta.
+- 🔧 **Stack:** Next.js 16 + Turso (libSQL) + Gemini 2.5-flash + Claude API + OpenAI + Baileys (WhatsApp local) + Playwright (scraping Gmaps local) + **Claude in Chrome** (inteligência externa via browser autenticado)
+- 📊 **Estado (26/04 noite):** ~190 leads totais no banco · 53 com playbook customizado · 12 batches CIC rodados · 17 concorrentes LP mapeados · 2 métodos-ouro de prospecção descobertos
+- 🌐 **Produção:** radarpro-inky.vercel.app
+- 🐙 **GitHub:** ImpulsoDigital063/radarpro
 
 **Schema do banco (Turso — `lib/db.ts`):**
 - Tabela `leads` (25+ campos): nome, whatsapp, cidade, segmento, site, instagram, avaliacao, num_avaliacoes, horario_funcionamento, endereco, status (novo/qualificado/contactado/respondeu/fechado/morto), score, ia_analise, tem_site, tem_instagram, tem_whatsapp, status_operacional, periodo_analisado, **script_json** (cache do playbook completo), **termometro** (quente/morno/frio), **termometro_razao**, **termometro_atualizado_em**, created_at, updated_at
@@ -271,6 +372,61 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
 - Extração: nome, endereço, avaliação, número de avaliações, telefone, horário de funcionamento, site, Instagram
 
 **Ambição 7 dias:** Ser o primeiro cliente do RadarPRO a lucrar com ele. Usar em produção, fechar 2-3 vendas, virar case da própria ferramenta.
+
+### 🔥 EVOLUÇÃO 20-26/04 — RadarPRO virou plataforma operacional de prospecção
+
+**12 batches CIC rodados** (Claude in Chrome — inteligência externa via browser autenticado):
+- #1 Mapa concorrência Palmas (10 agências)
+- #2 + #2.5 v2 Moda feminina + multi-nicho (24 leads Shopify)
+- #3 Saúde estética / nicho Erlane (5 leads LP)
+- #4 Multi-canal Shopify (validação cruzada Google Business)
+- #5 Caça LP multi-fonte (8 leads, 5 análises)
+- #6 Médicos RQE + dentistas + advogados (RECORDE 7 Tier S)
+- #7 Clone-Erlane (3 leads paramédicas)
+- #8 Cluster farmac/biomédica esteta premium (6 leads + VACINA DE PITCH)
+- #9 Clone-GB Nutrition Shopify (8 leads incluindo Sabor da Terra 45k seg)
+- #10 LP fitness via /following/ Gabriel (vetor /following/ validado)
+- #11 Educação física via IA Overview CREF (método-ouro #1 descoberto)
+- #12 Médicos especialistas via IA Overview CRM-TO (6 Tier S premium)
+
+**Pool atual: 53 leads com playbook customizado completo** distribuídos em Tier A pos 1-53. Categorias: dentistas estéticos (4), médicos especialistas RQE (11), advogados (3), psicólogos (3), nutris (4), fisio (1), fono (1), farmac/biomédicas estetas (8), suplementos (5), moda feminina (5), perfumaria (1), semi-joias (1), móveis design (2), comida fit (2), roupa fitness (3), equipamento (2), personal trainers (6).
+
+**Sistema calibrado em CAMADAS** (lições META integradas ao SYSTEM_PROMPT):
+1. Hierarquia ICP Palmas (70% saúde+estética / 20% jurídico / 10% demais)
+2. Ancoragem real R$2.000-15.000 mercado nacional (DIVIA, Odonto Pages, Webgui)
+3. Filtro Tier S automático (4 critérios: registro + 4.8★/30 reviews + zero .com.br + bio amadora)
+4. Soluções amadoras (Linktr.ee/bio.site/sandwiche.me/contate.me/Lovable/eksy.me/msha.ke/clique.ink/Vizzoone/Canva site/abre.ai) = SINAL DE COMPRA
+5. Sub-personas LP fitness (Apresentador R$499+R$99 vs Consultor Online Recorrente R$799+R$199)
+6. Pitch Shopify ≠ Pitch LP (Shopify argumenta CONVERSÃO 24/7, LP argumenta autoridade)
+7. Vacina de pitch (lead recusa → padrão extraído → anti-pitch automático pros análogos)
+8. Padrão >5k seg médicos = JÁ tem .com.br (Tier S real é 2k-4.5k)
+9. GEO TRAP IA Overview (cross-validar SEMPRE DDD do bio link)
+10. Proposta SHOWCASE R$200 desconto pra primeiro fechado de cada nicho virar case
+
+**2 métodos-ouro de prospecção descobertos:**
+
+**🥇 Google IA Overview por REGISTRO PROFISSIONAL** (#11 e #12)
+Query: `"[REGISTRO]" "[REGIONAL]" [profissão] [cidade] instagram`
+- 100% pré-validados em 90 segundos
+- Aplicável: CRM-TO/RQE, CREF GO-TO, CRO-TO, OAB-TO, CRP-TO, CRBM-TO, CRFa, CREFITO
+
+**🥈 Vetor /following/ do case ATIVO Impulso** (#10)
+Densidade 2x maior que Maps. Aplicado em GB Nutrition (Gabriel) — 6 leads em 35 min.
+
+**Cases reais Impulso (apenas 4 confirmados — ❌ Janaína, Irsnayra, LocaJV NÃO são clientes):**
+1. EV Suplementos Injetáveis (Erlane)
+2. GB Nutrition (Gabriel)
+3. UrbanFeet (loja própria)
+4. Criativos do Céu
+
+**Mapa de concorrência LP local (17 mapeados):** psi (5), dermato (3), gineco (1), endocrino (2), masto (2), uro (1), oftalmo (1), nutri (1), ozonioterapia (1).
+
+**UI /disparo evoluída (26/04):**
+- Bug fix telefone null (API + 4 botões WhatsApp)
+- Botão DM Insta como alternativa (1 clique = abre conversa + copia mensagem adaptada pra clipboard)
+- `adaptarMensagemDm()` remove identificação formal (handle do Eduardo já identifica no Insta)
+- Visual condicional: "Pegar tel" cinza vs "DM Insta" gradient Aurora
+- Aviso amarelo: "DM funciona melhor depois do pre-engajamento Insta D-1"
 
 ---
 
