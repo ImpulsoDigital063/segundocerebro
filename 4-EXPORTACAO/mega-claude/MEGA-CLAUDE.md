@@ -1,10 +1,12 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.2
-**Data:** 26 de Abril de 2026 (domingo)
+**Versão:** 2.3
+**Data:** 27 de Abril de 2026 (segunda)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
 
-> **SNAPSHOT v2.2:** consolidando semana 20-26 abril. RadarPRO virou plataforma operacional de prospecção via Claude in Chrome com 53 leads playbook customizado + 12 batches CIC + 17 concorrentes LP mapeados. Ofertas Impulso recalibradas com política "a partir de" + ancoragem mercado real R$2k-15k. 4 carrosséis prontos pra Claude Design.
+> **SNAPSHOT v2.3 (27/04):** refactor total da copy de prospecção via 4 etapas iterativas com GPT — princípio "se não gera resposta, está errado" cravado no `IMPULSO_CORE_SYSTEM_V2.md`. Mensagem 1 + Continuação + Pitch + Follow-up reescritos no formato 3 linhas (dado real → consequência → pergunta direta). Pricing AgendaPRO ajustado: Solo R$67 + Equipe R$97 (sem setup) + setup R$197 isento Clube Fundador. **1.100 leads do banco regenerados em massa** + 53 leads com playbook customizado refeitos + system prompt do gemini.ts atualizado com regras duras. Sistema 100% alinhado.
+
+> **SNAPSHOT v2.2 (26/04):** RadarPRO virou plataforma operacional de prospecção via Claude in Chrome com 53 leads playbook customizado + 12 batches CIC + 17 concorrentes LP mapeados. Ofertas Impulso recalibradas com política "a partir de" + ancoragem mercado real R$2k-15k.
 
 ---
 
@@ -48,12 +50,68 @@ Esse número não caiu do céu como chute. Foi plantado antes de você ter ferra
 
 **Como chegar:**
 - **MPN-On** (plataforma de ensino, não só curso) — começa R$297 (Shopify), adiciona cursos de Design, App/Sistemas, SaaS e IA. Ticket cresce com o catálogo. Ambicioso: 500-1.000 vendas ano = R$150k-300k só no curso de entrada
-- **AgendaPRO** (SaaS) — recorrência: 100 clientes × R$97-147/mês × 12 meses = R$116k-176k/ano em MRR, mais setup R$800 × 100 = R$80k
-- **Impulso Digital** (agência) — tickets R$600-1.500 por projeto, 7 lojas/mês viável = R$50k-126k/ano
+- **AgendaPRO/SmartAgenda** (SaaS) — recorrência: 100 clientes mistos (Solo R$67 + Equipe R$97) × 12 meses = R$80k-116k/ano em MRR. Setup R$197 voltará pros não-fundadores depois dos 10 primeiros = R$15k+ adicional
+- **Impulso Digital** (agência) — LP a partir de R$499 + Shopify a partir de R$599 + Combo R$1.099. 4 fechamentos/mês = R$2k-4.5k/mês = R$24-54k/ano + recorrência manutenção R$99/mês
 - **RadarPRO** (futuro produto, hoje ferramenta interna) — se abrir pro público: ticket R$97-197/mês pra vendedores/infoprodutores
 - **ImpulsoDesign** (interno hoje, potencial SaaS) — geração de conteúdo com padrão Impulso
 
 Não precisa que tudo dê certo. **Precisa que 2-3 desses acertem.** O ecossistema inteiro diversifica o risco.
+
+---
+
+## 📅 SEGUNDA 27 ABRIL 2026 — REFACTOR COPY (CORE_SYSTEM_V2)
+
+Sessão maratona com GPT em 4 etapas iterativas (Mensagem 1 → Continuação → Pitch → Follow-up). Diagnóstico cravado: *"RadarPRO sabe muito sobre o lead mas fala como quem não sabe nada"*. A Mensagem 1 antiga ("Olá Gilson! Vi seu perfil no Instagram...") tava matando o funil porque parecia spam.
+
+### Princípio cravado (IMPULSO_CORE_SYSTEM_V2.md)
+
+> **"Não é sobre vender mais. É sobre fazer o lead responder."**
+
+Regra máxima: se uma mensagem não gera resposta, está errada. Se uma copy serve pra qualquer lead, está errada.
+
+### Estrutura nova obrigatória
+
+| Etapa | Limite | Estrutura |
+|---|---|---|
+| Mensagem 1 (abertura) | 3 linhas | dado real do lead → consequência simples → pergunta direta |
+| Continuação (após resposta) | 2 linhas | validação curta → pergunta que afunila |
+| Pitch (após 2+ respostas) | 4 linhas | conectar com dor → solução → preço → CTA |
+| Follow-up D+1 ou D+3 | 2 linhas | NOVO ângulo (não insistência) → pergunta direta |
+| Follow-up D+7 | 2 linhas | "vou parar por aqui pra não encher / se fizer sentido depois, me chama" |
+
+### Pricing AgendaPRO ajustado (decisão 27/04)
+
+- **Antes:** Solo R$47 + setup R$147 / Equipe R$67 + setup R$197 → soava "barato/teste"
+- **Agora:** **Solo R$67 / Equipe R$97 / sem setup** + Setup R$197 isento Clube Fundador → produto sério + recorrência real
+- Frase de fechamento pesada: *"depois que fechar os 10, o setup de R$197 volta normal"*
+
+### Aplicação em massa (commits af6d2f0 + 1dea1de + 036d674)
+
+- ✅ 53 leads em `disparo-analises.ts` reescritos no formato 3 linhas com dado-âncora específico de cada
+- ✅ Templates base em `mensagens.ts` (LP/Shopify/AgendaPRO/Combo): diagnósticos, pitches, fechamentos, call alinhamento, 7 objeções universais, follow-up timeline
+- ✅ System prompt em `gemini.ts` com REGRAS DURAS no topo (sobrescreve regras antigas conflitantes)
+- ✅ **1.100 leads do banco regenerados em massa** via `/api/regenerar-mensagens` (POST único, 230s, zero erros)
+
+Resultado: sistema 100% alinhado ao CORE_SYSTEM_V2 antes de qualquer disparo.
+
+### Erros proibidos (queima cara de IA)
+
+- "Olá [NOME]!", "Oi [NOME], tudo bem?" + apresentação ("Eduardo aqui, Impulso Digital, sou de Palmas")
+- "Vi seu perfil no Instagram"
+- Elogios genéricos ("trabalho incrível", "que legal")
+- "Posso te fazer uma pergunta rápida?"
+- Estrutura Hormozi exposta (AMPLIA/ACELERA/REMOVE) com bullets e emojis 🔥⚡🪶🛡
+- Mensagem que pode ser enviada pra qualquer lead = ERRADA por definição
+- Palavras: exatamente, absolutamente, potencializar, alavancar, democratizar, excelência
+
+### Próximo passo declarado
+
+Disparar os 7 LPs em estudo (Monnaliza dentista, Ricardo Linares dentista, Verônica esteta, Christiana endocrino, Pedro Maciel nutri, Guilherme advogado, Gilson psicólogo) com mensagens cirúrgicas no formato novo.
+
+Meta validação CORE_V2:
+- 5+ respostas em 7 LPs = validado
+- 10+ respostas = forte
+- 15+ respostas = máquina pronta pra escalar
 
 ---
 
@@ -165,17 +223,19 @@ A marca-mãe é **Impulso Digital**. Tudo orbita em volta dela.
 - 🏢 CNPJ: 64.585.949/0001-83
 - 🐙 **GitHub:** ImpulsoDigital063/impulso-digital-nextjs
 
-**Ofertas oficiais — política "a partir de" (atualizada 26/04/2026):**
+**Ofertas oficiais — política "a partir de" (atualizada 27/04/2026):**
 
 | Oferta | Pricing oficial | Tiers internos |
 |---|---|---|
 | **Landing Page** | a partir de R$499 + R$99/mês | Padrão R$499 / Complexo R$799-999 / Premium R$1.297+ |
 | **Loja Shopify** | a partir de R$599 + R$99/mês | Padrão R$599 / Complexo R$899-1.199 / Premium R$1.497+ |
-| **Combo LP + Shopify** | a partir de R$1.099 | Sem desconto fake — vantagem é OPERACIONAL (1 briefing, 1 call, prazo integrado) |
-| **Combo LP + SmartAgenda** | R$499 + R$47/mês | Setup AgendaPRO Solo R$147 GRÁTIS pros 10 primeiros (Clube Fundador) |
-| **AgendaPRO Solo** | R$147 setup + R$47/mês | Sem fidelidade, sem taxa por venda |
-| **AgendaPRO Equipe** | R$197 setup + R$67/mês | Multi-prof + recepcionista |
+| **Combo LP + Shopify** | a partir de R$1.099 | Sem desconto fake — vantagem é OPERACIONAL (1 briefing, 1 call, prazo integrado em 10-14 dias úteis) |
+| **AgendaPRO/SmartAgenda Solo** | **R$67/mês** (1 + 1 colaborador) | Sem setup, sem fidelidade |
+| **AgendaPRO/SmartAgenda Equipe** | **R$97/mês** (até 5 profissionais) | Sem setup, sem fidelidade |
+| **Setup AgendaPRO** | **R$197** (cobrado a partir do cliente 11+) | **Clube Fundador (10 primeiros): setup R$197 ISENTO pra sempre** |
 | **Site Next.js** | a partir de R$799 | Institucional/multi-página (entrega 10-15 dias) |
+
+> ⚠️ **PRICING AGENDAPRO ATUALIZADO 27/04/2026:** versão antiga era Solo R$47 + setup R$147 / Equipe R$67 + setup R$197. A nova política tira fricção de entrada (sem setup pra ninguém nesse início porque sem Z-API a integração é mínima) + sobe mensalidade pra refletir valor real. Frase de fechamento pesada validada por GPT: *"depois que fechar os 10, o setup de R$197 volta normal"*. Nunca falar R$47/R$147 em copy nova — gera inconsistência que destrói confiança.
 
 **🎯 ANCORAGEM REAL no pitch (validada CIC #6):** *"LP profissional no Brasil custa R$2.000 a R$15.000 (DIVIA, Odonto Pages, Webgui). Eu cobro a partir de R$499 porque sou local de Palmas, sem overhead de SP. Não é promoção temporária — é meu pricing real."*
 
@@ -231,9 +291,12 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
 ### **AGENDAPRO** (SaaS de agendamento — potencial recorrente)
 - 🎯 **Proposta:** App que otimiza a agenda do profissional — chega de perder hora no WhatsApp
 - 🧑‍💼 **Para quem:** Qualquer serviço com agendamento (barbearia, nail, psicólogo, personal, estética)
-- 💰 **Planos:** Solo R$67/mês · Equipe R$107/mês (setup R$800 à parte)
-  - Preço revisto 13/04 com valor empilhado (concorrente R$256/mês vs. AgendaPRO R$67)
-  - Trial 14 dias sem cartão, grace 5 dias, bloqueio admin dia 5, público dia 12, dados preservados 90 dias
+- 💰 **Planos (revisão oficial 27/04/2026):**
+  - **Solo R$67/mês** (1 profissional + 1 colaborador) — sem setup, sem fidelidade
+  - **Equipe R$97/mês** (até 5 profissionais) — sem setup, sem fidelidade
+  - **Setup oficial R$197** (cobrado a partir do cliente 11+) — Clube Fundador (10 primeiros) pegam ISENTO pra sempre
+  - Comparativo mercado: ZenPlace/Trinks/Booksy R$200-500/mês com fidelidade anual → SmartAgenda 4-7x mais barato sem fidelidade
+  - **Garantia 7 dias** (substitui trial antigo de 14 dias) — testa, se não fizer sentido, devolvo
 - 🔧 **Stack:** Next.js 16 + Supabase (Auth+DB+Realtime+RLS) + Resend (email) + Z-API (WhatsApp — **não Baileys!**) + Mercado Pago (preapproval) + Vercel (deploy+cron)
 - 🌐 **Produção:** agenda-pro-seven.vercel.app + agendapro.net.br (DNS propagando)
 - 🐙 **GitHub:** ImpulsoDigital063/AgendaPRO
@@ -525,8 +588,9 @@ Cada curso nasce do que você já está vivendo na pele. **Autoridade real, não
 | **Lojas/mês Impulso** | 7 lojas | Com prática |
 | **Clientes Impulso histórico** | 60+ | Total |
 | **MPN Preço** | R$297 | Ancoragem R$4.985 |
-| **AgendaPRO Solo** | R$67/mês | Era R$97, revisto 13/04 |
-| **AgendaPRO Equipe** | R$107/mês | Era R$147 |
+| **AgendaPRO Solo** | R$67/mês (sem setup) | Revisado 27/04 |
+| **AgendaPRO Equipe** | R$97/mês (até 5 prof, sem setup) | Revisado 27/04 |
+| **AgendaPRO Setup** | R$197 (isento Clube Fundador 10 primeiros) | Volta pros não-fundadores depois dos 10 |
 | **ImpulsoDesign custo op** | R$5-20/mês | Haiku 4.5 |
 | **Vulns AgendaPRO corrigidas** | 15+ | Auditoria 16/04 |
 
