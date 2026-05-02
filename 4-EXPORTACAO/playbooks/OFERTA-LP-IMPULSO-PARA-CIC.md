@@ -2,7 +2,7 @@
 
 **Pra quem este doc é:** Claude in Chrome (CIC) operando dentro do Claude Design pra gerar criativos sobre LP da Impulso.
 
-**Como usar:** cole este doc inteiro no contexto do CIC. Ele vira a fonte de verdade sobre a oferta LP e usa em qualquer prompt no Claude Design.
+**Como usar:** cole este doc inteiro no contexto do CIC. Ele vira a fonte de verdade sobre a oferta LP e usa em qualquer prompt no Claude.
 
 ---
 

@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Impulso Digital · Catálogo WhatsApp · LP R$499</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --bg-deep: #0E2A1D;
+    --neon: #C8E82E;
+    --neon-soft: rgba(200, 232, 46, 0.12);
+    --neon-line: rgba(200, 232, 46, 0.28);
+    --ink: #0F0F0F;
+    --white: #FFFFFF;
+    --muted: rgba(255,255,255,0.6);
+    --muted-2: rgba(255,255,255,0.4);
+    --hairline: rgba(255,255,255,0.10);
+  }
+
+  html, body { margin: 0; padding: 0; background: #0a0a0a; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--white); }
+
+  /* ============================================================ */
+  /*  CARD 1080x1080                                                */
+  /* ============================================================ */
+  .card {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 800px 600px at 92% 6%, var(--bg-deep) 0%, rgba(14,42,29,0.55) 28%, rgba(14,42,29,0) 60%),
+      radial-gradient(ellipse 700px 500px at 100% -10%, rgba(200,232,46,0.10) 0%, rgba(200,232,46,0) 55%),
+      var(--bg);
+    color: var(--white);
+    font-family: 'Inter', system-ui, sans-serif;
+    isolation: isolate;
+  }
+
+  .card .grain::before {
+    content:"";
+    position:absolute; inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: screen;
+    pointer-events:none;
+    z-index: 1;
+  }
+
+  .card .frame {
+    position: absolute;
+    inset: 28px;
+    border: 1px solid var(--hairline);
+    border-radius: 28px;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .card > .layer { position: relative; z-index: 2; }
+
+  /* ============================================================ */
+  /*  TOP BADGE                                                     */
+  /* ============================================================ */
+  .badge-top {
+    position: absolute;
+    top: 70px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--neon);
+    color: var(--ink);
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 0 60px rgba(200,232,46,0.25);
+  }
+
+  /* ============================================================ */
+  /*  iPhone mockup                                                 */
+  /* ============================================================ */
+  .iphone {
+    position: relative;
+    border-radius: 56px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    padding: 8px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 80px rgba(200,232,46,0.18);
+  }
+  .iphone .frame-inner {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50px;
+    border: 2px solid #000;
+    background: #000;
+    overflow: hidden;
+  }
+  .iphone .notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; height: 28px;
+    background: #000;
+    border-radius: 18px;
+    z-index: 5;
+  }
+  .iphone .notch::after {
+    content: ""; position: absolute;
+    right: 12px; top: 50%; transform: translateY(-50%);
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    box-shadow: inset 0 0 0 1px rgba(200,232,46,0.4);
+  }
+  .iphone .screen {
+    position: absolute;
+    inset: 0;
+    background: #0a0a0a;
+    overflow: hidden;
+    border-radius: 50px;
+  }
+
+  /* ============================================================ */
+  /*  Generic LP inside the phone                                   */
+  /* ============================================================ */
+  .lp {
+    width: 100%; height: 100%;
+    background: #0a0a0a;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .lp .lp-status {
+    height: 36px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 22px 6px;
+    font-size: 10px; font-weight: 700;
+    color: #fff;
+  }
+  .lp .lp-status .bars {
+    display: inline-flex; gap: 3px; align-items: flex-end;
+  }
+  .lp .lp-status .bar {
+    width: 3px; background: #fff; border-radius: 1px;
+  }
+  .lp .lp-status .bar:nth-child(1) { height: 4px; }
+  .lp .lp-status .bar:nth-child(2) { height: 6px; }
+  .lp .lp-status .bar:nth-child(3) { height: 8px; }
+  .lp .lp-status .bar:nth-child(4) { height: 10px; }
+
+  .lp .lp-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 14px;
+  }
+  .lp .lp-logo {
+    font-weight: 900; font-size: 13px; letter-spacing: 0.04em;
+    color: #fff;
+  }
+  .lp .lp-logo .dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--neon); border-radius: 50%;
+    margin-right: 4px; vertical-align: middle;
+  }
+  .lp .lp-burger {
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .lp .lp-burger span {
+    width: 16px; height: 1.5px; background: #fff;
+  }
+
+  .lp .lp-hero {
+    padding: 14px 16px 16px;
+    position: relative;
+  }
+  .lp .lp-eyebrow {
+    color: var(--neon);
+    font-size: 8px; font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .lp .lp-headline {
+    font-size: 24px; font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .lp .lp-headline em { font-style: normal; color: var(--neon); }
+  .lp .lp-sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .lp .lp-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--neon); color: #000;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 9px; font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .lp .lp-cta .arrow {
+    width: 0; height: 0;
+    border-left: 5px solid #000;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+  }
+
+  /* Image area inside LP — striped placeholder */
+  .lp .lp-img {
+    margin: 14px 16px 0;
+    height: 150px;
+    border-radius: 10px;
+    background:
+      repeating-linear-gradient(
+        135deg,
+        rgba(200,232,46,0.08) 0 6px,
+        rgba(255,255,255,0.02) 6px 12px
+      ),
+      linear-gradient(135deg, #1a2410, #0a0a0a);
+    border: 1px solid rgba(200,232,46,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+  .lp .lp-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 35%, rgba(200,232,46,0.18), transparent 55%);
+  }
+  .lp .lp-img-tag {
+    position: absolute;
+    bottom: 8px; left: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .lp .lp-trust {
+    display: flex; align-items: center; gap: 8px;
+    margin: 12px 16px 0;
+    font-size: 8px;
+    color: rgba(255,255,255,0.55);
+  }
+  .lp .lp-trust .stars {
+    color: var(--neon);
+    letter-spacing: 1px;
+    font-size: 9px;
+  }
+
+  .lp .lp-section-divider {
+    height: 1px;
+    margin: 12px 16px 0;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .lp .lp-feat {
+    margin: 10px 16px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .lp .lp-feat .f {
+    font-size: 7.5px;
+    padding: 5px 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+  }
+  .lp .lp-feat .f::before {
+    content: "✓";
+    color: var(--neon);
+    font-weight: 900;
+    margin-right: 4px;
+  }
+
+  /* ============================================================ */
+  /*  Headline + price + pills (shared styling)                     */
+  /* ============================================================ */
+  .product-name {
+    margin: 0;
+    font-family: 'Inter';
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    color: #fff;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .editorial-name { margin-top: 0; margin-bottom: 24px; }
+
+  .price-block {
+    text-align: center;
+    color: #fff;
+  }
+  .price-pre {
+    font-family: 'Inter';
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .price-big {
+    font-family: 'Inter';
+    font-weight: 900;
+    color: var(--neon);
+    letter-spacing: -0.05em;
+    line-height: 0.85;
+    text-shadow: 0 0 80px rgba(200,232,46,0.25);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .price-big .rs {
+    font-size: 0.45em;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  .pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .pill-neon {
+    background: var(--neon);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 40px rgba(200,232,46,0.15);
+  }
+  .pill-neon svg {
+    width: 14px; height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ============================================================ */
+  /*  Footer (brand)                                                */
+  /* ============================================================ */
+  .footer-brand {
+    position: absolute;
+    bottom: 60px;
+    left: 0; right: 0;
+    text-align: center;
+    z-index: 5;
+  }
+  .footer-brand .logo {
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .footer-brand .logo .sep {
+    color: var(--neon);
+    font-weight: 400;
+    margin: 0 4px;
+  }
+  .footer-brand .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ============================================================ */
+  /*  Variation A — Mockup dominant                                 */
+  /*  Stack:  badge(56) · phone(115-555) · name(580) · price(720) · pills(870) · footer(960) */
+  /* ============================================================ */
+  .va .badge-top { top: 56px; }
+
+  .va .stage-mockup {
+    position: absolute;
+    top: 115px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 220px; height: 446px;
+    z-index: 3;
+  }
+  .va .iphone {
+    width: 100%; height: 100%;
+    border-radius: 36px;
+    padding: 6px;
+  }
+  .va .iphone .frame-inner {
+    inset: 6px;
+    border-radius: 30px;
+  }
+  .va .iphone .screen { border-radius: 30px; }
+  .va .iphone .notch {
+    width: 64px; height: 18px;
+    top: 8px;
+    border-radius: 12px;
+  }
+  .va .iphone .notch::after {
+    width: 6px; height: 6px; right: 7px;
+  }
+
+  .va .product-name {
+    position: absolute;
+    top: 580px;
+    left: 0; right: 0;
+    font-size: 64px;
+    z-index: 4;
+  }
+
+  .va .price-block {
+    position: absolute;
+    top: 720px;
+    left: 0; right: 0;
+    z-index: 4;
+  }
+  .va .price-pre { font-size: 14px; margin-bottom: 6px; }
+  .va .price-big { font-size: 116px; }
+  .va .price-big .rs { font-size: 48px; }
+
+  .va .pills-row {
+    position: absolute;
+    top: 870px;
+    left: 0; right: 0;
+    z-index: 4;
+    padding: 0 60px;
+  }
+  .va .pills-row .pill-neon { padding: 12px 22px; font-size: 16px; }
+
+  .va .footer-brand { bottom: 50px; }
+  .va .footer-brand .logo { font-size: 18px; }
+  .va .footer-brand .url { font-size: 12px; }
+
+  /* glow halo behind phone */
+  .va .glow {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 500px;
+    background: radial-gradient(circle, rgba(200,232,46,0.16) 0%, rgba(200,232,46,0) 60%);
+    filter: blur(40px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* ============================================================ */
+  /*  Variation B — Text dominant                                   */
+  /*  Stack:  badge(56) · phone(110-360) · name(395-580) · price(610-810) · pills(850) · footer(970) */
+  /* ============================================================ */
+  .vb .badge-top { top: 56px; }
+
+  .vb .stage-mockup {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 130px; height: 264px;
+    z-index: 3;
+  }
+  .vb .iphone {
+    width: 100%; height: 100%;
+    border-radius: 24px;
+    padding: 4px;
+  }
+  .vb .iphone .frame-inner {
+    inset: 4px;
+    border-radius: 20px;
+  }
+  .vb .iphone .screen { border-radius: 20px; }
+  .vb .iphone .notch {
+    width: 44px; height: 12px;
+    top: 6px;
+    border-radius: 8px;
+  }
+  .vb .iphone .notch::after {
+    width: 4px; height: 4px; right: 5px;
+  }
+
+  .vb .product-name {
+    position: absolute;
+    top: 395px;
+    left: 0; right: 0;
+    font-size: 88px;
+    z-index: 4;
+  }
+
+  .vb .price-block {
+    position: absolute;
+    top: 610px;
+    left: 0; right: 0;
+    z-index: 4;
+  }
+  .vb .price-pre { font-size: 16px; margin-bottom: 4px; letter-spacing: 0.22em; }
+  .vb .price-big { font-size: 168px; }
+  .vb .price-big .rs { font-size: 64px; }
+
+  .vb .pills-row { display: none; }
+
+  .vb .b-pills {
+    position: absolute;
+    top: 858px;
+    left: 0; right: 0;
+    display: flex; justify-content: center; gap: 12px;
+    z-index: 4;
+  }
+  .vb .b-pills .pill-neon {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+
+  .vb .footer-brand { bottom: 50px; }
+  .vb .footer-brand .logo { font-size: 18px; }
+  .vb .footer-brand .url { font-size: 12px; }
+
+  /* ============================================================ */
+  /*  Variation C — Editorial                                       */
+  /* ============================================================ */
+  .vc {
+    background:
+      radial-gradient(ellipse 1100px 800px at 12% 100%, var(--bg-deep) 0%, rgba(14,42,29,0.4) 30%, rgba(14,42,29,0) 60%),
+      radial-gradient(ellipse 700px 500px at 100% -10%, rgba(200,232,46,0.10) 0%, rgba(200,232,46,0) 55%),
+      var(--bg);
+  }
+
+  .vc .badge-top {
+    top: 56px;
+    left: 60px;
+    transform: none;
+    background: transparent;
+    color: var(--neon);
+    border: 1px solid var(--neon-line);
+    padding: 12px 22px;
+    box-shadow: none;
+  }
+
+  .vc .editorial-meta {
+    position: absolute;
+    top: 64px;
+    right: 60px;
+    z-index: 5;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+  .vc .editorial-meta b {
+    color: var(--neon);
+    font-weight: 700;
+  }
+
+  .vc .stage-mockup {
+    position: absolute;
+    top: 180px;
+    left: 60px;
+    width: 300px; height: 608px;
+    transform: rotate(-6deg);
+    z-index: 3;
+  }
+  .vc .iphone { width: 100%; height: 100%; }
+
+  /* heavy editorial drop-shadow */
+  .vc .stage-mockup::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 0; right: 0;
+    height: 80px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.7), transparent 70%);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .vc .editorial-text {
+    position: absolute;
+    right: 60px;
+    top: 200px;
+    width: 460px;
+    z-index: 4;
+    text-align: left;
+  }
+  .vc .editorial-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .vc .editorial-eyebrow::before {
+    content: "";
+    width: 28px; height: 1px;
+    background: var(--neon);
+  }
+  .vc .editorial-name {
+    font-family: 'Inter';
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 24px;
+  }
+  .vc .editorial-name span { color: var(--neon); }
+  .vc .editorial-divider {
+    height: 1px;
+    width: 100%;
+    background: var(--hairline);
+    margin: 18px 0;
+  }
+  .vc .editorial-price {
+    text-align: left;
+  }
+  .vc .editorial-price .pre {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .vc .editorial-price .big {
+    font-family: 'Inter';
+    font-weight: 900;
+    color: var(--neon);
+    font-size: 110px;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .vc .editorial-price .big .rs { font-size: 44px; font-weight: 800; }
+
+  .vc .b-pills {
+    position: absolute;
+    bottom: 110px;
+    left: 60px;
+    right: 60px;
+    display: flex; justify-content: flex-start; gap: 10px;
+    z-index: 4;
+  }
+  .vc .b-pills .pill-neon {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .vc .footer-brand {
+    bottom: 50px;
+    text-align: left;
+    padding-left: 60px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    justify-content: flex-start;
+  }
+  .vc .footer-brand .logo { font-size: 20px; margin: 0; }
+  .vc .footer-brand .url { font-size: 13px; }
+
+  /* Spec note over each artboard, only visible on canvas */
+  .spec {
+    position: absolute;
+    top: -34px;
+    left: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .spec b { color: var(--neon); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" fill="#0F0F0F"/>
+    <circle cx="78" cy="22" r="22" fill="#0E2A1D"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="14" fill="#fff" letter-spacing="-0.04em">LP</text>
+    <text x="50" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="22" fill="#C8E82E" letter-spacing="-0.05em">R$499</text>
+    <rect x="30" y="78" width="40" height="6" rx="3" fill="#C8E82E"/>
+  </svg>
+</template>
+
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState } = React;
+
+/* =====================================================
+   Reusable iPhone + LP mockup
+   ===================================================== */
+function PhoneLP({ small = false }) {
+  return (
+    <div className="iphone">
+      <div className="frame-inner">
+        <div className="notch"></div>
+        <div className="screen">
+          <div className="lp">
+            <div className="lp-status">
+              <span>9:41</span>
+              <span className="bars">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+              </span>
+            </div>
+            <div className="lp-nav">
+              <div className="lp-logo"><span className="dot"></span>STUDIO</div>
+              <div className="lp-burger"><span></span><span></span><span></span></div>
+            </div>
+            <div className="lp-hero">
+              <div className="lp-eyebrow">Consultoria · 2026</div>
+              <h1 className="lp-headline">Resultados<br/><em>que escalam</em></h1>
+              <p className="lp-sub">Site que converte visitas em clientes reais. Estratégia, design e performance — entregues em 7 dias.</p>
+              <div className="lp-cta">AGENDAR <span className="arrow"></span></div>
+            </div>
+            <div className="lp-img">
+              <div className="lp-img-tag">// hero.jpg</div>
+            </div>
+            <div className="lp-trust">
+              <span className="stars">★★★★★</span>
+              <span>+120 clientes atendidos</span>
+            </div>
+            <div className="lp-section-divider"></div>
+            <div className="lp-feat">
+              <div className="f">SEO técnico</div>
+              <div className="f">Mobile-first</div>
+              <div className="f">Hospedagem</div>
+              <div className="f">Suporte 24/7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* =====================================================
+   Pill — neon
+   ===================================================== */
+function PillNeon({ icon, children }) {
+  return (
+    <div className="pill-neon">
+      {icon}
+      <span>{children}</span>
+    </div>
+  );
+}
+
+const IconInfinity = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+    <path d="M5 12c0-2 1.5-4 4-4s4 2 6 4 4 4 6 4 4-2 4-4-1.5-4-4-4-4 2-6 4-4 4-6 4-4-2-4-4z" transform="scale(0.85) translate(2 2)"/>
+  </svg>
+);
+const IconBolt = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
+  </svg>
+);
+
+/* =====================================================
+   Variation A — MOCKUP DOMINANT
+   ===================================================== */
+function VariationA() {
+  return (
+    <div className="card va grain">
+      <div className="frame"></div>
+      <div className="grain"></div>
+
+      <div className="badge-top">Landing Page</div>
+
+      <div className="glow"></div>
+
+      <div className="stage-mockup">
+        <PhoneLP />
+      </div>
+
+      <h2 className="product-name">
+        Landing Page<br/>Profissional
+      </h2>
+
+      <div className="price-block">
+        <div className="price-pre">a partir de</div>
+        <div className="price-big">
+          <span className="rs">R$</span>499
+        </div>
+      </div>
+
+      <div className="pills-row">
+        <PillNeon icon={<IconInfinity/>}>Hospedagem vitalícia</PillNeon>
+        <PillNeon icon={<IconBolt/>}>Entrega em 7 dias</PillNeon>
+      </div>
+
+      <div className="footer-brand">
+        <div className="logo">Impulso<span className="sep">·</span>Digital</div>
+        <div className="url">impulsodigital063.com</div>
+      </div>
+    </div>
+  );
+}
+
+/* =====================================================
+   Variation B — TEXT DOMINANT
+   ===================================================== */
+function VariationB() {
+  return (
+    <div className="card vb grain">
+      <div className="frame"></div>
+      <div className="grain"></div>
+
+      <div className="badge-top">Landing Page</div>
+
+      <div className="stage-mockup">
+        <PhoneLP small />
+      </div>
+
+      <h2 className="product-name">
+        Landing Page<br/>Profissional
+      </h2>
+
+      <div className="price-block">
+        <div className="price-pre">a partir de</div>
+        <div className="price-big">
+          <span className="rs">R$</span>499
+        </div>
+      </div>
+
+      <div className="b-pills">
+        <PillNeon icon={<IconInfinity/>}>Hospedagem vitalícia</PillNeon>
+        <PillNeon icon={<IconBolt/>}>Entrega em 7 dias</PillNeon>
+      </div>
+
+      <div className="footer-brand" style={{display:'block'}}>
+        <div className="logo">Impulso<span className="sep">·</span>Digital</div>
+        <div className="url">impulsodigital063.com</div>
+      </div>
+    </div>
+  );
+}
+
+/* =====================================================
+   Variation C — EDITORIAL
+   ===================================================== */
+function VariationC() {
+  return (
+    <div className="card vc grain">
+      <div className="frame"></div>
+      <div className="grain"></div>
+
+      <div className="badge-top">Landing Page</div>
+
+      <div className="editorial-meta">
+        Catálogo / 01<br/>
+        <b>R$ 499</b>
+      </div>
+
+      <div className="stage-mockup">
+        <PhoneLP />
+      </div>
+
+      <div className="editorial-text">
+        <div className="editorial-eyebrow">Produto · 2026</div>
+        <h2 className="editorial-name">
+          Landing<br/>
+          Page<br/>
+          <span>Profissional</span>
+        </h2>
+
+        <div className="editorial-divider"></div>
+
+        <div className="editorial-price">
+          <div className="pre">a partir de</div>
+          <div className="big">
+            <span className="rs">R$</span>499
+          </div>
+        </div>
+      </div>
+
+      <div className="b-pills">
+        <PillNeon icon={<IconInfinity/>}>Hospedagem vitalícia</PillNeon>
+        <PillNeon icon={<IconBolt/>}>Entrega em 7 dias</PillNeon>
+      </div>
+
+      <div className="footer-brand">
+        <div className="logo">Impulso<span className="sep">·</span>Digital</div>
+        <div className="url">impulsodigital063.com</div>
+      </div>
+    </div>
+  );
+}
+
+/* =====================================================
+   App
+   ===================================================== */
+function App() {
+  return (
+    <DesignCanvas projectName="Catálogo WhatsApp · LP Profissional R$499">
+      <DCSection id="catalog" title="WhatsApp Catalog · 1080×1080" subtitle="3 variações · paleta Impulso (preto + verde neon)">
+        <DCArtboard id="va" label="A — Mockup dominante" width={1080} height={1080}>
+          <VariationA />
+        </DCArtboard>
+        <DCArtboard id="vb" label="B — Texto dominante" width={1080} height={1080}>
+          <VariationB />
+        </DCArtboard>
+        <DCArtboard id="vc" label="C — Editorial" width={1080} height={1080}>
+          <VariationC />
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>

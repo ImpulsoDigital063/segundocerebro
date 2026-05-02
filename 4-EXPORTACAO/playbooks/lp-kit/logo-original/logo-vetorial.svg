@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 40" fill="none">
+  <defs>
+    <!-- Gradient for 3D depth effect on icon background -->
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1de9a2"/>
+      <stop offset="100%" stop-color="#0a9e6e"/>
+    </linearGradient>
+    <!-- Subtle shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#10b981" flood-opacity="0.35"/>
+    </filter>
+    <!-- Text shadow -->
+    <filter id="textGlow" x="-5%" y="-20%" width="110%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#10b981" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Icon: rounded square with gradient + depth shadow -->
+  <rect width="40" height="40" rx="10" fill="url(#iconGrad)" filter="url(#shadow)"/>
+
+  <!-- Subtle inner highlight (top edge for 3D feel) -->
+  <rect x="1" y="1" width="38" height="18" rx="9" fill="white" opacity="0.07"/>
+
+  <!-- Upward arrow (minimal, clean) centered in 40x40 -->
+  <!-- Shaft: vertical bar from y=14 to y=30, centered at x=20 -->
+  <rect x="17" y="16" width="6" height="14" rx="1.5" fill="white"/>
+  <!-- Arrowhead: upward-pointing chevron -->
+  <path d="M11 20L20 8L29 20" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Wordmark: "Impulso" bold white -->
+  <text
+    x="52" y="17"
+    font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="16"
+    font-weight="800"
+    fill="white"
+    letter-spacing="-0.5"
+    filter="url(#textGlow)">Impulso</text>
+
+  <!-- Wordmark: "DIGITAL" in green, spaced -->
+  <text
+    x="53" y="32"
+    font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="10"
+    font-weight="600"
+    fill="#10b981"
+    letter-spacing="3">DIGITAL</text>
+</svg>

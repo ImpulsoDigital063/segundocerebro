@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AgendaPRO — Brand Kit · Aplicações</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 40px 20px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+    .lead { color: #475569; margin-bottom: 32px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .card-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #3B82F6;
+    }
+    .card-desc {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2px;
+    }
+    .demo {
+      padding: 36px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+
+    /* Header LP claro */
+    .demo-lp-header {
+      background: #ffffff;
+      width: 100%;
+    }
+    .lp-header-bar {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .lp-header-bar img { height: 28px; width: auto; }
+    .lp-header-bar nav { display: flex; gap: 14px; font-size: 12px; color: #64748b; font-weight: 500; }
+
+    /* Header admin escuro */
+    .demo-admin-dark { background: #0f172a; }
+    .admin-bar {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+    }
+    .admin-bar img { height: 28px; width: auto; }
+    .admin-bar nav { display: flex; gap: 14px; font-size: 12px; color: #94a3b8; font-weight: 500; }
+
+    /* Browser tab favicon */
+    .demo-browser { background: #f1f5f9; }
+    .browser-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      padding: 10px 16px;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid #e2e8f0;
+      border-bottom: none;
+      font-size: 12px;
+      color: #475569;
+      font-weight: 600;
+    }
+    .browser-tab img { width: 16px; height: 16px; border-radius: 3px; }
+
+    /* iPhone mockup */
+    .demo-iphone {
+      background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+    }
+    .iphone-frame {
+      width: 180px;
+      height: 220px;
+      background: #0f172a;
+      border-radius: 36px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .iphone-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Footer LP signed */
+    .demo-footer {
+      background: #f8fafc;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-bar {
+      width: 100%;
+      max-width: 480px;
+      padding: 24px 20px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .footer-bar img { height: 60px; width: auto; }
+    .footer-bar p { color: #64748b; font-size: 11px; margin-top: 12px; }
+
+    /* Criativo Insta */
+    .demo-insta { background: linear-gradient(135deg, #1E3A8A, #3B82F6); }
+    .insta-card {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #DBEAFE, #ffffff);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .insta-card img { height: 24px; width: auto; }
+    .insta-card .headline {
+      font-size: 18px;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    /* Fatura mono */
+    .demo-fatura { background: #fff; }
+    .fatura {
+      width: 100%;
+      max-width: 360px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .fatura img { height: 24px; width: auto; opacity: 0.9; }
+    .fatura .doc {
+      margin-top: 18px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .fatura .doc strong { color: #0f172a; }
+
+    /* Watermark sobre foto */
+    .demo-photo {
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='240'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23475569'/><stop offset='100%25' stop-color='%231e293b'/></linearGradient></defs><rect width='400' height='240' fill='url(%23g)'/><circle cx='80' cy='80' r='40' fill='%23f59e0b' opacity='0.6'/><circle cx='320' cy='160' r='60' fill='%2306b6d4' opacity='0.4'/></svg>");
+      background-size: cover;
+      background-position: center;
+    }
+    .watermark-img {
+      height: 32px;
+      width: auto;
+      opacity: 0.95;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+
+    /* Splash app */
+    .demo-splash {
+      background: linear-gradient(135deg, #3B82F6, #1E40AF);
+      flex-direction: column;
+      gap: 14px;
+    }
+    .demo-splash .logo-img { height: 40px; width: auto; }
+    .demo-splash .signed { color: #DBEAFE; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AgendaPRO Brand Kit · Aplicações</h1>
+    <p class="lead">A logo aplicada em 8 contextos reais. Use isso como referência antes de plotar a logo num material novo.</p>
+
+    <div class="grid">
+
+      <!-- 1. Header LP claro -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">01 · Header de LP (claro)</div>
+          <div class="card-desc">agendapro-color.svg</div>
+        </div>
+        <div class="demo demo-lp-header">
+          <div class="lp-header-bar">
+            <img src="logo/agendapro-color.svg" alt="AgendaPRO"/>
+            <nav><span>Como funciona</span><span>Preço</span><span>Entrar</span></nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Header admin escuro -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">02 · Header admin (escuro)</div>
+          <div class="card-desc">agendapro-dark.svg</div>
+        </div>
+        <div class="demo demo-admin-dark">
+          <div class="admin-bar">
+            <img src="logo/agendapro-dark.svg" alt="AgendaPRO"/>
+            <nav><span>Agenda</span><span>Clientes</span><span>Configurações</span></nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Favicon real -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">03 · Favicon (browser tab)</div>
+          <div class="card-desc">agendapro-icon.svg @ 16px</div>
+        </div>
+        <div class="demo demo-browser">
+          <div class="browser-tab">
+            <img src="logo/agendapro-icon.svg"/>
+            <span>AgendaPRO — Sua agenda virou o turno da noite...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. iPhone home screen -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">04 · App icon (iPhone home)</div>
+          <div class="card-desc">png/icon-512.png</div>
+        </div>
+        <div class="demo demo-iphone">
+          <div class="iphone-frame">
+            <img class="iphone-icon" src="png/icon-512.png" alt="AgendaPRO"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Footer signed -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">05 · Footer com assinatura</div>
+          <div class="card-desc">agendapro-color-signed.svg</div>
+        </div>
+        <div class="demo demo-footer">
+          <div class="footer-bar">
+            <img src="logo/agendapro-color-signed.svg" alt="AgendaPRO by Impulso Digital"/>
+            <p>© 2026 · Sistema de agenda inteligente</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Splash escuro signed -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">06 · Splash app / Hero LP escuro</div>
+          <div class="card-desc">agendapro-dark-signed.svg sobre fundo brand</div>
+        </div>
+        <div class="demo demo-splash">
+          <img class="logo-img" src="logo/agendapro-dark-signed.svg" alt="AgendaPRO by Impulso Digital"/>
+        </div>
+      </div>
+
+      <!-- 7. Criativo Instagram -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">07 · Criativo Instagram</div>
+          <div class="card-desc">agendapro-color.svg dentro de post 1:1</div>
+        </div>
+        <div class="demo demo-insta">
+          <div class="insta-card">
+            <img src="logo/agendapro-color.svg" alt="AgendaPRO"/>
+            <div class="headline">Sua agenda virou o turno da noite do seu negócio.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Fatura monocromática -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">08 · Documento mono (fatura/contrato)</div>
+          <div class="card-desc">agendapro-mono-black.svg</div>
+        </div>
+        <div class="demo demo-fatura">
+          <div class="fatura">
+            <img src="logo/agendapro-mono-black.svg" alt="AgendaPRO"/>
+            <div class="doc">
+              <strong>FATURA #2026-0142</strong><br/>
+              Cliente: Barbearia Palmas<br/>
+              Plano: Solo · R$ 67,00/mês<br/>
+              Vencimento: 15/05/2026<br/><br/>
+              Pagamento via Mercado Pago.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Watermark sobre foto -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">09 · Watermark sobre foto</div>
+          <div class="card-desc">agendapro-mono-white.svg</div>
+        </div>
+        <div class="demo demo-photo">
+          <img class="watermark-img" src="logo/agendapro-mono-white.svg" alt="AgendaPRO"/>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 32px; padding: 20px 24px; background: #1e293b; color: #fff; border-radius: 16px; font-size: 13px;">
+      <strong style="color: #60A5FA;">Lembrete:</strong>
+      antes de aplicar em qualquer material novo, valida com o BRAND-GUIDELINES.md (espaço mínimo, paleta, dont's).
+      Se precisa de variante que não está aqui — abre conversa antes de improvisar.
+    </div>
+  </div>
+</body>
+</html>
