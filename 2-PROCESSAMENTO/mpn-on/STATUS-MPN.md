@@ -1,6 +1,6 @@
 # MPN-On — Status e Processamento
 
-**Atualizado:** 09 de Abril de 2026
+**Atualizado:** 01 de Maio de 2026 (refresh — sem mudanças significativas na semana 28/04→01/05; foco do Eduardo foi AgendaPRO + Aura Energy)
 
 ---
 
@@ -8,9 +8,11 @@
 
 - Preço: R$297
 - Campanhas: Ativas no Meta Ads
-- Conversão: Abaixo do esperado
+- Conversão: **Abaixo do esperado** — atenção pendente a VSL + Copy na próxima sprint
 - Módulos gravados: Módulo 2 (29 aulas, 8+ horas)
 - Módulos pendentes: 1, 3 e 4
+
+> **Nota 01/05/2026:** MPN-On não recebeu atualizações na semana 28/04→01/05. Status desde 09/04 mantém-se. Próxima sprint MPN deve atacar VSL/copy pra destravar conversão antes de aumentar investimento Meta.
 
 ## Dados a coletar (urgente)
 

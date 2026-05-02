@@ -1,3 +1,38 @@
+# OS
 .DS_Store
 Thumbs.db
 *.tmp
+*.log
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / build artifacts
+node_modules/
+.next/
+.turbo/
+dist/
+build/
+.cache/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Local config (per-machine, não compartilha)
+.claude/settings.local.json
+
+# Obsidian — ignorar configs locais voláteis (mantém só vault/notes)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# OS / Windows
+desktop.ini
+$RECYCLE.BIN/

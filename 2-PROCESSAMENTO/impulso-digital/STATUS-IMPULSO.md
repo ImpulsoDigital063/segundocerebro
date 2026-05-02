@@ -1,8 +1,8 @@
 # STATUS-IMPULSO.md
 
 **Produto:** Impulso Digital — Agência de criação digital (marca-mãe do ecossistema)
-**Fase:** Operacional · 1ª venda fechada na semana
-**Data:** 17/04/2026 (sexta) · Atualizado de 09/04
+**Fase:** Operacional · 1ª venda fechada (Gabriel) · 1º cliente solar em pipeline (Aura Energy)
+**Data:** 01/05/2026 (sexta · noite)
 **Responsável:** Eduardo Barros
 
 ---
@@ -74,16 +74,23 @@ Arquivo completo: `4-EXPORTACAO/playbooks/PLAYBOOK-IMPULSO-DIGITAL-VENDA.md`
 
 ---
 
-## Leads em andamento
+## Leads em andamento (status 01/05)
 
-| Nome | Contato | Status | Próximo passo |
-|---|---|---|---|
-| — | — | — | (Atualizar conforme RadarPRO entra em operação) |
+| Nome | Contato | Nicho | Status | Próximo passo |
+|---|---|---|---|---|
+| **Aura Energy** (Renato Edson) | (63) 9 9268-8852 · Palmas-TO | Energia solar fotovoltaica | 🟡 **Lead morno-quente** — LP de 20 seções entregue 01/05, apresentou à noite, gostou mas não fechou (cenário informal) | Mensagem casual D+1 + ajustes na LP D+2 + material útil D+4-5 + pergunta direta D+7. Plano detalhado em `STATUS-AURA-ENERGY.md` |
+
+**Status canônico Aura:** [`2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`](../aura-energy/STATUS-AURA-ENERGY.md)
+
+**LP entregue:** https://auraenergy.vercel.app
+**Stack:** Next.js 16 + React 19 + Tailwind v4
+**Modalidades propostas:** 7 opções (LP R$799 / Tráfego R$497+R$597 / Conteúdo R$697 / Site R$1.297 / RadarPRO B2B R$997 / **Combo Decolagem R$1.997/mês** / **Parceria comissão 5%**)
 
 ---
 
 ## Padrões validados (do ecossistema)
 
+### Padrões de venda
 - Consultoria grátis + urgência real = 95% conversão com lead quente
 - Prototype funcional > mockup estático (Next.js rodando fecha mais)
 - Valor empilhado antes do preço (mostrar concorrente primeiro)
@@ -91,17 +98,26 @@ Arquivo completo: `4-EXPORTACAO/playbooks/PLAYBOOK-IMPULSO-DIGITAL-VENDA.md`
 - Duas camadas de preço sempre funciona
 - Influenciador local relevante > grande genérico
 
-Todos registrados em `3-RETENCAO/padroes/`.
+### Padrões de LP cravados em 01/05/2026 (memory feedbacks)
+1. **SVG sempre, NUNCA emojis** em LPs/criativos premium
+2. **Imagens reais, nunca vetor genérico** estilo unDraw/clipart
+3. **Movimento e modernidade obrigatório em LP tech** — mesh animado, pulsos circuito, fade scroll, glow, marquee. Estática = amador.
+4. **Light premium é alternativa válida** ao dark tech default — pra empresa solar/luz/sol o off-white quente faz sentido temático
+5. **Carta branca em projetos do segundo cérebro** — não pedir autorização entre etapas em LPs/criativos, decidir e entregar
+
+Todos registrados em `3-RETENCAO/padroes/` ou auto-memory feedback.
 
 ---
 
-## Pendências (próximos 7 dias)
+## Pendências (próximos 7 dias — atualizado 01/05)
 
+- [ ] **Aura Energy follow-up D+1 a D+7** — mensagem casual amanhã (02/05), ajustes na LP D+2, material útil D+4-5, pergunta direta D+7
+- [ ] **Aplicar correções no Hero das LPs Impulso** (lista do Eduardo, pendência da semana anterior)
 - [ ] Iniciar gravação do case Gabriel (estúdio na sala)
 - [ ] Abordar 10-15 leads quentes do RadarPRO
 - [ ] Fechar 2-3 projetos via RadarPRO + playbook
 - [ ] Publicar case Gabriel no Instagram + LP (prova social)
-- [ ] Cadastrar 1º cliente AgendaPRO via Impulso (barbeiro em onboarding)
+- [ ] Cadastrar 1º cliente AgendaPRO via Impulso (Olímpio em onboarding)
 
 ---
 
@@ -128,10 +144,11 @@ Impulso Digital é a porta de entrada. Cliente chega por LP/loja/site, vira:
 
 ## Próxima atualização
 
-Quando: 3 clientes fechados via RadarPRO, ou 25/04 (o que vier primeiro).
-Atualizar: leads ativos, cases, conversão por canal, ajustes no playbook.
+Quando: Aura Energy fechar (qualquer modalidade) OU final do follow-up D+7 OU 3 clientes fechados via RadarPRO.
+Atualizar: status do Aura, leads ativos, cases, conversão por canal, ajustes no playbook.
 
 ---
 
-**Ver também:** [[EDUARDO-BARROS]] | [[MEGA-CLAUDE]] | [[STATUS-RADARPRO]] | [[STATUS-AGENDAPRO]]
+**Ver também:** [[EDUARDO-BARROS]] | [[MEGA-CLAUDE]] | [[STATUS-RADARPRO]] | [[STATUS-AGENDAPRO]] | [[STATUS-AURA-ENERGY]]
 **Playbook completo:** [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]]
+**Diferenciais venda AgendaPRO:** [[AGENDAPRO-DIFERENCIAIS-VENDAS]]

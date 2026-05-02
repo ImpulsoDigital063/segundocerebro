@@ -2,8 +2,10 @@
 
 **Produto:** RadarPRO — Plataforma de prospecção
 **Fase:** Interno (Impulso Digital) → potencial SaaS público
-**Data:** 17/04/2026 (sexta)
+**Data:** 01/05/2026 (sexta · noite — refresh leve, ver evolução completa em `ATUALIZACAO-24-04-2026.md`)
 **Responsável:** Eduardo Barros
+
+> **Nota 01/05/2026:** Sem mudanças estruturais no RadarPRO na semana 28/04→01/05. Foco do Eduardo foi consolidação AgendaPRO (37 commits em 01/05) + construção da LP Aura Energy. RadarPRO segue como ferramenta interna estável com 53 leads playbook customizado e 12 batches CIC. Próxima ativação prevista: usar o RadarPRO pra prospectar comércios B2B em Palmas pro próprio Renato (Aura Energy) caso fechemos a modalidade RadarPRO B2B custom (R$ 997/mês). Atualização anterior consolidada: ver `ATUALIZACAO-24-04-2026.md`.
 
 ---
 
@@ -95,6 +97,11 @@ Beleza · Saúde · Odonto · Barbearia · Academia · Vet · Pet shop · Defaul
 - [ ] Importador CSV pra leads externos (hoje tudo vem do scraping)
 - [ ] Multi-conta WhatsApp (hoje singleton)
 - [ ] Exportar playbook como PDF (cliente pedir copy pra usar)
+- [ ] **Configurar TALLY_WEBHOOK_SECRET no Vercel (Production)** — endurecer webhook Tally
+  - Hoje aceita request sem signing (dev mode). Baixo risco mas vale endurecer.
+  - Vercel: Settings → Environments → clica em "Production" → adiciona `TALLY_WEBHOOK_SECRET`
+  - Cola o mesmo secret em cada webhook do Tally (Integrations → Signing secret)
+  - Secret sugerido: string aleatória de 40+ chars (ex: `tally-imp-R4d4rPR0-2026-xK7mN9pQ3wL2sB6vT8jY`)
 
 ---
 
@@ -112,3 +119,26 @@ Beleza · Saúde · Odonto · Barbearia · Academia · Vet · Pet shop · Defaul
 
 Quando: 1ª venda fechada via RadarPRO, ou 25/04 (o que vier primeiro).
 Atualizar: vendas fechadas, conversão por segmento, ajustes no SYSTEM_PROMPT baseados em campo real.
+
+---
+
+## Atualização 24/04/2026 (sexta noite — sessão de quase 12h)
+
+Resumo executivo separado em **`ATUALIZACAO-24-04-2026.md`** (mesma pasta).
+
+**Headline:**
+- 2 formulários Tally publicados (Diagnóstico pré-venda + Briefing pós-venda)
+- Webhook integrado ao RadarPRO
+- Dashboard `/tally` separado com 4 abas do funil Impulso
+- 2 geradores de IA: Script de Venda (8 seções) e Plano de Negócio (14 seções)
+- Multi-modelo Claude/Gemini/OpenAI no dropdown
+- SYSTEM_PROMPT global enriquecido com FAQ matador, autoridade Eduardo, funil Tally, preços corrigidos
+
+**Commits relevantes (master):**
+- `2e54868` — webhook Tally + schema (Fase 1+2)
+- `5ad64f5` — dashboard /tally + endpoint marcar-pagamento
+- `a1a1a91` — gerador de Plano de Negócio (inicial)
+- `a453afc` — troca pra Claude Sonnet 4.6
+- `189150e` — seletor multi-modelo
+- `b87dfba` — gerador de Script de Venda
+- `3e192b4` — enriquecimento SYSTEM_PROMPT

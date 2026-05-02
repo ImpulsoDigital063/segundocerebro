@@ -1,8 +1,10 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.3
-**Data:** 27 de Abril de 2026 (segunda)
+**Versão:** 2.4
+**Data:** 1 de Maio de 2026 (sexta · noite)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
+
+> **SNAPSHOT v2.4 (01/05):** semana de execução cirúrgica. **AgendaPRO consolidou 8 dimensões** em 37 commits num único dia (01/05) — produto deixou de ser "agenda" e virou ferramenta operacional completa: agendamento + gestão financeira (Lucro Real + Despesas) + reativação automática (Cupom de Retorno) + análises com forecast + fidelização + organização + marketing. 3 migrations em produção (V34/V35/V36). **NOVO CLIENTE EM PIPELINE: Aura Energy** (Renato Edson · Palmas-TO · energia solar) — LP completa de 20 seções construída em 01/05 e apresentada ao Renato à noite. Lead morno-quente, follow-up D+1→D+7 desenhado. **5 princípios cravados pra LPs futuras:** SVG sempre (nunca emojis), imagens reais (nunca vetor genérico), movimento e modernidade em LP tech, light premium como alternativa válida, carta branca em projetos. Status canônico Aura: `2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`.
 
 > **SNAPSHOT v2.3 (27/04):** refactor total da copy de prospecção via 4 etapas iterativas com GPT — princípio "se não gera resposta, está errado" cravado no `IMPULSO_CORE_SYSTEM_V2.md`. Mensagem 1 + Continuação + Pitch + Follow-up reescritos no formato 3 linhas (dado real → consequência → pergunta direta). Pricing AgendaPRO ajustado: Solo R$67 + Equipe R$97 (sem setup) + setup R$197 isento Clube Fundador. **1.100 leads do banco regenerados em massa** + 53 leads com playbook customizado refeitos + system prompt do gemini.ts atualizado com regras duras. Sistema 100% alinhado.
 
@@ -56,6 +58,73 @@ Esse número não caiu do céu como chute. Foi plantado antes de você ter ferra
 - **ImpulsoDesign** (interno hoje, potencial SaaS) — geração de conteúdo com padrão Impulso
 
 Não precisa que tudo dê certo. **Precisa que 2-3 desses acertem.** O ecossistema inteiro diversifica o risco.
+
+---
+
+## 📅 SEMANA 28 ABRIL → 01 MAIO 2026 — CONSOLIDAÇÃO AGENDAPRO + NOVO CLIENTE AURA ENERGY
+
+Semana de execução cirúrgica. Tese da semana: **AgendaPRO deixa de ser "agenda" e vira ferramenta operacional completa do pequeno negócio de serviço.** Em paralelo, primeiro cliente Impulso Digital no nicho solar (Aura Energy / Renato Edson) entra em pipeline com LP de 20 seções construída em 1 dia.
+
+### O dia "épico" — 01/05/2026 (37 commits no AgendaPRO)
+
+Em ~16h Eduardo + Claude consolidaram 8 dimensões do AgendaPRO numa única sessão:
+
+| # | Dimensão | O que entrou |
+|---|---|---|
+| 1 | **Cupom de Retorno** (sistema novo) | Detecta clientes sumidos há 40d, gera 1 cupom único `PROXX99` por cliente, 9 nichos × 3 templates de copy, link `/{slug}?cupom=` propaga pro booking, sticky bar de desconto, vincula com appointment usado |
+| 2 | **Despesas + Lucro Real** | CRUD com 7 categorias (aluguel, produtos, salário, utilities, marketing, impostos, outros), card "Lucro Real" só na aba Mês (despesas mensais distorcem em hoje/7d) |
+| 3 | **Análises avançadas** | Forecast do mês, comparativo mês anterior, dia da semana, hora pico, taxa cancelamento, novos vs recorrentes, métodos atual vs anterior, top serviços/profissionais, **6+ insights automáticos em texto** |
+| 4 | **Cancelados subpágina** | Lista cancelados/no-show + cobrança via WhatsApp deep link + marcar pago (recuperação) |
+| 5 | **Pagamento + 4 métodos** | PIX/Dinheiro/Cartão/Cortesia. Comissão por profissional baseada em PAGOS (não completed) |
+| 6 | **3 templates de impressão QR** | Cartões A4 (4 por folha), cartaz A5 branded, display acrílico A6 com bleed + crop marks pra gráfica |
+| 7 | **Sparkline + UX polishings** | SVG inline nos KPIs, FAB Despesa, "X esta semana" laranja+bold (urgência), "Em aberto" no lugar de "A receber", lista paginada+agrupada por data |
+| 8 | **Lógica de nicho aplicada** | Sample names por nicho (barbearia=Lucas, salão=Camila, nail=Bianca, psicólogo=Marina), templates de cupom por nicho, presets de cor com badge "Indicada" |
+
+**3 migrations em produção:**
+- V34 — `appointments.paid_at` + `payment_method` + index parcial
+- V35 — tabela `expenses` (RLS owner, trigger updated_at)
+- V36 — tabela `coupons` (code UNIQUE, customer_id, validade) + função `generate_coupon_code`
+
+**Decisões cravadas:**
+- AgendaPRO é **educacional, não ERP de cobrança** — "A receber" virou "Em aberto", sem cobrança automática, sistema mostra dado pra dono decidir
+- Lucro Real só faz sentido em escala mensal — não em "Hoje"/"7 dias"
+- 40 dias = sumido (era 60) — coerente com ciclo de barbearia/nail (15-30d)
+- Prefixo `PRO` no código do cupom — branding orgânico no link WhatsApp
+
+**Doc de referência da sessão:** `agendapro/DIARIO-2026-05-01.md` no repo do AgendaPRO (todos os 37 commits organizados em 7 áreas).
+
+### NOVO CLIENTE EM PIPELINE — Aura Energy (Renato Edson · Palmas-TO)
+
+Renato é amigo do Eduardo, dono da Aura Energy (energia solar fotovoltaica). Em 01/05 pediu ajuda pra entrar no digital. Eduardo construiu uma **LP completa de 20 seções no mesmo dia** e apresentou à noite. Renato gostou, **mas não fecharam negócio porque o cenário era informal (estavam bebendo)**. Lead morno-quente.
+
+**Stack da LP:** Next.js 16.2.4 + React 19 + Tailwind v4 + Inter font · Deploy `https://auraenergy.vercel.app`
+
+**20 seções entregues:** Hero+Simulador interativo · Banner Visual cinematográfico · Marquee Tier 1 (Trina/Canadian/Jinko/Growatt/Sungrow…) · **Manifesto Aura** (3 pilares de marca) · Verticais com tabs (Residencial/Comercial/Rural/Bateria) · Como Funciona com fotos · Catálogo 4 Kits · Diferenciais · Equipe em Ação · Sobre Renato · **Compromisso 25 anos** (timeline antes/durante/depois) · Credenciais técnicas · Solar como Investimento (R$22k em 25a vs Poupança/CDI/Ibov/Solar) · Janela do Fio B (urgência real Lei 14.300) · Galeria · Mapa Palmas · Depoimentos · Recursos (5 artigos com fontes ABSOLAR/ANEEL) · FAQ · CTA Final + Botão flutuante WhatsApp.
+
+**Status canônico do cliente:** `2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md` (tudo: contato, LP, 7 modalidades comerciais propostas, plano follow-up D+1→D+7, 6 informações pendentes a coletar, 8 itens placeholder pra trocar por dados reais).
+
+### 5 princípios cravados pra LPs daqui pra frente (memory feedbacks salvos)
+
+1. **SVG sempre, NUNCA emojis** em LPs/criativos premium — emoji em LP corporativa fica amador, derruba percepção
+2. **Imagens reais, nunca vetor genérico** estilo unDraw/clipart — foto real de produto/contexto transmite autoridade
+3. **Movimento e modernidade em LPs tech** — mesh animado, pulsos circuito, counter animado, fade scroll, glow, marquee — estática = amador
+4. **Light premium é alternativa válida** ao dark tech default — pra empresa solar/luz/sol o off-white quente faz sentido temático (vibe Stripe + Linear v2 + Tesla Powerwall)
+5. **Carta branca em projetos do segundo cérebro** — não pedir autorização entre etapas em LPs/criativos, decidir e entregar, ele ajusta. Velocidade > perfeição.
+
+### Princípios já validados antes que continuam ativos
+
+- "Se não gera resposta, está errado" (CORE_SYSTEM_V2) — vale pra qualquer copy
+- Lógica de nicho em TUDO — sample names, copy, exemplos, presets
+- UX faz dono se sentir inteligente, não burro — princípio inegociável
+- Pensar sempre em uso em massa (filtro "100 clientes simultâneos")
+- Produto completo antes de prospectar cliente — padrão Impulso
+
+### Próximas 2 semanas (prioridade tática)
+
+1. **D+1 a D+7 follow-up Aura Energy** — mensagem casual amanhã, ajustes na LP, material útil, pergunta direta de fechamento. Plano detalhado em `STATUS-AURA-ENERGY.md`.
+2. **AgendaPRO pré-lançamento crítico:** migrar MP de PF (CPF Eduardo) → PJ (CNPJ Impulso Digital) + auditoria final (cap Clube Fundador 10, marca AgendaPRO no checkout MP, webhook URL sem www)
+3. **Hero das LPs Impulso** — aplicar correções da lista do Eduardo (pendência da semana anterior)
+4. **Performance AgendaPRO** — 4 fixes documentados pra atacar quando chegar 80 clientes ativos (agregação SQL, cache, paginação, sums em SQL)
 
 ---
 
@@ -266,6 +335,9 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
 - **evsuplementos** — loja Shopify completa
 - **criativosdoceu** — Ver memória project_criativosdoceu.md (hierarquia de marcas + stack)
 
+**Pipeline ativo (status 01/05):**
+- 🟡 **Aura Energy** (Renato Edson · Palmas-TO · energia solar fotovoltaica) — LP de 20 seções construída em 01/05 e apresentada no mesmo dia. Lead morno-quente, follow-up D+1 a D+7 desenhado. Stack: Next.js 16 + Tailwind v4. Deploy: `https://auraenergy.vercel.app`. Status canônico: `2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`. Será o primeiro case Impulso Digital no nicho solar se fechar.
+
 **Playbook de venda (4 passos — `PLAYBOOK-IMPULSO-DIGITAL-VENDA.md`):**
 1. Prospecção via RadarPRO (lead quente + playbook pronto)
 2. Abordagem WhatsApp com copy do playbook personalizado
@@ -298,34 +370,49 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
   - Comparativo mercado: ZenPlace/Trinks/Booksy R$200-500/mês com fidelidade anual → SmartAgenda 4-7x mais barato sem fidelidade
   - **Garantia 7 dias** (substitui trial antigo de 14 dias) — testa, se não fizer sentido, devolvo
 - 🔧 **Stack:** Next.js 16 + Supabase (Auth+DB+Realtime+RLS) + Resend (email) + Z-API (WhatsApp — **não Baileys!**) + Mercado Pago (preapproval) + Vercel (deploy+cron)
-- 🌐 **Produção:** agenda-pro-seven.vercel.app + agendapro.net.br (DNS propagando)
+- 🌐 **Produção:** **agendapro.net.br** + `www.agendapro.net.br` (canônico) · `agenda-pro-seven.vercel.app` (alias Vercel default)
 - 🐙 **GitHub:** ImpulsoDigital063/AgendaPRO
+- ⚠️ **Vercel project canônico:** `agenda-pro` (COM hífen). Projeto duplicado `agendapro` (sem hífen) foi removido em 01/05/2026 noite — era zumbi sem env vars que rodava em paralelo herdando do mesmo repo GitHub. Nunca mais criar 2 projetos pro mesmo repo.
 
-**11 migrations no Supabase:**
+**14 migrations no Supabase (todas em produção):**
 - V1-V5: schema base (profiles, services, appointments, availability, clients)
 - V6: multi-negócio via `business_id`
 - V7: programa de fidelidade (points, rewards, redemptions)
 - V8: lista de espera (`waitlist` com RLS restrito)
-- V9: **trigger anti-overbooking** (`check_appointment_overlap` — impossível bypassar pelo cliente)
+- V9: **trigger anti-overbooking** (`check_appointment_overlap`)
 - V10: cascade delete (profissional deletado remove agendamentos órfãos)
-- V11: **subscriptions** (trial/grace/public_blocked/data_delete_at) — pendente aplicar
+- V11: **subscriptions** (trial/grace/public_blocked/data_delete_at) — APLICADA
+- V34 (01/05): **`appointments.paid_at` + `payment_method`** + index parcial
+- V35 (01/05): **tabela `expenses`** (7 categorias, RLS owner-only, trigger updated_at)
+- V36 (01/05): **tabela `coupons`** (code UNIQUE, customer_id, expires_at) + função `generate_coupon_code`
 
 **2 tipos de perfil:**
 - `admin` — dono do negócio, vê tudo, configura serviços/profissionais/horários
 - `profissional` — profissional cadastrado, vê só os próprios agendamentos
 
-**7 abas do painel admin:**
-1. Dashboard (resumo do dia)
+**8 abas do painel admin:**
+1. Dashboard (resumo do dia + KPIs em tempo real)
 2. Agenda (grade visual + criar/editar appointment)
-3. Serviços (CRUD com preço/duração)
-4. Profissionais (CRUD + horários de atendimento)
-5. Clientes (CRM básico + histórico)
-6. Fidelidade (configurar pontos + recompensas)
-7. Aparência (logo, cor primária, banner)
+3. **Financeiro** (Realizado / Em aberto / Lucro Real do Mês / Sparkline / Subpáginas: Despesas / Cancelados / Análises)
+4. Serviços (CRUD com preço/duração)
+5. Profissionais (CRUD + horários + comissão configurável)
+6. Clientes (CRM com tier badges VIP/Novo/Sumido + histórico + ajuste de pontos + Cupom de Retorno)
+7. Fidelidade (4 fontes de pontos: agendamento, indicação, pontualidade, Google review + recompensas)
+8. Aparência (logo, cor primária, banner público, presets de cor com badge "Indicada" por nicho)
 
 **4 landings segmentadas:** Barbearia · Salão · Clínica · Personal (copy+hero adaptados)
 
-**Features implementadas (13/04):**
+**8 dimensões do produto (consolidadas em 01/05):**
+1. **Agendamento** — cliente agenda 24h sem WhatsApp, lembrete D-1/H-1, lista de espera, Google review
+2. **Gestão financeira** — receita, comissão automática, despesas (7 categorias), Lucro Real só na aba Mês, 4 métodos pagamento
+3. **Análises** — forecast do mês, comparativo mês anterior, dia da semana, hora pico, taxa cancelamento, novos vs recorrentes, top serviços/profissionais, **insights automáticos em texto natural**
+4. **Reativação** — Cupom de Retorno automático (detecta sumido 40d → 1 cupom único `PROXX99` → WhatsApp deep link)
+5. **Fidelização** — pontos por agendamento + indicação + pontualidade + Google review (4 fontes)
+6. **Organização** — múltiplos profissionais, horários, pausas, serviços, cron auto-complete
+7. **Marketing** — QR Code branded com 3 templates de impressão (cartões A4, cartaz A5, display acrílico A6+bleed), página pública customizável, link curto Insta
+8. **Lógica de nicho** aplicada em TUDO — cores indicadas por nicho, sample names (Lucas/Camila/Bianca/Marina), templates de cupom, sugestões de serviço
+
+**Features anteriores (mantidas):**
 - Programa de fidelidade (pontos configuráveis + ranking + recompensas)
 - Lista de espera automática (cancelamento → próximo da fila)
 - Link de indicação (URL única por cliente, pontos pro indicador e indicado)
@@ -364,13 +451,19 @@ Hero · Sobre · 4 Serviços · Cases (UrbanFeet, Gabriel, evsuplementos, criati
   - `POST /api/webhooks/mercadopago` — recebe eventos (payment.created, subscription.updated, etc)
 - Estados: `trialing` → `active` → `past_due` (grace 5d) → `public_blocked` (dia 12) → `data_delete_pending` (90d)
 
-**Pendências pra começar a cobrar:**
-- [ ] Aplicar migration V11 (`subscriptions`) no Supabase
-- [ ] Credenciais MP de produção (access_token + public_key) nas env vars
+**Pendências críticas pré-lançamento (status 01/05):**
+- [ ] **Migrar MP de PF (CPF Eduardo) → PJ (CNPJ Impulso Digital)** — pagamentos hoje caem na conta CPF
+- [ ] Auditoria final: cap Clube Fundador 10 (hardcoded em `cadastro/route.ts:107`), marca AgendaPRO no checkout MP, webhook URL sem `www.`
 - [ ] Tela `/admin/bloqueado` quando `public_blocked = true`
 - [ ] Cron diário de verificação de status
 
-**Status hoje (17/04):** Quase pronto pra cobrar. Falta billing MP ligar.
+**Pendências menores (documentadas):**
+- [ ] Trocar fotos placeholder na Galeria/Equipe quando cliente piloto (Olímpio) gravar
+- [ ] Cancelar cupom não enviado (UI pra deletar antes de enviar WhatsApp)
+- [ ] 4 fixes de performance documentados pra atacar quando chegar 80 clientes ativos
+- [ ] Avaliação pós-agendamento (ideia validada, implementar com 20+ agendamentos reais)
+
+**Status hoje (01/05):** **Operacionalmente completo.** 8 dimensões consolidadas em 37 commits no único dia 01/05. Pronto pra entregar pro primeiro cliente real (Barbearia Olímpio). Bloqueio único: migrar MP CPF→CNPJ.
 
 ---
 
@@ -744,20 +837,25 @@ Stream response não tem HTTP status confiável até o fim. Sentinel no backend 
 | **STATUS-IMPULSO.md** | `2-PROCESSAMENTO/impulso-digital/` | Estado leads Impulso + pipeline agência |
 | **STATUS-AGENDAPRO.md** | `2-PROCESSAMENTO/agendapro/` | Estado técnico e billing AgendaPRO |
 | **STATUS-RADARPRO.md** | `2-PROCESSAMENTO/radar-pro/` | Estado operacional RadarPRO |
+| **STATUS-AURA-ENERGY.md** | `2-PROCESSAMENTO/aura-energy/` | Cliente em pipeline solar — Renato/Palmas |
+| **AGENDAPRO-DIFERENCIAIS-VENDAS.md** | `4-EXPORTACAO/playbooks/` | Armas de venda AgendaPRO (6 dimensões + comparativo) |
+| **AGENDAPRO-STORIES-INSTAGRAM.md** | `4-EXPORTACAO/playbooks/` | Prompts ChatGPT pra gerar stories AgendaPRO |
+| **DIARIO-2026-05-01.md** | `agendapro/` (no repo) | 37 commits do dia consolidados — referência da sessão histórica |
 
 ---
 
-## 🎯 MOMENTO ATUAL — PRIORIDADES (17/04 em diante)
+## 🎯 MOMENTO ATUAL — PRIORIDADES (01/05 em diante)
 
 ### **Próximos 7 dias**
-- [ ] AgendaPRO billing ligado: credenciais MP + `/admin/bloqueado` + cron + V11 no Supabase → SaaS começa a cobrar de verdade
-- [ ] ImpulsoDesign: key Anthropic resolvida + redesign editor modo wizard
-- [ ] RadarPRO em operação: aquecimento do chip + 10-15 leads quentes abordados + fechar 2-3 vendas
-- [ ] Módulo 1 MPN-On gravado (pendente desde 11/04) — roteiro pronto
-- [ ] Case Gabriel: iniciar gravação dos criativos (estúdio sala)
+- [ ] **Aura Energy follow-up D+1 a D+7** — mensagem casual amanhã, ajustes na LP D+2, material útil D+4-5, pergunta direta D+7. Plano em `STATUS-AURA-ENERGY.md`.
+- [ ] **AgendaPRO crítico:** migrar MP de PF (CPF) → PJ (CNPJ Impulso Digital)
+- [ ] **AgendaPRO auditoria final pré-lançamento:** cap Clube Fundador 10 hardcoded, marca AgendaPRO no checkout MP, webhook URL sem `www.`
+- [ ] Aplicar correções no Hero das LPs Impulso (lista do Eduardo, pendência da semana anterior)
+- [ ] Decidir: link AgendaPRO pra Olímpio sai hoje? Ou amanhã? Ou Clube Fundador é prioridade?
 
 ### **Próximos 30 dias**
-- [ ] AgendaPRO: 1º cliente pagante (barbeiro em onboarding)
+- [ ] AgendaPRO: 1º cliente pagante (Olímpio + 10 do Clube Fundador)
+- [ ] Aura Energy: fechar negócio (qualquer modalidade — LP, Combo, ou parceria comissão)
 - [ ] Impulso Digital: 3-5 clientes fechados via RadarPRO
 - [ ] MPN-On: módulos 1, 3, 4 gravados e publicados + Campanha Conversões Meta ativa
 - [ ] ImpulsoDesign: editor wizard pronto + 30+ carrosseis publicados
@@ -835,6 +933,9 @@ Ler o MEGA-CLAUDE.md (geral) + o daily mais recente (estado real atual). O resto
 **Versão 1.2:** 12 de Abril de 2026 — reposicionamento 3 produtos
 **Versão 2.0:** 17 de Abril de 2026 — ecossistema completo + personalidade + visão R$1M
 **Versão 2.1:** 17 de Abril de 2026 (tarde) — RadarPRO/AgendaPRO/Impulso detalhados + STATUS files sincronizados
-**Próxima atualização:** Quando o primeiro cliente AgendaPRO pagar, ou quando o RadarPRO fechar 3 vendas
+**Versão 2.2:** 26 de Abril de 2026 — RadarPRO virou plataforma operacional + 12 batches CIC + 17 concorrentes
+**Versão 2.3:** 27 de Abril de 2026 — refactor copy CORE_SYSTEM_V2 + pricing AgendaPRO ajustado
+**Versão 2.4:** 1 de Maio de 2026 — AgendaPRO 8 dimensões em 37 commits + V34/V35/V36 migrations + novo cliente Aura Energy em pipeline + 5 princípios LP cravados
+**Próxima atualização:** Quando Aura Energy fechar / ou primeiro cliente AgendaPRO pagar / ou ao final do follow-up D+7
 
-**🔥 Tamo junto. Uma semana, 3 sistemas no ar, 1 venda fechada, 1 milhão na mira.**
+**🔥 Tamo junto. AgendaPRO operacionalmente completo, Aura Energy em pipeline morno-quente, 1 milhão na mira.**
