@@ -1,16 +1,55 @@
 # STATUS-AURA-ENERGY
 
-**Última atualização:** 2026-05-01 (noite)
-**Status do lead:** 🟡 morno-quente (LP apresentada, gostou, sem fechamento formal)
+**Última atualização:** 2026-05-06 (madrugada · Verbo s05 → reunião dia 06/05)
+**Status do lead:** 🔥 **HOT — reunião marcada 06/05 pra fechar Frente 1 R$ 1.200**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato
+**Case status:** 🌟 **case-flagship Impulso 2026**
 
 ---
 
 ## 📌 RESUMO EXECUTIVO (leia primeiro)
 
-A Aura Energy é uma empresa de energia solar fotovoltaica de **Renato Edson** em **Palmas-TO**. Renato é amigo do Eduardo. Conversaram dia 01/05/2026 enquanto bebiam — Renato apresentou o projeto, pediu ajuda pra entrar no digital. Eduardo construiu uma **LP completa de 20 seções no mesmo dia** (com Claude/Impulso Digital) e apresentou. **Renato gostou muito** mas não fecharam negócio porque o momento era informal. Lead a esquentar via follow-up estruturado.
+A Aura Energy é uma empresa de energia solar fotovoltaica de **Renato Edson** em **Palmas-TO**, fundada como nova frente sobre a infraestrutura técnica da **Brasfrio** (refrigeração + energia, anos em Palmas — Renato é sócio). A dor real do Renato é **captação de leads novos** (network social esgotando, conta @brasfrio_engsolar parou de postar há 3 meses). Aura é a **camada digital/comercial/educativa** sobre a operação física Brasfrio.
 
-**Próxima ação prevista (D+1):** mensagem casual no WhatsApp do Renato + ajustes na LP com detalhes específicos que ele comentou na reunião.
+**Estado atual (06/05 madrugada — pré-reunião):**
+- ✅ LP v6 em produção (`auraenergy.vercel.app`) — auditoria CIC factual aplicada
+- ✅ Briefing privado em `/briefing` — Renato pode preencher
+- ✅ Diagnóstico competitivo Brasfrio Solar (CIC) cravado
+- ✅ Estrutura comercial 3 frentes definida
+- ✅ **Reunião 06/05 com 4 docs prontos:**
+  - `ROTEIRO-VENDA-RENATO-06MAIO.md` — script completo (abertura → fechamento + 6 objeções)
+  - `PESQUISA-NICHO-INFO-PRODUTO-SOLAR.md` — base do bônus "direção"
+  - `6-ARTES-INSTAGRAM-AURA.md` — copy + briefing visual das 6 artes do pacote
+  - `DIRECAO-INFO-PRODUTO-RENATO.md` — 1 página A4 pra exportar PDF e levar
+- ⏳ Output do CIC sobre curso Tenda Solar — análise estrutural aula-a-aula (rodando madrugada)
+- ⏳ Visuais das 6 artes — Eduardo produz pós-fechamento (Canva ou HTML/CSS render)
+
+**Embalagem da venda (Frente 1 R$ 1.200) — DECISÃO 05/05:**
+- ✅ LP completa (já entregue)
+- ➕ **6 artes Instagram** prontas (copy + briefing visual) — 30 dias de presença sem Renato pensar
+- 🎁 **BÔNUS: direção info-produto** (1 página A4) — mapa estratégico pro curso próprio dele
+
+**Frente 2 (NÃO oferecer amanhã, plantar semente):**
+- Pacote mensal Insta + Tráfego R$ 1.497-1.997
+- Apresentar SE Renato pedir continuidade após começar a postar
+
+**Frente 3 (estudar):**
+- RadarPRO Solar Palmas — atacar via comissão (5-7% sobre venda fechada)
+- Renda menor no início, escala quando decolar
+
+**Princípios cravados pra reunião (Verbo lembrar):**
+- λ.contrato — não inventar cláusula/exclusividade na hora
+- λ.dor — Renato compra captação, não LP
+- **Preço é o preço** — se descontar, queima a relação
+- Plantar Frente 2/3 sem cravar nada formal
+
+**Próximas ações Eduardo (D+1 — quarta 06/05):**
+1. Manhã: ler 4 docs prontos (`ROTEIRO`, `DIRECAO`, `PESQUISA`, `6-ARTES`)
+2. Exportar `DIRECAO-INFO-PRODUTO-RENATO.md` em PDF (1 página)
+3. Cruzar análise CIC do curso Tenda com a estrutura de aulas (seção 5 do `DIRECAO`) — pela manhã, antes da reunião
+4. Reunião com Renato — fechar R$ 1.200
+5. Pós-fechamento: produzir 6 visuais (Canva 3-5h)
+6. Atualizar este STATUS com resultado da reunião
 
 ---
 
@@ -110,6 +149,47 @@ A Aura Energy é uma empresa de energia solar fotovoltaica de **Renato Edson** e
 ---
 
 ## 📅 LINHA DO TEMPO
+
+### 2026-05-02 (madrugada · Verbo s04 ~12h contínuas)
+
+**Aura v5 → v6 com auditoria CIC factual:**
+- Background `#FAFAF6` frio → `#fffef2` cream warm Aesop-derived
+- Bar Sistema Solar amarela → verde neon `#10F19F` (ancorando "ativo financeiro")
+- Footer-CTA gigante full-bleed cravado (padrão Tesla/Whoop/Allurium)
+- Dark zone Investimento + Janela Fio B (modelo Huberman)
+- Tap feedback `scale(0.98)` em :active mobile
+- Header mobile compactado (89px → 56-64px)
+- H1 hero `font-extrabold` → `font-bold` (princípio Aesop pesos máx 500)
+- Foto real do Renato integrada em SobreRenato com tratamento premium
+
+**Briefing privado `/briefing` no ar:**
+- 10 cards mobile-first com 15 perguntas
+- Submit via API + Resend → email pro Eduardo
+- Estimativa 30 min preenchimento Renato
+- Vira playbook reutilizável pra próximos clientes Impulso
+
+**Diagnóstico CIC competitivo Brasfrio Solar:**
+- @brasfrio_engsolar parado há 3 meses, engagement 0,48%, 1.887 followers
+- 92% dos buracos estratégicos abertos pra Aura ocupar
+- Reel com Renato em câmera = 5,4× mais engajamento (única vez testado)
+- Doc: `DIAGNOSTICO-BRASFRIO-SOLAR.md`
+
+**Estrutura comercial 3 frentes definida:**
+- Frente 1 · LP setup R$ 1.200 (já feita)
+- Frente 2 · Insta + Tráfego R$ 1.497-1.997/mês
+- Frente 3 · RadarPRO Solar Palmas — comissão 5-7% sobre venda fechada
+
+**Princípios cravados (8 novos memory feedback):**
+- Mobile-first lei Impulso (`λ.mobile`)
+- BR-first em referências de design (`λ.br`)
+- Deep research = diferencial Impulso (`λ.deep-research`)
+- Vender pra DOR real (`λ.dor`)
+- RadarPRO arma própria (`λ.radarpro`)
+- Cliente entregue = ICP categoria validado (`λ.icp`)
+- Não inventar contrato sem mandato (`λ.contrato`)
+- Idioma denso pra auto-memory (`λ.idioma`)
+
+**Status pessoal Eduardo:** Renato é amigo + sócio Brasfrio. Brasfrio funciona pelo network mas tá esgotando. Aura é resposta à dor de aquisição.
 
 ### 2026-05-01 — Sessão de criação intensiva
 
