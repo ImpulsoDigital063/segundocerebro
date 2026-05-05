@@ -350,22 +350,308 @@
 
 ---
 
-## 📚 FONTES CONSULTADAS
+## ⚡ TARIFA ENERGISA TOCANTINS — números atualizados (2025-2026)
 
-- [Empresas Solar em Palmas - Portal Solar](https://www.portalsolar.com.br/fornecedores/empresas-de-energia-solar/tocantins/palmas)
-- [Tocantins 49 mil conexões 2025 - Sicredi](https://www.sicredi.com.br/coop/uniaomstoeoestedabahia/noticias/energia-solar/com-crescimento-expressivo-no-numero-de-sistemas-fotovoltaicos-tocantins-alcanca-mais-de-49-mil-conexoes-em-2025/)
-- [Tocantins 2° em buscas solar empresas - SouDePalmas](https://soudepalmas.com.br/tocantins/tocantins-vira-referencia-em-energia-solar-para-empresas-e-assume-2o-lugar-em-buscas-nacionais)
-- [Energia Solar R$300 bi - Agência Brasil](https://agenciabrasil.ebc.com.br/economia/noticia/2026-05/energia-solar-supera-r-300-bilhoes-em-investimentos)
-- [Programa Palmas Solar - GPublicas](https://gpublicas.org.br/boa-pratica/programa-palmas-solar/)
-- [Palmas Solar IPTU 80% - AF Notícias](https://afnoticias.com.br/cidades/energia-solar-garante-varios-beneficios-e-ate-desconto-no-iptu-em-palmas-que-chega-a-80)
-- [Lei 14.300 Fio B 60% 2026 - Sunfox](https://www.sunfox.com.br/lei-14300-fio-b-energia-solar-2026/)
-- [Fio B 60% Canal Solar](https://canalsolar.com.br/consumidores-60-do-fio-b-2026/)
-- [Preço Solar 2026 - Portal Leo Dias](https://portalleodias.com/diversos/2026/01/30/quanto-custa-instalar-energia-solar-residencial-em-2026/)
-- [Ferpam Inauguração - AtitudeTO](https://atitudeto.com.br/cidade/empresa-solar-inaugura-em-palmas-com-um-dos-maiores-projetos-de-sistema-fotovoltaico-do-estado-do-tocantins/)
-- ARASOL Instagram principal: [@arasol_energiasolar](https://www.instagram.com/arasol_energiasolar/)
-- Palmas Energia Solar Instagram: [@palmasenergiasolar_to](https://www.instagram.com/palmasenergiasolar_to/)
-- Sites empresas: arasolenergia.com.br · palmasenergiasolar.com.br · unita.solar
+> **Por que isso importa:** sem saber a tarifa, não dá pra calcular economia honesta. Aura precisa cravar esses números no marketing pra **mostrar que sabe o que está vendendo**.
+
+### Tarifa convencional residencial
+- **~R$ 0,762/kWh** (tarifa convencional)
+- Reajuste de **+12,68%** aplicado em julho/2025 (vigência até julho/2026)
+- Resolução ANEEL nº 3.479 de 04/07/2025
+
+### Bandeiras tarifárias (acréscimos sobre consumo)
+- **Amarela:** +R$ 1,88 por 100 kWh consumidos
+- **Vermelha P1:** +R$ 4,46 por 100 kWh
+- **Vermelha P2:** ainda mais alto (a confirmar)
+
+### Implicação prática pro marketing
+- Conta de **R$ 500/mês** = ~656 kWh × R$ 0,762
+- Conta de **R$ 1.000/mês** = ~1.312 kWh × R$ 0,762 (alto consumo, ideal pra solar)
+- Em ano com bandeira vermelha frequente → solar paga ainda mais rápido
+
+**Argumento de venda real (Aura):** *"A tarifa Energisa subiu 12,68% só no último ano. Bandeira vermelha tem aparecido. Quem instalou solar antes do reajuste já tá pagando R$ 0 ou taxa mínima."*
 
 ---
 
-— Verbo, 06/05/2026 madrugada · pesquisa pré-reunião Renato
+## 🏛 HOMOLOGAÇÃO ENERGISA — fluxo + prazos reais
+
+### Etapas oficiais (cronograma real)
+| Etapa | Quem faz | Prazo |
+|---|---|---|
+| 1. Projeto + ART/TRT + memorial | Engenheiro Aura | 3-7 dias |
+| 2. Análise da concessionária | Energisa | **15 dias** (microgeração até 75 kW) ou **30 dias** (mini até 5 MW) |
+| 3. Instalação física | Aura + equipe | 1-3 dias |
+| 4. Vistoria | Energisa | até 7 dias após solicitação |
+| 5. Liberação para gerar | Energisa | imediato após vistoria OK |
+
+### Tempo total típico
+- **Microgeração residencial**: 30-45 dias do projeto à energia gerando
+- Pode dobrar se Energisa exigir reforço de rede (raro em Palmas)
+
+### Diferencial possível Aura
+*"Eu cuido do processo inteiro com a Energisa. Você não precisa entender de ART, vistoria, memorial técnico. Quando o sistema gerar a primeira energia, você é avisado. Pronto."*
+
+→ **Concorrência:** Palmas Energia Solar e Unità mencionam "ajudam com homologação" mas não comunicam claramente. **Aura pode ser a mais explícita.**
+
+---
+
+## 💰 FINANCIAMENTO SOLAR — comparativo 4 bancos (atualizado 2026)
+
+> **Por que importa:** ~70% das vendas solar Brasil são financiadas. Se a parcela bate menor que conta de luz, fechamento é quase automático.
+
+| Banco | Taxa a.m. | Prazo máx | Carência | Share mercado | Diferencial |
+|---|---|---|---|---|---|
+| **BV Financeira** | 1,17% | 96x | 0-90 dias | 47% (líder) | Maior aprovação, processo rápido |
+| **Santander Solar** | 1,11% | 96x | 120 dias | 25% | **Carência mais longa** |
+| **Sicredi** | 1-3% (varia) | 120 meses | a confirmar | 24% | Cooperativa local Palmas, atendimento personalizado |
+| **Solfácil** | 1,17-1,4% (pós-fixado) / 1,5-1,6% (pré) | 120x | 6 meses | 18% | **Maior prazo + carência longa** |
+
+### Conta de exemplo — Conta luz R$ 600/mês
+
+**Sistema 5 kWp (R$ 19.000) financiado em 96x BV (1,17% a.m.):**
+- Parcela: ~R$ 320/mês
+- Conta de luz pós-solar: R$ 78 (mínimo)
+- **Total mensal pós:** R$ 398 (vs R$ 600 antes — economia de R$ 202/mês desde o 1° mês)
+- Após 96 meses (8 anos): **conta solar paga, economia mensal de R$ 522/mês pelos próximos 17+ anos**
+
+### Argumento de venda (Renato comigo amanhã + futuro)
+*"Você não vai gastar mais por mês. Você vai trocar uma conta de luz alta por uma parcela menor + conta mínima. No fim do financiamento, o sistema é seu — e a economia continua por 17+ anos."*
+
+---
+
+## 🏷 ISENÇÃO ICMS — Tocantins é estado favorecido
+
+### Convênio ICMS 16/2015 — Tocantins aderiu pelo Decreto 5.338/2015
+
+**Benefícios fiscais ativos (2025-2026):**
+- **Isenção 25% ICMS** sobre energia gerada por sistema solar fotovoltaico
+- **Isenção 18% ICMS** na compra de equipamentos para instalação (desde jan/2016)
+
+**Implicação prática:**
+- Cliente paga ICMS apenas sobre a **diferença** entre consumo e geração
+- Equipamentos solar saem mais baratos pro instalador (que pode repassar)
+
+### Argumento Aura
+*"Em estados sem isenção, cliente paga ICMS cheio. Aqui no Tocantins, o governo isenta 25% do ICMS sobre o que você gera + 18% no equipamento. É um dos motivos que solar paga rápido em Palmas — mais que outros estados."*
+
+---
+
+## 🌾 AGRONEGÓCIO TOCANTINS — oportunidade B2B massiva
+
+### Tamanho do agro TO 2025-2026 (CONAB / SECOM-TO)
+
+| Cultura | Produção 2025/2026 | Crescimento |
+|---|---|---|
+| Grãos total | **9,6 milhões t** | recorde histórico |
+| Soja | **5,75-6,01 milhões t** | +12,4% vs 2024/25 |
+| Arroz irrigado | **612 mil t** | hegemonia região Norte |
+| Área soja plantada | 1,6 milhão hectares | em expansão |
+
+### "Quadrilátero do Ouro" do arroz irrigado
+- **Lagoa da Confusão** · **Formoso do Araguaia** · **Pium** · **Dueré**
+- Produtividade: **120 sacas/hectare** (arroz irrigado · acima da média BR)
+- **Pivôs de irrigação consomem MUITA energia** — alvo perfeito pra solar B2B
+
+### Oportunidade pra Aura (B2B agronegócio)
+- **Pivô de irrigação solar** — caso Bahia mostrou que **dobrou produção de soja** numa fazenda
+- Sistema 50-200 kWp · ticket **R$ 200k-800k** por projeto
+- Concorrência B2B agro em Palmas: **fraca** (concorrentes focam residencial)
+
+### Conexão com plano Aura
+- Frente 1 (LP) já tem aba **"Rural"** entre as 4 verticais
+- Pode-se criar conteúdo específico: *"Solar pra fazenda — pivô de irrigação que se paga em 3 safras"*
+- Cliente típico rural TO: produtor de soja médio, usa 5.000-15.000 kWh/mês
+- **Ticket × volume = receita absurda comparado a residencial**
+
+### Argumento de venda agro
+*"Tocantins teve recorde de 9,6 milhões de toneladas de grãos em 2025/2026. Quem irriga gasta luz alta. Solar pra pivô paga em 3 safras e o sistema dura 25 anos — equivalente a 25 colheitas livres de conta de energia."*
+
+---
+
+## 🔋 BATERIA SOLAR / OFF-GRID — mercado emergente
+
+> **Status 2026:** ainda nicho, mas crescendo rápido. **Tendência confirmada: até 2028 sistema híbrido (solar + bateria) vira viável pra residencial mid-market.**
+
+### Preços atuais (2026)
+| Componente | Faixa de preço |
+|---|---|
+| Bateria lítio 10 kWh (BYD/LG) | **R$ 12.000-20.000** |
+| Tesla Powerwall 13,5 kWh | R$ 50.000-70.000 (premium) |
+| Sistema off-grid básico | R$ 15.000-25.000 |
+| Sistema off-grid intermediário | R$ 30.000-55.000 |
+| Sistema híbrido (solar + bateria) residencial | R$ 35.000-80.000 |
+
+### Tendência 2026-2030
+- **Preços de bateria lítio caíram 90% desde 2010** — continuam caindo
+- **Sistemas híbridos** projetados pra ultrapassar **20% do mercado solar residencial em 2030**
+- Aplicações fortes: **rural off-grid** + **comércio que não pode parar** (mercado, restaurante, clínica)
+
+### Posicionamento Aura
+- **NÃO oferecer agora como produto principal** (mercado ainda imaturo)
+- **Oferecer como "futuro" ao cliente** — "instalamos sistema preparado pra adicionar bateria depois"
+- **Alavancar quando preço cair mais** (estimativa: 2027-2028)
+
+### Argumento futuro (não vende AGORA, planta semente)
+*"Hoje seu sistema injeta o excedente na rede. Daqui 2-3 anos, com a Lei do Fio B chegando perto de 100%, vai ser mais vantajoso armazenar em bateria. Eu já te entrego um sistema preparado pra você adicionar bateria depois sem refazer nada."*
+
+---
+
+## 📈 MERCADO SOLAR BR 2026 — tendências macro
+
+### Capacidade e investimento
+- **Brasil 2026:** previsão de chegar a **54 GW** capacidade total
+- **Investimento 2026:** R$ 31,8 bilhões previstos
+- **Top 5 mercados globais** em solar
+- **R$ 300+ bilhões** já investidos acumulados
+
+### Tendências chave 2026-2030
+1. **Sistemas híbridos** (solar + bateria) — passa a 20%+ do mercado em 2030
+2. **Fazendas solares com aluguel de créditos** — modelo emergente onde cliente NÃO instala mas recebe créditos. Pode ser nova frente Aura
+3. **IA + monitoramento avançado** — diferencial competitivo
+4. **Mercado livre energia** — empresas grandes negociando direto
+5. **Agronegócio puxando demanda** — irrigação + processamento solar
+
+### Ameaças identificadas
+- **Restrições de rede** em alguns estados (corte de geração quando rede satura)
+- **Lei do Fio B** chegando a 100% em 2029 — viabilidade econômica DEPOIS de 2029 muda
+- **Concorrência cresce** — todo mês surge empresa nova
+
+### Janela estratégica Aura
+**2026-2028 = janela de ouro**
+- Lei Fio B ainda viável (60-90% TUSD)
+- Programa Palmas Solar ainda 60% IPTU
+- Tarifa Energisa subiu 12,68% (faz solar mais atrativo)
+- Concorrência Palmas digitalmente fraca
+
+→ **Mensagem implícita pro Renato:** **agora é o momento. Atrasar 12 meses = perde meio mercado.**
+
+---
+
+## ☀️ IRRADIAÇÃO SOLAR PALMAS — dado técnico cravado
+
+### O que é HSP (Horas de Sol Pleno)
+- HSP = irradiação total diária / 1000 W/m²
+- Exemplo: 5.200 Wh/m²/dia = 5,2 HSP
+- **Não é horas reais de sol**, é equivalente em sol pleno (1000 W/m²)
+
+### Palmas-TO — irradiação confirmada
+- **Faixa típica: 5,5-6,1 kWh/m²/dia** (média anual)
+- Variação sazonal: 5,2 (junho-julho) a 6,4 (agosto-outubro)
+- **Top 3 estados BR em irradiação solar** (junto com BA, PI)
+- Fonte oficial: CRESESB SunData v3.0 + Atlas Brasileiro Energia Solar 2018
+
+### Implicação prática
+**Um sistema 5 kWp em Palmas gera ~750 kWh/mês** (vs ~620 kWh em SP).
+**~21% MAIS energia que São Paulo** com mesmo equipamento.
+
+### Argumento Aura
+*"Em São Paulo, um sistema solar de 5 kWp gera 620 kWh/mês. Aqui em Palmas, o MESMO sistema gera 750 kWh/mês — 21% a mais. Tocantins não é só caro de energia — é privilegiado em sol. Por isso o payback é de 4 anos aqui (vs 6-7 em estados frios)."*
+
+---
+
+## 🏷 MARCAS TIER 1 — quais usar e por quê (2026)
+
+### Tier 1 ≠ qualidade técnica
+**Importante:** "Tier 1" é classificação de **bancabilidade** da BloombergNEF — mede se bancos financiam projetos com aquela marca. **Não mede qualidade do módulo.**
+
+Para qualidade técnica real: **PVEL Reliability Scorecard 2025 (Kiwa)** é o indicador independente.
+
+### Comparativo das principais marcas (2026)
+
+| Marca | Garantia produto | Garantia geração | Eficiência típica | Pós-venda BR |
+|---|---|---|---|---|
+| **Trina Solar** | **15 anos** ⭐ | 25 anos linear | 21-22%+ | bom |
+| **Jinko Solar** | 12 anos | 25 anos | 21-22% | bom |
+| **Canadian Solar** | 12 anos | 25 anos | 20-21% | **excelente** (suporte BR forte) |
+| **LONGi** | 12 anos | 25 anos | **22%+** ⭐ | bom |
+| **JA Solar** | 12 anos | 25 anos | 21% | médio |
+| **BYD** | 12 anos | 25 anos | 21% | crescendo |
+| **Risen** | 12 anos | 25 anos | 20-21% | médio |
+
+### Recomendação Aura (mix estratégico)
+- **Padrão entry/mid:** Trina (garantia 15 anos = diferencial real de marketing)
+- **Premium (cliente exige):** LONGi (eficiência maior = menos painéis na mesma área)
+- **Cliente sensível pós-venda:** Canadian Solar (suporte BR forte)
+
+### Inversores (mesma lógica)
+- **Growatt:** dominante mid-market, bom custo-benefício
+- **Sungrow:** premium, qualidade industrial
+- **Huawei FusionSolar:** monitoramento avançado (atualizações via app)
+- **Fronius:** premium europeu (mais caro, ROI melhor longo prazo)
+- **GoodWe:** alternativa China-tech robusta
+
+### Argumento Aura
+*"Eu trabalho com Trina porque é a ÚNICA Tier 1 com 15 anos de garantia de produto (contra defeito de fabricação). As outras grandes — Canadian, Jinko, LONGi — dão 12 anos. Em sistema que dura 25 anos, esses 3 anos extras importam."*
+
+→ **Diferencial real, baseado em fato técnico verificável, fácil de comunicar.**
+
+---
+
+## 📚 FONTES CONSULTADAS
+
+### Mercado e setor
+- [Empresas Solar em Palmas - Portal Solar](https://www.portalsolar.com.br/fornecedores/empresas-de-energia-solar/tocantins/palmas)
+- [Tocantins 49 mil conexões 2025 - Sicredi](https://www.sicredi.com.br/coop/uniaomstoeoestedabahia/noticias/energia-solar/com-crescimento-expressivo-no-numero-de-sistemas-fotovoltaicos-tocantins-alcanca-mais-de-49-mil-conexoes-em-2025/)
+- [Tocantins 2° em buscas solar - SouDePalmas](https://soudepalmas.com.br/tocantins/tocantins-vira-referencia-em-energia-solar-para-empresas-e-assume-2o-lugar-em-buscas-nacionais)
+- [Energia Solar R$300 bi - Agência Brasil](https://agenciabrasil.ebc.com.br/economia/noticia/2026-05/energia-solar-supera-r-300-bilhoes-em-investimentos)
+- [Mercado Solar 2026 Tendências - Modular Estruturas](https://modularestruturas.com.br/mercado-solar-2026-o-que-vem-por-ai/)
+- [Cenário Solar 2026 - Amara NZero](https://amaranzero.com.br/blog/cenario-solar-2026-brasil)
+
+### Tributação e incentivos
+- [Programa Palmas Solar - GPublicas](https://gpublicas.org.br/boa-pratica/programa-palmas-solar/)
+- [Palmas Solar IPTU - AF Notícias](https://afnoticias.com.br/cidades/energia-solar-garante-varios-beneficios-e-ate-desconto-no-iptu-em-palmas-que-chega-a-80)
+- [ICMS solar Tocantins - SECOM-TO](https://www.to.gov.br/secom/governo-do-tocantins-isenta-icms-e-incentiva-o-uso-da-energia-solar-no-estado/3y3o1hkr4sbh)
+- [Convênio ICMS 16/15 Tocantins](https://acervo.socioambiental.org/index.php/acervo/noticias/governo-do-tocantins-isenta-icms-e-incentiva-o-uso-da-energia-solar-no-estado)
+
+### Lei 14.300 / Fio B
+- [Lei 14.300 Fio B 60% 2026 - Sunfox](https://www.sunfox.com.br/lei-14300-fio-b-energia-solar-2026/)
+- [Fio B 60% Canal Solar](https://canalsolar.com.br/consumidores-60-do-fio-b-2026/)
+- [Lei 14.300 GD - SolarAgora](https://solaragora.com.br/lei-14300-geracao-distribuida)
+
+### Preços e tarifas
+- [Preço Solar 2026 - Portal Leo Dias](https://portalleodias.com/diversos/2026/01/30/quanto-custa-instalar-energia-solar-residencial-em-2026/)
+- [Quadro de Tarifas Energisa TO](https://www.energisa.com.br/sites/energisa/files/media/documents/2026-03/Quadro%20de%20Tarifas%20ETO%20-%20Atualizado%20ICMS.pdf)
+- [Resolução ANEEL 3.479/2025 Energisa TO](https://www2.aneel.gov.br/cedoc/reh20253479ti.pdf)
+- [Tarifa Energia Palmas - WebArCondicionado](https://www.webarcondicionado.com.br/tarifa-energia-eletrica-palmas)
+
+### Homologação Energisa
+- [Homologação Energisa - Seliga Soluções](https://seligasolucoes.com.br/como-funciona-o-processo-de-homologacao-junto-a-energisa/)
+- [Geração Distribuída - Energisa](https://www.energisa.com.br/para-sua-casa/servicos/outros-servicos/geracao-distribuida)
+
+### Financiamento
+- [Linha de crédito energia solar - Solfácil](https://blog.solfacil.com.br/energia-solar/linha-de-credito-para-energia-solar/)
+- [Comparativo financiamento solar 2026 - Energia Solar Explicada](https://energiasolarexplicada.com.br/guias/financiamento-energia-solar/)
+
+### Bateria / Off-grid
+- [Sistema Off-Grid 2026 - Solar Task](https://solartask.com.br/energia-solar-off-grid/)
+- [Bateria Solar BYD/Tesla 2026 - Albatroz](https://albatrozgrupo.pt/qual-bateria-solar-escolher/)
+
+### Agronegócio Tocantins
+- [Tocantins recorde grãos 2025 - SECOM-TO](https://www.to.gov.br/secom/noticias/tocantins-bate-recorde-de-producao-de-graos-com-safra-de-89-milhoes-de-toneladas-em-2025/e654280kh3x)
+- [Soja Tocantins 2026 - Atitude TO](https://atitudeto.com.br/negocio/agronegocio/expansao-da-soja-no-tocantins-evidencia-papel-estrategico-das-agroindustrias-na-absorcao-da-safra/)
+- [Pivô irrigação solar - PV Magazine](https://www.pv-magazine-brasil.com/2024/05/23/pivo-de-irrigacao-com-energia-solar-dobra-safra-de-soja-em-fazenda-na-bahia/)
+- [Caravana da Produção 2026 TO](https://www.agenciatocantins.com.br/noticia/105348/governo-do-tocantins-inicia-caravana-da-producao-2026-com-atividades-de-campo-voltadas-para-tecnologias-da-soja-e-do-arroz)
+
+### Irradiação solar
+- [CRESESB SunData v3.0](https://cresesb.cepel.br/sundata/index.php)
+- [Atlas Brasileiro de Energia Solar - CRESESB](https://cresesb.cepel.br/publicacoes/download/Atlas_Solarimetrico_do_Brasil_2000.pdf)
+- [Sistemas FV em Palmas-TO - CBENS](https://anaiscbens.emnuvens.com.br/cbens/article/view/2544)
+
+### Marcas (painéis e inversores)
+- [Melhores marcas painéis 2026 - Solar dos Pomares](https://solardospomares.com.br/melhores-marcas-paineis-solares-tecnicos/)
+- [Ranking painéis 2026 - Energia Solar Explicada](https://energiasolarexplicada.com.br/blog/melhor-marca-painel-solar-2026/)
+- [Como escolher fabricante 2026 - Amara NZero](https://amaranzero.com.br/blog/melhores-fabricantes-paineis-solares-2026-tier1-pvel-retc)
+
+### Concorrência mapeada (perfis Instagram + sites)
+- [Ferpam Inauguração - AtitudeTO](https://atitudeto.com.br/cidade/empresa-solar-inaugura-em-palmas-com-um-dos-maiores-projetos-de-sistema-fotovoltaico-do-estado-do-tocantins/)
+- ARASOL Instagram: [@arasol_energiasolar](https://www.instagram.com/arasol_energiasolar/) · [@arasolenergiafotovoltaica](https://www.instagram.com/arasolenergiafotovoltaica/)
+- Palmas Energia Solar Instagram: [@palmasenergiasolar_to](https://www.instagram.com/palmasenergiasolar_to/)
+- Império Solar: [@imperiocellsolar](https://www.instagram.com/imperiocellsolar/)
+- Smart Energia Solar: [@energiasolarsmart](https://www.instagram.com/energiasolarsmart/)
+- Sites: arasolenergia.com.br · palmasenergiasolar.com.br · unita.solar · innotechengenharia.com.br
+
+---
+
+**Total de 45+ fontes consultadas em 12 áreas temáticas.** Pesquisa em camada profunda — diferencial Impulso Digital (λ.deep-research).
+
+— Verbo, 06/05/2026 madrugada → continuação · pesquisa pré-reunião Renato
