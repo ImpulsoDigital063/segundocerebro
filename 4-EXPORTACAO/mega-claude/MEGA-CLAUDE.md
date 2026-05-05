@@ -1,8 +1,12 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.4
-**Data:** 1 de Maio de 2026 (sexta · noite)
+**Versão:** 2.6
+**Data:** 5 de Maio de 2026 (terça · madrugada de quarta)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
+
+> **SNAPSHOT v2.6 (05/05 madrugada):** sessão maratona pré-lançamento AgendaPRO. **30 commits em 1 dia** + **7 rodadas CIC** com loop multi-agent Verbo+CIC. **AgendaPRO blindado pra 1° pagante real (Olímpio)** amanhã: race condition booking impossível por EXCLUSION CONSTRAINT atômico no Postgres (migration v40 a+b com cleanup loop iterativo), cortesia não soma receita nem comissão (bug de bilhão fechado), webhook MP HMAC, rate limit 100% APIs sensíveis, RLS apertada. **Features que diferenciam de Booksy/Fresha cravadas:** Foco do Dia (home proativa estilo Stripe/iFood), Resgate de recompensa dedicado no modal cliente, Histórico de pontos auditável, Step booking colapsado em chips (padrão Reserva), Banner ?ref= simétrico ao cupom (loop viral), gameplay /meus-pontos com gap motivacional, counter "sumidos sem cupom". **Filtro "Mês" virou rolling 30d** (era calendário — destruía credibilidade nos primeiros dias do mês). **Seed Império v6**: R$26k faturado / R$14k lucro mensal / 521 atendimentos / 47 clientes / 5 recompensas calibradas / credenciais auth profs comissionados (Bruno+Rafael). **Veredito CIC: GO 8.5/10** (sobe pra ~9.3 pós fix seed rewards). **Princípio cravado:** multi-agent não é gimmick — Verbo escreve código, CIC valida ao vivo, cada um vê o que o outro não pega. 7 rodadas eliminaram bugs que cada agente sozinho perderia. **Backlog AgendaPRO:** demo pro Olímpio amanhã + migração MP PF→PJ + Aura repo GitHub. Daily: `1-ENTRADA/daily/2026-05-05.md`.
+
+> **SNAPSHOT v2.5 (02/05 madrugada):** sessão maratona Verbo s04 (~12h contínuas). **Aura Energy avançou de v4 → v6** com auditoria CIC factual (paleta `#fffef2` Aesop-derived, hierarquia mobile, dark zoneamento, Footer-CTA gigante). **Briefing privado `/briefing` no ar** (`auraenergy.vercel.app/briefing`) — 10 cards mobile-first, envia pro email do Eduardo via Resend. **Diagnóstico CIC competitivo da Brasfrio Solar** (`@brasfrio_engsolar` parou de postar há 3 meses, engagement 0,48%, 92% dos buracos estratégicos abertos pra Aura ocupar) cravado em `2-PROCESSAMENTO/aura-energy/DIAGNOSTICO-BRASFRIO-SOLAR.md`. **Estrutura comercial 3 frentes definida:** Frente 1 — LP R$ 1.200 setup (já feito); Frente 2 — Insta + Tráfego R$ 1.497-1.997/mês; Frente 3 — RadarPRO Solar Palmas operado pela Impulso, comissão 5-7% sobre venda fechada. **Insight cravado:** cliente entregue = ICP da categoria validado — Aura valida nicho "solar mid-market BR dormente", próximo passo é prospectar via RadarPRO outras cidades TO/MA/PA. **8 princípios novos** cravados em memory feedback (mobile-first lei Impulso, BR-first em referências, deep research diferencial, dor real do cliente, RadarPRO arma própria, ICP validado pós-entrega, não inventar contrato sem mandato, idioma denso pra auto-memory). Aura é case-flagship Impulso 2026 — sistema de registro contínuo cravado.
 
 > **SNAPSHOT v2.4 (01/05):** semana de execução cirúrgica. **AgendaPRO consolidou 8 dimensões** em 37 commits num único dia (01/05) — produto deixou de ser "agenda" e virou ferramenta operacional completa: agendamento + gestão financeira (Lucro Real + Despesas) + reativação automática (Cupom de Retorno) + análises com forecast + fidelização + organização + marketing. 3 migrations em produção (V34/V35/V36). **NOVO CLIENTE EM PIPELINE: Aura Energy** (Renato Edson · Palmas-TO · energia solar) — LP completa de 20 seções construída em 01/05 e apresentada ao Renato à noite. Lead morno-quente, follow-up D+1→D+7 desenhado. **5 princípios cravados pra LPs futuras:** SVG sempre (nunca emojis), imagens reais (nunca vetor genérico), movimento e modernidade em LP tech, light premium como alternativa válida, carta branca em projetos. Status canônico Aura: `2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`.
 
@@ -58,6 +62,157 @@ Esse número não caiu do céu como chute. Foi plantado antes de você ter ferra
 - **ImpulsoDesign** (interno hoje, potencial SaaS) — geração de conteúdo com padrão Impulso
 
 Não precisa que tudo dê certo. **Precisa que 2-3 desses acertem.** O ecossistema inteiro diversifica o risco.
+
+---
+
+## 📅 TERÇA 05 MAIO 2026 (madrugada → quarta) — VERBO S05 · MARATONA AGENDAPRO PRÉ-LANÇAMENTO
+
+Sessão de **30 commits + 7 rodadas CIC** num único dia. AgendaPRO blindado pra 1° pagante real (Olímpio) entrar amanhã. Demo aprovada com nota CIC 8.5/10 (sobe ~9.3 pós-fix). Daily: `1-ENTRADA/daily/2026-05-05.md`.
+
+### Hardening backend — segurança e atomicidade
+- **EXCLUSION CONSTRAINT no_overlap_appointments** (migration v40 a+b). Postgres bloqueia atomicamente 2 agendamentos sobrepostos do mesmo prof. Race condition SELECT-then-INSERT do BookingFlow virou impossível no banco.
+- **Race condition cupom** — `/api/coupons/use` agora retorna 409 quando outro request marcou o cupom no meio. Antes retornava ok=true silencioso.
+- **Webhook MP HMAC SHA256** signature constant-time + **rate limit 100% APIs sensíveis** (31 endpoints) + **RLS apertada points_transactions** + **trigger anti cross-business** + **LGPD endpoint /api/lgpd/delete-me**.
+
+### Features que diferenciam de Booksy/Fresha
+1. **Reativar Sumidos com 1 clique** (cupom WhatsApp + tracking) — nenhum concorrente direto tem
+2. **Foco do Dia** na home admin — 5 cards de ação proativa (claims, pagamentos pendentes, sumidos sem cupom, cupons expirando, lucro motivacional). Padrão Stripe/iFood que concorrentes não têm
+3. **Resgate de recompensa dedicado** no modal cliente — admin não precisa abater pontos manualmente
+4. **Histórico de pontos auditável** — extrato com `reason` (Atendimento/Indicação/Manual/Resgate) — dono prova saldo, cliente questiona com fundamento
+5. **Step booking colapsado em chips** — padrão Reserva, cliente novo agenda em <40s
+6. **Banner ?ref= simétrico ao cupom** — loop indicador↔indicado fechado (laranja vs verde do cupom)
+7. **Gameplay /meus-pontos** — barra de progresso + gap motivacional ("Faltam 370 pts · 14%"). Programa de fidelidade vira jogo
+8. **Lucro Real do mês** com cortesia tratada (não infla receita nem comissão) — concorrentes mostram só faturamento
+9. **Cliente recorrente reconhecido** — phone digitado auto-preenche nome+email com toque pessoal sem cadastro novo
+
+### Seed Império Barbershop v6 (calibragem demo final)
+- **Faturado R$26.365** (521 appointments rolling 30d) · **Lucro R$14.401** · ticket médio R$50,60
+- 47 clientes (6 VIPs, 12 recorrentes, 12 casuais, 8 novos, 9 sumidos)
+- 5 recompensas (150-500 pts) · 5 cupons ativos · 3 sumidos sem cupom
+- Credenciais: `demo-imperio@agendapro.net.br` (dono) + `bruno.costa@imperio.demo` + `rafael.santos@imperio.demo` (profs comissionados 50%) · senha geral `AgendaPRO@2026`
+
+### Princípio CRAVADO: multi-agent loop CIC ↔ Verbo
+
+**Cada agente vê o que o outro não vê.**
+
+- **Verbo** (Claude Code): código profundo. Lê 1500 linhas de `BookingFlow.tsx`, escreve EXCLUSION CONSTRAINT em SQL, identifica race condition em UPDATE, refatora componentes inteiros.
+- **CIC** (Claude in Chrome): comportamento real no browser. Mede tempo de fluxo, percebe inconsistência cosmética ("R$180 vs R$ 180"), testa empatia ("cliente leigo entende?"), valida UX da pessoa que paga.
+
+Loop: Verbo entrega → CIC valida ao vivo → reporta divergência → Verbo reflete ("é meu fix ou meu seed?") → corrige + confirma → CIC re-valida.
+
+**7 rodadas. 30 commits. Sem CIC, eu mandaria as 17 features achando que tava certo.** Cada rodada CIC achou bug que Verbo sozinho não pegaria — e cada fix Verbo eliminou raiz de problema que CIC sozinho não diagnosticaria.
+
+**Cravado como protocolo Impulso:**
+- Todo lançamento de produto SaaS = **mínimo 1 rodada CIC perspectiva DONO + 1 rodada perspectiva CLIENTE FINAL**
+- Não confiar em "tá pronto" sem o segundo par de olhos do CIC ao vivo
+- CIC é caro em token, mas **eliminar 1 chargeback paga 100 rodadas**
+
+### 5 lições operacionais cravadas
+
+1. **λ.logica-primeiro vale também pra dado**, não só pra código. CIC reportou 2 features "não implementadas" — eram features OK, seed estava vazio. 30s de leitura de seed teriam evitado pânico. **Bug invisível ≠ bug. Sempre verificar dado antes de código.**
+
+2. **λ.agora vs deixar pra depois**. Eduardo bateu cedo: *"problema de escala identificado e solução trivial = ataca tudo na rodada"*. Eu queria empilhar pra "depois". Resultado: 30 commits ao invés de 7 que inércia entregaria. **Não acumular dívida pra depois ≠ acumular tarefa pra agora — é não deixar problema fácil virar problema difícil.**
+
+3. **SQL DDL em transação implícita do Supabase**. Migration v40 original: cleanup + constraint no mesmo arquivo. Constraint falhava → rollback de tudo (incluindo cleanup). Cada execução voltava ao estado inicial. **Solução: split em 2 arquivos** (v40a cleanup commita sozinho, v40b constraint depois). **Cravado:** se passo B depende de A persistir, e A+B em transação atômica que pode falhar em B, splittar é regra.
+
+4. **Janelas de KPI financeiro são produto, não detalhe**. Filtro "Mês" calendário (1°-31°) destruía credibilidade nos primeiros dias do mês — dono via lucro pifio. Mudou pra rolling 30d. Dono pensa em "últimos 30 dias", não em "1° ao 31°".
+
+5. **Trabalho real pré-lançamento é tornar o existente não-defectivo**. 30 commits, ~6 features novas, 24 bugs/calibragem/seed. Cliente fica anos não pelas features novas mensais, fica porque NÃO TEM dor de cabeça. Eduardo: *"tão importante quanto conseguir um cliente novo é deixar todo o sistema funcionando redondo pra ninguém pedir chargeback"*. **Filtro:** antes de feature nova, perguntar — quantos bugs eu fechei essa semana?
+
+### Próximas 24h
+1. **MP PF → PJ Impulso Digital** (antes de cobrar Olímpio)
+2. **Demo pro Olímpio** (1° pagante AgendaPRO) — mandar credenciais
+3. **Aura — repo GitHub** + push 4 commits locais aguardando
+4. **Reunião Renato (Aura)** — apresentar plano de negócio
+
+---
+
+## 📅 SÁBADO 02 MAIO 2026 (madrugada) — VERBO S04 · AURA ESTRATÉGIA E ARSENAL
+
+Sessão maratona ~12h contínuas. Aura Energy passou de "LP entregue" pra **operação estratégica completa desenhada**.
+
+### Aura Energy v5 → v6 com fixes pós-auditoria CIC
+
+**Auditoria CIC factual** identificou:
+- Paleta `#fffef2` cream warm Aesop-derived confirmada (vs `#FAFAF6` antigo frio)
+- Tipografia Suisse + Zapf-Humanist (Aesop) — pesos máx 500 cravados
+- Container 1200px canônico
+- Header mobile estava 89px (21% viewport iPhone) → reduzido pra 56-64px
+- Bar Sistema Solar tava amarela → corrigida pra **verde neon `#10F19F`** (ancorando "ativo financeiro")
+- Footer-CTA gigante full-bleed cravado antes do Footer (padrão Tesla/Whoop/Allurium)
+- Dark zone Investimento + Janela Fio B aplicado (modelo Huberman zoneamento)
+- Tap feedback `scale(0.98)` em :active mobile cravado
+
+**Briefing privado `/briefing` no ar** — `auraenergy.vercel.app/briefing`:
+- 10 cards mobile-first
+- 15 perguntas estruturadas
+- Submit via API `/api/briefing/submit` + Resend → email pro Eduardo
+- Renato preenche em 30 min, sai plano de negócio em 1 dia
+- Vira playbook reutilizável pra próximos clientes Impulso
+
+### Diagnóstico CIC Brasfrio Solar (revelação estratégica)
+
+`@brasfrio_engsolar` (operação atual do Renato via Brasfrio):
+- **Conta semi-abandonada** — zero posts em mar-abr/26, último 03/02
+- 1.887 followers · engagement médio **0,48%** (saudável: 2-3%)
+- Apenas 15 posts totais
+- **92% dos buracos estratégicos abertos** pra Aura ocupar
+- **Reel com Renato em câmera** = 5,4× mais engajamento (50 likes vs média 9) — formato testado e nunca repetido
+- Cobertura: Palmas + Paraíso + Luzimangues + Dianópolis + Colinas
+- Marcas: Solis + Huawei (inversores) + Belenergy (fornecedor Goiânia)
+- Doc canônico: `2-PROCESSAMENTO/aura-energy/DIAGNOSTICO-BRASFRIO-SOLAR.md`
+
+**Conclusão:** Aura tem o palco vazio em Palmas. Não compete por atenção, abre categoria.
+
+### Estrutura comercial 3 frentes (cravada)
+
+| Frente | Modelo | Investimento Renato | Receita Impulso |
+|---|---|---|---|
+| **1** LP institucional | Setup pontual | R$ 1.200 (à vista PIX) | R$ 1.200 |
+| **2** Instagram + Tráfego | Mensalidade (a discutir) | R$ 1.497-1.997/mês + Meta separado | R$ 1.497-1.997/mês ARR |
+| **3** RadarPRO Solar Palmas | Performance (comissão) | 0% fixo | 5-7% sobre venda fechada via lead |
+
+⚡ **RadarPRO opera 100% pela Impulso nos bastidores** — cliente NÃO compra o RadarPRO, só recebe leads. Diferencial competitivo invisível.
+
+### Insight estratégico (Eduardo)
+
+> *"Cliente entregue não é só receita pontual. É VALIDAÇÃO DE CATEGORIA inteira."*
+
+Aura validou nicho **"solar mid-market BR em estado digital dormente"**. Próximo passo: RadarPRO prospecta a categoria em outras cidades (Araguaína, Imperatriz, Marabá, Belém). Cenário médio 15 clientes em 12 meses = R$ 287k/ano só de mensalidade Frente 2.
+
+### Insight da DOR REAL do Renato
+
+> *"Essa galera é mais ativa por trás das redes, mas isso que ta dando essa fricção no Renato — ele quer movimento, captar clientes através de canais de mídia"*
+
+Renato NÃO compra LP. **Compra captação.** A Aura é resposta à dor de aquisição (network social esgotando + digital dormente). Pitch muda de "vender LP" pra **"ligar motor de aquisição"**.
+
+### 8 princípios novos cravados (memory feedback)
+
+1. **Mobile-first é lei Impulso** — Whoop+Allurium paradigma · viewport 375px first
+2. **Referências BR-first em design system** — 3 BR + 2 universais mínimo · Reserva/Nubank/Westwing > Apple/Stripe
+3. **Deep research do nicho = diferencial Impulso** — LP entregue com conhecimento técnico real do nicho · cliente sente "esse sistema entende meu mundo"
+4. **Vender pra DOR real, não pro produto** — cliente NÃO compra o que você entrega, compra a dor que resolve
+5. **RadarPRO arma proprietária Impulso** — opera nos bastidores, alimenta cliente · cliente NÃO compra o RadarPRO
+6. **Cliente entregue = ICP categoria validado** — entrega valida nicho · RadarPRO prospecta categoria
+7. **Não inventar termos contratuais sem mandato** — carta branca = decisão técnica · NÃO = cláusulas/SLA
+8. **Idioma denso pra auto-memory Verbo** — glyphs (⚡→⊕Λ), arquivos compartilhados PT-BR pleno
+
+### Aura é case-flagship Impulso 2026
+
+Sistema de registro contínuo cravado:
+- `STATUS-AURA-ENERGY.md` (visão geral)
+- `DIAGNOSTICO-BRASFRIO-SOLAR.md` (competitivo)
+- `CASE-AURA-LOG.md` (diário operacional — em construção)
+- `METRICAS-AURA.md` (KPIs semanais — em construção)
+- `PLANO-NEGOCIO-MARKETING-AURA.md` (estratégia — template em construção)
+
+### Próximas ações (dia seguinte)
+
+- [ ] Eduardo configura `RESEND_API_KEY` na Vercel `auraenergy` (1 min)
+- [ ] Eduardo manda briefing pro Renato no WhatsApp
+- [ ] Eduardo lança CIC com prompt pra criar form Tally de qualificação de lead
+- [ ] Renato preenche briefing em 30 min
+- [ ] Plano de negócio Aura completo entregue em 1-2 dias
 
 ---
 
@@ -936,6 +1091,7 @@ Ler o MEGA-CLAUDE.md (geral) + o daily mais recente (estado real atual). O resto
 **Versão 2.2:** 26 de Abril de 2026 — RadarPRO virou plataforma operacional + 12 batches CIC + 17 concorrentes
 **Versão 2.3:** 27 de Abril de 2026 — refactor copy CORE_SYSTEM_V2 + pricing AgendaPRO ajustado
 **Versão 2.4:** 1 de Maio de 2026 — AgendaPRO 8 dimensões em 37 commits + V34/V35/V36 migrations + novo cliente Aura Energy em pipeline + 5 princípios LP cravados
-**Próxima atualização:** Quando Aura Energy fechar / ou primeiro cliente AgendaPRO pagar / ou ao final do follow-up D+7
+**Versão 2.5:** 2 de Maio de 2026 (madrugada) — Aura v6 + briefing privado /briefing + diagnóstico CIC Brasfrio + estrutura 3 frentes (LP / Insta-tráfego / RadarPRO comissão) + 8 princípios novos + ICP validado · Aura case-flagship Impulso 2026
+**Próxima atualização:** Quando Renato responder briefing / ou Tally form qualificação rodar / ou Aura fechar Frente 2
 
-**🔥 Tamo junto. AgendaPRO operacionalmente completo, Aura Energy em pipeline morno-quente, 1 milhão na mira.**
+**🔥 Tamo junto. Aura case-flagship rodando. AgendaPRO operacionalmente completo. RadarPRO virando arma. 1 milhão na mira.**
