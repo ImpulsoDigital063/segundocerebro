@@ -15,14 +15,38 @@
 - **Status:** **PRIMEIRO CLIENTE FORMAL DA IMPULSO DIGITAL**
 - **O que vendeu:** plano de negócio de 20 páginas + análise jurídica Programa Palmas Solar + estratégia 90 dias + bônus info-produto + painel-renato apresentado ao vivo
 
-**Próximos passos imediatos pós-fechamento:**
-1. ✅ STATUS atualizado (este doc)
-2. ⏳ Produzir 6 visuais Instagram (Canva 3-5h)
-3. ⏳ Entregar PDF da Direção info-produto B2B
-4. ⏳ Calibragem da LP com fotos e dados reais (1 mês incluso)
-5. ⏳ Setup Insta @auraenergy + Google Meu Negócio + WhatsApp Business
-6. ⏳ Configurar Pixel Meta + GA4 + Google Search Console
-7. ⏳ Compra do domínio auraenergy.com.br
+---
+
+## 🎯 PLANO DE EXECUÇÃO — SEMANA 1 (06-13/05/2026)
+
+**Hora de separar os homens dos meninos.** Tudo que prometemos no setup R$ 1.497, entregue até 13/05.
+
+### ⚡ ATACAR HOJE (06/05) — não depende do Renato
+- [ ] **Cadastrar Google Search Console** + sitemap.xml das 5 LPs (Verbo, 30min)
+- [ ] **Pauta de 12-20 stories** pra acompanhar as 6 artes (Verbo, 1h)
+- [ ] **Cartão de visita digital + QR Code** pra LP mãe (Eduardo Canva, 1-2h)
+- [ ] **Comprar domínio** `auraenergy.com.br` no Registro.br (Eduardo, 15min)
+- [ ] **Exportar PDF da Direção info-produto** (Ctrl+P em `/direcao-curso`, 5min)
+
+### 📞 AMANHÃ (07/05) — cobrar Renato
+- [ ] WhatsApp pedindo: anos Brasfrio + CREA-TO + ART pública + n° real instalações últimos 12m + maior projeto (kWp+cliente+cidade) + fotos (equipe + Renato + 2-3 instalações) + lista 3-5 clientes pra autorização LGPD
+
+### 🛠 QUI-SEX (08-09/05) — depende dos dados do Renato
+- [ ] **Calibragem da LP** com fotos e dados reais (Eduardo + Verbo, 2-3h)
+- [ ] **6 artes Instagram em produção** no Canva (Eduardo, 3-5h)
+
+### 🚀 SAB-DOM (10-11/05) — finalização
+- [ ] **6 artes finalizadas** prontas pra postar
+- [ ] **Insta @auraenergy criado** (perfil + bio + capa + destaques)
+
+### ✅ SEG-TER (12-13/05) — entrega completa
+- [ ] **WhatsApp Business** da Aura configurado
+- [ ] **Google Meu Negócio** com ficha completa
+- [ ] **Pixel Meta + GA4** instalados nas LPs
+- [ ] **Domínio `auraenergy.com.br`** apontado pra Vercel
+- [ ] ✅ **SETUP R$ 1.497 100% ENTREGUE**
+
+---
 
 ---
 
