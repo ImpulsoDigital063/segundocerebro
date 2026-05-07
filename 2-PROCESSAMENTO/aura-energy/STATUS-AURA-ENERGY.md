@@ -1,9 +1,28 @@
 # STATUS-AURA-ENERGY
 
-**Última atualização:** 2026-05-06 (madrugada · Verbo s05 → reunião dia 06/05)
-**Status do lead:** 🔥 **HOT — reunião marcada 06/05 pra fechar Frente 1 R$ 1.200**
+**Última atualização:** 2026-05-06 (pós-reunião · 1ª venda fechada)
+**Status do lead:** 🟢 **CLIENTE FECHADO — Frente 1 vendida em R$ 1.497**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato
-**Case status:** 🌟 **case-flagship Impulso 2026**
+**Case status:** 🌟 **case-flagship Impulso 2026 · 1ª venda formal da operação**
+
+---
+
+## 🏆 VITÓRIA CRAVADA — 06/05/2026
+
+- **Cliente:** Renato Edson · Aura Energy · Palmas-TO
+- **Valor fechado:** R$ 1.497 (preço subiu de R$ 1.200 pra R$ 1.497 minutos antes da reunião — fechou sem piscar)
+- **Modalidade:** Setup completo Aura (Frente 1)
+- **Status:** **PRIMEIRO CLIENTE FORMAL DA IMPULSO DIGITAL**
+- **O que vendeu:** plano de negócio de 20 páginas + análise jurídica Programa Palmas Solar + estratégia 90 dias + bônus info-produto + painel-renato apresentado ao vivo
+
+**Próximos passos imediatos pós-fechamento:**
+1. ✅ STATUS atualizado (este doc)
+2. ⏳ Produzir 6 visuais Instagram (Canva 3-5h)
+3. ⏳ Entregar PDF da Direção info-produto B2B
+4. ⏳ Calibragem da LP com fotos e dados reais (1 mês incluso)
+5. ⏳ Setup Insta @auraenergy + Google Meu Negócio + WhatsApp Business
+6. ⏳ Configurar Pixel Meta + GA4 + Google Search Console
+7. ⏳ Compra do domínio auraenergy.com.br
 
 ---
 
