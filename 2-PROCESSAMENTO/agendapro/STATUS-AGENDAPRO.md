@@ -1,9 +1,25 @@
 # STATUS-AGENDAPRO.md
 
 **Produto:** AgendaPRO — SaaS de agendamento + gestão financeira + fidelização + reativação
-**Fase:** **Operacionalmente completo** · pré-lançamento (último bloqueio: migrar MP CPF→CNPJ)
-**Data:** 01/05/2026 (sexta · noite)
+**Fase:** ✅ **PRONTO PRA VENDER** · MP migrado pra PJ Impulso Digital em 07/05/2026
+**Data:** 07/05/2026 (atualizado)
 **Responsável:** Eduardo Barros
+
+---
+
+## ✅ MIGRAÇÃO MP PF → PJ CONCLUÍDA (07/05/2026)
+
+- **Conta MP PJ:** Agenda-PRO (User ID 3202117739 · App 668403200532189)
+- **Integração:** Assinaturas (preapproval)
+- **Env vars Vercel (production):**
+  - `MP_ACCESS_TOKEN` — credencial PJ
+  - `NEXT_PUBLIC_MP_PUBLIC_KEY` — credencial PJ
+  - `MP_WEBHOOK_SECRET` — HMAC ativo (gap de segurança que existia antes, agora cravado)
+- **Webhook URL:** `https://www.agendapro.net.br/api/webhooks/mercadopago` (com www — sem causa redirect 307)
+- **Eventos:** Pagamentos + Planos e assinaturas
+- **Validação:** notificação teste do MP retornou **200 OK**
+
+Próxima venda já cai na PJ.
 
 > **📋 LEIA PRIMEIRO AO RETOMAR:** [`agendapro/DIARIO-2026-05-01.md`](C:/Users/DELL/agendapro/DIARIO-2026-05-01.md) no repo do AgendaPRO — daily com **37 commits** organizados em 7 áreas temáticas que consolidaram o produto em 8 dimensões. Esse foi o dia épico.
 
