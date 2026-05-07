@@ -7,6 +7,26 @@
 
 ---
 
+## 🟢 INTEGRAÇÃO ASAAS PRONTA — aguarda 6 cliques pra ativar (07/05 madrugada)
+
+**Por que:** MP travou checkout cartão real (cruza email cliente x conta MP do dono do cartão). Esposa pagar pelo marido = bloqueado. PJ pagar pessoal = bloqueado. Eduardo viveu na pele com Erlane.
+
+**Solução:** integração Asaas em paralelo com feature flag. Cobra 5x menos taxa (1,99% vs 9,99%) + sem fricção de email/CPF.
+
+**Status do código:**
+- ✅ `supabase-migration-v40-asaas-integration.sql` — campos `asaas_*` + `provider`
+- ✅ `src/lib/asaas.ts` — wrapper completo (customers, subscriptions, payments, refunds)
+- ✅ `/api/billing/checkout-asaas` — cria customer + sub/payment
+- ✅ `/api/billing/cancel-asaas` — cancel + refund 7d (CDC art. 49)
+- ✅ `/api/webhooks/asaas` — validação `asaas-access-token` + handlers
+- ✅ Feature flag `NEXT_PUBLIC_BILLING_PROVIDER` (default `mercado_pago`)
+- ✅ Build passou + commit `599915a` em master
+- ⏳ MP atual NÃO TOCADO — produção segue idêntica até ativar
+
+**Próximo passo:** abrir `agendapro/ASAAS-INTEGRATION-README.md` e seguir os 6 passos (~10min total). Documentação detalhada com comandos prontos.
+
+---
+
 ## ✅ MIGRAÇÃO MP PF → PJ CONCLUÍDA (07/05/2026)
 
 - **Conta MP PJ:** Agenda-PRO (User ID 3202117739 · App 668403200532189)
