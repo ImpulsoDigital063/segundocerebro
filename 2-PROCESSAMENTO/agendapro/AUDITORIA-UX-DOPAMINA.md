@@ -277,3 +277,7 @@ Material pra LP/anúncio do AgendaPRO quando tiver os P1 implementados:
 4. Rodar captura de volta (`node scripts/capture-agendapro.js --only=cliente`) pra validar visualmente
 
 **Bordão operacional aplicado:** funil é continuidade. Cada tela precisa cumprir, ali mesmo, o que a promessa da LP diz ("cliente vira fã, não só agendamento"). Dopamina não é decoração — é o mecanismo que fecha o loop.
+
+---
+
+**Ver também:** [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

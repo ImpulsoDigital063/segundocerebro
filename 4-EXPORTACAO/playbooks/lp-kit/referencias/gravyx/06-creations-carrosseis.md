@@ -100,3 +100,7 @@ Gerar ~15 mockups variando nicho (nutrição, moda, estética, infoproduto, deli
 **Portar direto.** É a seção de maior impacto visual do Gravyx e serve 100% pra LP de serviço também. Único custo: gerar 10-15 mockups no Claude Design se o portfolio real não bastar.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

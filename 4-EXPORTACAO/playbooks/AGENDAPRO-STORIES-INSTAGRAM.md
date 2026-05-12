@@ -248,3 +248,7 @@ Pedir ChatGPT pra renderizar mockup minimalista de iPhone com tela específica d
 - **MEGA-CLAUDE.md** (`4-EXPORTACAO/mega-claude/`) — contexto do Eduardo, tom de voz.
 - **DIARIO-2026-05-01.md** (no projeto AgendaPRO) — sessão de origem desse prompt.
 - **agendapro-brandkit/png/agendapro-color-480.png** — logo oficial pra anexar no ChatGPT.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-AGENDAPRO]] · [[AGENDAPRO-DIFERENCIAIS-VENDAS]]

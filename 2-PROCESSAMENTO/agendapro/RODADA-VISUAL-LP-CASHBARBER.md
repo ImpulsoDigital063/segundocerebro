@@ -193,3 +193,7 @@ Iluminação azul `#3B82F6` + ciano `#06B6D4` (nossas cores) — não royal `#2B
 ---
 
 **Quando voltar nesse arquivo:** ler do topo até "Decisões consolidadas pendentes", responder as 11 perguntas, aí o Claude da próxima sessão tem tudo pra avançar sem perder 1h reconstruindo contexto.
+
+---
+
+**Ver também:** [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

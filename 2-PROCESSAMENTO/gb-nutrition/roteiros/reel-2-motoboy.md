@@ -129,3 +129,7 @@ Fundo borrado de movimento.
 - [ ] Confirmar se sábado funciona o motoboy também
 - [ ] Conseguir motoboy com uniforme / sacola com logo GB
 - [ ] Definir se grava entrega real em cliente (autorização) ou simulada
+
+---
+
+**Ver também:** [[PDF-1-GB-NUTRITION-LANCAMENTO-30D]] · [[plano-lancamento-7dias]] · [[MEGA-CLAUDE]]

@@ -370,3 +370,7 @@ Atravessar essa linha = publicidade enganosa (CDC + CONAR). Ver `cases-aprendiza
 | `lib/mensagens.ts` | Pitches <80 palavras, 4 bônus, 3 ancoragens, Risk-Mitigation Close + Follow-up tem-site | ✅ |
 | `lib/disparo-analises.ts` | Aberturas + follow-ups D+3/D+7 + nota_interna separada | ✅ |
 | `app/disparo/page.tsx` | Banner refinado + Razão ranking como nota interna (cor amarela) + bloco Nota interna específico | ✅ |
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[vacina-lead-quente]]

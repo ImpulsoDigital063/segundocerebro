@@ -113,3 +113,7 @@ Fonte grande, fundo do estoque desfocado atrás.
 - [ ] Confirmar "há X anos" de personal (dado do Gabriel)
 - [ ] Confirmar se o estoque da loja já está organizado pra servir de cenário
 - [ ] Definir a frase exata de menção à Impulso (com Eduardo)
+
+---
+
+**Ver também:** [[PDF-1-GB-NUTRITION-LANCAMENTO-30D]] · [[plano-lancamento-7dias]] · [[MEGA-CLAUDE]]

@@ -337,3 +337,7 @@ Cinco LPs entregues — usar como prova social conforme nicho do lead:
 - `app/disparo/page.tsx` → não muda (UI fica)
 
 **Manter este manual atualizado:** sempre que aprender em campo que uma categoria fechou ou não fechou, atualizar tabelas FIT/NÃO FIT acima. Realidade > teoria.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]] · [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]]

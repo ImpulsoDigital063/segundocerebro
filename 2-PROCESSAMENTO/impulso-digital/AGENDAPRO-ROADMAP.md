@@ -130,3 +130,7 @@ O foco agora é completar o roadmap Fase 2 antes de qualquer prospecção.
 | Churn mensal | < 20% | < 15% | < 10% |
 | NPS (satisfação) | > 7 | > 8 | > 8.5 |
 | Trial → pago | — | > 30% | > 40% |
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

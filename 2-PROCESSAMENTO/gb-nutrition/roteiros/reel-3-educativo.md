@@ -120,3 +120,7 @@ Gabriel segurando 3 potes (whey, creatina, pré-treino), texto na tela:
 
 - [ ] Gabriel confirma os **3 combos/perfis** que fazem sentido (podem ser os combos que ele vai montar hoje)
 - [ ] Se Gabriel preferir formato diferente (ex: "top 3 erros" em vez de "top 3 perfis"), adaptar o roteiro mantendo a estrutura
+
+---
+
+**Ver também:** [[PDF-1-GB-NUTRITION-LANCAMENTO-30D]] · [[plano-lancamento-7dias]] · [[MEGA-CLAUDE]]

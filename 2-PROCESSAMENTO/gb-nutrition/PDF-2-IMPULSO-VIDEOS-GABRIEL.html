@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Impulso Digital · 2 Vídeos com Gabriel · Roteiros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:        #1FA85C;
+    --green-dk:     #0E5A38;
+    --green-soft:   #E6F4EC;
+    --blue:         #1FA8E0;
+    --blue-dk:      #0D6B95;
+    --blue-soft:    #E0F4FB;
+    --gold:         #E0A82E;
+    --gold-dk:      #A87A1F;
+    --gold-soft:    #FAF1DA;
+    --ink:          #2C2C2E;
+    --ink-2:        #3A3A3C;
+    --mute:         #6E6E73;
+    --mute-2:       #8E8E93;
+    --line:         #D5DCE0;
+    --line-soft:    #E5E9EC;
+    --paper:        #F6F8F7;
+    --paper-2:      #FBFCFB;
+    --white:        #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 14px;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px 52px 16px;
+    background: var(--white);
+    position: relative;
+  }
+  .page.new-part {
+    page-break-before: always;
+    padding-top: 36px;
+  }
+  .cena, .criativo-header, .card, .info-bloco { page-break-inside: avoid; }
+  .criativo-header { page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
+
+  /* CAPA */
+  .cover {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 60px 40px;
+    page-break-after: always;
+    background: var(--white);
+    position: relative;
+  }
+  .cover .brand-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--green) 33%, var(--blue) 33%, var(--blue) 66%, var(--gold) 66%, var(--gold) 100%);
+    margin-bottom: 60px;
+  }
+  .cover .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .cover .logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    color: var(--green-dk);
+  }
+  .cover .logo .super {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--mute);
+    margin-left: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .cover .tag-impulso {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+  .cover .tag-impulso::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--green);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .cover .pre-headline {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1.5px solid var(--green);
+    color: var(--green-dk);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-size: 84px;
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .cover h1 .accent { color: var(--green); }
+  .cover .sub {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--mute);
+    margin-bottom: 60px;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+  .cover .quote-block {
+    border-left: 4px solid var(--green);
+    padding-left: 22px;
+    margin: 50px 0 60px;
+    max-width: 560px;
+  }
+  .cover .quote-block .q {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .cover .quote-block .a {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.16em;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+  .cover .toc {
+    margin: 50px 0 30px;
+  }
+  .cover .toc-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--mute);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .cover .toc-list {
+    list-style: none;
+    counter-reset: toc;
+  }
+  .cover .toc-list li {
+    counter-increment: toc;
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .cover .toc-list li::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--green);
+    font-weight: 800;
+    min-width: 28px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .cover .toc-list li strong { font-weight: 700; }
+  .cover .toc-list li .desc {
+    color: var(--mute);
+    font-weight: 400;
+    margin-left: 6px;
+    font-size: 13.5px;
+  }
+  .cover .cover-footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .cover .cover-footer .accent { color: var(--green-dk); font-weight: 700; }
+  .cover .cover-footer .gb-tag {
+    font-style: italic;
+    color: var(--green-dk);
+    font-weight: 600;
+  }
+
+  /* HEADINGS */
+  .pre-title {
+    display: inline-block;
+    padding: 4px 11px;
+    border: 1.5px solid var(--green);
+    color: var(--green-dk);
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  h1.section {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  h1.section .num { color: var(--green); margin-right: 10px; }
+  .section-sub {
+    color: var(--mute);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-top: 30px;
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--green);
+  }
+  h3 {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--green-dk);
+    margin-top: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 12px; color: var(--ink-2); font-size: 14px; }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .card.blue { border-left-color: var(--blue); }
+  .card.gold { border-left-color: var(--gold); }
+  .card h4 {
+    color: var(--green-dk);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .card.blue h4 { color: var(--blue-dk); }
+  .card.gold h4 { color: var(--gold-dk); }
+
+  /* TABELA */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead { border-bottom: 2px solid var(--green); }
+  th {
+    text-align: left;
+    padding: 11px 14px;
+    font-weight: 800;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--green-dk);
+    background: var(--white);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+    color: var(--ink-2);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--paper-2); }
+
+  /* CRIATIVO HEADER (cabeçalho de cada vídeo) */
+  .criativo-header {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 12px solid var(--green);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+  }
+  .criativo-header.blue { border-left-color: var(--blue); }
+  .criativo-header .tag {
+    display: inline-block;
+    color: var(--green-dk);
+    border: 1.5px solid var(--green);
+    padding: 4px 11px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .criativo-header.blue .tag { color: var(--blue-dk); border-color: var(--blue); }
+  .criativo-header h2 {
+    color: var(--ink);
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    padding-bottom: 0;
+  }
+  .criativo-header h2::after { display: none; }
+  .criativo-meta {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--mute);
+  }
+  .criativo-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .criativo-meta strong { color: var(--green-dk); font-weight: 700; }
+  .criativo-header.blue .criativo-meta strong { color: var(--blue-dk); }
+
+  /* DIREÇÃO GRID */
+  .direcao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0 20px;
+  }
+  .direcao-grid .item {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+  }
+  .direcao-grid .item.blue { border-left-color: var(--blue); }
+  .direcao-grid .item strong {
+    color: var(--green-dk);
+    font-weight: 800;
+    display: block;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .direcao-grid .item.blue strong { color: var(--blue-dk); }
+  .direcao-grid .item span { color: var(--ink-2); }
+
+  /* CENAS · ROTEIRO */
+  .roteiro { margin: 14px 0; }
+  .cena {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .cena.blue { border-left-color: var(--blue); }
+  .cena-tempo {
+    background: var(--paper);
+    color: var(--green-dk);
+    padding: 10px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.12em;
+    height: fit-content;
+    line-height: 1.5;
+    border: 1px solid var(--line-soft);
+  }
+  .cena.blue .cena-tempo { color: var(--blue-dk); }
+  .cena-tempo .time-num {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 900;
+  }
+  .cena-corpo .cena-titulo {
+    font-weight: 700;
+    color: var(--mute);
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cena-fala {
+    background: var(--paper-2);
+    border-left: 3px solid var(--green);
+    padding: 12px 14px;
+    border-radius: 4px;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0;
+    font-weight: 500;
+  }
+  .cena.blue .cena-fala { border-left-color: var(--blue); }
+  .cena-fala em {
+    color: var(--green);
+    font-weight: 800;
+    font-style: normal;
+  }
+  .cena.blue .cena-fala em { color: var(--blue); }
+  .cena-tela {
+    background: var(--paper);
+    border: 1px dashed var(--blue);
+    color: var(--blue-dk);
+    padding: 9px 14px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    margin: 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .cena-nota {
+    font-size: 11.5px;
+    color: var(--mute);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dotted var(--line);
+    font-style: italic;
+  }
+  .cena-nota strong {
+    color: var(--green-dk);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+  .cena.blue .cena-nota strong { color: var(--blue-dk); }
+
+  /* INFO BLOCO */
+  .info-bloco {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+  .info-bloco.blue { border-left-color: var(--blue); }
+  .info-bloco.gold { border-left-color: var(--gold); }
+  .info-bloco strong.label {
+    color: var(--green-dk);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 800;
+  }
+  .info-bloco.blue strong.label { color: var(--blue-dk); }
+  .info-bloco.gold strong.label { color: var(--gold-dk); }
+
+  /* HELPERS */
+  ul.tight { margin: 8px 0 14px 22px; }
+  ul.tight li {
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  ul.tight li::marker { color: var(--green); }
+  ul.tight li strong { color: var(--green-dk); font-weight: 700; }
+
+  hr.fancy {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--blue) 50%, var(--gold) 100%);
+    margin: 28px 0;
+  }
+
+  .closing {
+    text-align: center;
+    padding: 40px 0 20px;
+  }
+  .closing .q {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    font-style: italic;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+  }
+  .closing .q .accent { color: var(--green); }
+  .closing .meta {
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* PRINT · rodapé rotativo · frases de vendedores famosos */
+  @page {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "Impulso Digital · @impulso.digital063";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Vende sozinho · 24 horas · zero refém.\"";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  .page.p1 { page: briefing; }
+  @page briefing {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "Impulso Digital · @impulso.digital063";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Vender é transferir entusiasmo.\" — Zig Ziglar";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  .page.p2 { page: video1; }
+  @page video1 {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "Impulso Digital · @impulso.digital063";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"As pessoas não compram o que voce faz · compram POR QUE voce faz.\" — Simon Sinek";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  .page.p3 { page: video2; }
+  @page video2 {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "Impulso Digital · @impulso.digital063";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Nao venda · faça as pessoas quererem comprar.\" — Alex Hormozi";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  .page.p4 { page: operacao; }
+  @page operacao {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "Impulso Digital · @impulso.digital063";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Documente · nao crie.\" — Gary Vaynerchuk";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ CAPA ═══════════ -->
+<section class="cover">
+  <div class="brand-bar"></div>
+
+  <div class="topbar">
+    <div class="logo">Impulso Digital<span class="super">CONTEÚDO</span></div>
+    <div class="tag-impulso">2 vídeos · Gabriel Barros</div>
+  </div>
+
+  <div class="pre-headline">Roteiro de gravação · 12/05/2026</div>
+
+  <h1>Você tem produto.<br>Só falta <span class="accent">sistema.</span></h1>
+
+  <p class="sub">2 vídeos com Gabriel Barros (GB Nutrition) usados pra atrair revendedores e lojistas que vendem pelo WhatsApp e ainda não escalaram pro digital.</p>
+
+  <div class="quote-block">
+    <div class="q">"Você tem produto · você tem cliente. Só falta SISTEMA que vende sozinho."</div>
+    <span class="a">Frase âncora · Impulso Digital</span>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">O que tem aqui dentro</div>
+    <ol class="toc-list">
+      <li><strong>Briefing</strong> <span class="desc">· pra quem · onde roda · objetivo de cada vídeo</span></li>
+      <li><strong>Vídeo 1 · UGC universal</strong> <span class="desc">· hook largo pra topo de funil</span></li>
+      <li><strong>Vídeo 2 · Case Gabriel</strong> <span class="desc">· prova viva pra meio de funil</span></li>
+      <li><strong>Operação + uso</strong> <span class="desc">· como gravar · onde postar · como medir</span></li>
+    </ol>
+  </div>
+
+  <div class="cover-footer">
+    <div><span class="accent">Impulso Digital</span> · @impulso.digital063</div>
+    <div class="gb-tag">Ator-cliente · Gabriel Barros · GB Nutrition</div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARTE 01 · BRIEFING ═══════════ -->
+<section class="page new-part p1">
+  <span class="pre-title">Parte 01 · Briefing</span>
+  <h1 class="section"><span class="num">01</span>Por que esses 2 vídeos</h1>
+  <p class="section-sub">Direção curta antes do roteiro · alvo · função no funil · onde rodam.</p>
+
+  <h2>O que estamos fazendo</h2>
+  <p>2 reels da <strong>Impulso Digital</strong> usando o Gabriel como ator-cliente. Ele já é cliente real (GB Nutrition · loja online lançando agora). A entrega dele vira <strong>prova viva</strong> de que a Impulso transforma negócio físico em loja online de verdade.</p>
+
+  <h2>Pra quem falamos</h2>
+
+  <div class="card">
+    <h4>ICP · loja online Shopify</h4>
+    <p style="margin-bottom: 8px;">Quem <strong>já vende produto físico</strong> · tem estoque · tem cliente comprando · só precisa de sistema que escala:</p>
+    <ul class="tight">
+      <li>Revendedor de roupa · tênis · perfume · cosmético · suplemento</li>
+      <li>Lojista físico que quer abrir digital</li>
+      <li>Importador que revende em escala</li>
+      <li>Fabricante artesanal · doceira · confeitaria em escala</li>
+      <li>Boutique · loja de presente · utilidades · acessórios</li>
+    </ul>
+  </div>
+
+  <div class="card gold">
+    <h4>Quem NÃO é alvo deste vídeo</h4>
+    <p>Quem vende <strong>serviço</strong> (esteticista · manicure · advogada · personal · nutri · psi · dentista). Esses são alvo do <strong>AgendaPRO</strong>, não da loja online.</p>
+  </div>
+
+  <h2>Objetivo de cada vídeo</h2>
+  <table>
+    <thead>
+      <tr><th>Vídeo</th><th>Função no funil</th><th>O que faz</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>V1 · UGC universal</strong></td>
+        <td>Topo de funil</td>
+        <td>Atrai qualquer revendedor cansado do WhatsApp. Hook largo.</td>
+      </tr>
+      <tr>
+        <td><strong>V2 · Case Gabriel</strong></td>
+        <td>Meio de funil</td>
+        <td>Prova viva. Mostra estoque real. Convence quem já tá interessado.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Onde rodam</h2>
+  <ul class="tight">
+    <li><strong>Reels @impulso.digital063</strong> · canal principal</li>
+    <li><strong>Stories @gabribarros10</strong> · validação social via cliente</li>
+    <li><strong>Meta Ads</strong> · impulsionar o que tiver maior salvamento orgânico</li>
+  </ul>
+</section>
+
+
+<!-- ═══════════ PARTE 02 · VÍDEO 1 ═══════════ -->
+<section class="page new-part p2">
+  <span class="pre-title">Parte 02 · Vídeo 1</span>
+  <h1 class="section"><span class="num">02</span>UGC universal</h1>
+  <p class="section-sub">Hook largo · todos os nichos que vendem produto pelo celular.</p>
+
+  <div class="criativo-header">
+    <div class="tag">REEL · 35-45 SEGUNDOS</div>
+    <h2>"Você ainda vende um por um?"</h2>
+    <div class="criativo-meta">
+      <span><strong>FORMATO</strong> selfie · vertical 9:16</span>
+      <span><strong>SETTING</strong> qualquer · luz natural</span>
+      <span><strong>ENERGIA</strong> papo de irmão dando dica</span>
+    </div>
+  </div>
+
+  <div class="direcao-grid">
+    <div class="item"><strong>Câmera</strong><span>Celular · braço estendido · selfie</span></div>
+    <div class="item"><strong>Tomadas</strong><span>6 cenas curtas · corte seco</span></div>
+    <div class="item"><strong>Áudio</strong><span>Direto do celular · ambiente silencioso</span></div>
+    <div class="item"><strong>Trilha</strong><span>Lo-fi baixíssima (ou nenhuma)</span></div>
+  </div>
+
+  <h3>Roteiro cena a cena</h3>
+
+  <div class="roteiro">
+    <div class="cena">
+      <div class="cena-tempo">CENA 01<span class="time-num">0-4s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Hook · olho na câmera</div>
+        <div class="cena-fala">"Se você vende <em>qualquer produto</em> pelo Insta · pelo direct · pelo WhatsApp · presta atenção 1 minuto."</div>
+        <div class="cena-nota"><strong>Direção</strong>tom firme · sem sorriso forçado · como quem vai contar uma parada importante.</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 02<span class="time-num">4-11s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Inclusão · listar todos os nichos</div>
+        <div class="cena-fala">"Roupa · tênis · perfume · suplemento · cosmético · doce · acessório · <em>qualquer coisa</em>. Se você tem estoque e tem cliente · você tá no mesmo barco que eu tava."</div>
+        <div class="cena-nota"><strong>Direção</strong>listar com ritmo · um nicho a cada batida. "Mesmo barco que eu tava" cria identificação.</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 03<span class="time-num">11-21s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Dor · imitando o cliente</div>
+        <div class="cena-fala">"Cliente manda <em>'tem essa cor?'</em> · <em>'qual o preço?'</em> · <em>'aceita PIX?'</em> · <em>'tem frete pra cá?'</em>. Você responde tudo · 50 vezes por dia · de manhã · de noite · domingo. E ainda <em>perde venda</em> porque demorou 10 minutos a mais que o concorrente."</div>
+        <div class="cena-nota"><strong>Direção</strong>se Gabriel tiver traquejo · imita as perguntas com voz de cliente (mais leve). Se não · LÊ com tom de quem repete a milésima vez · cansado da rotina. As duas opções funcionam. "Perde venda" entra firme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="page p2">
+  <span class="pre-title">Vídeo 1 · continuação</span>
+  <h1 class="section"><span class="num">02</span>Cenas 4 · 5 · 6</h1>
+
+  <div class="roteiro">
+    <div class="cena">
+      <div class="cena-tempo">CENA 04<span class="time-num">21-26s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Virada · nomear o problema</div>
+        <div class="cena-fala">"Cara · isso não é vender · é ser <em>refém</em>. Você não precisa disso. Existe sistema que faz tudo no automático."</div>
+        <div class="cena-nota"><strong>Direção</strong>palavra "refém" carrega o vídeo. Pausa de meio segundo antes de "Existe sistema".</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 05<span class="time-num">26-36s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Revelação · mostrando solução</div>
+        <div class="cena-tela">B-roll · gravar tela do celular em 2 momentos · home da loja GB com banner topo + 3 produtos visíveis · scroll lento · ~4s</div>
+        <div class="cena-fala">"A Impulso me fez uma <em>loja online de verdade</em>. Cliente entra · vê produto · vê preço · escolhe · paga PIX · recebe em casa. Eu não respondo mais 'tem isso?' nem 'quanto é?'. Eu <em>vendo dormindo</em>."</div>
+        <div class="cena-nota"><strong>Direção</strong>"vendo dormindo" é o gancho final. Mostrar a tela da loja rolando enquanto fala · home com banner + produtos. Pode pré-gravar o B-roll e cortar em cima da fala depois.</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 06<span class="time-num">36-45s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Diferenciação + CTA</div>
+        <div class="cena-fala">"Não é Instagram pago · não é link na bio · é uma <em>loja sua</em> · funcionando 24 horas · com PIX automático. Quer parar de ser refém? Chama a <em>@impulso.digital063</em> · fala que veio do meu vídeo."</div>
+        <div class="cena-nota"><strong>Direção</strong>texto sobreposto reforça @impulso.digital063 nos últimos 3s.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-bloco gold">
+    <strong class="label">Texto sobreposto na edição</strong>
+    <ul class="tight" style="margin-bottom: 0;">
+      <li><strong>Cena 1:</strong> "Você ainda vende um por um?"</li>
+      <li><strong>Cena 3:</strong> "Refém do WhatsApp."</li>
+      <li><strong>Cena 5:</strong> "Loja online de verdade."</li>
+      <li><strong>Cena 6:</strong> "@impulso.digital063"</li>
+    </ul>
+  </div>
+
+  <div class="info-bloco">
+    <strong class="label">Legenda do reel (copiar/colar)</strong>
+    <p style="font-style: italic; margin-bottom: 0;">"Você ainda responde 'tem essa cor?' 50 vezes por dia? Existe sistema que faz isso por você. A gente constrói lojas online de verdade · não link na bio · não catálogo no WhatsApp · LOJA. Chama no direct. 🚀<br><br>#lojaonline #empreendedorismo #palmas #revenda"</p>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARTE 03 · VÍDEO 2 ═══════════ -->
+<section class="page new-part p3">
+  <span class="pre-title">Parte 03 · Vídeo 2</span>
+  <h1 class="section"><span class="num">03</span>Case Gabriel</h1>
+  <p class="section-sub">Prova viva · prateleira em foco · "vendia só pros alunos · hoje vende pra Palmas inteira".</p>
+
+  <div class="criativo-header blue">
+    <div class="tag">REEL · 40-50 SEGUNDOS</div>
+    <h2>"Eu vendia só pros meus alunos. Hoje vendo pra Palmas inteira."</h2>
+    <div class="criativo-meta">
+      <span><strong>FORMATO</strong> plano fixo · vertical 9:16</span>
+      <span><strong>SETTING</strong> em pé · prateleira ao fundo</span>
+      <span><strong>ENERGIA</strong> autoridade · contando a virada</span>
+    </div>
+  </div>
+
+  <div class="direcao-grid">
+    <div class="item blue"><strong>Câmera</strong><span>Tripé OU 2ª pessoa firme · enquadramento médio</span></div>
+    <div class="item blue"><strong>Tomadas</strong><span>5 cenas · 1 corte só pra mostrar celular</span></div>
+    <div class="item blue"><strong>Áudio</strong><span>Lapela se tiver · senão ambiente silencioso</span></div>
+    <div class="item blue"><strong>Cenário</strong><span>Prateleira NÍTIDA · organizada · iluminada</span></div>
+  </div>
+
+  <h3>Roteiro cena a cena</h3>
+
+  <div class="roteiro">
+    <div class="cena blue">
+      <div class="cena-tempo">CENA 01<span class="time-num">0-6s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Hook · status quo</div>
+        <div class="cena-fala">"Suplemento eu vendo há <em>2 anos</em>. Esse estoque aqui rodando há 2 anos. Mas só <em>aluno meu</em> comprava."</div>
+        <div class="cena-nota"><strong>Direção</strong>gesticular pra prateleira na palavra "estoque". "Só aluno meu comprava" tem que vir com peso · denúncia da limitação.</div>
+      </div>
+    </div>
+
+    <div class="cena blue">
+      <div class="cena-tempo">CENA 02<span class="time-num">6-16s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Universaliza · sai do suplemento</div>
+        <div class="cena-fala">"Quem não me conhecia · não me achava. Eu tava limitado <em>ao meu círculo</em>. Quem vende roupa? Vende pras amigas. Quem vende perfume? Pra família. Quem vende doce? Pro grupo do bairro. <em>Sempre limitado.</em>"</div>
+        <div class="cena-nota"><strong>Direção</strong>listar nichos mantém ritmo. "Sempre limitado" fecha · é a dor universal.</div>
+      </div>
+    </div>
+
+    <div class="cena blue">
+      <div class="cena-tempo">CENA 03<span class="time-num">16-28s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Revelação · mostra celular</div>
+        <div class="cena-tela">B-roll · sequência completa · home rolando ~3s → clique em produto (whey ou beef protein) ~2s → página de produto com botão PIX visível ~3s → checkout PIX gerando ~2s · 10s total</div>
+        <div class="cena-fala">"A Impulso me fez uma <em>loja online de verdade</em>. Não link na bio · não catálogo no WhatsApp · LOJA. Cara em Palmas que <em>nunca ouviu falar de mim</em> · pesquisa whey no Google · acha minha loja · compra · paga · motoboy sai daqui em 2 horas. Eu durmo. Loja vende por mim."</div>
+        <div class="cena-nota"><strong>Direção</strong>cena chave · prova viva do sistema funcionando. Pré-gravar a sequência de tela ANTES da gravação principal · 1 take só · depois corta em cima da fala do Gabriel.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="page p3">
+  <span class="pre-title">Vídeo 2 · continuação</span>
+  <h1 class="section"><span class="num">03</span>Cenas 4 · 5</h1>
+
+  <div class="roteiro">
+    <div class="cena blue">
+      <div class="cena-tempo">CENA 04<span class="time-num">28-38s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Provocação universal · número de impacto</div>
+        <div class="cena-fala">"Se você revende <em>qualquer coisa</em> · roupa · cosmético · tênis · perfume · suplemento · doce · você tá vendendo pra <em>10% do mercado</em> que te conhece. Os outros 90% nunca vão te achar enquanto você depender de DM."</div>
+        <div class="cena-nota"><strong>Direção</strong>"10% do mercado" é o número de impacto. Falar com ritmo · pausa antes de "90%".</div>
+      </div>
+    </div>
+
+    <div class="cena blue">
+      <div class="cena-tempo">CENA 05<span class="time-num">38-50s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Solução + CTA Palmas</div>
+        <div class="cena-fala">"Loja online <em>não dorme</em> · não fica doente · não tira fim de semana · não precisa responder 'tem isso?' às 11 da noite. E em Palmas · <em>motoboy mesmo dia</em>. Cliente vê 'entrega hoje' · compra na hora. A Impulso fez essa virada comigo. <em>@impulso.digital063</em> · chama eles."</div>
+        <div class="cena-nota"><strong>Direção</strong>acelera o ritmo nas vantagens. "Motoboy mesmo dia" é diferencial Palmas. Fecha com handle.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-bloco gold">
+    <strong class="label">Texto sobreposto na edição</strong>
+    <ul class="tight" style="margin-bottom: 0;">
+      <li><strong>Cena 1:</strong> "2 anos vendendo suplemento."</li>
+      <li><strong>Cena 2:</strong> "Sempre limitado ao círculo."</li>
+      <li><strong>Cena 3:</strong> "Loja online de verdade."</li>
+      <li><strong>Cena 4:</strong> "10% do mercado. Só isso?"</li>
+      <li><strong>Cena 5:</strong> "@impulso.digital063 · Palmas"</li>
+    </ul>
+  </div>
+
+  <div class="info-bloco blue">
+    <strong class="label">Legenda do reel (copiar/colar)</strong>
+    <p style="font-style: italic; margin-bottom: 0;">"Gabriel vendia suplemento há 2 anos · só pros alunos dele. Hoje a loja vende sozinha pra Palmas inteira. Motoboy mesmo dia. Cliente fechando às 23h. Isso é o que a Impulso faz. Quer fazer essa virada? DM aberto. 🚀<br><br>#lojaonline #shopify #palmas #revendedor #empreendedor"</p>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARTE 04 · OPERAÇÃO + USO ═══════════ -->
+<section class="page new-part p4">
+  <span class="pre-title">Parte 04 · Operação + uso</span>
+  <h1 class="section"><span class="num">04</span>Gravar · postar · medir</h1>
+  <p class="section-sub">Como encaixar os 2 vídeos no meio da sessão GB · onde publicar · o que medir.</p>
+
+  <h2>Encaixe na sessão (12/05 tarde)</h2>
+  <p>Os 2 vídeos entram <strong>no meio</strong> da gravação GB Nutrition. Gabriel já preparado · luz já montada · prateleira organizada. Tempo total: <strong>~30 minutos</strong>.</p>
+
+  <table>
+    <thead>
+      <tr><th>Momento</th><th>O que grava</th><th>Por quê</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Início</td><td>Conteúdo GB Nutrition (Plano 30d)</td><td>Gabriel com mais energia · cabeça no contexto dele</td></tr>
+      <tr><td>Pausa 1 · 15-20min</td><td><strong>Vídeo 2 · Case Gabriel</strong></td><td>Cenário já montado · Gabriel ainda no tom GB</td></tr>
+      <tr><td>Pausa 2 · 10min</td><td><strong>Vídeo 1 · UGC universal</strong></td><td>Selfie · sai do cenário · energia mais solta</td></tr>
+      <tr><td>Continua</td><td>Resto do conteúdo GB</td><td>Fluxo natural</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Equipamento mínimo</h2>
+  <ul class="tight">
+    <li><strong>Celular do Gabriel</strong> · vertical 1080x1920</li>
+    <li><strong>Tripé OU 2ª pessoa firme</strong> · plano fixo do Vídeo 2</li>
+    <li><strong>Luz natural</strong> (janela) ou softbox · evitar luz amarela do teto</li>
+    <li><strong>Microfone de lapela</strong> se tiver · senão grava em silêncio</li>
+    <li><strong>Celular com loja GB aberta</strong> · pronto pra cena 3 do Vídeo 2</li>
+  </ul>
+
+  <h2>Cronograma de publicação</h2>
+  <table>
+    <thead>
+      <tr><th>Quando</th><th>Onde</th><th>O quê</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>D+1</strong></td><td>Reels @impulso.digital063</td><td>Vídeo 1 (UGC universal) · primeiro a rodar</td></tr>
+      <tr><td><strong>D+1</strong></td><td>Stories @gabribarros10</td><td>Gabriel reposta com legenda própria</td></tr>
+      <tr><td><strong>D+3</strong></td><td>Reels @impulso.digital063</td><td>Vídeo 2 (Case Gabriel) · respeita 48-72h</td></tr>
+      <tr><td><strong>D+5</strong></td><td>Stories @impulso.digital063</td><td>Recortes 8s · CTA "DM pra orçamento"</td></tr>
+      <tr><td><strong>D+7</strong></td><td>Meta Ads · Palmas + 50km</td><td>Impulsiona o que tiver maior salvamento</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Métrica de sucesso (7 dias)</h2>
+  <div class="direcao-grid">
+    <div class="item"><strong>Vídeo 1 · UGC</strong><span>+5.000 views · +50 salvamentos · 3+ DMs perguntando "como funciona?"</span></div>
+    <div class="item blue"><strong>Vídeo 2 · Case</strong><span>+3.000 views · +15 compartilhamentos · 2+ leads qualificados</span></div>
+  </div>
+
+  <hr class="fancy">
+
+  <div class="closing">
+    <div class="q">"Você tem produto. Você tem cliente.<br>Só falta <span class="accent">sistema que vende sozinho.</span>"</div>
+    <div class="meta">Impulso Digital · 11/05/2026</div>
+  </div>
+</section>
+
+</body>
+</html>

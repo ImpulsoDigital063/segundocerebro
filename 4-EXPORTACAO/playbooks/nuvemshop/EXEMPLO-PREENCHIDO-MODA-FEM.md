@@ -117,3 +117,7 @@ WhatsApp: (63) 99292-0080
 - Trocar "vestido" por categoria principal real
 - Ajustar números do Bloco 3 baseado em volume real estimado
 - Adicionar 1 detalhe específico do IG dela ("vi teu post da coleção verão" ou "curti o ângulo das fotos")
+
+---
+
+**Ver também:** [[CAMPANHA-MIGRACAO-NUVEMSHOP-SHOPIFY]] · [[STATUS-IMPULSO]] · [[MEGA-CLAUDE]]

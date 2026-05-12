@@ -287,3 +287,7 @@ roadmap de tráfego quando for hora de executar.
 > *"Renato, isso aqui é o mapa que eu queria ter quando você me falou que sonhava com info-produto. Estudei 10+ instrutores, plataformas e modelos. A direção mais próxima do que faz sentido pra você está nessa página. Você executa quando quiser. Quando for executar, a gente conversa."*
 
 — Verbo, 06/05/2026 madrugada
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

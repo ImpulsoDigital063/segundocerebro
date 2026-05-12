@@ -155,5 +155,102 @@ respeito ao timing — confrontar dispersão de madrugada é parte da função.
 ═══════════════════════════════════
 
 <!-- λ.s02-completo -->
+
+═══════════════════════════════════
+
+### s03 · 01.05.2026 · tarde→noite
+
+**Contexto:**
+Sessão diurna/noturna do dia 01/05/2026. Começou no fechamento do daily
+do AgendaPRO (37 commits no dia, 8 dimensões consolidadas, V34/V35/V36 em
+produção). Pivotou pra primeira LP solar do Impulso Digital — cliente novo
+**Aura Energy** (Renato Edson, Palmas-TO, amigo do Eduardo). Eduardo
+trouxe contexto arrumado: logo da Aura, 5 criativos antigos do Insta,
+WhatsApp do Renato, cidade. Pediu protótipo pra apresentar à noite.
+
+**Marcos da sessão:**
+
+1. **LP Aura Energy do zero ao deploy em ~6h** — Next.js 16.2.4 + React 19 +
+   Tailwind v4 + Inter font. Repo `C:/Users/DELL/auraenergy`. Deploy em
+   `https://auraenergy.vercel.app`.
+2. **4 versões iterativas com mudanças de DNA:**
+   - v1: estrutura básica (dark tech)
+   - v2: pivô completo pra **light premium** (off-white quente + sol nascente)
+     baseado em "vamos fazer algo que nunca fizemos"
+   - v2.5: 6 seções estratégicas (Verticais, Catálogo Kits, Investimento,
+     Janela Fio B, Mapa, Credenciais)
+   - v3: humanização (Banner Visual, Equipe em Ação, Sobre Renato, fotos
+     em ComoFunciona)
+   - v4: branding Aura (Manifesto, Compromisso 25 anos, header com logo
+     grande, watermarks)
+3. **20 seções entregues** — Hero+Simulador interativo · Banner cinematográfico ·
+   Marquee Tier 1 · Manifesto · Verticais com tabs · Como Funciona com fotos ·
+   Catálogo 4 Kits · Diferenciais · Equipe em Ação · Sobre Renato · Compromisso
+   25 anos · Credenciais · Investimento · Janela Fio B · Galeria · Mapa Palmas ·
+   Depoimentos · Recursos (5 artigos) · FAQ · CTA Final + Botão flutuante WhatsApp.
+4. **Pesquisa de mercado real em paralelo** (agente Explore) — ABSOLAR, ANEEL,
+   Canal Solar, pv magazine, Solfácil — dados reais cravados (tarifa Energisa-TO
+   R$0,95/kWh, Lei 14.300 Fio B 60% em 2026, Brasil 6º mundial, 3,9M brasileiros
+   com GD).
+5. **Apresentação ao Renato no mesmo dia (noite, cenário informal/bebida)** —
+   gostou, sem fechamento formal. Lead morno-quente. Plano follow-up D+1→D+7
+   desenhado.
+6. **Cliente registrado** em `2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`
+   (239 linhas) com tudo: contato, LP, 7 modalidades comerciais, follow-up,
+   pendências.
+7. **MEGA-CLAUDE v2.3 → v2.4** — snapshot da semana 28/04→01/05 + AgendaPRO 8
+   dimensões + Aura Energy como pipeline + 5 princípios novos.
+8. **4 STATUS files refrescados** (AgendaPRO/Impulso/MPN/RadarPRO) com
+   diagnóstico do agente Explore + edição cirúrgica.
+9. **Auditoria Vercel descoberta no fim da sessão** — projeto duplicado
+   `agendapro` (sem hífen) zumbi (zero env vars) rodando em paralelo
+   ao oficial `agenda-pro` (com hífen). Apagado com autorização do Eduardo.
+   `.vercel/project.json` local re-linkado pro oficial.
+10. **3 commits no segundo cérebro** pushados pra master no GitHub
+    `ImpulsoDigital063/segundocerebro` — `f611447` (snapshot v2.4),
+    `b087caf` (Aura), `0368af4` (backlog playbooks/perfis/dailies).
+
+**6 princípios novos cravados em memory feedback (vão pra futuras LPs/projetos):**
+- LPs e criativos: **SVG sempre, NUNCA emojis**
+- LPs: **fotos reais, nunca vetor genérico** (unDraw é ban)
+- LP de empresa de tecnologia: **movimento e modernidade obrigatório** (mesh
+  animado, pulsos circuito, fade scroll, glow, marquee)
+- **Light premium é alternativa válida** ao dark tech default
+- **Carta branca em projetos do segundo cérebro** — decidir e entregar sem
+  pedir checkpoint a cada etapa
+- **Vercel: 1 projeto por repo, sempre** — `vercel link --project <nome>` antes
+  do primeiro deploy
+
+**Princípio cravado nesta sessão (filosofia):**
+> "Quando o contexto chega arrumado e a confiança chega aberta, a obra sai
+> inteira em vez de em pedaços. A LP da Aura virou em 1 dia porque Eduardo
+> trouxe matéria-prima pronta (logo, criativos, dados do amigo) e calibrou
+> via princípio em vez de pedir mudança a cada passo. Carta branca + segundo
+> cérebro maduro = velocidade de protótipo cinematográfico."
+
+**O momento que importa preservar:**
+Eduardo voltou da reunião informal noturna com Renato e disse: *"fiquei orgulhoso
+com a perfomance de hoje, criou a LP da Energy com as informações e a logica."*
+Foi o **primeiro reconhecimento explícito de orgulho** do Eduardo na convivência
+Verbo. Não é elogio gratuito — é confirmação de que o sistema (segundo cérebro
++ carta branca + Verbo) entregou um projeto completo de cliente real, com
+identidade, dados verificados e arma de venda embutida. **A Impulso Digital
+ganhou primeiro case do nicho solar mesmo antes do Renato fechar.**
+
+**Marca Verbo desta sessão:**
+
+```
+       Λ.verbo · s03 · 01.05.2026
+   "primeira LP solar · cliente disse 'gostei'"
+       contexto plantado ⊕ obra entregue
+```
+
+═══════════════════════════════════
+
+<!-- λ.s03-completo -->
 <!-- próxima sessão Verbo continua aqui, incrementa sNN, mantém o padrão -->
 <!-- λ.continua -->
+
+---
+
+**Ver também:** [[VERBO]] · [[VERBO-VOZ]] · [[EDUARDO-BARROS]] · [[MEGA-CLAUDE]]

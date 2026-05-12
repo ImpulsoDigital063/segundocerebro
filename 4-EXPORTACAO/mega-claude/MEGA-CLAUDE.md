@@ -1,8 +1,10 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.6
-**Data:** 5 de Maio de 2026 (terça · madrugada de quarta)
+**Versão:** 2.7
+**Data:** 11 de Maio de 2026 (segunda)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
+
+> **SNAPSHOT v2.7 (11/05):** semana de **VALIDAÇÃO REAL DO ECOSSISTEMA**. **Case-1 Impulso fechado 06/05:** Renato Edson · Aura Energy · **R$ 1.497** (primeira venda contratual da agência · plano negócio 20pg + painel-renato ao vivo · padrão "mostrar produto vivo > falar de produto" cravado). **Case-2 AgendaPRO 07/05:** primeira venda real Asaas · PIX nativo R$67 · fatura 805613865 · webhook + ativação automática validados. **Ciclo completo billing 08/05:** pagamento + cancelamento + refund 7d + 2FA SMS + emails branded · AgendaPRO pronto pra prospectar. **Lead-3 Andressa Kupferman / Raras Clinic Academy** (Palmas-TO · via network Renato 08/05): podóloga+enfermeira · escola real · plataforma Kupferman backend v0.1 deployada 08/05 (CRM 7 tabelas + painel /painel + webhook Kiwify). **Lead-4 Viva Cacheada** (esposa Gabriel/GB Nutrition · oferta 3 meses grátis AgendaPRO em troca de divulgação · reunião 12/05 com SQL trial 90d pronto). **Case-2 AgendaPRO online 11/05:** Olímpio Barbearia · 1º cliente pagante 100% via fluxo digital · 3 bugs fixados ao vivo (logout middleware Supabase SSR · manifest webmanifest · instalação iOS Safari). **Pack Divulgação V2 com selo "by AgendaPRO" (11/05):** primeiro mecanismo de aquisição zero CAC estilo Calendly · 3 templates Canvas + QR + Web Share API · cada cliente vira distribuidor passivo. **AgendaPRO Tutorial v1.2** (08/05) modal welcome + checklist 5 passos · pós 3 rodadas de teste Eduardo. **Princípios cravados pós-Aura/Olímpio:** λ.real (não inventar dados que cliente não confirmou) · λ.amplificar (zero vocabulário negativo com cliente premium) · λ.cocriacao (briefing ganha bloco aberto pra cliente PROPOR ferramenta/ideia) · λ.case-1 (mostrar produto vivo > falar) · λ.densidade-calibrada (Eduardo não absorve análise longa · entregar doc refeito fluido + 3-5 mudanças). **PC novo GT 1600 + GPU 8GB** entregue 12/05 (substitui Apolo IV · destrava Stable Diffusion local · render vídeo). **GB Nutrition · sessão gravação 12/05 com Gabriel** prepara 2 PDFs prontos: plano lançamento 30d + roteiros 2 vídeos diretos Impulso usando Gabriel como ator-cliente (UGC universal + case prateleira). Daily: `1-ENTRADA/daily/2026-05-11.md`.
 
 > **SNAPSHOT v2.6 (05/05 madrugada):** sessão maratona pré-lançamento AgendaPRO. **30 commits em 1 dia** + **7 rodadas CIC** com loop multi-agent Verbo+CIC. **AgendaPRO blindado pra 1° pagante real (Olímpio)** amanhã: race condition booking impossível por EXCLUSION CONSTRAINT atômico no Postgres (migration v40 a+b com cleanup loop iterativo), cortesia não soma receita nem comissão (bug de bilhão fechado), webhook MP HMAC, rate limit 100% APIs sensíveis, RLS apertada. **Features que diferenciam de Booksy/Fresha cravadas:** Foco do Dia (home proativa estilo Stripe/iFood), Resgate de recompensa dedicado no modal cliente, Histórico de pontos auditável, Step booking colapsado em chips (padrão Reserva), Banner ?ref= simétrico ao cupom (loop viral), gameplay /meus-pontos com gap motivacional, counter "sumidos sem cupom". **Filtro "Mês" virou rolling 30d** (era calendário — destruía credibilidade nos primeiros dias do mês). **Seed Império v6**: R$26k faturado / R$14k lucro mensal / 521 atendimentos / 47 clientes / 5 recompensas calibradas / credenciais auth profs comissionados (Bruno+Rafael). **Veredito CIC: GO 8.5/10** (sobe pra ~9.3 pós fix seed rewards). **Princípio cravado:** multi-agent não é gimmick — Verbo escreve código, CIC valida ao vivo, cada um vê o que o outro não pega. 7 rodadas eliminaram bugs que cada agente sozinho perderia. **Backlog AgendaPRO:** demo pro Olímpio amanhã + migração MP PF→PJ + Aura repo GitHub. Daily: `1-ENTRADA/daily/2026-05-05.md`.
 
@@ -1092,6 +1094,39 @@ Ler o MEGA-CLAUDE.md (geral) + o daily mais recente (estado real atual). O resto
 **Versão 2.3:** 27 de Abril de 2026 — refactor copy CORE_SYSTEM_V2 + pricing AgendaPRO ajustado
 **Versão 2.4:** 1 de Maio de 2026 — AgendaPRO 8 dimensões em 37 commits + V34/V35/V36 migrations + novo cliente Aura Energy em pipeline + 5 princípios LP cravados
 **Versão 2.5:** 2 de Maio de 2026 (madrugada) — Aura v6 + briefing privado /briefing + diagnóstico CIC Brasfrio + estrutura 3 frentes (LP / Insta-tráfego / RadarPRO comissão) + 8 princípios novos + ICP validado · Aura case-flagship Impulso 2026
-**Próxima atualização:** Quando Renato responder briefing / ou Tally form qualificação rodar / ou Aura fechar Frente 2
+**Versão 2.6:** 5 de Maio de 2026 (madrugada) — Maratona pré-lançamento AgendaPRO · 30 commits + 7 rodadas CIC · race condition zerada · Demo aprovada 8.5/10
+**Versão 2.7:** 11 de Maio de 2026 — Case-1 Aura fechado R$1.497 (06/05) · Case-2 AgendaPRO Asaas online R$67/mês (07/05) · Olímpio entregue ao vivo (11/05) · Pack Divulgação loop viral · bug logout fixado · leads-3 (Andressa) e leads-4 (Viva Cacheada)
+**Próxima atualização:** Pós-sessão GB Nutrition 12/05 · ou fechamento Andressa Kupferman · ou trial Viva Cacheada virar pagante
+
+---
+
+## 🗺️ HUBS CONECTADOS DO VAULT
+
+Esses são os pontos de entrada do segundo cérebro. Em qualquer chat novo, este MEGA-CLAUDE puxa o resto.
+
+### Perfis
+- [[EDUARDO-BARROS]] · identidade · tom de voz · números reais · framework cold outreach
+- [[VERBO]] · companheiro Verbo · 20 princípios λ cravados · cronologia s01→s09
+
+### Status canônicos
+- [[STATUS-AGENDAPRO]] · SaaS · Asaas validado · 1º pagante online Olímpio
+- [[STATUS-AURA-ENERGY]] · case-1 fechado · operação Renato rodando
+- [[STATUS-IMPULSO]] · agência lojas Shopify · ICP produto físico
+- [[STATUS-ANDRESSA]] · lead-3 warm · Raras Clinic Academy
+- [[STATUS-MPN]] · curso · campanhas Meta
+- [[STATUS-RADARPRO]] · plataforma proprietária
+
+### Conhecimento
+- [[PADROES-VALIDADOS]] · padrões com casos reais
+- [[ESTRATEGIAS-ATIVAS]] · estratégias em execução
+- [[IMPULSO_CORE_SYSTEM_V2]] · core do sistema
+- [[INDICE-MEMORIAS]] · ~50 princípios λ + cases em projeto (espelho auto-memory Verbo)
+
+### Playbooks
+- [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · vender Impulso
+- [[META ADS - PLAYBOOK]] · decisões de tráfego
+- [[APOSTILA-V2-OPERACAO]] · manual completo
+- [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · template validado em 3 cases
+- [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · diferencial Impulso
 
 **🔥 Tamo junto. Aura case-flagship rodando. AgendaPRO operacionalmente completo. RadarPRO virando arma. 1 milhão na mira.**

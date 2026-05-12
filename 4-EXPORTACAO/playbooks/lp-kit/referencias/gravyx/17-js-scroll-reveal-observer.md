@@ -178,3 +178,7 @@ export default function Page() {
 Este é o JS final — usar esse em vez do que escrevi no bloco 16. Substituir o hook no `useScrollReveal.js` pelo canônico.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

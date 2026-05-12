@@ -132,3 +132,7 @@ Profissional de saúde valoriza pre-engajamento TÉCNICO. Comentário "lindo!" Q
 | **21-25** | **Batch #5 caça LP multi-fonte (5)** | **LP** |
 
 Pool de Tier B/qualificar: ~10 leads adicionais com observação rica pro `disparo:20-perfeitos` pegar pelo critério automático.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

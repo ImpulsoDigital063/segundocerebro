@@ -36,3 +36,7 @@ _config
 5. Atualiza STATUS dos projetos (Impulso, MPN)
 6. Quando aprender padrão novo → adiciona em `3-RETENCAO/padroes/`
 7. A cada semana → atualiza MEGA-CLAUDE.md
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[README]] · [[TEMPLATE-DAILY]]

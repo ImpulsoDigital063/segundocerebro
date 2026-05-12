@@ -114,3 +114,7 @@ A persona "Erlane" (case-mãe Impulso) é REPLICÁVEL em Palmas. Existem PELO ME
 4. ✅ **Concorrência atualizada** (Ozônioterapia Palmas)
 5. **AÇÃO EDUARDO:** pedir permissão da Erlane pra usar como case explícito + checar conhecimento pessoal das clones
 6. **Próximo prompt sugerido (#8):** rodar Doctoralia.com.br/cidade/palmas + Maps "consultório de enfermagem Palmas" + hashtags #suplementacaoinjetavelpalmas / #soroterapiapalmas pra fechar o universo clone-Erlane completo
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

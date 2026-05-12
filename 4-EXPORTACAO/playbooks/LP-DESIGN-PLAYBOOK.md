@@ -241,3 +241,7 @@ Antes de aprovar/publicar:
 
 **Última atualização:** 15/04/2026 (redesign AgendaPRO v2)
 **Validado por:** Eduardo Barros — após preview rodando em `agendapro-git-v2-design.vercel.app`
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[lp-product-ui-showcase]] · [[TEMPLATE-LP-PERSONAL-NUTRI]] · [[MARKET-INTELLIGENCE-LP-BR]]

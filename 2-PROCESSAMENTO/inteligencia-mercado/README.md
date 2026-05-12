@@ -74,3 +74,7 @@ inteligencia-mercado/
 - ❌ **NÃO copiar conteúdo protegido por copyright** integralmente — só extrair dados estruturados (preço, posicionamento, stack)
 - ✅ **Respeitar o robots.txt e rate limits** dos sites
 - ✅ **Anonymizar quando necessário** — se pesquisa de concorrente revelar info sensível de cliente final dele, descartar
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[PROSPECCAO-MANUAL-COMPLETO]]

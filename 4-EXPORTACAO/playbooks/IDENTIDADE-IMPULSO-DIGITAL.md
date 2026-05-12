@@ -551,3 +551,7 @@ Quando colar este doc em outra IA (ChatGPT, MyPostFlow, Claude Design, Codex), p
 **Fim do doc.** Última atualização: 2026-04-27.
 
 Se este doc for usado e o resultado violar alguma regra acima, **rejeite o output** e regenere até estar dentro das regras. Identidade da Impulso Digital não negocia.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[perfil-marca-impulso-digital]] · [[IMPULSO_CORE_SYSTEM_V2]] · [[PADRAO-IMPULSO-V2]]

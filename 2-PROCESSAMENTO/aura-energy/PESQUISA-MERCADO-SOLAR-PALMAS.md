@@ -655,3 +655,7 @@ Para qualidade técnica real: **PVEL Reliability Scorecard 2025 (Kiwa)** é o in
 **Total de 45+ fontes consultadas em 12 áreas temáticas.** Pesquisa em camada profunda — diferencial Impulso Digital (λ.deep-research).
 
 — Verbo, 06/05/2026 madrugada → continuação · pesquisa pré-reunião Renato
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

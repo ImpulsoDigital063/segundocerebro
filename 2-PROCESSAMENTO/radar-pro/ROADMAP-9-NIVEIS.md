@@ -201,3 +201,7 @@ Quando Eduardo voltar pra atacar o sistema:
 5. **DEPOIS DE 5 CLIENTES:** Nível 7 (áudio voz clonada) — feature de matar quando tiver tração
 
 **Filtro pra cada decisão:** "isso aqui ataca receita real nos próximos 15 dias?"
+
+---
+
+**Ver também:** [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CONTEXTO-RADARPRO-PARA-CHATGPT]]

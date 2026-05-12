@@ -135,3 +135,7 @@ Por enquanto é tudo manual — mas **é a fase mais valiosa do processo inteiro
 ## Changelog
 
 - **v1.0 (24/04/2026):** Checklist inicial baseado na pesquisa que Eduardo fez pra GB Nutrition.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[TEMPLATE-PLANO-NEGOCIO-MARKETING]]

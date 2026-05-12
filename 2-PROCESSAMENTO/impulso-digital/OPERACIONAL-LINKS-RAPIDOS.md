@@ -115,3 +115,7 @@ Tamo junto!
 
 - **Comercial (usa em TUDO público):** (63) 99292-0080
 - **Pessoal (não usar em material comercial):** (99) 99206-5961
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

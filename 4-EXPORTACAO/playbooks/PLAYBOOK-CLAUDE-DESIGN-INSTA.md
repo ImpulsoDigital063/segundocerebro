@@ -273,3 +273,7 @@ Vou te orientar no **Caminho B** — Canva direto.
 - [Threads Carousel Claude Skill — GitHub itchernetski](https://github.com/itchernetski/threads-carousel-claude-skill)
 - [Claude Design Workflows — Spicy Advisory](https://www.spicyadvisory.com/blog/claude-design-anthropic-labs-guide-workflows-2026)
 - [Claude Design Features & Pricing — ALM Corp](https://almcorp.com/blog/claude-design-anthropic-labs/)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CARROSSEIS-IMPULSO-INSTA-V1]] · [[design-carrossel-impulso]] · [[IDENTIDADE-IMPULSO-DIGITAL]]

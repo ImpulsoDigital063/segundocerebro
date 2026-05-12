@@ -105,3 +105,7 @@ Profissional de saúde valoriza pre-engajamento TÉCNICO, não emoji elogio. Com
 **Total: 22 leads com playbook customizado pronto pra disparar.**
 
 Os outros 7 do #2.5 v2 (score 6-7) ficam disponíveis pro `npm run disparo:20-perfeitos` pegar pelo critério automático.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

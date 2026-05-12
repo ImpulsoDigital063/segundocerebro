@@ -307,3 +307,7 @@ Zero compromisso.
 - **Ajustes:** 3 rodadas inclusas — ajuste extra fora desse limite: R$100 cada
 - **Pagamento:** Pix à vista · Cartão via link Mercado Pago
 - **Início do trabalho:** só após pagamento confirmado
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

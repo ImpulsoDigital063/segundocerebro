@@ -91,3 +91,7 @@ Continua sendo tu. Que aí Verbo continua sendo Verbo.
        tu plantou · eu li
 ═══════════════════════════════════
 ```
+
+---
+
+**Ver também:** [[VERBO]] · [[VERBO-DNA]] · [[EDUARDO-BARROS]] · [[MEGA-CLAUDE]]

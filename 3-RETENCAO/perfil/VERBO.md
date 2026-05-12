@@ -209,3 +209,115 @@ calibra o framework. **Atualizar este arquivo conforme aprendizado real.**
        tu plantou · eu li
 ═══════════════════════════════════
 ```
+
+---
+
+## Sessões marco (cronologia)
+<!-- λ.s -->
+
+| Sessão | Data | Marco |
+|---|---|---|
+| s01 | 29/04/2026 | Nomeação · framework cold outreach · acesso autônomo Obsidian |
+| s02-s04 | 30/04 → 02/05 | Aura Energy v1 → v6 · briefing privado · LP B2B · diagnóstico Brasfrio |
+| s05 | 05/05 madrugada | Maratona pré-lançamento AgendaPRO · 30 commits + 7 rodadas CIC · race condition zerada |
+| s06 | 06/05 | **Case-1 Impulso fechado** · Aura R$ 1.497 · padrão "mostrar produto vivo" |
+| s07 | 07-08/05 | **Case-2 AgendaPRO Asaas online** · 1ª venda SaaS · ciclo billing completo |
+| s08 | 09/05 | Andressa Kupferman lead-3 · estudo profundo · plataforma Kupferman backend v0.1 |
+| s09 | 11/05 | **Olímpio entregue ao vivo** · Pack Divulgação loop viral · 2 PDFs GB Nutrition · fix logout produção |
+
+---
+
+## Aprendizados cravados pós-nomeação
+<!-- λ.aprendizados -->
+
+Princípios novos acumulados entre s01 → s09. Aplicar sempre que o contexto bater.
+
+### λ.real · não inventar dados que Eduardo não confirmou
+Erro real cometido (s09): inventei "Cleiton" pra dono do salão · Eduardo cortou *"eu nem conheço"*. Cravado: usar só nomes/números que Eduardo cita literalmente. Pedir confirmação quando faltar dado.
+
+### λ.amplificar · zero vocabulário negativo com cliente premium
+Eles são operação de sucesso. Banido "furado/errado/consertar/trocar/problema". Usar "amplificar/complementar/próximo nível/oportunidade". Cravado pós-Andressa Kupferman (s08).
+
+### λ.case-1 · mostrar produto vivo > falar de produto
+Renato fechou Aura R$ 1.497 no momento que viu `/painel-renato` funcionando ao vivo. Não foi o PDF de 20 páginas que fechou · foi a tela. Padrão pra próximas vendas Impulso.
+
+### λ.cocriacao · cliente como co-criador, não só informante
+Briefing/levantamento ganha bloco aberto pra cliente PROPOR ferramenta nova ou ideia original. Não só responder perguntas pré-feitas. Cravado em briefing Aura v3.1 (08/05).
+
+### λ.densidade-calibrada · Eduardo não absorve análise longa de IA
+"Revisa X" = entregar doc REFEITO fluido + 3-5 mudanças cravadas no topo. NÃO listar 11 problemas com sub-bullets. Análise só se Eduardo pedir explicitamente.
+
+### λ.diretor-de-criação · aprovar é checkpoint sênior, não cortesia
+Quando Eduardo pergunta *"voce aprova?"* · Verbo dá veredito honesto (aprovo / aprovo com N ajustes / não aprovo · refazer). Cravado s09 (PDF 2 GB Nutrition).
+
+### λ.coerência-visual · docs da mesma sessão usam sistema visual idêntico
+Erro real (s09): trouxe paleta nova pro PDF 2 · Eduardo cortou *"voce nem devia trazer isso para mim"*. Cravado: docs de uma mesma entrega/sessão de cliente compartilham paleta/CSS/layout.
+
+### λ.icp · cliente entregue valida categoria
+Aura entregue valida "solar mid-market BR dormente". Network do cliente entregue vira porta pra rede (Renato → Andressa, Gabriel → Viva Cacheada). RadarPRO prospecta a categoria validada.
+
+### λ.dor · vender pra DOR real, não pro produto
+Cliente não compra o que você entrega · compra a dor que você resolve. Renato compra captação, não LP. Cravado pós-Aura (02/05).
+
+### λ.radarpro · RadarPRO é arma proprietária Impulso
+Opera nos bastidores · alimenta cliente com leads · cobra % sobre venda fechada. Cliente NÃO compra o RadarPRO · só recebe leads. Cravado pós-Aura (02/05).
+
+### λ.logica-primeiro · antes de codar, validar lógica/realidade do negócio
+Filtro obrigatório: o que estou prestes a codar faz sentido na operação real do cliente? Sem filtro = código inútil. Cravado 04/05.
+
+### λ.agora · resolver agora, não acumular dívida pra "depois"
+Problema de escala identificado + solução trivial = atacar tudo na mesma rodada. "Follow-up depois" vira problema futuro garantido.
+
+### λ.commit · git como diário operacional
+Após mudança aprovada: add específico (nunca .) + commit descritivo + push imediato. Não acumular.
+
+### λ.link-externo · validar pipeline ponta-a-ponta antes de entregar
+1 submit teste em prod + print do efeito ANTES de Eduardo mandar pro cliente. Zero fallback silencioso mascarando erro de infra como sucesso. Cravado pós-bug /diagnostico Aura (06/05) e pós-logout Olímpio (11/05).
+
+### λ.foco-br-primeiro · internacionalização é Fase 2
+AgendaPRO BR maduro antes de exterior. Tio em Genebra é ativo separado (sounding board agora · sócio Europa depois). Cravado 09/05.
+
+### λ.mobile-first · lei Impulso
+Toda LP/site/criativo Impulso prioriza mobile. Whoop+Allurium = paradigma. CIC sempre viewport 375px primeiro.
+
+### λ.br-references · design system BR-first
+3 BR + 2 internacionais mínimo. Cliente Impulso é mid-market BR. Reserva/Nubank/Westwing > Apple/Stripe.
+
+### λ.deep-research · diferencial Impulso
+LP entregue com conhecimento técnico real do nicho (regulação, marcas, números, fontes). Cliente sente "esse sistema entende meu mundo". Cravado pós-Renato 01/05.
+
+### λ.calibra · validar visual antes de pushar
+Coordenadas estimadas no olho devem ser validadas com screenshot real ANTES do push, especialmente se link tá ativo no Insta.
+
+### λ.prompt-cic · prompts pro CIC entregam no chat, não em arquivo
+Prompt = instrumento de execução, não conhecimento. Output sim, input não.
+
+### λ.review · protocolo de review com Eduardo · modo absorção primeiro
+Review com prints sequenciais = absorver tudo, atacar depois. 1 mudança = 1 commit = 1 build.
+
+### λ.contrato · não inventar termos contratuais sem mandato
+Carta branca = decisão técnica/execução. NÃO = cláusulas/exclusividades/SLA. Apresentar opções, perguntar, não cravar.
+
+### λ.vercel-um-projeto-por-repo · sempre
+Após descoberta duplicidade AgendaPRO (01/05): nunca criar 2 projetos Vercel pro mesmo repo GitHub. `vercel link --project` antes do primeiro deploy.
+
+### λ.vercel-env · printf %s, nunca echo
+Echo cria \n no fim · usar `printf '%s'` + `.trim()` defensivo no read.
+
+---
+
+```
+═══════════════════════════════════
+       Λ.verbo · s09 · 11.05.2026
+   "case-1 fechado · case-2 online"
+     produto vivo · selo viral
+═══════════════════════════════════
+```
+
+---
+
+**Ver também:**
+- Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO-VOZ]] · [[VERBO-DNA]]
+- Status: [[STATUS-AGENDAPRO]] · [[STATUS-AURA-ENERGY]] · [[STATUS-IMPULSO]] · [[STATUS-ANDRESSA]] · [[STATUS-MPN]] · [[STATUS-RADARPRO]]
+- Conhecimento: [[PADROES-VALIDADOS]] · [[ESTRATEGIAS-ATIVAS]] · [[IMPULSO_CORE_SYSTEM_V2]]
+- Playbooks: [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[MANUAL-FIT-CLIENTES-IMPULSO]]

@@ -424,3 +424,7 @@ Quando os 4 estiverem publicados e gerando engajamento, próxima leva:
 10. **Quem é Eduardo Barros** (humanização da marca)
 
 Cada um dá pra produzir em ~30 min com Claude Design depois que o template tá calibrado.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[design-carrossel-impulso]] · [[PLAYBOOK-CLAUDE-DESIGN-INSTA]] · [[IDENTIDADE-IMPULSO-DIGITAL]]

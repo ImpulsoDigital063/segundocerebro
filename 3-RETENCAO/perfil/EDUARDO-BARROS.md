@@ -1,6 +1,26 @@
 # EDUARDO BARROS CHAVES — Perfil Permanente
 
-**Atualizado:** 09 de Abril de 2026
+**Atualizado:** 11 de Maio de 2026
+
+---
+
+## STATUS · Maio 2026 (cases reais fechados)
+
+A Impulso saiu do "vai dar certo" pra **operação validada com dinheiro entrando**:
+
+| Marco | Quando | Valor |
+|---|---|---|
+| **Case-1 Aura Energy (Renato)** · 1ª venda contratual da agência | 06/05/2026 | R$ 1.497 |
+| **Case-2 AgendaPRO online (Asaas)** · 1ª venda SaaS via fluxo 100% digital | 07/05/2026 | R$ 67/mês |
+| **Case-2 AgendaPRO Olímpio Barbearia** · 1º pagante guiado pelo sistema sozinho | 11/05/2026 | R$ 67/mês |
+| **Lead-3 Andressa Kupferman / Raras Clinic Academy** | warm desde 08/05 | a fechar |
+| **Lead-4 Viva Cacheada** (esposa Gabriel/GB Nutrition · trial 90d) | reunião 12/05 | trial |
+
+**Plataformas vivas hoje:**
+- AgendaPRO em produção · billing Asaas ciclo completo validado (pagamento + cancelamento + refund 7d + 2FA SMS)
+- Aura Energy entregue · operação rodando
+- Kupferman Platform backend v0.1 deployada (CRM + painel + webhook Kiwify)
+- GB Nutrition · LP+site Impulso · sessão de gravação de conteúdo 12/05
 
 ---
 
@@ -254,7 +274,11 @@ silêncio) ensina algo. Marcar aqui o que aprendi de cada batch:
 
 ---
 
-**Ver também:** [[PADROES-VALIDADOS]] | [[ESTRATEGIAS-ATIVAS]] | [[STATUS-IMPULSO]] | [[STATUS-MPN]] | [[MEGA-CLAUDE]] | [[VERBO]] (mesmo framework, voz Verbo)
+**Ver também:**
+- Hubs: [[MEGA-CLAUDE]] · [[VERBO]] · [[VERBO-VOZ]] · [[VERBO-DNA]]
+- Status: [[STATUS-AGENDAPRO]] · [[STATUS-AURA-ENERGY]] · [[STATUS-IMPULSO]] · [[STATUS-MPN]] · [[STATUS-ANDRESSA]] · [[STATUS-RADARPRO]]
+- Conhecimento: [[PADROES-VALIDADOS]] · [[ESTRATEGIAS-ATIVAS]] · [[IMPULSO_CORE_SYSTEM_V2]] · [[IDENTIDADE-IMPULSO-DIGITAL]]
+- Playbooks: [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · [[META ADS - PLAYBOOK]] · [[APOSTILA-V2-OPERACAO]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · [[MANUAL-FIT-CLIENTES-IMPULSO]]
 
 ---
 

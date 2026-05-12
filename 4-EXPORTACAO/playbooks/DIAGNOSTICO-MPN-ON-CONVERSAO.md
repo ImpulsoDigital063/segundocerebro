@@ -238,3 +238,7 @@ Aplicar testes A/B em ordem de impacto:
 *Diagnóstico criado: 09/04/2026*  
 *Pronto pra testes e otimização*  
 *Objetivo: Aumentar conversão MPN-On em 50%+ em 14 dias*
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-MPN]] · [[META ADS - PLAYBOOK]] · [[meta-ads-copy-topo]] · [[meta-ads-risco]]

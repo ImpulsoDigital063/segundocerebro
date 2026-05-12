@@ -189,3 +189,7 @@ Pronto! Design enviado pro Canva como design editável.
 
 **Abrir no Canva:** https://www.canva.com/d/Aa8mY8nFc21fW60
 
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[PROSPECCAO-MANUAL-COMPLETO]]

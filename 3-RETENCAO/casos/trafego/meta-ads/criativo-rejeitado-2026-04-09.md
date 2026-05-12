@@ -74,3 +74,7 @@ Se remover linguagem de ganho financeiro direto → criativo tende a ser aprovad
 > Criativos de topo de funil NÃO devem mencionar ganho financeiro direto ou indireto.
 
 **Ver padrão completo:** [[meta-ads-copy-topo]]
+
+---
+
+**Ver também:** [[meta-ads-risco]] · [[meta-ads-copy-topo]] · [[META ADS - PLAYBOOK]] · [[STATUS-MPN]] · [[PADROES-VALIDADOS]]

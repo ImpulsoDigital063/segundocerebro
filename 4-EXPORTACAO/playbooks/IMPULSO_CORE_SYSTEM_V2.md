@@ -271,3 +271,7 @@ Gerar:
 É sobre fazer o lead responder."
 
 ---
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]] · [[IDENTIDADE-IMPULSO-DIGITAL]] · [[PADRAO-IMPULSO-V2]] · [[APOSTILA-V2-OPERACAO]] · [[MANUAL-FIT-CLIENTES-IMPULSO]]

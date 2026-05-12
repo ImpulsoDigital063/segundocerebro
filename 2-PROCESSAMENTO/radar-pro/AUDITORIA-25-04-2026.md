@@ -253,3 +253,7 @@ Pra não soar só negativo:
 - SEO da própria UI (meta tags)
 - Testes de integração
 - Análise de logs em produção (precisa de Vercel logs)
+
+---
+
+**Ver também:** [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CONTEXTO-RADARPRO-PARA-CHATGPT]]

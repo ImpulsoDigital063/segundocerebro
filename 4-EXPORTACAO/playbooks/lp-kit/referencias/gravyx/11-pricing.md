@@ -175,3 +175,7 @@ Tem **3 eixos de decisão simultâneos** (muito denso):
    - **Recomendação (memória `feedback_call_alinhamento_processo.md`):** Todos levam pra "Agendar call grátis" — a call é parte do processo, não bônus.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

@@ -150,3 +150,7 @@ Mercado gigante (R$3-6 bi/ano só pra pequenos), crescendo dois dígitos ao ano,
 1. **Pricing escalonado** — saltar R$599 → R$1.497 de uma vez não. Plano: R$997 primeiros 5 (gerar prova) → R$1.297 próximos 10 → R$1.497 padrão
 2. **Plano de manutenção** — definir o que entra (relatório mensal, ajustes copy, integração nova/mês, sem desenvolvimento maior)
 3. **Vertical foco** — escolher saúde estética OU suplementação como nicho-âncora pros próximos 90 dias
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

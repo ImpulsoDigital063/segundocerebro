@@ -1,6 +1,6 @@
 # AgendaPRO — Diferenciais Competitivos & Argumentos de Venda
 
-**Última atualização:** 2026-05-01 (tarde)
+**Última atualização:** 2026-05-04 (tarde — sessão Verbo: alinha agenda × financeiro + 3 diferenciais técnicos novos: anti-overbooking, fila inclusa, dual-mode admin)
 **Por que esse arquivo existe:** referência única pra produzir copy, oferta, disparo, anúncio, comparativo e quebra de objeção do AgendaPRO. Sempre que precisar fundamentar venda, vir aqui antes.
 
 **Contexto:** o produto cresceu MUITO em 72h de tour pré-lançamento (de uma agenda básica pra ferramenta operacional completa de gestão de pequeno negócio de serviço). 37 commits SÓ em 01/05/2026. Preço congelado em R$67/mês (Solo) e R$97/mês (Equipe). Outras opções via PIX semestral/anual com desconto.
@@ -235,8 +235,96 @@ A maioria dos donos de barbearia/salão/estética/nail no Brasil NÃO usa softwa
 | Lembretes automáticos (1d e 1h) | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Lista de espera | ✅ | ❌ | ✅ | ❌ | ❌ |
 | Cliente integra review do Google | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Trava anti-overbooking sob carga** | ✅ (RPC atômico) | ? | Parcial | ? | ? |
+| **Lista de espera com email auto** | ✅ (todos planos) | ❌ | ✅ (R$120+/mês Boost) | ❌ | ❌ |
+| **Dual-mode: admin + profissional na mesma conta** | ✅ | ❌ (2 contas) | ❌ (2 contas) | ❌ (2 contas) | ❌ (2 contas) |
 
-**Conclusão:** AgendaPRO custa 3x menos e entrega features que NÃO EXISTEM nos concorrentes (despesas/lucro real, QR branded, pontos por pontualidade/indicação, integração Google review).
+**Conclusão:** AgendaPRO custa 3x menos e entrega features que NÃO EXISTEM nos concorrentes (despesas/lucro real, QR branded, pontos por pontualidade/indicação, integração Google review). Adicionalmente: 2 diferenciais técnicos invisíveis viram argumento de venda — anti-overbooking e fila inclusa.
+
+---
+
+## Diferenciais técnicos invisíveis (cravados 04/05/2026)
+
+Esses 2 são INVISÍVEIS no produto até o momento da dor — mas viram argumento decisivo na conversa de venda quando o cliente menciona qualquer coisa relacionada.
+
+### 🔒 Trava anti-overbooking
+
+**Pitch curto pra LP/anúncio:**
+> Nunca dá horário duplicado. Mesmo com 5 clientes apertando "agendar" no mesmo segundo.
+
+**Pitch expandido (conversa de vendas):**
+> Em dia de pico (Dia das Mães, Black Friday, sexta de tarde), sistemas mais simples falham e geram horário duplicado — você só descobre quando 2 clientes chegam ao mesmo tempo, perde a confiança de pelo menos 1 deles, e ainda tem que explicar pessoalmente. AgendaPRO usa transação atômica no banco: o sistema trava o horário enquanto verifica e grava, então só 1 agendamento passa. Os outros recebem aviso "horário acabou de ser reservado".
+
+**Argumento de fechamento:**
+> "Se você teve 1 overbooking no ano que custou um cliente fiel, já valeu o investimento."
+
+**Tradução técnica (NUNCA usar com cliente, só pra Verbo entender):**
+- Implementação: PostgreSQL transaction + row-level locking via RPC (Remote Procedure Call)
+- Migrations: V09 (overbooking-protection) + V32 (atomic-hours-replace)
+- Padrão da computação desde 1970, MAS muitos SaaS BR pequenos não usam direito
+
+**Onde concorrente falha (verificado em campo):**
+- Sistemas BR caseiros sem transação atômica
+- Soluções "agenda no Excel + Google Forms"
+- Apps free com infra fraca
+
+---
+
+### 📋 Fila de espera inclusa em todos os planos
+
+**Pitch curto pra LP/anúncio:**
+> Cliente que viu lotado não vai embora — entra na fila e ganha o horário se alguém cancelar.
+
+**Pitch expandido (conversa de vendas):**
+> Quando o horário desejado tá ocupado, o cliente clica e entra na fila de espera. Se o agendamento original cancelar, o sistema dispara email automático pra todos da fila simultaneamente. Quem responder primeiro pega. Você não perde o cliente, e ainda transforma cancelamento (que normalmente é prejuízo) em agendamento confirmado.
+
+**Argumento de fechamento:**
+> "Cliente que sai sem agendar é cliente perdido. Fila vira receita extra de cada cancelamento."
+
+**Comparação direta com concorrente:**
+- **Booksy** (BR + global): cobra a partir de **R$120/mês** no plano Boost pra liberar Waitlist
+- **Fresha**: incluso só nos planos pagos (~R$150+/mês)
+- **Trinks/Avec/Zen**: não tem
+- **AgendaPRO**: liberado em todos os planos — Solo R$67 e Equipe R$97
+
+**Linha matadora pra LP/copy:**
+> "Fila de espera automática inclusa. A Booksy cobra R$120/mês pra liberar isso."
+
+**Onde encaixar nas LPs (task #81):**
+- Card comparativo (já tem 3 linhas novas adicionadas na tabela acima)
+- Bloco "Por que AgendaPRO" das 4 LPs — vira 3 cards lado a lado com esses 3 diferenciais
+- Carrossel Instagram de aquisição
+
+---
+
+### 👥 Dual-mode: o sistema cabe no dono que atende E no dono que só gerencia
+
+**Pitch curto pra LP/anúncio:**
+> Você atende? Aparece sua agenda pessoal junto com a do estabelecimento. Não atende? Só vê o estabelecimento — sem ícone órfão, sem fricção.
+
+**Pitch expandido (conversa de vendas):**
+> Em barbearia/salão pequeno, o dono normalmente também corta cabelo, faz unha, atende cliente. Mas os outros sistemas tratam admin e profissional como contas SEPARADAS — você teria que ter 2 logins, alternar contexto, configurar 2 perfis. AgendaPRO entende que **dono que atende é UMA pessoa só** — mesma conta, mesma sessão. Você abre o app, vê a visão geral do estabelecimento, e tem uma aba "Eu" só pra suas agendas pessoais (faturamento seu isolado, atendimentos seus, sem misturar com outros profissionais). Quem só gerencia (não atende) nem vê esse ícone — interface limpa pro perfil dele.
+
+**Argumento de fechamento:**
+> "Você não precisa decidir se é admin OU profissional. AgendaPRO sabe que você pode ser os dois ao mesmo tempo, e adapta sozinho."
+
+**Comparação direta com concorrente:**
+- **Trinks/Booksy/Fresha/Avec/Zen**: o dono que atende precisa cadastrar uma conta admin (pra gerenciar) E uma conta profissional (pra ter agenda dele). Login duplo, fricção, configuração dupla.
+- **AgendaPRO**: pergunta no cadastro "Você também atende clientes?" — se sim, cria perfil profissional vinculado automaticamente. Mesma conta, 1 login, 2 visões integradas.
+
+**Linha matadora pra LP/copy:**
+> "Você é dono e atende? Mesma conta, agenda pessoal isolada do estabelecimento. Os outros sistemas pedem 2 logins."
+
+**Tradução técnica (NUNCA usar com cliente, só pra Verbo entender):**
+- Implementação: `professionals.role='owner'` linkado ao `auth_user_id` do dono
+- /api/cadastro cria automaticamente desde 30/04/2026 (V28 backfilou histórico)
+- Layout admin detecta via `getOwnerProfessional()` cacheado e condiciona aba "Eu"
+- Aba: `/admin/eu` mostra KPIs e atendimentos filtrados por professional_id do owner
+
+**Onde encaixar nas LPs (task #81):**
+- Reforço no card comparativo (linha "Dual-mode" já adicionada)
+- Pode virar GIF/screenshot mostrando os 2 cenários: aba "Eu" presente vs ausente
+- Headline forte pra criativo Meta Ads
 
 ---
 
@@ -330,6 +418,15 @@ A maioria dos donos de barbearia/salão/estética/nail no Brasil NÃO usa softwa
 ### "Eu já uso planilha pra controlar isso"
 **Resposta:** "Planilha não te avisa quando um cliente some há 40 dias. Não calcula seu lucro real. Não gera cupom de retorno. Não envia lembrete pro cliente. Não registra qual método o cliente pagou. Planilha é foto, AgendaPRO é vídeo do seu negócio. E o vídeo se mexe sozinho — você só decide o que fazer com a informação."
 
+### "E se 2 clientes apertam agendar no mesmo segundo?"
+**Resposta:** "Não dá overbooking. AgendaPRO usa trava no banco — quando o primeiro cliente confirma, o horário fica bloqueado em milissegundos. O segundo recebe 'horário acabou de ser reservado, escolhe outro'. Sistema mais simples (Excel, planilha, alguns apps caseiros) falha aí — você descobre quando 2 clientes chegam ao mesmo tempo. Aqui não tem essa dor."
+
+### "Sou dono e também atendo. Vou ter que ter 2 contas?"
+**Resposta:** "Não. AgendaPRO entende que dono que atende é UMA pessoa só — mesma conta, mesma sessão. No seu app, além da visão do estabelecimento (todos os profissionais, financeiro completo, etc), você ganha uma aba 'Eu' com **sua agenda pessoal isolada**: só os clientes que agendaram com você, seu faturamento, seus horários. Tudo limpo e separado, sem alternar de login. Trinks/Booksy/Fresha forçam você a ter 2 contas separadas — login duplo, configuração dobrada. Aqui não."
+
+### "A Booksy é mais conhecida, por que escolher AgendaPRO?"
+**Resposta:** "Booksy é boa, é gringa adaptada pro Brasil. Mas o plano básico dela não tem fila de espera (cobra R$120 a mais pra liberar). AgendaPRO já vem com fila inclusa em qualquer plano — Solo R$67 ou Equipe R$97. Você paga MENOS e ganha MAIS. E AgendaPRO foi pensado pra negócio brasileiro pequeno desde o dia 1 — Booksy foi pensada pra rede grande nos EUA, traduziram pro Brasil. UX pesa."
+
 ### "Não confio em sistema gringo / online / na nuvem"
 **Resposta:** "AgendaPRO é brasileiro, feito por agência brasileira (Impulso Digital), pra negócio brasileiro. Roda no celular, mas tudo fica seguro nos nossos servidores. Se acabar a internet do salão, dono abre o celular 4G e continua. Se trocar de celular, abre o link e tudo tá lá igual. Mais seguro que caderno (que pode pegar fogo) ou planilha do PC (que pode dar pau)."
 
@@ -344,6 +441,9 @@ A maioria dos donos de barbearia/salão/estética/nail no Brasil NÃO usa softwa
 - **"Tem cliente que sumiu há 40 dias? AgendaPRO traz de volta."**
 - **"Não é só agendamento. É gestão financeira, fidelização e reativação. R$67."**
 - **"Receita ≠ Lucro. Sabe a diferença? AgendaPRO sabe."**
+- **"Fila de espera inclusa. Booksy cobra R$120/mês pra liberar."** (cravado 04/05)
+- **"Nunca mais 2 clientes no mesmo horário. Trava no banco, não na sorte."** (cravado 04/05)
+- **"Você corta E gerencia? Mesma conta. Os outros pedem 2 logins."** (cravado 04/05 dual-mode)
 
 ### Subhead (LP)
 - "Cliente agenda 24h sozinho · Lembrete automático · Comissão calculada · Lucro real visível · Tudo no celular."
@@ -424,3 +524,7 @@ Marcos da iteração 01/05:
 **E) Mostrar comparativo.** A tabela de concorrentes acima é o argumento mais forte. Cliente vê AgendaPRO ✅ em coisas que outros têm ❌, e faz a conta sozinho.
 
 **Resumindo:** custo-benefício é absurdo, e isso é arma. Mas tem que ser mostrada com framing de **valor entregue** (o que vou ganhar), não de **preço baixo** (quanto vou pagar). A venda vira fácil se a história começa com a dor e termina no preço.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-AGENDAPRO]] · [[AGENDAPRO-ANALISE-COMPETITIVA]] · [[AGENDAPRO-STORIES-INSTAGRAM]] · [[ESTRATEGIA-LP-AGENDAPRO]]

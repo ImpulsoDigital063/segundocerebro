@@ -130,3 +130,7 @@ Mês 5+    → Clínica estética + Psicólogo
 | Lembrete pré-procedimento específico | ⭐ | ⭐⭐ | ⭐ | ⭐⭐⭐ |
 | Fila de espera automática | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
 | Política de no-show configurável | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

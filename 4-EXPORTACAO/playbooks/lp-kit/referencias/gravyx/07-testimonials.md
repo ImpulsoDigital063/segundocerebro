@@ -108,3 +108,7 @@ TC — "consultoria de 1h me economizou 3 meses jogando dinheiro fora no ads"   
 - Se fabricar, viola o tom de voz Eduardo ("direto, sem frescura") e pode pegar mal. **Não faz.**
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

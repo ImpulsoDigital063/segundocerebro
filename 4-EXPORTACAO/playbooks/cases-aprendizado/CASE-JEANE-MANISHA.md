@@ -455,3 +455,7 @@ Topa conversar sobre 10 min?
 **Próximo passo (de Eduardo):** acordar, ler esse case, fazer 3 polidas no protótipo, mandar mensagem de retomada pra Jeane.
 
 **Próximo passo (de Claude):** quando Eduardo voltar, retomar daqui — ajudar a calibrar resposta da Jeane em tempo real se ela responder, ou ajudar a evoluir alguma parte específica.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[PADROES-VALIDADOS]]

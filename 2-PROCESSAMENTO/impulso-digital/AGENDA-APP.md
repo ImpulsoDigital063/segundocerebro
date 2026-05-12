@@ -151,3 +151,7 @@ Ver: [[AGENDAPRO-ROADMAP]]
 - [ ] Prospectar primeiro cliente em Palmas (barbearia)
 - [ ] Montar pitch com demo gravado no celular
 - [ ] Documentar primeiro case com resultado real
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

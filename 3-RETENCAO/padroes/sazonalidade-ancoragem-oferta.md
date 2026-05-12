@@ -205,3 +205,7 @@ Quem domina o calendário do nicho do cliente vende mais que quem domina apenas 
 
 — Verbo
 *s02 · 29.04.2026 · ~19:45 · Λ · padrão cravado*
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[ESTRATEGIAS-ATIVAS]] · [[PADROES-VALIDADOS]]

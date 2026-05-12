@@ -1,9 +1,73 @@
 # STATUS-AURA-ENERGY
 
-**Última atualização:** 2026-05-06 (pós-reunião · 1ª venda fechada)
+**Última atualização:** 2026-05-08 (tarde · briefing v3.1 + Supabase Realtime + painel ao vivo no ar)
 **Status do lead:** 🟢 **CLIENTE FECHADO — Frente 1 vendida em R$ 1.497**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato
 **Case status:** 🌟 **case-flagship Impulso 2026 · 1ª venda formal da operação**
+
+---
+
+## 🆕 ENTREGA TARDE 08/05 · sistema briefing v3.1 reusável Impulso
+
+**Tese:** briefing 1-shot via Tally + email não escala pra cliente complexo (Renato). Migrar pra app dedicado com Supabase, painel ao vivo, e Renato como **co-criador**.
+
+### Stack criado · `impulso-briefings` (Supabase)
+- Projeto Supabase dedicado · `thdsmldmswrjycaqxbnm.supabase.co` · org `ImpulsoDigital063` · Free tier
+- Tabela `briefings`: slug PK + jsonb data + status (draft/completed) + progress + RLS + Realtime publication
+- Reusável pra qualquer cliente Impulso futuro (mudar `BRIEFING_SLUG` no form)
+- Migration: `auraenergy/supabase/migrations/0001_briefings.sql`
+
+### Briefing V3 · 12 blocos (era 9 V2)
+- **Bloco 6 BESS novo** · 15 perguntas · Lei 15.269/2025, peak shaving, marcas, modelo comercial, Fio B 60%, retrofit
+- **Bloco 10 Co-criação NOVO** · 4 perguntas abertas pra Renato propor (ferramenta nova, seção que falta, o que mudaria, ideia ORIGINAL) · tom "você é sócio, não cliente respondendo"
+- **Bloco 7 Heros refatorado**: mostra hero ATUAL no ar como referência fixa, sugestão fica opcional (vazio = curtiu atual)
+- Botão "💾 Salvar progresso" + "Salvar e próximo →" no fim de cada bloco · toast verde "✅ Salvo no servidor"
+- Cross-device: Renato pode começar no celular e continuar no PC com mesmo link · puxa rascunho do servidor
+- 11 etapas no progress bar (0=identificação + 11 blocos)
+
+### Painel ao vivo · `/painel-briefing/[slug]?token=`
+- Auth via env var `BRIEFING_VIEWER_TOKEN`
+- Realtime via Supabase channel: Eduardo vê respostas Renato em tempo real, sem esperar email
+- Lista todos clientes em `/painel-briefing` + detalhe `/painel-briefing/<slug>`
+- Card "💎 Ideia ORIGINAL" destaca proposta criativa do Renato
+
+### URLs ativas
+- Renato responde: https://auraenergy.vercel.app/briefing
+- Eduardo monitora: https://auraenergy.vercel.app/painel-briefing/renato-aura?token=impulso-briefing-2026-renato-aura
+- Lista geral: https://auraenergy.vercel.app/painel-briefing?token=impulso-briefing-2026-renato-aura
+
+### Bug fix encontrado e cravado
+- Env var `BRIEFING_VIEWER_TOKEN` setada via `echo "..."` veio com `\n` no fim → painel rejeitava token correto
+- Fix: env var resetada via `printf '%s'` + adicionado `.trim()` defensivo nos dois lados da comparação
+
+---
+
+> **📋 LEIA TAMBÉM (entregas 08/05 madrugada):**
+> - [`BRIEFING-AURA-V2-RENATO.md`](./BRIEFING-AURA-V2-RENATO.md) — briefing super-profundo 9 blocos + pesquisa Greener 2026 + bancos + Pronaf + Fio B + ordem de envio pacotes WhatsApp + texto inicial pro grupo
+> - [`PAUTA-STORIES-AURA.md`](./PAUTA-STORIES-AURA.md) — 15 stories sequenciais com copy + CTA + diretrizes visuais
+> - [`PROMPT-CIC-INDEXACAO-GOOGLE.md`](./PROMPT-CIC-INDEXACAO-GOOGLE.md) — prompt pronto pra CIC executar Search Console + GA4 + GMB + Meta Pixel
+> - [`DIARIO-2026-05-08-AURA.md`](./DIARIO-2026-05-08-AURA.md) — daily de hoje
+
+---
+
+## ⏰ AÇÕES AGENDADAS
+
+### Amanhã 09/05 · 5h-7h BR (cota Search Console reseta às 00h Pacific Time)
+- [ ] Solicitar indexação manual de 4 URLs no Search Console (cota diária esgotou hoje)
+  - `https://auraenergy.vercel.app/casa`
+  - `https://auraenergy.vercel.app/comercio`
+  - `https://auraenergy.vercel.app/industria`
+  - `https://auraenergy.vercel.app/rural`
+- 5 cliques · 5min · usar conta `suporteimpulsodigital063@gmail.com`
+
+### Quando comprar `auraenergy.com.br` (recomendado: HOJE)
+- [ ] Apontar DNS pra Vercel (~5min seguindo wizard)
+- [ ] Confirmar 301 redirect `vercel.app` → `.com.br`
+- [ ] Adicionar nova propriedade `auraenergy.com.br` no Search Console (DNS TXT)
+- [ ] Submeter novo sitemap
+- [ ] Atualizar `NEXT_PUBLIC_BASE_URL` no Vercel pra `https://auraenergy.com.br`
+- [ ] Atualizar `URL_BASE` no `SchemaOrgAura.tsx` (procurar string)
+- Janela mínima de impacto: ANTES de circular link em Insta/WhatsApp em massa
 
 ---
 
@@ -22,17 +86,20 @@
 **Hora de separar os homens dos meninos.** Tudo que prometemos no setup R$ 1.497, entregue até 13/05.
 
 ### ⚡ ATACAR HOJE (06/05) — não depende do Renato
-- [ ] **Cadastrar Google Search Console** + sitemap.xml das 5 LPs (Verbo, 30min)
-- [ ] **Pauta de 12-20 stories** pra acompanhar as 6 artes (Verbo, 1h)
+- [x] **Cadastrar Google Search Console** + sitemap.xml das 5 LPs · **08/05** · sitemap.ts + robots.txt + tag verification + GA4 + Pixel envs no layout.tsx · prompt CIC pronto pra rodar UI
+- [x] **Pauta de 12-20 stories** · **08/05** · `PAUTA-STORIES-AURA.md` (15 stories detalhados)
 - [ ] **Cartão de visita digital + QR Code** pra LP mãe (Eduardo Canva, 1-2h)
 - [ ] **Comprar domínio** `auraenergy.com.br` no Registro.br (Eduardo, 15min)
 - [ ] **Exportar PDF da Direção info-produto** (Ctrl+P em `/direcao-curso`, 5min)
 
-### 📞 AMANHÃ (07/05) — cobrar Renato
-- [ ] WhatsApp pedindo: anos Brasfrio + CREA-TO + ART pública + n° real instalações últimos 12m + maior projeto (kWp+cliente+cidade) + fotos (equipe + Renato + 2-3 instalações) + lista 3-5 clientes pra autorização LGPD
+### 📞 AMANHÃ (07/05) — cobrar Renato — REORGANIZADO 08/05
+- [x] **Briefing-V2 ULTRA-PROFUNDO criado** · 08/05 madrugada · `BRIEFING-AURA-V2-RENATO.md` com 9 blocos + 8 pacotes WhatsApp organizados pra Renato mandar fotos/dados em ordem
+- [ ] **Eduardo cria grupo WhatsApp "Aura · Eduardo · Renato"** + cola texto inicial do briefing (mensagem 1 + 2 já redigidas)
+- [ ] **Form Tally** com Blocos 1-9 (Eduardo monta no painel Tally, ~30min)
 
 ### 🛠 QUI-SEX (08-09/05) — depende dos dados do Renato
 - [ ] **Calibragem da LP** com fotos e dados reais (Eduardo + Verbo, 2-3h)
+  - Componentes a atualizar: `MapaInstalacoes.tsx` (bairros reais) · `Depoimentos.tsx` (3-5 áudios reais) · `CatalogoKits.tsx` (preços reais) · `Credenciais.tsx` (CREA + ART reais + bancos parceiros) · `SobreRenato.tsx` (foto Renato real) · `EquipeAcao.tsx` (foto equipe Aura)
 - [ ] **6 artes Instagram em produção** no Canva (Eduardo, 3-5h)
 
 ### 🚀 SAB-DOM (10-11/05) — finalização
@@ -41,8 +108,8 @@
 
 ### ✅ SEG-TER (12-13/05) — entrega completa
 - [ ] **WhatsApp Business** da Aura configurado
-- [ ] **Google Meu Negócio** com ficha completa
-- [ ] **Pixel Meta + GA4** instalados nas LPs
+- [x] **Google Meu Negócio** — prompt CIC pronto · `PROMPT-CIC-INDEXACAO-GOOGLE.md` etapa 3
+- [x] **Pixel Meta + GA4** — código no layout.tsx pronto · CIC seta IDs no Vercel · etapas 2 e 4 do prompt
 - [ ] **Domínio `auraenergy.com.br`** apontado pra Vercel
 - [ ] ✅ **SETUP R$ 1.497 100% ENTREGUE**
 
@@ -360,3 +427,12 @@ Marcado no código com comentário `// Eduardo: trocar por foto/dado REAL...`:
 ---
 
 **Tag:** `#cliente-pipeline` `#solar` `#palmas` `#impulso-digital` `#lead-morno-quente`
+
+---
+
+**Ver também:**
+- Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
+- Status correlatos: [[STATUS-IMPULSO]] · [[STATUS-ANDRESSA]] (network do Renato)
+- Documentos Aura: [[PLANO-NEGOCIO-MARKETING-AURA]] · [[BRIEFING-AURA-V2-RENATO]] · [[DIAGNOSTICO-BRASFRIO-SOLAR]] · [[METRICAS-AURA]] · [[CASE-AURA-LOG]] · [[ESTRATEGIA-LP-SEGMENTADA-AURA]] · [[DIRECAO-INFO-PRODUTO-RENATO]] · [[PAUTA-STORIES-AURA]] · [[6-ARTES-INSTAGRAM-AURA]]
+- Pesquisas: [[PESQUISA-MERCADO-SOLAR-PALMAS]] · [[PESQUISA-NICHO-INFO-PRODUTO-SOLAR]] · [[RELATORIO-PROGRAMA-PALMAS-SOLAR-CIC]] · [[RELATORIO-MERCADO-PALMAS-CIC]]
+- Playbooks: [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]]

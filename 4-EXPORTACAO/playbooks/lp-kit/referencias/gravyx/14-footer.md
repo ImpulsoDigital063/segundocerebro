@@ -128,3 +128,7 @@ Esse é o bloco 14. A extração parece estar caminhando pra fim do HTML. **Pró
 - **Paleta + tipografia** completa
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

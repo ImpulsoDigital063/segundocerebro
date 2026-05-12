@@ -1,9 +1,27 @@
 # STATUS-AGENDAPRO.md
 
 **Produto:** AgendaPRO — SaaS de agendamento + gestão financeira + fidelização + reativação
-**Fase:** ✅ **PRONTO PRA VENDER** · MP migrado pra PJ Impulso Digital em 07/05/2026
-**Data:** 07/05/2026 (atualizado)
+**Fase:** ✅ **CICLO BILLING VALIDADO PROD** · Asaas + PIX nativo + Resend branded + refund 7d com 2FA testados em 08/05
+**Data:** 08/05/2026 (atualizado)
 **Responsável:** Eduardo Barros
+
+> **📋 LEIA PRIMEIRO AO RETOMAR:**
+> - [`DIARIO-2026-05-08.md`](./DIARIO-2026-05-08.md) — daily 08/05 com 14 commits, 7 bugs corrigidos, ciclo Asaas validado ponta-a-ponta com Erlane R$67
+> - [`agendapro/DIARIO-2026-05-01.md`](C:/Users/DELL/agendapro/DIARIO-2026-05-01.md) — daily épico 01/05 com 37 commits + 8 dimensões consolidadas
+
+---
+
+## 🟢 PRONTO PRA PRIMEIRO CLIENTE REAL — Barbearia Olímpio (08/05/2026)
+
+**Validação ponta-a-ponta com Erlane:**
+- Pagamento PIX nativo dentro do AgendaPRO (sem sair pro asaas.com)
+- Email branded "Pagamento confirmado" via Resend (notif Asaas desabilitada)
+- Refund 7d processado via 2FA SMS Asaas
+- Painel bloqueia imediato pós-refund com mensagem "Acesso encerrado"
+
+**Estratégia Asaas:** R$64 saldo permanente como buffer pra refunds (Asaas exige saldo integral, cobra taxa antes — sem buffer, primeiro refund sempre falha).
+
+**Antes de mandar pro Olímpio (5min):** ativar Sentry — DSN + redeploy. SDK já plugado.
 
 ---
 
@@ -262,3 +280,12 @@ Padrão salvo em `3-RETENCAO/padroes/auditoria-seguranca-saas.md`.
 - Ou ao atingir 80 clientes ativos (trigger pra atacar fixes de performance)
 
 **O que atualizar:** estado billing, número de clientes ativos, métricas reais de uso, ajustes UX baseados em feedback real, novas migrations se houver.
+
+---
+
+**Ver também:**
+- Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
+- Status correlatos: [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[STATUS-AURA-ENERGY]]
+- Diferenciais venda: [[AGENDAPRO-DIFERENCIAIS-VENDAS]] · [[AGENDAPRO-ANALISE-COMPETITIVA]]
+- Conhecimento: [[AGENDAPRO-ROADMAP]] · [[AGENDAPRO-SEGMENTOS]] · [[ESTRATEGIA-LP-AGENDAPRO]] · [[AUDITORIA-UX-DOPAMINA]]
+- Padrões: [[PADROES-VALIDADOS]] · [[auditoria-seguranca-saas]]

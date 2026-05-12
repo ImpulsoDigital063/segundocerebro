@@ -38,3 +38,7 @@ agendapro-brandkit/
 ## Convenções de naming
 
 Todos os arquivos seguem `agendapro-{variante}.{ext}`. Sem prefix de versão (sempre a última). Histórico fica no git.
+
+---
+
+**Ver também:** [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[IDENTIDADE-IMPULSO-DIGITAL]]

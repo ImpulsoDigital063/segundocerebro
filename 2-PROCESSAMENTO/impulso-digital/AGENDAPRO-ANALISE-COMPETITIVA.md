@@ -90,3 +90,7 @@
 - **Booksy** falha no Brasil porque não entende que o cliente brasileiro não quer baixar app nem sair do WhatsApp
 - **EiBarber** é o concorrente mais perigoso no segmento de barbearia — tem IA, WhatsApp e fidelização. Atacar outros segmentos primeiro.
 - **SimplesAgenda** é o concorrente de preço — se o cliente só quer o básico e barato, vai para lá. Não competir em preço, competir em experiência e suporte local.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

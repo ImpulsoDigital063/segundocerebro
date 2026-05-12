@@ -71,3 +71,7 @@
 3. **Próximo prompt CIC:** #2.5 v2 (multi-nicho denso) — suplementos + camisa de time + joias + perfumaria + brechó + outros
 4. **Bisbilhotar @xanimbrecho** comentários pra ver se a dona abriu outro projeto
 5. **Monitorar @katiapacheco.estilo** — quando inaugurar Renove Boutique, atacar
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

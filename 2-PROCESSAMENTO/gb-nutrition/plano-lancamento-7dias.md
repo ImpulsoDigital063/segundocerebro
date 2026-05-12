@@ -176,3 +176,7 @@ Frase exata definida com Eduardo antes de gravar. **Não pode soar forçada** �
 3. **3 combos do Gabriel** (whey+creatina? pré+creatina? qual ticket?)
 4. **Dias que Gabriel grava** (ideal: 1 dia gravando os 3 reels de uma vez)
 5. **Gabriel topa a menção orgânica à Impulso nos reels?** (resposta esperada: sim, é gratidão natural)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

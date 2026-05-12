@@ -230,3 +230,7 @@ Quando o usuário (Eduardo) pedir um criativo sobre LP da Impulso:
 5. **Quando montar um carrossel**, use os 6 layouts oficiais (foto-hero, texto-dominante, bento-blocks, stats, produto-mockup, screenshot-prova). Não invente layout novo.
 6. **Quando precisar de prova social** — cite valor de mercado real (R$2k-15k) como ancoragem, não desconto fake.
 7. **Quando precisar de número de impacto** — use os reais: 1.600+ pares UrbanFeet, 4 cases reais entregues, 7 dias de entrega, R$2.400 em bônus.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[OFERTA-LP-499]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]]

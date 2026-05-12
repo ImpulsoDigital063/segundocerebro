@@ -152,3 +152,7 @@ Essa seção é o **lugar estratégico** pra comunicar isso. O cliente vê que a
 - Essa seção é **arma de fechamento pesada** — ela mata "e se depois me abandonar?" que é a objeção nº 1 de quem já foi queimado por freelancer.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

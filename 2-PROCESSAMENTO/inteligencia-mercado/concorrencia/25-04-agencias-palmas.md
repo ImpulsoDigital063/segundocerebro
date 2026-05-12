@@ -201,3 +201,7 @@ Foco em DevFlow, Palmasite, Agência Topo.
 4. ⏳ **Setup Google Business** + pedir 5 reviews iniciais (cliente fechado, Erlane, Gabriel)
 5. ⏳ **Rodar Prompts #2 e #3** (leads IG-only) quando puder
 6. ⏳ **Deep dive nos 3 priorizados** (DevFlow, Palmasite, Agência Topo) na próxima rodada Claude in Chrome
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

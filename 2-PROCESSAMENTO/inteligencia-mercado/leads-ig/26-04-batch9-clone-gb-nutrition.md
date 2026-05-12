@@ -153,3 +153,7 @@ Geo-trap Tampa-FL EUA. Padrão emergente: hashtags FIT genéricas sem "TO" são 
 5. ✅ **Hashtag armadilha #fitpalmas** mapeada
 6. **AÇÃO EDUARDO**: conversar com Gabriel sobre INTROS pra Sabor da Terra + Nutri+ ANTES de disparar
 7. **Próximo prompt CIC sugerido (#10):** rede LP fitness — vasculhar destaques/menções/tags em fotos do Gabriel pra extrair personal/nutri/atletas locais. Persona-âncora: @gabribarros10 (LP de captura aluno presencial+online)
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

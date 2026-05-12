@@ -342,3 +342,7 @@ Exporte PNG 1080×1080 com fundo preto preenchido.
 ---
 
 **Fim do doc.** Última atualização: 2026-04-27.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[PROMPTS-CD-CALIBRADOS]] · [[STATUS-IMPULSO]]

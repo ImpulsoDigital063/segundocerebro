@@ -172,3 +172,7 @@ CSS: altura 0 → auto via `max-height: 0 / 500px` + `transition`.
 - Ícones `+` / `−` unicode ou SVG simples
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

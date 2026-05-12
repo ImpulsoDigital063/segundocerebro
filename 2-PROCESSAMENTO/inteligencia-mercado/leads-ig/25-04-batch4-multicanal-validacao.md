@@ -98,3 +98,7 @@ Lista parcial (15 lojas) extraída via Google IA: **TODAS as lojas conhecidas er
 Os outros 6 do batch #2.5 v2 (score 6-7) ficam disponíveis pro `npm run disparo:20-perfeitos` pegar pelo critério automático.
 
 **Aguardando do CIC paralelo:** resultado do **Prompt #5** (Caça LP multi-fonte calibrada com lições dos batches 1-4).
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

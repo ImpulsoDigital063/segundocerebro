@@ -312,3 +312,7 @@ Antes de mandar a LP final pro cliente:
 - [ ] Versão pra **advogado solo nicho** (clone Douglas Pimentel — adaptado pra conformidade OAB Provimento 205/2021)
 
 Cada nicho tem variações nas seções 4 (método), 5 (galeria), 7 (planos) e 8 (FAQ). Outras seções permanecem.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-funil-estrutura]] · [[lp-design-system-dark]]

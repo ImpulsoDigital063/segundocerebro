@@ -133,3 +133,7 @@ Eduardo cola no chat:
 Claude preenche as tabelas e atualiza as seções "O que está funcionando / O que não está funcionando".
 
 Após 7 dias de dados: exportar tabelas para Google Sheets para análise visual.
+
+---
+
+**Ver também:** [[STATUS-MPN]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[META ADS - PLAYBOOK]] · [[DIAGNOSTICO-MPN-ON-CONVERSAO]]

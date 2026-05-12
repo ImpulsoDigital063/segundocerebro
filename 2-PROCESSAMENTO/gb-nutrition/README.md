@@ -101,3 +101,7 @@ Esse projeto não é só entrega — é **case da Impulso Digital**:
 
 - `roteiros/` — 5 arquivos `.md` (1 por peça)
 - `referencias/` — prints de posts/reels que inspiram
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

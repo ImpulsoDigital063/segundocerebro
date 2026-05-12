@@ -89,3 +89,7 @@
 - Feature que duplica um Motor → absorvida no motor
 - "Sobre nós" / "Nossa história" → ninguém lê, não converte
 - Depoimentos falsos → prova social toast no canto é mais sutil e crível
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-product-ui-showcase]] · [[PADROES-VALIDADOS]]

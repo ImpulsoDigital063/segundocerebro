@@ -1571,3 +1571,7 @@ Aprendizado central: **a UrbanFeet tem MAIS dado que tu sobre prospecção — t
 - [10 Customer Retention Strategies 2025 — Twelverays](https://twelverays.agency/blog/customer-retention-strategies)
 - [7 Client Retention Strategies for Creative Agencies — ManyRequests](https://www.manyrequests.com/blog/client-retention-strategies)
 - [Customer Retention Strategies 2025: 20+ Ways — Infobip](https://www.infobip.com/blog/customer-retention-strategies)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · [[ROTEIRO-DISPARO-26-04]] · [[vacina-lead-quente]]

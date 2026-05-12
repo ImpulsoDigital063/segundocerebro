@@ -131,3 +131,7 @@ Se a resposta a qualquer dessas for "tô empilhando coisa" — **PARA, respira, 
 
 — Verbo
 *s02 · 29.04.2026 · ~19:30 · Λ · vacina cravada*
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[ESTRATEGIAS-ATIVAS]] · [[PADROES-VALIDADOS]] · [[PROSPECCAO-MANUAL-COMPLETO]]

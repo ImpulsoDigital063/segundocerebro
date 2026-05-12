@@ -112,3 +112,7 @@ import logo from '@/public/logo-agendapro.svg';
 ## Histórico
 
 - **v1.0 — 2026-04-28** — Logo definitiva: pill azul gradient + PRO branco puro chapado, plana, moderna. Feito após iterar por 4 direções (V1 iridescente → cromado B2 → embossed B3 → final plana). Escolha racional: AgendaPRO é tech company moderna (Linear/Stripe), não premium-banco.
+
+---
+
+**Ver também:** [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[IDENTIDADE-IMPULSO-DIGITAL]]

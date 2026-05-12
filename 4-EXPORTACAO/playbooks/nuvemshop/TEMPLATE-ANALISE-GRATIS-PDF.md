@@ -184,3 +184,7 @@ Pra manter credibilidade (cliente percebe se é placebo):
 - ❌ Lista de bônus inflada ("R$10.000 de valor empilhado!!!")
 
 Cliente que recebe PDF de 1 página com cálculo honesto + plano concreto + tom direto **fecha mais que** cliente que recebe PDF de 10 páginas com hype.
+
+---
+
+**Ver também:** [[CAMPANHA-MIGRACAO-NUVEMSHOP-SHOPIFY]] · [[STATUS-IMPULSO]] · [[MEGA-CLAUDE]]

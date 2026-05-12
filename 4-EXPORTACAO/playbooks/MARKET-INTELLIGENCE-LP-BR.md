@@ -249,3 +249,7 @@ NUNCA usar "essa semana só!" toda semana. Cliente sofisticado percebe padrão.
 | `lib/openai.ts` SYSTEM_SCRIPT_VENDA | Tabela atualizada + ancoragem real + combo |
 | Memórias persistentes | `reference_market_intelligence_lp.md` + `project_estrutura_ofertas_2026.md` |
 | Próximos prompts CIC | Tier S automático + hierarquia 70/20/10 + filtro registro profissional |
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[LP-DESIGN-PLAYBOOK]] · [[ESTUDO-MERCADO-LP-SHOPIFY-BR-2026]]

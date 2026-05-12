@@ -225,3 +225,7 @@ Fica com meu contato — quando estiver no momento certo, me chama 👊
 - [ ] 20 perfis identificados com WhatsApp em mãos
 - [ ] 20 mensagens de abertura enviadas
 - [ ] Registrar cada resposta no tracker acima
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

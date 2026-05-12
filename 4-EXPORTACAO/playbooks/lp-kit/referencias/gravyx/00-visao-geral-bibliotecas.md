@@ -33,3 +33,7 @@ A LP inteira é **HTML + CSS puros + JS vanilla**. Zero bibliotecas pesadas de a
 - Gallery rotator + infinite scroll — vanilla JS dentro de `useEffect` no componente React
 
 **Não precisamos instalar nada.** Tudo pode ir direto pro código atual.
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

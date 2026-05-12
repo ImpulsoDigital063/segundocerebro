@@ -365,3 +365,7 @@ Pontos críticos que tu DEVE respeitar:
 8. **Concorrência mapeada** — 17 concorrentes em Palmas, ancoragem nacional R$2-15k
 
 **Fim do doc.**
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-RADARPRO]] · [[ROADMAP-9-NIVEIS]] · [[PROSPECCAO-MANUAL-COMPLETO]]

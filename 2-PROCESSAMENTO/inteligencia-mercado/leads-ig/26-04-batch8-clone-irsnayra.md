@@ -141,3 +141,7 @@ O batch #8 valida que o sistema agora **aprende com falhas** automaticamente:
 - Aprendizado opera-se em camadas (não é só "mais leads", é "leads melhores com pitch melhor")
 
 Próximo nível: aplicar mesmo padrão pra OUTROS leads não-fechados conforme aparecerem. Toda recusa vira insumo pra calibrar pitch dos análogos.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

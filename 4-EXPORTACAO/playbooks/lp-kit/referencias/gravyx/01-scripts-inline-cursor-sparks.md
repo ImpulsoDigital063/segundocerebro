@@ -39,3 +39,7 @@
 - **Paleta Gravyx** já vazando: `#00A1FF` (azul elétrico), `#D3E3FF` (azul claro), `#fff` (branco).
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

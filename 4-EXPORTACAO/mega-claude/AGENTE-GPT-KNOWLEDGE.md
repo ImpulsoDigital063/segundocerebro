@@ -209,3 +209,7 @@ Só prospectar depois que o produto está pronto para entregar. Promessa sem ent
 - MPN-On: conversão aumentada 30-50% + 3 módulos gravados e publicados
 - AgendaPRO: 1º cliente recorrente (R$97–147/mês)
 - Meta combinada: R$1.000–3.000 em novas receitas + tração MPN
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[PROMPTS-CHATGPT-IMPULSO]]

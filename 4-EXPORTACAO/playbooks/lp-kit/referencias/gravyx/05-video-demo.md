@@ -64,3 +64,7 @@
 Não portar agora. Deixar o espaço reservado com classe `.section-video` no CSS pra facilitar adicionar depois. Hoje → substituir por seção de **mini-prints de projetos reais** (pattern "mini-UI do produto" já validado na memória `feedback_lp_visual_proof.md`).
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

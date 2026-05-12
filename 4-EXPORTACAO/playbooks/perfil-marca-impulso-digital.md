@@ -268,3 +268,7 @@ Quando esse aqui estiver validado e gerando criativo bom, replicar pra:
 - ✅ Workflow de criação descrito
 - ⏳ **Falta:** vídeo de referência do Eduardo + integração com Claude Design
 - ⏳ **Falta:** validação do primeiro criativo gerado (loop de calibragem)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[IDENTIDADE-IMPULSO-DIGITAL]] · [[IMPULSO_CORE_SYSTEM_V2]]

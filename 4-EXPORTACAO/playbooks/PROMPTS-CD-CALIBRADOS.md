@@ -333,3 +333,7 @@ Tu construiu o Impulso Design durante meses na paleta (a). Mas o Aurora gradient
 - `C:\Users\DELL\impulsodesign\lib\slides.tsx` — 6 layouts + aspect ratios
 - `C:\Users\DELL\impulsodesign\data\gb-lancamento.ts` — exemplo real de carrossel calibrado (GB Nutrition lançamento, 8 slides)
 - `C:\Users\DELL\impulsodesign\package.json` — stack (Next.js 16, Replicate, sharp, R2)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[PROMPTS-CHATGPT-IMPULSO]]

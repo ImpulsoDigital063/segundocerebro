@@ -142,3 +142,11 @@ Resumo executivo separado em **`ATUALIZACAO-24-04-2026.md`** (mesma pasta).
 - `189150e` — seletor multi-modelo
 - `b87dfba` — gerador de Script de Venda
 - `3e192b4` — enriquecimento SYSTEM_PROMPT
+
+---
+
+**Ver também:**
+- Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
+- Status correlatos: [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[STATUS-AURA-ENERGY]]
+- Documentos RadarPRO: [[ROADMAP-9-NIVEIS]] · [[AUDITORIA-25-04-2026]] · [[ATUALIZACAO-24-04-2026]] · [[IDEIA-FORMULARIO-DIAGNOSTICO-ADDON]]
+- Playbooks: [[CONTEXTO-RADARPRO-PARA-CHATGPT]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[META ADS - PLAYBOOK]]

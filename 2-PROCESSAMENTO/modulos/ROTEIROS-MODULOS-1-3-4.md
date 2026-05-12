@@ -468,3 +468,7 @@ Tamo junto! 👊"
 *Roteiros criados: 09/04/2026*  
 *Pronto pra gravar*  
 *Tempo total: ~2.5-3 horas*
+
+---
+
+**Ver também:** [[STATUS-MPN]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[estudio-setup-gravacao]]

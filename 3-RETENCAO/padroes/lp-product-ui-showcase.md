@@ -42,3 +42,7 @@ O lead enxerga o que vai ter acesso antes do CTA. Reduz fricção, aumenta conve
 ## Referências
 
 linear.app · vercel.com · stripe.com · arc.net · raycast.com · resend.com · clerk.com
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[PADROES-VALIDADOS]]

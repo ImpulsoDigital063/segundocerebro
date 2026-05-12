@@ -32,3 +32,7 @@ Quando a inbox tiver 5+ itens, processe:
 - Se é estratégia → move para `3-RETENCAO/estrategias/`
 - Se é tarefa de projeto → move para `2-PROCESSAMENTO/`
 - Se não serve → deleta sem culpa
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[OBSIDIAN-CONFIG]] · [[README]] (raiz do vault)

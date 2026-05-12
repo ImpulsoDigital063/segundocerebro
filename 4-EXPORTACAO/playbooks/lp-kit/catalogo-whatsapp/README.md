@@ -23,3 +23,7 @@ The design medium is **HTML/CSS/JS** — these are prototypes, not production co
 - `lp-impulso/README.md` — this file
 - `lp-impulso/chats/` — conversation transcripts (read these!)
 - `lp-impulso/project/` — the `LP Impulso` project files (HTML prototypes, assets, components)
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[MEGA-CLAUDE]] · [[LP-DESIGN-PLAYBOOK]] · [[CAMPANHA-MIGRACAO-NUVEMSHOP-SHOPIFY]]

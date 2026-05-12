@@ -152,3 +152,7 @@ Posso segurar a sua até quinta-feira?
 | Jul em diante | — | — | R$970+ fixo (10 clientes) |
 
 A recorrência do AgendaPRO transforma a Impulso Digital de serviço avulso em receita previsível.
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]]

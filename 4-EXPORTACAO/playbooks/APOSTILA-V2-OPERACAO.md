@@ -775,3 +775,7 @@ segundo-cerebro/
 **Próxima atualização:** Quando fechar 1º cliente Impulso Digital ou resultado do Teste A/B #1
 
 > O sistema não gera renda por existir. Gera renda porque te faz executar melhor toda vez.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[STATUS-MPN]] · [[STATUS-RADARPRO]] · [[IMPULSO_CORE_SYSTEM_V2]] · [[PADROES-VALIDADOS]]

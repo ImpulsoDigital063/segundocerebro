@@ -233,3 +233,7 @@ Contador regressivo.
 - [ ] Conseguir **2-3 depoimentos** de alunos em vídeo (gravar essa semana antes do D4)
 - [ ] Confirmar cutoff motoboy (entra nos stories D5 e D7)
 - [ ] Gabriel aprova o tom geral antes de começar
+
+---
+
+**Ver também:** [[PDF-1-GB-NUTRITION-LANCAMENTO-30D]] · [[plano-lancamento-7dias]] · [[MEGA-CLAUDE]]

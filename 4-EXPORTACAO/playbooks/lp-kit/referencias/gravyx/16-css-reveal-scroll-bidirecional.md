@@ -237,3 +237,7 @@ export default function Page() {
 Esse é o **bloco mais replicável e de maior impacto visual** de toda a análise Gravyx. **Porta direto, sem modificação**, muda a LP inteira de patamar.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

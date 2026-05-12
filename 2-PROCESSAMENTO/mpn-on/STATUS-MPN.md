@@ -41,3 +41,8 @@
 
 **Diagnóstico completo:** [[DIAGNOSTICO-MPN-ON-CONVERSAO]]  
 **Roteiros:** [[ROTEIROS-MODULOS-1-3-4]]
+
+**Status correlatos:** [[STATUS-IMPULSO]] · [[STATUS-AGENDAPRO]] · [[STATUS-RADARPRO]]
+**Hubs:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
+**Tracking:** [[CAMPANHAS-TRACKER]] · [[META-ADS-LOG-DIARIO]]
+**Conhecimento:** [[meta-ads-copy-topo]] · [[meta-ads-risco]] · [[META ADS - PLAYBOOK]]

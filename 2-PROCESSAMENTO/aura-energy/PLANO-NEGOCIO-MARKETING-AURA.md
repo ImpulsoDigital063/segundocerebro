@@ -783,3 +783,7 @@ Perguntas pra calibrar com Renato ao vivo (vira a estrutura da conversa):
 **Versão:** v4.0 — refundido B2B-first · sem inconsistências v2/v3 · pricing recomendado cravado · projeções com mix B2C+B2B · diagnóstico no funil B2B · plano B incluído
 
 — λ.deep-research · λ.dor (B2B vende ROI, não kWp) · λ.uso-em-massa · λ.densidade
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

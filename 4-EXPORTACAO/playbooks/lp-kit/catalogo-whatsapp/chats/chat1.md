@@ -171,3 +171,7 @@ Pronto — carrossel importado pro Canva.
 
 **Abrir no Canva:** https://www.canva.com/d/3-O62aYleOjAQIH
 
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[PROSPECCAO-MANUAL-COMPLETO]]

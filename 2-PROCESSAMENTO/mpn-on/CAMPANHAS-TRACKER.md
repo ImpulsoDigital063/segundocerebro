@@ -155,3 +155,7 @@ Eduardo cola o relatório bruto (Meta Ads, Kiwify, Claude) → Claude extrai os 
 | 11/04/2026 | Usar InitiateCheckout como evento de conversão na nova campanha | Acumula dados mais rápido que Purchase do zero |
 | 12/04/2026 | Aceitar aumento de orçamento R$40 → R$50/dia | Score de Oportunidade 85/100 — Meta sinalizou potencial |
 | 12/04/2026 | Não aumentar além de R$50/dia por ora | Aguardar dados de ROAS antes de escalar mais |
+
+---
+
+**Ver também:** [[STATUS-MPN]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[META ADS - PLAYBOOK]] · [[DIAGNOSTICO-MPN-ON-CONVERSAO]]

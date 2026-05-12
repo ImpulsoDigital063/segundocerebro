@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>GB Nutrition · Lançamento 30 dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:        #1FA85C;
+    --green-dk:     #0E5A38;
+    --green-soft:   #E6F4EC;
+    --blue:         #1FA8E0;
+    --blue-dk:      #0D6B95;
+    --blue-soft:    #E0F4FB;
+    --gold:         #E0A82E;
+    --gold-dk:      #A87A1F;
+    --gold-soft:    #FAF1DA;
+    --ink:          #2C2C2E;
+    --ink-2:        #3A3A3C;
+    --mute:         #6E6E73;
+    --mute-2:       #8E8E93;
+    --line:         #D5DCE0;
+    --line-soft:    #E5E9EC;
+    --paper:        #F6F8F7;
+    --paper-2:      #FBFCFB;
+    --white:        #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 14px;
+  }
+
+  /* PAGE WRAPPER · seções lógicas que se concatenam naturalmente · sem
+     forçar altura · browser quebra página onde fizer sentido */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px 52px 16px;
+    background: var(--white);
+    position: relative;
+  }
+  /* Quebra página antes de cada PARTE nova (5 partes do doc) */
+  .page.new-part {
+    page-break-before: always;
+    padding-top: 36px;
+  }
+  /* Page-headers internos só duplicam info nas páginas físicas
+     concatenadas · ocultos · mantemos hierarquia via pre-title */
+  .page-header { display: none; }
+  /* Não cortar cards/criativos importantes no meio */
+  .day, .criativo-header, .roteiro, .carrossel-slide,
+  .pilares, .stat-grid, .persona, .card {
+    page-break-inside: avoid;
+  }
+  .criativo-header { page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .page-header .ph-left { display: flex; gap: 12px; align-items: center; }
+  .page-header .ph-logo {
+    font-weight: 900;
+    color: var(--green-dk);
+    letter-spacing: -0.01em;
+    font-size: 13px;
+    text-transform: none;
+  }
+  .page-header .ph-section { color: var(--ink-2); font-weight: 600; }
+  .page-header .ph-pagenum {
+    color: var(--green);
+    font-weight: 800;
+    font-size: 11px;
+  }
+  .page-header .ph-pagenum .total { color: var(--mute); font-weight: 500; }
+
+  /* CAPA · ocupa página inteira · força quebra depois */
+  .cover {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 60px 40px;
+    page-break-after: always;
+    background: var(--white);
+    position: relative;
+  }
+  .cover .brand-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--green) 33%, var(--blue) 33%, var(--blue) 66%, var(--gold) 66%, var(--gold) 100%);
+    margin-bottom: 60px;
+  }
+  .cover .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .cover .logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    color: var(--green-dk);
+  }
+  .cover .logo .super {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--mute);
+    margin-left: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .cover .tag-impulso {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+  .cover .tag-impulso::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--green);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .cover .pre-headline {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1.5px solid var(--green);
+    color: var(--green-dk);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-size: 108px;
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .cover h1 .accent { color: var(--green); }
+  .cover .sub {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--mute);
+    margin-bottom: 60px;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+  .cover .quote-block {
+    border-left: 4px solid var(--green);
+    padding-left: 22px;
+    margin: 50px 0 70px;
+    max-width: 520px;
+  }
+  .cover .quote-block .q {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .cover .quote-block .a {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.16em;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+  .cover .toc {
+    margin: 70px 0 30px;
+  }
+  .cover .toc-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--mute);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .cover .toc-list {
+    list-style: none;
+    counter-reset: toc;
+  }
+  .cover .toc-list li {
+    counter-increment: toc;
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .cover .toc-list li::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--green);
+    font-weight: 800;
+    min-width: 28px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .cover .toc-list li strong {
+    font-weight: 700;
+  }
+  .cover .toc-list li .desc {
+    color: var(--mute);
+    font-weight: 400;
+    margin-left: 6px;
+    font-size: 13.5px;
+  }
+  .cover .cover-footer {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .cover .cover-footer .accent { color: var(--green-dk); font-weight: 700; }
+  .cover .cover-footer .gb-tag {
+    font-style: italic;
+    color: var(--green-dk);
+    font-weight: 600;
+  }
+
+  /* HEADINGS · todo no branco · cores em detalhes */
+  .pre-title {
+    display: inline-block;
+    padding: 4px 11px;
+    border: 1.5px solid var(--green);
+    color: var(--green-dk);
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  h1.section {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  h1.section .num {
+    color: var(--green);
+    margin-right: 10px;
+  }
+  .section-sub {
+    color: var(--mute);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-top: 30px;
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--green);
+  }
+  h3 {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--green-dk);
+    margin-top: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 12px; color: var(--ink-2); font-size: 14px; }
+
+  /* CARDS · sempre branco · borda lateral colorida */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .card.blue { border-left-color: var(--blue); }
+  .card.gold { border-left-color: var(--gold); }
+  .card.soft {
+    background: var(--paper-2);
+  }
+
+  /* PILARES · 3 cards brancos · top border alternada */
+  .pilares {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0 30px;
+  }
+  .pilar {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--green);
+    border-radius: 6px;
+    padding: 24px 20px;
+  }
+  .pilar.blue { border-top-color: var(--blue); }
+  .pilar.gold { border-top-color: var(--gold); }
+  .pilar .num-big {
+    color: var(--green);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.04em;
+  }
+  .pilar.blue .num-big { color: var(--blue); }
+  .pilar.gold .num-big { color: var(--gold-dk); }
+  .pilar .title {
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .pilar .desc { font-size: 13px; color: var(--ink-2); margin-bottom: 14px; line-height: 1.5; }
+  .pilar .frase {
+    font-size: 12px;
+    color: var(--mute);
+    border-top: 1px solid var(--line-soft);
+    padding-top: 12px;
+    font-style: italic;
+  }
+
+  /* TABELA · cabeçalho fino verde · rest white */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead {
+    border-bottom: 2px solid var(--green);
+  }
+  th {
+    text-align: left;
+    padding: 11px 14px;
+    font-weight: 800;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--green-dk);
+    background: var(--white);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+    color: var(--ink-2);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--paper-2); }
+
+  /* TIMELINE · branca com bordas */
+  .timeline {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+    font-family: 'Inter', monospace;
+    font-size: 12.5px;
+    line-height: 2;
+    margin: 20px 0;
+    color: var(--ink);
+  }
+  .timeline .wk {
+    color: var(--green-dk);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--green-soft);
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+  }
+  .timeline .icon-reel   { color: var(--green); font-weight: 800; }
+  .timeline .icon-promo  { color: var(--gold-dk); font-weight: 800; }
+  .timeline .icon-static { color: var(--blue-dk); font-weight: 800; }
+  .timeline .icon-mi     { color: var(--gold-dk); font-weight: 800; }
+
+  /* STATS · cards brancos · número colorido · borda inferior cor */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0 22px;
+  }
+  .stat {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-bottom: 4px solid var(--green);
+    padding: 18px 16px;
+    border-radius: 6px;
+  }
+  .stat:nth-child(3n+2) { border-bottom-color: var(--blue); }
+  .stat:nth-child(3n+3) { border-bottom-color: var(--gold); }
+  .stat .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+  .stat:nth-child(3n+2) .num { color: var(--blue); }
+  .stat:nth-child(3n+3) .num { color: var(--gold-dk); }
+  .stat .label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--mute);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* PERSONAS · cards brancos */
+  .persona {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+  }
+  .persona:nth-child(5n+2) { border-left-color: var(--blue); }
+  .persona:nth-child(5n+3) { border-left-color: var(--gold); }
+  .persona:nth-child(5n+4) { border-left-color: var(--green-dk); }
+  .persona:nth-child(5n+5) { border-left-color: var(--blue-dk); }
+  .persona-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .persona-nome {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .persona-nome .idade {
+    color: var(--green);
+    margin-left: 6px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .persona:nth-child(5n+2) .persona-nome .idade { color: var(--blue); }
+  .persona:nth-child(5n+3) .persona-nome .idade { color: var(--gold-dk); }
+  .persona-tag {
+    font-size: 10px;
+    border: 1px solid var(--line);
+    color: var(--mute);
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .persona-row {
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 5px 0;
+  }
+  .persona-row strong {
+    color: var(--green-dk);
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 8px;
+    min-width: 90px;
+  }
+  .persona-fala {
+    font-style: italic;
+    color: var(--ink);
+    padding: 10px 14px;
+    background: var(--paper-2);
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .persona:nth-child(5n+2) .persona-fala { border-left-color: var(--blue); }
+  .persona:nth-child(5n+3) .persona-fala { border-left-color: var(--gold); }
+
+  /* CRIATIVO HEADER · branco com lateral grossa */
+  .criativo-header {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 12px solid var(--green);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+  }
+  .criativo-header.blue { border-left-color: var(--blue); }
+  .criativo-header.gold { border-left-color: var(--gold); }
+  .criativo-header .tag {
+    display: inline-block;
+    color: var(--green-dk);
+    border: 1.5px solid var(--green);
+    padding: 4px 11px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .criativo-header.blue .tag { color: var(--blue-dk); border-color: var(--blue); }
+  .criativo-header.gold .tag { color: var(--gold-dk); border-color: var(--gold); }
+  .criativo-header h2 {
+    color: var(--ink);
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    padding-bottom: 0;
+  }
+  .criativo-header h2::after { display: none; }
+  .criativo-meta {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--mute);
+  }
+  .criativo-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .criativo-meta strong { color: var(--green-dk); font-weight: 700; }
+
+  /* ROTEIRO CENAS · todas brancas */
+  .roteiro { margin: 14px 0; }
+  .cena {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .cena-tempo {
+    background: var(--paper);
+    color: var(--green-dk);
+    padding: 10px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.12em;
+    height: fit-content;
+    line-height: 1.5;
+    border: 1px solid var(--line-soft);
+  }
+  .cena-tempo .time-num {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 900;
+  }
+  .cena-corpo .cena-titulo {
+    font-weight: 700;
+    color: var(--mute);
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cena-fala {
+    background: var(--paper-2);
+    border-left: 3px solid var(--green);
+    padding: 12px 14px;
+    border-radius: 4px;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0;
+    font-weight: 500;
+  }
+  .cena-fala em {
+    color: var(--green);
+    font-weight: 800;
+    font-style: normal;
+  }
+  .cena-tela {
+    background: var(--paper);
+    border: 1px dashed var(--blue);
+    color: var(--blue-dk);
+    padding: 9px 14px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    margin: 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* DIREÇÃO GRID · branca com lateral verde */
+  .direcao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .direcao-grid .item {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+  }
+  .direcao-grid .item strong {
+    color: var(--green-dk);
+    font-weight: 800;
+    display: block;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .direcao-grid .item span { color: var(--ink-2); }
+
+  /* COPY BLOCO · branco com borda lateral */
+  .copy-bloco {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    color: var(--ink);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    margin: 12px 0;
+  }
+
+  /* CARROSSEL SLIDES · brancos com lateral super grossa */
+  .carrossel-slide {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 16px solid var(--green);
+    border-radius: 6px;
+    padding: 28px 26px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .carrossel-slide.alt { border-left-color: var(--blue); }
+  .carrossel-slide .num {
+    position: absolute;
+    top: 14px; right: 16px;
+    color: var(--green);
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .carrossel-slide.alt .num { color: var(--blue); }
+  .carrossel-slide h3 {
+    color: var(--ink);
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 8px 0 14px;
+    text-transform: none;
+    letter-spacing: -0.015em;
+    padding-right: 40px;
+  }
+  .carrossel-slide p { color: var(--ink-2); font-size: 14px; margin-bottom: 8px; }
+  .carrossel-slide p:last-child { margin-bottom: 0; }
+  .carrossel-slide.final {
+    border-left-color: var(--gold);
+    background: var(--gold-soft);
+  }
+  .carrossel-slide.final .num { color: var(--gold-dk); }
+  .carrossel-slide.final h3 { color: var(--ink); }
+
+  /* STORY · DAY CARDS · brancos · lateral grossa colorida · cabeçalho mínimo */
+  .day {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--green);
+    border-radius: 6px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .day.blue { border-left-color: var(--blue); }
+  .day.gold { border-left-color: var(--gold); }
+  .day.dk   { border-left-color: var(--green-dk); }
+
+  .day-header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper-2);
+  }
+  .day-num {
+    color: var(--green);
+    font-weight: 900;
+    font-size: 20px;
+    min-width: 50px;
+    text-align: center;
+    letter-spacing: -0.025em;
+    border: 2px solid var(--green);
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  .day.blue .day-num { color: var(--blue); border-color: var(--blue); }
+  .day.gold .day-num { color: var(--gold-dk); border-color: var(--gold); }
+  .day.dk .day-num   { color: var(--green-dk); border-color: var(--green-dk); }
+
+  .day-tema {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 3px;
+    font-weight: 700;
+  }
+  .day-titulo {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .day-body { padding: 16px 20px; }
+  .story {
+    background: var(--paper-2);
+    border: 1px solid var(--line-soft);
+    border-left: 3px solid var(--green);
+    border-radius: 5px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .story:last-child { margin-bottom: 0; }
+  .day.blue .story { border-left-color: var(--blue); }
+  .day.gold .story { border-left-color: var(--gold); }
+  .day.dk .story   { border-left-color: var(--green-dk); }
+
+  .story-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .story-num { color: var(--green-dk); }
+  .story-time { color: var(--mute); }
+  .story-tipo {
+    display: inline-block;
+    color: var(--green-dk);
+    border: 1px solid var(--green);
+    background: var(--white);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 3px 4px 3px 0;
+  }
+  .story-row {
+    margin: 6px 0;
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
+  .story-row strong {
+    color: var(--green-dk);
+    font-weight: 800;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .story-fala {
+    background: var(--white);
+    border-left: 3px solid var(--green);
+    padding: 9px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--ink);
+    border-radius: 3px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .story-fala em { color: var(--green); font-weight: 800; font-style: normal; }
+  .story-cta {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--mute);
+    padding: 6px 10px;
+    background: var(--white);
+    border: 1px dashed var(--line);
+    border-radius: 3px;
+  }
+  .story-cta strong { color: var(--green-dk); font-weight: 800; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-right: 4px; }
+  .mi-tag {
+    display: inline-block;
+    color: var(--gold-dk);
+    border: 1px solid var(--gold);
+    background: var(--gold-soft);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-left: 6px;
+    text-transform: uppercase;
+  }
+
+  /* HASHTAG BLOCO */
+  .hashtag-bloco {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+  .hashtag-bloco:nth-of-type(2n) { border-left-color: var(--blue); }
+  .hashtag-bloco:nth-of-type(3n) { border-left-color: var(--gold); }
+  .hashtag-bloco strong {
+    color: var(--green-dk);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  .hashtag-bloco:nth-of-type(2n) strong { color: var(--blue-dk); }
+  .hashtag-bloco:nth-of-type(3n) strong { color: var(--gold-dk); }
+  .hashtag-bloco code {
+    color: var(--green-dk);
+    border: 1px solid var(--green-soft);
+    background: var(--green-soft);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: 'Inter', monospace;
+    font-weight: 600;
+    display: inline-block;
+    margin: 2px;
+  }
+  .hashtag-bloco:nth-of-type(2n) code { color: var(--blue-dk); border-color: var(--blue-soft); background: var(--blue-soft); }
+  .hashtag-bloco:nth-of-type(3n) code { color: var(--gold-dk); border-color: var(--gold-soft); background: var(--gold-soft); }
+
+  /* HELPERS */
+  ul.tight { margin: 8px 0 14px 22px; }
+  ul.tight li {
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  ul.tight li::marker { color: var(--green); }
+  ul.tight li strong { color: var(--green-dk); font-weight: 700; }
+
+  hr.fancy {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--blue) 50%, var(--gold) 100%);
+    margin: 28px 0;
+  }
+
+  .alert {
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin: 12px 0;
+    color: var(--ink);
+  }
+  .alert strong {
+    color: var(--gold-dk);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+  }
+
+  .closing {
+    text-align: center;
+    padding: 40px 0 20px;
+  }
+  .closing .q {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    font-style: italic;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+  .closing .q .accent { color: var(--green); }
+  .closing .meta {
+    margin-top: 14px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* PRINT · rodapé de marca rotativo · 1 frase por parte do documento
+     Chrome suporta @page named + page: property · cria branding
+     cinematográfico onde cada seção tem assinatura própria. */
+
+  /* Default @page (usado na capa antes das parts) */
+  @page {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Juntos somos mais fortes\"";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  /* Parte 01 · Estudo */
+  .page.p1 { page: estudo; }
+  @page estudo {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"A dor é passageira. O orgulho é pra sempre.\" — Dorian Yates";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  /* Parte 02 · Estratégia */
+  .page.p2 { page: estrategia; }
+  @page estrategia {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Transformação não é mágica, é método.\" — Gabriel Barros";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  /* Parte 03 · Criativos */
+  .page.p3 { page: criativos; }
+  @page criativos {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Onde foco vai, energia flui.\" — Tony Robbins";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  /* Parte 04 · Roteiros diários */
+  .page.p4 { page: roteiros; }
+  @page roteiros {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Disciplina é fazer todo dia, mesmo quando não dá vontade.\"";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+
+  /* Parte 05 · Apêndices */
+  .page.p5 { page: apendices; }
+  @page apendices {
+    size: A4;
+    margin: 14mm 10mm 18mm 10mm;
+    @bottom-left {
+      content: "GB Nutrition · gbnutrition.online";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #6E6E73;
+      letter-spacing: 0.04em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "\"Resultado não é sorte. É consistência.\"";
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #0E5A38;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+  @media print {
+    body { background: var(--white); }
+    .page, .cover {
+      padding-left: 32px;
+      padding-right: 32px;
+      box-shadow: none;
+    }
+    .page { padding-top: 8px; padding-bottom: 10px; }
+    a { color: inherit; text-decoration: none; }
+    /* Cover-footer redundante agora · escondido na impressão (info
+       aparece via @page bottom-left/right em todas as páginas) */
+    .cover .cover-footer { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CAPA                                                              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="brand-bar"></div>
+
+  <div class="topbar">
+    <div class="logo">GB Nutrition <span class="super">Suplementos</span></div>
+    <div class="tag-impulso">Impulso Digital</div>
+  </div>
+
+  <div class="pre-headline">Plano de Lançamento · 30 dias</div>
+  <h1>Mês de<br>Virada<span class="accent">.</span></h1>
+  <div class="sub">30 dias de método pra colocar a GB Nutrition no jogo digital de Palmas · sem promessa milagrosa · só conteúdo direto.</div>
+
+  <div class="quote-block">
+    <div class="q">"Transformação não é mágica,<br>é método."</div>
+    <span class="a">Gabriel Barros</span>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">O que tem neste documento</div>
+    <ol class="toc-list">
+      <li><strong>O estudo</strong> <span class="desc">· quem é o Gabriel · quem é o consumidor de Palmas</span></li>
+      <li><strong>Como vamos lançar</strong> <span class="desc">· estratégia · cronograma 30 dias</span></li>
+      <li><strong>Os 5 criativos</strong> <span class="desc">· 3 reels + 1 carrossel + 1 estático</span></li>
+      <li><strong>30 dias de stories</strong> <span class="desc">· roteiro diário pra Gabriel seguir</span></li>
+      <li><strong>Apêndices</strong> <span class="desc">· hashtags · prompts · contatos</span></li>
+    </ol>
+  </div>
+
+  <div class="cover-footer">
+    <span><span class="accent">GB Nutrition</span> · CNPJ 49.518.620/0001-06 · gbnutrition.online</span>
+    <span class="gb-tag">"Juntos somos mais fortes"</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PARTE 01 · ESTUDO · ABERTURA                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page new-part p1">
+  <div class="pre-title">Parte 01 · O Estudo</div>
+  <h1 class="section">Antes de criar nada · estudamos</h1>
+  <div class="section-sub">2 pesquisas profundas alimentaram este plano</div>
+
+  <div class="card">
+    <p>Esse documento não é chute. Antes de propor 1 reel ou 1 story · a gente investigou 2 coisas:</p>
+    <ul class="tight">
+      <li>Quem o Gabriel é hoje · perfil pessoal · loja · presença real</li>
+      <li>Quem é o consumidor de suplemento em Palmas · o que pesquisa · o que teme · como fala</li>
+    </ul>
+    <p style="margin-top: 10px; color: var(--mute); font-size: 12.5px;">Resumo dos achados nas próximas páginas. Cada decisão do plano (ângulo · tom · cronograma) saiu daqui.</p>
+  </div>
+
+  <h2>Quem é o Gabriel · em números</h2>
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="num">+500</div>
+      <div class="label">Alunos com resultados reais ao longo da carreira</div>
+    </div>
+    <div class="stat">
+      <div class="num">6,4k</div>
+      <div class="label">Seguidores @gabribarros10 · público local orgânico</div>
+    </div>
+    <div class="stat">
+      <div class="num">2,5</div>
+      <div class="label">Anos da marca GB Nutrition · Insta + vendas presenciais</div>
+    </div>
+    <div class="stat">
+      <div class="num">2026</div>
+      <div class="label">Arnold Conference SP · foto com Fabricio Pacholok</div>
+    </div>
+    <div class="stat">
+      <div class="num">2023</div>
+      <div class="label">Muscle Contest TO · 2 troféus</div>
+    </div>
+    <div class="stat">
+      <div class="num">35</div>
+      <div class="label">Produtos no site · 5 marcas principais curadas</div>
+    </div>
+  </div>
+
+  <h3>O que isso nos diz</h3>
+  <ul class="tight">
+    <li><strong>Gabriel é atleta DE VERDADE</strong> · não personal de Insta · isso vira nosso pilar de autoridade</li>
+    <li><strong>Marca não é nova · site é</strong> · GB Nutrition tem 2,5 anos no Insta + vendas presenciais · o que estreia agora é a operação digital com site Shopify entregue pela Impulso</li>
+    <li><strong>Insta da loja tá em ritmo lento</strong> · primeiro objetivo do plano é ressuscitar a presença digital</li>
+    <li><strong>Posts pessoais batem 5-10x mais views</strong> que técnicos · conteúdo precisa misturar pessoal + produto</li>
+  </ul>
+</div>
+
+<!-- 5 PERSONAS -->
+<div class="page p1">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Parte 01 · O Estudo</span>
+    </div>
+    <span class="ph-pagenum">03 <span class="total">/ 24</span></span>
+  </div>
+
+  <h1 class="section">Quem compra suplemento em Palmas</h1>
+  <div class="section-sub">5 personas reais · com falas reais extraídas de reviews, grupos e autocomplete Google</div>
+
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-nome">Larissa <span class="idade">27 anos</span></div>
+      <div class="persona-tag">Começou agora</div>
+    </div>
+    <div class="persona-row"><strong>Perfil</strong>Assistente administrativa · treina por estética e ansiedade</div>
+    <div class="persona-row"><strong>Quer</strong>Whey · multivitamínico · talvez termogênico</div>
+    <div class="persona-row"><strong>Maior medo</strong>"Whey engorda?" (busca real no Google)</div>
+    <div class="persona-fala">"Fui muito bem atendida pela Júlia · ela explicou tudo com paciência."</div>
+  </div>
+
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-nome">Lucas <span class="idade">24 anos</span></div>
+      <div class="persona-tag">Puxa pesado</div>
+    </div>
+    <div class="persona-row"><strong>Perfil</strong>Estudante de Ed. Física · busca PR · competição amadora</div>
+    <div class="persona-row"><strong>Quer</strong>Pré-treino forte · creatina · beta-alanina</div>
+    <div class="persona-row"><strong>Maior medo</strong>Produto fraco ou falsificado · "não senti nada"</div>
+    <div class="persona-fala">"Pancada · o brabo tem nome 🔥"</div>
+  </div>
+
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-nome">Camila <span class="idade">38 anos</span></div>
+      <div class="persona-tag">Mãe voltou treinar</div>
+    </div>
+    <div class="persona-row"><strong>Perfil</strong>Servidora pública · mãe de 2 · treina por saúde</div>
+    <div class="persona-row"><strong>Quer</strong>Multivit · termogênico natural · colágeno · whey zero lactose</div>
+    <div class="persona-row"><strong>Maior medo</strong>"Creatina faz mal pros rins?" + falsificado</div>
+    <div class="persona-fala">"Tem que ter muito cuidado · é algo que vai ingerir."</div>
+  </div>
+
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-nome">Bruno <span class="idade">34 anos</span></div>
+      <div class="persona-tag">Atleta amador</div>
+    </div>
+    <div class="persona-row"><strong>Perfil</strong>Bombeiro/militar/personal · compete (Muscle Contest)</div>
+    <div class="persona-row"><strong>Quer</strong>Curadoria fechada · creatina top · whey isolado · pré específico</div>
+    <div class="persona-row"><strong>Maior medo</strong>Marca duvidosa atrapalhar preparação</div>
+    <div class="persona-fala">"Amassou manin · somos NPC fio 🆙🏆"</div>
+  </div>
+
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-nome">Pedro <span class="idade">18 anos</span></div>
+      <div class="persona-tag">Primeira compra</div>
+    </div>
+    <div class="persona-row"><strong>Perfil</strong>Cursinho/1º emprego · mãe ainda paga · viu creatina no TikTok</div>
+    <div class="persona-row"><strong>Quer</strong>Creatina + whey baratinho</div>
+    <div class="persona-row"><strong>Maior medo</strong>Pagar caro · mãe brigar · não saber tomar</div>
+    <div class="persona-fala">"Creatina antes ou depois do treino?"</div>
+  </div>
+</div>
+
+<!-- TENDÊNCIAS + LIÇÃO -->
+<div class="page p1">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Parte 01 · O Estudo</span>
+    </div>
+    <span class="ph-pagenum">04 <span class="total">/ 24</span></span>
+  </div>
+
+  <h1 class="section">Tendências e medos do mercado</h1>
+  <div class="section-sub">O que tá pegando em Palmas · o que dá medo no consumidor</div>
+
+  <h2>Em ascensão no Tocantins (Google Trends · últimos meses)</h2>
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="num">+160%</div>
+      <div class="label">Adaptogen Panic · pré-treino</div>
+    </div>
+    <div class="stat">
+      <div class="num">+150%</div>
+      <div class="label">Whey zero lactose</div>
+    </div>
+    <div class="stat">
+      <div class="num">+120%</div>
+      <div class="label">Whey Adaptogen</div>
+    </div>
+  </div>
+  <p style="font-size: 12.5px; color: var(--mute); margin-top: -8px;">→ Beef Protein também em alta · "qual o melhor whey" disparado nas buscas.</p>
+
+  <h2>Medos reais do consumidor</h2>
+  <table>
+    <thead>
+      <tr><th>Medo</th><th>Sinal real</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Comprar falsificado</strong></td><td>"Tem que ter cuidado · é algo que vai ingerir" (post real Palmas)</td></tr>
+      <tr><td><strong>Faz mal pra saúde</strong></td><td>Autocomplete · "creatina faz mal pro fígado/rim/estômago"</td></tr>
+      <tr><td><strong>Whey engorda</strong></td><td>Busca top no autocomplete pra mulheres iniciantes</td></tr>
+      <tr><td><strong>Comprar errado pro objetivo</strong></td><td>"Whey protein para emagrecer" · busca top · confusão básica</td></tr>
+      <tr><td><strong>Pagar caro sem orientação</strong></td><td>"Qual o melhor whey custo benefício" · pesquisa antes de comprar</td></tr>
+    </tbody>
+  </table>
+
+  <h2>A lição estratégica · resumo de uma frase</h2>
+  <div class="card blue">
+    <p style="font-size: 15px; line-height: 1.55; margin: 0;">O cliente de Palmas <strong style="color: var(--blue-dk);">não compra suplemento</strong> · ele compra <strong style="color: var(--blue-dk);">orientação pra não fazer errado</strong>. O concorrente que vence é o que tem <strong style="color: var(--blue-dk);">vendedora paciente que explica</strong> (vide reviews da Júlia, Yasmin). <strong style="color: var(--blue-dk);">Gabriel ocupa esse espaço naturalmente</strong> · porque é personal · porque atende ele mesmo · porque é atleta. Esse é o nosso pilar.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PARTE 02 · COMO VAMOS LANÇAR                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page new-part p2">
+  <div class="pre-title">Parte 02 · Como vamos lançar</div>
+  <h1 class="section">O ângulo central</h1>
+  <div class="section-sub">Um lema · tudo gira em torno disso por 30 dias</div>
+
+  <div class="card" style="padding: 36px 32px; text-align: center; margin: 22px 0 30px;">
+    <p style="font-size: 30px; font-weight: 900; color: var(--ink); line-height: 1.2; letter-spacing: -0.025em; margin: 0;">
+      "Transformação<br>não é mágica,<br><span style="color: var(--green);">é método."</span>
+    </p>
+    <p style="font-size: 10px; color: var(--mute); letter-spacing: 0.2em; margin-top: 18px; text-transform: uppercase; font-weight: 700;">
+      O lema da campanha
+    </p>
+  </div>
+
+  <h3>Por que esse lema</h3>
+  <ul class="tight">
+    <li><strong>É bordão LITERAL do Gabriel</strong> · já tá na bio dele · seguidores reconhecem</li>
+    <li><strong>Pega o adjetivo livre</strong> em Palmas · educação · método · paciência</li>
+    <li><strong>Resolve as 5 personas</strong> · Larissa quer explicação · Pedro quer info clara · Camila quer segurança · Lucas quer curadoria · Bruno quer atestado</li>
+    <li><strong>Não ataca concorrência</strong> · postura saudável · marca premium-acessível</li>
+  </ul>
+
+  <h2>Os 3 pilares</h2>
+  <p style="color: var(--mute); font-size: 13px; margin-bottom: 10px;">Cada peça bate em pelo menos um · às vezes nos três.</p>
+
+  <div class="pilares">
+    <div class="pilar">
+      <div class="num-big">01</div>
+      <div class="title">Curadoria</div>
+      <div class="desc">Gabriel testa antes de indicar · atleta atestando · não vendedor adivinhando.</div>
+      <div class="frase">"Aqui só tem o que eu uso."</div>
+    </div>
+    <div class="pilar blue">
+      <div class="num-big">02</div>
+      <div class="title">Educação</div>
+      <div class="desc">Explica antes de vender · paciência · cliente sai sabendo o que tá tomando.</div>
+      <div class="frase">"Antes de vender, eu te explico."</div>
+    </div>
+    <div class="pilar gold">
+      <div class="num-big">03</div>
+      <div class="title">Conveniência</div>
+      <div class="desc">Palmas: motoboy mesmo dia · Brasil todo: Correios e transportadora.</div>
+      <div class="frase">"Comprou até [X]h? Recebe hoje."</div>
+    </div>
+  </div>
+</div>
+
+<!-- CRONOGRAMA + RESUMO 5 CRIATIVOS -->
+<div class="page p2">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Parte 02 · Como vamos lançar</span>
+    </div>
+    <span class="ph-pagenum">06 <span class="total">/ 24</span></span>
+  </div>
+
+  <h1 class="section">Cronograma · 30 dias</h1>
+  <div class="section-sub">Cadência sustentável · 2 stories/dia + 5 criativos espalhados</div>
+
+  <div class="timeline">
+<span class="wk">Semana 1 · Abertura</span>
+D1 ─── D2 ─── D3 ─── D4 ─── D5 ─── D6 ─── D7
+       <span class="icon-mi">[MI]</span>                           <span class="icon-promo">[$$]</span>
+
+<span class="wk">Semana 2 · Educação</span>
+D8 ─── D9 ─── D10 ── D11 ── D12 ── D13 ── D14
+                            <span class="icon-reel">[R1+MI]</span>          <span class="icon-promo">[$$]</span>
+
+<span class="wk">Semana 3 · Autoridade</span>
+D15 ── D16 ── D17 ── D18 ── D19 ── D20 ── D21
+              <span class="icon-reel">[R2]</span>                          <span class="icon-promo">[$$]</span>
+
+<span class="wk">Semana 4 · Conversão</span>
+D22 ── D23 ── D24 ── D25 ── D26 ── D27 ── D28 ── D29 ── D30
+<span class="icon-static">[ES+MI]</span> <span class="icon-reel">[R3]</span>             <span class="icon-static">[CR]</span>                   <span class="icon-promo">[$$+MI]</span>
+  </div>
+
+  <div class="card soft">
+    <p style="font-size: 12px; color: var(--mute); margin: 0;">
+      <strong style="color: var(--green-dk);">Legenda</strong> ·
+      <strong style="color: var(--green);">R1/R2/R3</strong> Reel ·
+      <strong style="color: var(--blue);">ES</strong> Post estático ·
+      <strong style="color: var(--blue);">CR</strong> Carrossel ·
+      <strong style="color: var(--gold-dk);">$$</strong> Combo ·
+      <strong style="color: var(--gold-dk);">MI</strong> Menção Impulso
+    </p>
+  </div>
+
+  <h3>Cadência cravada</h3>
+  <ul class="tight">
+    <li><strong>2 stories/dia</strong> · 60 no mês · executável sem pesar</li>
+    <li><strong>5 criativos novos</strong> · 3 reels + 1 carrossel + 1 estático</li>
+    <li><strong>3 combos</strong> · D7 · D14 · D21 · mais o fechamento D28</li>
+    <li><strong>4 menções Impulso</strong> · espalhadas em D2 · D12 · D22 · D28</li>
+  </ul>
+
+  <h2>Os 5 criativos · resumo rápido</h2>
+  <table>
+    <thead>
+      <tr><th>Peça</th><th>Dia</th><th>Pra quem fala</th><th>Mensagem central</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong style="color: var(--green);">Reel 1</strong></td><td>D12</td><td>Larissa + Pedro</td><td>"Antes de comprar, pergunta"</td></tr>
+      <tr><td><strong style="color: var(--green);">Reel 2</strong></td><td>D17</td><td>Bruno + Lucas</td><td>"Eu compito, eu treino, eu indico"</td></tr>
+      <tr><td><strong style="color: var(--green);">Reel 3</strong></td><td>D23</td><td>Quem é de Palmas</td><td>"Palmas: você não precisa esperar 5 dias"</td></tr>
+      <tr><td><strong style="color: var(--blue);">Carrossel</strong></td><td>D25</td><td>Todo mundo</td><td>"5 perguntas antes de comprar"</td></tr>
+      <tr><td><strong style="color: var(--blue);">Estático</strong></td><td>D22</td><td>Todo mundo</td><td>Lema-âncora do mês</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <strong>Como usar este documento:</strong> as falas dos roteiros são orientação · Gabriel adapta pro jeito dele. O que NÃO mudar: os 3 pilares · o lema central · a presença diária.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PARTE 03 · 5 CRIATIVOS · ABERTURA                                 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page new-part p3">
+  <div class="pre-title">Parte 03 · Os 5 criativos</div>
+  <h1 class="section">As peças grandes da campanha</h1>
+  <div class="section-sub">3 reels · 1 carrossel · 1 post estático · com fala-a-fala detalhada</div>
+
+  <p style="margin-top: 20px;">Cada criativo tem 1 página com tudo o que Gabriel precisa pra gravar/postar:</p>
+  <ul class="tight">
+    <li><strong>Roteiro fala-a-fala</strong> · dividido por cena/tempo</li>
+    <li><strong>Texto na tela</strong> · o que aparece em overlay</li>
+    <li><strong>Direção</strong> · cenário · figurino · áudio · capa</li>
+    <li><strong>Copy do post</strong> · legenda pronta pra colar</li>
+  </ul>
+
+  <div class="alert">
+    <strong>Importante:</strong> Reel 2 (D17) é o reel-âncora de autoridade · capricha. Reel 3 (D23) tem chance de viralizar se Letícia aparecer (CIC mostrou que casal bate 5-10x mais views).
+  </div>
+</div>
+
+<!-- REEL 1 -->
+<div class="page p3">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Reel 1 · Dia 12</span>
+    </div>
+    <span class="ph-pagenum">08 <span class="total">/ 24</span></span>
+  </div>
+
+  <div class="criativo-header">
+    <div class="tag">Reel 1 · Dia 12</div>
+    <h2>Antes de comprar, pergunta.</h2>
+    <div class="criativo-meta">
+      <span><strong>⏱</strong> 50-60s</span>
+      <span><strong>🎯</strong> Larissa + Pedro</span>
+      <span><strong>📅</strong> 19h-20h</span>
+    </div>
+  </div>
+
+  <h3>Roteiro · fala-a-fala</h3>
+
+  <div class="roteiro">
+    <div class="cena">
+      <div class="cena-tempo">HOOK<span class="time-num">0—4s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Frente câmera · firme · pausa antes de soltar</div>
+        <div class="cena-fala">"Toda semana chega gente na DM com as mesmas duas perguntas. Vou responder de uma vez."</div>
+        <div class="cena-tela">Whey engorda?  ·  Creatina faz mal?</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 1<span class="time-num">4—15s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Caminha no estoque · gesto de "olha aqui"</div>
+        <div class="cena-fala">"Não é pergunta boba não fio. É gente que treina, que tá gastando dinheiro, que não quer fazer errado. <em>E começar suplemento tem método.</em>"</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 2<span class="time-num">15—35s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Pega pote de whey e creatina · mostra um por vez</div>
+        <div class="cena-fala">"Whey não engorda. Whey é <em>proteína</em>. Engorda se você toma demais sem ajustar a comida · simples assim. E creatina não faz mal pro rim de quem é saudável. <em>Faz mal pro rim de quem JÁ tem problema renal antes.</em>"</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 3<span class="time-num">35—48s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Volta frente câmera · sério · vendendo método</div>
+        <div class="cena-fala">"Por isso a GB existe. Aqui você pergunta primeiro. A gente explica. Depois você compra · sabendo o que tá tomando. <em>Transformação não é mágica, é método.</em>"</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CTA<span class="time-num">48—58s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-fala">"Dúvida? Chama no direct, eu respondo. Quer comprar com curadoria? Link na bio · Palmas, motoboy hoje. Vamoo 🚀"</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Direção</h3>
+  <div class="direcao-grid">
+    <div class="item"><strong>Cenário</strong><span>Estoque da loja · luz boa</span></div>
+    <div class="item"><strong>Figurino</strong><span>Camiseta preta lisa OU camisa GB</span></div>
+    <div class="item"><strong>Áudio</strong><span>Voz nítida · sem música alta</span></div>
+    <div class="item"><strong>Legenda</strong><span>Obrigatória · 75% assiste sem som</span></div>
+    <div class="item"><strong>Capa</strong><span>Texto grande "Whey engorda?"</span></div>
+    <div class="item"><strong>Takes</strong><span>3 vezes o hook · pega o melhor</span></div>
+  </div>
+
+  <h3>Copy do post · legenda Instagram</h3>
+  <div class="copy-bloco">Toda semana chega gente no direct com as mesmas
+duas perguntas:
+
+"Whey engorda?"
+"Creatina faz mal pros rins?"
+
+Respondi as duas no reel. Mas o que importa
+mesmo é: SEMPRE pergunta antes de comprar.
+Aqui na GB você não compra no escuro.
+
+Palmas: motoboy hoje · Brasil: Correios.
+Link na bio · gbnutrition.online
+
+#suplementos #palmasTO #personaltrainer #curadoria</div>
+</div>
+
+<!-- REEL 2 -->
+<div class="page p3">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Reel 2 · Dia 17</span>
+    </div>
+    <span class="ph-pagenum">09 <span class="total">/ 24</span></span>
+  </div>
+
+  <div class="criativo-header">
+    <div class="tag">Reel 2 · Dia 17</div>
+    <h2>Eu compito · eu treino · eu indico.</h2>
+    <div class="criativo-meta">
+      <span><strong>⏱</strong> 45-55s</span>
+      <span><strong>🎯</strong> Bruno + Lucas</span>
+      <span><strong>📅</strong> 20h-21h</span>
+    </div>
+  </div>
+
+  <h3>Roteiro</h3>
+
+  <div class="roteiro">
+    <div class="cena">
+      <div class="cena-tempo">HOOK<span class="time-num">0—4s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Close · sério · de regata se possível</div>
+        <div class="cena-fala">"Fui pro Muscle Contest. Treino com o Romilson. Fui pro Arnold em São Paulo. E o que eu vendo aqui · <em>eu uso.</em>"</div>
+        <div class="cena-tela">O que entra na estante passa pelo treino</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 1<span class="time-num">4—25s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Panorâmica nos produtos · você passa a mão na prateleira</div>
+        <div class="cena-fala">"Shark Pro. IntegralMédica. Max Titanium. New Millen. Nutrata. Adaptogen. Não tá aqui porque dá margem boa · tá aqui porque <em>eu provei no meu corpo</em>, provei nos meus alunos · e funcionou."</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 2<span class="time-num">25—40s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Frente câmera · tom firme</div>
+        <div class="cena-fala">"<em>Se você treina sério, suplemento bom não é gasto, é investimento.</em> Não pega o que tá em oferta · pega o que quem treina pesado tá tomando. Faz diferença · principalmente na hora que aperta."</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CTA<span class="time-num">40—55s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-fala">"Tô na DM pra orientar. Link na bio pra comprar. Palmas: motoboy hoje. E quem tem negócio em Palmas e tá pensando em colocar tudo no digital · valeu <em>@impulso.digital063</em> que fez tudo aqui."</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Direção</h3>
+  <div class="direcao-grid">
+    <div class="item"><strong>Cenário</strong><span>Estoque + troféu ou foto Arnold ao fundo</span></div>
+    <div class="item"><strong>Figurino</strong><span>Regata preta ou camisa de competição</span></div>
+    <div class="item"><strong>Trilha</strong><span>Beat motivacional sub-volume</span></div>
+    <div class="item"><strong>Capa</strong><span>"EU TREINO. EU INDICO."</span></div>
+  </div>
+
+  <div class="alert">
+    <strong>Importante:</strong> esse é seu reel-âncora de autoridade. Capricha. Aqui é onde a galera vê que você é atleta DE VERDADE.
+  </div>
+
+  <h3>Copy do post</h3>
+  <div class="copy-bloco">Eu compito. Eu treino. Eu indico.
+
+Se eu não uso, não vendo.
+Se eu não recomendo pros meus alunos, não tá na estante.
+
+Curadoria não é discurso · é prática diária.
+
+Palmas: motoboy hoje · Brasil: Correios + transportadora.
+Link na bio · gbnutrition.online
+
+#fisiculturismo #palmasTO #curadoria #suplementos #musculação</div>
+</div>
+
+<!-- REEL 3 -->
+<div class="page p3">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Reel 3 · Dia 23</span>
+    </div>
+    <span class="ph-pagenum">10 <span class="total">/ 24</span></span>
+  </div>
+
+  <div class="criativo-header">
+    <div class="tag">Reel 3 · Dia 23</div>
+    <h2>Palmas, você não precisa esperar 5 dias.</h2>
+    <div class="criativo-meta">
+      <span><strong>⏱</strong> 35-45s</span>
+      <span><strong>🎯</strong> Quem é de Palmas (especialmente mãe + trabalhador CLT)</span>
+      <span><strong>📅</strong> 12h-13h</span>
+    </div>
+  </div>
+
+  <h3>Roteiro</h3>
+
+  <div class="roteiro">
+    <div class="cena">
+      <div class="cena-tempo">HOOK<span class="time-num">0—4s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Frente câmera segurando celular com o site aberto</div>
+        <div class="cena-fala">"Em Palmas, você compra suplemento online · e recebe quando? <em>Amanhã? Depois? Segunda?</em>"</div>
+        <div class="cena-tela">Palmas: você não precisa esperar</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 1<span class="time-num">4—14s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Motoboy real saindo da loja · sacola GB na mão · ambiente real</div>
+        <div class="cena-fala">"Aqui é diferente. Você pediu até <em>[horário cutoff]</em> · motoboy sai · recebe HOJE. Pra mãe que não tem tempo · pra quem trabalha o dia inteiro · pra quem treina hoje à noite e quer começar amanhã."</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 2<span class="time-num">14—24s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Plano fechado · cliente recebendo o pacote em casa (autorização) OU mão recebendo</div>
+        <div class="cena-fala">"Brasil todo? Correios + transportadora com melhor prazo e preço. Mas se você é de Palmas · <em>é privilégio.</em>"</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CENA 3<span class="time-num">24—34s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-titulo">Frente câmera · sorriso · tom de fechamento</div>
+        <div class="cena-fala">"Aqui é a loja com rosto · motoboy real · loja real · pessoa real. <em>Você não tá comprando de robô · tá comprando de quem treina e atende.</em>"</div>
+      </div>
+    </div>
+
+    <div class="cena">
+      <div class="cena-tempo">CTA<span class="time-num">34—45s</span></div>
+      <div class="cena-corpo">
+        <div class="cena-fala">"Site na bio. Palmas, pediu hoje · recebe hoje. <em>Vamoo 🚀</em>"</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Direção</h3>
+  <div class="direcao-grid">
+    <div class="item"><strong>Cenário</strong><span>Loja + externa motoboy (essencial) + rua de Palmas</span></div>
+    <div class="item"><strong>Figurino</strong><span>Camisa GB · clima de "operação real"</span></div>
+    <div class="item"><strong>Tom</strong><span>Prático · direto · sem floreio</span></div>
+    <div class="item"><strong>Capa</strong><span>"Palmas: você não precisa esperar"</span></div>
+    <div class="item"><strong>Áudio</strong><span>Som do motoboy acelerando (ruído real vende)</span></div>
+    <div class="item"><strong>B-roll</strong><span>~40% do reel · capricha na imagem do motoboy</span></div>
+  </div>
+
+  <div class="alert">
+    <strong>Importante:</strong> esse reel é seu DIFERENCIAL GEOGRÁFICO em Palmas. Concorrentes maiores (Nutri+, Emporiun) também entregam · mas você é o único que MOSTRA o motoboy real saindo. Capricha na cena externa.
+  </div>
+
+  <h3>Copy do post</h3>
+  <div class="copy-bloco">Em Palmas, você não precisa esperar 5 dias.
+
+Comprou até [HORÁRIO CUTOFF]? Motoboy sai. Recebe hoje.
+
+Outras cidades? Correios + transportadora ·
+melhor prazo e melhor preço.
+
+Loja com rosto · motoboy real · operação local.
+
+gbnutrition.online · link na bio
+
+#palmasTO #motoboypalmas #entregarapida #suplementospalmas</div>
+</div>
+
+<!-- CARROSSEL -->
+<div class="page p3">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Carrossel · Dia 25</span>
+    </div>
+    <span class="ph-pagenum">11 <span class="total">/ 24</span></span>
+  </div>
+
+  <div class="criativo-header blue">
+    <div class="tag">Carrossel · Dia 25</div>
+    <h2>5 perguntas antes de comprar suplemento.</h2>
+    <div class="criativo-meta">
+      <span><strong>📐</strong> 6 slides · 1:1</span>
+      <span><strong>🎯</strong> Todo mundo</span>
+      <span><strong>📅</strong> 18h-20h</span>
+    </div>
+  </div>
+
+  <p style="margin: 14px 0;">Conteúdo educativo · resolve dores reais · termina chamando pra GB. <strong style="color: var(--green-dk);">Salvável.</strong> Cliente guarda pra próxima compra.</p>
+
+  <div class="carrossel-slide">
+    <div class="num">1</div>
+    <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--green-dk); margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Slide 1 · Capa</div>
+    <h3>5 perguntas que você deveria fazer antes de comprar suplemento</h3>
+    <p style="color: var(--mute); margin-top: 10px;">→ Arrasta</p>
+  </div>
+
+  <div class="carrossel-slide alt">
+    <div class="num">2</div>
+    <h3>1. Pra que VOCÊ quer esse suplemento?</h3>
+    <p>Se a resposta for "porque o influencer disse" · volta um passo.</p>
+    <p>Suplemento bom é o que combina com o <strong style="color: var(--blue);">SEU</strong> objetivo · não com o tom do anúncio.</p>
+  </div>
+
+  <div class="carrossel-slide">
+    <div class="num">3</div>
+    <h3>2. Essa marca passa no teste de quem treina?</h3>
+    <p>Marca certificada · com lote · com nota fiscal · com personal ou atleta atestando.</p>
+    <p>Se ninguém que treina indica · <strong style="color: var(--green);">desconfia.</strong></p>
+  </div>
+
+  <div class="carrossel-slide alt">
+    <div class="num">4</div>
+    <h3>3. Você tem com quem tirar dúvida depois?</h3>
+    <p>Comprou online de site sem rosto? Boa sorte se chegar errado.</p>
+    <p>Loja com WhatsApp aberto = você não fica no escuro.</p>
+  </div>
+
+  <div class="carrossel-slide">
+    <div class="num">5</div>
+    <h3>4. Já ajustou comida e treino antes?</h3>
+    <p>Suplemento NÃO substitui dieta.</p>
+    <p>Se você não dormiu · não comeu direito · não treinou sério · <strong style="color: var(--green);">o pote não faz milagre.</strong></p>
+  </div>
+
+  <div class="carrossel-slide final">
+    <div class="num">6</div>
+    <h3>5. Você tem calma pra ser orientado antes de comprar?</h3>
+    <p>Aqui na GB Nutrition, EU te explico antes de você gastar.</p>
+    <p style="margin-top: 12px;"><strong style="color: var(--gold-dk);">Chama no direct</strong> com sua dúvida</p>
+    <p><strong style="color: var(--gold-dk);">gbnutrition.online</strong> · link na bio</p>
+    <p><strong style="color: var(--gold-dk);">Palmas:</strong> motoboy hoje</p>
+    <p style="margin-top: 14px; font-style: italic; font-weight: 700; color: var(--ink);">Transformação não é mágica, é método.</p>
+  </div>
+
+  <h3>Copy da legenda</h3>
+  <div class="copy-bloco">5 perguntas que separam compra inteligente
+de compra no escuro.
+
+Não é discurso de venda · é check antes
+de você gastar dinheiro no que pode
+não te servir.
+
+🔖 Salva pra lembrar antes da próxima compra.
+
+Chama no direct pra dúvida específica.
+gbnutrition.online
+
+#educaçãofitness #suplementos #curadoria #personaltrainer #palmasTO</div>
+</div>
+
+<!-- ESTÁTICO -->
+<div class="page p3">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Estático · Dia 22</span>
+    </div>
+    <span class="ph-pagenum">12 <span class="total">/ 24</span></span>
+  </div>
+
+  <div class="criativo-header blue">
+    <div class="tag">Estático · Dia 22</div>
+    <h2>Transformação não é mágica.</h2>
+    <div class="criativo-meta">
+      <span><strong>📐</strong> 1:1 quadrado</span>
+      <span><strong>🎯</strong> Todo mundo</span>
+      <span><strong>📅</strong> 8h-9h</span>
+    </div>
+  </div>
+
+  <h3>A imagem · mockup</h3>
+
+  <div class="card" style="text-align: center; padding: 50px 30px; margin: 14px 0; border: 1.5px solid var(--line); border-left-width: 6px;">
+    <div style="font-size: 30px; font-weight: 900; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em;">
+      Transformação<br>não é mágica,<br><span style="color: var(--green);">é método.</span>
+    </div>
+    <div style="margin-top: 22px; font-size: 12px; font-weight: 600; color: var(--mute); letter-spacing: 0.08em;">
+      GB Nutrition · gbnutrition.online
+    </div>
+  </div>
+
+  <h3>Prompt ChatGPT pra imagem · cola no Plus mobile</h3>
+  <div class="copy-bloco">Imagem fotográfica realista · proporção 1:1 (quadrado) ·
+estoque de suplementos premium organizado em prateleira ·
+iluminação cinematográfica · sombra dramática · paleta verde
+escuro e azul com detalhes em dourado · estilo editorial
+fitness brasileiro · foco selectivo · sem texto · sem logo ·
+clima sério e profissional.</div>
+
+  <div class="alert">
+    <strong>Dica:</strong> gera 4 variações · escolhe a melhor · edita o texto por cima no Canva ou InShot.
+  </div>
+
+  <h3>Copy da legenda</h3>
+  <div class="copy-bloco">Transformação não é mágica.
+
+Quem chega aqui pensando que vai tomar um
+pote e mudar o corpo em 30 dias sai decepcionado.
+
+Quem chega buscando MÉTODO sai com plano ·
+com produto certo · com acompanhamento.
+
+A GB Nutrition existe pra ser esse método.
+Você pergunta · eu oriento · você compra
+sabendo o que tá tomando.
+
+Palmas: motoboy hoje · Brasil: Correios.
+gbnutrition.online · link na bio
+
+#método #disciplina #suplementos #palmasTO #personaltrainer</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PARTE 04 · STORIES · ABERTURA                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page new-part p4">
+  <div class="pre-title">Parte 04 · Roteiros diários</div>
+  <h1 class="section">30 dias de stories</h1>
+  <div class="section-sub">2 stories por dia · espalha no dia · não posta os 2 seguidos</div>
+
+  <div class="card">
+    <h3 style="margin-top: 0;">Como ler cada card</h3>
+    <ul class="tight">
+      <li><strong>Cabeçalho</strong> · número do dia + tema + título</li>
+      <li><strong>Story 1</strong> (manhã geralmente) · tipo + o que mostrar + o que dizer + CTA</li>
+      <li><strong>Story 2</strong> (tarde/noite) · idem</li>
+      <li><strong>Tag dourada "MI"</strong> · quando tem menção orgânica Impulso</li>
+    </ul>
+    <p style="margin-top: 12px; color: var(--green-dk); font-weight: 700; font-size: 12.5px;">A fala em <em style="font-style: normal; color: var(--green); font-weight: 800;">VERDE</em> é o BORDÃO ou ÊNFASE · grita um pouco mais quando falar.</p>
+  </div>
+</div>
+
+<!-- DIAS 1-2 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 1</span>
+    </div>
+    <span class="ph-pagenum">14 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D1</div>
+    <div>
+      <div class="day-tema">Lançamento oficial do site</div>
+      <div class="day-titulo">gbnutrition.online no ar</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã · 8h-10h</span></div>
+      <span class="story-tipo">🎥 Vídeo selfie no estoque · 15s</span>
+      <div class="story-row"><strong>Mostrar:</strong>você segurando o celular com o site aberto na tela · vira pra câmera · sorriso firme</div>
+      <div class="story-fala">"Bom dia galera. Oficial: <em>gbnutrition.online tá no ar</em>. Curadoria de quem treina · motoboy em Palmas mesmo dia · Brasil todo. Bora? <em>Vamoo 🚀</em>"</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker LINK direto → gbnutrition.online</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Noite · 19h-21h</span></div>
+      <span class="story-tipo">📊 Caixa de pergunta</span>
+      <div class="story-row"><strong>Texto:</strong>"Sua MAIOR dúvida sobre suplemento hoje? Manda aí."</div>
+      <div class="story-cta"><strong>Por quê:</strong>coleta matéria-prima · usa nos próximos dias respondendo nominalmente</div>
+    </div>
+  </div>
+</div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D2</div>
+    <div>
+      <div class="day-tema">Bordão raiz · menção Impulso</div>
+      <div class="day-titulo">Transformação não é mágica</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto frente câmera · braços cruzados</span>
+      <div class="story-row"><strong>Texto na tela:</strong>"TRANSFORMAÇÃO NÃO É MÁGICA, É MÉTODO."</div>
+      <div class="story-fala">"Esse é o lema que tô levando esse mês. E o lema da GB também. <em>Cliente que chega aqui sai com plano</em> · não com pote."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde · 15h-17h <span class="mi-tag">MI 1/4</span></span></div>
+      <span class="story-tipo">🎥 Vídeo sentado · clima bastidor · 15s</span>
+      <div class="story-fala">"Aliás · esse site novo da GB? Tá rodando bonito. Quem montou tudo foi a <em>@impulso.digital063</em>. Trabalho top, recomendo pra quem tem negócio em Palmas."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link → gbnutrition.online</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 3-6 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 1</span>
+    </div>
+    <span class="ph-pagenum">15 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D3</div>
+    <div>
+      <div class="day-tema">Adaptogen Panic · tendência</div>
+      <div class="day-titulo">Esse pré tá voando em Palmas</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto com pote do Panic na mão</span>
+      <div class="story-row"><strong>Texto:</strong>"PANIC · esse pré aqui tá voando na busca em Palmas"</div>
+      <div class="story-fala">"E não é à toa. Cafeína + beta-alanina · pega quem treina pesado e quer foco. <em>Tomo antes de treinos longos.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Noite</span></div>
+      <span class="story-tipo">📊 Enquete</span>
+      <div class="story-row"><strong>Texto:</strong>"Você já tomou Panic? JÁ TOMEI / VOU EXPERIMENTAR"</div>
+      <div class="story-cta"><strong>Bônus:</strong>sticker link direto pro produto no site</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D4</div>
+    <div>
+      <div class="day-tema">Dúvida real · busca top</div>
+      <div class="day-titulo">"Whey engorda?"</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote whey + caixa "GORDURA?"</span>
+      <div class="story-row"><strong>Texto:</strong>"WHEY ENGORDA?"</div>
+      <div class="story-fala">"Resposta rápida: <em>NÃO.</em> Whey é proteína. Engorda quem toma demais e não ajusta a comida. Próximo story explico melhor."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo selfie · 15s · explicando</span>
+      <div class="story-fala">"Whey só engorda se você somar com a comida e estourar suas calorias. Se ajustou a comida e treina · <em>whey AJUDA a definir, não engorda.</em> Dúvida? Chama no direct."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker DM</div>
+    </div>
+  </div>
+</div>
+
+<div class="day dk">
+  <div class="day-header">
+    <div class="day-num">D5</div>
+    <div>
+      <div class="day-tema">Bastidor real · motoboy em ação</div>
+      <div class="day-titulo">Aqui não é dropshipping</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🎥 Vídeo caminhando pelo estoque · 15s</span>
+      <div class="story-fala">"Bom dia. <em>Loja física · estoque real · em Palmas.</em> Não é dropshipping. Não é loja sem rosto. Vem ver."</div>
+      <div class="story-cta"><strong>Por quê:</strong>combate medo principal (falsificado · clone · site fantasma)</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo motoboy saindo + pacote sendo entregue · 15s</span>
+      <div class="story-fala">"Cliente pediu agora cedo · motoboy saindo agora. <em>É isso que diferencia: você não espera 5 dias.</em>"</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker localização Google Maps + link site</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D6</div>
+    <div>
+      <div class="day-tema">Medo real · autocomplete</div>
+      <div class="day-titulo">"Creatina faz mal pros rins?"</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote creatina + interrogação</span>
+      <div class="story-row"><strong>Texto:</strong>"CREATINA FAZ MAL PROS RINS?"</div>
+      <div class="story-fala">"Galera, vou ser direto: <em>se você é saudável, é seguríssima.</em> Estudo após estudo confirma. O problema é pra quem JÁ tem doença renal · ou pra quem inventa dose de cavalo."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · firme</span>
+      <div class="story-fala">"Creatina monohidratada · 3 a 5g por dia · saudável é seguro. Sem ciclo · sem saturação maluca. Quer começar? <em>Chama no direct, eu te oriento.</em>"</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 7-9 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 1 → 2</span>
+    </div>
+    <span class="ph-pagenum">16 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D7</div>
+    <div>
+      <div class="day-tema">Combo da semana 📦</div>
+      <div class="day-titulo">Primeira oferta do mês</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto Shark Pro Whey 900g + IntegralMedica Creatina Hardcore</span>
+      <div class="story-row"><strong>Texto:</strong>"COMBO BASE · SHARK PRO WHEY + INTEGRAL CREATINA"</div>
+      <div class="story-fala">"O combo que recomendo pra quase TODO aluno que começa: <em>Whey 100% Shark Pro</em> + <em>Creatina Hardcore IntegralMedica.</em> Sai R$[X] em 12x. Palmas: motoboy hoje. Até domingo 23h59."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link → carrinho do site</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo motoboy saindo · 15s</span>
+      <div class="story-fala">"Tá saindo · quem pediu hoje cedo vai receber hoje mesmo. <em>Vamoo 🚀</em>"</div>
+      <div class="story-cta"><strong>Bônus:</strong>sticker contador regressivo "promo acaba domingo"</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D8</div>
+    <div>
+      <div class="day-tema">Educação</div>
+      <div class="day-titulo">Como ler rótulo de whey</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🎥 Vídeo close · 15s · pote na mão · zoom no rótulo</span>
+      <div class="story-fala">"Aprendendo a ler rótulo de whey · presta atenção em 2 coisas: <em>proteína por dose</em> e se tem enchimento. Próximo story explico o que é enchimento."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">📷 Foto comparativa (rótulo bom + rótulo "encheu")</span>
+      <div class="story-row"><strong>Texto:</strong>"ENCHIMENTO = ingredientes baratos que ocupam volume"</div>
+      <div class="story-fala">"Quanto MAIOR a % de proteína pura por dose · melhor. <em>Marca boa raramente tem enchimento.</em>"</div>
+      <div class="story-cta"><strong>CTA:</strong>DM aberto</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D9</div>
+    <div>
+      <div class="day-tema">Zero Lactose · tendência</div>
+      <div class="day-titulo">Whey sem desconforto</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote Whey Zero Lactose</span>
+      <div class="story-row"><strong>Texto:</strong>"WHEY · ZERO LACTOSE"</div>
+      <div class="story-fala">"Pra quem é intolerante OU pra quem só sente desconforto · <em>diferença de qualidade de treino.</em> Tô vendendo bastante esse aqui."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Noite</span></div>
+      <span class="story-tipo">📊 Caixa de pergunta</span>
+      <div class="story-row"><strong>Texto:</strong>"Você é intolerante a lactose? Conta a história, eu posto anônimo."</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 10-13 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 2</span>
+    </div>
+    <span class="ph-pagenum">17 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D10</div>
+    <div>
+      <div class="day-tema">TeamGB · comunidade</div>
+      <div class="day-titulo">Prova social orgânica</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto grupo TeamGB (você + alunos)</span>
+      <div class="story-row"><strong>Texto:</strong>"TEAM GB · TRANSFORMAÇÃO DE VERDADE"</div>
+      <div class="story-fala">"Aluno que eu treino é aluno que consome o que eu indico. <em>Curadoria funciona porque eu vejo o resultado todo dia na minha frente.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo curto aluna treinando + narração · 15s</span>
+      <div class="story-fala">"Toda transformação tem 3 coisas: <em>treino sério · comida ajustada · suplemento certo.</em> Sem um desses, não funciona."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D11</div>
+    <div>
+      <div class="day-tema">Atleta amador</div>
+      <div class="day-titulo">Quem compete sabe</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto sua na competição (Muscle Contest ou Arnold)</span>
+      <div class="story-row"><strong>Texto:</strong>"QUEM COMPETE SABE: PREPARAÇÃO É 90%"</div>
+      <div class="story-fala">"E preparação inclui suplemento sério. <em>Não tem espaço pra marca duvidosa</em> quando você tá tirando o último 1% do corpo."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · close · firme</span>
+      <div class="story-fala">"Se você compete · ou tá em fase forte de preparação · <em>vamo conversar.</em> Curadoria de competidor pra competidor."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker DM</div>
+    </div>
+  </div>
+</div>
+
+<div class="day dk">
+  <div class="day-header">
+    <div class="day-num">D12</div>
+    <div>
+      <div class="day-tema">🎬 Reel 1 · menção Impulso</div>
+      <div class="day-titulo">Lançamento do 1º reel</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto bastidor de gravação · celular na mão</span>
+      <div class="story-row"><strong>Texto:</strong>"REEL NOVO HOJE · ÀS [HORÁRIO]"</div>
+      <div class="story-fala">"As 2 perguntas que mais me fazem sobre suplemento · respondi tudo num reel só. <em>Vem ver.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde <span class="mi-tag">MI 2/4</span></span></div>
+      <span class="story-tipo">🔗 Repost do Reel 1 com sticker</span>
+      <div class="story-fala">"Pra quem tá se perguntando como eu produzo esse conteúdo · trabalho com a <em>@impulso.digital063</em> desde o início. Eles cuidam de site, conteúdo, estratégia."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D13</div>
+    <div>
+      <div class="day-tema">Iniciante · busca top</div>
+      <div class="day-titulo">"Creatina antes ou depois?"</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote creatina + relógio</span>
+      <div class="story-row"><strong>Texto:</strong>"CREATINA · ANTES OU DEPOIS DO TREINO?"</div>
+      <div class="story-fala">"Resposta curta: <em>tanto faz.</em> Creatina é diária · acumulação no músculo. Importa MUITO mais você tomar todo dia do que o horário exato."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo selfie · 15s</span>
+      <div class="story-fala">"Esquece muito? Toma junto com o whey pós-treino · cria rotina. <em>Mais importante que horário é constância.</em>"</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 14-17 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 2 → 3</span>
+    </div>
+    <span class="ph-pagenum">18 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D14</div>
+    <div>
+      <div class="day-tema">Combo da semana 📦</div>
+      <div class="day-titulo">Combo Treino Pesado</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto Adaptogen Panic + Creatina Integral + DUX Cafeína</span>
+      <div class="story-row"><strong>Texto:</strong>"COMBO PANCADA · ADAPTOGEN PANIC + CREATINA + CAFEÍNA"</div>
+      <div class="story-fala">"Pra quem tá em fase de explosão: <em>Panic da Adaptogen</em> (esse é o pré que tá voando) + <em>Creatina Hardcore</em> + <em>Cafeína DUX</em>. R$[X] em 12x. Não toma os três sem orientação · chama no direct."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo motoboy real entregando</span>
+      <div class="story-fala">"Quem pediu de manhã já recebeu. <em>Palmas é assim · vamoo 🚀</em>"</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D15</div>
+    <div>
+      <div class="day-tema">Bastidor pessoal · alto engajamento</div>
+      <div class="day-titulo">Quem treina junto fica junto</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto natural com a Letícia (treino · café · momento real)</span>
+      <div class="story-fala">"Bom dia. <em>Quem treina junto fica junto</em> · não é só meme."</div>
+      <div class="story-cta"><strong>Por quê:</strong>CIC mostrou que conteúdo com casal bate 20k+ views · alto alcance natural</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">📊 Caixa de pergunta</span>
+      <div class="story-row"><strong>Texto:</strong>"Você treina com seu parceiro/parceira? Conta como é."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D16</div>
+    <div>
+      <div class="day-tema">Curadoria · marca</div>
+      <div class="day-titulo">Shark Pro · por que tá aqui</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote Shark Pro 100% Whey</span>
+      <div class="story-row"><strong>Texto:</strong>"SHARK PRO · POR QUE TÁ NA MINHA ESTANTE"</div>
+      <div class="story-fala">"Marca brasileira · <em>transparente no rótulo</em> · 24g de proteína por dose. Custo-benefício pancada."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você tomando · pós-treino</span>
+      <div class="story-fala">"Tomo essa marca há tempo · <em>funciona pra mim e pros meus alunos.</em> Tá no site."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day dk">
+  <div class="day-header">
+    <div class="day-num">D17</div>
+    <div>
+      <div class="day-tema">🎬 Reel 2 · autoridade atleta</div>
+      <div class="day-titulo">Eu compito · eu treino · eu indico</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Capa do reel + texto "HOJE TEM"</span>
+      <div class="story-row"><strong>Texto:</strong>"REEL NOVO HOJE · ÀS [HORÁRIO]"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Noite</span></div>
+      <span class="story-tipo">🔗 Repost do Reel 2 com sticker</span>
+      <div class="story-fala">"<em>Sai depois de assistir.</em> Comenta lá no post o que achou."</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 18-21 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 3</span>
+    </div>
+    <span class="ph-pagenum">19 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D18</div>
+    <div>
+      <div class="day-tema">Pré-treino · pancada</div>
+      <div class="day-titulo">Na medida certa pra você</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto montagem pré-treinos disponíveis</span>
+      <div class="story-row"><strong>Texto:</strong>"PRÉ-TREINO · PANCADA NA MEDIDA CERTA"</div>
+      <div class="story-fala">"Tem pra todos os perfis · iniciante até veterano. <em>Chama no direct, te ajudo a escolher o seu.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · cara de "abre o olho"</span>
+      <div class="story-fala">"<em>Não toma pré-treino forte demais sem testar antes.</em> Já vi mlk passar mal de pré errado. Eu te oriento qual começar."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D19</div>
+    <div>
+      <div class="day-tema">Beef Protein Shark Pro · em alta</div>
+      <div class="day-titulo">Por que tô recomendando esse aqui</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você com pote Shark Pro Beef Protein</span>
+      <div class="story-fala">"Galera, fala de Beef Protein todo dia comigo · vou explicar. <em>Proteína de carne hidrolisada</em>. Mesma função do whey: ajuda no anabolismo e recuperação · mas com perfil diferente. Quem é intolerante a lactose · quem treina cutting · quem quer variar a fonte · esse é o ideal."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">📷 Foto comparativa · Whey vs Beef Protein lado a lado</span>
+      <div class="story-row"><strong>Texto:</strong>"BEEF PROTEIN vs WHEY · quando usar qual"</div>
+      <div class="story-fala">"<em>Whey</em>: absorção mais rápida · perfeito pós-treino. <em>Beef Protein</em>: liberação mais gradual · funciona durante o dia entre refeições. Não é melhor nem pior · é <em>diferente.</em> Eu uso os dois alternando. Quer entender qual cabe pra você? <em>Chama no direct.</em>"</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker DM aberto + link produto Beef Protein</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D20</div>
+    <div>
+      <div class="day-tema">TeamGB · comunidade</div>
+      <div class="day-titulo">+500 testemunhas de método</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto grupo grande (~25 alunos)</span>
+      <div class="story-row"><strong>Texto:</strong>"TEAM GB · A COMUNIDADE"</div>
+      <div class="story-fala">"+500 alunos. <em>+500 testemunhas de que método funciona.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · aluno treinando · seu olho atento</span>
+      <div class="story-fala">"Quem treina comigo sabe: <em>aqui ninguém adivinha</em>. Cada série tem motivo."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D21</div>
+    <div>
+      <div class="day-tema">Combo da semana 📦</div>
+      <div class="day-titulo">Kit Iniciante · tudo no mês 1</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto Shark Pro Whey + Creatina IntegralMedica + DUX Multivit</span>
+      <div class="story-row"><strong>Texto:</strong>"KIT INICIANTE · TUDO QUE VOCÊ PRECISA NO MÊS 1"</div>
+      <div class="story-fala">"Pra quem tá começando: <em>Shark Pro Whey</em> + <em>Creatina IntegralMedica</em> + <em>Multivitamínico DUX</em>. 3 produtos · 1 mês inteiro · sai 12x. Curadoria fechada por mim · zero suplemento extra desnecessário."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo motoboy</span>
+      <div class="story-fala">"Sai motoboy. <em>Hoje em Palmas.</em>"</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 22-25 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Semana 4</span>
+    </div>
+    <span class="ph-pagenum">20 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day dk">
+  <div class="day-header">
+    <div class="day-num">D22</div>
+    <div>
+      <div class="day-tema">🖼 Estático · menção Impulso</div>
+      <div class="day-titulo">Lema-âncora do mês</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🔗 Repost do estático com sticker</span>
+      <div class="story-row"><strong>Texto:</strong>"Esse aqui é o lema do mês."</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker pro post no feed</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde <span class="mi-tag">MI 3/4</span></span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você no estoque</span>
+      <div class="story-fala">"Esse mês inteiro de conteúdo só rolou porque tem time por trás cuidando do site, dos posts, da estratégia. <em>@impulso.digital063</em> que pilota isso aqui comigo. Pra quem é dono de negócio em Palmas e precisa profissionalizar · vale demais a indicação."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D23</div>
+    <div>
+      <div class="day-tema">🎬 Reel 3 · entrega expressa Palmas</div>
+      <div class="day-titulo">Palmas, você não precisa esperar</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Capa do Reel 3 + texto "HOJE"</span>
+      <div class="story-row"><strong>Texto:</strong>"REEL HOJE · PALMAS, VOCÊ NÃO PRECISA ESPERAR 5 DIAS"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🔗 Repost com sticker</span>
+      <div class="story-fala">"<em>Marca aqui quem é de Palmas</em> e ainda não tinha visto a operação local rolando."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D24</div>
+    <div>
+      <div class="day-tema">Termogênico · público feminino</div>
+      <div class="day-titulo">É seguro?</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto pote termogênico</span>
+      <div class="story-row"><strong>Texto:</strong>"TERMOGÊNICO · SEGURO?"</div>
+      <div class="story-fala">"Se você é saudável · sim. Se tem pressão alta, ansiedade ou problema cardíaco · <em>NÃO.</em> Sempre converso isso na DM antes de vender."</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · acolhedor</span>
+      <div class="story-fala">"Termogênico não queima gordura sozinho. É um empurrão pro déficit calórico fazer efeito. <em>Sem dieta, não funciona.</em>"</div>
+    </div>
+  </div>
+</div>
+
+<div class="day blue">
+  <div class="day-header">
+    <div class="day-num">D25</div>
+    <div>
+      <div class="day-tema">🎨 Carrossel · 5 perguntas</div>
+      <div class="day-titulo">Conteúdo educativo salvável</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Capa do carrossel</span>
+      <div class="story-row"><strong>Texto:</strong>"PUBLICAÇÃO HOJE · ARRASTA PRA VER AS 5"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🔗 Sticker com link pro carrossel + caixa pergunta</span>
+      <div class="story-row"><strong>Texto da caixa:</strong>"Qual das 5 perguntas você nunca tinha pensado?"</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- DIAS 26-30 -->
+<div class="page p4">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Stories · Fechamento</span>
+    </div>
+    <span class="ph-pagenum">21 <span class="total">/ 24</span></span>
+  </div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D26</div>
+    <div>
+      <div class="day-tema">Prova social orgânica</div>
+      <div class="day-titulo">Cliente que voltou</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Print de WhatsApp de cliente OU depoimento aluno antigo</span>
+      <div class="story-row"><strong>Texto:</strong>"CLIENTE REAL · ESSE MÊS" (ou "ALUNO REAL · ESSE ANO")</div>
+      <div class="story-row"><strong>Opção A:</strong>se já apareceu cliente novo esse mês · prova social do mês</div>
+      <div class="story-row"><strong>Opção B:</strong>se ainda não · puxa depoimento de aluno antigo da GB · funciona igual</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você falando</span>
+      <div class="story-fala">"Esse aqui é o motor da GB · <em>cliente que volta.</em> Não tem fórmula mágica · só método e atenção."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D27</div>
+    <div>
+      <div class="day-tema">Casal · humanização</div>
+      <div class="day-titulo">Quem suplementa junto</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🎥 Vídeo curto casal treinando juntos OU foto natural</span>
+      <div class="story-fala">"Quem treina junto fica junto. <em>Quem suplementa junto também.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">📊 Enquete</span>
+      <div class="story-row"><strong>Texto:</strong>"VOCÊ TREINA COM ALGUÉM? SOZINHO / COM PARCEIRO"</div>
+    </div>
+  </div>
+</div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D28</div>
+    <div>
+      <div class="day-tema">Promoção fechamento · menção Impulso</div>
+      <div class="day-titulo">Última semana do mês</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Foto promoção "PROMOÇÃO DE FECHAMENTO"</span>
+      <div class="story-row"><strong>Texto:</strong>"ÚLTIMA SEMANA DO MÊS · 10% NO COMBO"</div>
+      <div class="story-fala">"Combo que rodou o mês inteiro <em>sai esse fim de semana com desconto.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde <span class="mi-tag">MI 4/4</span></span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você agradecendo</span>
+      <div class="story-fala">"Esse mês foi de método. Pra quem tem negócio em Palmas e tá pensando em fazer igual no seu · fala com a <em>@impulso.digital063</em> · eles que pilotam o time aqui comigo."</div>
+    </div>
+  </div>
+</div>
+
+<div class="day gold">
+  <div class="day-header">
+    <div class="day-num">D29</div>
+    <div>
+      <div class="day-tema">Last call</div>
+      <div class="day-titulo">Promoção termina amanhã</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">🎥 Vídeo · 15s · você na loja</span>
+      <div class="story-fala">"Hoje e amanhã · promoção de fechamento. <em>Depois volta o preço normal.</em>"</div>
+      <div class="story-cta"><strong>Bônus:</strong>sticker contador regressivo</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Tarde</span></div>
+      <span class="story-tipo">📷 Foto motoboy último pedido do dia</span>
+      <div class="story-row"><strong>Texto:</strong>"PALMAS · ÚLTIMOS PEDIDOS DO DIA SAINDO"</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link site</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">D30</div>
+    <div>
+      <div class="day-tema">Balanço · agradecimento</div>
+      <div class="day-titulo">30 dias de método</div>
+    </div>
+  </div>
+  <div class="day-body">
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 01</span><span class="story-time">Manhã</span></div>
+      <span class="story-tipo">📷 Print de números do mês</span>
+      <div class="story-row"><strong>Texto:</strong>"30 DIAS DE MÉTODO · OBRIGADO"</div>
+      <div class="story-fala">"[X] pedidos · [Y] clientes novos · [Z] DMs respondidos. <em>Vocês são a GB.</em>"</div>
+    </div>
+    <div class="story">
+      <div class="story-head"><span class="story-num">Story 02</span><span class="story-time">Noite</span></div>
+      <span class="story-tipo">🎥 Vídeo selfie · 20s · acolhedor</span>
+      <div class="story-fala">"Fechei o mês grato. Mês que vem tem mais método · mais conteúdo · mais curadoria. Quem ainda não fez parte · <em>tá no tempo.</em> DM aberto. Bora junto · <em>vamoo 🚀</em>"</div>
+      <div class="story-cta"><strong>CTA:</strong>sticker link bio</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PARTE 05 · APÊNDICES                                              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page new-part p5">
+  <div class="pre-title">Parte 05 · Apêndices</div>
+  <h1 class="section">Hashtags por tipo</h1>
+  <div class="section-sub">Cola direto na hora de postar</div>
+
+  <div class="hashtag-bloco">
+    <strong>Educação / Curadoria</strong>
+    <code>#suplementos</code> <code>#curadoria</code> <code>#personaltrainer</code> <code>#palmasTO</code> <code>#educaçãofitness</code> <code>#saúdeesporte</code> <code>#musculação</code>
+  </div>
+
+  <div class="hashtag-bloco">
+    <strong>Atleta / Autoridade</strong>
+    <code>#fisiculturismo</code> <code>#palmasTO</code> <code>#atleta</code> <code>#musculação</code> <code>#suplementação</code> <code>#tocantinsfit</code> <code>#treino</code>
+  </div>
+
+  <div class="hashtag-bloco">
+    <strong>Mulher / Mães</strong>
+    <code>#mulheresfortes</code> <code>#mamãeforte</code> <code>#saúdedamulher</code> <code>#suplementoseguro</code> <code>#palmasTO</code> <code>#lifestyle</code>
+  </div>
+
+  <div class="hashtag-bloco">
+    <strong>Iniciante / Educativo</strong>
+    <code>#primeirowhey</code> <code>#começandoacademia</code> <code>#musculaçãoiniciante</code> <code>#suplementosparainiciantes</code> <code>#personaltrainerpalmas</code>
+  </div>
+
+  <div class="hashtag-bloco">
+    <strong>Conversão / Promoção</strong>
+    <code>#palmasTO</code> <code>#suplementospalmas</code> <code>#deliveryrapido</code> <code>#motoboypalmas</code> <code>#gbnutrition</code>
+  </div>
+</div>
+
+<!-- PROMPTS CHATGPT -->
+<div class="page p5">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Parte 05 · Apêndices</span>
+    </div>
+    <span class="ph-pagenum">23 <span class="total">/ 24</span></span>
+  </div>
+
+  <h1 class="section">Prompts ChatGPT pra imagens</h1>
+  <div class="section-sub">Cola no ChatGPT Plus mobile · pede 4 variações</div>
+
+  <h3>Imagem editorial fitness · feed estático</h3>
+  <div class="copy-bloco">Imagem fotográfica realista · proporção 1:1 · estoque de
+suplementos premium em prateleira · iluminação cinematográfica ·
+sombra dramática · paleta verde escuro e azul com detalhes em
+dourado · estilo editorial fitness brasileiro · foco selectivo ·
+sem texto · sem logo · clima sério e profissional.</div>
+
+  <h3>Imagem motoboy · story conveniência</h3>
+  <div class="copy-bloco">Imagem realista · proporção 9:16 · motoboy de costas saindo
+de loja em movimento, sacola em punho · iluminação cinematográfica
+ao entardecer · clima urbano brasileiro de cidade média · sem
+texto · sem logo · profundidade de campo desfocando o fundo.</div>
+
+  <h3>Imagem rótulo close · story educação</h3>
+  <div class="copy-bloco">Close fotográfico realista · proporção 9:16 · mão masculina
+segura pote de whey protein · foco no rótulo nutricional ·
+iluminação de produto · fundo desfocado escuro · estilo editorial fitness.</div>
+
+  <h3>Imagem casal academia · story humanização</h3>
+  <div class="copy-bloco">Foto realista · proporção 9:16 · casal jovem brasileiro vestido
+de academia, treinando junto, sorrindo · luz natural · clima
+acolhedor · academia ao fundo desfocada · estilo lifestyle
+fitness · sem texto · sem logo.</div>
+
+  <h3>Imagem grupo TeamGB · story comunidade</h3>
+  <div class="copy-bloco">Foto realista · proporção 9:16 · grupo de 8-10 jovens adultos
+brasileiros vestidos de academia, sorrindo, abraçados, formando
+um time · espaço externo (parque) · luz natural · sem texto · sem logo.</div>
+</div>
+
+<!-- CHECKLIST + CONTATOS -->
+<div class="page p5">
+  <div class="page-header">
+    <div class="ph-left">
+      <span class="ph-logo">GB</span>
+      <span class="ph-section">Parte 05 · Apêndices</span>
+    </div>
+    <span class="ph-pagenum">24 <span class="total">/ 24</span></span>
+  </div>
+
+  <h1 class="section">Checklist de gravação</h1>
+  <div class="section-sub">Confere antes da sessão · evita refilmagem</div>
+
+  <div class="card">
+    <h3 style="margin-top: 0;">Antes da sessão</h3>
+    <ul class="tight">
+      <li>☐ Decidir 1 take ou múltiplos · recomendado gravar TUDO numa sessão · corta depois</li>
+      <li>☐ Camiseta limpa · sem logo de outra marca aparecendo</li>
+      <li>☐ Estoque organizado · prateleira frontalmente</li>
+      <li>☐ Celular carregado · tripé + luz se possível</li>
+      <li>☐ Áudio · lugar sem eco (perto de parede com produto)</li>
+      <li>☐ Foto do Arnold ou Muscle Contest enquadrável (Reel 2)</li>
+      <li>☐ 1 motoboy combinado pra cena (Reel 3 + D7 stories)</li>
+    </ul>
+
+    <h3 style="margin-top: 22px;">Bordões na cabeça</h3>
+    <ul class="tight">
+      <li>"Transformação não é mágica, é método"</li>
+      <li>"Se você treina sério, X não é opcional, é base"</li>
+      <li>"Suplemento bom não é gasto, é investimento"</li>
+      <li>"Chama no direct"</li>
+      <li>"Vamoo 🚀"</li>
+    </ul>
+  </div>
+
+  <h1 class="section" style="margin-top: 40px;">Contatos à mão</h1>
+
+  <table>
+    <thead>
+      <tr><th>Quem</th><th>O que faz</th><th>Quando chamar</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Eduardo · Impulso</strong></td>
+        <td>Suporte site · estratégia · ajuste</td>
+        <td>Qualquer dúvida do plano</td>
+      </tr>
+      <tr>
+        <td><strong>WhatsApp Eduardo</strong></td>
+        <td>63 99292-0080</td>
+        <td>Resposta rápida</td>
+      </tr>
+      <tr>
+        <td><strong>Site GB</strong></td>
+        <td>gbnutrition.online</td>
+        <td>Compartilhar com cliente</td>
+      </tr>
+      <tr>
+        <td><strong>Insta loja</strong></td>
+        <td>@gbnutritionn</td>
+        <td>Postar peças do plano</td>
+      </tr>
+      <tr>
+        <td><strong>Insta pessoal</strong></td>
+        <td>@gabribarros10</td>
+        <td>Bastidor · treino · casal · alunos</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="fancy">
+
+  <div class="closing">
+    <div class="q">"Transformação não é mágica,<br><span class="accent">é método.</span>"</div>
+    <div class="meta">Produzido por Impulso Digital · Maio 2026</div>
+  </div>
+</div>
+
+</body>
+</html>

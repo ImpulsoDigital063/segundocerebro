@@ -152,3 +152,8 @@ Atualizar: status do Aura, leads ativos, cases, conversão por canal, ajustes no
 **Ver também:** [[EDUARDO-BARROS]] | [[MEGA-CLAUDE]] | [[STATUS-RADARPRO]] | [[STATUS-AGENDAPRO]] | [[STATUS-AURA-ENERGY]]
 **Playbook completo:** [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]]
 **Diferenciais venda AgendaPRO:** [[AGENDAPRO-DIFERENCIAIS-VENDAS]]
+
+**Cases ativos:** [[STATUS-AURA-ENERGY]] (case-1 fechado · 06/05) · [[STATUS-ANDRESSA]] (lead-3 warm)
+**Hubs:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
+**Conhecimento:** [[IMPULSO_CORE_SYSTEM_V2]] · [[IDENTIDADE-IMPULSO-DIGITAL]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[MANUAL-VENDAS-5-LIVROS]]
+**Templates:** [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[TEMPLATE-PLANO-NEGOCIO-MARKETING]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]]

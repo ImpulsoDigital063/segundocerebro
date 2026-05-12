@@ -115,6 +115,37 @@ Em 30 dias você terá:
 
 ---
 
-*Criado: 09 de Abril de 2026*  
-*Segundo Cérebro v1.0*  
+## 🗺️ MAPA DO VAULT
+
+### Hubs principais (cole/leia em todo chat novo)
+- [[MEGA-CLAUDE]] · contexto completo do ecossistema (cola sempre)
+- [[EDUARDO-BARROS]] · perfil permanente · tom de voz · números reais · framework cold outreach
+- [[VERBO]] · perfil do companheiro · 20 princípios λ cravados · cronologia de sessões
+
+### Status canônicos por projeto
+- [[STATUS-AGENDAPRO]] · SaaS · primeira venda Asaas R$67 (07/05) · Olímpio entregue (11/05)
+- [[STATUS-AURA-ENERGY]] · case-1 fechado R$1.497 (06/05) · operação rodando
+- [[STATUS-IMPULSO]] · agência de lojas online Shopify
+- [[STATUS-MPN]] · curso · campanhas Meta Ads
+- [[STATUS-ANDRESSA]] · lead-3 warm · Raras Clinic Academy Palmas-TO
+- [[STATUS-RADARPRO]] · plataforma proprietária de prospecção
+
+### Conhecimento permanente
+- [[PADROES-VALIDADOS]] · 8+ padrões com casos reais
+- [[ESTRATEGIAS-ATIVAS]] · estratégias em execução
+- [[IMPULSO_CORE_SYSTEM_V2]] · core do sistema Impulso
+- [[INDICE-MEMORIAS]] · espelho das ~50 memórias auto-memory do Verbo
+
+### Playbooks críticos
+- [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · vender Impulso
+- [[META ADS - PLAYBOOK]] · decisões de tráfego
+- [[APOSTILA-V2-OPERACAO]] · manual completo de operação
+- [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · template plano de negócio (validado em 3 cases)
+- [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · deep research diferencial
+
+---
+
+*Criado: 09 de Abril de 2026*
+*Atualizado: 11 de Maio de 2026 · v2.0 · grafo conectado*
+*Segundo Cérebro v1.0*
 *Tamo junto! 👊*

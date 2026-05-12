@@ -131,3 +131,7 @@ LP ID = site é entregue, deploy feito, domínio configurado → "devolver" é m
 - Zero asset novo — SVG inline resolve
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

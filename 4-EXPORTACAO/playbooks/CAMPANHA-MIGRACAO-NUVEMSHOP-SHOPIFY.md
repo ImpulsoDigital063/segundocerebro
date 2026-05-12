@@ -209,3 +209,7 @@ Lista 30-50 lojas. Pega WhatsApp/Instagram do dono. Manda áudio personalizado.
 - Esta campanha **converge** com a alavanca **"subir preço médio"** do estudo de mercado (`ESTUDO-MERCADO-LP-SHOPIFY-BR-2026.md`)
 - Funciona em paralelo com `MANUAL-VENDAS-5-LIVROS.md` — Arsenal Psicológico se aplica direto (Hormozi Equação de Valor, Voss Labeling, Klaff Award Frame)
 - Material visual da LP comparativa pode reusar paleta + componentes da `LP da Impulso Digital atual`
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]] · [[MANUAL-FIT-CLIENTES-IMPULSO]]

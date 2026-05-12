@@ -331,3 +331,7 @@ Páginas e materiais reusáveis que ficam no Vercel da Impulso/clientes:
 **Data:** 2026-05-06 (pós-fechamento Aura)
 **Status:** validado em 3 cases · pronto pra reusar em N próximos clientes
 **Próxima revisão:** após mais 2-3 cases fechados (validar pricing R$ 1.497 → R$ 1.997)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-AURA-ENERGY]] (validado neste case) · [[STATUS-IMPULSO]] · [[TEMPLATE-PLANO-NEGOCIO-MARKETING]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]] · [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]]

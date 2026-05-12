@@ -148,3 +148,7 @@ Roxo:    #8B5CF6
 - Grid: 1 col mobile → 2 col tablet → layout final desktop
 - Stats complementares: `hidden sm:inline` (mostra número no mobile, contexto no desktop)
 - CTA: `w-full sm:w-auto` (full-width no mobile)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-funil-estrutura]] · [[lp-product-ui-showcase]] · [[PADROES-VALIDADOS]]

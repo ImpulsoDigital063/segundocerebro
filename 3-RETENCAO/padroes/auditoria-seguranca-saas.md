@@ -163,3 +163,7 @@ Depois de rodar esse padrão, o sistema deve ter:
 - Zero senhas/secrets em responses de API
 - Zero `select('*')` em páginas públicas
 - Constraint no banco pra race conditions críticas (overbooking, pontos duplicados)
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-AGENDAPRO]] · [[PADROES-VALIDADOS]]

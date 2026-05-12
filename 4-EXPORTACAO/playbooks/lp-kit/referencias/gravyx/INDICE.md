@@ -192,3 +192,7 @@ Decisões pendentes Eduardo antes de começar:
 3. **Consultoria R$299:** preço fica ou sobe pra R$499?
 4. **CTA principal:** "Quero minha call grátis" confirmado?
 5. **Garantia:** aprovação 3 dias + 100% devolução confirmado?
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

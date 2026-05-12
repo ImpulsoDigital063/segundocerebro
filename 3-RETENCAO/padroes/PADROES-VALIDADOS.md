@@ -209,3 +209,6 @@ Antes de tomar qualquer decisão estratégica, consulte aqui:
 **Ver também:** [[EDUARDO-BARROS]] | [[ESTRATEGIAS-ATIVAS]] | [[STATUS-IMPULSO]] | [[STATUS-MPN]]
 
 **Regra de atualização:** Quando um padrão novo for validado na prática, adicione aqui com o caso real.
+
+
+**Ver também:** [[INDICE-MEMORIAS]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[ESTRATEGIAS-ATIVAS]]

@@ -132,3 +132,7 @@
 
 **Amanhã com o que já tenho + papel manteiga:** primeiro teste do case Gabriel.
 **Essa semana com capturadora + softbox:** setup completo e repetível.
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-MPN]] · [[ROTEIROS-MODULOS-1-3-4]] · [[PADROES-VALIDADOS]]

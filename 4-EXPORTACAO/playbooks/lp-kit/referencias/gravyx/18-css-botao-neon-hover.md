@@ -203,3 +203,7 @@ O CSS truncou em `.btn-neon-wr...`. Preciso da continuação pra ter:
 - `@media (hover: hover)` provavelmente pra desabilitar em touch
 
 **Arquivo salvo. Manda o próximo bloco (continuação do botão neon).**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

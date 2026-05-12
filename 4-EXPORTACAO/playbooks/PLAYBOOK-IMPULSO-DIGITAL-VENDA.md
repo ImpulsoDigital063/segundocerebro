@@ -360,3 +360,7 @@ Quer garantir?
 *Playbook criado: 09/04/2026*  
 *Pronto pra usar imediatamente*  
 *Objetivo: Primeira renda Impulso Digital em 7 dias*
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[PROSPECCAO-MANUAL-COMPLETO]]

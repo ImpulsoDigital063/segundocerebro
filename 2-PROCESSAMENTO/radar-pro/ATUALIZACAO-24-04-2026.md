@@ -160,3 +160,7 @@ Migrations idempotentes via `ALTER TABLE ADD COLUMN` no `initDb()` — rodam aut
 5. **Próximo passo natural:** prospecção real — segunda-feira já tem tudo pronto pra começar
 
 Tamo junto. 🚀
+
+---
+
+**Ver também:** [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CONTEXTO-RADARPRO-PARA-CHATGPT]]

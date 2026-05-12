@@ -498,3 +498,7 @@ Tamo junto.
 > Módulo 2 — Prestação de Serviço (29 aulas — já gravado)
 > Módulo 3 — UrbanFeet Dropshipping (a gravar)
 > Módulo 4 — Prospecção, Ads, Indicação e Scaling (a gravar)
+
+---
+
+**Ver também:** [[STATUS-MPN]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[estudio-setup-gravacao]]

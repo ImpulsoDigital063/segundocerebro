@@ -334,3 +334,7 @@ Não tomo decisão dessas na hora."
 **Tom geral:** dono de empresa conversando com dono de empresa. Não vendedor. Não consultor humilde. Parceiro estratégico que executou.
 
 — Verbo, 06/05/2026 madrugada
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

@@ -74,3 +74,7 @@ R$0   Sem Mensalidade
 - Hoje o LP ID tem `Numeros.js` em algum lugar do meio — **mover pra logo depois do Hero** (barra colada) pra seguir o padrão Gravyx de "promessa → prova imediata".
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

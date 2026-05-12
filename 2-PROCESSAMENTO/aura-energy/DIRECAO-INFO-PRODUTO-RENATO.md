@@ -89,22 +89,79 @@ Curso (R$19) → Lead super-qualificado → Orçamento Aura → Projeto R$15-50k
 
 ---
 
-## 5. ESTRUTURA DE AULAS SUGERIDA (10 aulas, ~2h30)
+## 5. ESTRUTURA DE AULAS — 8 aulas B2B-focused (60-80 min totais)
 
-> _**Esta seção será preenchida com a análise do CIC sobre o curso Tenda — vou cruzar os padrões observados lá com o nicho cliente-final pra ajustar a estrutura aula-a-aula.**_
+> **Refinada pós-análise estrutural CIC do curso Tenda Solar (Hotmart).** O CIC depurou as 24 aulas e extraiu padrões pedagógicos validados. Estrutura abaixo aplica esses padrões adaptados ao **decisor B2B** (não eletricista).
 
-**Esqueleto base (refinar com output CIC):**
+> **Premissa:** aulas curtas (6-10 min, teto 10), uma promessa por aula nos primeiros 15s, fatura/planilha/gráfico na tela 80% do tempo, Renato em PIP pequeno (não tela cheia), zero teoria elétrica — **decisor B2B compra resultado financeiro, não kWp**.
 
-1. **Bem-vindo / Por que solar agora** (gancho + Lei 14.300)
-2. **Como funciona um sistema solar** (fundamentos sem jargão)
-3. **Quanto você vai economizar** (cálculo prático com sua conta)
-4. **Os 5 erros mais comuns ao contratar** (anti-pegadinha)
-5. **O que perguntar pro instalador** (checklist pra cliente)
-6. **Tipos de painel: o que importa de verdade** (mono vs poli vs N-type)
-7. **Inversor: o cérebro do sistema** (string vs micro)
-8. **Garantias e seguros** (25 anos não é mentira)
-9. **Financiamento: vale a pena ou pagar à vista?** (matemática real)
-10. **Conclusão + próximo passo** (CTA pra orçamento)
+### Aula 1 — "Por que sua conta de energia industrial é o maior custo invisível da sua operação" (~7 min)
+Abertura com **fatura real na tela**. Demanda contratada vs consumida. TUSD/TE. Mostra como 18-35% do custo operacional some sem ninguém perceber.
+**Fecha com:** *"Na próxima eu te mostro quanto disso volta para o caixa."*
+
+### Aula 2 — "Payback de usina solar em indústria: a conta que ninguém te mostra direito" (~9 min)
+Estrutura: CAPEX → economia mensal → TIR. Compara com CDB, expansão de máquina. **Caso real Aura** (com números, sem nome).
+**Fecha com:** *"Mas tem 3 modelos diferentes — qual serve pra você?"*
+
+### Aula 3 — "Os 3 modelos de aquisição: à vista, financiado, locação (PPA)" (~10 min)
+Quadro comparativo. Quem usa cada um (caixa forte = à vista; apertada = PPA; expansão = financiado BNDES/Pronaf).
+**Fecha com:** *"Modelo escolhido. Agora — sua telha aguenta?"*
+
+### Aula 4 — "Telhado, solo ou carport: como decidir em 5 minutos" (~6 min)
+Critérios objetivos: área, sombreamento, estrutura, expansão futura. Sem jargão. Mostra que decisão de local muda 15-20% do retorno.
+
+### Aula 5 — "Rural: Pronaf, Moderagro e o detalhe que dobra o retorno" (~8 min)
+Específica agro (irrigação, resfriamento, secadores). Linhas de crédito. Compensação entre unidades (autoconsumo remoto). Case rural curto.
+
+### Aula 6 — "Comércio e supermercado: por que horário de pico é seu inimigo" (~7 min)
+Demanda de pico, geladeiras 24h, AC. Como solar + bateria começa a fazer sentido. Tarifa branca.
+**Fecha com:** *"Mas o decisor manda a Lei 14.300 na sua cara — vamos resolver."*
+
+### Aula 7 — "Lei 14.300, Fio B e o que mudou: tradução pra dono de empresa" (~9 min)
+Desmistifica a lei. O que de fato pesa no payback. Janela de transição. Por que 2026 ainda é janela boa.
+**Fecha com:** *"Tudo decidido — agora como NÃO ser enganado por instalador ruim."*
+
+### Aula 8 — "Os 7 sinais de um projeto solar mal feito (e como blindar o seu)" (~10 min)
+Checklist proposta: garantias separadas (módulo/inversor/instalação), dimensionamento honesto, monitoramento incluso, ART/homologação, seguro, cláusula de performance.
+**Fecha com CTA:** orçamento Aura + próximo passo (FASE 3 — comunidade premium).
+
+---
+
+### 5.1 PADRÕES DE PRODUÇÃO (extraídos do CIC depurando o curso Tenda)
+
+**Setup enxuto que funciona:**
+- 1 câmera (DSLR ou iPhone)
+- 1 lapela (sem boom)
+- Iluminação natural
+- Zero greenscreen, zero overlay gráfico rebuscado
+- Custo estimado: **R$ 8-25k** total pra produzir 8 aulas
+
+**4 modos visuais a alternar (gangorra previne tédio):**
+1. **Studio premium** (vinhetas de capítulo cinemáticas)
+2. **Sala de reunião** (Renato + cliente B2B real, formato podcast)
+3. **Slide-livro com PIP** (aulas analíticas — fatura/planilha)
+4. **Documental em campo** (Renato dentro da indústria/fazenda do cliente)
+
+**Quebra de ritmo na metade do curso:**
+- Aulas 1-3: slide + Renato em PIP (estilo livro técnico)
+- Aula 4-5: vai pra campo (dentro da indústria/fazenda)
+- Aula 6-7: volta pra slide
+- Aula 8: **money shot** — close-up da fatura DEPOIS (R$ 87 onde era R$ 8.400)
+
+**Personagem fixo equivalente ao "instalador laranja" da Tenda:**
+- **Cliente B2B real** (dono de indústria já atendido pela Aura) aparece em 2-3 aulas
+- Renato é o cérebro, ele é a prova viva
+- Reduz custo + cria narrativa peer-to-peer
+
+**Material complementar baixável (gap crítico do curso Tenda — Aura preenche):**
+- Planilha Google Sheets de simulador de payback B2B
+- 1 PDF "checklist" por aula
+- Modelo de proposta comercial
+- Checklist de telhado industrial
+
+> **Insight central do CIC:** "O curso da Tenda é manual técnico pra virar instalador. Pra virar info-produto B2B Aura, mantém engenharia visual e narrativa, mas troca o protagonismo do objeto físico (ferramenta/cabo) pelo objeto financeiro (fatura/payback/contrato), e adiciona a camada de credibilidade que hoje está ausente (números, cases nominados, documentos)."
+
+→ **Documento completo:** [`RELATORIO-CURSO-TENDA-COMPLETO.md`](./RELATORIO-CURSO-TENDA-COMPLETO.md) — análise em 9 seções, todos os padrões e recomendações operacionais.
 
 ---
 
@@ -170,3 +227,7 @@ Quando você quiser executar, conversamos sobre escopo + valor separado.
 
 **Eduardo Barros · Impulso Digital · 06/05/2026**
 🌐 impulsodigital063.com · 📱 (99) 99206-5961
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

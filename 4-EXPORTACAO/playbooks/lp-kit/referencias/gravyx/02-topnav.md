@@ -34,3 +34,7 @@
 - **Blur + fixed:** vem no CSS (provavelmente próximo bloco) — guardar `backdrop-filter: blur()` pra aplicar em `nav` com `position: fixed`.
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

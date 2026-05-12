@@ -92,3 +92,7 @@ Inteiro preservado no arquivo: `radar-pro/scripts/data/leads-cic-25-04-multinich
 4. **Próximo prompt CIC pendente:** #3 saúde estética IG-only (foco LP Erlane — soroterapia/injetáveis/harmonização) — entregue 25/04 noite
 5. **Pré-engajamento Insta D-1** OBRIGATÓRIO pros 3 score 8 antes do disparo WhatsApp
 6. **Disparo recomendado:** começar por @donadulce.brecho (lead-âncora cristalino) e @maracamargo.semijoias (ticket alto + dona-marca)
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

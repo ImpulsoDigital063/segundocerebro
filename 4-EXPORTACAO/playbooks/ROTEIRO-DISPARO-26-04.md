@@ -225,3 +225,7 @@ Cada vez que tu disparar pra um lead, marcar status na tabela acima:
 - Se recusou: ❌ NÃO-FECHADO {data} + razão (vira insumo pra vacina de pitch)
 
 Toda recusa deve ser registrada com razão pra alimentar a inteligência de 2ª ordem (extração de padrão como fizemos com Irsnayra).
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[PROSPECCAO-MANUAL-COMPLETO]]

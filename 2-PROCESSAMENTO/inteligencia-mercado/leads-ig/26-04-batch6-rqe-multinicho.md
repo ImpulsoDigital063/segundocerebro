@@ -146,3 +146,7 @@ O batch #6 é a primeira validação direta do **sistema calibrado pós-market i
 5. Soluções amadoras tratadas como sinal de compra
 
 Esse batch sozinho gera mais leads quentes (7 Tier S) do que os 4 batches anteriores juntos (avaliado por Tier S puros).
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

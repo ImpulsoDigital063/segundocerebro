@@ -487,3 +487,7 @@ Versão 1.0 — {{ANO}} | Fase {{FASE}}: {{MERCADO_ALVO}}
 ## Changelog
 
 - **v1.0 (24/04/2026):** Template criado a partir da estrutura validada do GB Nutrition (Gabriel Barros). 14 seções + condicionais pra remover (seção 7 operacional, seção 10 catálogo).
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]]

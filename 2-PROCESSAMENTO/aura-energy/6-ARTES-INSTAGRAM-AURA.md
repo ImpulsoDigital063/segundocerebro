@@ -549,3 +549,7 @@ Conversão direta. Quem chegou nesse post passou pelos 5 anteriores. Tá pronto 
 >  a gente conversa sobre um plano mensal."*
 
 — Verbo, 06/05/2026 madrugada
+
+---
+
+**Ver também:** [[STATUS-AURA-ENERGY]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]] · [[STATUS-IMPULSO]]

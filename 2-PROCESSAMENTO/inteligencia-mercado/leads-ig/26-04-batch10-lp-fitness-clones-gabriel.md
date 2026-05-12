@@ -149,3 +149,7 @@ Doc separado em `4-EXPORTACAO/playbooks/TEMPLATE-LP-PERSONAL-NUTRI.md`:
    - Pegar telefones via link tree (5 leads sem tel direto)
    - Avaliar PARCERIA com @agenciaprintdesign (não competir)
 6. **Próximo prompt CIC sugerido (#11):** rodar /following/ do @gabribarros10 (6.325 contas — round dedicado) + hashtags substitutas (#palmasfit/#academiapalmas) + nichos arquivados (estética/jurídico/fisio/médica)
+
+---
+
+**Ver também:** [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[PROSPECCAO-MANUAL-COMPLETO]] · [[ROTEIRO-DISPARO-26-04]]

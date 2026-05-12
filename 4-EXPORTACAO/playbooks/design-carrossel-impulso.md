@@ -1038,3 +1038,7 @@ Matriz rápida:
 | Explicar conceito abstrato      | 15 — Blueprint Iceberg           |
 | GB Nutrition                    | (em definição — absorvendo)      |
 
+
+---
+
+**Ver também:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CARROSSEIS-IMPULSO-INSTA-V1]] · [[PLAYBOOK-CLAUDE-DESIGN-INSTA]] · [[IDENTIDADE-IMPULSO-DIGITAL]]

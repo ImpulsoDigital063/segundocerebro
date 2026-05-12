@@ -122,3 +122,7 @@ A ação `gerarScriptCompleto` (hoje 11 seções) pode passar a mencionar o form
 - Eduardo notou que o próprio processo de construção pode virar produto
 - Memória `feedback_escopo_caso_real.md` aplicada: não implementar agora, esperar caso real puxar
 - Bate com o padrão 10 do MEGA-CLAUDE ("construir em público, ser o primeiro case")
+
+---
+
+**Ver também:** [[STATUS-RADARPRO]] · [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[STATUS-IMPULSO]] · [[CONTEXTO-RADARPRO-PARA-CHATGPT]]

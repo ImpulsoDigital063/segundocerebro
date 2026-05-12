@@ -252,3 +252,7 @@ Decisão crítica: **usar paleta própria ID ou copiar paleta Gravyx?**
 - **Sparks podem irritar em mobile** — considerar `@media (max-width: 640px) { .animate-spark-rise { display: none; } }`
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]

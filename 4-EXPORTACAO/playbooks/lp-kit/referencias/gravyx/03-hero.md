@@ -105,3 +105,7 @@
 3. Primeiro frame WebP do vídeo (poster) — pode extrair do vídeo gerado
 
 **Arquivo salvo. Manda o próximo bloco.**
+
+---
+
+**Ver também:** [[INDICE]] · [[LP-DESIGN-PLAYBOOK]] · [[lp-design-system-dark]] · [[lp-funil-estrutura]] · [[STATUS-IMPULSO]]
