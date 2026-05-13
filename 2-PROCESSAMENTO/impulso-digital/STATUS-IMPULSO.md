@@ -1,8 +1,8 @@
 # STATUS-IMPULSO.md
 
 **Produto:** Impulso Digital — Agência de criação digital (marca-mãe do ecossistema)
-**Fase:** Operacional · 1ª venda fechada (Gabriel) · 1º cliente solar em pipeline (Aura Energy)
-**Data:** 01/05/2026 (sexta · noite)
+**Fase:** Operacional · 2 cases fechados (Aura R$1.497 · AgendaPRO Asaas R$67/mês) · 3 leads warm em pipeline (Andressa · Viva · Starteq)
+**Data:** 12/05/2026 (segunda · madrugada · sessão Starteq)
 **Responsável:** Eduardo Barros
 
 ---
@@ -74,11 +74,14 @@ Arquivo completo: `4-EXPORTACAO/playbooks/PLAYBOOK-IMPULSO-DIGITAL-VENDA.md`
 
 ---
 
-## Leads em andamento (status 01/05)
+## Leads em andamento (status 12/05)
 
 | Nome | Contato | Nicho | Status | Próximo passo |
 |---|---|---|---|---|
-| **Aura Energy** (Renato Edson) | (63) 9 9268-8852 · Palmas-TO | Energia solar fotovoltaica | 🟡 **Lead morno-quente** — LP de 20 seções entregue 01/05, apresentou à noite, gostou mas não fechou (cenário informal) | Mensagem casual D+1 + ajustes na LP D+2 + material útil D+4-5 + pergunta direta D+7. Plano detalhado em `STATUS-AURA-ENERGY.md` |
+| **Aura Energy** (Renato Edson) | (63) 9 9268-8852 · Palmas-TO | Energia solar fotovoltaica | 🟢 **CASE-1 FECHADO** R$ 1.497 (06/05/2026) · em operação | Próxima frente: Insta+tráfego R$ 1.997/mês. Status: `STATUS-AURA-ENERGY.md` |
+| **Andressa Kupferman** (Daniel · marido) | via network Renato (08/05) | Podologia + escola Raras Clinic Academy · Palmas | 🟡 **Lead-3 warm** · estudo profundo feito · plataforma Kupferman backend v0.1 deployada · sem pitch ainda | Aguardar entrada formal · Status: `STATUS-ANDRESSA.md` |
+| **Viva Cacheada** (esposa do Gabriel/GB) | via network Gabriel | Salão cabelos cacheados Palmas | 🟡 **Lead-4 quente** · oferta 3 meses grátis AgendaPRO em troca de divulgação · reunião 12/05 com SQL trial pronto | Ativar trial 90d ao vivo · `scripts/grant-trial-viva-cacheada.sql` |
+| **Starteq Tocantins** (Júnior) | (63) 99252-8619 · 104 Sul Palmas-TO | Loja PC gamer + assistência técnica · @starteq_to · 9k seg | 🟢 **Lead-5 quente · SISTEMA EM BUILD** · 3 CICs feitos · Next.js 16 deployando · 8-step montador funcional · API consumível IA · `github.com/ImpulsoDigital063/Starteq` | Eduardo busca PC + mostra ao vivo · plugar Vercel · marcar reunião formal. Status: `STATUS-STARTEQ.md` |
 
 **Status canônico Aura:** [`2-PROCESSAMENTO/aura-energy/STATUS-AURA-ENERGY.md`](../aura-energy/STATUS-AURA-ENERGY.md)
 
@@ -153,7 +156,7 @@ Atualizar: status do Aura, leads ativos, cases, conversão por canal, ajustes no
 **Playbook completo:** [[PLAYBOOK-IMPULSO-DIGITAL-VENDA]]
 **Diferenciais venda AgendaPRO:** [[AGENDAPRO-DIFERENCIAIS-VENDAS]]
 
-**Cases ativos:** [[STATUS-AURA-ENERGY]] (case-1 fechado · 06/05) · [[STATUS-ANDRESSA]] (lead-3 warm)
+**Cases ativos:** [[STATUS-AURA-ENERGY]] (case-1 fechado · 06/05) · [[STATUS-ANDRESSA]] (lead-3 warm) · [[STATUS-STARTEQ]] (lead-5 quente · janela 12/05)
 **Hubs:** [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
 **Conhecimento:** [[IMPULSO_CORE_SYSTEM_V2]] · [[IDENTIDADE-IMPULSO-DIGITAL]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[MANUAL-VENDAS-5-LIVROS]]
 **Templates:** [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[TEMPLATE-PLANO-NEGOCIO-MARKETING]] · [[CHECKLIST-PESQUISA-CLIENTE-PLANO]]
