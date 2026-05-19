@@ -50,7 +50,7 @@
 | Frente | O que entrega | Prazo | Pricing-âncora |
 |---|---|---|---|
 | **F1 · Site novo + montador interativo** | E-commerce padrão Pichau (referência) · montador de PC com validação de compatibilidade · paleta preto+amarelo · mobile-first · checkout PIX/cartão · cálculo de frete | 45-90d | R$ 3.500-5.000 setup |
-| **F2 · Painel ERP** | OS com volta · WhatsApp automático "serviço pronto" · controle de estoque integrado · sincronia com site | 30-60d | R$ 1.997-2.497 setup |
+| **F2 · Painel ERP** | OS com volta · WhatsApp automático "serviço pronto" · controle de estoque integrado · sincronia com site · **padrão Salão99/AgendaPRO cravado em [[05-PAINEL-ADMIN-PADRAO]]** | 30-60d | R$ 1.997-2.497 setup |
 | **F3 · API pra IA dele + manutenção** | Endpoint público de catálogo + estoque + preço pra IA consumir · IA deixa de mandar pro Kabum · manutenção mensal | 60-90d (junto com F1) | R$ 497/mês |
 
 **Total potencial:** R$ 5.500-7.500 setup + R$ 497/mês recorrente.

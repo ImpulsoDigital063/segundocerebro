@@ -50,19 +50,36 @@ starteq-palmas/
 │   │   │       └── pagamento/page.tsx      ← PIX Asaas
 │   │   │
 │   │   ├── (admin)/                        ← grupo painel Júnior
+│   │   │   │                                  📖 PADRÃO COMPLETO: [[05-PAINEL-ADMIN-PADRAO]]
+│   │   │   │                                  Base canônica: [[PAINEL-PROFISSIONAL]] (3-RETENCAO/perfil/)
 │   │   │   └── admin/
-│   │   │       ├── page.tsx                ← dashboard KPIs
-│   │   │       ├── login/page.tsx          ← Supabase Auth
+│   │   │       ├── page.tsx                ← dashboard KPIs (hero Vendas Hoje + 4 KPIs + atalhos)
+│   │   │       ├── login/page.tsx          ← Supabase Auth (magic link · senha temp junior2026)
 │   │   │       ├── produtos/
-│   │   │       │   ├── page.tsx            ← lista + busca + filtros
-│   │   │       │   ├── novo/page.tsx       ← criar SKU
-│   │   │       │   └── [id]/page.tsx       ← editar
+│   │   │       │   ├── page.tsx            ← tabela densa · drawer edição 6 tabs · bulk action
+│   │   │       │   ├── novo/page.tsx       ← criar SKU (página própria · fluxo dedicado)
+│   │   │       │   ├── [id]/page.tsx       ← (opcional · default vai pro drawer)
+│   │   │       │   ├── categorias/page.tsx ← CRUD categorias editáveis
+│   │   │       │   └── marcas/page.tsx     ← CRUD marcas editáveis
 │   │   │       ├── pedidos/
-│   │   │       │   ├── page.tsx            ← lista pedidos
-│   │   │       │   └── [id]/page.tsx       ← detalhe (status · notificar)
-│   │   │       ├── estoque/page.tsx        ← atualização massa
-│   │   │       ├── clientes/page.tsx       ← base CRM
-│   │   │       └── api-ia/page.tsx         ← docs API pra IA dele consumir
+│   │   │       │   ├── page.tsx            ← tabela com status chips + filtros
+│   │   │       │   └── [id]/page.tsx       ← detalhe (drawer ou página · timeline status)
+│   │   │       ├── os/                     ← OS montagem (tabela separada de pedidos)
+│   │   │       │   ├── page.tsx            ← lista admin
+│   │   │       │   └── [id]/page.tsx       ← drawer técnico (Carlos vê só dele)
+│   │   │       ├── estoque/
+│   │   │       │   ├── page.tsx            ← posição + busca SKU
+│   │   │       │   ├── entrada/page.tsx    ← NF compra · bulk
+│   │   │       │   └── inventario/page.tsx ← contagem física
+│   │   │       ├── financeiro/
+│   │   │       │   ├── vendas/page.tsx     ← online + balcão · filtros + export CSV
+│   │   │       │   ├── caixa/page.tsx      ← caixa físico (espécie do dia)
+│   │   │       │   ├── despesas/page.tsx   ← com navegador mês-a-mês
+│   │   │       │   ├── fluxo/page.tsx      ← receitas - despesas
+│   │   │       │   └── comissoes/page.tsx  ← técnicos · pagamento via wizard 2-step
+│   │   │       ├── clientes/page.tsx       ← CRM unificado · busca tripla nome/tel/CPF
+│   │   │       ├── relatorios/page.tsx     ← índice de cards-link (padrão Salão99)
+│   │   │       └── api-ia/page.tsx         ← docs API + OpenAPI + token teste
 │   │   │
 │   │   └── api/
 │   │       ├── products/
