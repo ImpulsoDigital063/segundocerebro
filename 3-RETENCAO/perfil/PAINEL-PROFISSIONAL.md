@@ -43,6 +43,32 @@ Antes de inventar UX, **audita o concorrente**. Salão99 existe há anos, foi us
 
 > *"Padrão Salão99"* virou expressão interna no AgendaPRO. Significa: testado, validado por uso real, padrão de referência.
 
+### Mobile e desktop são experiências separadas no mesmo codebase
+
+**Cravado em 19-20/05/2026** após sessão paralela Olímpio (mobile) + Palace (desktop).
+
+O painel SaaS atende **dois fluxos simultâneos**:
+- **Mobile** (`agendapro.net.br` no AgendaPRO) — dono opera no celular · clientes em produção real
+- **Desktop** (`agenda-pro-seven.vercel.app`) — versão em construção pra negócios maiores · estética/funcionalidades inspiradas no Salão99
+
+**Regra dura:** ajuste pra resolver problema do mobile **NÃO PODE** alterar o desktop, e vice-versa. Tolerância zero pra regressão cruzada — cliente real do mobile abre o app no dia seguinte e tá quebrado por causa de fix do desktop.
+
+**Como respeitar tecnicamente:**
+
+1. **Toda classe Tailwind sem prefixo afeta os 2 lados.** Trate isso como contrato.
+2. **Ajuste só pra mobile:** classe sem prefixo + **anular explicitamente no `sm:`**:
+   ```tsx
+   <div className="flex-1 min-h-[280px] sm:min-h-0" />
+   ```
+3. **Ajuste só pra desktop:** classe com `sm:` ou maior. Mobile não vê.
+4. **Quando o ajuste é grande (hero, layout):** duplicar 2 blocos JSX. `sm:hidden` pra mobile · `hidden sm:block` pra desktop. Garante isolamento perfeito.
+5. **Modal vazando estilo entre breakpoints** → refatorar pra `createPortal(node, document.body)` com guard SSR via `useEffect`. Renderiza fora da hierarquia DOM do parent → cada lado controla seu próprio layout sem herdar contexto.
+6. **Commit message menciona em qual breakpoint a mudança atua** — outras sessões/Verbos paralelos precisam entender o escopo.
+
+**Direção futura:** sistema device-aware com detecção real do aparelho (não só CSS responsive) pra performance. Mobile não baixa bundles desktop e vice-versa. Implementar via `headers()` server-side no Next ou dynamic imports condicionais.
+
+---
+
 ### Universal sempre · personalizado nunca
 
 Toda feature do painel é **universal** (vale pra qualquer cliente do AgendaPRO/Starteq). Não inventa categoria de despesa só pra Palace (`uniforms`). Não escreve copy com nome do cliente. Não cria fluxo especial pra 1 cliente "porque ele pediu".
