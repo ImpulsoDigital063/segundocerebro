@@ -1,3 +1,4 @@
+- [reference: verbo-design codebase (substitui impulsodesign)](reference_verbo_design_codebase.md) — 27/05 · C:/Users/Usuario/verbo-design + github.com/ImpulsoDigital063/verbo-design · CLI-first toolkit imagem+vídeo · Remotion + Kling 2.1 + Whisper
 - [feedback: análise de impacto antes de prod (regra dura)](feedback_analise_impacto_antes_de_prod.md) — 26/05 · P0 Olímpio · perdeu cliente · checklist 6 pontos obrigatório antes de migration/mudança crítica · não posso quebrar prod nesse início
 - [feedback: trigger SQL precisa SECURITY DEFINER](feedback_trigger_security_definer.md) — 26/05 · P0 Olímpio · trigger v70 sem SECURITY DEFINER quebrou BookingFlow anon · sempre declarar pra triggers que tocam tabela com RLS forte
 - [reference: Salão99 Pacotes (drilldown CIC parcial)](reference_salao99_pacotes.md) — 26/05 · catálogo + form documentado · 4-7 pendentes (venda/consumo/ficha/dashboard)
