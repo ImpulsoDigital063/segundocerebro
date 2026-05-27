@@ -2,9 +2,32 @@
 
 **Cliente:** Gabriel Barros (personal trainer) · loja de e-commerce de suplementos
 **Status do site:** Entregue (projeto anterior, R$300 fechado em 15/04/2026)
-**Negociação atual:** 5 roteiros pra campanha de lançamento
-**Data de início:** 20/04/2026 (segunda)
+**Status atual (16/05/2026):** 🚀 **lançamento marcado segunda 18/05/2026**
 **Responsável (Impulso):** Eduardo Barros
+
+---
+
+## 🆕 Atualização 16/05/2026 · estado real
+
+- ✅ **Plano de negócio apresentado** pessoalmente ao Gabriel há ~2 semanas (~01/05)
+- ✅ **3 reels gravados** esta semana (Eduardo foi pessoalmente até o Gabriel)
+- 🟡 **Edição dos 3 reels** em andamento no CapCut (Eduardo)
+- 🟡 **Atualização do site** com novos produtos + criação dos combos (Eduardo fechando novo valor adicional com Gabriel)
+- 📅 **Lançamento:** **segunda 18/05/2026**
+
+### 3 reels gravados (temas reais — README antigo estava desatualizado)
+1. **Reel 1 — Lançamento do site** (anuncia gbnutrition.online)
+2. **Reel 2 — Frete expresso Palmas** + **FRETE GRÁTIS na 1ª semana** (gancho de urgência cravado)
+3. **Reel 3 — Combo** (oferta de pacote de produtos)
+
+**Observação:** os roteiros antigos em `/roteiros/` (curadoria, motoboy, educativo) **NÃO foram os usados na gravação**. A campanha pivotou pra ganchos comerciais de lançamento (anúncio + frete grátis + combo) em vez de educativos. Os roteiros antigos ficam como template-base reusável pra próxima fase pós-lançamento.
+
+### Novo escopo (fechando agora · valor adicional)
+- [ ] Atualizar site GB com produtos novos
+- [ ] Criar combos no site (catálogo de combos a definir)
+- [ ] Editar os 3 reels (Eduardo · CapCut)
+
+---
 
 ---
 

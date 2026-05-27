@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Apostila · Clube Fidelidade Leva&Lava</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm;
+  }
+
+  :root {
+    --c-ink: #1A2A6C;
+    --c-ink-soft: #3E4F8C;
+    --c-h1: #00277A;
+    --c-h2: #003FB5;
+    --c-h3: #1E5BFF;
+    --c-accent-green: #4FB849;
+    --c-accent-yellow: #F5B400;
+    --c-bg-info: #E8F0FF;
+    --c-bg-success: #E6F7E5;
+    --c-bg-warn: #FFF6D9;
+    --c-bg-card: #F4F7FF;
+    --c-border: #6A7BA8;
+    --c-border-soft: #B9C5E3;
+  }
+
+  * {
+    box-sizing: border-box;
+    color: var(--c-ink);
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', 'Cambria', serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: var(--c-ink);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    color: var(--c-h1);
+    font-size: 26pt;
+    margin: 0 0 8pt 0;
+    page-break-before: always;
+    border-bottom: 3px solid var(--c-h2);
+    padding-bottom: 8pt;
+  }
+  h1:first-of-type { page-break-before: avoid; }
+
+  h2 {
+    color: var(--c-h2);
+    font-size: 16pt;
+    margin: 22pt 0 8pt 0;
+    border-left: 5px solid var(--c-h2);
+    padding-left: 10pt;
+  }
+
+  h3 {
+    color: var(--c-h3);
+    font-size: 13pt;
+    margin: 16pt 0 6pt 0;
+  }
+
+  h4 {
+    color: var(--c-h2);
+    font-size: 12pt;
+    margin: 12pt 0 4pt 0;
+  }
+
+  p { margin: 6pt 0; }
+
+  a { color: var(--c-h3); text-decoration: none; }
+
+  /* CAPA */
+  .cover {
+    height: 260mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20mm 10mm;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--c-bg-info) 100%);
+    border: 2px solid var(--c-h2);
+    page-break-after: always;
+  }
+  .cover-top {
+    color: var(--c-h3);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11pt;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .cover-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--c-h1);
+    font-size: 46pt;
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .cover-subtitle {
+    color: var(--c-h2);
+    font-size: 16pt;
+    margin-top: 14pt;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .cover-meta {
+    border-top: 2px solid var(--c-h2);
+    padding-top: 12pt;
+    color: var(--c-ink);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11pt;
+  }
+  .cover-meta strong { color: var(--c-h2); }
+
+  /* SUMARIO */
+  .toc {
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border-soft);
+    border-radius: 6px;
+    padding: 14pt 18pt;
+    margin: 12pt 0 24pt 0;
+  }
+  .toc h2 { margin-top: 0; }
+  .toc ol { padding-left: 22pt; }
+  .toc li { margin: 4pt 0; font-family: 'Helvetica Neue', sans-serif; }
+
+  /* CALLOUTS */
+  .callout {
+    border-left: 6px solid var(--c-h3);
+    background: var(--c-bg-info);
+    padding: 10pt 14pt;
+    margin: 12pt 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.green {
+    border-left-color: var(--c-accent-green);
+    background: var(--c-bg-success);
+  }
+  .callout.yellow {
+    border-left-color: var(--c-accent-yellow);
+    background: var(--c-bg-warn);
+  }
+  .callout h4 { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* CARDS */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt;
+    margin: 8pt 0;
+  }
+  .card {
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border-soft);
+    border-radius: 6px;
+    padding: 10pt 12pt;
+  }
+  .card .label {
+    color: var(--c-h3);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .card .value {
+    color: var(--c-h1);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    margin-top: 2pt;
+  }
+
+  /* TABELAS */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10pt 0;
+    font-size: 10pt;
+  }
+  th, td {
+    text-align: left;
+    padding: 7pt 9pt;
+    border-bottom: 1px solid var(--c-border-soft);
+    color: var(--c-ink);
+  }
+  th {
+    background: var(--c-bg-info);
+    color: var(--c-h2);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+  }
+  tr:nth-child(even) td { background: #FAFBFF; }
+
+  /* LISTAS */
+  ul, ol { padding-left: 22pt; }
+  li { margin: 3pt 0; }
+
+  /* CODIGO/MENSAGEM */
+  .msg-box {
+    background: var(--c-bg-card);
+    border: 1px dashed var(--c-h3);
+    padding: 12pt 14pt;
+    margin: 10pt 0;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10.5pt;
+    color: var(--c-ink);
+  }
+
+  /* SVG */
+  svg { display: block; margin: 12pt auto; max-width: 100%; }
+  .diagram-caption {
+    text-align: center;
+    color: var(--c-ink-soft);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 9pt;
+    font-style: italic;
+    margin-top: 4pt;
+  }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    background: var(--c-bg-card);
+    border-left: 4px solid var(--c-h3);
+    padding: 8pt 12pt;
+    margin: 6pt 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .checklist li::before {
+    content: '☐ ';
+    color: var(--c-h3);
+    font-weight: bold;
+    margin-right: 6pt;
+  }
+
+  .small {
+    font-size: 9pt;
+    color: var(--c-ink-soft);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--c-border-soft);
+    margin: 18pt 0;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--c-h3);
+    color: #FFFFFF;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 9pt;
+    padding: 2pt 8pt;
+    border-radius: 10pt;
+    margin-right: 4pt;
+  }
+  .badge.green { background: var(--c-accent-green); }
+  .badge.yellow { background: var(--c-accent-yellow); color: var(--c-h1); }
+
+  .quote {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--c-ink-soft);
+    border-left: 3px solid var(--c-border);
+    padding-left: 12pt;
+    margin: 8pt 0;
+  }
+
+  .step-row { display: flex; gap: 8pt; margin: 8pt 0; align-items: flex-start; }
+  .step-num {
+    flex-shrink: 0;
+    width: 26pt;
+    height: 26pt;
+    background: var(--c-h3);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 12pt;
+  }
+  .step-content { flex: 1; padding-top: 3pt; }
+</style>
+</head>
+<body>
+
+<!-- ============== CAPA ============== -->
+<div class="cover">
+  <div class="cover-top">Apostila de estudo · 21 de maio de 2026</div>
+
+  <div>
+    <div class="cover-top" style="margin-bottom: 12pt;">Projeto Impulso Digital</div>
+    <div class="cover-title">Clube Fidelidade<br>Leva&amp;Lava</div>
+    <div class="cover-subtitle">Plataforma SaaS de fidelidade<br>pra rede com 130+ unidades</div>
+  </div>
+
+  <div>
+    <svg width="100%" height="80" viewBox="0 0 500 80" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="40" r="32" fill="none" stroke="#003FB5" stroke-width="3"/>
+      <circle cx="60" cy="40" r="22" fill="none" stroke="#003FB5" stroke-width="2"/>
+      <path d="M 28 40 A 32 32 0 0 1 50 12" fill="none" stroke="#003FB5" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="36" r="3.5" fill="#003FB5"/>
+      <circle cx="68" cy="32" r="5" fill="#003FB5"/>
+      <path d="M 45 44 Q 60 58 75 44 Q 65 36 55 38 Z" fill="#003FB5"/>
+
+      <text x="120" y="35" font-family="Helvetica Neue, Arial" font-size="22" font-weight="800" fill="#00277A">IMPULSO DIGITAL</text>
+      <text x="120" y="55" font-family="Helvetica Neue, Arial" font-size="11" fill="#4FB849">marketing &amp; tecnologia · Palmas-TO</text>
+    </svg>
+
+    <div class="cover-meta">
+      <strong>Operador:</strong> Eduardo Barros Chaves &nbsp;|&nbsp;
+      <strong>Origem:</strong> visita à unidade Palmas Brasil Sul · conversa com a franqueada Beatriz<br>
+      <strong>Status:</strong> idealização cravada · pendente validação técnica (API Cicclo) e abertura comercial com matriz
+    </div>
+  </div>
+</div>
+
+<!-- ============== SUMARIO ============== -->
+<h1>Sumário</h1>
+<div class="toc">
+  <ol>
+    <li>Resumo executivo</li>
+    <li>Diagnóstico da visita</li>
+    <li>Pesquisa de mercado</li>
+    <li>O produto · os 8 blocos</li>
+    <li>Arquitetura técnica <span class="badge">com diagrama</span></li>
+    <li>Modelagem de dados <span class="badge">com diagrama ER</span></li>
+    <li>Fluxos de uso · cliente, franqueada, matriz <span class="badge">com diagramas</span></li>
+    <li>Stack tecnológica</li>
+    <li>Modelo de monetização</li>
+    <li>Roadmap MVP → V1 → V2 <span class="badge">com timeline</span></li>
+    <li>Estratégia comercial · primeira mensagem</li>
+    <li>Riscos e hipóteses a validar</li>
+    <li>Próximos passos cravados</li>
+  </ol>
+</div>
+
+<!-- ============== 1 · RESUMO EXECUTIVO ============== -->
+<h1>1 · Resumo executivo</h1>
+
+<p>A <strong>Leva&amp;Lava</strong> é uma rede de lavanderias self-service com <strong>130+ unidades em 26 estados</strong>. Ela opera um programa de fidelidade chamado <em>Clube leva&amp;lava</em> com a regra "a cada 10 ciclos, ganhe 1". O controle é feito assim: o cliente fotografa o comprovante e envia pelo WhatsApp da unidade. A contagem é manual, do outro lado.</p>
+
+<p>O sistema operacional dessas lavanderias é a <strong>Cicclo</strong> (cicclo.com), plataforma líder no Brasil para lavanderias self-service. A Cicclo já tem fidelidade nativa com cashback — mas a Leva&amp;Lava não usa. Esse gap é a oportunidade.</p>
+
+<div class="callout green">
+<h4>A proposta em uma frase</h4>
+<p>Plataforma SaaS de fidelidade <strong>multi-tenant</strong>, white-label, que substitui o WhatsApp manual por um fluxo digital: cliente cadastra telefone uma vez, pagamento confirmado no totem dispara ponto automático, painel da franqueada e da matriz consolidam tudo. Zero foto, zero contagem.</p>
+</div>
+
+<h3>Oportunidade em números</h3>
+<div class="grid-2">
+  <div class="card">
+    <div class="label">Cenário Realista · 50% de adesão</div>
+    <div class="value">R$ 69.420/ano</div>
+  </div>
+  <div class="card">
+    <div class="label">Cenário Otimista · rede inteira</div>
+    <div class="value">R$ 138.840/ano</div>
+  </div>
+  <div class="card">
+    <div class="label">Plano nacional · matriz fecha</div>
+    <div class="value">R$ 106.800/ano</div>
+  </div>
+  <div class="card">
+    <div class="label">Setup por unidade · receita única</div>
+    <div class="value">R$ 1.500</div>
+  </div>
+</div>
+
+<!-- ============== 2 · DIAGNOSTICO ============== -->
+<h1>2 · Diagnóstico da visita</h1>
+
+<h3>Cliente identificado</h3>
+<table>
+  <tr><th>Item</th><th>Valor</th></tr>
+  <tr><td>Rede</td><td>Leva&amp;Lava — Lavanderia Express</td></tr>
+  <tr><td>CNPJ franqueado visitado</td><td>61.708.378/0001-39 · GB Leva e Lava Ltda</td></tr>
+  <tr><td>Unidade visitada</td><td>TQ02 · Palmas Brasil Sul (Av. LO 15, Lote 7)</td></tr>
+  <tr><td>Franqueada</td><td>Beatriz · aliada interna · indicou contato corporativo</td></tr>
+  <tr><td>Outra unidade Palmas</td><td>Palmas · Posto Tucunaré (Av. NS 8)</td></tr>
+  <tr><td>WhatsApp do cartaz (unidade)</td><td>(63) 99810-36871</td></tr>
+  <tr><td>WhatsApp corporativo (rede)</td><td>(17) 99227-6766</td></tr>
+  <tr><td>E-mail corporativo</td><td>contato@levaelava.com.br</td></tr>
+</table>
+
+<h3>Sistema operacional do totem</h3>
+<table>
+  <tr><th>Item</th><th>Valor</th></tr>
+  <tr><td>Plataforma</td><td>Cicclo (também conhecida como Laundway)</td></tr>
+  <tr><td>Contato Cicclo</td><td>(11) 3230-2076 · contato@cicclo.com</td></tr>
+  <tr><td>Versão do totem (observada)</td><td>v3000.05.260520</td></tr>
+  <tr><td>Pagamentos aceitos</td><td>Crédito · Débito · PIX</td></tr>
+  <tr><td>Funções nativas</td><td>Libera máquina · consulta voucher · multi-idioma · fila/agendamento</td></tr>
+</table>
+
+<h3>Programa de fidelidade atual</h3>
+<ul>
+  <li><strong>Regra:</strong> 10 ciclos = 1 ciclo grátis</li>
+  <li><strong>Operação:</strong> cliente fotografa comprovante e envia para WhatsApp (63) 99810-36871</li>
+  <li><strong>Marca interna:</strong> "Clube leva&amp;lava — lave mais, pague menos"</li>
+  <li><strong>Texto defensivo do cartaz:</strong> "cupons não cumulativos, não convertidos em dinheiro/crédito, sujeito a cancelamento sem aviso prévio"</li>
+</ul>
+
+<div class="callout yellow">
+<h4>Leitura entre linhas</h4>
+<p>O texto defensivo no cartaz é sintoma clássico de quem <strong>já teve problema operacional</strong> com fidelidade manual. Sistema digital com regras automáticas elimina a causa da insegurança.</p>
+</div>
+
+<!-- ============== 3 · MERCADO ============== -->
+<h1>3 · Pesquisa de mercado</h1>
+
+<h3>Cicclo (sistema da lavanderia)</h3>
+<ul>
+  <li>Plataforma líder de self-service laundry no Brasil</li>
+  <li><strong>Possui fidelidade nativa</strong> com cashback, descontos e benefícios — confirmado em material institucional</li>
+  <li>Declara: "possibilidade de integração e comunicação de todas as funcionalidades do sistema com outras APIs"</li>
+  <li><strong>Não tem documentação pública</strong> — integração precisa ser negociada</li>
+  <li>Tem WhatsApp AI assistant pra desbloquear máquina (já operam stack de WhatsApp)</li>
+</ul>
+
+<h3>Leva&amp;Lava (a rede)</h3>
+<ul>
+  <li>130+ unidades em 26 estados (rede em rápida expansão)</li>
+  <li>Sede do grupo: interior SP (DDD 17)</li>
+  <li>Site institucional <strong>não documenta fidelidade nacional</strong> — pode ser iniciativa local ou padrão sem documentação online</li>
+</ul>
+
+<h3>O que mais existe lá fora</h3>
+<table>
+  <tr><th>Player</th><th>Fidelidade?</th><th>Observação</th></tr>
+  <tr><td>Lavô (maior rede Brasil)</td><td>Sim, nativa</td><td>Acoplado ao sistema, sem flexibilidade</td></tr>
+  <tr><td>Minha Lavanderia (PB)</td><td>Sim, "Ponto a Ponto"</td><td>Local, sem rede</td></tr>
+  <tr><td>Sislav, VendPago, PagLave, Nayax</td><td>Limitada/nativa</td><td>Sistemas de gestão, não plataformas de fidelidade</td></tr>
+</table>
+
+<div class="callout green">
+<h4>Brecha confirmada</h4>
+<p>Não existe SaaS dedicado de fidelidade <strong>multi-tenant</strong> para lavanderia self-service no Brasil. Quem tem fidelidade tem dentro do sistema operacional — sem customização, sem dado próprio pra rede, sem flexibilidade pra promoções segmentadas.</p>
+</div>
+
+<!-- ============== 4 · OS 8 BLOCOS ============== -->
+<h1>4 · O produto · os 8 blocos</h1>
+
+<p>O sistema, na visão funcional, é composto de 8 blocos. O bloco 2 é o <strong>fundador</strong> — todas as outras decisões descem dele.</p>
+
+<svg width="100%" height="380" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .b-rect { fill: #F4F7FF; stroke: #003FB5; stroke-width: 1.5; }
+      .b-rect-core { fill: #FFF6D9; stroke: #F5B400; stroke-width: 2.5; }
+      .b-txt { font-family: 'Helvetica Neue', Arial; font-size: 11px; fill: #00277A; font-weight: 700; }
+      .b-num { font-family: 'Helvetica Neue', Arial; font-size: 14px; fill: #1E5BFF; font-weight: 800; }
+      .b-sub { font-family: 'Helvetica Neue', Arial; font-size: 9px; fill: #3E4F8C; }
+      .b-arrow { stroke: #6A7BA8; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6A7BA8"/>
+    </marker>
+  </defs>
+
+  <rect class="b-rect" x="20" y="30" width="160" height="80" rx="6"/>
+  <text class="b-num" x="32" y="55">1</text>
+  <text class="b-txt" x="50" y="55">Cadastro do cliente</text>
+  <text class="b-sub" x="32" y="78">QR + telefone</text>
+  <text class="b-sub" x="32" y="92">Login mágico por SMS</text>
+
+  <rect class="b-rect-core" x="200" y="20" width="180" height="100" rx="6"/>
+  <text class="b-num" x="212" y="48" fill="#00277A">2 ★</text>
+  <text class="b-txt" x="240" y="48" fill="#00277A">Captura do evento</text>
+  <text class="b-sub" x="212" y="68">Hipóteses A, B, C ou D</text>
+  <text class="b-sub" x="212" y="82">Integração Cicclo (alvo)</text>
+  <text class="b-sub" x="212" y="96">OCR fallback (garantido)</text>
+  <text class="b-sub" x="212" y="110" font-weight="700" fill="#F5B400">BLOCO FUNDADOR</text>
+
+  <rect class="b-rect" x="400" y="30" width="160" height="80" rx="6"/>
+  <text class="b-num" x="412" y="55">3</text>
+  <text class="b-txt" x="430" y="55">Contagem de pontos</text>
+  <text class="b-sub" x="412" y="78">10 ciclos = 1 grátis</text>
+  <text class="b-sub" x="412" y="92">Validade 12 meses</text>
+
+  <rect class="b-rect" x="20" y="140" width="160" height="80" rx="6"/>
+  <text class="b-num" x="32" y="165">4</text>
+  <text class="b-txt" x="50" y="165">Resgate do bônus</text>
+  <text class="b-sub" x="32" y="188">Código no totem</text>
+  <text class="b-sub" x="32" y="202">Voucher único, auditável</text>
+
+  <rect class="b-rect" x="200" y="140" width="180" height="80" rx="6"/>
+  <text class="b-num" x="212" y="165">5</text>
+  <text class="b-txt" x="230" y="165">Painel da franqueada</text>
+  <text class="b-sub" x="212" y="188">Cliente recorrente</text>
+  <text class="b-sub" x="212" y="202">Próximos do bônus</text>
+
+  <rect class="b-rect" x="400" y="140" width="160" height="80" rx="6"/>
+  <text class="b-num" x="412" y="165">6</text>
+  <text class="b-txt" x="430" y="165">Painel da matriz</text>
+  <text class="b-sub" x="412" y="188">Base nacional</text>
+  <text class="b-sub" x="412" y="202">Ranking unidades</text>
+
+  <rect class="b-rect" x="20" y="250" width="160" height="80" rx="6"/>
+  <text class="b-num" x="32" y="275">7</text>
+  <text class="b-txt" x="50" y="275">Comunicação</text>
+  <text class="b-sub" x="32" y="298">SMS / WhatsApp</text>
+  <text class="b-sub" x="32" y="312">Disparos automáticos</text>
+
+  <rect class="b-rect" x="200" y="250" width="180" height="80" rx="6"/>
+  <text class="b-num" x="212" y="275">8</text>
+  <text class="b-txt" x="230" y="275">Antifraude</text>
+  <text class="b-sub" x="212" y="298">Dedupe + idempotência</text>
+  <text class="b-sub" x="212" y="312">Log auditável</text>
+
+  <rect x="400" y="250" width="160" height="80" rx="6" fill="#E6F7E5" stroke="#4FB849" stroke-width="1.5"/>
+  <text class="b-txt" x="412" y="278" fill="#1A6B12">Cliente final</text>
+  <text class="b-sub" x="412" y="298">recebe valor</text>
+  <text class="b-sub" x="412" y="312">→ retorna mais</text>
+</svg>
+<div class="diagram-caption">Diagrama 1 · Visão geral dos 8 blocos. Bloco 2 é o fundador.</div>
+
+<h2>Bloco 2 · As 4 hipóteses de captura de evento</h2>
+
+<table>
+  <tr><th>Hipótese</th><th>Como funciona</th><th>Fricção</th><th>Bloqueio</th></tr>
+  <tr>
+    <td><span class="badge green">A · IDEAL</span></td>
+    <td>Cicclo expõe webhook · pagamento confirmado dispara ponto automático</td>
+    <td>ZERO</td>
+    <td>Acordo comercial com Cicclo</td>
+  </tr>
+  <tr>
+    <td><span class="badge">B</span></td>
+    <td>Cliente digita telefone no totem antes de pagar (custom field)</td>
+    <td>1 clique</td>
+    <td>Cicclo permitir customização</td>
+  </tr>
+  <tr>
+    <td><span class="badge">C</span></td>
+    <td>App próprio + janela de 3min · lê eventos do Cicclo</td>
+    <td>1 clique fora</td>
+    <td>Leitura mínima de eventos</td>
+  </tr>
+  <tr>
+    <td><span class="badge yellow">D · FALLBACK</span></td>
+    <td>OCR de comprovante via nosso bot WhatsApp</td>
+    <td>Mantém a foto</td>
+    <td>Nenhum · funciona sozinho</td>
+  </tr>
+</table>
+
+<div class="callout">
+<h4>Estratégia recomendada</h4>
+<p>Apresentar <strong>Hipótese A como visão</strong> e <strong>Hipótese D como fallback garantido</strong>. Isso protege o pitch: você consegue entregar valor mesmo se o Cicclo não topar abrir API.</p>
+</div>
+
+<h2>Outros blocos · detalhes que importam</h2>
+
+<h3>Bloco 5 · Painel da franqueada</h3>
+<p><strong>Princípio cravado:</strong> sistema reduz cliques. Cada feature aprovada precisa responder "isso economiza tempo dela em quanto?". Se não responde, não entra.</p>
+<ul>
+  <li>Hoje: 14 ciclos, 11 clientes únicos, 2 estão a 1 ponto do bônus</li>
+  <li>Buscar cliente por telefone (3 cliques no máximo)</li>
+  <li>Ajustar ponto manualmente com log + justificativa obrigatória</li>
+  <li>Enviar mensagem em massa (segmentada por horário, recorrência, cidade)</li>
+</ul>
+
+<h3>Bloco 6 · Painel da matriz · onde mora o argumento de venda</h3>
+<ul>
+  <li>Base nacional única — saber quantos clientes a rede tem no Brasil</li>
+  <li>Ranking de unidades por engajamento e faturamento</li>
+  <li>Mapa de penetração geográfica por estado/cidade</li>
+  <li><strong>Power feature:</strong> marketing centralizado · SMS/WhatsApp em massa pra base nacional segmentada</li>
+</ul>
+
+<!-- ============== 5 · ARQUITETURA ============== -->
+<h1>5 · Arquitetura técnica</h1>
+
+<svg width="100%" height="500" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .a-front { fill: #E8F0FF; stroke: #003FB5; stroke-width: 1.8; }
+      .a-api { fill: #FFF6D9; stroke: #F5B400; stroke-width: 1.8; }
+      .a-data { fill: #E6F7E5; stroke: #4FB849; stroke-width: 1.8; }
+      .a-ext { fill: #F4F7FF; stroke: #6A7BA8; stroke-width: 1.5; stroke-dasharray: 4 3; }
+      .a-title { font-family: 'Helvetica Neue', Arial; font-size: 12px; font-weight: 700; fill: #00277A; }
+      .a-sub { font-family: 'Helvetica Neue', Arial; font-size: 10px; fill: #3E4F8C; }
+      .a-flow { stroke: #1E5BFF; stroke-width: 2; fill: none; marker-end: url(#a-arrow); }
+      .a-flow-ext { stroke: #6A7BA8; stroke-width: 1.5; fill: none; stroke-dasharray: 3 2; marker-end: url(#a-arrow); }
+    </style>
+    <marker id="a-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E5BFF"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="22" class="a-title" font-size="11" fill="#003FB5" text-transform="uppercase">FRONT-END</text>
+  <rect class="a-front" x="20" y="30" width="200" height="70" rx="6"/>
+  <text class="a-title" x="34" y="52">Web cliente · PWA</text>
+  <text class="a-sub" x="34" y="68">Cadastro · extrato · vouchers</text>
+  <text class="a-sub" x="34" y="84">Next.js 15 + Tailwind</text>
+
+  <rect class="a-front" x="240" y="30" width="200" height="70" rx="6"/>
+  <text class="a-title" x="254" y="52">Painel franqueada</text>
+  <text class="a-sub" x="254" y="68">Métricas · mensageria local</text>
+  <text class="a-sub" x="254" y="84">Next.js + Supabase Auth</text>
+
+  <rect class="a-front" x="460" y="30" width="200" height="70" rx="6"/>
+  <text class="a-title" x="474" y="52">Painel matriz nacional</text>
+  <text class="a-sub" x="474" y="68">Consolidado · promoções</text>
+  <text class="a-sub" x="474" y="84">Next.js + Supabase Auth</text>
+
+  <text x="20" y="135" class="a-title" font-size="11" fill="#F5B400" text-transform="uppercase">API · ORQUESTRACAO</text>
+  <rect class="a-api" x="20" y="145" width="640" height="60" rx="6"/>
+  <text class="a-title" x="320" y="170" text-anchor="middle">API REST/RPC · Next.js API Routes + Server Actions</text>
+  <text class="a-sub" x="320" y="188" text-anchor="middle">Multi-tenant · idempotência · read-after-write em writes críticos · rate-limit</text>
+
+  <text x="20" y="240" class="a-title" font-size="11" fill="#4FB849" text-transform="uppercase">DADOS &amp; SERVICOS</text>
+
+  <rect class="a-data" x="20" y="250" width="200" height="90" rx="6"/>
+  <text class="a-title" x="34" y="272">Supabase</text>
+  <text class="a-sub" x="34" y="290">Postgres + RLS</text>
+  <text class="a-sub" x="34" y="306">Auth + Magic Link</text>
+  <text class="a-sub" x="34" y="322">Storage (fotos OCR)</text>
+
+  <rect class="a-data" x="240" y="250" width="200" height="90" rx="6"/>
+  <text class="a-title" x="254" y="272">Worker integração</text>
+  <text class="a-sub" x="254" y="290">Webhook listener Cicclo</text>
+  <text class="a-sub" x="254" y="306">Fila + retry + DLQ</text>
+  <text class="a-sub" x="254" y="322">Idempotência por txn_id</text>
+
+  <rect class="a-data" x="460" y="250" width="200" height="90" rx="6"/>
+  <text class="a-title" x="474" y="272">Worker mensageria</text>
+  <text class="a-sub" x="474" y="290">SMS · Zenvia/Twilio</text>
+  <text class="a-sub" x="474" y="306">WhatsApp · Meta/Twilio</text>
+  <text class="a-sub" x="474" y="322">Templates aprovados</text>
+
+  <text x="20" y="380" class="a-title" font-size="11" fill="#6A7BA8" text-transform="uppercase">EXTERNO · NAO CONTROLAMOS</text>
+  <rect class="a-ext" x="20" y="390" width="640" height="80" rx="6"/>
+  <text class="a-title" x="320" y="416" text-anchor="middle" fill="#3E4F8C">PLATAFORMA CICCLO</text>
+  <text class="a-sub" x="320" y="436" text-anchor="middle">Totem · pagamento · liberação de máquina · transações</text>
+  <text class="a-sub" x="320" y="452" text-anchor="middle">Integração via webhook (Hipótese A) ou polling de API</text>
+
+  <path class="a-flow" d="M 120 100 L 120 145"/>
+  <path class="a-flow" d="M 340 100 L 340 145"/>
+  <path class="a-flow" d="M 560 100 L 560 145"/>
+
+  <path class="a-flow" d="M 120 205 L 120 250"/>
+  <path class="a-flow" d="M 340 205 L 340 250"/>
+  <path class="a-flow" d="M 560 205 L 560 250"/>
+
+  <path class="a-flow-ext" d="M 340 340 L 340 390"/>
+</svg>
+<div class="diagram-caption">Diagrama 2 · Arquitetura · linhas tracejadas representam integração externa</div>
+
+<div class="callout">
+<h4>Princípios cravados</h4>
+<ul>
+  <li><strong>Multi-tenant por design:</strong> toda query tem unidade_id ou rede_id. RLS no Supabase isola dados.</li>
+  <li><strong>Read-after-write</strong> em writes críticos (ponto, voucher, resgate): UI verde não é prova, banco é.</li>
+  <li><strong>Integração externa é falível:</strong> idempotency key, retry com backoff, dead-letter queue pra investigação manual.</li>
+</ul>
+</div>
+
+<!-- ============== 6 · MODELAGEM ============== -->
+<h1>6 · Modelagem de dados</h1>
+
+<svg width="100%" height="540" viewBox="0 0 740 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .e-rect { fill: #FFFFFF; stroke: #003FB5; stroke-width: 1.5; }
+      .e-head { fill: #003FB5; }
+      .e-name { font-family: 'Helvetica Neue', Arial; font-size: 11px; font-weight: 700; fill: #FFFFFF; }
+      .e-field { font-family: 'Helvetica Neue', Arial; font-size: 9.5px; fill: #1A2A6C; }
+      .e-pk { fill: #F5B400; font-weight: 700; }
+      .e-line { stroke: #1E5BFF; stroke-width: 1.5; fill: none; }
+      .e-label { font-family: 'Helvetica Neue', Arial; font-size: 9px; fill: #3E4F8C; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- REDE -->
+  <rect class="e-head" x="20" y="20" width="140" height="20" rx="3"/>
+  <text class="e-name" x="90" y="34" text-anchor="middle">rede</text>
+  <rect class="e-rect" x="20" y="40" width="140" height="64"/>
+  <text class="e-field e-pk" x="28" y="55">PK id</text>
+  <text class="e-field" x="28" y="69">nome</text>
+  <text class="e-field" x="28" y="83">cnpj_franqueador</text>
+  <text class="e-field" x="28" y="97">contato_corporativo</text>
+
+  <!-- UNIDADE -->
+  <rect class="e-head" x="220" y="20" width="160" height="20" rx="3"/>
+  <text class="e-name" x="300" y="34" text-anchor="middle">unidade</text>
+  <rect class="e-rect" x="220" y="40" width="160" height="100"/>
+  <text class="e-field e-pk" x="228" y="55">PK id</text>
+  <text class="e-field" x="228" y="69">FK rede_id</text>
+  <text class="e-field" x="228" y="83">nome (Palmas 02)</text>
+  <text class="e-field" x="228" y="97">endereco</text>
+  <text class="e-field" x="228" y="111">cnpj_franqueado</text>
+  <text class="e-field" x="228" y="125">cicclo_unit_id</text>
+
+  <!-- REGRA -->
+  <rect class="e-head" x="440" y="20" width="180" height="20" rx="3"/>
+  <text class="e-name" x="530" y="34" text-anchor="middle">regra_fidelidade</text>
+  <rect class="e-rect" x="440" y="40" width="180" height="100"/>
+  <text class="e-field e-pk" x="448" y="55">PK id</text>
+  <text class="e-field" x="448" y="69">FK rede_id (nullable)</text>
+  <text class="e-field" x="448" y="83">FK unidade_id (nullable)</text>
+  <text class="e-field" x="448" y="97">ciclos_para_bonus (10)</text>
+  <text class="e-field" x="448" y="111">validade_meses (12)</text>
+  <text class="e-field" x="448" y="125">voucher_aplicavel</text>
+
+  <!-- CLIENTE -->
+  <rect class="e-head" x="20" y="180" width="140" height="20" rx="3" fill="#4FB849"/>
+  <text class="e-name" x="90" y="194" text-anchor="middle">cliente</text>
+  <rect class="e-rect" x="20" y="200" width="140" height="100" stroke="#4FB849"/>
+  <text class="e-field e-pk" x="28" y="215">PK id</text>
+  <text class="e-field" x="28" y="229">telefone UNIQUE</text>
+  <text class="e-field" x="28" y="243">nome</text>
+  <text class="e-field" x="28" y="257">email (opcional)</text>
+  <text class="e-field" x="28" y="271">lgpd_opt_in_em</text>
+  <text class="e-field" x="28" y="285">primeira_unidade_id</text>
+
+  <!-- CLIENTE_UNIDADE -->
+  <rect class="e-head" x="220" y="180" width="160" height="20" rx="3"/>
+  <text class="e-name" x="300" y="194" text-anchor="middle">cliente_unidade</text>
+  <rect class="e-rect" x="220" y="200" width="160" height="80"/>
+  <text class="e-field e-pk" x="228" y="215">PK cliente_id+unid_id</text>
+  <text class="e-field" x="228" y="229">primeiro_evento_em</text>
+  <text class="e-field" x="228" y="243">ultimo_evento_em</text>
+  <text class="e-field" x="228" y="257">total_eventos</text>
+
+  <!-- EVENTO -->
+  <rect class="e-head" x="440" y="180" width="180" height="20" rx="3" fill="#F5B400"/>
+  <text class="e-name" x="530" y="194" text-anchor="middle" fill="#00277A">evento_lavagem ★</text>
+  <rect class="e-rect" x="440" y="200" width="180" height="130" stroke="#F5B400"/>
+  <text class="e-field e-pk" x="448" y="215">PK id</text>
+  <text class="e-field" x="448" y="229">FK cliente_id</text>
+  <text class="e-field" x="448" y="243">FK unidade_id</text>
+  <text class="e-field" x="448" y="257">valor_pago</text>
+  <text class="e-field" x="448" y="271">forma_pagamento</text>
+  <text class="e-field" x="448" y="285">cicclo_txn_id UNIQUE</text>
+  <text class="e-field" x="448" y="299">origem (cicclo/ocr/manual)</text>
+  <text class="e-field" x="448" y="313">ocorreu_em</text>
+
+  <!-- PONTO -->
+  <rect class="e-head" x="20" y="360" width="140" height="20" rx="3"/>
+  <text class="e-name" x="90" y="374" text-anchor="middle">ponto</text>
+  <rect class="e-rect" x="20" y="380" width="140" height="80"/>
+  <text class="e-field e-pk" x="28" y="395">PK id</text>
+  <text class="e-field" x="28" y="409">FK cliente_id</text>
+  <text class="e-field" x="28" y="423">FK regra_id</text>
+  <text class="e-field" x="28" y="437">saldo</text>
+  <text class="e-field" x="28" y="451">ultima_atualizacao</text>
+
+  <!-- VOUCHER -->
+  <rect class="e-head" x="220" y="360" width="160" height="20" rx="3"/>
+  <text class="e-name" x="300" y="374" text-anchor="middle">voucher</text>
+  <rect class="e-rect" x="220" y="380" width="160" height="120"/>
+  <text class="e-field e-pk" x="228" y="395">PK id</text>
+  <text class="e-field" x="228" y="409">FK cliente_id</text>
+  <text class="e-field" x="228" y="423">codigo UNIQUE</text>
+  <text class="e-field" x="228" y="437">gerado_em</text>
+  <text class="e-field" x="228" y="451">validade_ate</text>
+  <text class="e-field" x="228" y="465">status</text>
+  <text class="e-field" x="228" y="479">resgatado_em</text>
+  <text class="e-field" x="228" y="493">FK resgatado_unidade_id</text>
+
+  <!-- AUDIT -->
+  <rect class="e-head" x="440" y="360" width="180" height="20" rx="3"/>
+  <text class="e-name" x="530" y="374" text-anchor="middle">audit_log</text>
+  <rect class="e-rect" x="440" y="380" width="180" height="100"/>
+  <text class="e-field e-pk" x="448" y="395">PK id</text>
+  <text class="e-field" x="448" y="409">tabela / registro_id</text>
+  <text class="e-field" x="448" y="423">acao</text>
+  <text class="e-field" x="448" y="437">payload_antes / depois</text>
+  <text class="e-field" x="448" y="451">ator_id · ip</text>
+  <text class="e-field" x="448" y="465">criado_em</text>
+
+  <!-- Relações -->
+  <path class="e-line" d="M 160 60 L 220 60"/>
+  <text class="e-label" x="170" y="55">1:N</text>
+
+  <path class="e-line" d="M 380 80 L 440 80"/>
+  <text class="e-label" x="390" y="75">N:1</text>
+
+  <path class="e-line" d="M 160 240 L 220 240"/>
+  <text class="e-label" x="170" y="235">N:M</text>
+
+  <path class="e-line" d="M 380 240 L 440 240"/>
+  <text class="e-label" x="390" y="235">1:N</text>
+
+  <path class="e-line" d="M 90 300 L 90 360"/>
+  <text class="e-label" x="95" y="335">1:N</text>
+
+  <path class="e-line" d="M 90 460 L 90 490 L 220 490 L 220 470"/>
+  <text class="e-label" x="155" y="485">1:N</text>
+</svg>
+<div class="diagram-caption">Diagrama 3 · Modelo de entidades e relações · cliente (verde) é universal, evento (amarelo) é o coração transacional</div>
+
+<div class="callout green">
+<h4>Decisões cravadas</h4>
+<ul>
+  <li><strong>Cliente é universal:</strong> mesmo telefone na rede toda. Permite "cliente da Leva&amp;Lava" como conceito, não isolado por unidade.</li>
+  <li><strong>cliente_unidade é tabela ponte:</strong> rastreia em quais unidades cada cliente é ativo, sem duplicar identidade.</li>
+  <li><strong>regra_fidelidade flexível:</strong> rede pode ter regra nacional + unidades específicas com regra própria.</li>
+  <li><strong>evento_lavagem tem origem rastreável:</strong> Cicclo · OCR · manual. Crítico pra auditoria e antifraude.</li>
+  <li><strong>voucher tem código único de 6 dígitos:</strong> apresentável no totem, validável offline em caso de queda.</li>
+</ul>
+</div>
+
+<!-- ============== 7 · FLUXOS UX ============== -->
+<h1>7 · Fluxos de uso</h1>
+
+<h2>7.1 · Cliente · primeiro cadastro</h2>
+
+<svg width="100%" height="160" viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .f-step { fill: #E8F0FF; stroke: #003FB5; stroke-width: 1.5; }
+      .f-num { fill: #1E5BFF; font-family: Arial; font-size: 14px; font-weight: 800; }
+      .f-txt { fill: #00277A; font-family: 'Helvetica Neue', Arial; font-size: 10px; font-weight: 700; }
+      .f-sub { fill: #3E4F8C; font-family: 'Helvetica Neue', Arial; font-size: 9px; }
+      .f-arrow { stroke: #4FB849; stroke-width: 2.5; fill: none; marker-end: url(#f-arr); }
+    </style>
+    <marker id="f-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4FB849"/>
+    </marker>
+  </defs>
+
+  <rect class="f-step" x="10" y="40" width="120" height="80" rx="6"/>
+  <text class="f-num" x="20" y="60">1</text>
+  <text class="f-txt" x="38" y="60">Escaneia QR</text>
+  <text class="f-sub" x="20" y="80">no cartaz</text>
+  <text class="f-sub" x="20" y="94">da lavanderia</text>
+
+  <path class="f-arrow" d="M 130 80 L 155 80"/>
+
+  <rect class="f-step" x="155" y="40" width="120" height="80" rx="6"/>
+  <text class="f-num" x="165" y="60">2</text>
+  <text class="f-txt" x="183" y="60">Digita</text>
+  <text class="f-sub" x="165" y="80">telefone</text>
+  <text class="f-sub" x="165" y="94">+ nome</text>
+
+  <path class="f-arrow" d="M 275 80 L 300 80"/>
+
+  <rect class="f-step" x="300" y="40" width="120" height="80" rx="6"/>
+  <text class="f-num" x="310" y="60">3</text>
+  <text class="f-txt" x="328" y="60">Recebe SMS</text>
+  <text class="f-sub" x="310" y="80">link mágico</text>
+  <text class="f-sub" x="310" y="94">(sem senha)</text>
+
+  <path class="f-arrow" d="M 420 80 L 445 80"/>
+
+  <rect class="f-step" x="445" y="40" width="120" height="80" rx="6"/>
+  <text class="f-num" x="455" y="60">4</text>
+  <text class="f-txt" x="473" y="60">Clica no link</text>
+  <text class="f-sub" x="455" y="80">conta criada</text>
+  <text class="f-sub" x="455" y="94">em 30 seg</text>
+
+  <path class="f-arrow" d="M 565 80 L 590 80"/>
+
+  <rect x="590" y="40" width="120" height="80" rx="6" fill="#E6F7E5" stroke="#4FB849" stroke-width="1.5"/>
+  <text class="f-num" x="600" y="60" fill="#1A6B12">★</text>
+  <text class="f-txt" x="615" y="60" fill="#1A6B12">Pronto</text>
+  <text class="f-sub" x="600" y="80" fill="#1A6B12">próximas vezes</text>
+  <text class="f-sub" x="600" y="94" fill="#1A6B12">automático</text>
+</svg>
+
+<h2>7.2 · Cliente ganha ponto · hipótese A · integração Cicclo</h2>
+
+<svg width="100%" height="200" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .h-c { fill: #F4F7FF; stroke: #003FB5; stroke-width: 1.5; }
+      .h-cc { fill: #FFF6D9; stroke: #F5B400; stroke-width: 1.8; }
+      .h-cs { fill: #E6F7E5; stroke: #4FB849; stroke-width: 1.8; }
+      .h-name { fill: #00277A; font-family: 'Helvetica Neue', Arial; font-size: 10px; font-weight: 700; }
+      .h-sub { fill: #3E4F8C; font-family: 'Helvetica Neue', Arial; font-size: 9px; }
+      .h-flow { stroke: #1E5BFF; stroke-width: 2; fill: none; marker-end: url(#h-arr); }
+      .h-label { fill: #1E5BFF; font-family: 'Helvetica Neue', Arial; font-size: 9px; font-weight: 700; }
+    </style>
+    <marker id="h-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E5BFF"/>
+    </marker>
+  </defs>
+
+  <rect class="h-c" x="20" y="30" width="120" height="70" rx="6"/>
+  <text class="h-name" x="80" y="60" text-anchor="middle">Cliente</text>
+  <text class="h-sub" x="80" y="78" text-anchor="middle">paga no totem</text>
+
+  <rect class="h-cc" x="200" y="30" width="120" height="70" rx="6"/>
+  <text class="h-name" x="260" y="55" text-anchor="middle">CICCLO</text>
+  <text class="h-sub" x="260" y="73" text-anchor="middle">confirma</text>
+  <text class="h-sub" x="260" y="87" text-anchor="middle">pagamento</text>
+
+  <rect class="h-c" x="380" y="30" width="160" height="70" rx="6"/>
+  <text class="h-name" x="460" y="55" text-anchor="middle">Nosso webhook</text>
+  <text class="h-sub" x="460" y="73" text-anchor="middle">recebe evento +</text>
+  <text class="h-sub" x="460" y="87" text-anchor="middle">identifica cliente</text>
+
+  <rect class="h-c" x="580" y="30" width="120" height="70" rx="6"/>
+  <text class="h-name" x="640" y="55" text-anchor="middle">Banco</text>
+  <text class="h-sub" x="640" y="73" text-anchor="middle">+1 ponto</text>
+  <text class="h-sub" x="640" y="87" text-anchor="middle">soma saldo</text>
+
+  <path class="h-flow" d="M 140 65 L 200 65"/>
+  <text class="h-label" x="155" y="55">paga</text>
+
+  <path class="h-flow" d="M 320 65 L 380 65"/>
+  <text class="h-label" x="335" y="55">webhook</text>
+
+  <path class="h-flow" d="M 540 65 L 580 65"/>
+  <text class="h-label" x="548" y="55">write</text>
+
+  <rect class="h-cs" x="380" y="130" width="160" height="60" rx="6"/>
+  <text class="h-name" x="460" y="155" text-anchor="middle" fill="#1A6B12">SMS pro cliente</text>
+  <text class="h-sub" x="460" y="173" text-anchor="middle" fill="#1A6B12">"Ganhou 1 ciclo · 3/10"</text>
+
+  <path class="h-flow" d="M 640 100 L 640 160 L 540 160"/>
+  <text class="h-label" x="650" y="135">após read-after-write</text>
+</svg>
+<div class="diagram-caption">Diagrama 4 · Fluxo com integração Cicclo · zero fricção pro cliente · todo automático</div>
+
+<h2>7.3 · Cliente ganha ponto · hipótese D · fallback OCR</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Cliente lava</strong> · totem imprime comprovante</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Cartaz orienta</strong> · "Fotografe e mande pro nosso bot"</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Cliente envia foto</strong> pro WhatsApp do bot (nosso, não da unidade)</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Bot responde</strong> · "Recebi, validando..."</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>OCR extrai</strong> data + valor + hora · cruza dedupe</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">6</div>
+      <div class="step-content"><strong>Bot confirma</strong> · "Ponto adicionado! Total 3/10"</div>
+    </div>
+  </div>
+</div>
+
+<h2>7.4 · Cliente resgata bônus</h2>
+
+<svg width="100%" height="180" viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .r-step { fill: #E8F0FF; stroke: #003FB5; stroke-width: 1.5; }
+      .r-bonus { fill: #FFF6D9; stroke: #F5B400; stroke-width: 2; }
+      .r-success { fill: #E6F7E5; stroke: #4FB849; stroke-width: 1.8; }
+      .r-num { fill: #1E5BFF; font-family: Arial; font-size: 14px; font-weight: 800; }
+      .r-txt { fill: #00277A; font-family: 'Helvetica Neue', Arial; font-size: 10px; font-weight: 700; }
+      .r-sub { fill: #3E4F8C; font-family: 'Helvetica Neue', Arial; font-size: 9px; }
+      .r-arrow { stroke: #4FB849; stroke-width: 2.5; fill: none; marker-end: url(#r-arr); }
+    </style>
+    <marker id="r-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4FB849"/>
+    </marker>
+  </defs>
+
+  <rect class="r-bonus" x="20" y="40" width="140" height="100" rx="6"/>
+  <text class="r-num" x="32" y="60" fill="#F5B400">★</text>
+  <text class="r-txt" x="50" y="60">Atinge meta</text>
+  <text class="r-sub" x="32" y="80">10 pontos</text>
+  <text class="r-sub" x="32" y="96">Recebe SMS</text>
+  <text class="r-sub" x="32" y="112">"Ganhou 1 ciclo</text>
+  <text class="r-sub" x="32" y="126">grátis · cód 4729"</text>
+
+  <path class="r-arrow" d="M 160 90 L 195 90"/>
+
+  <rect class="r-step" x="195" y="40" width="140" height="100" rx="6"/>
+  <text class="r-num" x="207" y="60">2</text>
+  <text class="r-txt" x="225" y="60">Vai à unidade</text>
+  <text class="r-sub" x="207" y="80">No totem,</text>
+  <text class="r-sub" x="207" y="96">digita telefone</text>
+  <text class="r-sub" x="207" y="112">ou escaneia</text>
+  <text class="r-sub" x="207" y="126">QR do app</text>
+
+  <path class="r-arrow" d="M 335 90 L 370 90"/>
+
+  <rect class="r-step" x="370" y="40" width="160" height="100" rx="6"/>
+  <text class="r-num" x="382" y="60">3</text>
+  <text class="r-txt" x="400" y="60">Totem mostra</text>
+  <text class="r-sub" x="382" y="80">"Voucher 4729"</text>
+  <text class="r-sub" x="382" y="96">"Usar agora?"</text>
+  <text class="r-sub" x="382" y="112">Cliente confirma</text>
+
+  <path class="r-arrow" d="M 530 90 L 565 90"/>
+
+  <rect class="r-success" x="565" y="40" width="140" height="100" rx="6"/>
+  <text class="r-num" x="577" y="60" fill="#1A6B12">★</text>
+  <text class="r-txt" x="595" y="60" fill="#1A6B12">Liberado</text>
+  <text class="r-sub" x="577" y="80" fill="#1A6B12">Máquina libera</text>
+  <text class="r-sub" x="577" y="96" fill="#1A6B12">sem cobrar</text>
+  <text class="r-sub" x="577" y="112" fill="#1A6B12">Voucher marcado</text>
+  <text class="r-sub" x="577" y="126" fill="#1A6B12">como resgatado</text>
+</svg>
+<div class="diagram-caption">Diagrama 5 · Resgate em 4 passos · auditoria automática via código único</div>
+
+<!-- ============== 8 · STACK ============== -->
+<h1>8 · Stack tecnológica</h1>
+
+<table>
+  <tr><th>Camada</th><th>Tecnologia</th><th>Por quê</th></tr>
+  <tr><td>Frontend</td><td>Next.js 15 + TypeScript + Tailwind + shadcn/ui</td><td>Mesma base que Eduardo já opera em Impulso/AgendaPRO</td></tr>
+  <tr><td>PWA</td><td>Install prompt + offline básico</td><td>Painel franqueada precisa funcionar no celular</td></tr>
+  <tr><td>Backend</td><td>Next.js API Routes + Server Actions</td><td>Mantém tudo no mesmo deploy</td></tr>
+  <tr><td>Banco</td><td>Supabase Postgres + RLS</td><td>Multi-tenant nativo · mesma stack AgendaPRO</td></tr>
+  <tr><td>Auth</td><td>Supabase Auth · magic link SMS pro cliente</td><td>Zero senha pro cliente · senha pra franqueado/matriz</td></tr>
+  <tr><td>Storage</td><td>Supabase Storage · TTL 30 dias</td><td>Pra fotos OCR (Hipótese D)</td></tr>
+  <tr><td>Mensageria SMS</td><td>Zenvia ou Twilio</td><td>R$ 0,08–0,15 por SMS · cobertura Brasil</td></tr>
+  <tr><td>Mensageria WhatsApp</td><td>Twilio Business API ou Meta Cloud API</td><td>R$ 0,05–0,30 por mensagem · engajamento alto</td></tr>
+  <tr><td>OCR (fallback)</td><td>GPT-4o-mini vision OU Google Cloud Vision</td><td>R$ 0,01–0,03 por foto</td></tr>
+  <tr><td>Hosting</td><td>Vercel Pro</td><td>R$ 110/mês · CI/CD + edge functions</td></tr>
+</table>
+
+<div class="callout">
+<h4>Custo infra mensal estimado</h4>
+<p>R$ 240–400 dependendo do volume de mensagens (SMS é o item variável). Supabase Pro custa R$ 130 e aguenta 50–100k usuários tranquilo.</p>
+</div>
+
+<!-- ============== 9 · MONETIZACAO ============== -->
+<h1>9 · Modelo de monetização</h1>
+
+<h2>9.1 · Modelo SaaS por unidade · recomendado</h2>
+<div class="grid-2">
+  <div class="card">
+    <div class="label">Setup único por unidade</div>
+    <div class="value">R$ 1.500</div>
+    <p class="small">Treinamento, branding, integração inicial</p>
+  </div>
+  <div class="card">
+    <div class="label">Mensalidade · plano Essencial</div>
+    <div class="value">R$ 89/mês</div>
+    <p class="small">Mensageria por consumo (cobrar à parte)</p>
+  </div>
+  <div class="card">
+    <div class="label">Mensalidade · plano Pro</div>
+    <div class="value">R$ 149/mês</div>
+    <p class="small">Inclui pacote mensal de SMS + WhatsApp</p>
+  </div>
+  <div class="card">
+    <div class="label">Override mensagem</div>
+    <div class="value">R$ 0,15 / R$ 0,30</div>
+    <p class="small">SMS · WhatsApp · custo + 50% margem</p>
+  </div>
+</div>
+
+<h2>9.2 · Modelo alternativo · matriz fecha nacional</h2>
+<div class="grid-2">
+  <div class="card">
+    <div class="label">Setup nacional · one-shot</div>
+    <div class="value">R$ 15.000</div>
+  </div>
+  <div class="card">
+    <div class="label">Mensalidade nacional · até 200 unidades</div>
+    <div class="value">R$ 8.900/mês</div>
+  </div>
+</div>
+
+<h2>9.3 · Cenários de oportunidade · Leva&amp;Lava</h2>
+<table>
+  <tr><th>Cenário</th><th>Adesão</th><th>Unidades</th><th>MRR</th><th>Anual</th></tr>
+  <tr><td>Pessimista</td><td>20%</td><td>26</td><td>R$ 2.314</td><td>R$ 27.768</td></tr>
+  <tr><td>Realista</td><td>50%</td><td>65</td><td>R$ 5.785</td><td>R$ 69.420</td></tr>
+  <tr><td>Otimista</td><td>100%</td><td>130</td><td>R$ 11.570</td><td>R$ 138.840</td></tr>
+  <tr><td>Plano nacional</td><td>—</td><td>130+</td><td>R$ 8.900</td><td>R$ 106.800</td></tr>
+</table>
+
+<h2>9.4 · Custo operacional por unidade · margem</h2>
+<table>
+  <tr><th>Item</th><th>Valor</th></tr>
+  <tr><td>Infra rateada</td><td>~R$ 5</td></tr>
+  <tr><td>Mensagens (média 50 SMS/un/mês)</td><td>~R$ 7,50</td></tr>
+  <tr><td>Suporte (1h/mês/un terceirizado)</td><td>R$ 30</td></tr>
+  <tr><td><strong>Custo total/un/mês</strong></td><td><strong>~R$ 42,50</strong></td></tr>
+  <tr><td><strong>Margem bruta no Essencial</strong></td><td><strong>~52%</strong></td></tr>
+</table>
+
+<!-- ============== 10 · ROADMAP ============== -->
+<h1>10 · Roadmap</h1>
+
+<svg width="100%" height="320" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .rm-line { stroke: #6A7BA8; stroke-width: 2; fill: none; }
+      .rm-dot { fill: #1E5BFF; stroke: #FFFFFF; stroke-width: 3; }
+      .rm-dot2 { fill: #4FB849; stroke: #FFFFFF; stroke-width: 3; }
+      .rm-dot3 { fill: #F5B400; stroke: #FFFFFF; stroke-width: 3; }
+      .rm-title { fill: #00277A; font-family: 'Helvetica Neue', Arial; font-size: 14px; font-weight: 800; }
+      .rm-sub { fill: #1E5BFF; font-family: 'Helvetica Neue', Arial; font-size: 11px; font-weight: 700; }
+      .rm-time { fill: #3E4F8C; font-family: 'Helvetica Neue', Arial; font-size: 10px; font-style: italic; }
+      .rm-item { fill: #1A2A6C; font-family: 'Helvetica Neue', Arial; font-size: 10px; }
+    </style>
+  </defs>
+
+  <path class="rm-line" d="M 60 280 L 660 280"/>
+
+  <circle class="rm-dot" cx="120" cy="280" r="10"/>
+  <text class="rm-time" x="120" y="305" text-anchor="middle">4 semanas</text>
+  <text class="rm-sub" x="120" y="55" text-anchor="middle">MVP</text>
+  <text class="rm-title" x="120" y="75" text-anchor="middle">Piloto Palmas</text>
+  <text class="rm-item" x="120" y="100" text-anchor="middle">Web cliente</text>
+  <text class="rm-item" x="120" y="115" text-anchor="middle">Painel franqueada</text>
+  <text class="rm-item" x="120" y="130" text-anchor="middle">Bot WhatsApp OCR</text>
+  <text class="rm-item" x="120" y="145" text-anchor="middle">SMS confirmação</text>
+  <text class="rm-item" x="120" y="160" text-anchor="middle">Voucher digital</text>
+  <text class="rm-item" x="120" y="180" text-anchor="middle" font-weight="700" fill="#1E5BFF">→ Beatriz piloto</text>
+
+  <circle class="rm-dot2" cx="360" cy="280" r="10"/>
+  <text class="rm-time" x="360" y="305" text-anchor="middle">12 semanas</text>
+  <text class="rm-sub" x="360" y="55" text-anchor="middle" fill="#4FB849">V1</text>
+  <text class="rm-title" x="360" y="75" text-anchor="middle">Rede ativa</text>
+  <text class="rm-item" x="360" y="100" text-anchor="middle">Painel matriz</text>
+  <text class="rm-item" x="360" y="115" text-anchor="middle">Multi-unidade · RLS</text>
+  <text class="rm-item" x="360" y="130" text-anchor="middle">Integração Cicclo</text>
+  <text class="rm-item" x="360" y="145" text-anchor="middle">WhatsApp Business</text>
+  <text class="rm-item" x="360" y="160" text-anchor="middle">Promoções nacionais</text>
+  <text class="rm-item" x="360" y="180" text-anchor="middle" font-weight="700" fill="#4FB849">→ Leva&amp;Lava nacional</text>
+
+  <circle class="rm-dot3" cx="600" cy="280" r="10"/>
+  <text class="rm-time" x="600" y="305" text-anchor="middle">6 meses</text>
+  <text class="rm-sub" x="600" y="55" text-anchor="middle" fill="#F5B400">V2</text>
+  <text class="rm-title" x="600" y="75" text-anchor="middle">Plataforma</text>
+  <text class="rm-item" x="600" y="100" text-anchor="middle">Multi-rede</text>
+  <text class="rm-item" x="600" y="115" text-anchor="middle">Marketplace templates</text>
+  <text class="rm-item" x="600" y="130" text-anchor="middle">ERP integração</text>
+  <text class="rm-item" x="600" y="145" text-anchor="middle">Mobile nativo</text>
+  <text class="rm-item" x="600" y="160" text-anchor="middle">API pública</text>
+  <text class="rm-item" x="600" y="180" text-anchor="middle" font-weight="700" fill="#F5B400">→ Lavô, OMO, outras</text>
+
+  <line x1="120" y1="220" x2="120" y2="270" stroke="#1E5BFF" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="360" y1="220" x2="360" y2="270" stroke="#4FB849" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="600" y1="220" x2="600" y2="270" stroke="#F5B400" stroke-width="1.5" stroke-dasharray="3 2"/>
+</svg>
+<div class="diagram-caption">Diagrama 6 · Timeline · azul = MVP, verde = rede, amarelo = plataforma</div>
+
+<!-- ============== 11 · ESTRATEGIA COMERCIAL ============== -->
+<h1>11 · Estratégia comercial</h1>
+
+<h2>11.1 · Primeira mensagem · WhatsApp do cartaz</h2>
+
+<p>Canal: <strong>(63) 99810-36871</strong> · com autorização da Beatriz pra citar o nome dela.</p>
+
+<div class="callout">
+<h4>Regra de ouro</h4>
+<p>A primeira mensagem <strong>não é o pitch</strong>. O objetivo é só conseguir ser direcionado pra quem decide (marketing ou operações da rede). Se você manda a solução pronta, perde — atendente não tem autoridade pra avaliar.</p>
+</div>
+
+<div class="msg-box">
+Olá, bom dia. Sou Eduardo Barros, da Impulso Digital aqui de Palmas. Sou cliente da unidade Palmas Brasil Sul há um tempo e gosto bastante do serviço.<br><br>
+
+Estive hoje na unidade, conversei com a Beatriz e comentei sobre uma proposta de melhoria pro Clube leva&amp;lava — uma forma de automatizar o controle dos ciclos que hoje é feito por foto no WhatsApp.<br><br>
+
+Ela me orientou a falar com a equipe por aqui. Poderia me direcionar pra pessoa responsável pelo programa de fidelidade ou pela área de marketing/operações da rede? Tenho um material estruturado pra apresentar.<br><br>
+
+Obrigado.
+</div>
+
+<h3>O que essa mensagem faz, dissecada</h3>
+<ul>
+  <li><strong>"Sou cliente":</strong> posicionamento de cliente, não vendedor frio</li>
+  <li><strong>"Conversei com a Beatriz":</strong> âncora de confiança · referência interna</li>
+  <li><strong>"Proposta de melhoria":</strong> cita problema sem entregar solução · cria curiosidade</li>
+  <li><strong>"Poderia me direcionar":</strong> pedido específico · não pede reunião direto</li>
+  <li><strong>"Obrigado":</strong> encerra com gratidão · não com CTA agressivo</li>
+</ul>
+
+<h2>11.2 · Segunda mensagem · quando chegar no decisor</h2>
+
+<ul>
+  <li>Apresentação curta: Impulso Digital · cidade · por que isso te interessa</li>
+  <li>Problema observado em 3 frases</li>
+  <li>Solução em 3 frases · sem detalhe técnico</li>
+  <li>1 mockup de tela (cliente vendo o progresso 7/10)</li>
+  <li>Pedido: 30 minutos de reunião por vídeo</li>
+</ul>
+
+<h2>11.3 · Argumentos centrais pra usar com a matriz</h2>
+
+<ol>
+  <li><strong>Dado centralizado:</strong> hoje você não sabe quantos clientes únicos a rede tem. Com sistema, sabe.</li>
+  <li><strong>Diferencial competitivo:</strong> "lave em qualquer unidade Leva&amp;Lava e acumule" — concorrente avulsa não tem.</li>
+  <li><strong>Liberação operacional:</strong> cada franqueado economiza horas/mês não contando comprovante.</li>
+  <li><strong>Marketing direto:</strong> base própria de telefones opt-in, sem depender de Instagram.</li>
+  <li><strong>Proteção legal:</strong> o cartaz atual tem texto defensivo · sintoma de erro operacional histórico. Sistema elimina a causa.</li>
+</ol>
+
+<h2>11.4 · Objeções e respostas</h2>
+
+<table>
+  <tr><th>Objeção</th><th>Resposta</th></tr>
+  <tr><td>"Já temos Cicclo, eles têm fidelidade"</td><td>"Sim, e por que vocês operam por WhatsApp manual então? Sinal de que a fidelidade nativa não atende à regra de vocês. Nosso sistema é customizável e branded como Clube leva&amp;lava."</td></tr>
+  <tr><td>"Vamos esperar o Cicclo desenvolver"</td><td>"Justo. Mas o Cicclo é fornecedor de N redes, não vai customizar pra Leva&amp;Lava. Vocês querem dado próprio ou dependente de fornecedor?"</td></tr>
+  <tr><td>"Quanto custa?"</td><td>"R$ 89/unidade/mês ou R$ 8.900 nacional. Piloto gratuito em 1 unidade por 60 dias pra provar ROI."</td></tr>
+  <tr><td>"Quem é você?"</td><td>"Impulso Digital, Palmas. Já operamos AgendaPRO em produção com salões. Stack provada."</td></tr>
+</table>
+
+<!-- ============== 12 · RISCOS ============== -->
+<h1>12 · Riscos e hipóteses a validar</h1>
+
+<h2>12.1 · Hipóteses críticas · validar ANTES de codar V1</h2>
+
+<div class="callout yellow">
+<ol>
+  <li><strong>Cicclo aceita integração?</strong> Contato (11) 3230-2076 · contato@cicclo.com. Pode pedir parceria comercial ou cobrar caro pela API.</li>
+  <li><strong>Leva&amp;Lava centraliza fidelidade ou cada franqueado faz do seu jeito?</strong> Descobrir na primeira reunião. Muda modelo de monetização (rede paga vs franqueado paga).</li>
+  <li><strong>Existe contrato de exclusividade Cicclo x Leva&amp;Lava?</strong> Se sim, projeto morre. Improvável, mas verificar.</li>
+  <li><strong>LGPD:</strong> opt-in claro obrigatório · política de privacidade explícita · direito de excluir cadastro.</li>
+</ol>
+</div>
+
+<h2>12.2 · Riscos técnicos</h2>
+<ul>
+  <li>Cicclo pode ter rate-limit ou política restritiva</li>
+  <li>OCR (fallback D) pode falhar em comprovantes amassados — fluxo de revisão manual</li>
+  <li>WhatsApp Business exige aprovação Meta (templates + caso de uso)</li>
+  <li>SMS taxa de não-entrega média no Brasil: 80–92%</li>
+</ul>
+
+<h2>12.3 · Riscos comerciais</h2>
+<ul>
+  <li>Matriz pode ter projeto interno paralelo (in-house) · pivot rápido pra "integrar com o que vocês têm"</li>
+  <li>Matriz pode demorar 60–90 dias pra responder · manter pipeline com outros clientes Cicclo enquanto isso</li>
+  <li>Franqueados podem resistir a custo extra · vender benefício de retenção · cada cliente recorrente vale R$ X em LTV</li>
+</ul>
+
+<!-- ============== 13 · PROXIMOS PASSOS ============== -->
+<h1>13 · Próximos passos cravados</h1>
+
+<h2>Esta semana · 21 a 28 de maio</h2>
+<ul class="checklist">
+  <li>Mandar mensagem 1 pro WhatsApp (63) 99810-36871 · texto cravado na seção 11</li>
+  <li>Tirar print/foto do verso do cartaz e do totem completo · pode ter info que perdemos</li>
+  <li>Ligar pro Cicclo (11 3230-2076) anônimo · descobrir se vendem API ou só fidelidade nativa</li>
+  <li>Visitar a outra unidade Palmas (Posto Tucunaré) · comparar operação e conversar com o franqueado</li>
+</ul>
+
+<h2>Semana seguinte · após resposta da rede</h2>
+<ul class="checklist">
+  <li>Reunião com decisor da Leva&amp;Lava · usar deck de 1 página</li>
+  <li>Validar 4 hipóteses críticas da seção 12</li>
+  <li>Cravar Hipótese A/B/C/D do bloco 2 com base na resposta da rede + Cicclo</li>
+  <li>Definir modelo de monetização final (unidade ou nacional)</li>
+</ul>
+
+<h2>Em 30 dias</h2>
+<ul class="checklist">
+  <li>Começar MVP com Beatriz · unidade Palmas Brasil Sul como piloto pago (R$ 89/mês desde o dia 1, contrato 60 dias)</li>
+  <li>Gravar case do piloto pra apresentar pra matriz fechar nacional</li>
+</ul>
+
+<hr>
+
+<div class="callout green">
+<h4>Mantra do projeto</h4>
+<p><em>"O sistema facilita, não cria trabalho. Cada feature aprovada precisa responder: isso economiza quanto tempo?"</em></p>
+</div>
+
+<p class="small" style="margin-top: 24pt; text-align: center;">Apostila cravada por Eduardo Barros · Impulso Digital · Palmas, 21 de maio de 2026</p>
+
+</body>
+</html>

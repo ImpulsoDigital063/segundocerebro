@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Apostila GitHub</title><style>
+/* APOSTILA GITHUB — print stylesheet
+ * Paleta sem preto (impressora sem tinta preta)
+ * Toda fonte usa azul-marinho (#1a365d) → impresso via cyan+magenta+yellow
+ */
+
+:root {
+  --ink-primary:   #1a365d;   /* corpo do texto — azul-marinho escuro */
+  --ink-heading:   #1e3a72;   /* H2/H3 */
+  --ink-h1:        #14284a;   /* H1 mais escuro mas ainda sem preto puro */
+  --ink-strong:    #1a365d;   /* negrito = mesma cor */
+  --ink-muted:     #4a6896;   /* texto secundário */
+  --ink-link:      #2563b0;   /* links */
+  --ink-code:      #1a365d;   /* texto dentro de code */
+  --bg-code:       #e8f0f9;   /* fundo de code claro azulado */
+  --bg-blockquote: #f0f5fb;
+  --border-soft:   #b7cce5;
+  --border-medium: #7ba0c9;
+}
+
+@page {
+  size: A4;
+  margin: 12mm 12mm 12mm 14mm;
+}
+
+* {
+  color: var(--ink-primary) !important;   /* força tudo no azul, sem preto */
+  border-color: var(--border-soft) !important;
+}
+
+html, body {
+  font-family: 'Segoe UI', 'Calibri', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.35;
+  color: var(--ink-primary);
+  background: #ffffff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  margin: 0;
+  padding: 0;
+}
+
+/* CABEÇALHOS */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink-h1) !important;
+  font-weight: 700;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h1 {
+  font-size: 18pt;
+  border-bottom: 2px solid var(--border-medium);
+  padding-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 13pt;
+  color: var(--ink-heading) !important;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 2px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  page-break-before: auto;
+  break-before: auto;
+}
+
+h3 {
+  font-size: 11pt;
+  color: var(--ink-heading) !important;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+h4 {
+  font-size: 10pt;
+  color: var(--ink-heading) !important;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+/* PARÁGRAFOS E TEXTO */
+p {
+  margin: 0 0 5px 0;
+  text-align: left;
+  orphans: 2;
+  widows: 2;
+}
+
+strong, b {
+  color: var(--ink-strong) !important;
+  font-weight: 700;
+}
+
+em, i {
+  color: var(--ink-primary) !important;
+}
+
+/* LINKS */
+a {
+  color: var(--ink-link) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--border-medium);
+}
+
+/* LISTAS */
+ul, ol {
+  margin: 3px 0 6px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 1.5px;
+}
+
+li::marker {
+  color: var(--ink-heading) !important;
+}
+
+/* CHECKBOXES (- [ ] e - [x]) */
+input[type="checkbox"] {
+  accent-color: var(--ink-heading);
+  margin-right: 4px;
+}
+
+/* CÓDIGO INLINE */
+code {
+  font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+  font-size: 8.5pt;
+  background: var(--bg-code);
+  color: var(--ink-code) !important;
+  padding: 0px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+}
+
+/* BLOCO DE CÓDIGO */
+pre {
+  background: var(--bg-code) !important;
+  border: 1px solid var(--border-medium);
+  border-left: 3px solid var(--ink-heading);
+  border-radius: 3px;
+  padding: 6px 10px;
+  margin: 5px 0;
+  overflow-x: auto;
+  font-size: 8pt;
+  line-height: 1.3;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: var(--ink-primary) !important;
+}
+
+/* TABELAS */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 5px 0;
+  font-size: 8.5pt;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th {
+  background: var(--bg-code) !important;
+  color: var(--ink-h1) !important;
+  font-weight: 700;
+  text-align: left;
+  padding: 3px 6px;
+  border: 1px solid var(--border-medium) !important;
+}
+
+td {
+  padding: 3px 6px;
+  border: 1px solid var(--border-soft) !important;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f4f8fc;
+}
+
+/* CITAÇÃO (>) */
+blockquote {
+  background: var(--bg-blockquote);
+  border-left: 3px solid var(--ink-heading);
+  padding: 4px 10px;
+  margin: 5px 0;
+  color: var(--ink-muted) !important;
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 2px 0;
+}
+
+/* LINHA HORIZONTAL */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-medium);
+  margin: 8px 0;
+}
+
+/* IMAGENS */
+img {
+  max-width: 100%;
+  height: auto;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* AJUSTES DE QUEBRA DE PÁGINA */
+table, pre, blockquote {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+h1 + p, h2 + p, h3 + p {
+  page-break-before: avoid;
+}
+
+/* RODAPÉ DE PÁGINA — md-to-pdf gerencia headerTemplate/footerTemplate via options */
+
+</style></head><body>
+<h1>APOSTILA GITHUB — IMPULSO DIGITAL</h1>
+<p><strong>Para:</strong> Eduardo Barros · operador Impulso Digital
+<strong>Nível assumido:</strong> mediano (sabe commit/push/branch básico via Cursor)
+<strong>Objetivo:</strong> sair de &quot;uso porque o Cursor me obriga&quot; pra &quot;GitHub é minha vitrine técnica e meu sistema de versionamento sério&quot;
+<strong>Tempo de leitura:</strong> ~45 min · <strong>Tempo pra aplicar tudo:</strong> ~3h em uma tarde</p>
+<hr>
+<h2>ÍNDICE</h2>
+<ol>
+<li><a href="#1-git--github">O que é Git × O que é GitHub</a></li>
+<li><a href="#2-anatomia-de-um-repositorio">Anatomia de um repositório</a></li>
+<li><a href="#3-anatomia-do-seu-perfil">Anatomia do seu perfil</a></li>
+<li><a href="#4-fluxo-cursor-code">Fluxo do dia-a-dia no Cursor/Code</a></li>
+<li><a href="#5-gitignore">.gitignore e arquivos sensíveis</a></li>
+<li><a href="#6-branches">Branches — trabalhar sem quebrar nada</a></li>
+<li><a href="#7-profissionalizar-perfil">Profissionalizar seu perfil</a></li>
+<li><a href="#8-profissionalizar-repos">Profissionalizar seus repositórios</a></li>
+<li><a href="#9-colaboracao">Colaboração — receber ajuda do Lucas (ou contratado)</a></li>
+<li><a href="#10-seguranca">Segurança — não vazar senha/chave</a></li>
+<li><a href="#11-erros-comuns">Erros comuns e como sair deles</a></li>
+<li><a href="#12-cheatsheet">Cheatsheet de comandos</a></li>
+<li><a href="#13-glossario">Glossário PT-EN</a></li>
+<li><a href="#14-checklist">Checklist — &quot;deixar profissional em 3 horas&quot;</a></li>
+</ol>
+<hr>
+<h2>1. GIT × GITHUB</h2>
+<p><strong>Git</strong> = programa que roda no teu computador. Controla versões de arquivos. É offline, não tem nada a ver com internet.</p>
+<p><strong>GitHub</strong> = site/serviço da Microsoft que hospeda repositórios Git na nuvem. É a &quot;rede social&quot; do Git.</p>
+<p><strong>Analogia simples:</strong></p>
+<ul>
+<li>Git = Word + função &quot;salvar versão histórica&quot;</li>
+<li>GitHub = Google Drive onde tu sobe esses arquivos pra compartilhar</li>
+</ul>
+<p>Tu pode usar Git sem GitHub (versionar local). Tu não pode usar GitHub sem Git.</p>
+<p><strong>Outros como GitHub:</strong> GitLab, Bitbucket, Codeberg. GitHub é o dominante (~100M devs).</p>
+<hr>
+<h2>2. ANATOMIA DE UM REPOSITÓRIO</h2>
+<p>Um <strong>repositório</strong> (repo) é uma pasta de projeto com histórico Git ativado.</p>
+<p>Quando tu abre <code>github.com/ImpulsoDigital063/impulso-digital-nextjs</code>, vê isso:</p>
+<pre><code>┌────────────────────────────────────────────────────────────┐
+│  Code  Issues  Pull Requests  Actions  Projects  Settings  │ ← abas
+├────────────────────────────────────────────────────────────┤
+│  main ▼     1,234 commits     ⓘ 5 branches  3 tags         │ ← branch + estatísticas
+├────────────────────────────────────────────────────────────┤
+│  📁 src/                       &quot;feat: novo header&quot;  2h ago │
+│  📁 public/                    &quot;fix: logo size&quot;     1d ago │
+│  📄 README.md                  &quot;docs: como rodar&quot;   3d ago │
+│  📄 package.json               &quot;chore: bump next&quot;   1w ago │
+│  📄 .gitignore                 &quot;init&quot;               2m ago │
+└────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Abas que importam</h3>
+<table>
+<thead>
+<tr>
+<th>Aba</th>
+<th>Pra que serve</th>
+<th>Quando tu usa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Code</strong></td>
+<td>ver os arquivos</td>
+<td>sempre</td>
+</tr>
+<tr>
+<td><strong>Issues</strong></td>
+<td>reportar bugs / pedir features</td>
+<td>quando algo quebra ou tu quer planejar</td>
+</tr>
+<tr>
+<td><strong>Pull Requests</strong></td>
+<td>propor mudanças (PR)</td>
+<td>colaboração com outros</td>
+</tr>
+<tr>
+<td><strong>Actions</strong></td>
+<td>rodar automação (CI/CD)</td>
+<td>testes automáticos, deploy</td>
+</tr>
+<tr>
+<td><strong>Settings</strong></td>
+<td>configurar repo (visibilidade, colaboradores, branches)</td>
+<td>uma vez por repo</td>
+</tr>
+</tbody></table>
+<h3>Conceitos centrais</h3>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>O que é</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Commit</strong></td>
+<td>uma &quot;foto&quot; do projeto num momento. Tem hash (ex: <code>a3f8c2</code>), autor, data, mensagem</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>linha do tempo paralela. <code>main</code> é a principal. <code>feature/login</code> é uma alternativa</td>
+</tr>
+<tr>
+<td><strong>HEAD</strong></td>
+<td>&quot;onde tu tá agora&quot;. Aponta pra um commit específico em uma branch</td>
+</tr>
+<tr>
+<td><strong>Remote</strong></td>
+<td>versão do repo num servidor remoto (GitHub). Apelido padrão: <code>origin</code></td>
+</tr>
+<tr>
+<td><strong>Origin</strong></td>
+<td>o remote principal (geralmente teu fork no GitHub)</td>
+</tr>
+<tr>
+<td><strong>Upstream</strong></td>
+<td>o repo original (quando tu fez fork)</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td>enviar commits locais pro remote</td>
+</tr>
+<tr>
+<td><strong>Pull</strong></td>
+<td>trazer commits do remote pro local</td>
+</tr>
+<tr>
+<td><strong>Fetch</strong></td>
+<td>trazer informação do remote SEM mesclar (só atualiza referências)</td>
+</tr>
+<tr>
+<td><strong>Merge</strong></td>
+<td>juntar duas branches</td>
+</tr>
+<tr>
+<td><strong>Rebase</strong></td>
+<td>&quot;re-aplicar&quot; commits em cima de outra base (alternativa ao merge)</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td>marcador permanente num commit (geralmente versão: <code>v1.0.0</code>)</td>
+</tr>
+<tr>
+<td><strong>Release</strong></td>
+<td>tag + notas + artefatos publicados na aba Releases</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>3. ANATOMIA DO SEU PERFIL</h2>
+<p>Teu perfil: <code>github.com/ImpulsoDigital063</code></p>
+<pre><code>┌──────────────────────────────────────────────────────────┐
+│ [foto]   Impulso Digital                                 │
+│          ImpulsoDigital063                               │
+│          [Edit profile]                                  │
+│                                                          │
+│ Overview  Repositories(14)  Projects  Packages  Stars   │ ← abas do perfil
+├──────────────────────────────────────────────────────────┤
+│  Popular repositories                                    │ ← os 6 &quot;pinned&quot;
+│  ┌─────────────┐ ┌─────────────┐                        │
+│  │ repo1       │ │ repo2       │                        │
+│  └─────────────┘ └─────────────┘                        │
+│  ...                                                     │
+│                                                          │
+│  824 contributions in the last year     [gráfico verde]  │
+│                                                          │
+│  Contribution activity                                   │
+│  May 2026  ▸ Created 293 commits in 7 repositories       │
+└──────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Componentes do perfil que tu controla</h3>
+<ol>
+<li><strong>Foto</strong> — Settings → Profile → Profile picture. Use logo da Impulso.</li>
+<li><strong>Nome</strong> — Settings → Profile → Name. Use &quot;Impulso Digital&quot;.</li>
+<li><strong>Bio</strong> — 160 chars. Ex: &quot;Agência de tráfego e tecnologia. SaaS, LPs, automação.&quot;</li>
+<li><strong>Localização / website / email / Twitter</strong> — opcional, mas link pro site da Impulso ajuda.</li>
+<li><strong>Pinned repositories</strong> — 6 cards que aparecem na home. Clica em &quot;Customize your pins&quot;. Os 6 que aparecem hoje saíram automático (mais estrelas/forks).</li>
+<li><strong>Profile README</strong> — texto rico no topo da home. Explicado em <a href="#7-profissionalizar-perfil">§7</a>.</li>
+<li><strong>Contribution graph</strong> — gráfico verde de atividade. Não dá pra mexer, é automático.</li>
+</ol>
+<hr>
+<h2>4. FLUXO CURSOR/CODE → GITHUB</h2>
+<p>Cenário comum: tu acabou um projeto no Cursor, quer subir pro GitHub.</p>
+<h3>Cenário A — Projeto novo, criando do zero</h3>
+<p><strong>Passo 1 — Criar o repo no GitHub (pelo site)</strong></p>
+<ul>
+<li>Abre <code>github.com/new</code></li>
+<li>Owner: <code>ImpulsoDigital063</code></li>
+<li>Repository name: <code>nome-do-projeto</code> (kebab-case)</li>
+<li>Description: 1 linha curta (&quot;LP de captação para clínica X&quot;)</li>
+<li>Public / Private: <strong>Private</strong> se for projeto de cliente pago; Public se for portfólio/open-source</li>
+<li><strong>NÃO marca</strong> &quot;Add a README&quot; / &quot;Add .gitignore&quot; / &quot;Choose a license&quot; — tu vai colocar isso do projeto local</li>
+<li>Create repository</li>
+</ul>
+<p>GitHub te dá uma URL: <code>https://github.com/ImpulsoDigital063/nome-do-projeto.git</code></p>
+<p><strong>Passo 2 — No Cursor (terminal integrado, Ctrl+`)</strong></p>
+<pre><code class="language-bash">cd C:\Users\Usuario\projeto-x
+git init                                                              # inicia versionamento local
+git add .                                                             # marca todos os arquivos
+git commit -m &quot;feat: inicial&quot;                                         # primeira foto
+git branch -M main                                                    # renomeia branch pra main
+git remote add origin https://github.com/ImpulsoDigital063/projeto-x.git
+git push -u origin main                                               # primeiro push
+</code></pre>
+<p>Pronto. Atualiza a página do GitHub e tá tudo lá.</p>
+<p><strong>O <code>-u</code> no push</strong> = &quot;lembra que essa branch local rastreia essa remota&quot;. Depois disso tu só faz <code>git push</code> sem mais nada.</p>
+<h3>Cenário B — Projeto que tu já mexeu no Cursor sem Git</h3>
+<p>Mesma coisa. O <code>git init</code> funciona em pasta com arquivos existentes.</p>
+<h3>Cenário C — Trabalho diário (depois que repo já tá no GitHub)</h3>
+<pre><code class="language-bash"># editar arquivos no Cursor
+git status                          # vê o que mudou
+git add .                           # marca tudo
+git commit -m &quot;fix: erro no header&quot; # foto
+git push                            # envia
+</code></pre>
+<p>Ou pela interface do Cursor:</p>
+<ul>
+<li>Aba &quot;Source Control&quot; (Ctrl+Shift+G)</li>
+<li>Vê arquivos modificados (M), novos (U), deletados (D)</li>
+<li>&quot;+&quot; pra marcar (stage)</li>
+<li>Escreve mensagem no topo</li>
+<li>Ctrl+Enter pra commitar</li>
+<li>&quot;...&quot; → Push</li>
+</ul>
+<h3>Padrão de mensagem de commit (Conventional Commits)</h3>
+<p>Adota isso. Vira reflexo em 1 semana e teu histórico fica legível:</p>
+<pre><code>&lt;tipo&gt;(&lt;escopo&gt;): &lt;descrição curta minúscula&gt;
+
+feat(header): adiciona menu mobile
+fix(form): valida email antes de enviar
+docs(readme): adiciona seção de stack
+chore(deps): atualiza next pra 15.2
+refactor(api): extrai cliente do supabase
+style(css): ajusta espaçamento do hero
+test(login): adiciona teste de redirect
+ops(db): adiciona migration v62
+</code></pre>
+<p>Tipos comuns: <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>chore</code>, <code>refactor</code>, <code>style</code>, <code>test</code>, <code>ops</code>, <code>perf</code>.</p>
+<p><strong>Por que importa:</strong> ferramenta <code>release-please</code> ou <code>standard-version</code> lê isso e gera CHANGELOG sozinha. Lucas Passos usa esse padrão no GitHub dele — é sinal de maturidade.</p>
+<h3>Cenário D — Clonar repo existente (teu ou de outro)</h3>
+<pre><code class="language-bash">git clone https://github.com/ImpulsoDigital063/projeto-x.git
+cd projeto-x
+npm install
+</code></pre>
+<p><code>git clone</code> traz repo completo + histórico + remote já configurado.</p>
+<hr>
+<h2>5. .GITIGNORE</h2>
+<p>Arquivo na raiz do projeto que diz pro Git &quot;ignora esses caminhos, não versiona&quot;.</p>
+<p><strong>O que SEMPRE entra no .gitignore (Next.js / Node):</strong></p>
+<pre><code># dependências (são pesadas e instaláveis via package.json)
+node_modules/
+
+# build
+.next/
+out/
+dist/
+build/
+
+# environment (TEM SENHAS)
+.env
+.env.local
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# cache / temp
+.cache/
+.turbo/
+.vercel/
+</code></pre>
+<p><strong>Por que isso é crítico:</strong> se tu commitar <code>.env</code> com <code>SUPABASE_SERVICE_ROLE_KEY=eyJ...</code>, <strong>qualquer pessoa no mundo lê tua chave</strong>. E o histórico Git não esquece — não basta deletar depois, tem que <strong>revogar a chave no Supabase</strong>.</p>
+<p><strong>Como aplicar em projeto existente:</strong></p>
+<pre><code class="language-bash"># se já commitou node_modules ou .env por engano:
+git rm -r --cached node_modules
+git rm --cached .env
+# depois commita o .gitignore atualizado
+git add .gitignore
+git commit -m &quot;chore: gitignore node_modules e env&quot;
+git push
+</code></pre>
+<p><strong>Truque:</strong> <code>npx gitignore node</code> gera um <code>.gitignore</code> completo pra Node. Tem versão pra <code>next</code>, <code>python</code>, etc.</p>
+<hr>
+<h2>6. BRANCHES</h2>
+<p>Pensa em branch como uma linha do tempo paralela. Tu trabalha numa branch separada pra não quebrar a <code>main</code> (que normalmente é o código em produção).</p>
+<h3>Fluxo padrão</h3>
+<pre><code>main:    o-o-o-o------------o   ← código estável, em produção
+              \             /
+feature/x:     o-o-o-o-o-o-o    ← tu trabalha aqui
+</code></pre>
+<pre><code class="language-bash">git checkout -b feature/menu-mobile   # cria branch e troca
+# ...edita, commita várias vezes...
+git push -u origin feature/menu-mobile
+
+# depois abre Pull Request no GitHub pra mergear na main
+</code></pre>
+<h3>Comandos de branch</h3>
+<pre><code class="language-bash">git branch                            # lista branches locais
+git branch -a                         # inclui remotas
+git checkout main                     # troca pra main
+git checkout -b feature/x             # cria + troca
+git branch -d feature/x               # deleta (só se já mergeada)
+git push origin --delete feature/x    # deleta no remote
+</code></pre>
+<h3>Quando tu precisa de branch (e quando não)</h3>
+<p><strong>Não precisa</strong> se tu trabalha sozinho num projeto pequeno (LP de cliente) e o que tu commita já é o que vai pra produção. <code>main</code> direto serve.</p>
+<p><strong>Precisa</strong> quando:</p>
+<ul>
+<li>Vai mexer em algo arriscado e quer poder abandonar</li>
+<li>Vai colaborar com Lucas/outro dev (cada um na sua branch)</li>
+<li>Vai testar uma feature por dias antes de mergear</li>
+<li>Tem deploy automático ligado em <code>main</code> e tu não quer publicar a cada commit</li>
+</ul>
+<hr>
+<h2>7. PROFISSIONALIZAR PERFIL</h2>
+<p>Hoje teu perfil é &quot;tem 14 repos, gráfico verde&quot;. Pra parecer profissional:</p>
+<h3>7.1 Profile README (o card de boas-vindas)</h3>
+<p>Existe um repo mágico: se tu cria um repo com <strong>o mesmo nome do teu usuário</strong> (<code>ImpulsoDigital063/ImpulsoDigital063</code>) e coloca um <code>README.md</code> dentro, ele aparece no topo do teu perfil.</p>
+<p><strong>Como criar:</strong></p>
+<ol>
+<li><code>github.com/new</code></li>
+<li>Repository name: <code>ImpulsoDigital063</code> (exatamente igual ao user)</li>
+<li>Public + &quot;Add a README file&quot;</li>
+<li>Create repository</li>
+<li>Edita o README.md</li>
+</ol>
+<p><strong>Template enxuto pra tu (copia e adapta):</strong></p>
+<pre><code class="language-markdown">## Impulso Digital
+
+Agência de tráfego, performance e tecnologia.
+Construímos LPs, SaaS e automações pra negócios que querem crescer com método.
+
+**O que faço aqui no GitHub:**
+- Landing pages performáticas em Next.js + Tailwind
+- SaaS multi-tenant em Supabase + Next
+- Automações em Node e Python
+- Integrações com Meta Ads, WhatsApp, Stripe
+
+**Stack principal:** Next.js 15 · TypeScript · Tailwind · Supabase · Vercel · Anthropic API
+
+**Projetos em destaque:** ver pinned abaixo.
+
+---
+
+[impulsodigital.app.br](https://impulsodigital.app.br) · [Instagram @impulsodigital063](https://instagram.com/impulsodigital063) · contato@impulsodigital.app.br
+</code></pre>
+<h3>7.2 Pinned repositories</h3>
+<p>Os 6 cards na home. <strong>Hoje saíram automático</strong> (Minha---Landing, impulso-digital-nextjs, locajv-landing, ev-suplementos, criativosdoceu, MPN-On).</p>
+<p><strong>Faz manual:</strong></p>
+<ol>
+<li>Vai pro perfil → &quot;Customize your pins&quot;</li>
+<li>Escolhe 6 que <strong>representam teu melhor trabalho</strong> e mostram variedade</li>
+<li>Critério: deploy ao vivo &gt; README bom &gt; stack moderna &gt; recente</li>
+</ol>
+<p><strong>Sugestão pros teus 6 atuais:</strong></p>
+<ul>
+<li><code>impulso-digital-nextjs</code> — site institucional (vitrine própria)</li>
+<li><code>ev-suplementos</code> — LP de cliente real com resultado</li>
+<li><code>MPN-On</code> — projeto de mídia/automação</li>
+<li><ul>
+<li>3 dos melhores LPs (escolha visual + técnica)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Não fixa:</strong> repos vazios, abandonados, ou que tu não conseguiria explicar numa entrevista.</p>
+<h3>7.3 Foto, bio, link</h3>
+<p>Settings → Profile:</p>
+<ul>
+<li><strong>Picture:</strong> logo Impulso (não tua cara — é conta de empresa)</li>
+<li><strong>Name:</strong> Impulso Digital</li>
+<li><strong>Bio:</strong> &quot;Agência de tráfego e tecnologia. SaaS, LPs, automação. 📍 Brasil&quot;</li>
+<li><strong>URL:</strong> impulsodigital.app.br</li>
+<li><strong>Twitter/X:</strong> se tu posta</li>
+<li><strong>Email público:</strong> contato@... (não o pessoal)</li>
+</ul>
+<hr>
+<h2>8. PROFISSIONALIZAR REPOS</h2>
+<p>Cada repo individual também precisa de capricho. Aplica este checklist por repo:</p>
+<h3>8.1 Nome bom</h3>
+<ul>
+<li>✅ <code>lp-clinica-fisio-rj</code> — claro, kebab-case</li>
+<li>❌ <code>Minha---Landing</code> — confuso, hífens em excesso</li>
+<li>❌ <code>teste</code>, <code>projeto1</code> — anônimo</li>
+</ul>
+<p><strong>Como renomear:</strong> Settings → General → Repository name → Rename.</p>
+<h3>8.2 Description + topics</h3>
+<p>No topo de cada repo, à direita do título, tem um ⚙️. Clica.</p>
+<ul>
+<li><strong>Description:</strong> 1 linha. Ex: &quot;Landing page de captação para clínica de fisioterapia no Rio. Next 15 + Tailwind + integração Meta.&quot;</li>
+<li><strong>Website:</strong> URL do deploy (Vercel). Aparece como link clicável.</li>
+<li><strong>Topics:</strong> tags. Adiciona: <code>nextjs</code>, <code>tailwindcss</code>, <code>typescript</code>, <code>landing-page</code>, <code>supabase</code>, etc. <strong>Topics são indexados pelo GitHub</strong> — outras pessoas acham teu repo buscando por <code>landing-page nextjs</code>.</li>
+</ul>
+<h3>8.3 README do projeto</h3>
+<p><strong>TODO repo público precisa de README.</strong> Sem README, o repo parece morto.</p>
+<p><strong>Template enxuto (cola na raiz como README.md):</strong></p>
+<pre><code class="language-markdown"># Nome do Projeto
+
+&gt; 1 linha do que isso faz.
+
+Captura screenshot e cola aqui: ![screenshot](docs/cover.png)
+
+## Demo
+[clinicafisio.app.br](https://clinicafisio.app.br)
+
+## Stack
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
+- Supabase (auth + db)
+- Vercel (deploy)
+
+## Como rodar local
+```bash
+git clone https://github.com/ImpulsoDigital063/nome.git
+cd nome
+npm install
+cp .env.example .env       # preenche com tuas chaves
+npm run dev                # abre em localhost:3000
+</code></pre>
+<h2>Estrutura</h2>
+<pre><code>src/
+  app/        ← rotas Next (App Router)
+  components/ ← componentes reutilizáveis
+  lib/        ← helpers (supabase, utils)
+public/       ← imagens, fontes, favicons
+</code></pre>
+<h2>Variáveis de ambiente</h2>
+<p>Ver <code>.env.example</code>. Chaves obrigatórias:</p>
+<ul>
+<li><code>NEXT_PUBLIC_SUPABASE_URL</code></li>
+<li><code>SUPABASE_SERVICE_ROLE_KEY</code> (server-side only)</li>
+<li><code>RESEND_API_KEY</code> (envio de email)</li>
+</ul>
+<h2>Licença</h2>
+<p>MIT (ou Proprietary se for de cliente)</p>
+<pre><code>
+### 8.4 Screenshots (pasta /docs)
+
+Cria pasta `docs/` na raiz e joga:
+- `cover.png` — screenshot da home, 1600x900
+- `mobile.png` — versão mobile
+- `dashboard.png` — se tiver área logada
+
+Referência no README com `![alt](docs/cover.png)`.
+
+**Por que importa:** quem entra no repo julga em 5 segundos pela imagem. Sem screenshot, ele clica fora.
+
+### 8.5 Licença
+
+Settings → General → &quot;Add a license&quot;
+
+- **MIT** — qualquer um pode usar/modificar, só preserva créditos. Padrão pra projeto open.
+- **Apache 2.0** — parecido com MIT mas com proteção de patente.
+- **AGPL-3.0** — força quem usa a abrir o código também. Pesado.
+- **Sem licença** = &quot;todos direitos reservados&quot; implícito. Outros não podem usar legalmente.
+
+**Pra projeto de cliente pago:** sem licença ou &quot;Proprietary&quot; no README. Repo deve ser **privado**.
+**Pra portfólio open:** MIT.
+
+### 8.6 Badges (opcional mas dá um look pro)
+
+No topo do README:
+
+```markdown
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+</code></pre>
+<p>Gerador: <a href="https://shields.io">shields.io</a>.</p>
+<hr>
+<h2>9. COLABORAÇÃO</h2>
+<p>Cenário real: Lucas Passos vai mexer no teu GitHub. Como funciona sem tu dar a chave do cofre?</p>
+<h3>9.1 Os 3 níveis de acesso</h3>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>O que pode</th>
+<th>Quando dar</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Nenhum (público)</strong></td>
+<td>só ler/clonar/forkar</td>
+<td>sempre que repo é público</td>
+</tr>
+<tr>
+<td><strong>Collaborator</strong></td>
+<td>pode commitar direto na main</td>
+<td>só pra parceiros de confiança em projetos compartilhados</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>tudo, incluindo deletar o repo</td>
+<td>NUNCA pra terceiros</td>
+</tr>
+</tbody></table>
+<p><strong>Pra colaboração pontual (caso Lucas) = ele NÃO precisa de acesso de collaborator.</strong> Ele forka, mexe no fork dele, abre Pull Request. Tu revisa e merge.</p>
+<h3>9.2 Fluxo Fork + PR (passo a passo)</h3>
+<p><strong>Do lado do Lucas:</strong></p>
+<ol>
+<li>Abre <code>github.com/ImpulsoDigital063/impulso-digital-nextjs</code></li>
+<li>Clica &quot;Fork&quot; (canto superior direito) → cria cópia em <code>github.com/lspassos1/impulso-digital-nextjs</code></li>
+<li>Clona o fork local: <code>git clone https://github.com/lspassos1/impulso-digital-nextjs.git</code></li>
+<li>Cria branch: <code>git checkout -b feat/profile-readme</code></li>
+<li>Edita, commita, faz push</li>
+<li>No GitHub, vai pro fork dele → clica &quot;Compare &amp; pull request&quot; → escreve descrição → &quot;Create pull request&quot;</li>
+</ol>
+<p><strong>Do teu lado:</strong></p>
+<ol>
+<li>Recebe notificação no email/GitHub</li>
+<li>Abre o PR — vê:<ul>
+<li><strong>Files changed</strong> → diff visual (verde = adicionado, vermelho = removido)</li>
+<li><strong>Conversation</strong> → comentários</li>
+<li><strong>Commits</strong> → lista de commits do PR</li>
+</ul>
+</li>
+<li>Tu pode:<ul>
+<li>Comentar linha por linha</li>
+<li>Pedir mudanças (Request changes)</li>
+<li>Aprovar (Approve)</li>
+<li><strong>Mergear</strong> (Merge pull request)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Se for bom:</strong> clica &quot;Merge pull request&quot; → &quot;Confirm merge&quot;. As mudanças do Lucas viram parte da tua <code>main</code>.</p>
+<h3>9.3 Adicionar collaborator (só se for inevitável)</h3>
+<p>Settings → Collaborators → Add people → busca por username (<code>lspassos1</code>) → escolhe role (Write é o padrão pra colaborar).</p>
+<p><strong>Se fizer isso:</strong> ativa Branch Protection na <code>main</code> (próxima seção). Senão ele commita direto sem revisão.</p>
+<h3>9.4 Branch Protection (proteger a main)</h3>
+<p>Settings → Branches → Add rule → Branch name pattern: <code>main</code></p>
+<p>Marca:</p>
+<ul>
+<li>✅ Require a pull request before merging</li>
+<li>✅ Require approvals (1)</li>
+<li>✅ Require status checks to pass (se tiver CI)</li>
+<li>✅ Do not allow bypassing the above settings</li>
+</ul>
+<p>Resultado: nem tu nem o Lucas conseguem commitar direto em <code>main</code>. Tudo passa por PR. Trava bobeira.</p>
+<h3>9.5 Code review — o que olhar num PR</h3>
+<ul>
+<li>A mudança faz o que a descrição do PR diz?</li>
+<li>Quebrou algo que já funcionava?</li>
+<li>Tem <code>.env</code> ou senha vazada nos arquivos modificados?</li>
+<li>Mensagens de commit fazem sentido?</li>
+<li>Mexeu em arquivo crítico (next.config, supabase, package.json) sem necessidade?</li>
+</ul>
+<p>Se algo te incomoda: comenta na linha, marca &quot;Request changes&quot;. Ele corrige, atualiza o PR (sem fechar — o mesmo PR ganha commits novos), tu re-revisa.</p>
+<hr>
+<h2>10. SEGURANÇA</h2>
+<h3>10.1 Coisas que NUNCA podem ir pro Git</h3>
+<ul>
+<li><code>.env</code>, <code>.env.local</code>, <code>.env.production</code> (têm SENHAS)</li>
+<li>Arquivos <code>*.pem</code>, <code>*.key</code>, <code>*.p12</code></li>
+<li>Tokens hardcoded em código: <code>const KEY = &quot;sk-abc123...&quot;</code>  ← NUNCA</li>
+<li><code>service-account.json</code> (Google), <code>firebase-admin.json</code></li>
+<li>Backups de banco (<code>.sql</code>, <code>.dump</code>)</li>
+<li>Senhas no README ou docs/</li>
+</ul>
+<p><strong>Se vazou:</strong> Git <strong>não esquece</strong>. Deletar o arquivo e dar push NÃO resolve — o histórico ainda tem. Soluções:</p>
+<ol>
+<li><strong>Revoga a chave imediatamente</strong> na origem (Supabase, OpenAI, etc.) — essa é a única coisa que importa</li>
+<li>Opcional: reescrever histórico com <code>git filter-repo</code> ou BFG Repo-Cleaner (complicado)</li>
+</ol>
+<h3>10.2 GitHub Secrets (jeito certo de usar chaves em Actions)</h3>
+<p>Settings → Secrets and variables → Actions → New repository secret.</p>
+<p>Cria <code>SUPABASE_SERVICE_KEY</code> aqui. No workflow do GitHub Actions referencia como <code>${{ secrets.SUPABASE_SERVICE_KEY }}</code>. Nunca aparece em log.</p>
+<h3>10.3 2FA na conta</h3>
+<p>Settings (da conta, não do repo) → Password and authentication → Two-factor authentication.</p>
+<p><strong>OBRIGATÓRIO.</strong> Sem 2FA, basta vazar tua senha e o atacante apaga tudo. Usa app autenticador (Authy, Google Authenticator, 1Password).</p>
+<h3>10.4 SSH keys (alternativa a senha pra push)</h3>
+<p>Hoje tu provavelmente loga com usuário+senha (ou token) toda vez que dá push. Configura SSH:</p>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -C &quot;edubchaves5@gmail.com&quot;
+# enter, enter (sem passphrase pra simplicidade) ou define passphrase
+
+# copia a chave pública
+cat ~/.ssh/id_ed25519.pub
+</code></pre>
+<p>GitHub → Settings → SSH and GPG keys → New SSH key → cola.</p>
+<p>Depois usa URL SSH em vez de HTTPS:</p>
+<pre><code class="language-bash">git remote set-url origin git@github.com:ImpulsoDigital063/projeto.git
+</code></pre>
+<p>Pronto. <code>git push</code> direto sem senha.</p>
+<hr>
+<h2>11. ERROS COMUNS</h2>
+<h3>&quot;rejected — non-fast-forward&quot;</h3>
+<p>Tu commitou local, mas alguém (ou tu de outra máquina) commitou no remote antes. Resolve:</p>
+<pre><code class="language-bash">git pull --rebase
+# resolve conflitos se aparecer
+git push
+</code></pre>
+<h3>Merge conflict</h3>
+<p>Dois commits mexeram nas mesmas linhas. Git pede tua ajuda. Abre o arquivo conflitado:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+texto que TU tem local
+=======
+texto que VEIO do remote
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main
+</code></pre>
+<p>Edita manualmente, escolhe qual versão (ou junta), apaga as marcações <code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code>. Depois:</p>
+<pre><code class="language-bash">git add arquivo-resolvido.tsx
+git commit -m &quot;resolve conflito&quot;
+git push
+</code></pre>
+<h3>Commitei errado, quero desfazer</h3>
+<p><strong>Se ainda NÃO pushou:</strong></p>
+<pre><code class="language-bash">git reset --soft HEAD~1     # desfaz último commit, mantém arquivos modificados
+git reset --hard HEAD~1     # APAGA último commit E mudanças. CUIDADO.
+</code></pre>
+<p><strong>Se já pushou:</strong></p>
+<pre><code class="language-bash">git revert HEAD             # cria commit novo que desfaz o anterior. Seguro.
+git push
+</code></pre>
+<p>NUNCA use <code>git push --force</code> em branch compartilhada. Apaga commits dos outros.</p>
+<h3>Deletei algo sem querer</h3>
+<pre><code class="language-bash">git reflog              # mostra TODOS os movimentos do HEAD (mesmo &quot;deletados&quot;)
+git checkout &lt;hash&gt;     # volta pra antes
+</code></pre>
+<p>Git praticamente não apaga nada de verdade nos primeiros 30 dias. Calma.</p>
+<h3>Pushei pro repo errado</h3>
+<p>Verifica:</p>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<p>Se tá errado:</p>
+<pre><code class="language-bash">git remote set-url origin https://github.com/ImpulsoDigital063/certo.git
+git push
+</code></pre>
+<h3>Esqueci de <code>.gitignore</code> e commitei <code>node_modules</code></h3>
+<pre><code class="language-bash">git rm -r --cached node_modules
+echo &quot;node_modules/&quot; &gt;&gt; .gitignore
+git add .gitignore
+git commit -m &quot;chore: gitignore node_modules&quot;
+git push
+</code></pre>
+<h3>Mensagem do último commit tá errada</h3>
+<pre><code class="language-bash">git commit --amend -m &quot;mensagem certa&quot;
+# se já pushou:
+git push --force-with-lease    # mais seguro que --force
+</code></pre>
+<hr>
+<h2>12. CHEATSHEET</h2>
+<p>Imprime ou cola no Notion. Os comandos que tu vai usar 90% do tempo:</p>
+<pre><code class="language-bash"># começar
+git init                                    # iniciar versionamento
+git clone &lt;url&gt;                             # clonar repo existente
+
+# ver estado
+git status                                  # o que mudou
+git log --oneline -10                       # últimos 10 commits
+git diff                                    # ver mudanças não-staged
+git diff --staged                           # ver mudanças staged
+
+# trabalhar
+git add .                                   # marca todos os arquivos
+git add arquivo.tsx                         # marca um
+git commit -m &quot;feat: nova feature&quot;          # commita
+git push                                    # envia
+git pull                                    # recebe
+
+# branches
+git branch                                  # lista
+git checkout -b feature/x                   # cria + troca
+git checkout main                           # troca
+git merge feature/x                         # mescla (estando em main)
+git branch -d feature/x                     # deleta local
+
+# remote
+git remote -v                               # lista remotes
+git remote add origin &lt;url&gt;                 # adiciona
+git remote set-url origin &lt;url&gt;             # muda url
+
+# desfazer
+git reset --soft HEAD~1                     # desfaz commit, mantém mudanças
+git revert HEAD                             # desfaz commit criando novo
+git restore arquivo.tsx                     # descarta mudanças do arquivo
+git stash                                   # guarda mudanças temporariamente
+git stash pop                               # recupera
+
+# inspecionar
+git log --all --graph --oneline             # árvore visual
+git blame arquivo.tsx                       # quem mexeu em cada linha
+git show &lt;hash&gt;                             # detalhes de um commit
+git reflog                                  # histórico de movimentos do HEAD
+</code></pre>
+<hr>
+<h2>13. GLOSSÁRIO PT-EN</h2>
+<table>
+<thead>
+<tr>
+<th>Inglês (GitHub)</th>
+<th>Português</th>
+<th>O que é</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Repository / Repo</td>
+<td>Repositório</td>
+<td>Projeto versionado</td>
+</tr>
+<tr>
+<td>Commit</td>
+<td>Commit</td>
+<td>&quot;Foto&quot; do projeto num momento</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>Branch / Ramo</td>
+<td>Linha do tempo paralela</td>
+</tr>
+<tr>
+<td>Fork</td>
+<td>Fork / Bifurcação</td>
+<td>Cópia do repo pro teu GitHub</td>
+</tr>
+<tr>
+<td>Pull Request (PR)</td>
+<td>Pedido de Merge</td>
+<td>Proposta de mudança vinda de fork ou branch</td>
+</tr>
+<tr>
+<td>Merge</td>
+<td>Merge / Mesclagem</td>
+<td>Juntar duas branches</td>
+</tr>
+<tr>
+<td>Conflict</td>
+<td>Conflito</td>
+<td>Quando duas mudanças batem na mesma linha</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>Push / Enviar</td>
+<td>Mandar commits locais pro remote</td>
+</tr>
+<tr>
+<td>Pull</td>
+<td>Pull / Puxar</td>
+<td>Trazer commits do remote pro local</td>
+</tr>
+<tr>
+<td>Clone</td>
+<td>Clonar</td>
+<td>Baixar repo completo (com histórico)</td>
+</tr>
+<tr>
+<td>Stage</td>
+<td>Marcar (preparar pra commit)</td>
+<td><code>git add</code></td>
+</tr>
+<tr>
+<td>Stash</td>
+<td>Engavetar</td>
+<td>Guardar mudanças sem commitar</td>
+</tr>
+<tr>
+<td>Issue</td>
+<td>Issue / Tarefa</td>
+<td>Bug ou pedido de feature</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>Release / Lançamento</td>
+<td>Versão publicada com notas</td>
+</tr>
+<tr>
+<td>Tag</td>
+<td>Tag / Marcador</td>
+<td>Etiqueta num commit (ex: v1.0.0)</td>
+</tr>
+<tr>
+<td>Star</td>
+<td>Estrela</td>
+<td>Curtir/favoritar repo</td>
+</tr>
+<tr>
+<td>Watch</td>
+<td>Observar</td>
+<td>Receber notificações do repo</td>
+</tr>
+<tr>
+<td>Following</td>
+<td>Seguir</td>
+<td>Acompanhar outro user</td>
+</tr>
+<tr>
+<td>Achievement</td>
+<td>Conquista</td>
+<td>Medalhinhas (Pull Shark, etc.)</td>
+</tr>
+<tr>
+<td>Pinned</td>
+<td>Fixado</td>
+<td>Repos destacados no perfil</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td>Dono</td>
+<td>Usuário ou organização dona</td>
+</tr>
+<tr>
+<td>Collaborator</td>
+<td>Colaborador</td>
+<td>Quem tem write access</td>
+</tr>
+<tr>
+<td>Action / Workflow</td>
+<td>Action / Fluxo</td>
+<td>Automação (CI/CD)</td>
+</tr>
+<tr>
+<td>Secret</td>
+<td>Secret / Segredo</td>
+<td>Variável protegida (senha, token)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>14. CHECKLIST — &quot;DEIXAR PROFISSIONAL EM 3 HORAS&quot;</h2>
+<p>Marca conforme faz. Ordem importa.</p>
+<h3>Hora 1 — Conta + perfil</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Settings → 2FA ativado</li>
+<li><input disabled="" type="checkbox"> Settings → Profile → foto da Impulso</li>
+<li><input disabled="" type="checkbox"> Settings → Profile → bio: &quot;Agência de tráfego e tecnologia. SaaS, LPs, automação.&quot;</li>
+<li><input disabled="" type="checkbox"> Settings → Profile → website: <code>impulsodigital.app.br</code></li>
+<li><input disabled="" type="checkbox"> Settings → Profile → email público: <code>contato@impulsodigital.app.br</code></li>
+<li><input disabled="" type="checkbox"> Criar repo <code>ImpulsoDigital063/ImpulsoDigital063</code> com README (template em <a href="#71-profile-readme-o-card-de-boas-vindas">§7.1</a>)</li>
+<li><input disabled="" type="checkbox"> SSH key configurada (opcional mas vale, <a href="#104-ssh-keys-alternativa-a-senha-pra-push">§10.4</a>)</li>
+</ul>
+<h3>Hora 2 — Curadoria de repos</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Repositories → lista os 14 → identifica:<ul>
+<li><input disabled="" type="checkbox"> <strong>Manter público</strong> (portfólio bom) — vai limpar</li>
+<li><input disabled="" type="checkbox"> <strong>Tornar privado</strong> (cliente pago, sensível) — Settings → Danger Zone → Change visibility</li>
+<li><input disabled="" type="checkbox"> <strong>Arquivar</strong> (morto mas não dá pra deletar) — Settings → Archive</li>
+<li><input disabled="" type="checkbox"> <strong>Deletar</strong> (lixo de teste) — Settings → Danger Zone → Delete</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Pinned: customizar com os 6 melhores (Customize your pins)</li>
+<li><input disabled="" type="checkbox"> Pros 6 fixados: cada um precisa de description + topics + website (deploy)</li>
+</ul>
+<h3>Hora 3 — README dos 3 principais</h3>
+<p>Pega os 3 repos top (não os 6 — começa pequeno):</p>
+<ul>
+<li><input disabled="" type="checkbox"> Repo 1: README com template de <a href="#83-readme-do-projeto">§8.3</a></li>
+<li><input disabled="" type="checkbox"> Repo 1: screenshot em <code>docs/cover.png</code> + linkar no README</li>
+<li><input disabled="" type="checkbox"> Repo 2: idem</li>
+<li><input disabled="" type="checkbox"> Repo 3: idem</li>
+<li><input disabled="" type="checkbox"> Pra cada um: license (MIT se público) + .gitignore correto + .env.example sem segredo</li>
+</ul>
+<p><strong>Resultado depois das 3 horas:</strong> teu perfil vira &quot;vitrine&quot; em vez de &quot;depósito&quot;. Tu pode mandar a URL pra qualquer cliente, dev parceiro, ou candidato a freelancer.</p>
+<hr>
+<h2>ANEXOS</h2>
+<h3>A. Comandos pra rodar AGORA (validar setup)</h3>
+<pre><code class="language-bash">git --version                       # confirma git instalado
+git config --global user.name       # confirma nome
+git config --global user.email      # confirma email
+ssh -T git@github.com               # testa SSH (deve dizer &quot;Hi ImpulsoDigital063&quot;)
+</code></pre>
+<p>Se algum sair errado:</p>
+<pre><code class="language-bash">git config --global user.name &quot;Eduardo Barros&quot;
+git config --global user.email &quot;edubchaves5@gmail.com&quot;
+</code></pre>
+<h3>B. Pra estudar depois (quando quiser ir mais fundo)</h3>
+<ul>
+<li><strong>Pro Git book</strong> — <code>git-scm.com/book/pt-br/v2</code> — grátis, oficial, em português</li>
+<li><strong>GitHub Skills</strong> — <code>skills.github.com</code> — tutoriais interativos no próprio GitHub</li>
+<li><strong>Conventional Commits</strong> — <code>conventionalcommits.org</code> — padrão de mensagens</li>
+<li><strong>Shields.io</strong> — <code>shields.io</code> — gerador de badges</li>
+</ul>
+<h3>C. Quando chamar o Lucas</h3>
+<p>Depois que tu fez a Hora 1 e Hora 2 do checklist sozinho, <strong>aí</strong> manda o GitHub pra ele. Por dois motivos:</p>
+<ol>
+<li>Tu vai entender o que ele tá fazendo (não vira mágica de programador)</li>
+<li>O escopo do trabalho dele encolhe — sobra só &quot;polir os READMEs dos top 6&quot; e &quot;estruturar o Profile README&quot;, que dá pra fazer em ~3h dele</li>
+</ol>
+<p>Sem isso, tu paga ele (ou queima permuta) pra fazer trabalho de 10min que tu mesmo faz.</p>
+<hr>
+<p><strong>Versão:</strong> 1.0 · 24/05/2026
+<strong>Autor:</strong> Claude (Verbo/Code) · revisão de Eduardo Barros
+<strong>Próxima revisão:</strong> quando tu tiver feito o checklist e identificar lacunas</p>
+
+</body></html>

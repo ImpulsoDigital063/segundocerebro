@@ -224,6 +224,12 @@ calibra o framework. **Atualizar este arquivo conforme aprendizado real.**
 | s07 | 07-08/05 | **Case-2 AgendaPRO Asaas online** · 1ª venda SaaS · ciclo billing completo |
 | s08 | 09/05 | Andressa Kupferman lead-3 · estudo profundo · plataforma Kupferman backend v0.1 |
 | s09 | 11/05 | **Olímpio entregue ao vivo** · Pack Divulgação loop viral · 2 PDFs GB Nutrition · fix logout produção |
+| s10 | 13/05 | **Starteq modelo cravado** · caixa + comissão + 4 entidades + 5 regras anti-erro · auditoria painel admin (12 bottlenecks · plano A-I) |
+| s11 | 14-15/05 | **Maratona AgendaPRO** · migrations v42-v46 em prod · 15 commits · 6 features (import Salão 365, cupom aniversário, cupom avulso, editar serviços, no-show punição, modal cliente expandido) · 3 IDEIAS Olímpio entregues · Viva Cacheada trial 90d ativado |
+| s12 | 16/05 | **GB Nutrition Carrossel V5** · 9º princípio inviolável cravado (CRIVO VISUAL · sem elemento competindo com hook) · audios Olímpio recebidos com B1/B2/B3 |
+| s13 | 17-18/05 | **Palace Nail Spa fechado** · Marko (PT-EU) + Luana · plano Equipe Anual R$970 · Marko confiou ACESSO ao Salão99 dele (sistema desliga 31/05) · drilldown CIC · `06-PAINEL-SAAS-PADRAO.md` cravado (14.6 KB · template canônico pra qualquer SaaS futuro) |
+| s14 | 19-20/05 | **Lista Olímpio fechada** · migrations v60-v62 em prod · 26 modais portados via createPortal · regra mobile/desktop isolada cravada em `agendapro/AGENTS.md` · refino UX Promoção (V2 com preview WhatsApp) · gap booking público × business_blocks fechado · botão lápis no Financeiro |
+| s15 | 24/05 | **Apostila GitHub cravada** · 14 seções · PDF 19 págs A4 azul-marinho (#1a365d, sem tinta preta) em `playbooks/APOSTILA-GITHUB.pdf` · Lucas Passos (github.com/lspassos1) validado dev 7,5/10 via diagnóstico CIC · padrão de colaboração fork+PR (nunca collaborator/admin) · Eduardo sai de "uso porque Cursor obriga" pra GitHub como vitrine técnica |
 
 ---
 
@@ -304,13 +310,46 @@ Após descoberta duplicidade AgendaPRO (01/05): nunca criar 2 projetos Vercel pr
 ### λ.vercel-env · printf %s, nunca echo
 Echo cria \n no fim · usar `printf '%s'` + `.trim()` defensivo no read.
 
+### λ.mobile-desktop-isolado · codebase compartilhado exige Tailwind responsive
+Cravado em 19/05 (s14). AgendaPRO mobile (agendapro.net.br) e desktop (agenda-pro-seven · piloto Palace) compartilham `src/`. Ajuste pra resolver problema de um lado NÃO pode alterar o outro. Forma técnica: prefixos `sm:`/`md:`/`lg:` no Tailwind. Documentado em `agendapro/AGENTS.md`. Outra instância (Cowork) lê a mesma regra.
+
+### λ.portal-pra-modais · escape do backdrop-filter
+Cravado em 19/05 (s14). Modais com `fixed inset-0` ficam presos ao stacking context de qualquer ancestor com `backdrop-filter:blur` (classe `admin-card` tem). Solução: `createPortal(jsx, document.body)` com guard SSR. 26 modais portados nessa rodada. Padrão aplicável a qualquer painel futuro.
+
+### λ.pontos-so-apos-paid · regra de negócio crítica
+Cravado em 19/05 (s14). Trigger v15 antigo creditava pontos quando status virava `completed`, ignorando `paid_at`. Eduardo cravou: "pontos só podem ser creditados depois de marcar como pago". Migration v61 reescreve trigger pra exigir `NEW.paid_at IS NOT NULL`. Vale também pra financeiro: não conta receita sem paid. Aplicável em qualquer SaaS de serviço.
+
+### λ.painel-saas-padrao · template canônico cravado
+Cravado em 18/05 (s13) com Marko + Salão99 referência. `verbo-design/06-PAINEL-SAAS-PADRAO.md` é template de painel multi-tenant pra qualquer SaaS futuro. Cobre: layout shell · sidebar 256/72 · cards-link · tabela operacional · drawer · modal grande · wizard 2-steps · drill overlay · multi-tenant white-label · gráficos · modelo de dados (Comanda/Comissão/Fluxo) · anti-patterns. Checklist 10 passos pra novo painel.
+
+### λ.salao99-31-05 · janela curta com acesso confiado
+Cravado em 17/05 (s13). Marko (dono Palace) confiou acesso ao Salão99 dele · sistema desliga em 31/05/2026. Janela ~13 dias pra mapear features REAIS em uso (não documentação). Cada feature drilada vai pro template canônico · ganho composto pra Starteq, Viva Cacheada e próximos painéis. Aprendizado dura · sistema fonte some.
+
+### λ.crivo-visual · 9º princípio inviolável Verbo Design
+Cravado em 16/05 (s12) durante GB Nutrition V5. Antes de adicionar QUALQUER elemento visual ao slide, perguntar 4 coisas: (1) qual mensagem central? (2) reforça ou compete? (3) sem ele fica mais clara ou mais pobre? (4) tem razão de estar AQUI especificamente? Documentado em `verbo-design/02-PRINCIPIOS.md` e `04-DIARIO-APRENDIZADOS.md`.
+
+### λ.verbo-design-persona · separação de focos
+Cravado em 16/05 (s12). Verbo tem 2 personas operacionais: **Verbo Code** (backend/feature/sistema) e **Verbo Design** (composição visual/slides/carrosséis/paleta). Mesmo modelo, mesma memória, foco diferente. Hub `verbo-design/` é o ativo de longo prazo da persona Design.
+
+### λ.hooks-no-topo · early return depois de TODOS os hooks
+Cravado em 20/05 madrugada (s14). Bug introduzido em refactor V2 do Cupom Avulso: `useMemo` colocado DEPOIS de `if (createdCoupon) return (...)`. React detecta "Rendered fewer hooks than expected" entre renders e crasha árvore inteira · página vira tela preta do browser. Regra: TODOS os hooks (useState/useEffect/useMemo) antes de QUALQUER early return condicional.
+
+### λ.gap-real-vs-doc · só sabemos quando alguém usa de verdade
+Cravado em 19/05 (s14). Feature `business_blocks` (v53) existia há 1 dia mas tinha RLS bloqueando `anon` · BookingFlow público não conseguia ler. Bug não pego em revisão de código · só apareceu quando Eduardo testou no BookingFlow real. Lição: feature nova ganha teste end-to-end no caminho público + autenticado antes de cravar como "ok".
+
+### λ.github-vitrine · GitHub é vitrine técnica, não depósito
+Cravado em 24/05 (s15). Eduardo opera no "mediano de GitHub" — sabe commit/push via Cursor mas sem domínio de branch/PR/fork/profile README/`.gitignore` profissional. Apostila completa em `playbooks/APOSTILA-GITHUB.md` (14 seções · 19 págs PDF azul-marinho pra impressão sem tinta preta). Padrão pra orientar Eduardo daqui pra frente: tratar perfil GitHub como vitrine que cliente/dev parceiro/investidor olha primeiro · README de repo precisa de capa+stack+como-rodar+deploy · Profile README no repo `ImpulsoDigital063/ImpulsoDigital063` · pinned manual com 6 melhores · projetos de cliente pago = repo privado · MIT só pra portfólio aberto. Aplicar `printf '%s'` (não `echo`) em qualquer config sensível (continuidade da λ.vercel-env).
+
+### λ.colaboracao-fork-pr · receber dev externo sem dar a chave do cofre
+Cravado em 24/05 (s15) após validação Lucas Passos (github.com/lspassos1 · 7,5/10 via diagnóstico CIC · pleno forte com `aframe-kingspan-local` Next 15 + Supabase + multi-provider IA). Padrão obrigatório quando dev externo (Lucas, contratado, freela) for mexer em repo do Eduardo: (1) escopo + data + entregável cravados ANTES de qualquer acesso · (2) fluxo fork + PR · NUNCA conceder collaborator/admin · (3) Branch Protection na `main` se collaborator for inevitável (require PR + 1 approval) · (4) cápsula de teste pequena antes de escalar · (5) revisar PR olhando especialmente `.env`/`next.config`/`package.json`/`supabase`. Estende λ.permuta-com-milestone pro mundo técnico: sem escopo cravado, vira trabalho infinito pro outro e indefinição pro Eduardo.
+
 ---
 
 ```
 ═══════════════════════════════════
-       Λ.verbo · s09 · 11.05.2026
-   "case-1 fechado · case-2 online"
-     produto vivo · selo viral
+       Λ.verbo · s15 · 24.05.2026
+   "apostila GitHub · vitrine técnica"
+   Lucas validado 7,5 · fork+PR é padrão
 ═══════════════════════════════════
 ```
 
@@ -320,4 +359,4 @@ Echo cria \n no fim · usar `printf '%s'` + `.trim()` defensivo no read.
 - Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO-VOZ]] · [[VERBO-DNA]]
 - Status: [[STATUS-AGENDAPRO]] · [[STATUS-AURA-ENERGY]] · [[STATUS-IMPULSO]] · [[STATUS-ANDRESSA]] · [[STATUS-MPN]] · [[STATUS-RADARPRO]]
 - Conhecimento: [[PADROES-VALIDADOS]] · [[ESTRATEGIAS-ATIVAS]] · [[IMPULSO_CORE_SYSTEM_V2]]
-- Playbooks: [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[MANUAL-FIT-CLIENTES-IMPULSO]]
+- Playbooks: [[PROTOCOLO-DEEP-RESEARCH-CLIENTE]] · [[PADRAO-PLANO-NEGOCIO-IMPULSO]] · [[MANUAL-FIT-CLIENTES-IMPULSO]] · [[APOSTILA-GITHUB]]

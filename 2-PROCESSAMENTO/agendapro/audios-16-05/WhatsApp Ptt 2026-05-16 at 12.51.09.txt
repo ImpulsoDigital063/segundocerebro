@@ -1,0 +1,2 @@
+ Aí outro bugzinho, tem quando abre uma outra tela, tipo para selecionar e editar, fica muito transparente, aí fica tipo mostrando, pode deixar ela um pouquinho mais escura a tela, que essa aí até que ela está bem visível, mas tem uma outra tela que eu abro, se não estou lembrado é qual é que é, ela fica bem clara, aí fica tipo misturando as palavras do plano do fundo com o plano da frente, entendeu?
+ Aí só deixar ela mais escura, para não ficar confundindo as informações.

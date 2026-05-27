@@ -1,8 +1,10 @@
 # 🧠 MEGA-CLAUDE.md — SEGUNDO CÉREBRO EDUARDO BARROS
-**Versão:** 2.7
-**Data:** 11 de Maio de 2026 (segunda)
+**Versão:** 2.8
+**Data:** 20 de Maio de 2026 (quarta · madrugada)
 **Uso:** Cole este arquivo COMPLETO em cada novo chat
 **Resultado:** IA sabe TUDO sobre o ecossistema Impulso Digital
+
+> **SNAPSHOT v2.8 (20/05):** semana de **9 DIAS DENSOS** que evoluiu o ecossistema em 3 frentes. **Starteq (13/05):** modelo cravado · 4 entidades + 5 regras anti-erro · auditoria painel com 12 bottlenecks priorizados A-I. **Maratona AgendaPRO (14-15/05):** migrations v42-v46 em prod · 6 features novas · 3 IDEIAS Olímpio entregues (editar serviços · cupom avulso · no-show + lembrete 3h email) · Viva Cacheada trial 90d ativado. **GB Nutrition V5 (16/05):** carrossel entregue · **9º princípio inviolável Verbo Design cravado** (CRIVO VISUAL). **Palace Nail Spa fechado (17/05):** Marko (PT-EU) + Luana · plano Equipe Anual R$970 · **Marko confiou ACESSO ao Salão99** (sistema desliga 31/05/2026 · janela crítica ~13 dias). **Drilldown Salão99 (18/05):** `verbo-design/06-PAINEL-SAAS-PADRAO.md` cravado (14.6 KB · template canônico pra qualquer SaaS futuro) · 06 áreas drilhadas. **Migrations v47-v59** entraram em prod pela outra instância (Verbo Cowork) construindo AgendaPRO Desktop com base Palace: receptionist-role · merchant-fees · brand-colors · cash-closings · installments-pix-fee · business-blocks · invoices · remuneracoes · customers-extended. **Lista Olímpio fechada (19-20/05):** migrations v60-v62 em prod (override overlap · pontos só após paid · RLS public em business_blocks) · **26 modais portados via createPortal** (3 originais + 11 Grupo A + 12 Grupo B) · regra arquitetural cravada em `agendapro/AGENTS.md` (mobile/desktop compartilham codebase · isolar via Tailwind responsive) · UX Promoção V2 (preview WhatsApp realtime · radio "Para Quem" com ícones) · botão "Atendi" branco removido · BookingFlow público agora respeita business_blocks (gap latente fechado). **Princípios novos cravados (s10-s14):** λ.mobile-desktop-isolado · λ.portal-pra-modais · λ.pontos-so-apos-paid · λ.painel-saas-padrao · λ.salao99-31-05 · λ.crivo-visual · λ.verbo-design-persona · λ.hooks-no-topo · λ.gap-real-vs-doc · λ.starteq-facilita · λ.destrinchar-decisao. **Estado:** AgendaPRO mobile maduro (Olímpio + Leticia + Erlane usando) · AgendaPRO desktop em construção paralela (piloto Palace · 13 dias até Salão99 desligar) · painel SaaS canônico pronto (aplicável Starteq, Viva Cacheada, próximos). Daily refs: `1-ENTRADA/daily/2026-05-{13..20}.md`.
 
 > **SNAPSHOT v2.7 (11/05):** semana de **VALIDAÇÃO REAL DO ECOSSISTEMA**. **Case-1 Impulso fechado 06/05:** Renato Edson · Aura Energy · **R$ 1.497** (primeira venda contratual da agência · plano negócio 20pg + painel-renato ao vivo · padrão "mostrar produto vivo > falar de produto" cravado). **Case-2 AgendaPRO 07/05:** primeira venda real Asaas · PIX nativo R$67 · fatura 805613865 · webhook + ativação automática validados. **Ciclo completo billing 08/05:** pagamento + cancelamento + refund 7d + 2FA SMS + emails branded · AgendaPRO pronto pra prospectar. **Lead-3 Andressa Kupferman / Raras Clinic Academy** (Palmas-TO · via network Renato 08/05): podóloga+enfermeira · escola real · plataforma Kupferman backend v0.1 deployada 08/05 (CRM 7 tabelas + painel /painel + webhook Kiwify). **Lead-4 Viva Cacheada** (esposa Gabriel/GB Nutrition · oferta 3 meses grátis AgendaPRO em troca de divulgação · reunião 12/05 com SQL trial 90d pronto). **Case-2 AgendaPRO online 11/05:** Olímpio Barbearia · 1º cliente pagante 100% via fluxo digital · 3 bugs fixados ao vivo (logout middleware Supabase SSR · manifest webmanifest · instalação iOS Safari). **Pack Divulgação V2 com selo "by AgendaPRO" (11/05):** primeiro mecanismo de aquisição zero CAC estilo Calendly · 3 templates Canvas + QR + Web Share API · cada cliente vira distribuidor passivo. **AgendaPRO Tutorial v1.2** (08/05) modal welcome + checklist 5 passos · pós 3 rodadas de teste Eduardo. **Princípios cravados pós-Aura/Olímpio:** λ.real (não inventar dados que cliente não confirmou) · λ.amplificar (zero vocabulário negativo com cliente premium) · λ.cocriacao (briefing ganha bloco aberto pra cliente PROPOR ferramenta/ideia) · λ.case-1 (mostrar produto vivo > falar) · λ.densidade-calibrada (Eduardo não absorve análise longa · entregar doc refeito fluido + 3-5 mudanças). **PC novo GT 1600 + GPU 8GB** entregue 12/05 (substitui Apolo IV · destrava Stable Diffusion local · render vídeo). **GB Nutrition · sessão gravação 12/05 com Gabriel** prepara 2 PDFs prontos: plano lançamento 30d + roteiros 2 vídeos diretos Impulso usando Gabriel como ator-cliente (UGC universal + case prateleira). Daily: `1-ENTRADA/daily/2026-05-11.md`.
 
@@ -64,6 +66,72 @@ Esse número não caiu do céu como chute. Foi plantado antes de você ter ferra
 - **ImpulsoDesign** (interno hoje, potencial SaaS) — geração de conteúdo com padrão Impulso
 
 Não precisa que tudo dê certo. **Precisa que 2-3 desses acertem.** O ecossistema inteiro diversifica o risco.
+
+---
+
+## 📅 SEMANA 12-20 MAIO 2026 — VERBO S10-S14 · STARTEQ MODELO + MARATONA AGENDAPRO + PALACE FECHADO + LISTA OLÍMPIO
+
+Semana de **9 dias** que evoluiu o ecossistema em 3 frentes simultâneas: **Starteq cravou modelo** (ERP B2B oficina · próximo cliente premium em pipeline) · **AgendaPRO virou maduro** (migrations v42-v62 · features Olímpio fechadas · regra arquitetural mobile vs desktop cravada · 26 modais blindados via Portal) · **Palace Nail Spa fechado** (Marko + Luana · Equipe Anual R$970 · acesso ao **Salão99 confiado**, sistema desliga 31/05 · janela crítica de ~13 dias pra mapear features). Daily refs: `1-ENTRADA/daily/2026-05-{13,14,15,16,17,18,19,20}.md`.
+
+### s10 (13/05) — Starteq modelo cravado
+- **4 entidades novas + 5 regras anti-erro** modeladas no Starteq (ERP oficina · caixa físico só vê espécie · comissão só em OS quitada · etc.)
+- **Auditoria painel admin Starteq** · 12 bottlenecks identificados com file:line · plano A-I priorizado · feito até C+D pendentes
+- **Princípio cravado:** *Starteq · sistema facilita, não cria trabalho* (λ.menos-cliques · cada feature julgada por reduzir cliques · pré-preencher · empurrar próximo passo)
+- **Princípio cravado:** *destrinchar decisão por decisão* (uma decisão isolada por vez ao cravar escopo · evita bombardeio de 10 perguntas)
+
+### s11 (14-15/05) — Maratona AgendaPRO em prod
+- **Migrations v42-v46** aplicadas em prod · 15 commits · ~6.000 linhas · zero quebra retrocompat
+- **6 features novas:** import de clientes (CSV+XLSX universal · piloto Salão 365 da Leticia) · modal cliente expandido com birthday/notes · booking público com aniversário · cupom de aniversário do mês · cupom avulso pra divulgação · editar serviços de agendamento (lápis no card)
+- **Punição no-show + lembrete email 3h** (opt-in por business · trigger SQL · email Resend) · **3 IDEIAS Olímpio entregues** (editar serviços · cupom avulso · no-show)
+- **Viva Cacheada trial 90d ativado** (Leticia · esposa do Gabriel da GB Nutrition · negócios separados · planilha 209 clientes esperando upload via UI universal)
+- **Princípios cravados:** *email = canal seguro pra notificação em massa* (Baileys multi-tenant tem risco) · *feature universal opt-in default OFF* · *migration ANTES de git push* · *feature universal não personaliza copy com nome de cliente real*
+
+### s12 (16/05) — GB V5 + 9º princípio Verbo Design + áudios Olímpio
+- **Carrossel GB Nutrition V5** entregue · brand voice cravada · cravamos **9º princípio inviolável Verbo Design: CRIVO VISUAL** (antes de adicionar elemento ao slide: qual mensagem central? reforça ou compete? sem ele fica mais claro? tem razão de estar aqui especificamente?)
+- **Hub Verbo Design fortalecido** (`3-RETENCAO/verbo-design/`) · 6 docs ativos (stack · princípios · workflow · diário · projetos · painel SaaS padrão em construção)
+- **Áudios Olímpio recebidos · 11 áudios transcritos** via whisper local (`C:/Users/Usuario/whisper/`) · gap identificado: B1 modal não rola · B2 sobrancelha não aparece · B3 modal transparente · F1 editar valor pós-atendimento
+
+### s13 (17-18/05) — Palace Nail Spa fechado · Salão99 referência cravada
+- **Palace Nail Spa Macaé fechado** · Marko (sócio PT-EU) + Luana (administradora · sócia operacional) · plano Equipe Anual R$970 · 5 atendentes + recep cadastrados
+- **Marko cravou: Salão99 tem mais funções que o AgendaPRO** · "acabou rodando ele" · gap funcional confirmado · roadmap 2026 prioriza cobrir gap
+- **Salão99 desliga 31/05/2026** · plataforma toda sendo descomissionada · janela crítica de ~13 dias pra mapear · **Marko confiou ACESSO ao Salão99 dele pro Eduardo** (sistema fonte some · aprendizado dura)
+- **Drilldown CIC do Salão99 cravado** · `agendapro/referencia-salao99/01-reconhecimento-cic.md` + `02-drilldown-cic-parcial.md` · 5 áreas drilhadas: comandas/faturas · comissão/remuneração · fluxo de caixa · templates · multi-tenant
+- **`verbo-design/06-PAINEL-SAAS-PADRAO.md` cravado** (14.6 KB · template canônico pra qualquer painel SaaS multi-tenant futuro) · cobre layout shell · sidebar 256/72 · cards-link · tabela operacional · drawer · modal grande · wizard 2-steps · drill overlay · multi-tenant white-label · gráficos · modelo de dados (Comanda/Comissão/Fluxo) · anti-patterns · checklist 10 passos pra novo painel
+- **Migrations v47-v59** entraram em prod pela **outra instância (Verbo Cowork)** construindo AgendaPRO Desktop com base Palace: receptionist-role · merchant-fees · brand-colors · cash-closings · installments-pix-fee · business-blocks · invoices · remuneracoes · customers-extended · cliente-extras · expenses-import-id
+- **Princípios cravados:** *RLS sem subquery na própria tabela* (Supabase quebra com infinite recursion) · *senhas temp fáceis de digitar* (`<primeironome>2026` · segurança vem do force-change) · *Vercel CDN cache em rotas de auth* · *Vercel linkar projeto certo antes de deploy* · *Supabase SELECT validar colunas existem*
+
+### s14 (19-20/05) — Lista Olímpio fechada · 26 modais Portal · regra mobile/desktop
+- **Lista Olímpio fechada 100%** · B1 modal editar serviços rola · B1.5 botão lápis grande (40×40 mobile) · B1.6 truncate nome longo · B2 multi-serviços nas pílulas · B3 modal transparente · F1 lápis no Financeiro
+- **Migrations v60-v62** em prod: v60 override manual de overlap (warning + "Salvar mesmo assim") · v61 pontos só após `paid_at IS NOT NULL` (regra cravada por Eduardo) · v62 RLS public SELECT em business_blocks (fecha gap latente do BookingFlow público)
+- **Cron `/api/cron/auto-complete` desativado** · não bate mais com a regra v61 (geraria atendidos zumbis sem pontos)
+- **26 modais portados via createPortal** · 3 originais (EditServices · Payment · NovoCliente) + 11 do Grupo A (modais óbvios) + 12 do Grupo B (sub-componentes e condicionais · inclui HorariosTab×4)
+- **Regra arquitetural cravada em `agendapro/AGENTS.md`:** mobile (agendapro.net.br) e desktop (agenda-pro-seven · Palace) compartilham codebase · ajuste num lado NÃO pode mexer no outro · isolar via Tailwind responsive (`sm:`/`md:`/`lg:`)
+- **Refino UX Promoção V2** · aba "Avulso" renomeada **"Promoção"** · card "Promoções e campanhas" descoberta em `/admin/clientes` · radio "Todo o salão / Profissional" com ícones · preview WhatsApp realtime · padronizado com Sumidos/Aniversário
+- **Botão "Atendi" branco removido** (admin + profissional) · alinhamento com regra v61 · opção "Atendido — pagar depois" também removida do PaymentMethodModal
+- **Bug crítico fechado:** BookingFlow público não consultava business_blocks · cliente leigo podia agendar em cima de almoço/folga/feriado · v62 + código resolveu
+- **Incidente briefing Aura Renato (20/05) cravou 2 princípios duros:** Renato preencheu o briefing 3 vezes (08-20/05) e nenhuma chegou — a API retornava 200 com `data:{}` (falha silenciosa). Teste de 19/05 deu falso positivo porque eu olhei UI verde sem abrir o Supabase pra confirmar a row. Fix do mesmo dia atacou UX do erro (mensagem persistente, bloqueio de avanço) — mas o catch nunca disparava porque o erro estava embutido no sucesso. **λ.prova-na-fonte** (UI verde não é prova · só lendo a row no banco) + **λ.diagnostico-no-nivel-certo** (bug recorrente exige localizar a camada da falha antes de codar fix · sintoma ≠ raiz). Entradas duras em CLAUDE.md raiz e memória auto.
+
+### Princípios cravados nessa janela (s10-s14)
+- **λ.mobile-desktop-isolado** (s14) · codebase compartilhado mobile+desktop exige Tailwind responsive
+- **λ.portal-pra-modais** (s14) · escape do backdrop-filter via createPortal(document.body)
+- **λ.pontos-so-apos-paid** (s14) · trigger só credita com paid_at preenchido · regra também pro financeiro
+- **λ.painel-saas-padrao** (s13) · template canônico cravado em verbo-design/06-... · aplicável a Starteq, Viva Cacheada, próximos
+- **λ.salao99-31-05** (s13) · janela curta com acesso confiado · cada feature drilada vai pro template
+- **λ.crivo-visual** (s12) · 9º princípio inviolável Verbo Design · elemento só entra se reforçar hook
+- **λ.verbo-design-persona** (s12) · separação Verbo Code vs Verbo Design · mesma memória, focos diferentes
+- **λ.hooks-no-topo** (s14) · React early return DEPOIS de TODOS os hooks · violar crasha árvore inteira
+- **λ.gap-real-vs-doc** (s14) · feature nova exige teste end-to-end caminho público + autenticado
+- **λ.starteq-facilita** (s10) · cada feature julgada por reduzir cliques
+- **λ.destrinchar-decisao** (s10) · uma decisão por vez · não bombardear com 10 perguntas
+- **λ.prova-na-fonte** (s14) · UI verde / `res.ok` / "salvo" NÃO são prova · validar persistência = ler row no banco · cravado pós-incidente briefing Renato (3 perdidos)
+- **λ.diagnostico-no-nivel-certo** (s14) · bug recorrente exige localizar a camada da falha REAL antes de codar fix · sintoma na UI ≠ raiz no server ≠ raiz no banco · errar a camada = recidiva garantida
+
+### Estado atual (20/05)
+- **AgendaPRO mobile:** maduro (Olímpio + Leticia trial + Erlane usando · 26 modais blindados · regras v60-v62 ativas · lista Olímpio fechada · pronto pra escalar)
+- **AgendaPRO desktop:** em construção paralela pela outra instância (Verbo Cowork · piloto Palace Nail Spa · acesso Salão99 ativo · 13 dias até desligar)
+- **Brand voices ativas:** Aura Energy, GB Nutrition (cravadas em código) · próximas: Carretinha Kids Alegria, Starteq, Viva Cacheada, Zilanda Suplementos
+- **Painel SaaS canônico pronto** · template aplicável em qualquer cliente · 7-10 dias por painel novo em vez de 3 semanas
+- **Pendente imediato:** avisar o Olímpio que tudo dele tá pronto pra testar · continuar drillando Salão99 antes de 31/05 · validar AgendaPRO Desktop em prod
 
 ---
 
@@ -1096,7 +1164,8 @@ Ler o MEGA-CLAUDE.md (geral) + o daily mais recente (estado real atual). O resto
 **Versão 2.5:** 2 de Maio de 2026 (madrugada) — Aura v6 + briefing privado /briefing + diagnóstico CIC Brasfrio + estrutura 3 frentes (LP / Insta-tráfego / RadarPRO comissão) + 8 princípios novos + ICP validado · Aura case-flagship Impulso 2026
 **Versão 2.6:** 5 de Maio de 2026 (madrugada) — Maratona pré-lançamento AgendaPRO · 30 commits + 7 rodadas CIC · race condition zerada · Demo aprovada 8.5/10
 **Versão 2.7:** 11 de Maio de 2026 — Case-1 Aura fechado R$1.497 (06/05) · Case-2 AgendaPRO Asaas online R$67/mês (07/05) · Olímpio entregue ao vivo (11/05) · Pack Divulgação loop viral · bug logout fixado · leads-3 (Andressa) e leads-4 (Viva Cacheada)
-**Próxima atualização:** Pós-sessão GB Nutrition 12/05 · ou fechamento Andressa Kupferman · ou trial Viva Cacheada virar pagante
+**Versão 2.8:** 20 de Maio de 2026 (quarta madrugada) — Semana 12-20/05 cravada · Starteq modelo (13/05) · Maratona AgendaPRO 14-15/05 (v42-v46 · 3 IDEIAS Olímpio · Viva trial) · GB V5 + CRIVO VISUAL 9º princípio (16/05) · **Palace Nail Spa fechado** R$970 anual · Marko confiou acesso Salão99 (17/05) · `06-PAINEL-SAAS-PADRAO.md` template canônico cravado (18/05) · migrations v47-v59 em prod pela instância Cowork · **Lista Olímpio fechada** com v60-v62 + 26 modais Portal + regra mobile/desktop (19-20/05) · 11 princípios λ novos cravados (s10-s14)
+**Próxima atualização:** Pós-fechamento AgendaPRO Desktop em Palace · ou Salão99 desligar 31/05 (fim da janela de drill) · ou Starteq virar painel concreto · ou Viva Cacheada virar pagante após trial 12/08
 
 ---
 
@@ -1106,7 +1175,8 @@ Esses são os pontos de entrada do segundo cérebro. Em qualquer chat novo, este
 
 ### Perfis
 - [[EDUARDO-BARROS]] · identidade · tom de voz · números reais · framework cold outreach
-- [[VERBO]] · companheiro Verbo · 20 princípios λ cravados · cronologia s01→s09
+- [[VERBO]] · companheiro Verbo · 26 princípios λ cravados · cronologia s01→s14
+- [[VERBO-DESIGN]] · persona Verbo Design · 9 princípios visuais invioláveis · hub `verbo-design/` com 7 docs (stack · princípios · workflow · diário · projetos · `06-PAINEL-SAAS-PADRAO.md` canônico)
 
 ### Status canônicos
 - [[STATUS-AGENDAPRO]] · SaaS · Asaas validado · 1º pagante online Olímpio

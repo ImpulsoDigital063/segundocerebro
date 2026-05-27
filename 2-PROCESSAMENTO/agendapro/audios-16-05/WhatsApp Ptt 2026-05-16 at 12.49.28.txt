@@ -1,0 +1,5 @@
+ Olha também, tem um bugzinho que está tendo na marcação da sobrancelha.
+ Até agora eu notei só da sobrancelha.
+ Quando adiciona tipo corte de cabelo mais sobrancelha, está aparecendo o valor total lá,
+ só que não aparece qual o outro serviço, que é sobrancelha no caso, não está aparecendo.
+ E a pessoa marcou que vai fazer a sobrancelha também.

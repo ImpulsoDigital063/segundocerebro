@@ -1,0 +1,6 @@
+ Vamos marcar segunda-feira à tarde para você vir aqui no meu escritório, o que você acha?
+ Fica aqui na 1206 Sul, tá? Aí a gente agenda aí um horário para as 3 horas da tarde, o que você acha?
+ Você vem aqui, eu já vou ter algo para te mostrar também, já com base nessa conversa que tivemos, tá bom?
+ E também ao longo dos dias de hoje até segunda, se você puder ir soltando informações sobre o que você quer,
+ a sua visão, o que você pensa aqui, enfim, o que você trabalha, as coisas, porque você vai me jogando aqui
+ e eu vou anotando, tá? Aqui dentro do meu sistema e ele já vai ganhando forma, eu já vou criar o front-end aqui, no caso o visual.

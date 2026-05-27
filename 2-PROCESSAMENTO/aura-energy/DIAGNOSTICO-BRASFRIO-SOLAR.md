@@ -53,13 +53,15 @@
 
 ### Outlier que define estratégia
 
-**Reel Renato em câmera (jul/2024):** 50 likes, 11 comentários do círculo social
-- *"Orgulho dms desse cara"*
-- *"O melhor do estado"*
+**Reel Renato @ Belenergy showroom (05/jul/2024):** 50 likes, 11 comentários do círculo social
+- *"Excelentes profissionais"*
+- *"Melhor do estado"*
 - *"Voooooaaaaa"*
 - *"Melhor empresa do Tocantins"* (Renato comentando pelo perfil pessoal)
 
-→ **Renato é o produto.** Network já valida ele como protagonista. **Brasfrio NÃO REPETIU o formato.** Lacuna ÓBVIA pra Aura escalar.
+**⚠️ Correção de premissa (15/05/2026, auditoria CIC reforçada):** Reel NÃO é Renato falando pra câmera. É **B-roll observacional** — Renato caminhando + observando showroom da Belenergy em Goiânia. Áudio original (ambiente + corte musical corporate sutil), zero fala direta. Overlay de texto mínimo (apenas "-Show Room"). Cover frame = plano americano frontal do Renato em ambiente interno com vidraças.
+
+→ **O que viralizou:** presença do sócio em ambiente premium + endorsement implícito de fornecedor sério + ausência de "vender pra câmera" forçado. **Aura herda esse ESTILO** (Renato em ambiente premium, não como apresentador), NÃO o conteúdo específico (visita Belenergy é história Brasfrio).
 
 ### Mix de formatos (15 posts)
 

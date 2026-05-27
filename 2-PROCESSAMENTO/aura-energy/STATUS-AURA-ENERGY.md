@@ -1,9 +1,109 @@
 # STATUS-AURA-ENERGY
 
-**Última atualização:** 2026-05-08 (tarde · briefing v3.1 + Supabase Realtime + painel ao vivo no ar)
+**Última atualização:** 2026-05-15 (noite · carrossel Fio B V11 pronto pra postar · stack Verbo-operador completa cravada)
 **Status do lead:** 🟢 **CLIENTE FECHADO — Frente 1 vendida em R$ 1.497**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato
 **Case status:** 🌟 **case-flagship Impulso 2026 · 1ª venda formal da operação**
+
+---
+
+## 🆕 ENTREGA 15/05 noite · Carrossel Fio B V11 + stack Verbo-operador
+
+**Tese:** Verbo é o operador. Eduardo pede aqui, eu entrego pacote pronto na pasta destino (`Desktop/Posts Aura/`). Stack de 5 frentes ativada pra cravar isso.
+
+### 5 slides finais (Carrossel Fio B · arco AIDA)
+- **Slide 1 — ATENÇÃO** · Capa BLUE Aura + foto painel solar Unsplash + hook "POR QUE SOLAR EM 2026 VAI PAGAR MAIS QUE EM 2027" + watermark AURA Anton + logo perfil destacada
+- **Slide 2 — INTERESSE** · Light cream + "O QUE É O FIO B?" Anton + copy conversacional ("Pensa assim: você tem solar, gera energia... esse 'empréstimo' valia 100%... Agora a Energisa cobra uma taxa nessa troca. Chama Fio B (TUSD)") + watermark TUSD
+- **Slide 3 — EDUCAÇÃO** · BLUE Aura + "% DA SUA GERAÇÃO QUE VIRA TAXA" + gráfico 7 barras 2023→2029+ com VOCÊ ESTÁ AQUI em 2026
+- **Slide 4 — DESEJO** · Light cream + CASO REAL ("R$ 1.573 virou R$ 390/mês · Sistema 11,21 kWp · projeto entregue pela equipe técnica do Renato") + 3 cards Fio B 60/75/90%
+- **Slide 5 — AÇÃO** · Gradient sol + "QUER VER QUANTO ECONOMIZA NO SEU CASO?" voz primeira pessoa Renato + 2 CTAs (Link bio amarelo / WhatsApp azul)
+
+**Pasta destino:** `C:/Users/Usuario/Desktop/Posts Aura/carrossel-fio-b/` (slide-1..5.png + caption.txt + _arquivo/)
+
+### Stack design Verbo-operador (cravada hoje)
+- **Next/og ImageResponse** — render edge sub-segundo · vetorial puro · `/artes/[tema]/[n]`
+- **Puppeteer + Sharp** — `npm run arte`, pixel-perfect HTML/CSS full + processamento foto · scripts/render-arte.mjs e scripts/gen-logo-blur.mjs cravados
+- **Canva MCP** — Brand Kit `kAHJwcGixiU` (Aura Energy) com logos + paleta + Inter setados
+- **Anthropic API + Sistema Copy** — `/copy-gen` rodando com brand voice JSON + framework 7 formatos + token `impulso-copy-afa5154cbce0a0a30d01fcf3`
+- **Replicate Flux** — `npm run img -- <prompt-key>` · 8 prompts cravados pra Aura · smoke test passou (`telhadoSolarCloseUp` 2.2s, $0.003)
+
+### Identidade visual cravada
+- Paleta Aura: **cream + Blue Deep `#0E2152` + amarelo `#F5BC2C` + laranja `#FF8B3D`** (sem dark zone genérico — só cores do logo)
+- Tipografia: **Anton** (condensed pesado pra heros e watermarks) + Inter (body)
+- LogoBlock padronizado top-left em todos os slides · híbrido (perfil_minimal em dark zones · sem fundo em light zones)
+- DotGrid sutil de fundo (camadas premium)
+- Watermark tipográfico Anton temático por slide (palavra-chave gigante atrás)
+
+### Brand Voice + Framework
+- `src/lib/brand-voice/aura.ts` — pilares, tom, vocabulário use/avoid/forbidden, patterns, exemplos, anti-exemplos
+- `src/lib/copy-framework/formats.ts` — 7 formatos com beats obrigatórios (post-instagram, carrossel-capa/slide, story, story-sequencial, meta-ads-topo, whatsapp)
+- `src/lib/copy-engine/` — orquestra brand voice + framework + briefing → Claude Sonnet 4.6 → JSON 3 variações
+- `src/lib/image-prompts/aura.ts` — 8 prompts Flux pra biblioteca Aura
+
+### Análise Brasfrio (CIC) integrada
+- Template "Projeto Finalizado" extraído visualmente (azul-marinho `#0E2A47` + amarelo-mostarda `#F2C014` + tipografia condensed) — herdado em DNA, traduzido pra paleta Aura
+- 5 cases reais Brasfrio documentados (Palmas/Colinas/Dianópolis 6,84-14,64 kWp) — Slide 4 do carrossel usa 11,21 kWp R$1573→R$390
+- Reel @ Belenergy corrigido: é **B-roll observacional**, não Renato falando
+
+### Pendências V11 (quando Renato responder briefing)
+- [ ] Foto real do Renato pro slide 5 (humanização do CTA · viralizou 5,4× no Brasfrio)
+- [ ] Foto real instalação Palmas pro slide 1 (substitui Unsplash genérico)
+- [ ] Variar slide 4 com outros casos reais (Colinas 6,84 / Dianópolis 8,55)
+- **Alternativa imediata:** posso gerar via Flux Dev (`engenheiroSolar` + `casaPalmasComSolar`) — $0.025/img · 5-10s
+
+---
+
+## 🆕 ENTREGA 15/05 tarde · Sistema Copy Impulso V1 (MVP)
+
+**Tese:** copy from-scratch toda vez não escala. Cravar brand voice + framework + LLM = geração consistente que Renato/Olímpio podem operar sem o Eduardo no meio.
+
+### Stack cravada
+- `src/lib/brand-voice/aura.ts` — Brand Voice Aura completa (pilares, tom, vocabulário use/avoid/forbidden, patterns, exemplos, anti-exemplos)
+- `src/lib/brand-voice/types.ts` + `registry.ts` — sistema extensível pra adicionar Carretinha, Starteq, etc
+- `src/lib/copy-framework/formats.ts` — 7 formatos com "beats" obrigatórios (post Insta, carrossel capa/slide, story, story sequencial, Meta Ads topo, WhatsApp)
+- `src/lib/copy-engine/` — prompt builder + Anthropic SDK + parser JSON + validação palavras proibidas
+- `src/app/api/copy-gen/route.ts` — API Node runtime com auth por token
+- `src/app/copy-gen/page.tsx` — form completo + display 3 variações
+
+### Token de acesso (cravado 15/05)
+```
+COPY_GEN_TOKEN = impulso-copy-afa5154cbce0a0a30d01fcf3
+```
+
+### Pendências pra ativar
+- [ ] CIC setar `ANTHROPIC_API_KEY` no Vercel
+- [ ] CIC setar `COPY_GEN_TOKEN` no Vercel
+- [ ] CIC reconectar Canva no Claude (MCP enxergar brand kit Aura `kAHJwcGixiU`)
+- [ ] Smoke test: gerar 1 copy via `/copy-gen` e validar tom/vocabulário
+
+---
+
+## 🆕 ENTREGA 15/05 meio-dia · indexação Google destravada
+
+**Tese:** prompt CIC de 08/05 não foi completado (cota / desistência). Eduardo retomou em 15/05 e fechou via combo navegador + Verbo.
+
+### Cravado hoje
+- ✅ **Propriedade Search Console verificada** via Arquivo HTML (`googlefa4d673ff7a08510.html` em `auraenergy/public/`)
+- ✅ **Sitemap.xml submetido** — status inicial "Não foi possível buscar" (normal nas primeiras horas, atualiza em 24h)
+- ✅ **GA4 confirmado rodando** em produção (ID `G-SGB6JQW3JT` no HTML · env var setada anteriormente pelo CIC)
+- ✅ **Meta verification antiga descoberta** no HTML (`JBHsnG3XL08kijV-IJDPCprEPGJ2AbrxY3Eti3a9zCk` · provavelmente outra sessão CIC)
+- ✅ **2 sitemaps inválidos limpos** (entradas `/casa` e `/` submetidas por engano na tela de Sitemaps)
+- ✅ **Home (/) já consta como indexada** no Search Console (1 página indexada)
+
+### Descoberta técnica importante
+- Projeto Vercel **NÃO está conectado ao GitHub** para auto-deploy. Push pra master não dispara build.
+- Todos deploys vêm via `vercel --prod` CLI. Próxima feature: conectar GitHub no Vercel pra eliminar deploy manual.
+- Hash de verification do método Tag HTML que estava no Vercel (`JBHsnG3XL08kijV...`) **não bate** com a propriedade nova criada por Eduardo (`cf7DShSBie2W9I...`). Caminho que funcionou: Arquivo HTML em `public/`.
+
+### Pendente — amanhã 16/05 após 5h BR
+- [ ] **Indexação manual de 5 URLs** (cota esgotada hoje, reseta 00h Pacific)
+  - `https://auraenergy.vercel.app/`
+  - `https://auraenergy.vercel.app/casa`
+  - `https://auraenergy.vercel.app/comercio`
+  - `https://auraenergy.vercel.app/industria`
+  - `https://auraenergy.vercel.app/rural`
+- Caminho: barra superior do Search Console → cola URL → Enter → "Solicitar indexação"
+- Reusar prompt CIC ou fazer manual (5 cliques)
 
 ---
 
@@ -52,13 +152,14 @@
 
 ## ⏰ AÇÕES AGENDADAS
 
-### Amanhã 09/05 · 5h-7h BR (cota Search Console reseta às 00h Pacific Time)
-- [ ] Solicitar indexação manual de 4 URLs no Search Console (cota diária esgotou hoje)
+### Amanhã 16/05 · após 5h BR (cota Search Console reseta às 00h Pacific Time)
+- [ ] Solicitar indexação manual de 5 URLs (cota diária esgotou em 15/05)
+  - `https://auraenergy.vercel.app/`
   - `https://auraenergy.vercel.app/casa`
   - `https://auraenergy.vercel.app/comercio`
   - `https://auraenergy.vercel.app/industria`
   - `https://auraenergy.vercel.app/rural`
-- 5 cliques · 5min · usar conta `suporteimpulsodigital063@gmail.com`
+- 5 cliques · 5min · conta `edubchaves5@gmail.com`
 
 ### Quando comprar `auraenergy.com.br` (recomendado: HOJE)
 - [ ] Apontar DNS pra Vercel (~5min seguindo wizard)
