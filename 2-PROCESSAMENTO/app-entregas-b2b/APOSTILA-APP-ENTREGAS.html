@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Apostila · App de Entregas B2B — Palmas-TO</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm 18mm 14mm; }
+
+  :root{
+    --ink:        #16305c;   /* corpo — azul-marinho (impresso via C+M+Y, sem preto) */
+    --ink-soft:   #3a5488;   /* secundário */
+    --h1:         #0d2347;
+    --h2:         #133a86;
+    --h3:         #1d5bd6;
+    --green:      #1f7a43;
+    --green-bg:   #e6f5ec;
+    --yellow:     #8a6400;
+    --yellow-bg:  #fdf3d6;
+    --red:        #9e2b3a;
+    --red-bg:     #fdeaed;
+    --blue-bg:    #e9f1fc;
+    --card-bg:    #f4f8ff;
+    --border:     #6f8cc0;
+    --border-soft:#bcccea;
+    --code-bg:    #e8f0fb;
+  }
+
+  *{ box-sizing:border-box; color:var(--ink); }
+  html,body{
+    margin:0; padding:0;
+    font-family:'Segoe UI','Calibri','Helvetica Neue',Arial,sans-serif;
+    font-size:10pt; line-height:1.5; color:var(--ink); background:#fff;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  h1,h2,h3,h4{ font-weight:700; line-height:1.2; page-break-after:avoid; }
+  h1{ color:var(--h1); font-size:21pt; margin:0 0 8pt; padding-bottom:6pt;
+      border-bottom:3px solid var(--h2); page-break-before:always; }
+  h1:first-of-type{ page-break-before:avoid; }
+  h2{ color:var(--h2); font-size:15pt; margin:18pt 0 7pt;
+      border-left:5px solid var(--h2); padding-left:9pt; }
+  h3{ color:var(--h3); font-size:12.5pt; margin:13pt 0 5pt; }
+  h4{ color:var(--h2); font-size:11pt; margin:10pt 0 4pt; }
+  p{ margin:5pt 0; }
+  a{ color:var(--h3); text-decoration:none; }
+  strong,b{ color:var(--h1); font-weight:700; }
+  ul,ol{ margin:4pt 0 7pt; padding-left:20px; }
+  li{ margin-bottom:3pt; }
+  li::marker{ color:var(--h3); }
+  hr{ border:none; border-top:1px solid var(--border); margin:10pt 0; }
+
+  code{ font-family:'Cascadia Code','Consolas',monospace; font-size:9pt;
+        background:var(--code-bg); padding:1px 4px; border-radius:3px;
+        border:1px solid var(--border-soft); }
+  pre{ background:var(--code-bg); border:1px solid var(--border);
+       border-left:3px solid var(--h2); border-radius:3px; padding:8px 11px;
+       margin:6pt 0; font-size:8.5pt; line-height:1.35; overflow-x:auto;
+       page-break-inside:avoid; }
+  pre code{ background:transparent; border:none; padding:0; }
+
+  table{ border-collapse:collapse; width:100%; margin:7pt 0; font-size:9pt;
+         page-break-inside:avoid; }
+  th{ background:var(--h2); color:#eaf2ff !important; font-weight:700;
+      text-align:left; padding:5px 7px; border:1px solid var(--h2); }
+  th *{ color:#eaf2ff !important; }
+  td{ padding:4px 7px; border:1px solid var(--border-soft); vertical-align:top; }
+  tr:nth-child(even) td{ background:#f1f6fd; }
+
+  blockquote{ background:var(--blue-bg); border-left:4px solid var(--h3);
+      padding:6px 12px; margin:6pt 0; color:var(--ink-soft); font-style:italic; }
+  blockquote p{ margin:3px 0; }
+
+  /* CALLOUTS coloridos (sem preto) */
+  .box{ border-radius:6px; padding:8px 12px; margin:8pt 0; page-break-inside:avoid;
+        border:1px solid var(--border-soft); }
+  .box p{ margin:3px 0; }
+  .box .t{ font-weight:700; display:block; margin-bottom:3px; font-size:9.5pt;
+           text-transform:uppercase; letter-spacing:.5px; }
+  .info{ background:var(--blue-bg); border-color:var(--border); }
+  .info .t{ color:var(--h2); }
+  .ok{ background:var(--green-bg); border-color:#9fd3b3; }
+  .ok .t, .ok *{ color:var(--green) !important; }
+  .warn{ background:var(--yellow-bg); border-color:#e6c873; }
+  .warn .t, .warn *{ color:var(--yellow) !important; }
+  .danger{ background:var(--red-bg); border-color:#e2a3ad; }
+  .danger .t, .danger *{ color:var(--red) !important; }
+
+  .card{ background:var(--card-bg); border:1px solid var(--border-soft);
+         border-radius:6px; padding:8px 12px; margin:7pt 0; page-break-inside:avoid; }
+
+  .pill{ display:inline-block; font-size:8pt; font-weight:700; padding:1px 7px;
+         border-radius:10px; border:1px solid var(--h3); color:var(--h3);
+         margin-right:4px; }
+
+  /* CAPA */
+  .cover{ height:255mm; display:flex; flex-direction:column; justify-content:space-between;
+          padding:22mm 8mm; background:linear-gradient(160deg,#fff 0%,var(--blue-bg) 100%);
+          border:2px solid var(--h2); border-radius:8px; page-break-after:always; }
+  .cover .kicker{ color:var(--h3); font-size:11pt; letter-spacing:4px;
+          text-transform:uppercase; font-weight:700; }
+  .cover h1{ border:none; page-break-before:avoid; font-size:40pt; color:var(--h1);
+          margin:0; line-height:1.05; }
+  .cover .sub{ color:var(--h2); font-size:17pt; margin-top:14pt; }
+  .cover .meta{ border-top:2px solid var(--h2); padding-top:12pt; font-size:10.5pt;
+          color:var(--ink); }
+  .cover .tag{ color:var(--ink-soft); font-size:9.5pt; }
+
+  .toc li{ margin-bottom:4pt; }
+  .lead{ font-size:11pt; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<div class="cover">
+  <div>
+    <div class="kicker">Impulso Digital · Estudo Técnico</div>
+  </div>
+  <div>
+    <h1>App de Entregas<br>B2B sob Demanda</h1>
+    <div class="sub">Tudo o que é preciso para construir — Palmas-TO e região</div>
+    <p class="tag" style="margin-top:18pt;">Entrega de encomendas de negócios (não comida) · entregador verificado por antecedentes · rastreamento em tempo real</p>
+  </div>
+  <div class="meta">
+    <strong>Apostila completa de construção</strong><br>
+    Arquitetura · Sistema de GPS · Verificação · Pagamentos · Ferramentas com valores · Jurídico · Custos · Roadmap<br><br>
+    <span class="tag">Versão 1 · 29/05/2026 · Documento interno Impulso Digital</span>
+  </div>
+</div>
+
+<!-- ============ SUMÁRIO ============ -->
+<h1>Sumário</h1>
+<ol class="toc">
+  <li><strong>O Projeto</strong> — o que é, o recorte vencedor, mercado de Palmas</li>
+  <li><strong>O Mapa Local</strong> — quem já roda nesse modelo na região</li>
+  <li><strong>Benchmark TôNoLucro</strong> — o que copiar, evitar e superar</li>
+  <li><strong>Como o App Funciona</strong> — os 3 lados e os fluxos</li>
+  <li><strong>Arquitetura Técnica</strong> — visão geral do sistema</li>
+  <li><strong>Sistema de GPS e Rastreamento</strong> — o coração do produto</li>
+  <li><strong>Matching e Dispatch</strong> — como a corrida chega ao entregador</li>
+  <li><strong>Verificação de Antecedentes</strong> — o diferencial</li>
+  <li><strong>Pagamentos e Split</strong> — como o dinheiro circula</li>
+  <li><strong>Modelo de Dados</strong> — as tabelas principais</li>
+  <li><strong>Stack e Ferramentas (com valores)</strong></li>
+  <li><strong>Estimativa de Custos</strong> — setup e recorrente</li>
+  <li><strong>Jurídico, LGPD e Responsabilidade</strong></li>
+  <li><strong>Modelo de Negócio e Precificação</strong></li>
+  <li><strong>Escopo do MVP e Roadmap</strong></li>
+  <li><strong>Checklist de Execução</strong></li>
+  <li><strong>Perguntas para Cravar com o Cliente</strong></li>
+  <li><strong>Fontes</strong></li>
+</ol>
+
+<!-- ============ 1. O PROJETO ============ -->
+<h1>1. O Projeto</h1>
+<p class="lead">Um marketplace de entregas sob demanda — estilo "Uber/Lalamove de encomendas" — focado em <strong>B2B</strong> (negócio manda, motoboy entrega), com filtro de segurança no cadastro do entregador. Início em Palmas-TO e região.</p>
+
+<h3>Os três lados da plataforma</h3>
+<table>
+  <tr><th>Lado</th><th>Quem é</th><th>O que faz</th></tr>
+  <tr><td><strong>Negócio</strong></td><td>Quem paga (loja, escritório, distribuidora)</td><td>Pede coleta/entrega, acompanha em tempo real, paga</td></tr>
+  <tr><td><strong>Entregador</strong></td><td>Motoboy / motorista (MEI)</td><td>Recebe o pedido, aceita, coleta, entrega, recebe</td></tr>
+  <tr><td><strong>Admin / Operação</strong></td><td>O cliente / a Impulso operando</td><td>Aprova cadastros, roda antecedentes, resolve disputa, vê o caixa</td></tr>
+</table>
+
+<div class="ok">
+  <span class="t">O recorte vencedor</span>
+  <p>Não é "mais um app de entrega". É <strong>B2B de encomenda de valor + entregador verificado por antecedentes + regional</strong>. Esse é o nicho que os gigantes (food) e as transportadoras (carga pesada agendada) não cobrem. É por aqui que se entra sem morrer pisando no líder.</p>
+</div>
+
+<h3>Por que Palmas aguenta esse negócio</h3>
+<p>Palmas tem ~300 mil habitantes. O TôNoLucro nasceu exatamente aqui e provou que <strong>cidade média do interior tem demanda e dá lucro</strong> — a faixa ideal de cidade pra esse modelo é justamente 20 mil a 300 mil habitantes. Some a região (Porto Nacional, Paraíso, Gurupi, Araguaína) e há espaço pra crescer.</p>
+
+<!-- ============ 2. MAPA LOCAL ============ -->
+<h1>2. O Mapa Local — quem já roda nesse modelo na região</h1>
+<p>Mapeei quem opera em Palmas-TO. A leitura é clara: o mercado está <strong>partido em dois</strong>, e há um vão no meio.</p>
+
+<h3>Camada A — Apps de delivery (foco comida/varejo)</h3>
+<table>
+  <tr><th>Player</th><th>O que é</th><th>Observação</th></tr>
+  <tr><td><strong>TôNoLucro</strong></td><td>Nascido em Palmas (2015). +4,3 mi entregas, +40 cidades</td><td>Comprado pela <strong>Magalu</strong>, hoje sob o guarda-chuva do aiqfome. Tem o Tonolucro Express (sob demanda)</td></tr>
+  <tr><td><strong>aiqfome</strong> (Magalu)</td><td>2º maior app de comida do Brasil; chegou a Palmas e se expandiu p/ Gurupi e Porto Nacional</td><td>+60 motoboys; paga até 10% mais ao entregador que a concorrência</td></tr>
+  <tr><td><strong>iFood</strong></td><td>Marketplace nacional de comida</td><td>Domina food; não é encomenda B2B</td></tr>
+  <tr><td><strong>Cliqui</strong></td><td>App <strong>criado em Palmas</strong>; opera Taquaralto e região</td><td>Player local pequeno — vale observar de perto</td></tr>
+  <tr><td><strong>ZéDelivery</strong></td><td>Bebidas geladas</td><td>Nicho específico</td></tr>
+</table>
+
+<h3>Camada B — Logística / transportadoras (carga, agendada)</h3>
+<table>
+  <tr><th>Player</th><th>O que faz</th><th>Observação</th></tr>
+  <tr><td><strong>Atual Cargas</strong></td><td>Fundada em Palmas (1998), referência nacional em carga seca/fracionada</td><td>Carga pesada, não sob demanda</td></tr>
+  <tr><td><strong>TLA Logística</strong></td><td>Cargas fracionadas + armazenagem, com rastreio 24/7</td><td>B2B, mas agendado/contratual</td></tr>
+  <tr><td><strong>Top Logística / Rotex</strong></td><td>Transporte regional, rastreio em tempo real, +100 cidades (Rotex)</td><td>Foco em rota, não entrega rápida urbana</td></tr>
+  <tr><td><strong>Planalto Encomendas</strong></td><td>Encomenda no bagageiro de ônibus (linha SP–Palmas)</td><td>Intermunicipal lento</td></tr>
+</table>
+
+<div class="ok">
+  <span class="t">O vão no meio (a oportunidade)</span>
+  <p>A Camada A faz <strong>comida</strong>. A Camada B faz <strong>carga pesada agendada</strong>. <strong>Ninguém faz o meio:</strong> encomenda de negócio (documento, peça, produto de valor) <strong>sob demanda, rápida, urbana/regional, com entregador verificado</strong>. Esse é o território do projeto.</p>
+</div>
+<div class="danger">
+  <span class="t">Risco competitivo a respeitar</span>
+  <p>TôNoLucro/aiqfome (Magalu) é forte, local e tem os dois lados. <strong>Brigar de frente em "delivery genérico" = perder.</strong> A única entrada viável é o recorte estreito do vão no meio.</p>
+</div>
+
+<!-- ============ 3. BENCHMARK TONOLUCRO ============ -->
+<h1>3. Benchmark — TôNoLucro / Tonolucro Express</h1>
+<p>O cliente citou o TôNoLucro como exemplo. É o melhor benchmark possível: nasceu na porta dele (Palmas) e tem um produto quase idêntico ao que ele quer — o <strong>Tonolucro Express</strong>, entrega sob demanda pra qualquer negócio.</p>
+
+<table>
+  <tr><th>Dimensão</th><th>Como o TôNoLucro faz</th></tr>
+  <tr><td>Fluxo</td><td>Negócio pede coleta/entrega → entregadores próximos notificados → um aceita → coleta → entrega → baixa</td></tr>
+  <tr><td>Veículos</td><td>Moto ou carro (delivery clássico também tem bike)</td></tr>
+  <tr><td>Equipamento</td><td>Cede grátis bag, baú e carretinha (uso/devolução diária); moto é do entregador</td></tr>
+  <tr><td>Rastreio</td><td>Geolocalização em tempo real + <strong>SMS opcional</strong> a cada mudança de status</td></tr>
+  <tr><td>Preço</td><td><strong>Fórmula:</strong> km rodado + ponto de coleta + nº de entregas + retorno ao coleta + tempo de espera</td></tr>
+  <tr><td>Horário</td><td>Todos os dias, 08h–00h</td></tr>
+  <tr><td>Comissão</td><td>Express: entrega mínima R$ 4,99, entregador fica com <strong>75%</strong> (plataforma ~25%). Delivery: 25% comida / 15% industrializado</td></tr>
+  <tr><td>Entregador</td><td>Precisa ser <strong>MEI</strong>. Moto: CNH A + CRLV + RENAVAM. Bike: RG + CPF + maioridade</td></tr>
+  <tr><td>Responsabilidade</td><td><strong>A plataforma assume</strong> perdas (fraude, acidente, endereço inexistente) — embutida na comissão</td></tr>
+</table>
+
+<h3>O que fazer com isso</h3>
+<div class="ok">
+  <span class="t">Copiar (validado pelo líder)</span>
+  <p>Preço por fórmula (km+paradas+espera+retorno) · exigir MEI · requisitos por veículo · rastreio + status · take rate ~20-25% que embute o risco · foco em cidade média.</p>
+</div>
+<div class="warn">
+  <span class="t">Evitar</span>
+  <p>Misturar comida (terreno do iFood/aiqfome) · prometer +40 cidades de cara (eles levaram anos + franquia + Magalu).</p>
+</div>
+<div class="info">
+  <span class="t">Superar — a brecha real</span>
+  <p>Em nenhuma página pública o TôNoLucro destaca <strong>verificação de antecedentes</strong>. Eles pedem documento e MEI, mas não vendem "entregador auditado". Para encomenda de valor de empresa, <strong>confiança no entregador vale mais que pedir um lanche.</strong> Esse é o diferencial pedido pelo cliente — e nem o líder local explora.</p>
+</div>
+
+<!-- ============ 4. COMO FUNCIONA ============ -->
+<h1>4. Como o App Funciona</h1>
+
+<h3>Jornada do Negócio</h3>
+<ol>
+  <li>Cadastra a empresa (CNPJ/dados) e é aprovado.</li>
+  <li>Abre um pedido: endereço de coleta, endereço(s) de entrega, descrição da encomenda, <strong>valor declarado</strong>.</li>
+  <li>App calcula o preço pela fórmula e mostra o ETA estimado.</li>
+  <li>Confirma → o sistema procura e oferta a corrida ao entregador.</li>
+  <li>Acompanha o entregador no mapa em tempo real; recebe status (a caminho da coleta, coletado, a caminho da entrega, entregue).</li>
+  <li>Recebe comprovante (foto + assinatura) e a nota/recibo.</li>
+</ol>
+
+<h3>Jornada do Entregador</h3>
+<ol>
+  <li>Cadastra-se (MEI, CNH, CRLV, selfie, documento).</li>
+  <li>Passa pelo <strong>fluxo de verificação</strong> (antecedentes + CNH) — aprovado ou recusado.</li>
+  <li>Fica online e escolhe a região onde quer rodar.</li>
+  <li>Recebe oferta de corrida (push/som) com origem, destino, valor a receber e distância.</li>
+  <li>Aceita → navega até a coleta → tira foto na coleta → entrega → foto + assinatura do destinatário.</li>
+  <li>Recebe o ganho (descontada a comissão da plataforma).</li>
+</ol>
+
+<h3>Jornada do Admin / Operação</h3>
+<ol>
+  <li>Vê a fila de cadastros pendentes e o <strong>relatório de antecedentes</strong> de cada entregador.</li>
+  <li>Aprova ou recusa (com trilha de quem aprovou — padrão supervisor com PIN).</li>
+  <li>Monitora as entregas ao vivo num painel (mapa + lista).</li>
+  <li>Resolve disputas (extravio, atraso) com base na trilha de auditoria.</li>
+  <li>Acompanha o caixa: faturamento, comissões, repasses.</li>
+</ol>
+
+<!-- ============ 5. ARQUITETURA ============ -->
+<h1>5. Arquitetura Técnica</h1>
+<p>A boa notícia: <strong>~70% desse app a Impulso já sabe construir</strong> com a stack que usa hoje (Next.js + Supabase + Vercel). Os ~30% novos estão concentrados em quatro peças (GPS em tempo real, dispatch, split de pagamento, integrações de verificação) — e quase todas são <em>integração de terceiro</em>, não invenção do zero.</p>
+
+<h3>Visão de alto nível</h3>
+<pre><code>┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│  App NEGÓCIO │   │ App ENTREGADOR│   │ Painel ADMIN │
+│  (web/PWA)   │   │   (PWA mobile)│   │   (web)      │
+└──────┬───────┘   └──────┬───────┘   └──────┬───────┘
+       │                  │ GPS a cada Xs    │
+       └─────────┬────────┴─────────┬────────┘
+                 ▼                  ▼
+        ┌───────────────────────────────────┐
+        │   Next.js (API / Server Actions)   │
+        └───────────────┬───────────────────┘
+                        ▼
+   ┌─────────────────────────────────────────────┐
+   │  SUPABASE                                     │
+   │  Postgres + PostGIS  ·  Auth/RLS              │
+   │  Realtime (rastreio) ·  Storage (fotos/docs)  │
+   └───────┬───────────────────────────┬──────────┘
+           ▼                           ▼
+   ┌───────────────┐          ┌──────────────────┐
+   │ Integrações   │          │ Pagamento (split)│
+   │ Mapas/Rotas   │          │ Asaas            │
+   │ Antecedentes  │          └──────────────────┘
+   │ CNH/Veículo   │
+   └───────────────┘</code></pre>
+
+<h3>Matriz de capacidade — o que já temos × o que é novo</h3>
+<p><span class="pill">🟢 dominamos</span> <span class="pill">🟡 base, adaptar</span> <span class="pill">🔴 território novo</span></p>
+<table>
+  <tr><th>Componente</th><th>Status</th><th>Nota</th></tr>
+  <tr><td>Auth + multi-tenant + papéis/permissões</td><td>🟢</td><td>Já feito no Palace/AgendaPRO</td></tr>
+  <tr><td>Painel admin SaaS</td><td>🟢</td><td>Padrão canônico documentado</td></tr>
+  <tr><td>Cadastro com aprovação + PIN supervisor</td><td>🟢</td><td>Reusar pro "aprovar entregador"</td></tr>
+  <tr><td>Financeiro / caixa / comissão</td><td>🟢</td><td>Starteq/Palace</td></tr>
+  <tr><td>Mobile-first tri-modal</td><td>🟢</td><td>Entregador é 100% mobile</td></tr>
+  <tr><td>Upload de foto/documento + Storage</td><td>🟢</td><td>CNH/CRLV/selfie/foto-entrega</td></tr>
+  <tr><td>PDF + compartilhar WhatsApp</td><td>🟢</td><td>Comprovante de entrega</td></tr>
+  <tr><td>Precificação por fórmula</td><td>🟡</td><td>Regra de negócio nova, simples</td></tr>
+  <tr><td>Trilha de auditoria (foto+GPS+assinatura)</td><td>🟡</td><td>Assinatura via canvas</td></tr>
+  <tr><td>Push notification</td><td>🟡</td><td>Crítico pro entregador</td></tr>
+  <tr><td><strong>GPS em tempo real</strong></td><td>🔴</td><td>Maior risco — validar primeiro</td></tr>
+  <tr><td><strong>Mapa + rotas + ETA</strong></td><td>🔴</td><td>Integrar Mapbox/Google</td></tr>
+  <tr><td><strong>Matching / dispatch</strong></td><td>🔴</td><td>Lógica nova (PostGIS ajuda)</td></tr>
+  <tr><td><strong>Pagamento com split</strong></td><td>🔴</td><td>Integrar Asaas</td></tr>
+  <tr><td><strong>Antecedentes + CNH</strong></td><td>🔴</td><td>FlagCheck + Infosimples</td></tr>
+  <tr><td>App nativo (loja)</td><td>🟡</td><td>Só fase 2, se GPS exigir</td></tr>
+</table>
+
+<!-- ============ 6. GPS ============ -->
+<h1>6. Sistema de GPS e Rastreamento</h1>
+<p class="lead">É o coração do produto. Se isso falhar, o app morre. Não é "mais uma tela" — é engenharia de verdade. Aqui vai como funciona, peça por peça.</p>
+
+<h3>6.1 Captura da posição (no app do entregador)</h3>
+<p>O navegador/app do entregador usa a <strong>Geolocation API</strong> (<code>navigator.geolocation.watchPosition</code>) pra ler latitude/longitude do GPS do celular a cada poucos segundos e mandar pro servidor.</p>
+<div class="warn">
+  <span class="t">Limite do PWA</span>
+  <p>No PWA (web), o GPS em <strong>segundo plano</strong> é limitado — o navegador suspende quando a tela apaga. Funciona bem com o app aberto/tela ligada (que é o normal durante a corrida). Para rastreio contínuo com o celular no bolso, a fase 2 pede <strong>app nativo</strong> (React Native/Expo) com permissão de localização em background.</p>
+</div>
+
+<h3>6.2 Transporte em tempo real</h3>
+<p>A posição é gravada no Postgres e empurrada ao vivo via <strong>Supabase Realtime</strong> (WebSocket) para o negócio (que vê o entregador chegando) e para o painel admin (que monitora a frota). Sem polling pesado — o canal Realtime entrega a atualização no instante em que ela chega.</p>
+
+<h3>6.3 O componente geoespacial — PostGIS</h3>
+<p>O Postgres do Supabase suporta <strong>PostGIS</strong>, a extensão geoespacial. Com ela o banco responde nativamente a perguntas como "quais entregadores online estão num raio de 3 km do ponto de coleta, ordenados por distância". Isso é a <strong>base do matching</strong> e roda dentro do banco, rápido.</p>
+<pre><code>-- exemplo conceitual: entregadores online perto da coleta
+SELECT id, nome,
+  ST_Distance(posicao, ST_MakePoint(:lng,:lat)::geography) AS metros
+FROM entregadores
+WHERE status = 'online'
+  AND ST_DWithin(posicao, ST_MakePoint(:lng,:lat)::geography, 3000)
+ORDER BY metros ASC;</code></pre>
+
+<h3>6.4 Mapa, rota e ETA</h3>
+<p>Para desenhar o mapa, traçar a rota e calcular o tempo estimado (ETA), integra-se um provedor de mapas. Duas opções, comparadas na seção 11. <strong>Para o MVP, o Mapbox tende a sair de graça</strong> (free tier generoso) e é a recomendação.</p>
+
+<h3>6.5 Máquina de estados da entrega (prova-na-fonte)</h3>
+<p>O status só avança com <strong>evidência</strong>, nunca com clique solto:</p>
+<pre><code>pendente → ofertada → aceita → a_caminho_coleta
+        → coletada (FOTO obrigatória)
+        → a_caminho_entrega
+        → entregue (FOTO + ASSINATURA do destinatário)
+        → fechada (pagamento liquidado)</code></pre>
+<div class="info">
+  <span class="t">Regra de ouro</span>
+  <p>"Entregue" no app tem que bater com a realidade. O marco de entrega exige foto e assinatura — não basta o entregador clicar "entreguei". Isso é prova jurídica e mata 90% das disputas.</p>
+</div>
+
+<!-- ============ 7. MATCHING ============ -->
+<h1>7. Matching e Dispatch</h1>
+<p>É a lógica que pega um pedido e o entrega ao motoboy certo. Fluxo recomendado:</p>
+<ol>
+  <li>Pedido entra → PostGIS lista entregadores online dentro do raio, ordenados por distância.</li>
+  <li>Sistema <strong>oferta ao mais próximo</strong> (push + som). Ele tem um <strong>timeout</strong> (ex.: 30s) pra aceitar.</li>
+  <li>Se recusar ou estourar o tempo → oferta ao próximo da fila.</li>
+  <li>Aceito → corrida trava pra aquele entregador e o negócio é notificado.</li>
+  <li>Se ninguém aceitar em N rodadas → avisa o negócio e o admin (pico de demanda / poucos entregadores).</li>
+</ol>
+<div class="card">
+  <p><strong>Decisão de produto:</strong> ofertar a um por vez (mais justo, menos caos) ou a vários ao mesmo tempo "primeiro que aceitar leva" (mais rápido, mas gera corrida-fantasma). Para B2B com poucos entregadores no início, <strong>um por vez com timeout curto</strong> é o mais saudável.</p>
+</div>
+
+<!-- ============ 8. ANTECEDENTES ============ -->
+<h1>8. Verificação de Antecedentes — o Diferencial</h1>
+<p>É o requisito que o cliente nomeou e o que posiciona o app. Não se constrói do zero — <strong>integra-se via API</strong>. O combo que recomendo no cadastro do entregador:</p>
+
+<table>
+  <tr><th>#</th><th>Verificação</th><th>Fornecedor</th><th>O que barra</th></tr>
+  <tr><td>1</td><td>CPF + antecedentes criminais</td><td>FlagCheck</td><td>Histórico de roubo de carga, furto, receptação, estelionato</td></tr>
+  <tr><td>2</td><td>Validação de CNH (RENACH/Senatran)</td><td>Infosimples</td><td>CNH inexistente, vencida, suspensa, categoria errada</td></tr>
+  <tr><td>3</td><td>CRLV do veículo</td><td>Infosimples</td><td>Moto/carro irregular ou com restrição</td></tr>
+  <tr><td>4</td><td>Selfie + prova de vida</td><td>idwall (fase 2)</td><td>Laranja / cadastro com documento de terceiro</td></tr>
+  <tr><td>5</td><td>Re-verificação periódica</td><td>—</td><td>Antecedente não é "uma vez"; rodar a cada X meses</td></tr>
+</table>
+
+<div class="info">
+  <span class="t">Onde isso roda</span>
+  <p>Tudo dentro do <strong>fluxo de aprovação do cadastro</strong> (componente que a Impulso já domina do Palace — aprovação com PIN de supervisor). FlagCheck devolve o relatório em ~30s. O custo somado por entregador aprovado fica em ~R$ 5 a R$ 10 (ver seção 12).</p>
+</div>
+<div class="danger">
+  <span class="t">LGPD — dado sensível</span>
+  <p>Antecedente criminal é <strong>dado pessoal sensível</strong>. Exige consentimento explícito do entregador, base legal e guarda segura. O relatório fica <strong>só no admin</strong>, nunca é exposto ao negócio que contrata, e nunca vai em URL ou print.</p>
+</div>
+
+<!-- ============ 9. PAGAMENTOS ============ -->
+<h1>9. Pagamentos e Split</h1>
+<p>O desafio: cobrar o negócio e repassar ao entregador <strong>descontando a comissão automaticamente</strong>. Isso se chama <strong>split de pagamento</strong>, e o <strong>Asaas</strong> resolve bem no Brasil.</p>
+<ul>
+  <li>Cada entregador vira uma <strong>subconta</strong> Asaas (o KYC do gateway some com parte do trabalho de verificação financeira).</li>
+  <li>Negócio paga (Pix/cartão) → Asaas desconta a taxa → divide o líquido → repassa a comissão à plataforma e o ganho ao entregador, automático.</li>
+  <li>Pix, boleto e cartão suportados.</li>
+</ul>
+<div class="ok">
+  <span class="t">Atalho pro MVP</span>
+  <p>Não precisa de split automático no dia 1. Dá pra <strong>cobrar pela plataforma e fazer repasse em lote (semanal)</strong> no MVP, e automatizar o split na fase 1.5. Reduz a complexidade do lançamento sem travar nada.</p>
+</div>
+
+<!-- ============ 10. MODELO DE DADOS ============ -->
+<h1>10. Modelo de Dados — tabelas principais</h1>
+<table>
+  <tr><th>Tabela</th><th>Guarda</th></tr>
+  <tr><td><code>negocios</code></td><td>Empresa cliente: CNPJ, nome, endereço, contato, status</td></tr>
+  <tr><td><code>entregadores</code></td><td>Dados, veículo, CNH, status (pendente/aprovado/online/offline), <code>posicao</code> (PostGIS), subconta Asaas</td></tr>
+  <tr><td><code>verificacoes</code></td><td>Resultado de cada checagem (antecedentes, CNH, CRLV), data, aprovador</td></tr>
+  <tr><td><code>pedidos</code></td><td>Coleta, entrega(s), descrição, valor declarado, preço calculado, status, negócio</td></tr>
+  <tr><td><code>ofertas</code></td><td>Histórico de ofertas de corrida (entregador, aceite/recusa/timeout)</td></tr>
+  <tr><td><code>rastreios</code></td><td>Pontos de GPS do trajeto (entregador, lat/lng, timestamp)</td></tr>
+  <tr><td><code>comprovantes</code></td><td>Foto da coleta, foto da entrega, assinatura</td></tr>
+  <tr><td><code>pagamentos</code></td><td>Cobrança, taxa, split, repasse, status de liquidação</td></tr>
+  <tr><td><code>usuarios</code> / <code>papeis</code></td><td>Auth e permissões (negócio, entregador, admin, operador)</td></tr>
+</table>
+
+<!-- ============ 11. STACK E FERRAMENTAS ============ -->
+<h1>11. Stack e Ferramentas (com valores)</h1>
+<p class="lead">Valores aproximados de maio/2026. Câmbio de referência ~R$ 5,60/US$. Sempre confirmar na página oficial antes de fechar.</p>
+
+<h3>Stack recomendada</h3>
+<table>
+  <tr><th>Camada</th><th>Escolha</th><th>Por quê</th></tr>
+  <tr><td>Front / Back</td><td>Next.js + TypeScript + Tailwind</td><td>Padrão da casa, tri-modal cravado</td></tr>
+  <tr><td>App entregador</td><td>PWA mobile-first (MVP) → nativo Expo (fase 2)</td><td>Rápido/barato no início</td></tr>
+  <tr><td>Banco / Auth / Realtime / Storage</td><td>Supabase (Postgres + PostGIS)</td><td>Realtime cobre rastreio; PostGIS cobre geoespacial</td></tr>
+  <tr><td>Mapa / rotas / ETA</td><td>Mapbox (1ª opção) / Google Maps</td><td>Mapbox mais barato em volume</td></tr>
+  <tr><td>Pagamento</td><td>Asaas (split + Pix + subconta)</td><td>Mais simples no Brasil pra marketplace</td></tr>
+  <tr><td>Antecedentes</td><td>FlagCheck</td><td>Feito pra motoboy, pay-per-use</td></tr>
+  <tr><td>CNH / veículo</td><td>Infosimples (Senatran/RENACH)</td><td>Validação oficial</td></tr>
+  <tr><td>Push / SMS</td><td>Web Push (grátis) + SMS opcional</td><td>Notificação de corrida e status</td></tr>
+  <tr><td>Hospedagem</td><td>Vercel + Supabase</td><td>Padrão da casa</td></tr>
+</table>
+
+<h3>Mapas — Mapbox × Google (comparação de custo)</h3>
+<table>
+  <tr><th>Item</th><th>Mapbox</th><th>Google Maps</th></tr>
+  <tr><td>Carregamento de mapa</td><td><strong>50.000/mês grátis</strong>, depois US$ 5/1.000 (cai a US$ 3/1.000 acima de 200k)</td><td>Free tier por SKU (10k Essentials/mês); <strong>acabou o crédito universal de US$ 200</strong></td></tr>
+  <tr><td>Rotas (Directions)</td><td><strong>100.000/mês grátis</strong>, depois US$ 2/1.000</td><td>US$ 5/1.000</td></tr>
+  <tr><td>Matriz de distância</td><td>Incluso no free generoso</td><td>US$ 5/1.000 elementos</td></tr>
+  <tr><td>App mobile</td><td>25.000 usuários ativos/mês grátis</td><td>Por SKU</td></tr>
+  <tr><td><strong>Custo típico de MVP</strong></td><td><strong>≈ R$ 0</strong> (cabe no free tier)</td><td>Pode passar do free conforme o uso</td></tr>
+</table>
+<div class="ok">
+  <span class="t">Recomendação</span>
+  <p>Começar com <strong>Mapbox</strong>. Um MVP com 50k carregamentos + 100k rotas/mês roda a custo zero. Google entra só se precisar de precisão/cobertura específica que justifique.</p>
+</div>
+
+<h3>Pagamento — Asaas (tarifas)</h3>
+<table>
+  <tr><th>Meio</th><th>Tarifa</th></tr>
+  <tr><td>Pix</td><td>R$ 1,99 fixo (30 grátis/mês)</td></tr>
+  <tr><td>Boleto</td><td>R$ 3,49</td></tr>
+  <tr><td>Cartão de crédito</td><td>1,99% + R$ 0,49 (promo 3 meses) → depois 2,99% + R$ 0,49</td></tr>
+  <tr><td>Split</td><td>Desconta a taxa <strong>antes</strong> de dividir; repasse automático às subcontas. Sem custo extra entre contas Asaas</td></tr>
+</table>
+
+<h3>Verificação</h3>
+<table>
+  <tr><th>Serviço</th><th>Valor</th></tr>
+  <tr><td>FlagCheck — antecedentes por CPF</td><td><strong>R$ 3,33/consulta</strong>, sem mensalidade, relatório ~30s</td></tr>
+  <tr><td>Infosimples — CNH / CRLV</td><td>Por uso (preço cai com volume); <strong>franquia mínima R$ 100/mês</strong></td></tr>
+  <tr><td>idwall — prova de vida (fase 2)</td><td>Contrato enterprise (sob cotação)</td></tr>
+</table>
+
+<h3>Infraestrutura</h3>
+<table>
+  <tr><th>Serviço</th><th>Valor</th></tr>
+  <tr><td>Supabase</td><td>Free no começo · Pro US$ 25/mês (~R$ 140)</td></tr>
+  <tr><td>Vercel</td><td>Hobby grátis · Pro US$ 20/mês (~R$ 110)</td></tr>
+  <tr><td>Domínio .com.br</td><td>~R$ 40/ano</td></tr>
+  <tr><td>SMS de status (opcional)</td><td>~R$ 0,08–0,12 por SMS (Zenvia/Twilio)</td></tr>
+  <tr><td>Apple Developer (só app nativo, fase 2)</td><td>US$ 99/ano (~R$ 550)</td></tr>
+  <tr><td>Google Play (só app nativo, fase 2)</td><td>US$ 25 (taxa única, ~R$ 140)</td></tr>
+</table>
+
+<!-- ============ 12. CUSTOS ============ -->
+<h1>12. Estimativa de Custos</h1>
+
+<h3>Custo recorrente mensal — MVP rodando pequeno em Palmas</h3>
+<table>
+  <tr><th>Item</th><th>Custo/mês (estimado)</th></tr>
+  <tr><td>Mapbox</td><td>R$ 0 (free tier)</td></tr>
+  <tr><td>Supabase Pro</td><td>~R$ 140</td></tr>
+  <tr><td>Vercel Pro</td><td>~R$ 110</td></tr>
+  <tr><td>Infosimples (franquia mínima)</td><td>R$ 100</td></tr>
+  <tr><td>FlagCheck</td><td>~R$ 3,33 × nº de entregadores novos no mês</td></tr>
+  <tr><td>Asaas</td><td>% por transação (sai do faturamento, não é custo fixo)</td></tr>
+  <tr><td><strong>Base fixa aproximada</strong></td><td><strong>~R$ 350–450/mês</strong> + variável por uso</td></tr>
+</table>
+
+<h3>Custo por entregador aprovado (uma vez)</h3>
+<table>
+  <tr><th>Verificação</th><th>Custo</th></tr>
+  <tr><td>Antecedentes (FlagCheck)</td><td>R$ 3,33</td></tr>
+  <tr><td>CNH + CRLV (Infosimples)</td><td>~R$ 2 a 6 (dentro da franquia)</td></tr>
+  <tr><td><strong>Total por entregador</strong></td><td><strong>~R$ 5 a 10</strong></td></tr>
+</table>
+
+<div class="warn">
+  <span class="t">Quem paga o quê</span>
+  <p>Esses custos recorrentes são <strong>do cliente/operação</strong>, não da Impulso. Entram na conta do modelo de negócio dele (cobrar taxa de adesão do entregador OU embutir na comissão). Deixar isso explícito na proposta evita mal-entendido depois.</p>
+</div>
+
+<!-- ============ 13. JURÍDICO ============ -->
+<h1>13. Jurídico, LGPD e Responsabilidade</h1>
+<div class="danger">
+  <span class="t">O maior risco do negócio</span>
+  <p>Pelo <strong>CDC</strong>, a plataforma responde <strong>solidariamente</strong> pelos atos de representantes autônomos — mesmo sem vínculo. Se o motoboy some com a encomenda, a plataforma <strong>pode</strong> ser responsabilizada. Já há decisão judicial nesse sentido contra app de entrega.</p>
+</div>
+<p>Como o próprio líder (TôNoLucro) lida com isso: <strong>não foge — precifica.</strong> A comissão embute o custo de perda. O app precisa fazer igual. Mecanismos de blindagem que entram no produto:</p>
+<ul>
+  <li><strong>Exigir MEI</strong> do entregador (afasta vínculo trabalhista).</li>
+  <li><strong>Take rate</strong> que cobre a perda (~20-25%) ou <strong>seguro de carga</strong> por faixa de valor.</li>
+  <li><strong>Teto de valor declarado</strong> por categoria de veículo.</li>
+  <li><strong>Trilha de auditoria</strong> (foto coleta + GPS + foto/assinatura entrega) = prova jurídica.</li>
+  <li><strong>Termo de responsabilidade</strong> no aceite de cada corrida.</li>
+</ul>
+<p>Base legal complementar: <strong>Lei 11.442/2007</strong> (transporte rodoviário de cargas) e <strong>Lei 13.640/2018</strong> (apps de mobilidade — exige atestado de antecedentes validado <em>e revalidado</em>).</p>
+
+<!-- ============ 14. MODELO DE NEGOCIO ============ -->
+<h1>14. Modelo de Negócio e Precificação</h1>
+<h3>Como o app fatura (modelos, não excludentes)</h3>
+<ul>
+  <li><strong>Comissão %</strong> por entrega (padrão marketplace, 15–25%, igual Lalamove/TôNoLucro).</li>
+  <li><strong>Preço por km/zona</strong> cobrado do negócio (mais previsível — bom pra B2B).</li>
+  <li><strong>Assinatura</strong> do negócio (pacote mensal pra quem manda muito).</li>
+  <li><strong>Taxa de adesão/verificação</strong> do entregador (cobre o custo de antecedente).</li>
+</ul>
+<div class="info">
+  <span class="t">Recomendação pro B2B</span>
+  <p>Empresa quer <strong>previsibilidade de custo</strong>, não leilão de corrida. Testar <strong>preço por zona/km + comissão pequena</strong> em vez de só comissão variável.</p>
+</div>
+
+<h3>Precificação do projeto (para a Impulso)</h3>
+<p>Categoria: <strong>software/SaaS sob medida premium</strong> — não é site. Tem GPS realtime, dispatch, split, integrações. Modelo Impulso: <strong>entrada 50% + saldo flexível + 1 bônus recorrente</strong>, sem descer o preço-âncora. Formato que faz mais sentido: <strong>MVP fechado + mensalidade de operação/evolução</strong> (produto vivo, não one-shot).</p>
+<div class="warn">
+  <span class="t">Número fechado só depois do escopo</span>
+  <p>Sem responder as perguntas da seção 17, qualquer valor é chute. A <strong>Fase 0 (spike técnico)</strong> pode ser vendida como etapa paga de validação — protege a Impulso de cravar prazo no escuro e o cliente de pagar por algo não validado.</p>
+</div>
+
+<!-- ============ 15. MVP E ROADMAP ============ -->
+<h1>15. Escopo do MVP e Roadmap</h1>
+<h3>MVP — o mínimo pra rodar em Palmas e provar</h3>
+<ol>
+  <li>Cadastro de Negócio + cadastro de Entregador.</li>
+  <li><strong>Fluxo de aprovação com antecedentes + CNH</strong> (o diferencial — não corta).</li>
+  <li>Pedido de entrega (origem, destino, descrição, valor declarado).</li>
+  <li>Precificação por fórmula (km + paradas + espera + retorno).</li>
+  <li>Matching simples (ofertar ao online mais próximo) + aceite.</li>
+  <li>Rastreio em tempo real no mapa + status.</li>
+  <li>Trilha: foto na coleta + foto/assinatura na entrega.</li>
+  <li>Pagamento: Pix + repasse em lote (split automático na fase 1.5).</li>
+  <li>Painel admin: aprovar cadastro, ver antecedente, acompanhar entregas ao vivo, caixa/comissão.</li>
+</ol>
+
+<h3>Roadmap por fases</h3>
+<table>
+  <tr><th>Fase</th><th>Foco</th></tr>
+  <tr><td><strong>Fase 0 — Spike (de-risk)</strong></td><td>Protótipo de rastreio + matching com PostGIS/Realtime. Decidir Mapbox×Google. Validar GPS no PWA. <strong>Antes de cravar prazo/preço.</strong></td></tr>
+  <tr><td><strong>Fase 1 — MVP</strong></td><td>Os 9 itens acima. Rodar com carteira fechada em Palmas.</td></tr>
+  <tr><td><strong>Fase 1.5 — Pagamento maduro</strong></td><td>Split automático Asaas.</td></tr>
+  <tr><td><strong>Fase 2 — Escala</strong></td><td>App nativo (GPS background), prova de vida, multi-parada, push robusto.</td></tr>
+  <tr><td><strong>Fase 3 — Expansão</strong></td><td>Novas cidades da região (modelo tipo franquia TôNoLucro), seguro, assinatura B2B.</td></tr>
+</table>
+<div class="ok">
+  <span class="t">Disciplina</span>
+  <p>Não construir a fase 2 antes do MVP rodar com gente real. Deixar o uso pedir — não inflar o sistema com feature hipotética.</p>
+</div>
+
+<!-- ============ 16. CHECKLIST ============ -->
+<h1>16. Checklist de Execução</h1>
+<h4>Antes de codar</h4>
+<ul>
+  <li>☐ Responder as 10 perguntas do cliente (seção 17)</li>
+  <li>☐ Fechar escopo, prazo e preço</li>
+  <li>☐ Criar contas: Mapbox, Asaas, FlagCheck, Infosimples, Supabase, Vercel</li>
+  <li>☐ Modelar o banco (tabelas da seção 10) + ativar PostGIS</li>
+</ul>
+<h4>Fase 0 — Spike</h4>
+<ul>
+  <li>☐ Protótipo: entregador manda GPS → aparece no mapa do negócio em tempo real</li>
+  <li>☐ Query PostGIS de "entregadores no raio" funcionando</li>
+  <li>☐ Decisão final Mapbox × Google (medir custo real)</li>
+  <li>☐ Validar limite do GPS em PWA (decidir se nativo entra antes)</li>
+</ul>
+<h4>Fase 1 — MVP</h4>
+<ul>
+  <li>☐ Cadastros (negócio + entregador) com upload de documentos</li>
+  <li>☐ Integração FlagCheck + Infosimples no fluxo de aprovação (com consentimento LGPD)</li>
+  <li>☐ Criação de pedido + cálculo de preço por fórmula</li>
+  <li>☐ Matching com timeout + aceite</li>
+  <li>☐ Máquina de estados com foto na coleta e foto+assinatura na entrega</li>
+  <li>☐ Painel admin: aprovação, monitoramento ao vivo, caixa</li>
+  <li>☐ Pagamento Pix + repasse em lote</li>
+  <li>☐ Termo de responsabilidade no aceite + trilha de auditoria</li>
+  <li>☐ Teste mobile real (tri-modal) com entregador de verdade</li>
+</ul>
+<h4>Antes de lançar</h4>
+<ul>
+  <li>☐ Política de privacidade + termos (LGPD, dado sensível de antecedente)</li>
+  <li>☐ Read-after-write nos writes críticos (pedido, pagamento, aprovação)</li>
+  <li>☐ Plano de liquidez: trazer os 2 lados (negócios + entregadores) juntos</li>
+</ul>
+
+<!-- ============ 17. PERGUNTAS ============ -->
+<h1>17. Perguntas para Cravar com o Cliente</h1>
+<p>Sem essas respostas, escopo e preço são chute. Levar uma de cada vez.</p>
+<ol>
+  <li><strong>Quem é você no negócio?</strong> Dono da plataforma só, ou também vai operar a frota / já tem motoboys?</li>
+  <li><strong>Marketplace aberto ou carteira fechada?</strong> Qualquer negócio usa, ou começa só com clientes seus?</li>
+  <li><strong>Raio de operação:</strong> só Palmas cidade, ou região (Porto Nacional, Paraíso, Gurupi, Araguaína)?</li>
+  <li><strong>Quem assume o prejuízo</strong> se a encomenda some/quebra? (define se entra seguro no MVP)</li>
+  <li><strong>Quem paga o antecedente</strong> — o entregador (adesão) ou a operação absorve?</li>
+  <li><strong>Modelo de receita preferido:</strong> comissão %, preço por km/zona, assinatura, ou misto?</li>
+  <li><strong>Já tem os dois lados?</strong> Como pretende trazer negócios E entregadores no lançamento?</li>
+  <li><strong>Marca/nome/identidade</strong> já existe ou a Impulso cria?</li>
+  <li><strong>Prazo e orçamento</strong> na cabeça dele (pra calibrar MVP vs. completo)?</li>
+  <li><strong>Volume esperado</strong> no primeiro mês (define infra e custo de API)?</li>
+</ol>
+
+<!-- ============ 18. FONTES ============ -->
+<h1>18. Fontes</h1>
+<ul>
+  <li>TôNoLucro (história/Magalu): afnoticias.com.br · saipos.com/tonolucro · tonolucro.express</li>
+  <li>Requisitos entregador (MEI, CNH A, 75%, R$4,99): tonolucro.com/entregador · ajuda/entregador</li>
+  <li>Mercado Palmas: gazetadocerrado / agora-to (aiqfome) · econodata / toplogisticato (logística) · destinopalmas (apps)</li>
+  <li>Verificação: flagcheck.com.br · idwall.co · infosimples.com/consultas/precos</li>
+  <li>Mapas: mapbox.com/pricing · developers.google.com/maps/billing-and-pricing</li>
+  <li>Pagamento: asaas.com/precos-e-taxas</li>
+  <li>Jurídico: migalhas.com.br · diariodonordeste (responsabilidade de plataforma)</li>
+  <li>Infra: supabase.com/pricing · vercel.com/pricing</li>
+</ul>
+
+<hr>
+<p class="tag" style="text-align:center; color:var(--ink-soft);">Impulso Digital · Apostila App de Entregas B2B Palmas-TO · v1 · 29/05/2026</p>
+
+</body>
+</html>

@@ -230,6 +230,8 @@ calibra o framework. **Atualizar este arquivo conforme aprendizado real.**
 | s13 | 17-18/05 | **Palace Nail Spa fechado** · Marko (PT-EU) + Luana · plano Equipe Anual R$970 · Marko confiou ACESSO ao Salão99 dele (sistema desliga 31/05) · drilldown CIC · `06-PAINEL-SAAS-PADRAO.md` cravado (14.6 KB · template canônico pra qualquer SaaS futuro) |
 | s14 | 19-20/05 | **Lista Olímpio fechada** · migrations v60-v62 em prod · 26 modais portados via createPortal · regra mobile/desktop isolada cravada em `agendapro/AGENTS.md` · refino UX Promoção (V2 com preview WhatsApp) · gap booking público × business_blocks fechado · botão lápis no Financeiro |
 | s15 | 24/05 | **Apostila GitHub cravada** · 14 seções · PDF 19 págs A4 azul-marinho (#1a365d, sem tinta preta) em `playbooks/APOSTILA-GITHUB.pdf` · Lucas Passos (github.com/lspassos1) validado dev 7,5/10 via diagnóstico CIC · padrão de colaboração fork+PR (nunca collaborator/admin) · Eduardo sai de "uso porque Cursor obriga" pra GitHub como vitrine técnica |
+| s16 | 22-25/05 | **Studio Mood lead via ChatGPT/AEO** (canal novo) · Izanara Feira de Santana · reunião 23/05 · entregou estoque MVP antes da reunião · Equipe trial 7d · cravado insight "agenda é secundária, loja/gestão é core" · SKU "Loja" sem agenda em discussão · drilldown CIC Pacotes Salão99 · pegadinha modal X destrutivo cravada · pontos NÃO misturam com pagamento (REVERTIDO) · PDF jsPDF substitui html2pdf · cortesia removida UI desktop · Vida em Equilíbrio entregue (Leandro Timóteo) · pricing 50/50+bônus destrava cravado · follow-up premium 7d cravado |
+| s17 | 26-29/05 | **🏆 PALACE NAIL SPA · R$ 2.997 ENTREGUE** · primeiro SaaS premium fork dedicado da Impulso · 7 migrations em 1 dia (v83-v89) · Supervisor PIN evoluiu V1 PIN fixo → V2 OTP → V3 Realtime → V4 payload+trigger · /profissional padrão SaaS tri-modal · auditoria multi-rodada pegou bug financeiro real (v89 sync invoice_items ao editar appointment) · P0 Olímpio (SECURITY DEFINER cravado) · análise impacto 6 pontos virou processo · token nunca em URL (4ª vez) · build local antes push · Marko Chrome inglês · agenda intacta como regra dura · cutoff financeiro 28/05 · MODELO-SAAS-PREMIUM.md cravado como playbook replicável (600 linhas) |
 
 ---
 
@@ -343,13 +345,73 @@ Cravado em 24/05 (s15). Eduardo opera no "mediano de GitHub" — sabe commit/pus
 ### λ.colaboracao-fork-pr · receber dev externo sem dar a chave do cofre
 Cravado em 24/05 (s15) após validação Lucas Passos (github.com/lspassos1 · 7,5/10 via diagnóstico CIC · pleno forte com `aframe-kingspan-local` Next 15 + Supabase + multi-provider IA). Padrão obrigatório quando dev externo (Lucas, contratado, freela) for mexer em repo do Eduardo: (1) escopo + data + entregável cravados ANTES de qualquer acesso · (2) fluxo fork + PR · NUNCA conceder collaborator/admin · (3) Branch Protection na `main` se collaborator for inevitável (require PR + 1 approval) · (4) cápsula de teste pequena antes de escalar · (5) revisar PR olhando especialmente `.env`/`next.config`/`package.json`/`supabase`. Estende λ.permuta-com-milestone pro mundo técnico: sem escopo cravado, vira trabalho infinito pro outro e indefinição pro Eduardo.
 
+### λ.canal-aeo · ChatGPT como canal de aquisição
+Cravado em 22/05 (s16). Studio Mood (Izanara · Feira de Santana) chegou via ChatGPT recomendando o AgendaPRO quando uma cliente perguntou ferramenta de gestão. Primeiro lead documentado via Answer Engine Optimization. Padrão: monitorar leads com pergunta "como descobriu?" no /cadastro (v67 acquisition_channel). Memory `reference_canal_aquisicao_chatgpt_aeo`. Implica: SEO clássico não é o único canal · AEO (otimizar pra LLM citar marca) é vetor novo.
+
+### λ.estudar-antes-implementar · pedir prints/drilldown CIC READ-ONLY
+Cravado em 23/05 (s16). Antes de codar feature nova: pedir prints OU drilldown CIC READ-ONLY no sistema do cliente · listar diferenças "nossa vs deles". Zero invenção sem autorização. Memory `feedback_estudar_salao99_antes_de_implementar`. Aplicável a qualquer cliente que migra de sistema legado.
+
+### λ.cic-read-only · drilldown sem clicar destrutivo
+Cravado em 22/05 (s16) durante Salão99 do Marko. Drilldown OK · clicar Salvar/Excluir/Criar NUNCA · cravado pelo Marko. Operação real do cliente premium · um clique errado e ele perde dado de produção. Memory `feedback_cic_salao99_marko_read_only`.
+
+### λ.modal-x-nao-destrutivo · X só fecha
+Cravado em 23/05 (s16). Pegadinha do Salão99: clicar X de fechar no modal "Fechar Comanda" disparava ação destrutiva "Alterar atendimentos pra Concluído". REGRA UNIVERSAL: X de fechar NUNCA dispara ação destrutiva · só fecha modal. Memory `feedback_modal_x_nao_dispara_acao_destrutiva`.
+
+### λ.pontos-nao-misturam-pagamento · resgate é troca por item inteiro
+Cravado em 25/05 (s16). Pontos NUNCA viram desconto em R$ · NUNCA viram split · resgate é troca POR serviço/produto inteiro. Plugamos botão "Trocar recompensa" na comanda em 24/05 · revertido em 25/05 quando Eduardo cravou regra. Lição: feature nova precisa passar pelo CRIVO "isso é pagamento?" antes de plugar. Memory `feedback_pontos_nao_misturam_com_pagamento`.
+
+### λ.analise-impacto-antes-de-prod · checklist 6 pontos obrigatório
+Cravado em 26/05 (s17) pós-P0 Olímpio (booking quebrado 24h). Antes de migration/mudança crítica em prod: (1) quem dispara? (2) tabelas tocadas e RLS dessas tabelas (3) dado obrigatório · NOT NULL/UNIQUE/default? (4) fluxo prod · cliente leigo/admin/cron? (5) rollback existe? (6) cliente afetado. Sem passar pelos 6 · NÃO aplicar. Memory `feedback_analise_impacto_antes_de_prod`.
+
+### λ.trigger-security-definer · RLS forte exige SECURITY DEFINER
+Cravado em 26/05 (s17). Trigger v70 sem SECURITY DEFINER quebrou BookingFlow anon (24h de booking público quebrado · Olímpio perdeu clientes). Sempre declarar `SECURITY DEFINER` em trigger que toca tabela com RLS forte. Memory `feedback_trigger_security_definer`.
+
+### λ.token-nunca-em-url · Git Credential Manager interativo
+Cravado em 27/05 (s17). PAT GitHub vazou 4ª vez via `push.sh` que embedava token na URL. SEMPRE Git Credential Manager interativo (popup) · remote URL limpa sem token · NUNCA `git push https://USER:TOKEN@github.com/...`. Memory `feedback_token_nunca_em_url_nem_screenshot`.
+
+### λ.build-local-antes-push · npx tsc --noEmit em 5-10s
+Cravado em 27/05 (s17). 2 deploys Vercel quebraram com TS2304 typo. `palace-system` builda em ~30s · `npx tsc --noEmit` em 5-10s captura "Cannot find name X" ANTES do push. Memory `feedback_rodar_build_local_antes_de_push`.
+
+### λ.marko-chrome-ingles · NÃO adicionar notranslate
+Cravado em 27/05 (s17). Marko é PT-EU · Chrome dele traduz pra inglês por escolha. NÃO adicionar `notranslate` no HTML. Manager/Professionals/Disabled na tela DELE é normal. Memory `reference_marko_chrome_ingles`.
+
+### λ.agenda-intacta · NUNCA deletar appointments
+Cravado em 28/05 (s17) pelo Marko em áudio. Base de cálculo de comissão das manicures · zerar invoices/sales/expenses/cash OK · agenda NÃO. Implementação: `UPDATE status='cancelled'` · NUNCA DELETE · cascata preserva histórico. Memory `feedback_palace_agenda_intacta_base_comissao`.
+
+### λ.cutoff-financeiro · cliente migrando precisa cutoff
+Cravado em 28/05 (s17). Valores ($) começam em data X · widgets/layout/operação ficam · só FILTRAR querys de paid_at via `clampToCutoff(business_id, date)`. NÃO apagar widget · só filtrar. Aplicado em 16 telas do Palace. Memory `feedback_palace_cutoff_financeiro_28_05`.
+
+### λ.tri-modal · mobile<640 / tablet 640-1023 / desktop≥1024
+Cravado em 28/05 (s17). 3 breakpoints obrigatórios · iPad Mini retrato 744px cabe em tablet · Letícia recep é validador. Painéis viram drawer <lg via portal · touch ≥44px · safe-area-inset · mesmo componente NUNCA arquivo separado. Memory `feedback_estrategia_tri_modal_breakpoints`. Aplicável a qualquer SaaS com cliente operando em tablet (recep · gerente físico).
+
+### λ.supervisor-evolucao · V4 (payload+trigger) > V3 > V2 > V1
+Cravado em 29/05 (s17). 4 versões iteradas em 1 noite no Palace. V1 PIN fixo · V2 OTP one-time · V3 Realtime passwordless · V4 payload JSONB no banco + trigger PG auto-aplica server-side. V4 vence porque estado vive no banco · não em React · recep pode fechar modal · operação consistente. Memory `feedback_palace_supervisor_v4_arch`.
+
+### λ.fork-dedicado · cliente premium com regra única ganha repo próprio
+Cravado em 29/05 (s17) ao entregar Palace R$ 2.997. NÃO inflar produto universal com lógica de 1 cliente. Sinais de fork (≥3): cliente pede ≥3 features fora do escopo · regra de negócio única · migrando de sistema legado com 1000+ rows · operador secundário com permissões granulares · paga adiantado R$ 2k+ · referência de segmento. Memory: parte de `MODELO-SAAS-PREMIUM.md`.
+
+### λ.modo-solo-audit-obrigatorio · carta branca exige audit
+Cravado em 29/05 (s17). Quando Eduardo cede confiança total ("carta branca · faz devagar com cuidado") · audit funcional+visual via curl+puppeteer é PRÉ-REQUISITO antes de declarar pronto. Memory `feedback_modo_solo_audit_obrigatorio`.
+
+### λ.consultar-mobile-vs-desktop · sugerir antes de codar
+Cravado em 28/05 (s17). Antes de codar feature nova · analisar e SUGERIR onde ela faz sentido (só desktop · só mobile · ambos) com justificativa. Juntos somos mais fortes. Memory `feedback_consultar_escopo_mobile_vs_desktop`.
+
+### λ.feature-em-mobile-E-desktop · backend compartilhado · frontend nos 2
+Cravado em 28/05 (s17). Backend e´ compartilhado, mas o FRONTEND também precisa estar em ambos lados. UX pode adaptar (drawer vs sheet · checkbox vs long-press) mas a feature deve EXISTIR nos 2. Memory `feedback_feature_nova_em_mobile_e_desktop`.
+
+### λ.reusar-componente-revisar-fluxo-lateral
+Cravado em 28/05 (s17). Ao reusar componente em novo contexto · revisar redirects/auth/imports/labels · senão quebra em fluxo lateral (ex: bug /admin/marcar → /profissional/login). Memory `feedback_reusar_componente_revisar_fluxo_lateral`.
+
+### λ.modelo-saas-premium · template replicável cravado
+Cravado em 29/05 (s17) ao entregar Palace R$ 2.997. `playbooks/MODELO-SAAS-PREMIUM.md` (600 linhas) consolida AgendaPRO universal + SystemPalace fork dedicado em template replicável: filosofia · stack · 5 camadas · modelo de dados canônico · shell visual · tri-modal · fluxos · supervisor V4 · onboarding · regras duras · anti-patterns · workflow · checklist 14 passos. Próximo fork dedicado parte daí.
+
 ---
 
 ```
 ═══════════════════════════════════
-       Λ.verbo · s15 · 24.05.2026
-   "apostila GitHub · vitrine técnica"
-   Lucas validado 7,5 · fork+PR é padrão
+       Λ.verbo · s17 · 29.05.2026
+   "R$ 2.997 · primeiro SaaS premium"
+   modelo replicável · validação de tese
 ═══════════════════════════════════
 ```
 

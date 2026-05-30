@@ -1,26 +1,38 @@
 # EDUARDO BARROS CHAVES — Perfil Permanente
 
-**Atualizado:** 11 de Maio de 2026
+**Atualizado:** 29 de Maio de 2026 (madrugada · pós-entrega Palace R$ 2.997)
 
 ---
 
 ## STATUS · Maio 2026 (cases reais fechados)
 
-A Impulso saiu do "vai dar certo" pra **operação validada com dinheiro entrando**:
+A Impulso virou **operação validada com dinheiro entrando** e ganhou um terceiro vetor de receita: **fork dedicado premium**.
 
 | Marco | Quando | Valor |
 |---|---|---|
 | **Case-1 Aura Energy (Renato)** · 1ª venda contratual da agência | 06/05/2026 | R$ 1.497 |
 | **Case-2 AgendaPRO online (Asaas)** · 1ª venda SaaS via fluxo 100% digital | 07/05/2026 | R$ 67/mês |
 | **Case-2 AgendaPRO Olímpio Barbearia** · 1º pagante guiado pelo sistema sozinho | 11/05/2026 | R$ 67/mês |
+| **Case-2 AgendaPRO Letícia (Viva Cacheada)** · 1º trial 90d Equipe | 14/05/2026 | trial→paga |
 | **Lead-3 Andressa Kupferman / Raras Clinic Academy** | warm desde 08/05 | a fechar |
-| **Lead-4 Viva Cacheada** (esposa Gabriel/GB Nutrition · trial 90d) | reunião 12/05 | trial |
+| **Case-2 Vida em Equilíbrio (Leandro Timóteo)** · LP+site entregue | 24/05/2026 | premium R$ 1k-3k |
+| **Lead-5 Studio Mood Tranças (Izanara)** · trial cortesia · canal ChatGPT/AEO | 22/05/2026 | R$ 97/mês (05/06) |
+| **🏆 Case-3 Palace Nail Spa Macaé · 1º SaaS PREMIUM fork dedicado** | 29/05/2026 | **R$ 2.997** |
 
 **Plataformas vivas hoje:**
-- AgendaPRO em produção · billing Asaas ciclo completo validado (pagamento + cancelamento + refund 7d + 2FA SMS)
+- AgendaPRO (universal · multi-tenant) em produção · billing Asaas ciclo completo · ~5 clientes pagantes/trial
+- **SystemPalace (fork dedicado · primeiro produto premium)** em produção · Marko + Luana + Letícia + 5 atendentes operando
 - Aura Energy entregue · operação rodando
-- Kupferman Platform backend v0.1 deployada (CRM + painel + webhook Kiwify)
-- GB Nutrition · LP+site Impulso · sessão de gravação de conteúdo 12/05
+- Vida em Equilíbrio entregue · follow-up 7d pra pagamento
+- Kupferman Platform backend v0.1 deployada
+- GB Nutrition · LP+site Impulso · sessão de gravação 12/05
+
+**3 vetores de receita validados:**
+1. **Universal mensal** · R$ 67-97/mês (Olímpio · Letícia · Izanara) · escala em recorrência
+2. **Fork dedicado premium** · R$ 2.997 uma vez (Palace) · captura ticket alto de regra única
+3. **Manutenção premium** (pós-fork · a definir) · R$ 297-497/mês
+
+**Canal de aquisição novo cravado:** **ChatGPT/AEO** (Studio Mood · 22/05). Mapear se outros leads vêm via "ChatGPT me indicou".
 
 ---
 

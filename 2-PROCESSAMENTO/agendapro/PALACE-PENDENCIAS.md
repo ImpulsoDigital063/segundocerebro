@@ -1,9 +1,14 @@
 # Palace Nail Spa Macaé · Pendências pra Padrão Salão99
 
-**Última atualização:** 2026-05-19 (madrugada)
-**Conversão trial → R$970 anual:** 24/05/2026 (5 dias)
-**Salão99 desliga:** 31/05/2026 (12 dias)
+> ⚠️ **DOC OBSOLETO · ver [[STATUS-PALACE]] em `2-PROCESSAMENTO/palace-nail-spa/`**
+>
+> Em 29/05 Palace virou **fork dedicado** (`palace-system`) com valor **R$ 2.997 entregue**. STATUS atualizado em pasta própria. Esse doc fica como histórico da fase pré-fork.
+
+**Última atualização (snapshot histórico):** 2026-05-19 (madrugada)
+**Conversão trial → R$970 anual:** 24/05/2026 (5 dias) · **REVISADO 24/05** · trial estendido +9d · novo vencimento **02/06**
+**Salão99 desliga:** 31/05/2026 (12 dias · atualmente 2 dias)
 **business_id:** `ee6f0b22-5a46-406a-a3d4-b901551c4261`
+**Status atual (29/05):** ✅ **R$ 2.997 entregue como fork dedicado** · ver [[STATUS-PALACE]]
 
 ---
 
