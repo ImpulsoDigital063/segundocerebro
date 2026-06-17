@@ -1,291 +1,149 @@
 # STATUS-AGENDAPRO.md
 
 **Produto:** AgendaPRO — SaaS de agendamento + gestão financeira + fidelização + reativação
-**Fase:** ✅ **CICLO BILLING VALIDADO PROD** · Asaas + PIX nativo + Resend branded + refund 7d com 2FA testados em 08/05
-**Data:** 08/05/2026 (atualizado)
+**Fase:** 🟢 **EM PRODUÇÃO COM CLIENTES PAGANTES** · Asaas validado · Olímpio e Studio MOOD usando em operação real diária · onboarding ativo
+**Data:** 16/06/2026 (atualizado — substituição total do status de 08/05)
 **Responsável:** Eduardo Barros
-
-> **📋 LEIA PRIMEIRO AO RETOMAR:**
-> - [`DIARIO-2026-05-08.md`](./DIARIO-2026-05-08.md) — daily 08/05 com 14 commits, 7 bugs corrigidos, ciclo Asaas validado ponta-a-ponta com Erlane R$67
-> - [`agendapro/DIARIO-2026-05-01.md`](C:/Users/DELL/agendapro/DIARIO-2026-05-01.md) — daily épico 01/05 com 37 commits + 8 dimensões consolidadas
-
----
-
-## 🟢 PRONTO PRA PRIMEIRO CLIENTE REAL — Barbearia Olímpio (08/05/2026)
-
-**Validação ponta-a-ponta com Erlane:**
-- Pagamento PIX nativo dentro do AgendaPRO (sem sair pro asaas.com)
-- Email branded "Pagamento confirmado" via Resend (notif Asaas desabilitada)
-- Refund 7d processado via 2FA SMS Asaas
-- Painel bloqueia imediato pós-refund com mensagem "Acesso encerrado"
-
-**Estratégia Asaas:** R$64 saldo permanente como buffer pra refunds (Asaas exige saldo integral, cobra taxa antes — sem buffer, primeiro refund sempre falha).
-
-**Antes de mandar pro Olímpio (5min):** ativar Sentry — DSN + redeploy. SDK já plugado.
-
----
-
-## 🟢 INTEGRAÇÃO ASAAS PRONTA — aguarda 6 cliques pra ativar (07/05 madrugada)
-
-**Por que:** MP travou checkout cartão real (cruza email cliente x conta MP do dono do cartão). Esposa pagar pelo marido = bloqueado. PJ pagar pessoal = bloqueado. Eduardo viveu na pele com Erlane.
-
-**Solução:** integração Asaas em paralelo com feature flag. Cobra 5x menos taxa (1,99% vs 9,99%) + sem fricção de email/CPF.
-
-**Status do código:**
-- ✅ `supabase-migration-v40-asaas-integration.sql` — campos `asaas_*` + `provider`
-- ✅ `src/lib/asaas.ts` — wrapper completo (customers, subscriptions, payments, refunds)
-- ✅ `/api/billing/checkout-asaas` — cria customer + sub/payment
-- ✅ `/api/billing/cancel-asaas` — cancel + refund 7d (CDC art. 49)
-- ✅ `/api/webhooks/asaas` — validação `asaas-access-token` + handlers
-- ✅ Feature flag `NEXT_PUBLIC_BILLING_PROVIDER` (default `mercado_pago`)
-- ✅ Build passou + commit `599915a` em master
-- ⏳ MP atual NÃO TOCADO — produção segue idêntica até ativar
-
-**Próximo passo:** abrir `agendapro/ASAAS-INTEGRATION-README.md` e seguir os 6 passos (~10min total). Documentação detalhada com comandos prontos.
-
----
-
-## ✅ MIGRAÇÃO MP PF → PJ CONCLUÍDA (07/05/2026)
-
-- **Conta MP PJ:** Agenda-PRO (User ID 3202117739 · App 668403200532189)
-- **Integração:** Assinaturas (preapproval)
-- **Env vars Vercel (production):**
-  - `MP_ACCESS_TOKEN` — credencial PJ
-  - `NEXT_PUBLIC_MP_PUBLIC_KEY` — credencial PJ
-  - `MP_WEBHOOK_SECRET` — HMAC ativo (gap de segurança que existia antes, agora cravado)
-- **Webhook URL:** `https://www.agendapro.net.br/api/webhooks/mercadopago` (com www — sem causa redirect 307)
-- **Eventos:** Pagamentos + Planos e assinaturas
-- **Validação:** notificação teste do MP retornou **200 OK**
-
-Próxima venda já cai na PJ.
-
-> **📋 LEIA PRIMEIRO AO RETOMAR:** [`agendapro/DIARIO-2026-05-01.md`](C:/Users/DELL/agendapro/DIARIO-2026-05-01.md) no repo do AgendaPRO — daily com **37 commits** organizados em 7 áreas temáticas que consolidaram o produto em 8 dimensões. Esse foi o dia épico.
 
 ---
 
 ## O que é
 
-SaaS multi-tenant que **NÃO é só agendamento** — é **ferramenta operacional completa do dono de pequeno negócio de serviço** (barbearia, salão, nail, clínica, personal, estética). Em 01/05/2026 consolidaram-se 8 dimensões: agendamento + gestão financeira (com Lucro Real) + reativação automática (Cupom de Retorno) + análises com forecast + fidelização (4 fontes de pontos) + organização + marketing (QR branded) + lógica de nicho.
+SaaS multi-tenant que **NÃO é só agendamento** — é a **ferramenta operacional completa do dono de pequeno negócio de serviço** (barbearia, salão, nail, tranças, estética, clínica, personal). 8 dimensões: agendamento + gestão financeira (Lucro Real) + reativação (Cupom de Retorno) + análises com forecast + fidelização (4 fontes de pontos) + organização + marketing (QR branded) + lógica de nicho.
 
-**Proposta no mercado:** "Não é só agenda. É a operação completa do seu negócio." R$67/mês Solo · R$97/mês Equipe · concorrente cobra R$200-300/mês.
+**Proposta:** "Não é só agenda. É a operação completa do seu negócio." R$67/mês Solo · R$97/mês Equipe · concorrente cobra R$200-300/mês.
+
+**Dois fluxos de operação atendidos:** agenda-first (marca e atende) **E balcão/walk-in** (atende e registra depois, sem agendar online — caso Izanara/MOOD e Palace). Priorizar fluxo de balcão; auto-agendamento online é secundário.
 
 ---
 
 ## Stack
 
-- Next.js 16 (App Router + Server Actions)
-- Supabase: Auth · Postgres · Realtime · RLS estrito
-- Resend (email transacional)
-- Z-API (WhatsApp transacional — **não Baileys**, env vars `ZAPI_*`)
-- Mercado Pago via `preapproval` (assinatura recorrente)
-- Vercel (deploy + cron)
+- Next.js 16 (App Router) · ⚠️ versão com breaking changes — ler `node_modules/next/dist/docs/` antes de codar
+- Supabase: Auth (SSR cookie) · Postgres · RLS estrito · service-role no server
+- Resend (email transacional) · Z-API (WhatsApp)
+- **Asaas** (cobrança — PIX nativo + cartão). MP é legado/descontinuado.
+- Vercel (deploy + cron) — plano Hobby (cron limitado; cuidado com fila travada em pushes em sequência)
 
-**Repositório:** `C:/Users/DELL/agendapro` · GitHub: `ImpulsoDigital063/AgendaPRO`
-**Vercel project canônico:** `agenda-pro` (com hífen) — projeto duplicado `agendapro` (sem hífen) foi excluído em 01/05/2026 noite (zumbi sem env vars)
-**Produção:** **agendapro.net.br** + `www.agendapro.net.br` + `agenda-pro-seven.vercel.app` (alias Vercel default)
-
----
-
-## Migrations aplicadas (todas em produção)
-
-| # | Descrição | Status |
-|---|---|---|
-| V1-V5 | Schema base (profiles, services, appointments, availability, clients) | ✅ Aplicadas |
-| V6 | Multi-negócio via `business_id` | ✅ Aplicada |
-| V7 | Fidelidade (points, rewards, redemptions) | ✅ Aplicada |
-| V8 | Lista de espera (`waitlist` + RLS) | ✅ Aplicada |
-| V9 | **Trigger anti-overbooking** (`check_appointment_overlap`) | ✅ Aplicada |
-| V10 | Cascade delete profissional → appointments | ✅ Aplicada |
-| V11 | **subscriptions** (trial/grace/public_blocked/data_delete_at) | ✅ Aplicada |
-| **V34** | **`appointments.paid_at` + `payment_method`** + index parcial (01/05) | ✅ Aplicada |
-| **V35** | **Tabela `expenses`** (7 categorias, RLS owner-only, trigger updated_at) (01/05) | ✅ Aplicada |
-| **V36** | **Tabela `coupons`** (code UNIQUE, customer_id, expires_at) + função `generate_coupon_code` (01/05) | ✅ Aplicada |
+**Repositório:** `C:/Users/Usuario/agendapro` · GitHub: `ImpulsoDigital063/AgendaPRO` (checar `gh auth switch --user ImpulsoDigital063` antes do push)
+**Vercel project:** `agenda-pro` · **Produção:** agendapro.net.br
+**Disciplina de deploy:** `npx tsc --noEmit` antes do push · migration entra no banco ANTES do push · read-after-write em todo write crítico (λ.prova-na-fonte).
 
 ---
 
-## 8 dimensões do produto (consolidadas em 01/05/2026 — 37 commits)
+## Mobile × Desktop (regra cravada)
 
-### 1. Agendamento
-- Cliente agenda 24h sem WhatsApp/criar conta
-- Lembrete automático D-1 e H-1 (Z-API)
-- Lista de espera automática (cancelamento → próximo da fila)
-- Cron auto-complete (marca como concluído depois do horário)
-- Splash interno estilo Facebook (PRO animada)
+Mesmo codebase, dois fronts. **Mobile** (agendapro.net.br) = dono opera no celular, clientes em produção (Olímpio etc.) — é O principal, verificar responsividade real. **Desktop** = negócios maiores. Ajuste de um lado NÃO pode alterar o outro — isolar via breakpoint Tailwind (`sm:`). Feature nova deve existir nos dois fronts (UX pode adaptar).
 
-### 2. Gestão financeira
-- KPIs: Realizado / Em aberto (era "A receber") / Faturado / Ticket médio com **Sparkline SVG inline**
-- 4 métodos de pagamento: PIX / Dinheiro / Cartão / Cortesia
-- Comissão por profissional baseada em **PAGOS** (não completed)
-- **Despesas** subpágina: CRUD com 7 categorias (aluguel, produtos, salário, utilities, marketing, impostos, outros)
-- **Lucro Real** (Receita − Despesas) — só na aba Mês (despesas mensais distorcem em hoje/7d)
-
-### 3. Análises avançadas
-- Forecast do mês (projeção fim do mês)
-- Comparativo mês atual vs anterior (% variação)
-- Por dia da semana / por hora pico
-- Taxa cancelamento + execução
-- Novos vs recorrentes
-- Métodos atual vs anterior
-- Top serviços / top profissionais
-- **6+ insights automáticos em texto natural** ("Sábado é seu melhor dia (35%)", "Pico de movimento às 14h", etc)
-
-### 4. Reativação — Cupom de Retorno (sistema novo)
-- Detecta clientes sumidos há 40+ dias
-- Card laranja "Reativar X sumidos" (some quando todos têm cupom ativo)
-- Wizard 3 etapas: desconto → template do nicho → preview
-- 9 nichos × 3 templates cada (barbearia, salão, estética, nail, manicure, tatuagem, psicólogo, personal, genérico)
-- Sample names por nicho (Lucas/Camila/Bianca/Letícia/Lucas/Marina/Rafael)
-- 1 cupom único por cliente, código `PRO` + 5 chars
-- Cliente clica em `/{slug}?cupom=PROXX99` → banner verde + sticky bar de desconto + tela final mostra "−R$X / Total R$Y"
-- API server-side `/api/coupons/use` (service-role) com 3 validações
-- Defense-in-depth: UI + API filtram quem já tem cupom ativo
-
-### 5. Fidelização (4 fontes de pontos)
-- Por agendamento (configurável por serviço)
-- Por indicação (link `/slug?ref=X` automático)
-- Por pontualidade (cliente chega no horário → bônus)
-- Por review do Google
-- Recompensas customizáveis (cliente troca pontos por brindes)
-
-### 6. Organização
-- 8 abas: Dashboard · Agenda · **Financeiro** · Serviços · Profissionais · Clientes · Fidelidade · Aparência
-- Profissionais: comissionado (% sobre realizado) ou contratado (salário fixo)
-- Limite por plano (Solo=2, Equipe=5) — UI + trigger SQL
-- Horários: pausa de almoço múltipla, atalhos Seg-Sáb/Seg-Sex, copiar entre profs, RPC atômico
-- Cancelados subpágina: lista + botão "Cobrar via WhatsApp" + "Marcar pago"
-
-### 7. Marketing — QR Code branded + 3 templates de impressão
-- QR com logo do negócio + cor da brand (não preto genérico)
-- 3 templates de impressão pra casos reais:
-  - **Cartões balcão** (4 por folha A4) — qualquer impressora caseira
-  - **Cartaz parede** (A5 com selo Aura)
-  - **Display acrílico** (A6 + bleed 3mm + crop marks pra gráfica)
-- Web Share API pra PNG (sem tela "data:" iOS)
-- Iframe isolado pra impressão (resolve quirks iOS Safari)
-
-### 8. Lógica de nicho aplicada em TUDO
-- Sample names por nicho (barbearia=Lucas, salão=Camila, nail=Bianca, psicólogo=Marina, etc)
-- Templates de cupom autênticos por nicho (sem gírias problemáticas, sem gênero presumido)
-- Sugestões de serviço dinâmicas
-- Presets de cor com badge "★ Indicada" automático no card
+**LIGHT-ONLY** (tema dark removido 03/06, cravado). `AdminThemeProvider` é pass-through; layouts `initialTheme='light'` fixo. Não tratar dark como feature.
 
 ---
 
-## Princípios de produto cravados em 01/05
+## Billing (Asaas · em produção, validado)
 
-1. **AgendaPRO é educacional, NÃO ERP de cobrança** — "A receber" virou "Em aberto", sem cobrança automática, sistema mostra dado pra dono decidir
-2. **Lucro Real só em escala mensal** — em hoje/7d as despesas mensais distorcem
-3. **Pensar sempre em uso em massa** (filtro "100 clientes simultâneos")
-4. **Lógica de nicho em tudo** — princípio inegociável
-5. **UX faz dono se sentir inteligente, não burro** — princípio inegociável
-6. **40 dias = sumido** (era 60) — coerente com ciclo barbearia/nail
-7. **Lista paginada + agrupada por data** ("HOJE/ONTEM/5 DE MAIO") estilo WhatsApp
-8. **Pill "Confirmado" deduplicada** — só aparece quando "Pagamento pendente" não cobre
+**Modalidades:** mensal/semestral/anual em PIX (cobrança manual recorrente) · cartão (Asaas Subscription auto-renova via webhook).
 
----
+**Máquina de estados:**
+`active` → (vence) `past_due` + `grace_ends_at` (3 dias) → (carência vence) bloqueio no gate → `pending_payment` (paywall).
 
-## 4 landings segmentadas
-Barbearia · Salão · Estética · Nail Designer — hero + copy + prova social adaptados (4 modalidades PIX no pricing).
+- **Webhook Asaas** (`PAYMENT_OVERDUE`) é a trava real: seta `past_due` + `grace_ends_at = hoje+3`. `PAYMENT_CONFIRMED`/`RECEIVED` reativa (`active`, limpa carência).
+- **Gate** (`admin/(protected)/layout.tsx`): bloqueia se `pending_payment` | `cancelled` | `refunded` | (`past_due` E `grace_ends_at` vencido). NÃO usa `public_blocked_at`.
+- **Cron `billing-check`** (diário, `0 11 * * *`): D-3 cria cobrança PIX + email; D-2/D-1/D0/D+3 lembretes; **fallback** — se o webhook falhar, garante `past_due` + grace 3 dias (mesmo modelo do webhook). Passo 2: expira trial/cortesia não-permanente (`permanent_courtesy` isenta Palace legado).
+- **Asaas é PRODUÇÃO** (cobrança real). Quirk: `pix_link_atual` é o link válido; `asaas_payment_id_atual` pode ficar defasado (cron atualiza só o link no D-3).
+- **Signup público travado** (07/06, após bot criar contas) — conta nasce só via admin server-side; não reabrir "Allow new users to sign up".
 
 ---
 
-## Segurança (auditoria 16/04 mantida)
+## Migrations (em produção · base V1–V11, recentes relevantes)
 
-Auditoria completa com 3 agentes em paralelo (API · client · auth). 15+ vulns corrigidas:
-
-- HMAC + `timingSafeEqual` em tokens (anti timing attack)
-- XSS em templates Resend (escape rigoroso)
-- IDOR em endpoints de appointment/cliente
-- Rate limiting in-memory por IP nas rotas públicas
-- CSP headers estritos
-- RLS restritivo em `clients` e `waitlist`
-- Trigger SQL `check_appointment_overlap` — impossível overbooking
-- API server-side `/api/coupons/use` (service-role) — RLS bloqueava UPDATE público
-
-Padrão salvo em `3-RETENCAO/padroes/auditoria-seguranca-saas.md`.
-
----
-
-## Billing — estruturado e aplicado
-
-### Fluxo de estados
-`trialing` (14d sem cartão) → `active` → `past_due` (grace 5d) → `public_blocked` (dia 12) → `data_delete_pending` (90d preservação)
-
-### 4 API routes
-- `POST /api/billing/checkout` — cria preapproval MP, retorna URL
-- `GET /api/billing/status` — consulta estado atual
-- `POST /api/billing/cancel` — cancela preapproval
-- `POST /api/webhooks/mercadopago` — recebe eventos
-
-### 🔴 Pendências críticas pré-lançamento
-
-- [ ] **Migrar MP de PF (CPF Eduardo) → PJ (CNPJ Impulso Digital)** — pagamentos hoje caem na conta CPF, é o último bloqueio
-- [ ] Auditoria final: cap Clube Fundador 10 hardcoded em `cadastro/route.ts:107`, marca AgendaPRO no checkout MP, webhook URL sem `www.`
-- [ ] Tela `/admin/bloqueado` quando `public_blocked = true`
-- [ ] Cron diário de verificação de status
+| # | Descrição |
+|---|---|
+| V9 | Trigger + exclusion constraint anti-overbooking (`appointment_range` tstzrange) |
+| V40a/b · V60 | Overlap via EXCLUDE gist + override manual |
+| V49 / V52 | Taxas de maquininha (merchant_devices/fees) + colunas cartão em appointments |
+| V63 / V66 | Estoque (stock_movements · trigger AFTER INSERT soma quantity) + baixa por sale_items |
+| V77 | Trigger auto-cria comanda (invoice) aberta quando appointment entra |
+| v84 | package_items aceita produto (combo serviço+produto) |
+| v85 | `subscriptions.permanent_courtesy` (expiração trial/cortesia) |
+| v86 | `signup_attempts` (rate-limit cadastro) |
+| v87 | colunas de cartão em `sales` (taxa flui pro líquido na venda direta) |
+| **v88** | `products.variant_group_id` (variantes de produto · Caminho A) |
 
 ---
 
-## Pendências menores (documentadas, não-bloqueantes)
+## O que evoluiu desde maio (estado atual das frentes)
 
-- [ ] Aparência: melhorias futuras da capa (Eduardo deixou em standby)
-- [ ] Cupom de retorno: filtro manual ("não pra esse cliente")
-- [ ] Cancelar cupom não enviado (UI pra deletar antes do WhatsApp)
-- [ ] Auditoria pp_owner_* (v5) — bug de ambiguidade do `name` (mesmo do v33)
-- [ ] **4 fixes de performance** documentados pra atacar quando chegar 80 clientes ativos (agregação SQL, cache, paginação, sums em SQL)
-- [ ] Avaliação pós-agendamento (ideia validada, implementar com 20+ agendamentos reais)
-- [ ] Migrar import de leads do RadarPRO → AgendaPRO (futuro)
+- **Balcão "Registrar venda"** — atende+vende numa comanda só (serviço + produto na mesma conta, via rotas canônicas /items + /pay). Registro é ponto no tempo (duração não estoura range). Opção "Manter comanda aberta" (verde) pra pagar depois.
+- **Vender Produto** — venda avulsa: pagar na hora (pix/dinheiro/cartão) ou depois, cliente avulso, taxa de cartão grava e flui pro líquido (v87).
+- **Comandas** — adicionar serviço E produto por dentro; faturar; cancelar reverte estoque + remove comissão + apaga pagamento; "Receber pagamento" fecha. Pelo Vendas, botão verde "Pagar comanda #N" abre a comanda completa.
+- **Variantes de produto** (v88, Caminho A) — cor/tamanho/sabor com preço+estoque por variante; lista agrupa num card; criar/adicionar/editar variante; pickers de venda agrupam (produto→variante). Multi-eixo Shopify (Tamanho×Cor) descartado por ora. Detalhe em memória `project_agendapro_variantes_produto`.
+- **Comissão de produto = opt-in** — produto sem regra (`commission_type` null) = ZERO comissão (é do estúdio, não cai na % do serviço). No balcão, produto NÃO fica atribuído à profissional. Só comissiona com percent/fixed explícito.
+- **Recebido por data de pagamento** (`paid_at`, não `appointment_date`); "A receber" inclui produtos pendentes da comanda aberta.
+- **Recepção tri-modal** (sidebar desktop + drawer/bottom-nav mobile) · área profissional read-only · papel supervisor.
+- **Monitoramento**: cron monitor + bot Telegram (4x/dia) + auditoria financeira semanal.
+- **Google review fix** — link de avaliação extrai a URL de valor sujo (dono cola nome+URL juntos) — `lib/google-review.ts`.
 
 ---
 
-## Números reais
+## 8 dimensões do produto (evergreen)
+
+1. **Agendamento** — cliente agenda 24h sem conta; lembrete D-1/H-1; lista de espera; auto-complete.
+2. **Gestão financeira** — KPIs (Recebido/A receber/Faturado/Ticket); métodos pix/dinheiro/cartão/cortesia/pontos; comissão por profissional sobre PAGOS; despesas (7 categorias); Lucro Real (só mês).
+3. **Análises** — forecast, comparativo mês, dia/hora pico, cancelamento, novos×recorrentes, top serviços/profs, insights em texto.
+4. **Reativação** — Cupom de Retorno (sumidos 40+ dias, wizard 3 etapas, 9 nichos × 3 templates).
+5. **Fidelização** — 4 fontes de pontos (agendamento, indicação, pontualidade, review Google) + recompensas. Pontos NUNCA viram R$ nem entram em pagamento.
+6. **Organização** — abas; profissional comissionado/contratado; limite por plano (Solo/Equipe); horários com pausa/atalhos.
+7. **Marketing** — QR branded + 3 templates de impressão.
+8. **Lógica de nicho** — sample names, templates, sugestões e presets por nicho.
+
+---
+
+## Princípios cravados
+
+1. AgendaPRO é educacional, NÃO ERP de cobrança ("A receber", não cobra sozinho).
+2. Lucro Real só em escala mensal.
+3. Pensar em uso em massa.
+4. Lógica de nicho em tudo · UX faz o dono se sentir inteligente.
+5. Facilita, não cria trabalho (feature julgada por reduzir cliques).
+6. Estudar como JÁ funciona antes de codar (zero invenção sem ok).
+7. Segurança: HMAC/timingSafe em tokens, RLS restritivo, trigger anti-overbooking, rotas service-role.
+
+---
+
+## Clientes (estado real)
+
+| Cliente | Situação |
+|---|---|
+| **Olímpio Barbearia** | 🟢 PAGANTE · Solo R$67/mês PIX (Asaas) · opera no mobile diário · pagou junho (vencia 11/06, ciclo de cobrança+carência+bloqueio validado na prática 15/06) |
+| **Studio MOOD (Izanara)** | 🟢 Onboarding ativo · tranças · usa balcão (serviço+produto na comanda) · reportando ajustes finos (comissão produto, variantes, UX) que vão sendo resolvidos |
+| **Palace Nail Spa** | ⚠️ Virou produto PRÓPRIO independente (fork) — não é mais o AgendaPRO multi-tenant. Ver STATUS-PALACE. |
+| Outros | trials/leads em avaliação (ver STATUS-IMPULSO) |
+
+---
+
+## Números
 
 | Métrica | Valor |
 |---|---|
-| Commits aplicados em 01/05 | **37 commits em ~16h** |
-| Migrations rodadas | **13 de 13** (V34/V35/V36 incluídas) |
-| Dimensões do produto | **8** (era "agendamento", virou "ferramenta operacional completa") |
-| Vulns corrigidas na auditoria 16/04 | 15+ |
-| API routes de billing | 4 |
-| Primeiro cliente pagante | 0 (Olímpio em onboarding) |
-| Preço Solo | R$67/mês (sem setup) |
-| Preço Equipe | R$97/mês (sem setup) |
-| Setup oficial | **R$197** (cobrado a partir do cliente 11+, isento Clube Fundador 10 primeiros) |
+| Clientes pagantes | Olímpio + Studio MOOD (em operação real) |
+| Migrations | base + até **v88** |
+| Preço Solo / Equipe | R$67 / R$97 mês (sem setup pro Clube Fundador 10) |
+| Setup (cliente 11+) | R$197 |
 
 ---
 
-## Ambição 30 dias
+## Pendências / próximos
 
-- 1º cliente pagante (Olímpio)
-- 10 do Clube Fundador (R$67 fundadores travado pra sempre)
-- Fluxo de cobrança rodando ponta-a-ponta após CPF→CNPJ
-- DNS agendapro.net.br propagado e canônico
-- Avaliações pós-agendamento (ideia ativada quando tiver 20+ agendamentos reais)
+- [ ] Studio MOOD: rodar a régua premium nas telas internas da recepção se ativar login da recepcionista (Marlia, hoje sem login)
+- [ ] CAPTCHA Turnstile no cadastro (confirmar chave não-sensitive live)
+- [ ] 4 fixes de performance documentados pra quando chegar ~80 clientes ativos
+- [ ] Multi-eixo de variantes (Tamanho×Cor) só se cliente pedir
 
----
-
-## Meta 2026 (caminho pro R$1M)
-
-100 clientes pagantes × R$67-97/mês × 12 meses = R$80k-116k MRR anual
-+ setups R$197 × 90 (após Clube Fundador) = R$17.7k
-**Total projetado AgendaPRO 2026: R$95k-130k**
-
----
-
-## Próxima atualização
-
-**Quando:**
-- Após migração MP CPF→CNPJ + auditoria final pré-lançamento
-- Ou após primeiro cliente AgendaPRO pagar
-- Ou ao atingir 80 clientes ativos (trigger pra atacar fixes de performance)
-
-**O que atualizar:** estado billing, número de clientes ativos, métricas reais de uso, ajustes UX baseados em feedback real, novas migrations se houver.
+**Próxima atualização:** quando entrar novo cliente pagante, mudança grande de billing, ou nova leva de features. Substituir (não duplicar).
 
 ---
 
 **Ver também:**
-- Hubs: [[MEGA-CLAUDE]] · [[EDUARDO-BARROS]] · [[VERBO]]
-- Status correlatos: [[STATUS-IMPULSO]] · [[STATUS-RADARPRO]] · [[STATUS-AURA-ENERGY]]
-- Diferenciais venda: [[AGENDAPRO-DIFERENCIAIS-VENDAS]] · [[AGENDAPRO-ANALISE-COMPETITIVA]]
-- Conhecimento: [[AGENDAPRO-ROADMAP]] · [[AGENDAPRO-SEGMENTOS]] · [[ESTRATEGIA-LP-AGENDAPRO]] · [[AUDITORIA-UX-DOPAMINA]]
-- Padrões: [[PADROES-VALIDADOS]] · [[auditoria-seguranca-saas]]
+- Hubs: [[MEGA-CLAUDE]] · [[HUB-AGENDAPRO]] · [[EDUARDO-BARROS]]
+- Status correlatos: [[STATUS-IMPULSO]] · [[STATUS-STUDIO-MOOD]] · [[STATUS-PALACE]]
+- Conhecimento: [[AGENDAPRO-ROADMAP]] · [[AGENDAPRO-ANALISE-COMPETITIVA]] · [[AGENDAPRO-SEGMENTOS]]

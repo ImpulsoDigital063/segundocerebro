@@ -120,7 +120,7 @@ Todos registrados em `3-RETENCAO/padroes/` ou auto-memory feedback.
 - [ ] Abordar 10-15 leads quentes do RadarPRO
 - [ ] Fechar 2-3 projetos via RadarPRO + playbook
 - [ ] Publicar case Gabriel no Instagram + LP (prova social)
-- [ ] Cadastrar 1º cliente AgendaPRO via Impulso (Olímpio em onboarding)
+- [x] **1º cliente AgendaPRO pagante: Olímpio Barbearia** (Solo R$67 PIX/Asaas) · ciclo de cobrança validado na prática (venceu 11/06 → carência → bloqueio → pagou 15/06). 2º pagante: Studio MOOD/Izanara (Equipe R$97). Ver [[STATUS-AGENDAPRO]].
 
 ---
 
