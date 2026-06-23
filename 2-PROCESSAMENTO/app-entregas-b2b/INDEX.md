@@ -1,25 +1,57 @@
-# Projeto — App de Entregas B2B (Palmas-TO)
+# Projeto APPDELYVERY — App de Entregas B2B (Palmas-TO)
 
 > **ABRIR PROJETO = ler este INDEX primeiro.**
-> Cliente quer contratar a Impulso pra criar um app de entrega de **encomendas de negócios** (NÃO comida): negócio se cadastra, entregador/motorista se cadastra, com **análise de antecedentes**. Mercado: **Palmas-TO e região**.
-> Aliases: [app entregas, app de entrega, encomendas, motoboy app, delivery b2b, entregas palmas, tonolucro]
+> **Nome oficial: APPDELYVERY** (batizado pelo Eduardo em 29/05/2026).
+> App de entrega de **encomendas de negócios** (NÃO comida, foco em empresas): estabelecimento pede, entregador verificado entrega, cliente final acompanha por link. **Análise de antecedentes = o diferencial.** Mercado: **Palmas-TO e região**.
+> Aliases: [APPDELYVERY, appdelivery, app delyvery, app entregas, app de entrega, encomendas, motoboy app, delivery b2b, entregas palmas, tonolucro]
 
-## Estado
-- **29/05/2026** — Missão de reconhecimento noturna do Eduardo. Levantamento feito. **Escopo ainda NÃO cravado** — depende das 10 perguntas pro cliente (DOSSIE §10).
-- Sem nome de marca, sem cliente nomeado ainda, sem orçamento definido.
-
-## Documentos (ler nesta ordem)
-1. **DOSSIE-RECONHECIMENTO.md** — visão estratégica: briefing, concorrência, antecedentes, jurídico, modelo de negócio, MVP, perguntas pro cliente.
-2. **ESTUDO-TONOLUCRO.md** — teardown do app de referência (nascido em Palmas, comprado pela Magalu). O que copiar, evitar e superar. **A brecha: TôNoLucro não destaca antecedentes.**
-3. **ESTUDO-CONSTRUCAO.md** — o que precisamos fazer × o que a stack Impulso permite. Matriz de capacidade (18 componentes), 4 riscos técnicos, MVP, stack, roadmap.
+## Estado (atualizado 30/05/2026)
+- Protótipo navegável **pronto e validado** (Mapbox + rota real + preço real + 3 telas + cadastro/verificação + foto/assinatura).
+- **Especificação técnica completa registrada** (banco, back, front, integrações) em `build-spec/` — pronto pra construir o Next.js quando der o "sim".
+- Decisão 30/05: **não usar contas logadas (systempalace/Impulso)**; manter tudo no protótipo agora; criar contas próprias no início do build.
+- Pendente: tela do cliente final no protótipo · planos de negócio/marketing · reunião com investidor.
 
 ## Os 3 fatos que mudam tudo
 1. **TôNoLucro é de Palmas** e domina o território (Magalu atrás). Entrar de frente = perder. Único caminho = recorte estreito.
-2. **O recorte vencedor:** B2B de encomenda de valor + **entregador verificado por antecedentes** + regional. É a brecha que o líder não cobre.
-3. **~70% do app a Impulso já sabe fazer.** Os ~30% novos (GPS realtime, dispatch, split de pagamento, integrações de verificação) são quase todos integração de terceiro — exceto GPS+dispatch, que exige um **spike de validação** antes de cravar prazo/preço.
+2. **O recorte vencedor:** B2B de encomenda de valor + **entregador verificado por antecedentes** + regional. Brecha que nem o líder cobre.
+3. **~70% do app a Impulso já sabe fazer.** Os ~30% novos (GPS realtime, dispatch, split, verificação) são quase todos integração de terceiro.
+
+---
+
+## 📁 MAPA DOS DOCUMENTOS
+
+### Estratégia / negócio
+- **DOSSIE-RECONHECIMENTO.md** — briefing, concorrência, antecedentes, jurídico, modelo de negócio, MVP, **10 perguntas pro cliente**.
+- **ESTUDO-TONOLUCRO.md** — benchmark do concorrente (de Palmas, comprado pela Magalu). Copiar/evitar/superar.
+- **RECON-CLIQUERETIRE.md** — tech do CliqueRetire (não tem GPS ao vivo, só status). ⚠️ **DESATUALIZADO como diferencial:** a **Bee Delivery** (tb em Palmas) TEM GPS ao vivo → mapa ao vivo é **paridade, não vantagem**. Único diferencial real = **verificação de antecedentes**. Ver **RECON-BEEDELIVERY.md**.
+- **RECON-BEEDELIVERY.md** — 3º concorrente em Palmas (franquia nacional, Mossoró-RN, desde 2020). Tem GPS ao vivo + 2 apps nativos. Nunca cravar "único/primeiro app de Palmas".
+- **APOSTILA-APP-ENTREGAS.pdf** — apostila completa (18 seções) azul-marinho pronta pra imprimir.
+
+### Técnica / decisões
+- **ESTUDO-CONSTRUCAO.md** — matriz de capacidade (18 componentes), riscos, MVP, roadmap.
+- **SISTEMA-GPS.md** — as 5 camadas do GPS. Stack: Geolocation + Supabase Realtime + Mapbox + PostGIS.
+- **INTEGRACAO-MAPBOX.md** — integração Mapbox (3 serviços, tokens, código).
+- **FLUXO-COMUNICACAO.md** — comunicação dos 4 atores (estabelecimento/entregador/cliente final/admin) + pagamento e split.
+
+### 🔧 build-spec/ — PRONTO PRA CONSTRUIR (ler na ordem)
+- **build-spec/01-BLUEPRINT-NEXTJS.md** — documento-mestre: stack, estrutura de pastas, contas, ordem de construção, regras duras. **Começar por aqui no build.**
+- **build-spec/02-BANCO-DADOS.md** — schema Supabase/Postgres completo (SQL: tabelas, enums, PostGIS, matching, RLS).
+- **build-spec/03-BACKEND-API.md** — server actions, integrações, env vars, máquina de estados.
+- **build-spec/04-FRONTEND.md** — rotas, telas, componentes (mapeados do protótipo).
+
+### Protótipo
+- **prototipo/index.html** — app navegável (Mapbox, rota real, 3 telas, cadastro/verificação, foto/assinatura). Abre no navegador, sem instalar.
+- **prototipo/mapbox-token.txt.txt** — token público Mapbox (conta `appdelivery`).
+- Para mostrar no PC do cliente: subir em **Netlify Drop** (arrastar a pasta) → link público.
+
+---
+
+## Tabela de preço real (no protótipo, fácil de ajustar)
+Bandeirada moto R$8 / carro R$13 · R$1,50/km · mínimo R$10 · **entregador 80% / plataforma 20%**. Ex.: 6,34km moto = R$17,51 (entregador R$14,01). **Validar com o investidor.**
 
 ## Pendências
-- [ ] Levar as 10 perguntas do DOSSIE §10 pro cliente
-- [ ] Confirmar nome/marca, orçamento, prazo
-- [ ] Propor Fase 0 (spike técnico pago) antes do orçamento fechado
-- [ ] Decidir Mapbox vs Google Maps; gateway (Asaas vs Pagar.me)
+- [ ] Tela do **cliente final** (`/rastreio/[token]`) no protótipo
+- [ ] Login/cadastro, histórico, carteira, avaliação, mobile (completar front)
+- [ ] PLANO-NEGOCIO.md + PLANO-MARKETING.md
+- [ ] Reunião investidor → "sim" → criar contas → iniciar Fase 1 (build-spec/01)
+- [ ] Decisões pro investidor: quem paga frete · forma de pagamento · COD no MVP? · SMS/WhatsApp · nome/marca final

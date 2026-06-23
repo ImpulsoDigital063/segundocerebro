@@ -25,13 +25,15 @@
 
 **Evolução 2026:** subiu de agência low-ticket pra **3 frentes premium** — SaaS fork ~R$3k · LP/site ~R$2k · **plataforma própria APPDELYVERY** (entregas B2B Palmas · em construção · maior build atual · de prestador a fundador).
 
+**Modelo cravado (23/06):** **núcleo-fork** (`medellin-bar` = template → cada cliente clona pra github/vercel/supabase próprios · R$2.997/50% · caixa agora) **financia** o **ComandaPRO** (`acai-system` = SaaS food-service multi-tenant · recorrência). **Medellín FECHADO** (case-zero) · **Vidal = 1º ComandaPRO**. Detalhe: `2-PROCESSAMENTO/impulso-digital/MODELO-NUCLEO-FORK-COMANDAPRO.md`.
+
 **Ofertas oficiais (política "a partir de" — NUNCA cravar valor fixo em msg de venda):**
 - **Entrada:** LP a partir de **R$499** + R$99/mês · Shopify a partir de **R$599** + R$99/mês · Combo **R$1.099** · Site Next.js a partir de **R$799**
 - **Premium (real hoje):** LP/site premium **~R$2k** · SaaS fork dedicado **~R$3k** (entrada + saldo; ver λ.fork-dedicado)
 - **Recorrente:** AgendaPRO **Solo R$67/mês** (1+1) · **Equipe R$97/mês** (até 5) · Setup **R$197** (isento pros 10 primeiros — Clube Fundador)
 - Ancoragem: "LP no Brasil custa R$2k-15k; cobro a partir de R$499 porque sou local de Palmas, sem overhead de SP."
 
-**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (2 pagantes reais: Olímpio Barbearia R$67 + Studio MOOD/Izanara R$97 · ciclo de cobrança Asaas validado na prática) · GB Nutrition R$1.000 · EV Suplementos (Erlane). UrbanFeet (R$37.705 em 90d · +1.600 pares — prova pro **MPN-On**, não negócio ativo). Pausado: Criativos do Céu (permuta encerrada). NÃO usar: Janaína, Irsnayra, LocaJV.
+**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (2 pagantes reais: Olímpio Barbearia R$67 + Studio MOOD/Izanara R$97 · ciclo de cobrança Asaas validado na prática) · EV Suplementos (Erlane). UrbanFeet (R$37.705 em 90d · +1.600 pares — prova pro **MPN-On**, não negócio ativo). Pausado: Criativos do Céu (permuta encerrada). GB Nutrition = trabalho de graça pra aprender (o R$1.000 era âncora, NÃO venda — não usar como case de R$1k). NÃO usar: Janaína, Irsnayra, LocaJV.
 
 **Meta 2026:** R$1M em faturamento — não precisa tudo dar certo, precisa 2-3 acertarem.
 

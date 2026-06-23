@@ -5,6 +5,14 @@
 **Data:** 12/05/2026 (segunda · madrugada · sessão Starteq)
 **Responsável:** Eduardo Barros
 
+> ⚠️ Doc abaixo é de 12/05 (parcialmente desatualizado). Para a direção atual ver o modelo cravado abaixo.
+
+---
+
+## Evolução 2026 — Software House (cravado 23/06)
+
+A Impulso virou **software house AI-first** (tese: [[softwarehouse]]). Modelo operacional em dois trilhos: **forks dedicados** (`medellin-bar` = núcleo · cada cliente clona pra contas próprias · R$2.997/50% · **caixa**) financiando o **ComandaPRO** (`acai-system` · SaaS food-service multi-tenant · **recorrência**). **Medellín FECHADO** (case-zero) · **Vidal = 1º ComandaPRO**. Plano completo: [[MODELO-NUCLEO-FORK-COMANDAPRO]].
+
 ---
 
 ## O que é

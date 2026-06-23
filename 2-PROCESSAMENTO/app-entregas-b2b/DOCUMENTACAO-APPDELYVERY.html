@@ -1,0 +1,558 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>APPDELYVERY — Documentação</title>
+<style>
+:root{--indigo:#4f46e5;--indigo-d:#3730a3;--navy:#312e81;--ink:#3b38a8;--muted:#6b70bf;--line:#e7e9f7;--tint:#f6f7fe;--tint2:#eef0fe;--go:#047857;}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#fff;}
+body{font-family:'Segoe UI',Inter,system-ui,Arial,sans-serif;color:var(--ink);line-height:1.6;font-size:13px;}
+.page{max-width:820px;margin:0 auto;padding:0 40px;}
+h1{color:var(--indigo);font-size:30px;font-weight:800;letter-spacing:-.8px;line-height:1.15;margin:2px 0 16px;}
+h2{color:var(--navy);font-size:20px;font-weight:700;border-bottom:2px solid var(--line);padding-bottom:6px;margin:26px 0 10px;}
+h3{color:var(--navy);font-size:15.5px;font-weight:700;margin:18px 0 6px;}
+h4{color:var(--navy);font-size:13.5px;font-weight:700;margin:12px 0 4px;}
+p,li{color:var(--ink);}
+strong,b{color:var(--navy);font-weight:700;}
+a{color:var(--indigo);text-decoration:none;}
+.ksec{font-size:10.5px;font-weight:800;color:var(--indigo);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:11.8px;}
+th{background:transparent;color:var(--indigo);text-transform:uppercase;font-size:9.5px;letter-spacing:.5px;border-bottom:1.5px solid var(--indigo);text-align:left;padding:8px 9px;}
+td{border-bottom:1px solid var(--line);padding:8px 9px;vertical-align:top;}
+td strong{color:var(--navy);}
+code{background:var(--tint2);color:var(--indigo-d);padding:1px 5px;border-radius:4px;font-size:11px;}
+pre{background:var(--tint);border:1px solid var(--line);border-left:3px solid var(--indigo);border-radius:8px;padding:12px 14px;overflow:auto;font-size:10.5px;line-height:1.5;color:var(--navy);white-space:pre;}
+pre code{background:none;color:var(--navy);padding:0;font-size:10.5px;}
+blockquote{border-left:3px solid var(--indigo);background:var(--tint);margin:12px 0;padding:8px 14px;color:var(--muted);border-radius:0 8px 8px 0;font-size:12px;}
+ul,ol{padding-left:22px;margin:8px 0;}
+li{margin:3px 0;}
+li::marker{color:var(--indigo);}
+input[type=checkbox]{accent-color:var(--indigo);width:13px;height:13px;margin-right:7px;vertical-align:-1px;}
+hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
+.cover{min-height:250mm;display:flex;flex-direction:column;justify-content:center;border-top:7px solid var(--indigo);padding:0 44px;}
+.cover .tag{display:inline-block;align-self:flex-start;background:var(--tint2);color:var(--indigo);font-weight:700;font-size:12px;padding:7px 14px;border-radius:30px;letter-spacing:.4px;margin-bottom:24px;}
+.cover h1{font-size:54px;letter-spacing:-2px;margin:0;}
+.cover .rule{width:64px;height:3px;background:var(--indigo);border-radius:3px;margin:22px 0;}
+.cover .sub{color:var(--muted);font-size:18px;font-weight:400;max-width:540px;line-height:1.5;}
+.cover .foot{color:var(--muted);font-size:13px;font-weight:600;margin-top:40px;}
+.toc{background:var(--tint);padding:40px 0;break-after:page;}
+.toc h2{border:none;color:var(--indigo);text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:18px;}
+.toc-item{display:flex;gap:12px;align-items:baseline;font-size:14px;color:var(--ink);padding:9px 0;border-bottom:1px solid var(--line);}
+.toc-item .num{color:var(--indigo);font-weight:800;min-width:26px;}
+.doc{break-before:page;}
+.doc h1{border-bottom:2px solid var(--indigo);padding-bottom:8px;}
+@media print{@page{size:A4;margin:14mm 0;}.page{padding:0 16mm;max-width:none;}.cover{padding:0 16mm;}section,table,pre,blockquote{break-inside:avoid;}h1,h2,h3{break-after:avoid;}}
+</style></head><body>
+<div class="cover">
+  <span class="tag">◆ Documentação técnica · Palmas-TO</span>
+  <h1>APPDELYVERY</h1>
+  <div class="rule"></div>
+  <div class="sub">Arquitetura, progresso, plano de entrega, polimento do front e estratégia de captação — o mapa completo do projeto.</div>
+  <div class="foot">Impulso Digital · junho / 2026</div>
+</div>
+<div class="toc"><div class="page"><h2>Sumário</h2><div class="toc-item"><span class="num">01</span> Arquitetura do Sistema</div>
+<div class="toc-item"><span class="num">02</span> Checklist de Progresso</div>
+<div class="toc-item"><span class="num">03</span> Plano de Entrega</div>
+<div class="toc-item"><span class="num">04</span> Polimento do Front, Testes e Vitrine</div>
+<div class="toc-item"><span class="num">05</span> Estratégia de Captação</div></div></div>
+<section class="doc"><div class="page"><div class="ksec">Parte 01</div><h1>Arquitetura do Sistema</h1><blockquote>
+<p>Como a plataforma é montada por dentro: stack, camadas, fluxos, banco, segurança e integrações.
+Estado real em 08/06/2026 (auditoria de código+banco).</p>
+</blockquote>
+<h2>1. Stack (o que usamos)</h2>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Tecnologia</th>
+<th>Papel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>App + Site</td>
+<td><strong>Next.js 16</strong> (App Router) + React 19 + TypeScript + Tailwind v4</td>
+<td>As 4 telas + vitrine, um app só por papel; PWA instalável</td>
+</tr>
+<tr>
+<td>Banco + Auth</td>
+<td><strong>Supabase</strong> (PostgreSQL + PostGIS)</td>
+<td>Dados, login, regras de acesso (RLS), tempo real, arquivos</td>
+</tr>
+<tr>
+<td>Lógica de negócio</td>
+<td><strong>Server Actions</strong> + <strong>RPCs <code>SECURITY DEFINER</code></strong> no Postgres</td>
+<td>Cérebro no banco (despacho, preço, guards)</td>
+</tr>
+<tr>
+<td>Hospedagem</td>
+<td><strong>Vercel</strong></td>
+<td>Deploy contínuo (push na <code>main</code> → no ar)</td>
+</tr>
+<tr>
+<td>Mapas/rotas</td>
+<td><strong>Mapbox</strong> (Directions + Geocoding)</td>
+<td>Rota real pelas ruas, endereço, distância</td>
+</tr>
+<tr>
+<td>Pagamento</td>
+<td><strong>Asaas</strong> (Pix/split)</td>
+<td>Carteira, split 80/20, repasse — <em>a ligar</em></td>
+</tr>
+<tr>
+<td>Verificação</td>
+<td><strong>FlagCheck + Infosimples + idwall</strong></td>
+<td>Antecedentes + CNH/CRLV + biometria — <em>a ligar</em></td>
+</tr>
+<tr>
+<td>Notificação</td>
+<td>SMS/WhatsApp + Push</td>
+<td>Avisos — <em>a definir/construir</em></td>
+</tr>
+</tbody></table>
+<h2>2. Camadas (visão de cima)</h2>
+<pre><code>   NEGÓCIO        ENTREGADOR        ADMIN        CLIENTE FINAL
+  (/negocio)     (/entregador)    (/admin)     (/rastreio/token)
+      |                |              |                |
+      +--------- PWA / Navegador (mobile-first) -------+
+                          |
+                 VERCEL  ·  Next.js 16
+        (páginas + Server Actions + /api/v1 público)
+                          |
+                 SUPABASE  ·  PostgreSQL + PostGIS
+   Auth · RLS · RPCs (SECURITY DEFINER) · Realtime · Storage
+                          |
+   +----------+-----------+-----------+--------------+
+   |          |           |           |              |
+ Mapbox     Asaas    FlagCheck    Infosimples      idwall      (+ SMS/push)
+ (rotas)   (pgto)*   (antec.)*    (CNH/CRLV)*    (faceID)*
+                          * = a ligar (tomada pronta, sem chave)
+</code></pre>
+<h2>3. Os 4 atores (mesmo sistema, rota por papel)</h2>
+<p>O login lê <code>profiles.role</code> e redireciona: <code>estabelecimento → /negocio</code>, <code>entregador → /entregador</code>, <code>admin|operador → /admin</code>. O cliente final não tem login — entra por <strong>link com token</strong> (<code>/rastreio/[token]</code>).</p>
+<ul>
+<li><strong>Negócio</strong> — cria entrega (3 veículos + preço + endereço), acompanha, histórico, carteira, relatórios, API.</li>
+<li><strong>Entregador</strong> — cadastro→verificação→oferta→coleta→rota→entrega; ganhos; perfil.</li>
+<li><strong>Admin</strong> — despacho ao vivo, corridas, aprovação de entregador (PIN), financeiro, config, comunicados.</li>
+<li><strong>Cliente final</strong> — rastreio por link, GPS ao vivo, chat, código de entrega.</li>
+</ul>
+<h2>4. Modelo de dados (núcleo)</h2>
+<p><code>profiles</code> (papel) → <code>estabelecimentos</code> / <code>entregadores</code> → <strong><code>pedidos</code></strong> (centro de tudo) →
+<code>ofertas</code>, <code>rastreios</code> (GPS), <code>comprovantes</code> (foto/assinatura), <code>pagamentos</code>, <code>avaliacoes</code>,
+<code>carteira_transacoes</code>, <code>mensagens</code> (chat 3-pontas), <code>cancelamentos</code>, <code>disputas</code>,
+<code>comunicados</code>, <code>chaves_api</code>, <code>config</code> (preços/take/PIN/raio singleton).
+<strong>27 migrations</strong>, RLS em todas, PostGIS para geolocalização.</p>
+<h2>5. Fluxos principais</h2>
+<p><strong>A) Entrega (manual):</strong>
+<code>lojista cria → status &#39;buscando&#39; → trigger dispara o motor → ofertar_proximo (ranking distância×nota, timer 30s) → entregador aceita (atômico) → coleta (foto + geofence) → rota (GPS ao vivo via Realtime) → entrega (foto + assinatura + código 4 díg) → &#39;entregue&#39; + split 80/20</code>.</p>
+<p><strong>B) Entrega (via API — clientes grandes):</strong>
+<code>sistema do lojista → POST /api/v1/pedidos (chave) → criar_pedido_via_api (preço calculado no banco) → mesmo motor de oferta → webhook HMAC devolve status</code>.</p>
+<p><strong>C) Rastreio do cliente:</strong>
+<code>link com token → get_rastreio_publico (status + entregador + posição) → GPS ao vivo (Realtime) → chat por token</code>.</p>
+<p><strong>D) Verificação do entregador:</strong>
+<code>cadastro → iniciarVerificacao (FlagCheck + Infosimples + idwall, server-side) → grava em verificacoes (só-admin, LGPD) → admin aprova com PIN</code>.</p>
+<p><strong>E) Pagamento (a construir):</strong>
+<code>carteira pré-paga (recarga Pix via Asaas) → desconta na criação → split 80/20 na conclusão → repasse D+1 pro entregador</code>.</p>
+<h2>6. Motor de despacho (oferta dirigida — modelo 99)</h2>
+<p>Cérebro em funções Postgres + PostGIS. <code>ofertar_proximo</code> ranqueia por <strong>distância real × nota</strong> (placar adaptativo: quem entrega bem sobe). Oferta dirigida com cronômetro (~30s); recusou/expirou → cascata pro próximo. Aceite <strong>atômico</strong> (nunca corrida dupla). <code>processar_ofertas</code> roda por <strong>cron</strong> (expira/reativa). Parametrizável por cidade (raio, pesos, preço) — base pra escalar pra outras praças.</p>
+<h2>7. Segurança &amp; LGPD</h2>
+<ul>
+<li><strong>RLS</strong> em todas as tabelas; helpers <code>is_admin()</code>/<code>auth_role()</code> SECURITY DEFINER (sem recursão).</li>
+<li><strong>Guards (triggers):</strong> anti self-promote a admin; status crítico (coletado/entregue) só com evidência (foto/assinatura); entregador não se auto-aprova.</li>
+<li><strong>Antecedentes = dado sensível:</strong> tabela <code>verificacoes</code> só-admin, nunca exposto ao negócio/cliente nem em URL.</li>
+<li><strong>Acesso público por token</strong> (rastreio/chat) via SECURITY DEFINER que devolve só o necessário.</li>
+<li><strong>API:</strong> chave com hash SHA-256; webhook assinado (HMAC); preço sempre recalculado no servidor.</li>
+</ul>
+<h2>8. Integrações (status real)</h2>
+<table>
+<thead>
+<tr>
+<th>Integração</th>
+<th>Status</th>
+<th>Falta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mapbox</td>
+<td><strong>Ligada</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Supabase</td>
+<td><strong>Ligada</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>FlagCheck / Infosimples / idwall</td>
+<td>Tomada no-op</td>
+<td>chaves no CNPJ do dono + <code>SUPABASE_SERVICE_ROLE_KEY</code></td>
+</tr>
+<tr>
+<td>Asaas</td>
+<td>Esqueleto (webhook 501)</td>
+<td><strong>construir</strong> carteira/split/repasse + chave</td>
+</tr>
+<tr>
+<td>SMS/WhatsApp + Push</td>
+<td>Ausente</td>
+<td>definir provedor + construir</td>
+</tr>
+</tbody></table>
+<h2>9. Deploy &amp; ambientes</h2>
+<p>Repo <code>github.com/AppDelyvery/appdelivery</code> (conta gh dedicada <strong>AppDelyvery</strong>). Push na <code>main</code> → <strong>Vercel</strong> deploya (appdelivery-psi.vercel.app). Supabase projeto <code>cqmxjzrukbagvkznrunt</code>. Segredos em env var (Vercel + <code>.env.local</code>); contas externas no <strong>CNPJ do dono</strong>. Regra dura: <code>tsc --noEmit</code> + <code>next build</code> + migration aplicada antes do deploy.</p>
+<h2>10. Evolução planejada (Fase 2)</h2>
+<p>Apps nativos (Expo/Play+App Store) reaproveitando a mesma API; Van intercidade; conectores Bling/Tiny/PDV; camada de IA (previsão de demanda, ETA preditivo, antifraude, score) sobre o motor determinístico atual; multi-praça (a parametrização por cidade já é a base).</p>
+</div></section>
+<section class="doc"><div class="page"><div class="ksec">Parte 02</div><h1>Checklist de Progresso</h1><blockquote>
+<p>Estudo de estado real do projeto, levantado por auditoria do <strong>código e do banco</strong> (não dos docs antigos) em <strong>08/06/2026</strong>.
+Serve pra medir progresso e pra separar, no doc de vendas, o que é <strong>setup (R$15k)</strong> do que é <strong>evolução (Fase 2, à parte)</strong>.</p>
+</blockquote>
+<p><strong>Legenda:</strong> <code>[x]</code> pronto e provado · <code>[~]</code> construído mas falta ativar/ligar · <code>[ ]</code> a fazer</p>
+<p><strong>Leitura rápida:</strong> a plataforma (telas, banco, motor, API, GPS, deploy) está praticamente toda <strong>pronta e no ar</strong>. O que falta pra &quot;operar de verdade&quot; não é tela — é <strong>ligar o dinheiro (Asaas)</strong> e a <strong>verificação (chaves no CNPJ)</strong>, mais SMS/push e o jurídico. Estimativa: <strong>~80% do setup pronto</strong>; os ~20% restantes são integrações externas + polimento.</p>
+<hr>
+<h2>A. PRONTO E NO AR (provado na fonte)</h2>
+<h3>Fundação</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Stack Next 16 + Supabase + Vercel + Tailwind, deploy contínuo (push → Vercel)</li>
+<li><input checked="" disabled="" type="checkbox"> No ar: <strong>appdelivery-psi.vercel.app</strong> (site, login, app, rastreio)</li>
+<li><input checked="" disabled="" type="checkbox"> Auth real (cadastro/login) + redirect por papel (negócio/entregador/admin)</li>
+<li><input checked="" disabled="" type="checkbox"> PWA instalável (manifest, ícones) — abre no <code>/login</code> e roteia por papel</li>
+<li><input checked="" disabled="" type="checkbox"> SEO/AEO (metadata, llms.txt, robots, sitemap)</li>
+<li><input checked="" disabled="" type="checkbox"> Design system (Inter, índigo, Icons.tsx SVG, zero emoji), responsivo mobile</li>
+</ul>
+<h3>Banco (27 migrations aplicadas — 0001 a 0027)</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> ~18 tabelas (profiles, estabelecimentos, entregadores, pedidos, ofertas, comprovantes, mensagens, etc)</li>
+<li><input checked="" disabled="" type="checkbox"> ~30 RPCs/funções + PostGIS (geolocalização)</li>
+<li><input checked="" disabled="" type="checkbox"> RLS em todas as tabelas + guards de segurança (anti self-promote admin, status só com evidência, entregador não se auto-aprova)</li>
+<li><input checked="" disabled="" type="checkbox"> Auditoria adversarial de RLS (2 furos achados e fechados)</li>
+</ul>
+<h3>3 personas + cliente (todas no ar)</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>Negócio</strong> (8 telas): novo pedido + mapa, histórico, perfil, comunicados, relatórios/CSV, integração API</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Entregador</strong> (5 telas): cadastro→verificação→oferta→coleta→rota→entrega, ganhos, perfil, comunicados</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Admin</strong> (12 telas): dashboard, despacho ao vivo, corridas+comprovante, entregadores+aprovação(PIN), negócios, financeiro, rankings, avaliações, mensagens, disputas, comunicados, config</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Cliente final</strong>: rastreio por link (sem login) + GPS ao vivo + chat</li>
+</ul>
+<h3>Motor e recursos</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Algoritmo de oferta dirigida (modelo 99: ranking distância × nota, timer 30s, cascata, aceite atômico) + cron</li>
+<li><input checked="" disabled="" type="checkbox"> GPS ao vivo (Supabase Realtime broadcast)</li>
+<li><input checked="" disabled="" type="checkbox"> Preço por veículo (moto/carro/van) com match exato + config editável no admin</li>
+<li><input checked="" disabled="" type="checkbox"> Comprovação forte (foto + assinatura + código de 4 dígitos) + geofence anti-fraude</li>
+<li><input checked="" disabled="" type="checkbox"> Cancelamento com motivo (entregador e lojista), chat 3-pontas, proteção de carga (teto config)</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>API de integração</strong> (criar pedido + cotação + webhook HMAC) — provada no ar (modelo Bee→Drogasil)</li>
+<li><input checked="" disabled="" type="checkbox"> Mapbox real (rotas pelas ruas + geocoding + tradutor de endereço de Palmas/ARSE)</li>
+</ul>
+<hr>
+<h2>B. CONSTRUÍDO, MAS FALTA ATIVAR (precisa conta/chave no CNPJ do dono)</h2>
+<blockquote>
+<p>O código está pronto como &quot;tomada no-op&quot; — liga quando a chave entra. Hoje não trava o fluxo (cai em modo manual).</p>
+</blockquote>
+<ul>
+<li>[~] <strong>Verificação — Antecedentes (FlagCheck)</strong> — falta <code>FLAGCHECK_API_KEY</code></li>
+<li>[~] <strong>Verificação — CNH/CRLV (Infosimples)</strong> — falta <code>INFOSIMPLES_TOKEN</code></li>
+<li>[~] <strong>Verificação — Biometria/Face ID (idwall)</strong> — falta <code>IDWALL_API_KEY</code> (exige e-mail corporativo + CNPJ)</li>
+<li>[~] <strong>SERVICE_ROLE_KEY</strong> vazia no ambiente — necessária pra verificação server-side e algumas ações admin</li>
+</ul>
+<hr>
+<h2>C. FALTA CONSTRUIR (estrutura nova — não é só plugar chave)</h2>
+<h3>Pagamento real (a maior peça que falta)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Asaas — integração de verdade</strong> (hoje só existe o webhook esqueleto que retorna 501)<ul>
+<li><input disabled="" type="checkbox"> Cliente/SDK Asaas + <code>ASAAS_API_KEY</code> / <code>ASAAS_WEBHOOK_TOKEN</code></li>
+<li><input disabled="" type="checkbox"> Carteira pré-paga: recarga via Pix (botão &quot;Adicionar saldo&quot; hoje desativado)</li>
+<li><input disabled="" type="checkbox"> Split automático 80/20 na conclusão da entrega</li>
+<li><input disabled="" type="checkbox"> Subconta do entregador + repasse D+1</li>
+<li><input disabled="" type="checkbox"> Webhook real de confirmação de pagamento (<code>/api/webhooks/asaas</code>)</li>
+<li><input disabled="" type="checkbox"> Extrato de carteira pro lojista</li>
+</ul>
+</li>
+</ul>
+<h3>Notificações</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>SMS/WhatsApp</strong> (definir provedor — ex. Zenvia — + credencial + envio do link de rastreio)</li>
+<li><input disabled="" type="checkbox"> <strong>Push notifications</strong> (nova corrida pro entregador com som; hoje é polling)</li>
+</ul>
+<h3>Endpoints pendentes</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <code>GET /api/rota</code> (retorna 501 — proxy de Directions, opcional)</li>
+</ul>
+<hr>
+<h2>D. JURÍDICO / INFRA / POLIMENTO</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Termos de Uso e Privacidade</strong> — hoje são RASCUNHO; validar com advogado (dado sensível de antecedentes = LGPD)</li>
+<li><input disabled="" type="checkbox"> Domínio próprio (ex. appdelyvery.com.br) — hoje URL é <code>appdelivery-psi…</code> (com &quot;i&quot;, a marca é com &quot;y&quot;)</li>
+<li><input disabled="" type="checkbox"> Limpeza dos dados de teste no banco</li>
+<li><input disabled="" type="checkbox"> Validação visual final no celular (90% dos acessos são mobile)</li>
+<li><input disabled="" type="checkbox"> Definir hospedagem: Impulso hospeda e cobra na mensalidade, ou transfere contas pro dono</li>
+</ul>
+<hr>
+<h2>CAMINHO CRÍTICO pra &quot;operar de verdade&quot;</h2>
+<p>Em ordem do que destrava o uso real:</p>
+<ol>
+<li><strong>Contas no CNPJ do dono</strong> → ligar verificação (3 chaves) — vira o diferencial real do produto</li>
+<li><strong>Asaas</strong> → o dinheiro circulando (recarga, split, repasse) — sem isso não fatura</li>
+<li><strong>SMS/push</strong> → avisar entregador e cliente (operação fluida)</li>
+<li><strong>Jurídico</strong> (termos/privacidade) + <strong>domínio</strong> → pra publicar com cara de empresa séria</li>
+</ol>
+<p>Itens 1 e 2 são o coração do &quot;operar&quot;. O resto da plataforma já está de pé.</p>
+<hr>
+<h2>NOTA PRO DOC DE VENDAS (setup R$15k × Fase 2)</h2>
+<ul>
+<li><strong>Dentro do setup (R$15k):</strong> plataforma completa (A) + ligar verificação e Asaas (B+parte do C) + termos/domínio = &quot;pronto pra operar&quot;.</li>
+<li><strong>Fase 2 (à parte, evolução):</strong> apps nativos nas lojas (Play/App Store), Van intercidade, conectores Bling/Tiny, múltiplas paradas, agendamento, camada de IA.</li>
+</ul>
+</div></section>
+<section class="doc"><div class="page"><div class="ksec">Parte 03</div><h1>Plano de Entrega</h1><blockquote>
+<p>Roteiro de trabalho pra entregar a <strong>plataforma pronta pra operar</strong> (o setup contratado).
+Cruza o que foi <strong>vendido</strong> (plano de negócio) com o <strong>estado real</strong> (auditoria de código+banco, 08/06).
+Companion do <code>CHECKLIST-PROGRESSO.md</code> (esse é o &quot;onde estamos&quot;; este é o &quot;como chegar&quot;).</p>
+</blockquote>
+<h2>Definition of Done do SETUP (o que o cliente recebe por R$15k)</h2>
+<p>A plataforma rodando ponta a ponta com <strong>dinheiro real circulando</strong> e <strong>entregador verificado de verdade</strong>:</p>
+<ol>
+<li>Lojista recarrega por Pix → cria entrega → entregador aceita → coleta/entrega com comprovante → entregador recebe.</li>
+<li>Entregador novo passa por antecedentes + CNH + biometria reais antes de rodar.</li>
+<li>Avisos chegam (entregador sabe da corrida, cliente recebe o link).</li>
+<li>Termos/privacidade válidos + domínio próprio.</li>
+</ol>
+<p>Tudo que está fora disso = <strong>Fase 2 (cobrada à parte)</strong> — lista no fim.</p>
+<hr>
+<h2>FASE 1 — Ligar a VERIFICAÇÃO (o diferencial) · rápido, destrava valor</h2>
+<p>Pré-requisito: contas no CNPJ do dono + chaves.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Infra:</strong> criar contas FlagCheck, Infosimples, idwall no CNPJ do dono (idwall exige e-mail corporativo)</li>
+<li><input disabled="" type="checkbox"> <strong>Infra:</strong> preencher <code>.env.local</code> + Vercel: <code>FLAGCHECK_API_KEY</code>, <code>INFOSIMPLES_TOKEN</code>, <code>IDWALL_API_KEY</code>, <strong><code>SUPABASE_SERVICE_ROLE_KEY</code></strong> (hoje vazia — necessária pro server-side)</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> as tomadas já existem (<code>lib/verificacao/*</code>, <code>actions/iniciarVerificacao.ts</code>) — só validar que rodam com as chaves</li>
+<li><input disabled="" type="checkbox"> <strong>Banco/Telas:</strong> já prontos (status de verificação, painel admin de aprovação)</li>
+<li><input disabled="" type="checkbox"> <strong>DoD:</strong> cadastrar um entregador de teste → verificação real roda → admin vê resultado → aprova. Provar por <code>scripts/verify-*</code>.</li>
+</ul>
+<h2>FASE 2 — PAGAMENTO real (Asaas) · a maior peça, é o que faz faturar</h2>
+<p>Hoje só existe o webhook esqueleto (501). Falta construir.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Infra:</strong> conta Asaas no CNPJ do dono + <code>ASAAS_API_KEY</code> + <code>ASAAS_WEBHOOK_TOKEN</code></li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> client Asaas (<code>lib/asaas.ts</code>); criar subconta do entregador no cadastro/aprovação</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> recarga da carteira por Pix (cria cobrança Asaas → credita saldo no retorno do webhook)</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> split 80/20 na conclusão da entrega (entregador/plataforma)</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> repasse D+1 pro Pix do entregador (saque)</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> <code>/api/webhooks/asaas</code> real (confirma pagamento → credita; hoje 501)</li>
+<li><input disabled="" type="checkbox"> <strong>Banco:</strong> tabelas <code>pagamentos</code>/<code>carteira_transacoes</code> já existem; revisar se cobrem split/repasse</li>
+<li><input disabled="" type="checkbox"> <strong>Telas:</strong> ativar botão &quot;Adicionar saldo&quot; (hoje <code>disabled</code>) + extrato da carteira no lojista; tela de saque/ganhos do entregador</li>
+<li><input disabled="" type="checkbox"> <strong>DoD:</strong> lojista recarrega Pix de verdade → saldo sobe → entrega desconta → entregador vê crédito → saca. Provar na fonte (read-after-write).</li>
+</ul>
+<h2>FASE 3 — NOTIFICAÇÕES (SMS/WhatsApp + push)</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Decisão:</strong> escolher provedor de SMS/WhatsApp (ex. Zenvia) — credencial no CNPJ do dono</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> enviar <strong>SMS/WhatsApp com o link de rastreio</strong> pro cliente final ao despachar</li>
+<li><input disabled="" type="checkbox"> <strong>Backend:</strong> <strong>push</strong> de nova corrida pro entregador (hoje é polling) — Web Push/FCM</li>
+<li><input disabled="" type="checkbox"> <strong>Banco:</strong> (se preciso) log de envios</li>
+<li><input disabled="" type="checkbox"> <strong>DoD:</strong> cliente recebe o link no celular; entregador recebe alerta de corrida sem estar com o app aberto.</li>
+</ul>
+<h2>FASE 4 — ENTREGA / polimento final</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Jurídico:</strong> termos de uso + privacidade revisados por advogado (dado sensível de antecedentes = LGPD) — hoje são rascunho</li>
+<li><input disabled="" type="checkbox"> <strong>Infra:</strong> domínio próprio (ex. appdelyvery.com.br) — hoje a URL é <code>appdelivery-...</code> (com &quot;i&quot;; a marca é com &quot;y&quot;)</li>
+<li><input disabled="" type="checkbox"> <strong>Telas:</strong> confirmar que o que já está no banco aparece pro lojista — <strong>retorno</strong> (0026), <strong>cotação de preço</strong> (0025), <strong>proteção de carga</strong> (0027). Banco pronto; validar exposição na UI.</li>
+<li><input disabled="" type="checkbox"> <strong>Telas:</strong> validação visual final no celular (90% dos acessos são mobile)</li>
+<li><input disabled="" type="checkbox"> <strong>Banco:</strong> rodar <code>scripts/cleanup-teste.sql</code> (limpar dados de teste antes de entregar)</li>
+<li><input disabled="" type="checkbox"> <strong>DoD:</strong> abrir o app no celular como cliente real, do cadastro à entrega, sem nada de &quot;demo&quot;.</li>
+</ul>
+<hr>
+<h2>AJUSTES POR CAMADA (visão transversal)</h2>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Situação</th>
+<th>O que falta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Banco</strong></td>
+<td>Muito completo (27 migrations, ~18 tabelas, ~30 RPCs, guards)</td>
+<td>Quase nada estrutural — revisar <code>pagamentos</code>/<code>carteira</code> p/ split+repasse; talvez log de notificações</td>
+</tr>
+<tr>
+<td><strong>Backend / integrações</strong></td>
+<td>Mapbox + Supabase reais; resto é tomada no-op</td>
+<td><strong>Construir Asaas</strong> (grande), <strong>ligar verificação</strong> (chaves), <strong>criar SMS/push</strong> (novo), webhook Asaas real</td>
+</tr>
+<tr>
+<td><strong>Telas / UX</strong></td>
+<td>3 personas + admin + cliente, todas no ar</td>
+<td>Ativar recarga+extrato (depende Asaas); expor retorno/cotação/proteção no lojista; passada final mobile</td>
+</tr>
+<tr>
+<td><strong>Infra / jurídico</strong></td>
+<td>Deploy contínuo, PWA, SEO ok</td>
+<td>Chaves no CNPJ, domínio, termos com advogado, limpeza de teste</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>FORA DO SETUP — Fase 2 (evolução, cobrar à parte)</h2>
+<p>Do GAP-FUNCIONALIDADES + roadmap do plano, o que NÃO foi vendido no setup:</p>
+<ul>
+<li>Pagamento <strong>faturado/pós-pago CNPJ</strong> (trunfo p/ conta grande)</li>
+<li><strong>Agendamento / recorrência</strong> de entregas</li>
+<li><strong>Múltiplas paradas</strong> (1 coleta → várias entregas)</li>
+<li><strong>Devolução / return trip</strong> + <strong>dados do recebedor</strong> (nome/CPF na entrega)</li>
+<li>Instruções de entrega, endereços favoritos, tipos de entrega (express/agrupada)</li>
+<li><strong>Apps nativos</strong> (Play Store + App Store, via Expo)</li>
+<li><strong>Van intercidade</strong> (Porto/Gurupi)</li>
+<li><strong>Conectores</strong> Bling/Tiny/PDV de farmácia</li>
+<li><strong>Camada de IA</strong> (previsão de demanda, ETA preditivo, antifraude)</li>
+<li>Seguro de carga com <strong>apólice/parceiro real</strong> (hoje só o teto de cobertura no banco)</li>
+</ul>
+</div></section>
+<section class="doc"><div class="page"><div class="ksec">Parte 04</div><h1>Polimento do Front, Testes e Vitrine</h1><blockquote>
+<p>Auditoria fina (código) de 08/06/2026, tela por tela. O front <strong>funciona</strong> (motores ok), mas está
+<strong>~70-75% polido</strong>: faltam estados, validações, edge cases e acabamento mobile. Companion do
+<code>PLANO-DE-ENTREGA.md</code>. A validação VISUAL fica com a instância &quot;olhos&quot; (Chrome) + testes em aparelho real.</p>
+</blockquote>
+<hr>
+<h2>0. BUGS / GAPS CRÍTICOS (consertar antes de &quot;operar de verdade&quot;)</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Rastreio mostra entregador FAKE</strong> — <code>/rastreio/[token]</code> exibe &quot;Lucas Mendes / Honda CG 160 / ABC-1D23 / 4,9&quot; hardcoded e GPS em simulação (<code>usePosicaoAoVivo</code> existe mas não é usado). Tem que puxar do <code>get_rastreio_publico</code> real + ligar o GPS ao vivo. <strong>(É o link que foi pro investidor.)</strong></li>
+<li><input disabled="" type="checkbox"> <strong>Dados sensíveis hardcoded no cadastro do entregador</strong> — <code>defaultValue=&quot;Diego Alves de Souza&quot;</code> + CPF de exemplo no <code>EntregadorFlow</code>. Remover.</li>
+<li><input disabled="" type="checkbox"> <strong>Cadastro não valida CPF/CNPJ</strong> — aceita &quot;123&quot;. Falta máscara + validação (dígito verificador) no negócio e no entregador.</li>
+<li><input disabled="" type="checkbox"> <strong>Criar pedido sem saldo não bloqueia</strong> — lojista com carteira zerada cria pedido (entregador entregaria sem garantia de pagamento). Validar saldo antes de criar (pré-flight) — casa com a Fase 2 (Asaas).</li>
+<li><input disabled="" type="checkbox"> <strong>Código de entrega sem limite de tentativas</strong> — brute force possível. Throttle (ex. 3 erros → espera).</li>
+<li><input disabled="" type="checkbox"> <strong>&quot;Buscando entregador&quot; eterno</strong> — se ninguém aceita, fica travado sem timeout nem opção de cancelar/retentar. Definir timeout + ação.</li>
+</ul>
+<hr>
+<h2>1. POLIMENTO TRANSVERSAL (vale pra quase todas as telas)</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Estados de carregamento</strong> — trocar &quot;Carregando…&quot; por skeletons; padronizar.</li>
+<li><input disabled="" type="checkbox"> <strong>Estado de erro com retry</strong> — hoje várias telas falham em silêncio (lista vazia) se a query quebra. Botão &quot;tentar de novo&quot; + toast.</li>
+<li><input disabled="" type="checkbox"> <strong>Tempo real nas listas</strong> — Histórico, Ganhos, Comunicados, fila do Admin só atualizam no reload. Ligar Realtime/poll onde faz sentido (ex. comunicado urgente, nova corrida).</li>
+<li><input disabled="" type="checkbox"> <strong>Validações de formulário</strong> — máscara e tipo certo: CPF, CNPJ, telefone, valor declarado (<code>inputMode=&quot;numeric&quot;</code>, sem aceitar valor absurdo).</li>
+<li><input disabled="" type="checkbox"> <strong>Mobile fino</strong> — garantir toque ≥44px em todos os botões (<code>.btn</code> hoje não garante), tabelas com overflow visível, testar <strong>landscape</strong> (painel/mapa apertam), <code>&lt;pre&gt;</code> da API e canvas de assinatura sem estourar a tela.</li>
+<li><input disabled="" type="checkbox"> <strong>Feedback de ação</strong> — assinatura sem confirmação visual (&quot;assinado ✓&quot;); foto enviada sem check; SlideConfirm sem vibração.</li>
+</ul>
+<hr>
+<h2>2. POR PERSONA (itens curados, além do transversal)</h2>
+<h3>Negócio</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Novo pedido: toggle <strong>&quot;retorno&quot; não tem lógica</strong> ligada (existe no banco/0026, falta na tela); endereço fora de Palmas não é barrado; sem timeout no matching.</li>
+<li><input disabled="" type="checkbox"> Carteira: botão &quot;Adicionar saldo (em breve)&quot; — ativar com Asaas; tratar saldo baixo/zerado com aviso.</li>
+<li><input disabled="" type="checkbox"> Relatórios: mostra 50 na tela mas CSV exporta tudo (alinhar expectativa); avisar export vazio.</li>
+<li><input disabled="" type="checkbox"> Perfil: sem edição de dados ainda; conta suspensa não tem aviso/sessão-kill.</li>
+</ul>
+<h3>Entregador</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Verificação: animação &quot;aprovado&quot; é cosmética (timer fixo) — tem que refletir o resultado REAL do backend (senão mostra &quot;aprovado&quot; mentindo).</li>
+<li><input disabled="" type="checkbox"> Oferta: ao expirar/cair internet no aceite, fica em limbo — precisa re-buscar próxima/reconectar.</li>
+<li><input disabled="" type="checkbox"> Coleta/Entrega: geofence 100m pode dar falso-positivo (GPS impreciso em prédio) — mensagem clara de quantos metros faltam; foto/assinatura com validação real.</li>
+<li><input disabled="" type="checkbox"> Status &quot;recusado&quot;: sem caminho pra reapelar/refazer.</li>
+<li><input disabled="" type="checkbox"> Home: ao voltar depois de tempo, pode estar &quot;offline&quot; no backend sem avisar.</li>
+</ul>
+<h3>Admin</h3>
+<ul>
+<li><input disabled="" type="checkbox"> PIN de aprovação não é <code>required</code> (deixa aprovar sem PIN em alguns pontos) — travar.</li>
+<li><input disabled="" type="checkbox"> Comprovantes no drawer de Corridas aparecem vazios quando não há foto — ok, mas confirmar que aparecem quando há (depende da máquina de estados real).</li>
+<li><input disabled="" type="checkbox"> Financeiro: texto &quot;movimento real sai quando Asaas existir&quot; — trocar por estado neutro até ligar.</li>
+<li><input disabled="" type="checkbox"> Mensagens: sem paginação (carrega todas — trava com volume).</li>
+<li><input disabled="" type="checkbox"> Config: sem preview de impacto ao mudar preço; sem histórico de mudança.</li>
+</ul>
+<h3>Cliente final (rastreio)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> (ver crítico) dados reais + GPS ao vivo.</li>
+<li><input disabled="" type="checkbox"> Token inválido → tela de erro amigável (hoje quebra/branco).</li>
+<li><input disabled="" type="checkbox"> Entrega concluída/antiga → mostrar status final claro.</li>
+</ul>
+<hr>
+<h2>3. SITE VITRINE — conversão (capta cliente?)</h2>
+<p>Hoje é claro e bonito, mas <strong>não foi feito pra converter</strong>. Falta:</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Prova social / números</strong> — &quot;X entregas feitas&quot;, &quot;Y negócios atendidos&quot;, depoimentos. Hero só tem conceito.</li>
+<li><input disabled="" type="checkbox"> <strong>Cobertura no hero</strong> — &quot;Palmas e região&quot; só aparece miúdo no rodapé.</li>
+<li><input disabled="" type="checkbox"> <strong>FAQ</strong> — &quot;Como é a verificação?&quot;, &quot;Quanto custa?&quot;, &quot;Atende meu bairro?&quot; (tira objeção + ajuda SEO/AEO).</li>
+<li><input disabled="" type="checkbox"> <strong>CTA do entregador mais forte</strong> — hoje é ghost button discreto; o marketplace precisa dos dois lados.</li>
+<li><input disabled="" type="checkbox"> <strong>Tirar &quot;em breve&quot;</strong> da jornada do lojista (sinaliza produto incompleto).</li>
+<li><input disabled="" type="checkbox"> <strong>SEO on-page</strong> — title/description/OG por página; schema LocalBusiness/FAQ; imagem de hero real otimizada.</li>
+</ul>
+<hr>
+<h2>4. PLANO DE TESTES REAIS</h2>
+<h3>Aparelhos (mobile é 90% do uso)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> iPhone SE / 375px, Android 360px, iPad/tablet 768-1023px (o &quot;vão&quot; tablet é o menos testado), 1 desktop.</li>
+<li><input disabled="" type="checkbox"> <strong>2 aparelhos pro GPS</strong> (papel dos &quot;olhos&quot;/Chrome): entregador anda → lojista e cliente veem mover ao vivo.</li>
+</ul>
+<h3>Cenários ponta a ponta (cada um, na fonte/banco)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Lojista cria pedido <strong>sem saldo</strong> → deve bloquear.</li>
+<li><input disabled="" type="checkbox"> Pedido criado → ninguém online → comportamento do &quot;buscando&quot; (timeout?).</li>
+<li><input disabled="" type="checkbox"> Entregador aceita oferta → <strong>perde GPS/internet</strong> no meio → não pode ficar em limbo.</li>
+<li><input disabled="" type="checkbox"> Coleta/entrega <strong>longe do ponto</strong> → geofence avisa; com foto+assinatura+código → conclui e credita.</li>
+<li><input disabled="" type="checkbox"> <strong>Código errado 3x</strong> → throttle.</li>
+<li><input disabled="" type="checkbox"> Rastreio com <strong>token inválido</strong> → erro amigável.</li>
+<li><input disabled="" type="checkbox"> Cadastro com <strong>CPF/CNPJ inválido</strong> → barra.</li>
+<li><input disabled="" type="checkbox"> Admin aprova entregador <strong>sem PIN</strong> → barra.</li>
+<li><input disabled="" type="checkbox"> Suspender negócio/entregador enquanto ele usa → efeito imediato.</li>
+</ul>
+<hr>
+<h2>Prioridade sugerida</h2>
+<ol>
+<li><strong>Críticos (seção 0)</strong> — principalmente rastreio real + validações de cadastro/saldo (são correção, rápidos e de risco).</li>
+<li><strong>Transversal (seção 1)</strong> — estados + mobile fino (eleva tudo de uma vez).</li>
+<li><strong>Vitrine (seção 3)</strong> — em paralelo, porque alimenta a captação.</li>
+<li><strong>Por persona (seção 2)</strong> — varredura final tela a tela.</li>
+</ol>
+</div></section>
+<section class="doc"><div class="page"><div class="ksec">Parte 05</div><h1>Estratégia de Captação</h1><blockquote>
+<p>Esboço estratégico (08/06/2026) pra o Eduardo (que é o operador de tráfego) refinar.
+O APPDELYVERY é um <strong>marketplace de 2 lados</strong>: sem entregador não tem serviço; sem lojista não tem receita.
+Captar os dois em paralelo, começando pequeno e local.</p>
+</blockquote>
+<h2>O desafio do &quot;ovo e a galinha&quot;</h2>
+<p>Lojista só fica se a entrega sai rápido; entregador só fica se tem corrida. Solução: <strong>começar denso num recorte pequeno</strong> (um bairro/eixo de Palmas + um nicho), não espalhar fino.</p>
+<hr>
+<h2>LADO A — LOJISTAS (a receita)</h2>
+<h3>Quem (ordem de facilidade × valor)</h3>
+<ol>
+<li><strong>Âncora:</strong> os negócios do próprio cliente-dono (ele é empresário local) — garante volume inicial real.</li>
+<li><strong>Farmácias</strong> (Drogasil usa Bee via API — modelo provado), <strong>óticas</strong>, <strong>lojas de autopeças/eletrônicos</strong>, <strong>mercados/distribuidoras</strong> que entregam no interior.</li>
+<li><strong>Vendedores de Mercado Livre / Shopee (Flex)</strong> de Palmas — same-day local (já mapeado no plano de negócio).</li>
+</ol>
+<h3>Como captar</h3>
+<ul>
+<li><strong>Prospecção direta</strong> (o forte do Eduardo + relação local): visita/WhatsApp com demo no celular (os links que já temos). &quot;Primeiras N entregas grátis pra testar.&quot;</li>
+<li><strong>Oferta de entrada:</strong> isenção de setup / X entregas cortesia / sem fidelidade — reduzir atrito de experimentar.</li>
+<li><strong>Tráfego local (Google/AEO):</strong> &quot;entrega Palmas&quot;, &quot;motoboy empresa Palmas&quot;, &quot;entrega de encomenda Palmas&quot; — o site já tem SEO/llms.txt; falta FAQ + prova social (ver POLIMENTO-FRONT §3).</li>
+<li><strong>Parceria com sistema/PDV:</strong> virar opção de logística onde o lojista já trabalha (Bling/Tiny têm integração logística) — a API já existe.</li>
+<li><strong>Indicação lojista→lojista:</strong> comissão/crédito por indicar outro negócio.</li>
+</ul>
+<h3>Pitch pro lojista (ângulo)</h3>
+<p>Confiança (entregador de ficha checada) + local (atende rápido, fala com gente daqui) + sem frota própria (paga só o que usar) + comprovação forte (foto/assinatura/código).</p>
+<hr>
+<h2>LADO B — ENTREGADORES (a oferta/supply)</h2>
+<h3>Quem</h3>
+<p>Motoboys de Palmas que já rodam pra iFood/99/Bee e querem mais corrida; carro/van pra cargas maiores.</p>
+<h3>Como captar</h3>
+<ul>
+<li><strong>Grupos de WhatsApp/Telegram de motoboy</strong> de Palmas (canal nº1, baixo custo).</li>
+<li><strong>Programa de indicação</strong> (já no roadmap): bônus por trazer entregador que é aprovado e roda. Crescimento viral barato.</li>
+<li><strong>Argumento forte:</strong> recebe <strong>80% do frete</strong>, repasse <strong>D+1</strong> (dinheiro rápido), sem meta punitiva, app no padrão dos grandes.</li>
+<li><strong>Selo de verificado</strong> como diferencial de orgulho/confiança (e o lojista prefere verificado).</li>
+</ul>
+<h3>Cuidado de supply</h3>
+<p>Não captar entregador demais antes de ter corrida (frustra e some). Crescer o supply junto com a demanda do recorte inicial.</p>
+<hr>
+<h2>SEQUÊNCIA DE LANÇAMENTO (sugerida)</h2>
+<ol>
+<li><strong>Semente:</strong> 5-10 entregadores verificados + os negócios-âncora do dono rodando de verdade (provar o ciclo no mundo real, não só demo).</li>
+<li><strong>Recorte denso:</strong> 1 nicho (ex. farmácias) num eixo de Palmas — virar a referência ali.</li>
+<li><strong>Boca a boca + indicação</strong> (os dois lados) + tráfego local ligado.</li>
+<li><strong>Expandir nicho a nicho</strong> e bairro a bairro; depois região (Luzimangues) — ver EXPANSAO-REGIONAL.</li>
+</ol>
+<hr>
+<h2>MÉTRICAS PRA ACOMPANHAR (desde o dia 1)</h2>
+<ul>
+<li>Lojistas ativos / entregas por lojista / recompra.</li>
+<li>Entregadores ativos / corridas por entregador / tempo até aceite.</li>
+<li>Taxa de entrega no prazo, nota média, cancelamentos.</li>
+<li>CAC por lado vs. receita (take rate 20%).</li>
+</ul>
+<hr>
+<h2>DEPENDE DO PRODUTO (ver POLIMENTO-FRONT + PLANO-DE-ENTREGA)</h2>
+<p>Captação só escala com: pagamento real (Asaas), verificação ligada (o diferencial do pitch), rastreio real (não fake), e a vitrine com prova social/FAQ. Captar antes disso = queimar lead.</p>
+</div></section>
+</body></html>

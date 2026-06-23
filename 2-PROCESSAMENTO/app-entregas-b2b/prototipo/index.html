@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APPDELYVERY · Sistema</title>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#4f46e5; --brand-dark:#4338ca; --brand-2:#6366f1; --brand-light:#eef0ff; --brand-glow:rgba(79,70,229,.25);
+    --go:#059669; --go-bg:#e7f7f0; --go-dark:#047857;
+    --warn:#d97706; --warn-bg:#fef3e2;
+    --ink:#0d1424; --ink-2:#33405c; --muted:#6b7894; --faint:#9aa6bf;
+    --line:#e8ecf5; --line-2:#dde3f0; --bg:#f5f7fc; --card:#ffffff;
+    --shadow:0 4px 24px rgba(23,37,84,.07), 0 1px 3px rgba(23,37,84,.05);
+    --shadow-lg:0 12px 40px rgba(23,37,84,.13);
+    --shadow-sm:0 1px 3px rgba(23,37,84,.07);
+    --radius:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--bg); overflow:hidden; -webkit-font-smoothing:antialiased;}
+  ::-webkit-scrollbar{width:9px;} ::-webkit-scrollbar-thumb{background:var(--line-2); border-radius:6px; border:2px solid var(--bg);}
+
+  /* HEADER */
+  header{height:64px; background:rgba(255,255,255,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; padding:0 22px; position:relative; z-index:30;}
+  .logo{display:flex; align-items:center; gap:11px;}
+  .logo .mark{width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    display:grid; place-items:center; color:#fff; box-shadow:0 4px 14px var(--brand-glow);}
+  .logo .mark svg{width:21px;height:21px;}
+  .logo .name{font-weight:800; font-size:20px; letter-spacing:-.6px; line-height:1;}
+  .logo .name b{color:var(--brand);} .logo .name span{color:var(--ink);}
+  .logo .sub{font-size:10.5px; color:var(--muted); font-weight:600; letter-spacing:.2px; margin-top:2px;}
+  .tagline{font-size:11.5px; color:var(--muted); font-weight:600; margin-left:14px; padding-left:14px; border-left:1px solid var(--line-2); display:flex; align-items:center; gap:6px;}
+  .tagline svg{width:14px;height:14px;color:var(--go);}
+
+  /* SEGMENTED TABS */
+  .tabs{display:flex; gap:4px; background:#eef1f8; padding:4px; border-radius:13px;}
+  .tab{border:none; background:transparent; font-size:13px; font-weight:700; color:var(--muted);
+    padding:9px 16px; border-radius:9px; cursor:pointer; transition:.18s; display:flex; align-items:center; gap:7px;}
+  .tab svg{width:16px;height:16px;}
+  .tab.active{background:var(--card); color:var(--brand); box-shadow:var(--shadow-sm);}
+  .tab:not(.active):hover{color:var(--ink-2);}
+
+  .demo-tag{font-size:10px; font-weight:800; color:var(--warn); background:var(--warn-bg); padding:5px 11px; border-radius:30px;
+    text-transform:uppercase; letter-spacing:.6px; display:flex; align-items:center; gap:6px;}
+  .demo-tag svg{width:12px;height:12px;}
+
+  /* LAYOUT */
+  .app{display:flex; height:calc(100vh - 64px);}
+  .panel{width:418px; min-width:418px; background:var(--bg); overflow-y:auto; padding:20px;}
+  #map{flex:1; position:relative; border-left:1px solid var(--line);}
+
+  /* CARDS */
+  .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); margin-bottom:15px; border:1px solid var(--line);}
+  .card-h{display:flex; align-items:center; gap:8px; margin-bottom:14px;}
+  .card-h svg{width:15px; height:15px; color:var(--brand);}
+  .card-h h3{font-size:11.5px; text-transform:uppercase; letter-spacing:.7px; color:var(--muted); font-weight:800;}
+  .card-h .right{margin-left:auto; font-size:11px; color:var(--faint); font-weight:700; text-transform:none; letter-spacing:0;}
+
+  /* DRIVER */
+  .driver{display:flex; gap:13px; align-items:center;}
+  .avatar{width:54px; height:54px; border-radius:15px; background:linear-gradient(135deg,var(--brand-2),var(--brand-dark)); color:#fff;
+    display:grid; place-items:center; font-weight:800; font-size:19px; flex-shrink:0; box-shadow:0 4px 12px var(--brand-glow);}
+  .driver-info{flex:1;}
+  .driver-info .name{font-weight:800; font-size:16.5px; letter-spacing:-.3px;}
+  .driver-info .meta{font-size:12.5px; color:var(--muted); margin-top:3px; display:flex; align-items:center; gap:6px;}
+  .rating{color:var(--warn); font-weight:800; display:inline-flex; align-items:center; gap:3px;}
+  .rating svg{width:12px;height:12px;fill:var(--warn);stroke:none;}
+  .verified-badges{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px;}
+  .vbadge{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; color:var(--go-dark);
+    background:var(--go-bg); padding:6px 10px; border-radius:9px;}
+  .vbadge svg{width:13px; height:13px;}
+  .trust-banner{margin-top:14px; background:linear-gradient(135deg,var(--go-bg),#d6f3e6); border:1px solid #aee4c8;
+    border-radius:11px; padding:12px 13px; font-size:12.5px; color:var(--go-dark); font-weight:600; display:flex; gap:10px; align-items:center; line-height:1.45;}
+  .trust-banner svg{width:22px;height:22px;flex-shrink:0;}
+
+  /* ETA */
+  .eta-row{display:flex; gap:12px;}
+  .eta-box{flex:1; background:linear-gradient(135deg,var(--brand-light),#f3f4ff); border-radius:13px; padding:14px; text-align:center; border:1px solid #e0e3ff;}
+  .eta-box .big{font-size:27px; font-weight:800; color:var(--brand); letter-spacing:-1px; line-height:1;}
+  .eta-box .lbl{font-size:11px; color:var(--muted); font-weight:700; margin-top:5px; text-transform:uppercase; letter-spacing:.4px;}
+
+  /* TIMELINE */
+  .timeline{position:relative;}
+  .step{display:flex; gap:13px; padding-bottom:18px; position:relative;}
+  .step:last-child{padding-bottom:0;}
+  .step::before{content:''; position:absolute; left:10px; top:23px; bottom:-2px; width:2px; background:var(--line-2);}
+  .step:last-child::before{display:none;}
+  .step.done::before{background:var(--go);}
+  .dot{width:22px; height:22px; border-radius:50%; border:2px solid var(--line-2); background:var(--card); flex-shrink:0; z-index:1; display:grid; place-items:center; transition:.2s;}
+  .dot svg{width:12px;height:12px;color:#fff;opacity:0; transition:.2s;}
+  .step.done .dot{background:var(--go); border-color:var(--go);}
+  .step.done .dot svg{opacity:1;}
+  .step.active .dot{background:var(--brand); border-color:var(--brand); animation:pulse 1.5s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 var(--brand-glow);}70%{box-shadow:0 0 0 9px rgba(79,70,229,0);}100%{box-shadow:0 0 0 0 rgba(79,70,229,0);}}
+  .step-txt .t{font-weight:700; font-size:14px; letter-spacing:-.2px;}
+  .step.pending .step-txt .t{color:var(--faint); font-weight:600;}
+  .step-txt .s{font-size:12px; color:var(--muted); margin-top:2px;}
+  .step.pending .step-txt .s{color:var(--faint);}
+
+  /* PRICE */
+  .price-line{display:flex; justify-content:space-between; font-size:13px; padding:6px 0; color:var(--muted);}
+  .price-line span:last-child{color:var(--ink-2); font-weight:600;}
+  .price-line.total{border-top:1.5px dashed var(--line-2); margin-top:8px; padding-top:12px; font-size:18px; font-weight:800; color:var(--ink);}
+  .price-line.total span:last-child{color:var(--brand); font-size:22px; letter-spacing:-.5px;}
+  .price-sub{font-size:11.5px;color:var(--faint);text-align:right;margin-top:3px;}
+
+  /* FORM */
+  .field{margin-bottom:13px;}
+  .field label{display:block; font-size:11.5px; font-weight:700; color:var(--ink-2); margin-bottom:6px; letter-spacing:.1px;}
+  .field .input{width:100%; border:1.5px solid var(--line-2); border-radius:11px; padding:11px 13px; font-size:13.5px; font-family:inherit; color:var(--ink); background:#fbfcfe; transition:.15s;}
+  .field .input:focus{outline:none; border-color:var(--brand); background:#fff; box-shadow:0 0 0 3px var(--brand-light);}
+  .field .input::placeholder{color:var(--faint);}
+  .with-icon{position:relative;}
+  .with-icon svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--muted);}
+  .with-icon .input{padding-left:38px;}
+  .veh-toggle{display:flex; gap:8px;}
+  .veh-opt{flex:1; border:1.5px solid var(--line-2); border-radius:11px; padding:11px; display:flex; flex-direction:column; align-items:center; gap:5px; cursor:pointer; transition:.15s; background:#fbfcfe;}
+  .veh-opt svg{width:22px;height:22px;color:var(--muted);}
+  .veh-opt .vl{font-size:12px;font-weight:700;color:var(--muted);}
+  .veh-opt.sel{border-color:var(--brand); background:var(--brand-light);}
+  .veh-opt.sel svg, .veh-opt.sel .vl{color:var(--brand);}
+
+  /* UPLOAD */
+  .upload{display:flex; align-items:center; gap:11px; border:1.5px dashed var(--line-2); border-radius:11px; padding:13px; cursor:pointer; transition:.15s; background:#fbfcfe;}
+  .upload:hover{border-color:var(--brand); background:var(--brand-light);}
+  .upload.done{border-style:solid; border-color:var(--go); background:var(--go-bg);}
+  .upload .ic{width:36px;height:36px;border-radius:9px;background:var(--brand-light);display:grid;place-items:center;flex-shrink:0;}
+  .upload .ic svg{width:18px;height:18px;color:var(--brand);}
+  .upload.done .ic{background:#cdeedd;} .upload.done .ic svg{color:var(--go-dark);}
+  .upload .ut{font-size:13px;font-weight:700;} .upload .us{font-size:11px;color:var(--muted);margin-top:1px;}
+
+  /* VERIFY CHECKLIST */
+  .vcheck{display:flex; align-items:center; gap:12px; padding:13px; border-radius:11px; background:#fbfcfe; border:1px solid var(--line); margin-bottom:9px; opacity:.45; transition:.4s;}
+  .vcheck.run{opacity:1; border-color:var(--brand-light);}
+  .vcheck.ok{opacity:1; background:var(--go-bg); border-color:#aee4c8;}
+  .vcheck .vc-ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;background:var(--line);}
+  .vcheck.run .vc-ic{background:var(--brand-light);}
+  .vcheck.ok .vc-ic{background:#cdeedd;}
+  .vcheck .vc-ic svg{width:17px;height:17px;color:var(--muted);}
+  .vcheck.run .vc-ic svg{color:var(--brand); animation:spin 1s linear infinite;}
+  .vcheck.ok .vc-ic svg{color:var(--go-dark); animation:none;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .vcheck .vc-t{font-size:13.5px;font-weight:700;flex:1;}
+  .vcheck .vc-s{font-size:11px;color:var(--muted);}
+
+  /* BUTTONS */
+  .btn{width:100%; border:none; border-radius:12px; padding:14px; font-size:14.5px; font-weight:800; cursor:pointer; transition:.15s; display:flex; align-items:center; justify-content:center; gap:9px; font-family:inherit; letter-spacing:.1px;}
+  .btn svg{width:18px;height:18px;}
+  .btn-primary{background:var(--brand); color:#fff; box-shadow:0 4px 14px var(--brand-glow);} .btn-primary:hover{background:var(--brand-dark);}
+  .btn-go{background:var(--go); color:#fff; box-shadow:0 4px 14px rgba(5,150,105,.25);} .btn-go:hover{background:var(--go-dark);}
+  .btn-ghost{background:var(--card); color:var(--brand); border:1.5px solid var(--line-2);}
+  .btn-ghost:hover{border-color:var(--brand);}
+  .btn:disabled{opacity:.5; cursor:default; box-shadow:none;}
+  .btn-row{display:flex;gap:10px;} .btn-row .btn{margin:0;}
+
+  /* MATCHING RADAR */
+  .radar-wrap{display:flex;flex-direction:column;align-items:center;padding:18px 0 6px;}
+  .radar{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,var(--brand-light),#fff);position:relative;display:grid;place-items:center;}
+  .radar::before,.radar::after{content:'';position:absolute;border:2px solid var(--brand);border-radius:50%;opacity:0;animation:radar 2s infinite;}
+  .radar::before{width:100%;height:100%;} .radar::after{width:100%;height:100%;animation-delay:1s;}
+  @keyframes radar{0%{transform:scale(.3);opacity:.8;}100%{transform:scale(1);opacity:0;}}
+  .radar .rc{width:54px;height:54px;border-radius:15px;background:var(--brand);display:grid;place-items:center;z-index:1;box-shadow:0 6px 18px var(--brand-glow);}
+  .radar .rc svg{width:26px;height:26px;color:#fff;}
+
+  /* PHOTO PROOF */
+  .photo{position:relative;border-radius:12px;overflow:hidden;height:130px;background:linear-gradient(135deg,#3b4a6b,#1f2940);display:grid;place-items:center;}
+  .photo .pkg{width:46px;height:46px;color:rgba(255,255,255,.85);}
+  .photo .geo{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.7));padding:18px 11px 9px;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;gap:6px;}
+  .photo .geo svg{width:12px;height:12px;}
+
+  /* SIGNATURE */
+  .sigpad{border:1.5px solid var(--line-2);border-radius:12px;background:#fbfcfe;touch-action:none;cursor:crosshair;width:100%;display:block;}
+  .sig-hint{font-size:11.5px;color:var(--faint);text-align:center;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .sig-hint svg{width:13px;height:13px;}
+
+  /* KPIs */
+  .kpis{display:grid; grid-template-columns:1fr 1fr 1fr; gap:11px; margin-bottom:15px;}
+  .kpi{background:var(--card); border-radius:14px; padding:15px; box-shadow:var(--shadow); border:1px solid var(--line);}
+  .kpi .ic{width:30px;height:30px;border-radius:8px;background:var(--brand-light);display:grid;place-items:center;margin-bottom:9px;}
+  .kpi .ic svg{width:15px;height:15px;color:var(--brand);}
+  .kpi .v{font-size:23px; font-weight:800; letter-spacing:-.8px; line-height:1;}
+  .kpi .l{font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.4px; margin-top:5px;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{text-align:left; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.5px; padding:7px 4px; border-bottom:1px solid var(--line); font-weight:800;}
+  td{padding:11px 4px; border-bottom:1px solid var(--line); font-weight:500;}
+  tr:last-child td{border-bottom:none;}
+  .td-name{font-weight:700;}
+  .status-pill{font-size:10px; font-weight:800; padding:4px 9px; border-radius:30px; display:inline-flex; align-items:center; gap:4px; white-space:nowrap;}
+  .status-pill svg{width:10px;height:10px;}
+  .s-ok{background:var(--go-bg); color:var(--go-dark);}
+  .s-pend{background:var(--warn-bg); color:var(--warn);}
+  .s-live{background:var(--brand-light); color:var(--brand);}
+
+  /* OFFER */
+  .offer-amount{font-size:38px; font-weight:900; color:var(--go); text-align:center; margin:8px 0 2px; letter-spacing:-1.5px;}
+  .offer-sub{text-align:center;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:6px;}
+  .route-pts{display:flex; flex-direction:column; gap:0; margin:16px 0; position:relative;}
+  .route-pts::before{content:'';position:absolute;left:5px;top:14px;bottom:14px;width:2px;background:var(--line-2);}
+  .rpt{display:flex; gap:13px; align-items:flex-start; padding:7px 0; position:relative;}
+  .rpt .pin{width:12px;height:12px;border-radius:50%;margin-top:3px;flex-shrink:0;z-index:1;border:2px solid #fff;box-shadow:0 0 0 1px var(--line-2);}
+  .rpt .pin.o{background:var(--brand);} .rpt .pin.d{background:var(--go);}
+  .rpt .txt .a{font-weight:700;font-size:13.5px;} .rpt .txt .b{font-size:11.5px;color:var(--muted);margin-top:1px;}
+  .countdown{text-align:center; font-size:12px; color:var(--muted); margin-top:10px; font-weight:600;}
+  .countdown b{color:var(--brand);}
+
+  .hint{font-size:11.5px;color:var(--faint);text-align:center;margin-top:10px;line-height:1.6;}
+  .earn-big{font-size:40px;font-weight:900;color:var(--go);text-align:center;letter-spacing:-1.5px;margin:6px 0;}
+  .done-hero{text-align:center;padding:8px 0;}
+  .done-hero .circle{width:72px;height:72px;border-radius:50%;background:var(--go-bg);display:grid;place-items:center;margin:0 auto 12px;}
+  .done-hero .circle svg{width:36px;height:36px;color:var(--go);}
+  .done-hero .t{font-size:19px;font-weight:800;letter-spacing:-.4px;}
+  .done-hero .s{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  /* MAP overlay */
+  .map-badge{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);padding:9px 15px;border-radius:30px;
+    box-shadow:var(--shadow-lg);font-size:13px;font-weight:700;z-index:5;display:flex;align-items:center;gap:9px;}
+  .map-badge .pulse-dot{width:9px;height:9px;border-radius:50%;background:var(--go);box-shadow:0 0 0 0 rgba(5,150,105,.5);animation:pulse2 1.6s infinite;}
+  @keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(5,150,105,.5);}70%{box-shadow:0 0 0 7px rgba(5,150,105,0);}100%{box-shadow:0 0 0 0 rgba(5,150,105,0);}}
+  .moto-marker{width:42px;height:42px;background:var(--brand);border-radius:50%;border:3px solid #fff;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);display:grid;place-items:center;color:#fff;}
+  .moto-marker svg{width:23px;height:23px;}
+  .pt-marker{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.3);display:grid;place-items:center;}
+  .pt-marker svg{width:13px;height:13px;color:#fff;transform:rotate(45deg);}
+  .pt-marker.o{background:var(--brand);} .pt-marker.d{background:var(--go);}
+
+  /* ===== SITE PÚBLICO (vitrine) ===== */
+  #siteOverlay{position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;display:none;}
+  #siteOverlay.show{display:block;}
+  .s-nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:5;}
+  .s-nav .menu{display:flex;gap:24px;align-items:center;}
+  .s-nav .menu a{font-size:13.5px;font-weight:600;color:var(--ink-2);cursor:pointer;text-decoration:none;}
+  .s-nav .menu a:hover{color:var(--brand);}
+  .s-navbtn{border:none;background:var(--brand);color:#fff;border-radius:10px;padding:10px 18px;font-size:13.5px;font-weight:800;cursor:pointer;font-family:inherit;}
+  .s-wrap{max-width:1060px;margin:0 auto;padding:0 6%;}
+  .s-hero{text-align:center;padding:64px 0 36px;}
+  .s-trust{display:inline-flex;align-items:center;gap:7px;background:var(--go-bg);color:var(--go-dark);font-weight:800;font-size:12px;padding:7px 14px;border-radius:30px;margin-bottom:22px;text-transform:uppercase;letter-spacing:.5px;}
+  .s-trust svg{width:14px;height:14px;}
+  .s-hero h1{font-size:46px;font-weight:900;letter-spacing:-1.8px;line-height:1.06;color:var(--h1);max-width:780px;margin:0 auto;}
+  .s-hero h1 .hl{color:var(--brand);}
+  .s-hero p{font-size:17px;color:var(--ink-2);max-width:600px;margin:20px auto 0;line-height:1.6;}
+  .s-cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;}
+  .s-btn{border:none;border-radius:12px;padding:15px 26px;font-size:15px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:inherit;}
+  .s-btn svg{width:18px;height:18px;}
+  .s-btn.p{background:var(--brand);color:#fff;box-shadow:0 8px 22px var(--brand-glow);}
+  .s-btn.p:hover{background:var(--brand-dark);}
+  .s-btn.g{background:#fff;color:var(--brand);border:1.5px solid var(--line-2);}
+  .s-doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px 0 12px;}
+  .s-door{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--shadow);}
+  .s-door.dark{background:linear-gradient(160deg,var(--h1),var(--brand-dark));}
+  .s-door.dark *{color:#fff !important;}
+  .s-door.dark .ic{background:rgba(255,255,255,.15);}
+  .s-door .ic{width:50px;height:50px;border-radius:14px;background:var(--brand-light);display:grid;place-items:center;margin-bottom:16px;}
+  .s-door .ic svg{width:25px;height:25px;color:var(--brand);}
+  .s-door h3{font-size:21px;font-weight:800;letter-spacing:-.4px;}
+  .s-door .d{font-size:13.5px;color:var(--muted);margin-top:6px;}
+  .s-door ul{list-style:none;padding:0;margin:16px 0 20px;}
+  .s-door li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink-2);margin-bottom:10px;}
+  .s-door li svg{width:16px;height:16px;color:var(--go);flex-shrink:0;margin-top:2px;}
+  .s-door.dark li svg{color:#7dd3a8;}
+  .s-sec{padding:44px 0;}
+  .s-sec h2{text-align:center;font-size:30px;font-weight:800;letter-spacing:-.7px;margin-bottom:8px;color:var(--h1);}
+  .s-sec .subt{text-align:center;color:var(--muted);font-size:14.5px;margin-bottom:30px;}
+  .s-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .s-step{text-align:center;padding:8px;}
+  .s-step .n{width:46px;height:46px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px;margin:0 auto 13px;box-shadow:0 5px 14px var(--brand-glow);}
+  .s-step .t{font-weight:700;font-size:15px;}
+  .s-step .ss{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45;}
+  .s-band{background:linear-gradient(135deg,var(--go-dark),var(--go));border-radius:22px;padding:46px;text-align:center;color:#fff;margin:8px 0;}
+  .s-band *{color:#fff !important;}
+  .s-band h2{font-size:27px;font-weight:800;letter-spacing:-.5px;}
+  .s-band p{font-size:15px;opacity:.92;max-width:560px;margin:12px auto 0;line-height:1.55;}
+  .s-foot{border-top:1px solid var(--line);padding:34px 6%;text-align:center;color:var(--muted);font-size:12.5px;margin-top:20px;}
+  @media(max-width:760px){.s-doors,.s-steps{grid-template-columns:1fr;}.s-hero h1{font-size:33px;}.s-nav .menu a{display:none;}}
+
+  /* ===== SHELL SaaS (sidebar + topbar) — padrão AgendaPRO/Palace ===== */
+  .shell{display:flex;height:100vh;}
+  .sidebar{width:256px;flex-shrink:0;background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:16px 14px;overflow-y:auto;}
+  .sb-logo{display:flex;align-items:center;gap:10px;padding:6px 6px 16px;border-bottom:1px solid var(--line);margin-bottom:12px;}
+  .sb-logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;box-shadow:0 4px 14px var(--brand-glow);flex-shrink:0;}
+  .sb-logo .mark svg{width:20px;height:20px;}
+  .sb-logo .name{font-weight:800;font-size:17px;letter-spacing:-.5px;line-height:1;}
+  .sb-logo .name b{color:var(--brand);}
+  .sb-logo .sub{font-size:10px;color:var(--muted);font-weight:600;margin-top:3px;}
+  .sb-group .gh{font-size:10px;font-weight:800;color:var(--faint);text-transform:uppercase;letter-spacing:.7px;padding:12px 10px 5px;}
+  .sb-item{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:.12s;border:none;background:none;width:100%;text-align:left;font-family:inherit;margin-bottom:1px;}
+  .sb-item svg{width:17px;height:17px;color:var(--muted);flex-shrink:0;}
+  .sb-item:hover{background:var(--bg);}
+  .sb-item.active{background:var(--brand-light);color:var(--brand);}
+  .sb-item.active svg{color:var(--brand);}
+  .sb-item .badge{margin-left:auto;font-size:9px;font-weight:800;background:var(--line);color:var(--muted);padding:2px 7px;border-radius:20px;text-transform:uppercase;}
+  .sb-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;}
+  .sb-demo-h{font-size:9.5px;font-weight:800;color:var(--faint);text-transform:uppercase;letter-spacing:.6px;padding:0 6px 8px;}
+  .sb-demo{display:flex;gap:5px;}
+  .sb-demo button{flex:1;border:1px solid var(--line-2);background:#fff;border-radius:9px;padding:8px 4px;font-size:10px;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .sb-demo button svg{width:15px;height:15px;}
+  .sb-demo button.on{border-color:var(--brand);background:var(--brand-light);color:var(--brand);}
+  .main{flex:1;display:flex;flex-direction:column;min-width:0;}
+  .topbar{height:62px;flex-shrink:0;border-bottom:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;}
+  .topbar .tt{font-size:16px;font-weight:800;letter-spacing:-.3px;}
+  .topbar .ts{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:1px;}
+  .topbar .right{display:flex;align-items:center;gap:10px;}
+  .content{flex:1;display:flex;min-height:0;}
+  .content .panel{width:430px;flex-shrink:0;border-right:1px solid var(--line);}
+  .content.no-map .panel{width:100%;max-width:880px;margin:0 auto;border-right:none;}
+  .content.no-map #map{display:none;}
+  /* login SaaS (entrada — NÃO é LP) */
+  .login-screen{position:fixed;inset:0;z-index:300;background:radial-gradient(1100px 560px at 72% -12%,var(--brand-light),var(--bg));display:none;align-items:center;justify-content:center;padding:20px;}
+  .login-screen.show{display:flex;}
+  .login-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);width:100%;max-width:404px;padding:34px;}
+  .lg-logo{display:flex;align-items:center;gap:11px;justify-content:center;margin-bottom:6px;}
+  .lg-logo .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;}
+  .lg-logo .mark svg{width:23px;height:23px;}
+  .lg-logo .name{font-weight:900;font-size:22px;letter-spacing:-.6px;}
+  .lg-logo .name b{color:var(--brand);}
+  .lg-sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:22px;}
+  .lg-role{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line-2);border-radius:13px;padding:14px;cursor:pointer;margin-bottom:10px;transition:.14s;background:#fbfcfe;width:100%;font-family:inherit;text-align:left;}
+  .lg-role:hover{border-color:var(--brand);background:var(--brand-light);}
+  .lg-role .ic{width:40px;height:40px;border-radius:10px;background:var(--brand-light);display:grid;place-items:center;flex-shrink:0;}
+  .lg-role .ic svg{width:20px;height:20px;color:var(--brand);}
+  .lg-role .rt{font-weight:700;font-size:14px;}
+  .lg-role .rs{font-size:11.5px;color:var(--muted);}
+  .lg-role .arr{margin-left:auto;color:var(--faint);}
+  .lg-role .arr svg{width:18px;height:18px;}
+  .lg-foot{text-align:center;font-size:11.5px;color:var(--faint);margin-top:16px;}
+  @media(max-width:900px){.sidebar{display:none;}.content .panel{width:100%;border-right:none;}}
+</style>
+</head>
+<body>
+
+<div id="login" class="login-screen"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main">
+    <div class="topbar" id="topbar"></div>
+    <div class="content" id="content">
+      <div class="panel" id="panel"></div>
+      <div id="map">
+        <div class="map-badge"><span class="pulse-dot"></span> <span id="mapBadge">Rastreamento ao vivo · Palmas-TO</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+// ===================== ÍCONES SVG (zero emoji) =====================
+const I = {
+  building:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>',
+  moto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M8 17h6l3-5h-3.5l-2-3H7"/><path d="M14 7h3"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+  checkThin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  camera:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h3l2-2h8l2 2h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>',
+  pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg>',
+  stop:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>',
+  refresh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>',
+  pkg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>',
+  star:'<svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>',
+  upload:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
+  card:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l2-5h10l2 5M3 13h18v5h-2v-2H5v2H3z"/><circle cx="7.5" cy="16.5" r="1"/><circle cx="16.5" cy="16.5" r="1"/></svg>',
+  user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg>',
+  spinner:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" /></svg>',
+  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
+  send:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
+  money:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2c0-1 1.1-1.7 2.5-1.7s2.5.7 2.5 1.7-1.1 1.6-2.5 1.6-2.5.7-2.5 1.7 1.1 1.7 2.5 1.7 2.5-.7 2.5-1.7"/></svg>',
+  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>',
+};
+function svg(name){return I[name]||'';}
+
+// ===================== DADOS PALMAS-TO =====================
+const PALMAS=[-48.3336,-10.1844];
+const ORIGEM={lng:-48.3401,lat:-10.1701,nome:"Ótica Visão Center",end:"Q. 104 Norte, Av. JK"};
+const DESTINO={lng:-48.3209,lat:-10.2008,nome:"Andrade Contabilidade",end:"Q. 304 Sul, Av. NS-2"};
+function buildRoute(o,d,n){
+  const wp=[[o.lng,o.lat],[-48.3360,-10.1790],[-48.3300,-10.1850],[-48.3270,-10.1920],[-48.3230,-10.1970],[d.lng,d.lat]];
+  const pts=[];
+  for(let s=0;s<wp.length-1;s++){const a=wp[s],b=wp[s+1];for(let i=0;i<24;i++){const t=i/24;pts.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);}}
+  pts.push([d.lng,d.lat]); return pts;
+}
+let ROUTE=buildRoute(ORIGEM,DESTINO);
+let DIST_KM=6.3, DUR_MIN=10;
+function densify(coords,n){
+  const d=[0]; for(let i=1;i<coords.length;i++){const dx=coords[i][0]-coords[i-1][0],dy=coords[i][1]-coords[i-1][1];d.push(d[i-1]+Math.hypot(dx,dy));}
+  const total=d[d.length-1]||1; const out=[];
+  for(let k=0;k<n;k++){const tg=total*k/(n-1); let i=1; while(i<d.length&&d[i]<tg)i++; const t=(tg-d[i-1])/((d[i]-d[i-1])||1);
+    out.push([coords[i-1][0]+(coords[i][0]-coords[i-1][0])*t, coords[i-1][1]+(coords[i][1]-coords[i-1][1])*t]);}
+  return out;
+}
+
+// ===================== ESTADO =====================
+let persona='negocio';
+let veh='moto';
+let sim={running:false,frac:0,step:0,timer:null};
+
+// ===== TABELA DE PREÇO REAL (ajustável) =====
+const PRICE={ baseMoto:8.00, baseCarro:13.00, perKm:1.50, min:10.00, driverPct:0.80 };
+const money=v=>'R$ '+(v).toFixed(2).replace('.',',');
+const NV={form:'form',matching:'matching',tracking:'tracking',done:'done'};
+let negocioView='landing';   // landing → cadastro → form(painel) → matching → tracking → done
+let cadStep=1;               // passo do cadastro (1..3)
+let entregadorView='cadastro'; // cadastro→verificando→disponivel→coleta→rota→finalizar→concluido
+let cnhUp=false,crlvUp=false,selfieUp=false;
+let coletaFoto=false, sigData=null;
+
+const STEPS=[
+  {t:"Pedido aceito",s:"Lucas confirmou a corrida"},
+  {t:"A caminho da coleta",s:"Indo até a Ótica Visão Center"},
+  {t:"Encomenda coletada",s:"Foto registrada na coleta"},
+  {t:"A caminho da entrega",s:"Levando até o destino"},
+  {t:"Entregue",s:"Foto + assinatura do destinatário"},
+];
+
+// ===================== MAPA =====================
+let map,moto,routeReady=false,CUM=[],TOTAL=1;
+mapboxgl.accessToken='MAPBOX_TOKEN_REDACTED';
+map=new mapboxgl.Map({
+  container:'map',
+  style:'mapbox://styles/mapbox/streets-v12',
+  center:PALMAS,zoom:13.2
+});
+map.addControl(new mapboxgl.NavigationControl({showCompass:false}),'bottom-right');
+
+// distância em metros entre 2 coords (haversine simplificado)
+function geoDist(a,b){const R=6371000,r=Math.PI/180;const dLat=(b[1]-a[1])*r,dLng=(b[0]-a[0])*r,la=(a[1]+b[1])/2*r;const x=dLng*Math.cos(la),y=dLat;return Math.sqrt(x*x+y*y)*R;}
+function indexRoute(){CUM=[0];for(let i=1;i<ROUTE.length;i++)CUM.push(CUM[i-1]+geoDist(ROUTE[i-1],ROUTE[i]));TOTAL=CUM[CUM.length-1]||1;}
+// ponto exato sobre a linha na fração [0..1] — garante o motoboy COLADO na rua
+function posAt(frac){const tg=TOTAL*Math.min(1,Math.max(0,frac));let i=1;while(i<CUM.length&&CUM[i]<tg)i++;const a=ROUTE[i-1],b=ROUTE[i]||a;const seg=(CUM[i]-CUM[i-1])||1,t=(tg-CUM[i-1])/seg;return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+
+map.on('load',async()=>{ await setupRoute(); });
+async function setupRoute(){
+  // 1) busca a rota REAL pelas ruas (Directions) ANTES de desenhar — evita o "pulo"
+  try{
+    const c=`${ORIGEM.lng},${ORIGEM.lat};${DESTINO.lng},${DESTINO.lat}`;
+    const u=`https://api.mapbox.com/directions/v5/mapbox/driving/${c}?geometries=geojson&overview=full&access_token=${mapboxgl.accessToken}`;
+    const d=await (await fetch(u)).json();
+    if(d.routes&&d.routes[0]){const rt=d.routes[0];ROUTE=rt.geometry.coordinates;DIST_KM=+(rt.distance/1000).toFixed(2);DUR_MIN=Math.max(1,Math.round(rt.duration/60));}
+  }catch(e){/* fallback: rota aproximada */}
+  indexRoute();
+  // 2) desenha a linha exata da rua
+  map.addSource('route',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:ROUTE}}});
+  map.addLayer({id:'route-bg',type:'line',source:'route',paint:{'line-color':'#fff','line-width':10,'line-opacity':.95},layout:{'line-cap':'round','line-join':'round'}});
+  map.addLayer({id:'route',type:'line',source:'route',paint:{'line-color':'#4f46e5','line-width':5},layout:{'line-cap':'round','line-join':'round'}});
+  // 3) pinos + motoboy
+  pin(ORIGEM,'o','pin'); pin(DESTINO,'d','pkg');
+  const el=document.createElement('div'); el.className='moto-marker'; el.innerHTML=svg('moto');
+  moto=new mapboxgl.Marker({element:el}).setLngLat(ROUTE[0]).addTo(map);
+  fitRoute(); routeReady=true; render();
+}
+function pin(p,cls,ic){const el=document.createElement('div');el.className='pt-marker '+cls;el.innerHTML=svg(ic);
+  new mapboxgl.Marker({element:el,anchor:'bottom'}).setLngLat([p.lng,p.lat]).setPopup(new mapboxgl.Popup({offset:20}).setText(p.nome)).addTo(map);}
+function fitRoute(){const b=new mapboxgl.LngLatBounds();ROUTE.forEach(c=>b.extend(c));map.fitBounds(b,{padding:90,duration:800});}
+
+// ===================== SIMULAÇÃO GPS (suave, colada na rua) =====================
+function startSim(){
+  if(sim.running||!routeReady)return; sim.running=true; sim.frac=0; sim.step=0; render();
+  sim.timer=setInterval(()=>{
+    sim.frac=Math.min(1,sim.frac+0.009);
+    const ll=posAt(sim.frac);
+    if(moto)moto.setLngLat(ll);
+    map.easeTo({center:ll,duration:230});
+    const f=sim.frac; let ns=0;
+    if(f>0.02)ns=1; if(f>0.32)ns=2; if(f>0.42)ns=3; if(f>=0.999)ns=4;
+    if(ns!==sim.step){sim.step=ns; render();} else liveBits();
+    if(sim.frac>=1){clearInterval(sim.timer); sim.running=false; render();}
+  },150);
+}
+function resetSim(){clearInterval(sim.timer);sim.running=false;sim.frac=0;sim.step=0;if(moto&&ROUTE[0])moto.setLngLat(ROUTE[0]);fitRoute();}
+function eta(){const frac=1-Math.min(1,Math.max(0,sim.frac));return{min:Math.max(0,Math.round(frac*DUR_MIN)),km:(frac*DIST_KM).toFixed(1)};}
+function liveBits(){
+  const e=eta(),done=sim.step>=4;
+  const em=document.getElementById('etaMin'),ek=document.getElementById('etaKm');
+  if(em)em.textContent=done?'0':e.min; if(ek)ek.textContent=done?'0,0':e.km;
+  const mb=document.getElementById('mapBadge');
+  if(mb)mb.textContent=done?'Entrega concluída':'Lucas a caminho · '+e.min+' min';
+}
+
+// ===================== SHELL (sidebar + topbar) — padrão SaaS AgendaPRO/Palace =====================
+const NAV={
+  negocio:[
+    {g:'Operação',items:[{ic:'send',l:'Nova entrega',v:'form'},{ic:'moto',l:'Em andamento',v:'tracking'},{ic:'list',l:'Histórico',badge:'em breve'}]},
+    {g:'Conta',items:[{ic:'money',l:'Carteira',badge:'em breve'},{ic:'building',l:'Meu negócio',v:'cadastro'}]},
+  ],
+  entregador:[
+    {g:'Corridas',items:[{ic:'bolt',l:'Disponíveis',v:'disponivel'},{ic:'moto',l:'Minha corrida',v:'rota'},{ic:'money',l:'Ganhos',badge:'em breve'}]},
+    {g:'Conta',items:[{ic:'shield',l:'Verificação',v:'cadastro'},{ic:'user',l:'Cadastro',v:'cadastro'}]},
+  ],
+  admin:[
+    {g:'Operação',items:[{ic:'chart',l:'Dashboard',v:'dash'},{ic:'moto',l:'Entregadores',v:'dash'},{ic:'shield',l:'Aprovações',v:'dash'},{ic:'pkg',l:'Entregas',badge:'em breve'}]},
+    {g:'Financeiro',items:[{ic:'money',l:'Financeiro',badge:'em breve'}]},
+  ],
+};
+const TITLES={
+  negocio:{landing:'Início',form:'Nova entrega',matching:'Buscando entregador',tracking:'Entrega em andamento',done:'Entrega concluída',cadastro:'Meu negócio'},
+  entregador:{cadastro:'Cadastro e verificação',verificando:'Verificação',disponivel:'Corridas disponíveis',coleta:'Coleta',rota:'Minha corrida',finalizar:'Finalizar entrega',concluido:'Corrida concluída'},
+  admin:{dash:'Operação'},
+};
+function curView(){return persona==='negocio'?negocioView:(persona==='entregador'?entregadorView:'dash');}
+function navGo(v){ if(persona==='negocio'){negocioView=v; if(v==='cadastro')cadStep=1;} else if(persona==='entregador'){entregadorView=v;} render(); }
+function switchPersona(p){ persona=p; if(p==='negocio')negocioView='form'; else if(p==='entregador')entregadorView='disponivel'; render(); }
+function renderShell(){
+  const cv=curView();
+  const groups=NAV[persona].map(gr=>`<div class="sb-group"><div class="gh">${gr.g}</div>${gr.items.map(it=>{
+    const act=it.v&&(it.v===cv||(it.v==='tracking'&&['matching','tracking','done'].includes(cv))||(it.v==='rota'&&['coleta','rota','finalizar','concluido'].includes(cv))||(it.v==='cadastro'&&['cadastro','verificando'].includes(cv)));
+    return `<button class="sb-item ${act?'active':''}" ${it.v?`onclick="navGo('${it.v}')"`:''}>${svg(it.ic)}<span>${it.l}</span>${it.badge?`<span class="badge">${it.badge}</span>`:''}</button>`;
+  }).join('')}</div>`).join('');
+  const demo=[['negocio','building','Negócio'],['entregador','moto','Entregador'],['admin','chart','Operação']].map(d=>`<button class="${persona===d[0]?'on':''}" onclick="switchPersona('${d[0]}')">${svg(d[1])}${d[2]}</button>`).join('');
+  document.getElementById('sidebar').innerHTML=`
+    <div class="sb-logo"><div class="mark">${svg('moto')}</div><div><div class="name"><b>APP</b><span>DELYVERY</span></div><div class="sub">Palmas-TO</div></div></div>
+    ${groups}
+    <div class="sb-bottom"><div class="sb-demo-h">Demo · ver como</div><div class="sb-demo">${demo}</div></div>`;
+  const t=(TITLES[persona]||{})[cv]||'';
+  document.getElementById('topbar').innerHTML=`<div><div class="tt">${t}</div><div class="ts">APPDELYVERY · Logística sob demanda · Palmas-TO</div></div><div class="right"><span class="demo-tag">${svg('bolt')} Protótipo</span></div>`;
+}
+function updateMap(){
+  const cv=curView();
+  const show=(persona==='negocio'&&['form','matching','tracking','done'].includes(cv))||(persona==='entregador'&&['coleta','rota'].includes(cv));
+  document.getElementById('content').classList.toggle('no-map',!show);
+  if(show&&map){setTimeout(()=>{try{map.resize();}catch(e){}},60);}
+}
+
+// ===================== RENDER =====================
+function render(){
+  if(persona==='negocio')renderNegocio();
+  else if(persona==='entregador')renderEntregador();
+  else renderAdmin();
+  renderShell();
+  updateMap();
+}
+const P=()=>document.getElementById('panel');
+
+// ---------- NEGÓCIO ----------
+function renderNegocio(){
+  if(negocioView==='landing')return negLanding();
+  if(negocioView==='cadastro')return negCadastro();
+  if(negocioView==='form')return negForm();
+  if(negocioView==='matching')return negMatching();
+  if(negocioView==='done')return negDone();
+  return negTracking();
+}
+// ---- LANDING (como o negócio encontra/entra) ----
+function negLanding(){
+  P().innerHTML=`
+  <div class="card" style="background:linear-gradient(160deg,#fff,var(--brand-light));border:1px solid #dfe3ff">
+    <div style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:30px;padding:5px 11px;font-size:11px;font-weight:800;color:var(--go-dark);margin-bottom:12px">${svg('shield')} ENTREGADOR VERIFICADO</div>
+    <div style="font-size:23px;font-weight:900;letter-spacing:-.6px;line-height:1.15;color:var(--h1)">Entregas para o seu negócio, com entregador que você pode confiar.</div>
+    <p style="font-size:13.5px;color:var(--ink-2);margin-top:10px;line-height:1.55">Documento, peça, encomenda de valor — coletado e entregue em Palmas por motoboy com <b>antecedentes e CNH verificados</b>. Acompanhe tudo ao vivo no mapa.</p>
+    <div style="display:flex;gap:18px;margin:16px 0 4px">
+      <div><div style="font-size:20px;font-weight:800;color:var(--brand)">~22 min</div><div style="font-size:11px;color:var(--muted);font-weight:600">entrega média</div></div>
+      <div><div style="font-size:20px;font-weight:800;color:var(--brand)">100%</div><div style="font-size:11px;color:var(--muted);font-weight:600">verificados</div></div>
+      <div><div style="font-size:20px;font-weight:800;color:var(--brand)">ao vivo</div><div style="font-size:11px;color:var(--muted);font-weight:600">rastreio no mapa</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('bolt')}<h3>Como funciona</h3></div>
+    <div style="display:flex;flex-direction:column;gap:11px">
+      ${[['send','Você pede a entrega','coleta, destino e o que enviar'],['shield','Entregador verificado aceita','o mais próximo e com antecedentes OK'],['pin','Acompanha ao vivo','você e seu cliente veem no mapa'],['checkThin','Entregue com comprovante','foto + assinatura de quem recebeu']].map((s,i)=>`
+        <div style="display:flex;gap:11px;align-items:center"><div style="width:30px;height:30px;border-radius:8px;background:var(--brand-light);display:grid;place-items:center;flex-shrink:0">${svg(s[0])}</div><div><div style="font-size:13.5px;font-weight:700">${i+1}. ${s[1]}</div><div style="font-size:11.5px;color:var(--muted)">${s[2]}</div></div></div>`).join('')}
+    </div>
+  </div>
+  <button class="btn btn-primary" onclick="cadStep=1;negocioView='cadastro';render()">${svg('building')} Cadastrar meu negócio</button>
+  <button class="btn btn-ghost" style="margin-top:10px" onclick="negocioView='form';render()">${svg('arrow')} Já tenho conta — entrar</button>
+  <p class="hint">Negócios chegam por venda direta, indicação, busca no Google,<br>WhatsApp e anúncios locais — e caem sempre nesta tela.</p>`;
+}
+// ---- CADASTRO do negócio (passo a passo) ----
+function negCadastro(){
+  const bar=[1,2,3].map(n=>`<div style="flex:1;height:4px;border-radius:3px;background:${n<=cadStep?'var(--brand)':'var(--line-2)'}"></div>`).join('');
+  let body='';
+  if(cadStep===1){
+    body=`<div class="card-h">${svg('user')}<h3>Passo 1 de 3 · Sua conta</h3></div>
+      <div class="field"><label>Nome do responsável</label><input class="input" value="Carla Andrade"></div>
+      <div class="field"><label>WhatsApp</label><div class="with-icon">${svg('user')}<input class="input" value="(63) 9 9912-0042"></div></div>
+      <div class="field"><label>E-mail</label><input class="input" value="contato@oticavisao.com.br"></div>
+      <div class="field"><label>Criar senha</label><input class="input" type="password" value="123456"></div>`;
+  }else if(cadStep===2){
+    body=`<div class="card-h">${svg('building')}<h3>Passo 2 de 3 · Seu negócio</h3></div>
+      <div class="field"><label>Nome do negócio</label><input class="input" value="Ótica Visão Center"></div>
+      <div class="field"><label>CNPJ ou CPF (MEI)</label><div class="with-icon">${svg('card')}<input class="input" value="12.345.678/0001-90"></div></div>
+      <div class="field"><label>Ramo</label>
+        <select class="input"><option>Ótica</option><option>Farmácia</option><option>Loja / Varejo</option><option>Escritório / Serviços</option><option>Distribuidora</option><option>Outro</option></select></div>
+      <div class="field"><label>Telefone fixo (opcional)</label><input class="input" value="(63) 3215-0042"></div>`;
+  }else{
+    body=`<div class="card-h">${svg('pin')}<h3>Passo 3 de 3 · Endereço de coleta</h3></div>
+      <div class="field"><label>Endereço padrão de coleta</label><div class="with-icon">${svg('pin')}<input class="input" value="Q. 104 Norte, Av. JK, Palmas-TO"></div></div>
+      <div style="border:1px solid var(--line);border-radius:11px;overflow:hidden;height:120px;background:var(--brand-light);display:grid;place-items:center;color:var(--brand)">${svg('pin')}<span style="position:absolute;font-size:11px;color:var(--muted);margin-top:46px">ponto confirmado no mapa</span></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">Esse será o local de coleta padrão dos seus pedidos (dá pra mudar a cada entrega).</p>`;
+  }
+  P().innerHTML=`
+  <div style="display:flex;gap:6px;margin-bottom:14px">${bar}</div>
+  <div class="card">${body}</div>
+  <div class="btn-row">
+    ${cadStep>1?`<button class="btn btn-ghost" onclick="cadStep--;render()">Voltar</button>`:`<button class="btn btn-ghost" onclick="negocioView='landing';render()">Voltar</button>`}
+    ${cadStep<3?`<button class="btn btn-primary" onclick="cadStep++;render()">Continuar ${svg('arrow')}</button>`
+      :`<button class="btn btn-go" onclick="negocioView='form';render()">${svg('checkThin')} Criar conta e começar</button>`}
+  </div>
+  <p class="hint">Cadastro rápido: 3 passos. Quanto menos fricção,<br>mais negócios entram. CNPJ não é obrigatório (aceita MEI).</p>`;
+}
+function priceCalc(){
+  const base=veh==='moto'?PRICE.baseMoto:PRICE.baseCarro;
+  const dist=+(DIST_KM*PRICE.perKm).toFixed(2);
+  let total=base+dist; const aplicouMin=total<PRICE.min; if(aplicouMin)total=PRICE.min;
+  total=+total.toFixed(2);
+  return{base,dist,total,aplicouMin,driver:+(total*PRICE.driverPct).toFixed(2),taxa:+(total*(1-PRICE.driverPct)).toFixed(2)};
+}
+function negForm(){
+  const pc=priceCalc();
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('send')}<h3>Solicitar entrega</h3></div>
+    <div class="field"><label>Local de coleta</label><div class="with-icon">${svg('pin')}<input class="input" value="Ótica Visão Center — Q.104 Norte"></div></div>
+    <div class="field"><label>Local de entrega</label><div class="with-icon">${svg('pin')}<input class="input" value="Andrade Contabilidade — Q.304 Sul"></div></div>
+    <div class="field"><label>Tipo de veículo</label>
+      <div class="veh-toggle">
+        <div class="veh-opt ${veh==='moto'?'sel':''}" onclick="veh='moto';render()">${svg('moto')}<span class="vl">Moto</span></div>
+        <div class="veh-opt ${veh==='carro'?'sel':''}" onclick="veh='carro';render()">${svg('car')}<span class="vl">Carro</span></div>
+      </div>
+    </div>
+    <div class="field"><label>O que será enviado</label><input class="input" value="Documentos + 1 par de óculos"></div>
+    <div class="field"><label>Valor declarado da encomenda</label><div class="with-icon">${svg('money')}<input class="input" value="R$ 350,00"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('money')}<h3>Valor da entrega</h3><span class="right">cálculo automático</span></div>
+    <div class="price-line"><span>Bandeirada + coleta (${veh})</span><span>${money(pc.base)}</span></div>
+    <div class="price-line"><span>Distância · ${DIST_KM.toFixed(1).replace('.',',')} km × ${money(PRICE.perKm)}</span><span>${money(pc.dist)}</span></div>
+    <div class="price-line"><span>Pontos adicionais</span><span>R$ 0,00</span></div>
+    ${pc.aplicouMin?`<div class="price-line"><span>Valor mínimo da corrida</span><span>${money(PRICE.min)}</span></div>`:''}
+    <div class="price-line total"><span>Total</span><span>${money(pc.total)}</span></div>
+    <div class="price-sub">~${DUR_MIN} min · rota real Mapbox · entregador recebe ${money(pc.driver)} (${PRICE.driverPct*100}%)</div>
+  </div>
+  <button class="btn btn-primary" onclick="negocioView='matching';render()">${svg('send')} Solicitar entrega</button>
+  <p class="hint">O preço é calculado pela fórmula km + coleta + paradas,<br>igual aos grandes players — só que aqui com entregador verificado.</p>`;
+}
+function negMatching(){
+  P().innerHTML=`
+  <div class="card" style="text-align:center">
+    <div class="radar-wrap"><div class="radar"><div class="rc">${svg('moto')}</div></div></div>
+    <div style="font-size:16px;font-weight:800;margin-top:14px;letter-spacing:-.3px">Procurando entregador</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:4px">Buscando o verificado mais próximo da coleta…</div>
+    <div class="vbadge" style="margin:14px auto 0;width:max-content">${svg('shield')} só entregadores com antecedentes OK</div>
+  </div>
+  <p class="hint">Matching por proximidade (PostGIS): o sistema acha quem<br>está mais perto e online, e oferta a corrida.</p>`;
+  setTimeout(()=>{ if(negocioView==='matching'){ negocioView='tracking'; startSim(); } },2300);
+}
+function negTracking(){
+  const e=eta(),done=sim.step>=4;
+  let tl='';
+  STEPS.forEach((st,i)=>{const cls=i<sim.step?'done':(i===sim.step&&!done?'active':(i===sim.step&&done?'done':'pending'));
+    tl+=`<div class="step ${cls}"><div class="dot">${svg('checkThin')}</div><div class="step-txt"><div class="t">${st.t}</div><div class="s">${st.s}</div></div></div>`;});
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('moto')}<h3>Entrega ${done?'concluída':'em andamento'}</h3><span class="right">#4821</span></div>
+    <div class="driver"><div class="avatar">LM</div>
+      <div class="driver-info"><div class="name">Lucas Mendes</div>
+        <div class="meta">Honda CG 160 · ABC-1D23 <span class="rating">${svg('star')} 4,9</span></div></div></div>
+    <div class="verified-badges">
+      <span class="vbadge">${svg('shield')} Antecedentes OK</span>
+      <span class="vbadge">${svg('checkThin')} CNH válida (A)</span>
+      <span class="vbadge">${svg('checkThin')} Identidade</span></div>
+    <div class="trust-banner">${svg('shield')}<div>Entregador <b>verificado pela APPDELYVERY</b> — antecedentes criminais e habilitação checados.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('clock')}<h3>Tempo estimado</h3></div>
+    <div class="eta-row">
+      <div class="eta-box"><div class="big"><span id="etaMin">${done?0:e.min}</span></div><div class="lbl">minutos</div></div>
+      <div class="eta-box"><div class="big"><span id="etaKm">${done?'0,0':e.km}</span></div><div class="lbl">km restantes</div></div></div>
+  </div>
+  <div class="card"><div class="card-h">${svg('list')}<h3>Status da entrega</h3></div><div class="timeline">${tl}</div></div>
+  ${sim.running?`<button class="btn btn-ghost" onclick="resetSim();negocioView='form';render()">${svg('stop')} Encerrar simulação</button>`
+    :(done?`<button class="btn btn-go" onclick="negocioView='done';render()">${svg('arrow')} Ver comprovante</button>`
+      :`<button class="btn btn-primary" onclick="startSim()">${svg('play')} Simular entrega ao vivo</button>`)}`;
+  liveBits();
+}
+function negDone(){
+  P().innerHTML=`
+  <div class="card"><div class="done-hero"><div class="circle">${svg('check')}</div>
+    <div class="t">Entrega concluída</div><div class="s">#4821 · entregue por Lucas Mendes · 22 min</div></div></div>
+  <div class="card"><div class="card-h">${svg('camera')}<h3>Comprovante de entrega</h3></div>
+    <div class="photo">${svg('pkg').replace('class','x').replace('<svg','<svg class="pkg"')}
+      <div class="geo">${svg('pin')} Q.304 Sul · -10.2008, -48.3209 · 23:58</div></div>
+    <div style="margin-top:12px;font-size:11.5px;font-weight:700;color:var(--ink-2)">Assinatura do destinatário</div>
+    <div style="border:1px solid var(--line);border-radius:10px;margin-top:6px;background:#fbfcfe;padding:6px">${sigData?`<img src="${sigData}" style="width:100%;height:70px;object-fit:contain">`:`<div style="height:70px;display:grid;place-items:center;color:var(--faint);font-size:12px">assinado na entrega</div>`}</div>
+  </div>
+  <div class="card"><div class="price-line total" style="border:none;margin:0;padding:0"><span>Total pago</span><span>${money(priceCalc().total)}</span></div></div>
+  <button class="btn btn-primary" onclick="negocioView='form';resetSim();render()">${svg('refresh')} Nova entrega</button>
+  <p class="hint">Foto geolocalizada + assinatura = trilha de auditoria.<br>É a prova jurídica que protege a plataforma e o cliente.</p>`;
+}
+
+// ---------- ENTREGADOR ----------
+function renderEntregador(){
+  if(entregadorView==='cadastro')return entCadastro();
+  if(entregadorView==='verificando')return entVerificando();
+  if(entregadorView==='disponivel')return entOferta();
+  if(entregadorView==='coleta')return entColeta();
+  if(entregadorView==='rota')return entRota();
+  if(entregadorView==='finalizar')return entFinalizar();
+  return entConcluido();
+}
+function entCadastro(){
+  const ok=cnhUp&&crlvUp&&selfieUp;
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('user')}<h3>Cadastro de entregador</h3></div>
+    <div class="field"><label>Nome completo</label><input class="input" value="Diego Alves de Souza"></div>
+    <div class="field"><label>CPF</label><input class="input" value="047.***.***-12"></div>
+    <div class="field"><label>Veículo</label>
+      <div class="veh-toggle">
+        <div class="veh-opt sel">${svg('moto')}<span class="vl">Moto</span></div>
+        <div class="veh-opt">${svg('car')}<span class="vl">Carro</span></div></div></div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('card')}<h3>Documentos</h3><span class="right">obrigatório</span></div>
+    <div class="upload ${cnhUp?'done':''}" onclick="cnhUp=true;render()" style="margin-bottom:10px">
+      <div class="ic">${cnhUp?svg('checkThin'):svg('upload')}</div><div><div class="ut">CNH (categoria A)</div><div class="us">${cnhUp?'cnh-frente.jpg · enviado':'toque para enviar a foto'}</div></div></div>
+    <div class="upload ${crlvUp?'done':''}" onclick="crlvUp=true;render()" style="margin-bottom:10px">
+      <div class="ic">${crlvUp?svg('checkThin'):svg('upload')}</div><div><div class="ut">CRLV do veículo</div><div class="us">${crlvUp?'crlv-2026.pdf · enviado':'toque para enviar'}</div></div></div>
+    <div class="upload ${selfieUp?'done':''}" onclick="selfieUp=true;render()">
+      <div class="ic">${selfieUp?svg('checkThin'):svg('camera')}</div><div><div class="ut">Selfie com documento</div><div class="us">${selfieUp?'selfie.jpg · enviado':'prova de vida'}</div></div></div>
+  </div>
+  <button class="btn btn-primary" ${ok?'':'disabled'} onclick="entregadorView='verificando';render()">${svg('shield')} Enviar para verificação</button>
+  <p class="hint">${ok?'Tudo pronto. Vamos checar antecedentes e habilitação.':'Envie os 3 documentos para continuar.'}</p>`;
+}
+function entVerificando(){
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('shield')}<h3>Verificação de segurança</h3></div>
+    <div class="vcheck" id="v0"><div class="vc-ic">${svg('card')}</div><div><div class="vc-t">Validando CNH no Senatran</div><div class="vc-s">categoria, validade e situação</div></div></div>
+    <div class="vcheck" id="v1"><div class="vc-ic">${svg('shield')}</div><div><div class="vc-t">Consultando antecedentes</div><div class="vc-s">processos e restrições por CPF</div></div></div>
+    <div class="vcheck" id="v2"><div class="vc-ic">${svg('user')}</div><div><div class="vc-t">Conferindo identidade</div><div class="vc-s">prova de vida x documento</div></div></div>
+  </div>
+  <div id="vResult"></div>`;
+  const steps=['v0','v1','v2'];
+  steps.forEach((id,i)=>{
+    setTimeout(()=>{const el=document.getElementById(id);if(el){el.classList.add('run');el.querySelector('.vc-ic').innerHTML=svg('spinner');}},i*1100+200);
+    setTimeout(()=>{const el=document.getElementById(id);if(el){el.classList.remove('run');el.classList.add('ok');el.querySelector('.vc-ic').innerHTML=svg('checkThin');}},i*1100+1100);
+  });
+  setTimeout(()=>{const r=document.getElementById('vResult');if(r&&entregadorView==='verificando'){
+    r.innerHTML=`<div class="card"><div class="done-hero"><div class="circle">${svg('shield')}</div><div class="t">Cadastro aprovado</div><div class="s">Você é um entregador verificado APPDELYVERY</div></div></div>
+    <button class="btn btn-go" onclick="entregadorView='disponivel';render()">${svg('moto')} Começar a rodar</button>`;}},3700);
+}
+function entOferta(){
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('bolt')}<h3>Nova corrida</h3><span class="right">você verificado</span></div>
+    <div class="offer-amount">+ ${money(priceCalc().driver)}</div>
+    <div class="offer-sub">você recebe ${PRICE.driverPct*100}% · entrega de ${DIST_KM.toFixed(1).replace('.',',')} km · ~${DUR_MIN} min</div>
+    <div class="route-pts">
+      <div class="rpt"><div class="pin o"></div><div class="txt"><div class="a">${ORIGEM.nome}</div><div class="b">${ORIGEM.end} · coleta</div></div></div>
+      <div class="rpt"><div class="pin d"></div><div class="txt"><div class="a">${DESTINO.nome}</div><div class="b">${DESTINO.end} · entrega</div></div></div>
+    </div>
+  </div>
+  <button class="btn btn-go" onclick="entregadorView='coleta';render()">${svg('checkThin')} Aceitar corrida</button>
+  <button class="btn btn-ghost" style="margin-top:10px" onclick="entregadorView='disponivel'">Recusar</button>
+  <p class="countdown">Oferta passa para o próximo em <b>28s</b></p>
+  <p class="hint">No app real chega por push com som. O entregador<br>tem segundos para aceitar (matching por proximidade).</p>`;
+}
+function entColeta(){
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('pin')}<h3>Vá até a coleta</h3></div>
+    <div class="rpt" style="padding:0"><div class="pin o" style="margin-top:5px"></div><div class="txt"><div class="a">${ORIGEM.nome}</div><div class="b">${ORIGEM.end}</div></div></div>
+  </div>
+  ${coletaFoto?`<div class="card"><div class="card-h">${svg('camera')}<h3>Coleta registrada</h3></div>
+    <div class="photo"><svg class="pkg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
+    <div class="geo">${svg('pin')} Q.104 Norte · 23:51</div></div></div>
+    <button class="btn btn-primary" onclick="entregadorView='rota';startSim()">${svg('arrow')} Iniciar entrega</button>`
+  :`<button class="btn btn-primary" onclick="coletaFoto=true;render()">${svg('camera')} Cheguei — registrar coleta (foto)</button>`}
+  <p class="hint">A foto na coleta entra na trilha de auditoria da encomenda.</p>`;
+}
+function entRota(){
+  const e=eta(),done=sim.step>=4;
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('moto')}<h3>${done?'Você chegou ao destino':'A caminho da entrega'}</h3></div>
+    <div class="rpt" style="padding:0 0 12px"><div class="pin d" style="margin-top:5px"></div><div class="txt"><div class="a">${DESTINO.nome}</div><div class="b">${DESTINO.end}</div></div></div>
+    <div class="eta-row">
+      <div class="eta-box"><div class="big"><span id="etaMin">${done?0:e.min}</span></div><div class="lbl">minutos</div></div>
+      <div class="eta-box"><div class="big"><span id="etaKm">${done?'0,0':e.km}</span></div><div class="lbl">km restantes</div></div></div>
+  </div>
+  <div class="card"><div class="card-h">${svg('money')}<h3>Seu ganho</h3></div><div class="earn-big" style="font-size:30px">${money(priceCalc().driver)}</div></div>
+  ${done?`<button class="btn btn-go" onclick="entregadorView='finalizar';render()">${svg('pen')} Finalizar entrega</button>`
+    :`<button class="btn btn-primary" disabled>${svg('moto')} Em rota — GPS ativo</button>`}
+  <p class="hint">O GPS do seu celular alimenta o mapa do cliente em tempo real.</p>`;
+  liveBits();
+}
+function entFinalizar(){
+  P().innerHTML=`
+  <div class="card">
+    <div class="card-h">${svg('pen')}<h3>Assinatura do destinatário</h3></div>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px">Peça para quem recebeu assinar abaixo confirmando a entrega.</p>
+    <canvas id="sig" class="sigpad" height="150"></canvas>
+    <div class="sig-hint">${svg('pen')} assine com o dedo ou o mouse · <a href="#" onclick="clearSig(event)" style="color:var(--brand);font-weight:700">limpar</a></div>
+  </div>
+  <button class="btn btn-go" onclick="confirmDelivery()">${svg('check')} Confirmar entrega</button>
+  <p class="hint">Foto + assinatura fecham o ciclo e geram o comprovante do cliente.</p>`;
+  initSig();
+}
+function entConcluido(){
+  P().innerHTML=`
+  <div class="card"><div class="done-hero"><div class="circle">${svg('check')}</div>
+    <div class="t">Entrega concluída</div><div class="s">Comprovante enviado ao cliente</div></div></div>
+  <div class="card"><div class="card-h">${svg('money')}<h3>Você ganhou</h3></div><div class="earn-big">+ ${money(priceCalc().driver)}</div>
+    <div style="text-align:center;font-size:12px;color:var(--muted)">creditado na sua conta · repasse automático</div></div>
+  <button class="btn btn-go" onclick="entregadorView='disponivel';coletaFoto=false;sigData=null;resetSim();render()">${svg('bolt')} Buscar nova corrida</button>`;
+}
+
+// ---------- ASSINATURA (canvas) ----------
+let sigCtx,sigDrawing=false;
+function initSig(){
+  const c=document.getElementById('sig'); if(!c)return;
+  c.width=c.offsetWidth; sigCtx=c.getContext('2d');
+  sigCtx.lineWidth=2.5; sigCtx.lineCap='round'; sigCtx.strokeStyle='#0d1424';
+  const pos=e=>{const r=c.getBoundingClientRect();const t=e.touches?e.touches[0]:e;return[t.clientX-r.left,t.clientY-r.top];};
+  const down=e=>{sigDrawing=true;const[x,y]=pos(e);sigCtx.beginPath();sigCtx.moveTo(x,y);e.preventDefault();};
+  const move=e=>{if(!sigDrawing)return;const[x,y]=pos(e);sigCtx.lineTo(x,y);sigCtx.stroke();e.preventDefault();};
+  const up=()=>{sigDrawing=false;};
+  c.onmousedown=down;c.onmousemove=move;window.addEventListener('mouseup',up);
+  c.ontouchstart=down;c.ontouchmove=move;c.ontouchend=up;
+}
+function clearSig(e){e.preventDefault();const c=document.getElementById('sig');if(c&&sigCtx)sigCtx.clearRect(0,0,c.width,c.height);}
+function confirmDelivery(){const c=document.getElementById('sig');if(c)sigData=c.toDataURL();entregadorView='concluido';render();}
+
+// ---------- OPERAÇÃO ----------
+function renderAdmin(){
+  P().innerHTML=`
+  <div class="kpis">
+    <div class="kpi"><div class="ic">${svg('pkg')}</div><div class="v">37</div><div class="l">Entregas hoje</div></div>
+    <div class="kpi"><div class="ic">${svg('money')}</div><div class="v">528</div><div class="l">Faturado R$</div></div>
+    <div class="kpi"><div class="ic">${svg('moto')}</div><div class="v">9</div><div class="l">Online</div></div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('moto')}<h3>Entregadores</h3><span class="right">verificação</span></div>
+    <table>
+      <tr><th>Nome</th><th>Veículo</th><th>Status</th></tr>
+      <tr><td class="td-name">Lucas Mendes</td><td>Moto</td><td><span class="status-pill s-live">${svg('moto')} Em rota</span></td></tr>
+      <tr><td class="td-name">Rafael Sousa</td><td>Moto</td><td><span class="status-pill s-ok">${svg('checkThin')} Verificado</span></td></tr>
+      <tr><td class="td-name">Bruno Lima</td><td>Carro</td><td><span class="status-pill s-ok">${svg('checkThin')} Verificado</span></td></tr>
+      <tr><td class="td-name">Diego Alves</td><td>Moto</td><td><span class="status-pill s-pend">${svg('spinner')} Antecedentes</span></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('shield')}<h3>Fila de aprovação</h3></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)">
+      <div><div class="td-name" style="font-size:13.5px">Diego Alves</div><div style="color:var(--muted);font-size:11.5px;margin-top:2px">CNH OK · CRLV OK · antecedentes em análise</div></div>
+      <span class="status-pill s-pend">${svg('clock')} Pendente</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0 2px">
+      <div><div class="td-name" style="font-size:13.5px">Marina Reis</div><div style="color:var(--go-dark);font-size:11.5px;margin-top:2px">Antecedentes OK · CNH OK · pronta</div></div>
+      <button class="btn btn-go" style="width:auto;padding:8px 15px;font-size:12.5px" onclick="alert('Aprovação exige PIN do supervisor no app real.')">${svg('checkThin')} Aprovar</button></div>
+  </div>
+  <div class="card">
+    <div class="card-h">${svg('bolt')}<h3>Diferencial</h3></div>
+    <div class="trust-banner">${svg('shield')}<div>Nenhum concorrente local (TôNoLucro, apps de comida, transportadoras) checa antecedentes. <b>É o que torna a APPDELYVERY confiável para encomenda de empresa.</b></div></div>
+  </div>`;
+}
+
+// ===================== LOGIN (entrada SaaS — não é LP) =====================
+function renderLogin(){
+  const role=(p,ic,t,s)=>`<button class="lg-role" onclick="loginAs('${p}')"><div class="ic">${svg(ic)}</div><div><div class="rt">${t}</div><div class="rs">${s}</div></div><span class="arr">${svg('arrow')}</span></button>`;
+  document.getElementById('login').innerHTML=`
+    <div class="login-card">
+      <div class="lg-logo"><div class="mark">${svg('moto')}</div><div class="name"><b>APP</b><span>DELYVERY</span></div></div>
+      <div class="lg-sub">Logística sob demanda · Palmas-TO</div>
+      ${role('negocio','building','Entrar como Negócio','peço e acompanho minhas entregas')}
+      ${role('entregador','moto','Entrar como Entregador','recebo e faço corridas')}
+      ${role('admin','chart','Entrar como Operação','painel de gestão e aprovações')}
+      <div class="lg-foot">Protótipo de demonstração · dados simulados</div>
+    </div>`;
+}
+function loginAs(p){
+  persona=p;
+  if(p==='negocio')negocioView='form';
+  else if(p==='entregador')entregadorView='disponivel';
+  document.getElementById('login').classList.remove('show');
+  render();
+}
+function showLogin(){document.getElementById('login').classList.add('show');}
+
+renderLogin();
+render();
+showLogin();
+</script>
+</body>
+</html>

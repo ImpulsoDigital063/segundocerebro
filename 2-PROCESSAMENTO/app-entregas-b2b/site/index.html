@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APPDELYVERY — Entregas de empresa com entregador verificado | Palmas-TO</title>
+<meta name="description" content="Plataforma de entregas sob demanda para empresas em Palmas-TO. Motoboy verificado por antecedentes e CNH, rastreamento ao vivo e comprovante com assinatura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#4f46e5;--brand-dark:#4338ca;--brand-2:#6366f1;--brand-light:#eef0ff;--glow:rgba(79,70,229,.22);
+    --go:#059669;--go-bg:#e7f7f0;--go-dark:#047857;
+    --ink:#0d1424;--ink-2:#33405c;--muted:#64718c;--faint:#9aa6bf;
+    --line:#e8ecf5;--line-2:#dde3f0;--bg:#ffffff;--bg-soft:#f6f8fc;--ink-hero:#0a0f1e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  svg{display:block;}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  .nav .row{height:72px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;box-shadow:0 5px 16px var(--glow);}
+  .brand .mark svg{width:22px;height:22px;}
+  .brand .name{font-weight:800;font-size:20px;letter-spacing:-.6px;}
+  .brand .name b{color:var(--brand);}
+  .nav .links{display:flex;gap:30px;align-items:center;}
+  .nav .links a{font-size:14.5px;font-weight:600;color:var(--ink-2);}
+  .nav .links a:hover{color:var(--brand);}
+  .nav .actions{display:flex;gap:12px;align-items:center;}
+  .btn{border:none;border-radius:11px;font-weight:700;font-size:14.5px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;transition:.15s;text-decoration:none;}
+  .btn svg{width:17px;height:17px;}
+  .btn-primary{background:var(--brand);color:#fff;padding:11px 20px;box-shadow:0 6px 18px var(--glow);}
+  .btn-primary:hover{background:var(--brand-dark);}
+  .btn-text{color:var(--ink);font-weight:700;padding:11px 8px;}
+  .btn-lg{padding:15px 28px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:#fff;border:1.5px solid var(--line-2);color:var(--brand);padding:14px 26px;}
+  .btn-ghost:hover{border-color:var(--brand);}
+
+  /* HERO */
+  .hero{padding:84px 0 70px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-200px;right:-150px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,var(--brand-light),transparent 70%);z-index:-1;}
+  .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--go-bg);color:var(--go-dark);font-weight:700;font-size:12.5px;padding:8px 15px;border-radius:30px;margin-bottom:24px;}
+  .badge svg{width:15px;height:15px;}
+  .hero h1{font-size:54px;font-weight:800;letter-spacing:-2px;line-height:1.05;color:var(--ink-hero);}
+  .hero h1 .hl{color:var(--brand);}
+  .hero .lead{font-size:18.5px;color:var(--ink-2);margin-top:22px;line-height:1.55;max-width:520px;}
+  .hero .cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero .micro{margin-top:18px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px;}
+  .hero .micro svg{width:15px;height:15px;color:var(--go);}
+  .shot{border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,40,90,.18);overflow:hidden;background:#fff;}
+  .shot .bar{height:34px;background:#f1f3f9;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 13px;}
+  .shot .bar i{width:11px;height:11px;border-radius:50%;background:#d7dbe6;display:block;}
+  .shot img{width:100%;display:block;}
+
+  /* LOGOS / TRUST STRIP */
+  .strip{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;}
+  .strip .row{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;text-align:center;}
+  .strip .item .v{font-size:30px;font-weight:800;color:var(--brand);letter-spacing:-1px;}
+  .strip .item .l{font-size:13px;color:var(--muted);font-weight:600;margin-top:3px;}
+
+  /* SECTIONS */
+  section{padding:84px 0;}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 52px;}
+  .eyebrow{font-size:13px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:1.2px;}
+  .sec-head h2{font-size:38px;font-weight:800;letter-spacing:-1px;color:var(--ink-hero);margin-top:12px;line-height:1.12;}
+  .sec-head p{font-size:17px;color:var(--ink-2);margin-top:16px;line-height:1.55;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;}
+  .feat-list{margin-top:26px;display:flex;flex-direction:column;gap:20px;}
+  .feat{display:flex;gap:15px;}
+  .feat .ic{width:46px;height:46px;border-radius:12px;background:var(--brand-light);display:grid;place-items:center;flex-shrink:0;}
+  .feat .ic svg{width:22px;height:22px;color:var(--brand);}
+  .feat h4{font-size:17px;font-weight:700;letter-spacing:-.2px;}
+  .feat p{font-size:14.5px;color:var(--muted);margin-top:4px;line-height:1.5;}
+
+  /* DIFERENCIAL band */
+  .band{background:linear-gradient(140deg,var(--ink-hero),var(--brand-dark));color:#fff;border-radius:26px;padding:64px 56px;text-align:center;position:relative;overflow:hidden;}
+  .band *{color:#fff;}
+  .band .eyebrow{color:#a5b4fc;}
+  .band h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-top:12px;}
+  .band p{font-size:18px;opacity:.9;max-width:680px;margin:18px auto 0;line-height:1.6;}
+  .band .pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+  .band .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:10px 18px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center;}
+  .band .pill svg{width:16px;height:16px;}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .step{background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .step .n{width:42px;height:42px;border-radius:11px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px;margin-bottom:16px;}
+  .step h4{font-size:17px;font-weight:700;}
+  .step p{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.5;}
+
+  /* ENTREGADOR section */
+  .driver{background:var(--bg-soft);}
+  .driver .card-cta{background:linear-gradient(140deg,var(--brand),var(--brand-dark));border-radius:22px;padding:48px;color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;}
+  .driver .card-cta *{color:#fff;}
+  .driver .card-cta h3{font-size:30px;font-weight:800;letter-spacing:-.6px;}
+  .driver .card-cta p{font-size:16px;opacity:.92;margin-top:12px;line-height:1.55;}
+  .driver ul{list-style:none;margin:20px 0 0;}
+  .driver li{display:flex;gap:10px;align-items:center;font-size:15px;margin-bottom:11px;}
+  .driver li svg{width:18px;height:18px;color:#7dd3a8;flex-shrink:0;}
+
+  /* PRICING */
+  .price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pc{border:1px solid var(--line);border-radius:18px;padding:30px;background:#fff;}
+  .pc.hi{border:2px solid var(--brand);box-shadow:0 16px 44px var(--glow);position:relative;}
+  .pc .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;font-size:11px;font-weight:800;padding:5px 13px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+  .pc h4{font-size:18px;font-weight:800;}
+  .pc .pr{font-size:34px;font-weight:800;letter-spacing:-1px;margin:10px 0 4px;color:var(--brand);}
+  .pc .pr small{font-size:14px;color:var(--muted);font-weight:600;}
+  .pc .desc{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+  .pc ul{list-style:none;margin:0 0 22px;}
+  .pc li{display:flex;gap:9px;font-size:14px;color:var(--ink-2);margin-bottom:10px;}
+  .pc li svg{width:16px;height:16px;color:var(--go);flex-shrink:0;}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto;}
+  .qa{border-bottom:1px solid var(--line);padding:22px 0;}
+  .qa h4{font-size:17px;font-weight:700;display:flex;justify-content:space-between;gap:12px;}
+  .qa h4 svg{width:18px;height:18px;color:var(--brand);flex-shrink:0;}
+  .qa p{font-size:14.5px;color:var(--muted);margin-top:10px;line-height:1.6;}
+
+  /* CTA final */
+  .final{text-align:center;background:var(--bg-soft);}
+  .final h2{font-size:40px;font-weight:800;letter-spacing:-1.2px;color:var(--ink-hero);}
+  .final p{font-size:18px;color:var(--ink-2);margin:16px auto 32px;max-width:540px;}
+  .final .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{background:var(--ink-hero);color:#c5cde0;padding:64px 0 30px;}
+  footer *{color:#c5cde0;}
+  footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+  footer .brand .name{color:#fff;}
+  footer .brand .mark{box-shadow:none;}
+  footer .ft-about{font-size:14px;line-height:1.6;margin-top:16px;max-width:280px;color:#8b97b3;}
+  footer h5{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:16px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:11px;font-size:14px;}
+  footer li a:hover{color:#fff;}
+  footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#7986a3;}
+
+  /* HERO VISUAL (mapa + cards flutuantes) */
+  .hero-visual{position:relative;}
+  .mapcard{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,40,90,.18);}
+  .mapcard img{width:100%;display:block;}
+  .float-top{position:absolute;right:16px;top:16px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-radius:30px;padding:7px 14px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:8px;box-shadow:0 8px 22px rgba(20,40,90,.16);}
+  .float-top .dot{width:8px;height:8px;border-radius:50%;background:var(--go);box-shadow:0 0 0 4px rgba(5,150,105,.18);}
+  .float-card{position:absolute;left:16px;bottom:16px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(20,40,90,.2);padding:12px 14px;display:flex;align-items:center;gap:12px;max-width:80%;}
+  .float-card .av{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand-2),var(--brand-dark));color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;flex-shrink:0;}
+  .float-card .ft{font-weight:700;font-size:14px;}
+  .float-card .fs{font-size:12px;color:var(--go-dark);font-weight:700;display:flex;align-items:center;gap:5px;margin-top:2px;}
+  .float-card .fs svg{width:13px;height:13px;}
+  /* FROTA */
+  .frota{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .frota-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 6px 26px rgba(23,37,84,.08);}
+  .frota-visual{height:210px;background:linear-gradient(135deg,var(--brand-light),#eaf0ff);display:grid;place-items:center;position:relative;}
+  .frota-visual .veh svg{width:124px;height:124px;color:var(--brand);}
+  .adesivo{position:absolute;right:18px;bottom:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 10px 24px rgba(20,40,90,.16);}
+  .adesivo .m{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;}
+  .adesivo .m svg{width:16px;height:16px;}
+  .adesivo .at{font-weight:800;font-size:13px;letter-spacing:-.4px;}
+  .adesivo .at b{color:var(--brand);}
+  .frota-body{padding:22px 24px;}
+  .frota-body h4{font-size:20px;font-weight:800;display:flex;align-items:center;gap:11px;}
+  .frota-body .vb{font-size:11px;font-weight:800;color:var(--go-dark);background:var(--go-bg);padding:4px 10px;border-radius:20px;}
+  .frota-body p{font-size:14.5px;color:var(--muted);margin-top:9px;line-height:1.55;}
+  /* COBERTURA */
+  .cobertura-map{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(20,40,90,.14);}
+  .cobertura-map img{width:100%;display:block;}
+  /* HERO foto humana */
+  .hero-photo{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,40,90,.2);}
+  .hero-photo img{width:100%;display:block;aspect-ratio:1/1.2;object-fit:cover;}
+  .verified-tag{position:absolute;left:16px;top:16px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-radius:30px;padding:8px 14px;font-size:12.5px;font-weight:800;color:var(--go-dark);display:flex;align-items:center;gap:7px;box-shadow:0 8px 22px rgba(20,40,90,.2);}
+  .verified-tag svg{width:15px;height:15px;}
+  /* Para quem recebe */
+  .recebe-photo{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 22px 56px rgba(20,40,90,.16);}
+  .recebe-photo img{width:100%;display:block;aspect-ratio:4/3.6;object-fit:cover;}
+  /* CADASTRO form (estilo TôNoLucro) */
+  .cad{background:linear-gradient(135deg,var(--brand),var(--brand-dark));border-radius:28px;overflow:hidden;position:relative;padding:56px;display:grid;grid-template-columns:1fr 412px;gap:40px;align-items:center;}
+  .cad::before,.cad::after{content:'';position:absolute;border:2px solid rgba(255,255,255,.12);border-radius:50%;left:4%;top:50%;transform:translateY(-50%);pointer-events:none;}
+  .cad::before{width:360px;height:360px;}.cad::after{width:560px;height:560px;}
+  .cad .ct{position:relative;z-index:1;}
+  .cad .eyebrow{color:#fbbf24;}
+  .cad h2{color:#fff;font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.1;margin-top:12px;}
+  .cad p{color:rgba(255,255,255,.86);font-size:16px;margin-top:16px;max-width:400px;line-height:1.55;}
+  .cad-form{position:relative;z-index:1;background:#fff;border-radius:20px;padding:30px;box-shadow:0 30px 70px rgba(0,0,0,.3);}
+  .cad-form h3{font-size:20px;font-weight:800;}
+  .cad-form .fsub{font-size:13px;color:var(--muted);margin-bottom:18px;}
+  .cad-form .fld{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line-2);border-radius:11px;padding:12px 13px;margin-bottom:11px;background:#fbfcfe;}
+  .cad-form .fld svg{width:16px;height:16px;color:var(--muted);flex-shrink:0;}
+  .cad-form .fld input,.cad-form .fld select{border:none;background:none;outline:none;font-family:inherit;font-size:14px;color:var(--ink);width:100%;}
+  .cad-form button{width:100%;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:800;font-family:inherit;background:#f59e0b;color:#fff;cursor:pointer;margin-top:6px;box-shadow:0 8px 20px rgba(245,158,11,.35);}
+  .cad-form button:hover{background:#d97706;}
+  @media(max-width:900px){.cad{grid-template-columns:1fr;padding:34px 22px;}}
+
+  @media(max-width:900px){
+    .frota{grid-template-columns:1fr;}
+    .hero .grid,.split,.driver .card-cta{grid-template-columns:1fr;gap:34px;}
+    .steps,.price-cards{grid-template-columns:1fr;}
+    .nav .links{display:none;}
+    .hero h1{font-size:38px;}.sec-head h2,.final h2,.band h2{font-size:29px;}
+    footer .grid{grid-template-columns:1fr 1fr;}
+    .band{padding:44px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="wrap row">
+  <a class="brand" href="#top"><span class="mark" id="navmark"></span><span class="name"><b>APP</b>DELYVERY</span></a>
+  <div class="links">
+    <a href="#negocios">Para negócios</a>
+    <a href="#como">Como funciona</a>
+    <a href="#entregadores">Para entregadores</a>
+    <a href="#precos">Preços</a>
+  </div>
+  <div class="actions">
+    <a class="btn btn-text" href="../prototipo/index.html">Entrar</a>
+    <a class="btn btn-primary" href="../prototipo/index.html"><span id="navbtnic"></span> Cadastrar negócio</a>
+  </div>
+</div></nav>
+
+<span id="top"></span>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap grid">
+  <div>
+    <div class="badge" id="heroBadge"></div>
+    <h1>Entregas para sua empresa, com <span class="hl">entregador que você confia</span>.</h1>
+    <p class="lead">Documento, peça ou encomenda de valor coletada e entregue em <strong>Palmas e região</strong> por motoboy com antecedentes e CNH verificados. Você e seu cliente acompanham tudo ao vivo no mapa.</p>
+    <div class="cta">
+      <a class="btn btn-primary btn-lg" href="../prototipo/index.html"><span id="h1"></span> Cadastrar meu negócio</a>
+      <a class="btn btn-ghost btn-lg" href="#como">Ver como funciona</a>
+    </div>
+    <div class="micro" id="heroMicro"></div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo"><img src="img/motoboy.jpg" alt="Motoboy entregador verificado em Palmas-TO"></div>
+    <div class="verified-tag" id="vtag"></div>
+    <div class="float-card"><div class="av">LM</div><div><div class="ft">Lucas · entregador verificado</div><div class="fs" id="fcs"></div></div></div>
+  </div>
+</div></header>
+
+<!-- TRUST STRIP -->
+<div class="strip"><div class="wrap row">
+  <div class="item"><div class="v">Palmas-TO</div><div class="l">nascido aqui, feito pra região</div></div>
+  <div class="item"><div class="v">100%</div><div class="l">entregadores verificados</div></div>
+  <div class="item"><div class="v">~22 min</div><div class="l">entrega média na cidade</div></div>
+  <div class="item"><div class="v">ao vivo</div><div class="l">rastreio no mapa</div></div>
+</div></div>
+
+<!-- PARA NEGÓCIOS -->
+<section id="negocios"><div class="wrap split">
+  <div>
+    <div class="eyebrow">Para o seu negócio</div>
+    <h2 style="font-size:38px;font-weight:800;letter-spacing:-1px;margin-top:12px;line-height:1.12;color:var(--ink-hero)">Sua loja entrega como gente grande, sem frota própria.</h2>
+    <div class="feat-list">
+      <div class="feat"><div class="ic" id="f1"></div><div><h4>Entregador verificado</h4><p>Todo motoboy passa por checagem de antecedentes criminais e habilitação antes de rodar.</p></div></div>
+      <div class="feat"><div class="ic" id="f2"></div><div><h4>Rastreio ao vivo</h4><p>Você e seu cliente acompanham o trajeto no mapa, em tempo real, do início ao fim.</p></div></div>
+      <div class="feat"><div class="ic" id="f3"></div><div><h4>Preço justo por km</h4><p>Paga só pelo que usar, sem mensalidade. O valor aparece antes de confirmar.</p></div></div>
+      <div class="feat"><div class="ic" id="f4"></div><div><h4>Comprovante de verdade</h4><p>Foto na coleta e assinatura na entrega — prova de que chegou a quem devia.</p></div></div>
+      <div class="feat"><div class="ic" id="f5"></div><div><h4>Suporte que responde</h4><p>Time pronto pra te ajudar — do cadastro à resolução de qualquer entrega.</p></div></div>
+    </div>
+  </div>
+  <div><div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/app-negocio.png" alt="Painel do negócio APPDELYVERY"></div></div>
+</div></section>
+
+<!-- PARA QUEM RECEBE (cliente final) -->
+<section style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap split">
+  <div><div class="recebe-photo"><img src="img/cliente.jpg" alt="Cliente recebendo a encomenda com segurança"></div></div>
+  <div>
+    <div class="eyebrow">Para quem recebe</div>
+    <h2 style="font-size:38px;font-weight:800;letter-spacing:-1px;margin-top:12px;line-height:1.12;color:var(--ink-hero)">Seu cliente recebe com segurança — e sabe a hora certa.</h2>
+    <div class="feat-list">
+      <div class="feat"><div class="ic" id="r1"></div><div><h4>Recebe de quem é confiável</h4><p>Entregador verificado por antecedentes. Mais segurança pra quem abre a porta.</p></div></div>
+      <div class="feat"><div class="ic" id="r2"></div><div><h4>Acompanha sem instalar nada</h4><p>Recebe um link por WhatsApp e vê o entregador chegando, ao vivo no mapa.</p></div></div>
+      <div class="feat"><div class="ic" id="r3"></div><div><h4>Confirmação na entrega</h4><p>Foto e assinatura no recebimento — acabou o "será que chegou?".</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FROTA -->
+<section><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Nossa frota</div><h2>Moto ou carro, sempre identificados.</h2><p>Cada entregador verificado roda com a identidade APPDELYVERY — você sabe que é do app.</p></div>
+  <div class="frota">
+    <div class="frota-card">
+      <div class="frota-visual"><div class="veh" id="vehMoto"></div><div class="adesivo"><div class="m" id="adM1"></div><div class="at"><b>APP</b>DELYVERY</div></div></div>
+      <div class="frota-body"><h4>Moto <span class="vb">verificado</span></h4><p>Ágil pra documentos, peças e encomendas do dia a dia. CNH categoria A e baú de coleta.</p></div>
+    </div>
+    <div class="frota-card">
+      <div class="frota-visual"><div class="veh" id="vehCar"></div><div class="adesivo"><div class="m" id="adM2"></div><div class="at"><b>APP</b>DELYVERY</div></div></div>
+      <div class="frota-body"><h4>Carro <span class="vb">verificado</span></h4><p>Pra volumes maiores e entregas que pedem mais espaço, com adesivo do app na lataria.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COBERTURA -->
+<section style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Cobertura</div><h2>No mapa de Palmas e região.</h2><p>Entregadores espalhados pela cidade — o mais próximo da sua coleta recebe o pedido.</p></div>
+  <div class="cobertura-map"><img src="img/map-cobertura.png" alt="Cobertura APPDELYVERY em Palmas-TO"></div>
+</div></section>
+
+<!-- DIFERENCIAL -->
+<section style="padding-top:0"><div class="wrap"><div class="band">
+  <div class="eyebrow">O nosso diferencial</div>
+  <h2>"Verificado" muda tudo quando a encomenda tem valor.</h2>
+  <p>Pra mandar um documento, uma peça ou um produto caro, não basta ser rápido — você precisa confiar em quem carrega. Cada entregador da APPDELYVERY passa por checagem de antecedentes e CNH. Nenhum app de entrega da região faz isso.</p>
+  <div class="pills">
+    <span class="pill" id="p1"></span>
+    <span class="pill" id="p2"></span>
+    <span class="pill" id="p3"></span>
+  </div>
+</div></div></section>
+
+<!-- COMO FUNCIONA -->
+<section id="como" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Como funciona</div><h2>Da solicitação à entrega, com tudo registrado.</h2></div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h4>Você pede</h4><p>Informe coleta, destino e o que será enviado. O preço aparece na hora.</p></div>
+    <div class="step"><div class="n">2</div><h4>Verificado aceita</h4><p>O entregador confiável mais próximo recebe e aceita a corrida.</p></div>
+    <div class="step"><div class="n">3</div><h4>Acompanha ao vivo</h4><p>Você e seu cliente veem o motoboy no mapa em tempo real.</p></div>
+    <div class="step"><div class="n">4</div><h4>Entregue</h4><p>Foto e assinatura de quem recebeu fecham a entrega.</p></div>
+  </div>
+</div></section>
+
+<!-- PARA ENTREGADORES -->
+<section id="entregadores" class="driver"><div class="wrap"><div class="card-cta">
+  <div>
+    <div class="eyebrow" style="color:#c7d2fe">Para entregadores</div>
+    <h3>Seja um entregador parceiro.</h3>
+    <p>Rode quando e onde quiser, e receba por entrega — com repasse rápido e direto.</p>
+    <ul>
+      <li><span id="d1"></span> Você fica com 80% de cada corrida</li>
+      <li><span id="d2"></span> Escolhe sua região e seus horários</li>
+      <li><span id="d3"></span> Cadastro 100% pelo celular</li>
+    </ul>
+  </div>
+  <div style="text-align:center">
+    <a class="btn btn-ghost btn-lg" href="../prototipo/index.html" style="background:#fff;color:var(--brand)">Quero me cadastrar</a>
+    <div style="font-size:13px;opacity:.8;margin-top:14px">Moto ou carro · precisa ser MEI · CNH categoria A (moto)</div>
+  </div>
+</div></div></section>
+
+<!-- CADASTRO (estilo TôNoLucro: headline + form) -->
+<section><div class="wrap"><div class="cad">
+  <div class="ct">
+    <div class="eyebrow">Comece agora</div>
+    <h2>Quando a entrega é confiável, todo mundo ganha.</h2>
+    <p>Cadastre seu negócio em Palmas e faça a primeira entrega hoje — com entregador verificado e rastreio ao vivo.</p>
+  </div>
+  <form class="cad-form" onsubmit="window.location.href='../prototipo/index.html';return false;">
+    <h3>Cadastre seu negócio</h3>
+    <div class="fsub">Leva 2 minutos. Sem mensalidade.</div>
+    <div class="fld" id="cf1"><input placeholder="Seu nome e sobrenome"></div>
+    <div class="fld" id="cf2"><input placeholder="Nome da empresa"></div>
+    <div class="fld"><select><option>Ramo do negócio</option><option>Ótica</option><option>Farmácia</option><option>Loja / Varejo</option><option>Escritório / Serviços</option><option>Distribuidora</option><option>Outro</option></select></div>
+    <div class="fld" id="cf4"><input placeholder="E-mail"></div>
+    <div class="fld" id="cf5"><input placeholder="WhatsApp (63) 9 ..."></div>
+    <button type="submit">Cadastrar negócio</button>
+  </form>
+</div></div></section>
+
+<!-- PREÇOS -->
+<section id="precos"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Preços</div><h2>Simples e sem mensalidade.</h2><p>Você paga por entrega. Quanto mais perto, mais barato. O valor aparece antes de confirmar.</p></div>
+  <div class="price-cards">
+    <div class="pc"><h4>Avulso</h4><div class="pr">por entrega</div><div class="desc">Pague cada entrega no Pix ou cartão.</div><ul><li id="c1"> Sem mensalidade</li><li id="c2"> Preço por km</li><li id="c3"> Rastreio ao vivo</li></ul><a class="btn btn-ghost" href="../prototipo/index.html" style="width:100%;justify-content:center">Começar</a></div>
+    <div class="pc hi"><div class="tag">mais usado</div><h4>Carteira pré-paga</h4><div class="pr">recarga<small> a partir de R$ 100</small></div><div class="desc">Coloque saldo e cada entrega debita. Mais controle.</div><ul><li id="c4"> Tudo do Avulso</li><li id="c5"> Relatório de gastos</li><li id="c6"> Prioridade no atendimento</li></ul><a class="btn btn-primary" href="../prototipo/index.html" style="width:100%;justify-content:center">Cadastrar negócio</a></div>
+    <div class="pc"><h4>Empresarial</h4><div class="pr">sob medida</div><div class="desc">Fatura mensal e volume alto. Pra quem manda todo dia.</div><ul><li id="c7"> Fatura mensal (pós-pago)</li><li id="c8"> Vários usuários</li><li id="c9"> Condição por volume</li></ul><a class="btn btn-ghost" href="../prototipo/index.html" style="width:100%;justify-content:center">Falar com a gente</a></div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section style="background:var(--bg-soft);border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Dúvidas</div><h2>Perguntas frequentes</h2></div>
+  <div class="faq" id="faq"></div>
+</div></section>
+
+<!-- CTA FINAL -->
+<section class="final"><div class="wrap">
+  <h2>Pronto pra entregar com confiança?</h2>
+  <p>Cadastre seu negócio em minutos e faça a primeira entrega hoje, em Palmas-TO.</p>
+  <div class="cta">
+    <a class="btn btn-primary btn-lg" href="../prototipo/index.html">Cadastrar meu negócio</a>
+    <a class="btn btn-ghost btn-lg" href="../prototipo/index.html">Quero ser entregador</a>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="grid">
+    <div>
+      <div class="brand"><span class="mark" id="footmark"></span><span class="name"><b>APP</b>DELYVERY</span></div>
+      <p class="ft-about">Logística sob demanda para empresas em Palmas-TO e região. Entrega de encomendas com entregador verificado, rastreio ao vivo e comprovante de entrega.</p>
+    </div>
+    <div><h5>Produto</h5><ul><li><a href="#negocios">Para negócios</a></li><li><a href="#entregadores">Para entregadores</a></li><li><a href="#como">Como funciona</a></li><li><a href="#precos">Preços</a></li></ul></div>
+    <div><h5>Empresa</h5><ul><li><a href="#top">Sobre</a></li><li><a href="#">Contato</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Blog</a></li></ul></div>
+    <div><h5>Contato</h5><ul><li>Palmas — Tocantins</li><li>contato@appdelyvery.com.br</li><li>(63) 9 0000-0000</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 APPDELYVERY · Logística sob demanda · Palmas-TO</div><div>CNPJ 00.000.000/0001-00 · Termos · Privacidade</div></div>
+</div></footer>
+
+<script>
+const I={
+  moto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M8 17h6l3-5h-3.5l-2-3H7"/><path d="M14 7h3"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  money:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2c0-1 1.1-1.7 2.5-1.7s2.5.7 2.5 1.7-1.1 1.6-2.5 1.6-2.5.7-2.5 1.7 1.1 1.7 2.5 1.7 2.5-.7 2.5-1.7"/></svg>',
+  cam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h3l2-2h8l2 2h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>',
+  q:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+};
+const set=(id,ic)=>{const e=document.getElementById(id);if(e)e.innerHTML=I[ic];};
+['navmark','footmark'].forEach(i=>set(i,'moto'));
+set('navbtnic','plus');set('h1','plus');
+document.getElementById('heroBadge').innerHTML=I.shield+' Entregador verificado por antecedentes';
+document.getElementById('heroMicro').innerHTML=I.check+' Cadastro grátis · sem mensalidade · primeira entrega hoje';
+set('f1','shield');set('f2','pin');set('f3','money');set('f4','cam');
+document.getElementById('p1').innerHTML=I.shield+' Antecedentes criminais';
+document.getElementById('p2').innerHTML=I.check+' CNH e documento';
+document.getElementById('p3').innerHTML=I.check+' Identidade confirmada';
+['d1','d2','d3'].forEach(i=>set(i,'check'));
+I.car='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.8-5.2A2 2 0 0 1 8.7 6.5h6.6a2 2 0 0 1 1.9 1.3L19 13M4 13h16v5h-2v-2H6v2H4z"/><circle cx="7.5" cy="16.5" r="1.3"/><circle cx="16.5" cy="16.5" r="1.3"/></svg>';
+set('vehMoto','moto');set('vehCar','car');set('adM1','moto');set('adM2','moto');
+I.building='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>';
+I.user='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg>';
+I.mail='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+I.phone='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>';
+I.chat='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>';
+document.getElementById('vtag').innerHTML=I.shield+' Verificado';
+document.getElementById('fcs').innerHTML=I.check+' Antecedentes + CNH OK';
+set('f5','chat');
+set('r1','shield');set('r2','pin');set('r3','cam');
+set('cf1','user');set('cf2','building');set('cf4','mail');set('cf5','phone');
+for(let i=1;i<=9;i++)set('c'+i,'check');
+const FAQ=[
+  ['O que posso enviar pela APPDELYVERY?','Documentos, peças, produtos e encomendas de empresas em geral. O foco é entrega de negócio — não comida.'],
+  ['Como sei que o entregador é confiável?','Todo entregador passa por verificação de antecedentes criminais, CNH e identidade antes de ser aprovado. Esse é o nosso diferencial.'],
+  ['Quanto custa uma entrega?','O preço é por distância (km), sem mensalidade, e aparece antes de você confirmar. Há também carteira pré-paga e fatura mensal para quem manda muito.'],
+  ['Em quais cidades vocês atendem?','Começamos em Palmas-TO e estamos expandindo para a região (Porto Nacional, Paraíso, Gurupi, Araguaína).'],
+  ['Como meu cliente acompanha a entrega?','Ele recebe um link por SMS/WhatsApp e acompanha o entregador no mapa em tempo real, sem precisar instalar nada.'],
+];
+document.getElementById('faq').innerHTML=FAQ.map(f=>`<div class="qa"><h4>${f[0]} ${I.q}</h4><p>${f[1]}</p></div>`).join('');
+</script>
+</body>
+</html>

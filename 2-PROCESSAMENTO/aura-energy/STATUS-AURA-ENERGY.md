@@ -1,9 +1,47 @@
 # STATUS-AURA-ENERGY
 
-**Última atualização:** 2026-05-15 (noite · carrossel Fio B V11 pronto pra postar · stack Verbo-operador completa cravada)
+**Última atualização:** 2026-06-10 (auditoria de reencaixe · 6 dias de trabalho não-commitado blindados no git · estado real reconciliado com o código)
 **Status do lead:** 🟢 **CLIENTE FECHADO — Frente 1 vendida em R$ 1.497**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato
 **Case status:** 🌟 **case-flagship Impulso 2026 · 1ª venda formal da operação**
+**Repo local:** `C:\Users\Usuario\auraenergy\` (era `C:\Users\DELL\` na máquina antiga — caminho corrigido)
+**Domínio no ar:** `auraenergypalmas.com` (migrado de `auraenergy.vercel.app` em 24/05)
+**Deploy:** via `vercel --prod` CLI — **NÃO ligado ao GitHub** (push não dispara build)
+
+---
+
+## 🆕 ESTADO REAL 10/06 · auditoria de reencaixe
+
+**Contexto:** os docs do segundo-cérebro pararam em 15/05; o código avançou 3 semanas. Esta seção reconcilia.
+
+### 🔴→✅ Risco fechado hoje
+- **6 dias de trabalho (30/05→04/06) estavam fora do git.** Commitados e pushados em **`a9b66ab`** (`tsc` limpo, conta `ImpulsoDigital063` confirmada). Working tree limpo.
+- Artefatos de auditoria (`audit-shots/`, `psi-audit/`, `out-artes/`) jogados pro `.gitignore`.
+
+### ✅ Briefing V3.1 do Renato — RESPONDIDO e APLICADO (22-24/05)
+O Renato preencheu o briefing. Aplicado em bloco no código:
+- Preços alinhados · **garantia 12 anos** · banco **BV financeira** · marcas cravadas · cases anonimizados
+- **BESS (bateria)** virou eixo por segmento (rural/indústria/comércio/casa)
+- **PIX na entrada** (`BlocoPixEntrada`) · prazos por segmento · selo **112 kWp**
+- Removidas promessas numéricas inventadas → tom condicional
+
+### ✅ Arquitetura virou site multi-segmento (não é mais "uma LP")
+- LP mãe `/` + **4 segmentos** `/casa` `/comercio` `/industria` `/rural` (cada um com Hero/Simulador/Cases próprios, arco AIDA + Storybrand)
+- `/orcamento` (8 perguntas → Renato monta cálculo) · `/links` (linktree bio) · `/cartao` · `/diagnostico` · `/direcao-curso` · `/economia-resultado`
+- `/briefing` + `/painel-briefing` + `/painel-renato` + `/plano-renato` + `/recuperar-briefing`
+- **`/termos` + `/privacidade`** (novos · pré-requisito pra rodar Meta Ads)
+- **`/selecao-galeria`** (cliente escolhe fotos via link) · `/copy-gen` · `/artes` · `/artigos`
+
+### ✅ Outros marcos pós-15/05
+- **Foto REAL do Renato** (`public/renato-edson.jpg`, 03/06) substitui placeholder em `SobreRenato`
+- SEO/LLM: `robots.txt` explícito pra 14 bots de LLM + `llms.txt`/`llms-full.txt` + schema expandido + imagens Replicate no lugar de stock Unsplash
+- Blog: +436 linhas de conteúdo em `artigos.ts`
+
+### ⏳ Pendente / próximo
+- [ ] **Carrossel "Taxação do Sol"** (commit `a43bfa0`, 29/05) — v2 aprovada, **slide 1 OK, slides 2-9 pendentes** · CTA `/orcamento` (ver memória `project_aura_carrossel_taxacao_sol`)
+- [ ] Confirmar que a LP no ar (`auraenergypalmas.com`) bate com o working tree atual
+- [ ] Indexação Google das URLs novas (segmentos + domínio novo) no Search Console
+- [ ] Demais artes do pacote (#2 Mitos, #3 Calculadora, #4 Antes/Depois, #6 CTA)
 
 ---
 

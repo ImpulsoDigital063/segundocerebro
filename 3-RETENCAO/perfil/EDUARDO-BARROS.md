@@ -1,6 +1,6 @@
 # EDUARDO BARROS CHAVES — Perfil Permanente
 
-**Atualizado:** 29 de Maio de 2026 (madrugada · pós-entrega Palace R$ 2.997)
+**Atualizado:** 06 de Junho de 2026 (pós-pagamento Vida em Equilíbrio R$ — confirmado 30/05)
 
 ---
 
@@ -15,8 +15,8 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 | **Case-2 AgendaPRO Olímpio Barbearia** · 1º pagante guiado pelo sistema sozinho | 11/05/2026 | R$ 67/mês |
 | **Case-2 AgendaPRO Letícia (Viva Cacheada)** · 1º trial 90d Equipe | 14/05/2026 | trial→paga |
 | **Lead-3 Andressa Kupferman / Raras Clinic Academy** | warm desde 08/05 | a fechar |
-| **Case-2 Vida em Equilíbrio (Leandro Timóteo)** · LP+site entregue | 24/05/2026 | premium R$ 1k-3k |
-| **Lead-5 Studio Mood Tranças (Izanara)** · trial cortesia · canal ChatGPT/AEO | 22/05/2026 | R$ 97/mês (05/06) |
+| **Case-2 Vida em Equilíbrio (Leandro Timóteo)** · LP+site · **PAGO (Pix)** | 30/05/2026 | **R$ 1.900** |
+| **Lead-5 Studio Mood Tranças (Izanara)** · ainda em trial cortesia · canal ChatGPT/AEO | 22/05/2026 | R$ 97/mês (trial) |
 | **🏆 Case-3 Palace Nail Spa Macaé · 1º SaaS PREMIUM fork dedicado** | 29/05/2026 | **R$ 2.997** |
 
 **Plataformas vivas hoje:**
@@ -71,12 +71,20 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 
 ---
 
-## PROJETOS PARALELOS
+## PROJETOS PARALELOS (estado em 06/06/2026 · detalhe vivo em [[INDEX-CLIENTES]])
 
-- **20Pila:** Marketplace de landing pages a R$350
-- **New Pack Church Design (Matheus):** Assinatura de PSDs a R$37,90/mês
-- **EV Suplementos (Erlane):** Landing page domiciliar
-- **Irsnayra Mildred:** Farmacêutica esteta — não fechou (lição aprendida)
+**Em construção / a fechar:**
+- **APPDELYVERY** (app entregas B2B Palmas) — 🆕 protótipo navegável validado + spec técnica completa (`build-spec/`); recorte: encomenda B2B + entregador verificado por antecedentes + regional; pendente reunião com investidor. Ref TôNoLucro/Bee Delivery.
+- **Zilanda Suplementos** — farmacêutica Palmas (injetável); LP quase fechada
+- **Leva&Lava** (Beatriz · lavanderia) — SaaS clube fidelidade
+- **Starteq** (ERP oficina) — modelo cravado; próximo cliente premium
+- **Azeitona do Forró** (Lucas Teixeira · cantor MA-TO) — site Next em construção
+- **Carretinha Kids Alegria** (Olímpio) — LP não aprovada ainda
+- **Andressa Kupferman / Raras Clinic** — lead warm; backend v0.1 deployado
+
+**Pausados / lições:**
+- **Criativos do Céu** (Matheus) — permuta encerrada; retomada exige acordo pago
+- **Irsnayra Mildred** — não fechou (lição: consultoria grátis sem urgência = 0% conversão)
 
 ---
 

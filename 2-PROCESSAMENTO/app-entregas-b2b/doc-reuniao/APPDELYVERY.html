@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APPDELYVERY — Plano de Negócio</title>
+<style>
+  :root{
+    --indigo:#4f46e5; --indigo-d:#3730a3; --navy:#312e81; --ink:#3b38a8;
+    --muted:#7378b8; --line:#e7e9f7; --line-2:#eef0fb; --tintbg:#fafbff; --tint2:#f2f3fe;
+    --go:#059669; --go-d:#047857; --amber:#b45309; --rose:#be123c;
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{margin:0;padding:0}
+  body{font-family:'Segoe UI',Inter,system-ui,Arial,sans-serif; color:var(--ink); line-height:1.6; font-size:13.5px; background:#fff;}
+  .page{max-width:840px;margin:0 auto;padding:0 40px;}
+  h1,h2,h3,h4{color:var(--navy); letter-spacing:-.5px; line-height:1.16; margin:0;}
+  p{margin:9px 0;} b,strong{color:var(--navy);font-weight:700;}
+  a{color:var(--indigo);text-decoration:none;}
+  .muted{color:var(--muted);} .indigo{color:var(--indigo);} .go{color:var(--go-d);}
+
+  /* ---------- CAPA (clean, full-page, branca) ---------- */
+  .cover{min-height:252mm;display:flex;flex-direction:column;justify-content:space-between;
+         background:#fff;color:var(--ink);padding:64px 48px 40px;border-top:6px solid var(--indigo);}
+  .cover .mark{width:60px;height:60px;border-radius:16px;background:var(--tint2);
+               display:grid;place-items:center;}
+  .cover .mark svg{width:32px;height:32px;color:var(--indigo);}
+  .cover .tag{display:inline-flex;gap:8px;align-items:center;background:var(--tint2);color:var(--indigo);
+              font-weight:700;font-size:12px;padding:8px 15px;border-radius:30px;letter-spacing:.5px;}
+  .cover h1{color:var(--indigo);font-size:60px;font-weight:800;letter-spacing:-2px;line-height:1;}
+  .cover .rule{width:64px;height:3px;background:var(--indigo);border-radius:3px;margin:24px 0;}
+  .cover .sub{color:var(--muted);font-size:18px;font-weight:400;max-width:540px;line-height:1.55;}
+  .cover .foot{color:var(--muted);font-size:13px;font-weight:600;border-top:1px solid var(--line);
+               padding-top:18px;display:flex;justify-content:space-between;align-items:center;}
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;}
+
+  /* ---------- SUMÁRIO (agrupado em partes) ---------- */
+  .toc{background:#fff;padding:48px 0 20px;}
+  .toc h3{font-size:12px;text-transform:uppercase;letter-spacing:2.5px;color:var(--indigo);
+          font-weight:800;margin-bottom:24px;}
+  .toc-cols{columns:2;column-gap:54px;}
+  .toc-part{break-inside:avoid;margin-bottom:20px;}
+  .toc-part .pt{font-size:10.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);
+                font-weight:800;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:9px;}
+  .toc-item{display:flex;gap:11px;align-items:baseline;margin:6px 0;font-size:12.5px;color:var(--ink);}
+  .toc-item .num{color:var(--indigo);font-weight:800;min-width:22px;font-size:11.5px;}
+
+  /* ---------- SEÇÕES ---------- */
+  section{padding:34px 0;border-bottom:1px solid var(--line-2);}
+  .ksec{font-size:10.5px;font-weight:800;color:var(--indigo);letter-spacing:1.8px;
+        text-transform:uppercase;margin-bottom:9px;}
+  h2{font-size:26px;font-weight:700;margin-bottom:4px;}
+  h3{font-size:16px;font-weight:700;margin-top:18px;}
+  .lead{font-size:15.5px;color:var(--ink);}
+
+  /* ---------- CARDS ---------- */
+  .card{background:var(--tintbg);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;}
+  .card.go{background:#fff;border-color:#cdeadb;border-left:4px solid var(--go);}
+  .card.warn{background:#fff;border-color:#f1ddbb;border-left:4px solid var(--amber);}
+  .card h4{margin-bottom:6px;}
+  .quote{background:var(--tint2);color:var(--navy);border-left:4px solid var(--indigo);
+         border-radius:0 14px 14px 0;padding:22px 28px;font-size:19px;font-weight:600;
+         line-height:1.45;margin:16px 0;}
+  .quote b{color:var(--indigo);}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;}
+  .step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;
+           background:var(--indigo);color:#fff;font-weight:800;font-size:12.5px;margin-bottom:9px;}
+  .step h4{font-size:13.5px;font-weight:700;} .step p{font-size:12px;color:var(--muted);margin:4px 0 0;}
+
+  ul.feat{list-style:none;padding:0;margin:10px 0;}
+  ul.feat li{padding:5px 0 5px 25px;position:relative;}
+  ul.feat li:before{content:"✓";position:absolute;left:0;color:var(--indigo);font-weight:900;}
+
+  /* ---------- TABELAS (clean, sem header pesado) ---------- */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:transparent;color:var(--indigo);font-weight:800;font-size:10px;
+     text-transform:uppercase;letter-spacing:.7px;border-bottom:1.5px solid var(--indigo);}
+  td b{color:var(--navy);}
+  .price td:last-child{color:var(--indigo);font-weight:800;}
+  .price tr:last-child td{border-bottom:none;border-top:1.5px solid var(--line);font-size:14px;}
+
+  /* ---------- STACK / LOGOS ---------- */
+  .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0;}
+  .logo{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center;}
+  .logo img{height:30px;width:auto;margin-bottom:8px;}
+  .logo .n{font-size:11.5px;font-weight:800;color:var(--navy);}
+  .logo .d{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.3;}
+
+  /* ---------- FLOW (pílulas) ---------- */
+  .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0;}
+  .flow .b{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;
+           font-size:11.5px;font-weight:700;color:var(--navy);}
+  .flow .ar{color:var(--indigo);font-weight:800;}
+
+  .badge{display:inline-flex;gap:6px;background:var(--tint2);color:var(--indigo);font-weight:700;
+         font-size:11.5px;padding:5px 11px;border-radius:20px;margin:2px 4px 2px 0;}
+  .pill-go{display:inline-flex;align-items:center;gap:6px;background:#e9f8f1;color:var(--go-d);
+           font-weight:800;font-size:11.5px;padding:6px 13px;border-radius:20px;}
+
+  /* ---------- KPIs ---------- */
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0;}
+  .kpi .b{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;}
+  .kpi .v{font-size:28px;font-weight:800;color:var(--indigo);letter-spacing:-1.2px;line-height:1;}
+  .kpi .l{font-size:9.5px;color:var(--muted);font-weight:700;text-transform:uppercase;
+          letter-spacing:.5px;margin-top:6px;line-height:1.3;}
+
+  @media print{
+    @page{size:A4;margin:13mm 0;}
+    body{font-size:11.6px;}
+    .page{padding:0 16mm;max-width:none;}
+    .cover{padding:54px 16mm 36px;}
+    section,.card,.step,table,.quote,.stack,.logo,.toc-part,.kpi{break-inside:avoid;}
+    .cover,.toc{break-after:page;}
+    h2,h3{break-after:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M8 17h6l3-5h-3.5l-2-3H7"/><path d="M14 7h3"/></svg></div>
+    <div class="tag">◆ Plano de negócio · Palmas-TO</div>
+  </div>
+  <div class="cover-mid">
+    <h1>APPDELYVERY</h1>
+    <div class="rule"></div>
+    <div class="sub">Plataforma de entrega de encomendas B2B, com entregador verificado por antecedentes. Estudo de mercado, produto, tecnologia, estratégia e proposta.</div>
+    <div style="margin-top:24px"><span class="pill-go">✓ Sistema no ar e provado</span></div>
+  </div>
+  <div class="cover-foot">
+    <div class="foot"><span>Impulso Digital</span><span>junho / 2026</span></div>
+  </div>
+</div>
+
+<!-- SUMÁRIO -->
+<div class="toc"><div class="page">
+  <h3>Sumário</h3>
+  <div class="toc-cols">
+    <div class="toc-part">
+      <div class="pt">O essencial</div>
+      <div class="toc-item"><span class="num">01</span> Resumo executivo</div>
+      <div class="toc-item"><span class="num">02</span> O problema e a oportunidade</div>
+      <div class="toc-item"><span class="num">03</span> A solução (o produto)</div>
+    </div>
+    <div class="toc-part">
+      <div class="pt">Como funciona</div>
+      <div class="toc-item"><span class="num">04</span> A jornada, passo a passo</div>
+      <div class="toc-item"><span class="num">05</span> O produto e suas telas</div>
+      <div class="toc-item"><span class="num">06</span> A tecnologia e a arquitetura</div>
+      <div class="toc-item"><span class="num">07</span> O algoritmo de despacho</div>
+    </div>
+    <div class="toc-part">
+      <div class="pt">Diferenciais &amp; mercado</div>
+      <div class="toc-item"><span class="num">08</span> Diferenciais e sacadas do sistema</div>
+      <div class="toc-item"><span class="num">09</span> Achabilidade: Google e IAs</div>
+      <div class="toc-item"><span class="num">10</span> Análise de mercado</div>
+      <div class="toc-item"><span class="num">11</span> Análise da concorrência</div>
+      <div class="toc-item"><span class="num">12</span> Estratégia de expansão regional</div>
+    </div>
+    <div class="toc-part">
+      <div class="pt">Dinheiro</div>
+      <div class="toc-item"><span class="num">13</span> Modelo de negócio</div>
+      <div class="toc-item"><span class="num">14</span> Custos das ferramentas</div>
+    </div>
+    <div class="toc-part">
+      <div class="pt">Estrutura &amp; proposta</div>
+      <div class="toc-item"><span class="num">15</span> Roadmap por fases</div>
+      <div class="toc-item"><span class="num">16</span> Riscos e mitigações</div>
+      <div class="toc-item"><span class="num">17</span> Segurança e LGPD</div>
+      <div class="toc-item"><span class="num">18</span> A proposta e o investimento</div>
+    </div>
+  </div>
+</div></div>
+
+<div class="page">
+
+<!-- 1 -->
+<section>
+  <div class="ksec">01 · Resumo executivo</div>
+  <h2>O negócio em uma página</h2>
+  <p class="lead">O <b>APPDELYVERY</b> é uma plataforma de <b>entrega de encomendas para empresas</b> (B2B) em Palmas e região. A empresa pede pelo app ou integra o próprio sistema via API; o algoritmo aciona na hora um <b>entregador verificado por antecedentes</b>, com rastreio ao vivo e comprovante.</p>
+  <div class="kpi">
+    <div class="b"><div class="v">~30</div><div class="l">telas no ar</div></div>
+    <div class="b"><div class="v">27</div><div class="l">estruturas de banco</div></div>
+    <div class="b"><div class="v">API</div><div class="l">integração + webhook</div></div>
+    <div class="b"><div class="v">100%</div><div class="l">entregadores verificados</div></div>
+  </div>
+  <div class="card go"><b>Estágio:</b> não é maquete — é um sistema <b>rodando no ar</b>, com o ciclo completo provado (pedido → despacho → coleta → rota → entrega → comprovante). Dá pra abrir no celular agora.</div>
+  <p><b>O diferencial:</b> entregador com checagem de antecedentes, de forma ativa e visível. <b>O mercado:</b> Palmas (polo de distribuição) + região (Luzimangues, Porto Nacional, Gurupi) via Van. <b>O momento:</b> a estrutura já está pronta e no ar — falta alinhar o que é preciso pra colocar pra operar.</p>
+</section>
+
+<!-- 2 -->
+<section>
+  <div class="ksec">02 · O problema e a oportunidade</div>
+  <h2>Por que existe espaço</h2>
+  <p>Uma empresa de Palmas que precisa entregar tem três caminhos, e os três são ruins:</p>
+  <ul class="feat">
+    <li><b>Motoboy próprio:</b> caro (salário + encargos), ocioso, e ninguém checa o passado de quem carrega a mercadoria.</li>
+    <li><b>App de comida:</b> feito pra comida — não atende encomenda de empresa.</li>
+    <li><b>Concorrente de entrega:</b> credencia por documento, sem verificação ativa de antecedentes; o dono da carga não sabe quem bate na porta do cliente.</li>
+  </ul>
+  <div class="card"><b>A oportunidade:</b> ser a entrega B2B <b>confiável</b> (ficha checada), <b>local</b> (Palmas e região) e <b>integrada</b> (cai no sistema da empresa). Um espaço que os apps de comida não ocupam e que os concorrentes atuais não atacam pela confiança.</div>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="ksec">03 · A solução</div>
+  <h2>O produto, em uma frase</h2>
+  <div class="quote">A empresa pede; o sistema aciona na hora um entregador de ficha checada; todo mundo acompanha ao vivo; a entrega chega com comprovante. <b>Sem operar motoboy.</b></div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="ksec">04 · Como funciona</div>
+  <h2>A jornada, passo a passo</h2>
+  <div class="flow">
+    <span class="b">Empresa pede</span><span class="ar">→</span>
+    <span class="b">Algoritmo escolhe</span><span class="ar">→</span>
+    <span class="b">Entregador aceita</span><span class="ar">→</span>
+    <span class="b">Coleta (foto)</span><span class="ar">→</span>
+    <span class="b">Rota ao vivo (GPS)</span><span class="ar">→</span>
+    <span class="b">Entrega (foto+assinatura+código)</span><span class="ar">→</span>
+    <span class="b">Comprovante</span>
+  </div>
+  <div class="grid3">
+    <div class="step"><div class="n">1</div><h4>A empresa pede</h4><p>Coleta, destino e o que enviar. Vê o preço na hora — moto, carro ou van.</p></div>
+    <div class="step"><div class="n">2</div><h4>O sistema escolhe</h4><p>Por proximidade + avaliação + veículo + ficha aprovada. Oferta com cronômetro.</p></div>
+    <div class="step"><div class="n">3</div><h4>Acompanha ao vivo</h4><p>Empresa e cliente veem o trajeto no mapa, por link, sem instalar nada.</p></div>
+  </div>
+  <h3 style="margin-top:20px">Moto, carro ou van — o negócio escolhe na hora</h3>
+  <p>Logo ao criar a entrega, o negócio vê <b>os três veículos com o preço de cada um já calculado</b> e escolhe conforme o tamanho e o valor da carga. O valor aparece antes de confirmar — sem surpresa.</p>
+  <div class="grid3">
+    <div class="card"><h4 class="indigo" style="margin-top:0">Moto</h4><p style="font-size:12px;margin:4px 0">Documentos, pacotes e o dia a dia. O mais ágil no trânsito e o mais econômico. <b>Bandeirada R$ 8</b>.</p></div>
+    <div class="card"><h4 class="indigo" style="margin-top:0">Carro</h4><p style="font-size:12px;margin:4px 0">Volumes maiores, mais de uma caixa ou carga frágil que pede proteção. <b>Bandeirada R$ 13</b>.</p></div>
+    <div class="card"><h4 class="indigo" style="margin-top:0">Van</h4><p style="font-size:12px;margin:4px 0">Cargas grandes, muitas caixas, abastecimento de loja e o modelo intercidade. <b>Preço sob medida</b>.</p></div>
+  </div>
+  <p class="muted" style="font-size:12px">Cálculo: bandeirada por veículo + R$ 1,50/km, com mínimo de R$ 10. As faixas e o preço por km são <b>configuráveis</b> pela administração.</p>
+</section>
+
+<!-- 5 -->
+<section>
+  <div class="ksec">05 · O produto</div>
+  <h2>Quatro experiências, um sistema</h2>
+  <div class="grid">
+    <div class="card"><h4 class="indigo">App do Negócio</h4><p style="font-size:12.5px">Cria a entrega com busca de endereço, escolhe o veículo vendo o preço, acompanha ao vivo, histórico, relatórios, carteira e integração via API.</p></div>
+    <div class="card"><h4 class="indigo">App do Entregador</h4><p style="font-size:12.5px">No padrão dos apps de corrida: mapa em tela cheia, recebe a oferta com cronômetro, aceita deslizando, fluxo de coleta/entrega e tela de ganhos (80% do frete).</p></div>
+    <div class="card"><h4 class="indigo">Painel de Administração</h4><p style="font-size:12.5px">Despacho ao vivo no mapa, todas as corridas e mensagens, financeiro, e aprovação de entregador (com checagem de antecedentes).</p></div>
+    <div class="card"><h4 class="indigo">Tela do Cliente Final</h4><p style="font-size:12.5px">Acompanha por um link no WhatsApp — vê o entregador chegando ao vivo. Sem baixar app.</p></div>
+  </div>
+</section>
+
+<!-- 5B - COMPLETUDE -->
+<section>
+  <div class="ksec">05·B · O tamanho real do que já existe</div>
+  <h2>Tudo que já está construído</h2>
+  <p>Não são "4 telinhas". É um sistema completo, com <b>27 estruturas de banco</b>, <b>~30 telas</b> e <b>API pública</b>. Por área:</p>
+  <div class="grid">
+    <div class="card"><h4 class="indigo">Para o Negócio</h4><p style="font-size:12px;margin:4px 0">Criar pedido (3 veículos + preço + busca de endereço + pino no mapa + retorno) · acompanhamento ao vivo com entregador real · histórico · relatórios + exportar · carteira · comunicados · integração API · <b>equipe (multi-operador)</b>.</p></div>
+    <div class="card"><h4 class="indigo">Para o Entregador</h4><p style="font-size:12px;margin:4px 0">Home no mapa (estilo app de corrida) · <b>conectar/desconectar</b> · oferta dirigida com cronômetro · fluxo coleta→rota→entrega (foto + assinatura + código) · <b>antifraude por GPS</b> · ganhos (com ocultar valor) · taxas de aceitação/finalização · cancelar com motivo · abrir Waze/Google.</p></div>
+    <div class="card"><h4 class="indigo">Chat e Suporte</h4><p style="font-size:12px;margin:4px 0"><b>Chat de 3 pontas</b> (negócio + entregador + cliente na mesma conversa) · <b>botão de suporte</b> pras 3 pontas · chamados/disputas resolvidos pela administração.</p></div>
+    <div class="card"><h4 class="indigo">Cliente final</h4><p style="font-size:12px;margin:4px 0">Rastreio por link (sem app) · GPS ao vivo · abrir chamado pelo próprio link.</p></div>
+  </div>
+  <div class="card"><h4 class="indigo" style="margin-top:0">Painel de Administração — 12 telas (a operação inteira)</h4>
+    <p style="font-size:12px;margin:4px 0">Dashboard com período · <b>despacho ao vivo no mapa</b> · corridas (com comprovante) · todas as mensagens · entregadores (fila + aprovação com checagem de antecedentes + PIN) · negócios · <b>rankings</b> (melhores entregadores/negócios) · <b>avaliações</b> · suporte/chamados · financeiro (repasses + carteiras + exportar) · <b>comunicados</b> (broadcast) · configurações (preço por veículo, raio, PIN, teto de proteção). <b>O dono opera sozinho:</b> aprova/suspende entregador, muda preço e take rate, resolve disputa e <b>adiciona operadores com permissões</b> — sem depender de ninguém.</p>
+  </div>
+  <div class="card"><h4 class="indigo" style="margin-top:0">Integração e segurança</h4>
+    <p style="font-size:12px;margin:4px 0"><b>API pública</b> (criar/cotar/consultar pedido) + <b>webhook</b> de status + chaves de API · segurança por dentro: controle de acesso por papel, antifraude (GPS, aceite atômico, preço no servidor, código de entrega), e <b>prova-na-fonte</b> em cada passo crítico.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <div class="ksec">06 · Tecnologia e arquitetura</div>
+  <h2>Construído com a base dos grandes</h2>
+  <p>O sistema roda em ferramentas profissionais de nuvem — as mesmas que startups e grandes empresas usam. <b>Sem servidor pra manter</b>: sobe e escala sozinho.</p>
+  <div class="stack">
+    <div class="logo"><img src="https://cdn.simpleicons.org/nextdotjs/1b2147" alt="Next.js"><div class="n">Next.js</div><div class="d">App e site</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase"><div class="n">Supabase</div><div class="d">Banco + login + tempo real</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/postgresql/4f46e5" alt="PostgreSQL"><div class="n">PostgreSQL + PostGIS</div><div class="d">Dados + geolocalização</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/vercel/1b2147" alt="Vercel"><div class="n">Vercel</div><div class="d">Hospedagem</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/mapbox/4f46e5" alt="Mapbox"><div class="n">Mapbox</div><div class="d">Mapas e rotas</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="Google Maps"><div class="n">Google Maps</div><div class="d">Evolução (fase 2)</div></div>
+    <div class="logo"><img src="https://cdn.simpleicons.org/pix/4f46e5" alt="Pix"><div class="n">Asaas / Pix</div><div class="d">Pagamentos</div></div>
+    <div class="logo"><svg height="30" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:7px"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 14l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg><div class="n">IA (roadmap)</div><div class="d">Demanda, antifraude</div></div>
+  </div>
+  <p class="muted" style="font-size:12px">As camadas: o <b>cérebro</b> (algoritmo) vive no banco PostgreSQL+PostGIS; o <b>tempo real</b> leva a oferta ao celular na hora; o <b>app e o site</b> rodam na Vercel; pagamentos no Asaas (Pix). Arquitetura cloud-native, escalável.</p>
+</section>
+
+<!-- 7 -->
+<section>
+  <div class="ksec">07 · O cérebro</div>
+  <h2>O algoritmo de despacho</h2>
+  <p>Quando uma entrega é criada, o sistema decide <b>sozinho</b> quem leva, em segundos. Ele filtra os entregadores <b>online, aprovados, com o veículo certo e dentro do raio</b> e os ordena por um <b>placar inteligente</b> que cruza vários fatores ao mesmo tempo:</p>
+  <div class="grid">
+    <div class="card"><h4 class="indigo" style="margin-top:0">Como o placar é montado</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li><b>Proximidade real</b> (distância por rota, não em linha reta)</li>
+        <li><b>Avaliação</b> do entregador</li>
+        <li><b>Taxa de aceitação e de conclusão</b></li>
+        <li><b>Veículo compatível</b> com a carga (moto, carro, van)</li>
+        <li><b>Ficha aprovada</b> — antecedentes verificados</li>
+      </ul>
+    </div>
+    <div class="card"><h4 class="indigo" style="margin-top:0">Como a oferta roda</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li>Oferta dirigida ao <b>melhor colocado</b>, com cronômetro (~30s)</li>
+        <li>Recusou ou expirou? <b>Passa pro próximo</b>, em cascata</li>
+        <li>Aceite <b>atômico</b> — nunca duas corridas na mesma entrega</li>
+        <li>Preço calculado <b>no servidor</b>, à prova de fraude</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card"><b>Adaptativo e parametrizável:</b> o placar <b>se ajusta com a performance real</b> — quem entrega bem sobe, quem larga corrida desce. E cada peso do algoritmo (raio, prioridades, preço por zona, tempo de oferta) é <b>configurável por cidade</b> — é o que permite calibrar a operação para cada praça nova sem reescrever o sistema. A camada de <b>Inteligência Artificial</b> (prever demanda, prever o melhor entregador, detectar fraude, ETA preditivo) está no roadmap e entra com o volume. <span class="muted">Vende-se o que roda hoje + um caminho claro — não IA inventada.</span></div>
+</section>
+
+<!-- 8 -->
+<section>
+  <div class="ksec">08 · Inteligência aplicada</div>
+  <h2>As sacadas — feito pra Palmas de verdade</h2>
+  <ul class="feat">
+    <li><b>Tradutor de endereço de Palmas:</b> a cidade tem dupla nomenclatura ("ARSE 122" = "1206 Sul"). O sistema converte sozinho — coisa que nem o Google/Mapbox faz pronto.</li>
+    <li><b>Pino no mapa:</b> onde a busca não acha (Taquaralto, Aurenys), o lojista marca o ponto — funciona pra qualquer endereço.</li>
+    <li><b>Antifraude por GPS:</b> confere se o entregador está mesmo no local antes de liberar coleta/entrega.</li>
+    <li><b>Preço calculado no servidor:</b> ninguém de fora manipula o valor.</li>
+    <li><b>Despacho por gatilho + match exato de veículo:</b> o pedido entra, a oferta dispara, e van não vai pra moto.</li>
+  </ul>
+</section>
+
+<!-- API -->
+<section>
+  <div class="ksec">08·A · O grande trunfo</div>
+  <h2>Sistema de Integração (API) — o pedido cai sozinho</h2>
+  <p>É o que trava cliente grande. O sistema da empresa (loja virtual, ERP, sistema de balcão/PDV) <b>conversa direto com o APPDELYVERY</b>: a venda acontece e o pedido de entrega <b>cai automático</b> no APPDELYVERY, que aciona o entregador. <b>Ninguém digita nada.</b></p>
+  <div class="flow">
+    <span class="b">Cliente compra no site da loja</span><span class="ar">→</span>
+    <span class="b">Sistema da loja chama a API</span><span class="ar">→</span>
+    <span class="b">Pedido criado + despacho dispara</span><span class="ar">→</span>
+    <span class="b">Entregador verificado acionado</span><span class="ar">→</span>
+    <span class="b">Loja recebe os status (webhook)</span>
+  </div>
+  <p>É o <b>mesmo modelo das grandes redes</b> (ex.: a farmácia vende no app dela e o entregador é acionado, sem ninguém operar). <b>Já está construído e funcionando:</b> a empresa gera uma chave, faz a integração em poucas horas, e ainda recebe de volta cada mudança de status (aceito, coletado, a caminho, entregue).</p>
+  <div class="card"><b>Visão — conectores prontos:</b> em vez de cada loja precisar de programador, o APPDELYVERY oferece <b>plugins prontos</b> pros sistemas mais usados (Bling, Tiny, PDVs de farmácia). Aí a loja "ativa o APPDELYVERY" sem programar — e dezenas de lojas que usam aquele sistema viram clientes de uma vez.</div>
+</section>
+
+<!-- GAPS -->
+<section>
+  <div class="ksec">08·B · Igualar pra competir</div>
+  <h2>Os gaps que estudamos e já resolvemos</h2>
+  <p>Mapeamos, ferramenta por ferramenta, o que os grandes (Bee, Loggi, Lalamove, Uber Direct, Borzo) oferecem — e implementamos o que faltava pra estar no nível de mercado:</p>
+  <div class="grid">
+    <div class="card"><b>Proteção de carga</b><div class="muted" style="font-size:12px">Ressarcimento até um teto, igual a Bee.</div></div>
+    <div class="card"><b>Cotação de preço</b><div class="muted" style="font-size:12px">Preço antes de criar, igual o Uber Direct.</div></div>
+    <div class="card"><b>Opção de retorno</b><div class="muted" style="font-size:12px">Não recebeu? volta pra loja.</div></div>
+    <div class="card"><b>Relatórios do lojista</b><div class="muted" style="font-size:12px">Total, gasto, desempenho, exportar.</div></div>
+    <div class="card"><b>Preço por veículo</b><div class="muted" style="font-size:12px">Moto/carro/van com tabela própria.</div></div>
+    <div class="card"><b>Webhook de status</b><div class="muted" style="font-size:12px">Avisa o sistema da empresa em tempo real.</div></div>
+  </div>
+  <p class="muted" style="font-size:12px">Pesquisa de campo (jun/2026). A leitura honesta: <b>API e integração são paridade</b> (os grandes têm) — o diferencial real é <b>verificação ativa + hiper-local</b>. A paridade já está construída, porque sem ela nem se entra no jogo.</p>
+</section>
+
+<!-- 9 -->
+<section>
+  <div class="ksec">09 · Achabilidade</div>
+  <h2>No Google e nas Inteligências Artificiais</h2>
+  <p>Construir o app é metade. A outra metade é o cliente <b>achar você</b>. O sistema já vem preparado pra ser encontrado nas duas pontas da busca moderna:</p>
+  <div class="grid">
+    <div class="card"><h4 class="indigo">Google (SEO)</h4><p style="font-size:12.5px">Site otimizado pra aparecer em "entrega Palmas", "motoboy Palmas", com <b>Search Console</b> e <b>Analytics</b> medindo tudo, sitemap e dados estruturados.</p></div>
+    <div class="card"><h4 class="indigo">IAs (AEO)</h4><p style="font-size:12.5px">Um arquivo <b>llms.txt</b> faz o ChatGPT e outras IAs <b>entenderem e recomendarem</b> o negócio quando alguém pergunta "qual o melhor serviço de entrega em Palmas?".</p></div>
+  </div>
+  <div class="card go"><b>Por que vale ouro:</b> o futuro da busca não é só o Google — é perguntar pra uma IA. Quem aparece nas duas pontas <b>capta cliente de graça, 24h por dia.</b> Já montado.</div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="ksec">10 · Análise de mercado</div>
+  <h2>Palmas é um polo de distribuição</h2>
+  <p>Palmas concentra <b>centros de distribuição</b> de grandes redes (Atacadão), <b>centro logístico de e-commerce</b> (Shopee) e distribuidoras que abastecem o interior e estados vizinhos (sul do Pará, leste do MT, oeste da BA). <b>O fluxo de encomendas já existe e é grande</b> — documentos, peças, remédios, produtos, last-mile de e-commerce.</p>
+  <div class="kpi">
+    <div class="b"><div class="v">230k+</div><div class="l">hab. região metro Palmas</div></div>
+    <div class="b"><div class="v">1.156</div><div class="l">empresas em Luzimangues</div></div>
+    <div class="b"><div class="v">36h</div><div class="l">prazo do CD do Atacadão</div></div>
+    <div class="b"><div class="v">B2B</div><div class="l">nicho pouco atacado</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="ksec">11 · Concorrência</div>
+  <h2>Quem já está aqui (honesto)</h2>
+  <table>
+    <tr><th>Player</th><th>Perfil</th><th>Ponto fraco / brecha</th></tr>
+    <tr><td><b>Bee Delivery</b></td><td>Nacional, forte, tem API e integra PDV; multi-segmento</td><td>Antecedentes só como cláusula passiva; nacional, não hiper-local; interior fraco</td></tr>
+    <tr><td><b>TôNoLucro</b></td><td>Local, comprado pela Magazine Luíza; comida + encomenda</td><td>Foco comida/varejo; verificação não é o eixo</td></tr>
+    <tr><td><b>Loggi</b></td><td>Nacional B2B, API, integra Bling/Tiny</td><td>Não é local; sem relação de proximidade no TO</td></tr>
+  </table>
+  <div class="card warn"><b>Leitura honesta:</b> são adversários com estrutura e dinheiro. Não é terra de ninguém. <b>A brecha defensável:</b> verificação ativa + transparente de antecedentes, <b>hiper-local</b>, e cobertura do <b>interior</b> (Porto, Gurupi) onde os nacionais são fracos. Não cravamos "únicos" — cravamos "mais confiável e mais perto".</div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="ksec">12 · Crescimento</div>
+  <h2>Palmas é o começo; a Van abre a região</h2>
+  <table>
+    <tr><th>Região</th><th>Distância</th><th>Perfil / modelo</th></tr>
+    <tr><td><b>Luzimangues</b></td><td>~10 min</td><td>Metrô de Palmas · 24 mil hab. · 1.156 empresas · polo industrial. <b>Entra já</b> (moto/carro/van)</td></tr>
+    <tr><td><b>Porto Nacional</b></td><td>68 km</td><td>64 mil hab. · intercity curto · ideal pra <b>Van</b> on-demand</td></tr>
+    <tr><td><b>Gurupi</b></td><td>230 km</td><td>85 mil hab. · intercity longo · modelo <b>agendado/consolidado</b> (fase 2)</td></tr>
+  </table>
+  <p><b>Frentes de aquisição:</b> (1) prospectar as empresas de Luzimangues; (2) vender pras <b>distribuidoras de Palmas</b> que entregam no interior (eixo de distribuição); (3) atender empresas multi-cidade.</p>
+  <div class="card">
+    <h4 class="indigo" style="margin-top:0">A escada até o nacional</h4>
+    <p style="font-size:12.5px;margin:6px 0">O modelo — <b>cidade média mal atendida pelos gigantes + entregador verificado + operação hiper-local</b> — não é exclusivo de Palmas. Ele se repete em <b>dezenas de capitais e cidades do interior do Brasil</b> com o mesmo perfil. A escada de crescimento:</p>
+    <div class="flow">
+      <span class="b">Palmas</span><span class="ar">→</span>
+      <span class="b">Região metropolitana</span><span class="ar">→</span>
+      <span class="b">Interior do Tocantins</span><span class="ar">→</span>
+      <span class="b">Capitais vizinhas</span><span class="ar">→</span>
+      <span class="b">Nacional (rede / franquia)</span>
+    </div>
+    <p style="font-size:12.5px;margin:6px 0">Como o sistema é <b>multi-operador e parametrizável por cidade</b>, abrir uma praça nova é <b>configuração, não recomeço do zero</b>. <span class="muted">É uma possibilidade real de escala, conquistada praça a praça com tração comprovada — não uma promessa.</span></p>
+  </div>
+  <div class="card go">
+    <h4 class="go" style="margin-top:0">O last-mile dos grandes e-commerces</h4>
+    <p style="font-size:12.5px;margin:6px 0">Milhares de <b>vendedores de Palmas e região vendem no Mercado Livre e na Shopee</b> e ganham reputação quando entregam <b>no mesmo dia</b>. No programa <b>Flex do Mercado Livre</b>, é o próprio vendedor quem organiza essa entrega same-day na sua região — e a plataforma o remunera por cumprir o prazo. O problema do vendedor: ele não tem entregador.</p>
+    <p style="font-size:12.5px;margin:8px 0 6px"><b>É aí que o APPDELYVERY entra — como o entregador do vendedor.</b> Na prática:</p>
+    <div class="flow">
+      <span class="b">Vende no ML/Shopee</span><span class="ar">→</span>
+      <span class="b">Ativa o same-day (Flex)</span><span class="ar">→</span>
+      <span class="b">Aciona o APPDELYVERY (1 clique ou API)</span><span class="ar">→</span>
+      <span class="b">Coleta na loja</span><span class="ar">→</span>
+      <span class="b">Entrega no mesmo dia</span><span class="ar">→</span>
+      <span class="b">Comprovante = prova pro marketplace</span>
+    </div>
+    <p style="font-size:12.5px;margin:6px 0"><b>Por que o vendedor escolhe a operação:</b> não precisa ter moto nem funcionário, paga só pela entrega que usar, conta com entregador de ficha checada, e o rastreio + foto + assinatura viram a comprovação que o marketplace exige. O vendedor cumpre o prazo e sobe de reputação; a plataforma fica com o seu percentual de cada frete.</p>
+    <p style="font-size:12.5px;margin:6px 0"><b>O passo seguinte:</b> com histórico de entregas rodando, virar <b>parceiro logístico regional homologado</b> de Shopee e Mercado Livre — e o argumento é o <b>interior do Tocantins</b> (Porto, Gurupi, o eixo de distribuição), onde a logística própria deles é fraca.</p>
+  </div>
+</section>
+
+<!-- 13 -->
+<section>
+  <div class="ksec">13 · Modelo de negócio</div>
+  <h2>Como a plataforma gera receita</h2>
+  <ul class="feat">
+    <li><b>Carteira pré-paga:</b> a empresa-cliente abastece por Pix e cada entrega desconta o frete na hora — caixa antecipado, sem inadimplência.</li>
+    <li><b>Take rate:</b> o entregador recebe <b>80%</b> do frete; a plataforma fica com <b>20%</b> de cada corrida.</li>
+    <li><b>Planos + integração</b> para clientes de volume (lojas, redes e e-commerces).</li>
+  </ul>
+  <div class="card"><b>Na prática:</b> uma entrega de moto de 6,3 km sai a R$ 17,51 → R$ 14,01 para o entregador e <b>R$ 3,50 para a plataforma</b>. A receita cresce com o número de corridas, sem custo fixo por entrega.</div>
+  <h3 style="margin-top:20px">O dinheiro por dentro — blindado de ponta a ponta</h3>
+  <div class="grid">
+    <div class="card"><h4 class="indigo" style="margin-top:0">Entra sem risco de calote</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li><b>Carteira pré-paga:</b> o negócio recarrega por Pix (mín. R$ 50) antes de pedir</li>
+        <li><b>Bloqueio sem saldo:</b> sem dinheiro na carteira, não cria entrega — zero inadimplência</li>
+        <li>Alerta de saldo baixo antes de travar a operação</li>
+      </ul>
+    </div>
+    <div class="card"><h4 class="indigo" style="margin-top:0">Sai automático e justo</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li><b>Split automático:</b> 80% na subconta do entregador, 20% na plataforma</li>
+        <li><b>Repasse D+1:</b> o entregador saca pro Pix dele (mín. R$ 20), sem esperar</li>
+        <li><b>Reembolso de cancelamento:</b> 100% antes da coleta; após, deduz só a bandeirada</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted" style="font-size:12px">Cada movimento fica no extrato da carteira, e a plataforma não retém o dinheiro do entregador (sem float) — o que atrai entregador bom. O split e o repasse automáticos rodam via <b>Asaas</b>: engenharia pronta, ativa com a conta no CNPJ do dono (Fase 2).</p>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="ksec">14 · Custos das ferramentas</div>
+  <h2>Até onde vai sem custo, e quando o custo sobe</h2>
+  <p>Cada ferramenta tem um plano gratuito generoso. O custo só sobe quando a operação ultrapassa um limite claro — e quando isso acontece, é porque o volume (e a receita) já cresceram.</p>
+  <table>
+    <tr><th>Ferramenta</th><th>O que faz</th><th>Roda de graça até</th><th>Quando vira pago</th></tr>
+    <tr><td><b>Supabase</b></td><td>Banco, login e tempo real</td><td>~50 mil usuários ativos/mês · 500 MB de banco</td><td>~R$ 130/mês (plano Pro)</td></tr>
+    <tr><td><b>Vercel</b></td><td>Hospedagem do sistema</td><td>100 GB de tráfego/mês</td><td>~R$ 110/mês (plano Pro)</td></tr>
+    <tr><td><b>Mapbox</b></td><td>Mapas, rotas e endereço</td><td>50 mil carregamentos de mapa/mês</td><td>~US$ 5 por mil acima disso</td></tr>
+    <tr><td><b>Asaas</b></td><td>Pagamentos (Pix/cartão/boleto)</td><td>Sem mensalidade, sempre</td><td>Só taxa por transação</td></tr>
+    <tr><td><b>Verificação de antecedentes</b></td><td>Checagem do entregador</td><td>—</td><td>~R$ 100/mês + por consulta</td></tr>
+    <tr><td><b>Domínio</b></td><td>Endereço na internet</td><td>—</td><td>~R$ 40/ano (fixo)</td></tr>
+  </table>
+  <div class="card go"><b>Até onde a operação vai sem custo extra:</b> o primeiro teto a ser tocado é o do Mapbox, em <b>50 mil usos de mapa por mês</b> — folga de sobra para rodar em ritmo forte em Palmas antes de qualquer salto. Até lá, a estrutura roda praticamente de graça. Quando cada ferramenta encosta no limite, o aumento é pequeno e previsível (<b>R$ 110–130/mês cada</b>) e só acontece porque a receita já acompanhou.</div>
+  <h3 style="margin-top:22px">A verificação do entregador — qual ferramenta e quanto custa</h3>
+  <p>O eixo do APPDELYVERY é checar quem carrega a mercadoria. São <b>três camadas</b>, cada uma com um fornecedor especializado. O custo é <b>por entregador e só na entrada</b> — não a cada entrega:</p>
+  <table>
+    <tr><th>Camada</th><th>O que confere</th><th>Ferramenta</th><th>Custo</th></tr>
+    <tr><td><b>Antecedentes</b></td><td>Ficha criminal por CPF</td><td>FlagCheck</td><td>~R$ 3,33 por entregador</td></tr>
+    <tr><td><b>Documentos</b></td><td>CNH (Senatran) + CRLV do veículo</td><td>Infosimples</td><td>franquia ~R$ 100/mês</td></tr>
+    <tr><td><b>Identidade (Face ID)</b></td><td>Selfie com biometria facial × documento</td><td>idwall (ou equivalente)</td><td>por consulta</td></tr>
+  </table>
+  <div class="card go"><b>Por que é barato e escala:</b> a checagem roda <b>uma vez, quando o entregador entra</b> — não a cada corrida. Um entregador novo custa ~R$ 3,33 de antecedentes + a consulta de documentos e identidade, tudo embutido no take rate. As três integrações já estão <b>arquitetadas no sistema</b> e ativam assim que as contas entram no CNPJ do dono.</div>
+  <div class="card"><b>Evolução p/ Google Maps Platform:</b> o sistema usa o Mapbox (mais barato, cobre Palmas com ajustes próprios). Quando o volume crescer, pluga o Google Maps (cobertura melhor) — a tomada já fica pronta. Google: 10 mil buscas grátis/mês, depois ~US$ 5/mil.</div>
+</section>
+
+<!-- 15 -->
+<section>
+  <div class="ksec">15 · Roadmap</div>
+  <h2>O que está pronto × o que vem</h2>
+  <p><span class="pill-go">JÁ NO AR, PROVADO</span></p>
+  <p>~30 telas · motor de despacho (oferta dirigida) · API + webhook + cotação · GPS ao vivo · chat 3-pontas · suporte/chamados · avaliações + rankings · comunicados · proteção de carga · retorno · relatórios · 3 veículos com preço próprio · busca de endereço com tradutor de Palmas + pino no mapa · multi-operador · site com SEO + llms.txt.</p>
+  <h3>Fase 2 — pra escalar (curto prazo)</h3>
+  <p style="margin:4px 0">Pix/recarga e pagamento faturado (Asaas) · agendamento e recorrência · múltiplas paradas · devolução com dados do recebedor (nome/CPF) · push em tempo real com som · endereços favoritos · conectores prontos (Bling/Tiny) · <b>programa de indicação de entregadores</b> (bônus por trazer novos aprovados).</p>
+  <h3>Fase 3 — o salto</h3>
+  <p style="margin:4px 0"><b>Apps nativos nas lojas</b> (Play Store + App Store, via Expo) · <b>Van intercidade</b> (Porto/Gurupi, preço ida-e-volta) · <b>seguro via parceiro</b> (modelo das grandes) · <b>camada de Inteligência Artificial</b> (previsão de demanda, antifraude, ETA preditivo, score do entregador).</p>
+</section>
+
+<!-- 16 -->
+<section>
+  <div class="ksec">16 · Riscos e mitigações</div>
+  <h2>Olhando de frente</h2>
+  <table>
+    <tr><th>Risco</th><th>Mitigação</th></tr>
+    <tr><td>Concorrentes fortes (Bee/Magalu)</td><td>Não competir de frente: confiança + hiper-local + interior</td></tr>
+    <tr><td>Custo da verificação de antecedentes</td><td>Embutir no take rate; parceiro de verificação no CNPJ do dono</td></tr>
+    <tr><td>Responsabilidade civil por extravio (CDC)</td><td>Proteção de carga + comprovação forte; o take rate embute o risco</td></tr>
+    <tr><td>Volume baixo no começo</td><td>Custo de ferramentas quase zero; cresce só com receita</td></tr>
+    <tr><td>Cobertura de mapa em Palmas</td><td>Tradutor ARSE + pino no mapa; evolução p/ Google quando justificar</td></tr>
+  </table>
+</section>
+
+<!-- 17 -->
+<section>
+  <div class="ksec">17 · Segurança e LGPD</div>
+  <h2>Confiança por dentro</h2>
+  <ul class="feat">
+    <li><b>Trilha de auditoria jurídica:</b> cada entrega guarda foto + assinatura + GPS + data/hora — prova de quem recebeu, onde e quando. Blindagem contra disputa de extravio.</li>
+    <li><b>Acesso por papel (RLS):</b> cada um enxerga só o que é seu — o entregador não vê dados de outro, o negócio só os próprios pedidos, antecedentes só a administração.</li>
+    <li><b>LGPD:</b> dado de antecedente é sigiloso e criptografado — nunca aparece pro negócio, pro cliente, em URL ou print.</li>
+    <li><b>Reverificação periódica</b> dos entregadores (Lei 13.640) — a ficha não vence.</li>
+    <li><b>Prova-na-fonte:</b> todo passo crítico é confirmado no banco, não na tela.</li>
+    <li><b>Antifraude embutido:</b> GPS, aceite atômico, preço calculado no servidor, código de entrega.</li>
+    <li>Nuvem profissional que escala sozinha; rastreio público por link sem expor a base.</li>
+  </ul>
+</section>
+
+<!-- 18 -->
+<section style="border-bottom:none">
+  <div class="ksec">18 · A proposta</div>
+  <h2>Tudo que você recebe — e o investimento</h2>
+  <p>Não é um protótipo: é a plataforma inteira, construída e no ar. Está incluído na entrega:</p>
+  <div class="grid">
+    <div class="card">
+      <h4 class="indigo">Os 4 sistemas</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li>App do Negócio (pedido, preço por veículo, ao vivo, histórico, relatórios, carteira)</li>
+        <li>App do Entregador (mapa, oferta com cronômetro, coleta/entrega, ganhos)</li>
+        <li>Painel de Administração (despacho ao vivo, corridas, mensagens, financeiro)</li>
+        <li>Tela do Cliente Final (rastreio por link, sem instalar app)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 class="indigo">Motor e endereço</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li>Algoritmo de despacho com oferta dirigida e cronômetro</li>
+        <li>GPS ao vivo, rastreio das três pontas</li>
+        <li>Preço automático por veículo (moto, carro, van)</li>
+        <li>Busca de endereço com tradutor de Palmas (ARSE) + pino no mapa</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 class="indigo">Integração e operação</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li>API pública + webhook + cotação (o pedido cai sozinho do sistema da loja)</li>
+        <li>Verificação de antecedentes no fluxo de aprovação do entregador</li>
+        <li>Proteção de carga, retorno e comprovação (foto + assinatura + código)</li>
+        <li>Chat das três pontas, suporte/chamados, comunicados, avaliações e rankings</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 class="indigo">Presença e base</h4>
+      <ul class="feat" style="margin:6px 0">
+        <li>Site com SEO + llms.txt (achável no Google e nas IAs)</li>
+        <li>Multi-operador e relatórios de gestão</li>
+        <li>~30 telas e 27 estruturas de banco de dados</li>
+        <li>Base pronta pra escalar: conectores, Van intercidade e apps nativos</li>
+      </ul>
+    </div>
+  </div>
+  <table class="price">
+    <tr><th>Adquirir uma plataforma assim…</th><th>Custo</th></tr>
+    <tr><td>Agência de software, construída do zero</td><td>R$ 70 mil a 250 mil</td></tr>
+    <tr><td><b>APPDELYVERY — pronto, provado e no ar</b></td><td><b>R$ 15 mil</b> + ferramentas</td></tr>
+  </table>
+  <div class="card go">
+    <h3 style="margin-top:0" class="go">Investimento: R$ 15.000</h3>
+    <p style="margin:6px 0"><b>Entrada de 50% (R$ 7.500)</b> na assinatura; saldo flexível (parcelado ou por marco). <b>Mensalidade à parte</b>, que cobre as ferramentas + manutenção e suporte.</p>
+  </div>
+  <div class="card"><b>Pra colocar pra rodar:</b> contas no seu CNPJ (Asaas + verificação de antecedentes) e as decisões de seguro e Van intercidade. <br><b>Provas (agora):</b> site <b>appdelivery-psi.vercel.app</b> + as 4 telas no ar.</div>
+  <p class="muted" style="margin-top:14px;text-align:center">APPDELYVERY · Logística sob demanda · Palmas-TO · junho/2026</p>
+</section>
+
+</div>
+</body>
+</html>
