@@ -25,15 +25,16 @@
 
 **Evolução 2026:** subiu de agência low-ticket pra **3 frentes premium** — SaaS fork ~R$3k · LP/site ~R$2k · **plataforma própria APPDELYVERY** (entregas B2B Palmas · em construção · maior build atual · de prestador a fundador).
 
-**Modelo cravado (23/06):** **núcleo-fork** (`medellin-bar` = template → cada cliente clona pra github/vercel/supabase próprios · R$2.997/50% · caixa agora) **financia** o **ComandaPRO** (`acai-system` = SaaS food-service multi-tenant · recorrência). **Medellín FECHADO** (case-zero) · **Vidal = 1º ComandaPRO**. Detalhe: `2-PROCESSAMENTO/impulso-digital/MODELO-NUCLEO-FORK-COMANDAPRO.md`.
+**Modelo cravado (23/06):** **núcleo-fork** (`medellin-bar` = template → cada cliente clona pra github/vercel/supabase próprios · R$2.997/50% · caixa agora) **financia** o **ComandaPRO** (`acai-system` = SaaS food-service multi-tenant · recorrência). **Medellín NÃO fechou o fork R$2.997** — se interessou em **R$219/mês (recorrência)**, o que puxa pro lado SaaS/ComandaPRO, não o fork. **Vidal = 1º ComandaPRO**. Detalhe: `2-PROCESSAMENTO/impulso-digital/MODELO-NUCLEO-FORK-COMANDAPRO.md`.
 
-**Ofertas oficiais (política "a partir de" — NUNCA cravar valor fixo em msg de venda):**
-- **Entrada:** LP a partir de **R$499** + R$99/mês · Shopify a partir de **R$599** + R$99/mês · Combo **R$1.099** · Site Next.js a partir de **R$799**
-- **Premium (real hoje):** LP/site premium **~R$2k** · SaaS fork dedicado **~R$3k** (entrada + saldo; ver λ.fork-dedicado)
-- **Recorrente:** AgendaPRO **Solo R$67/mês** (1+1) · **Equipe R$97/mês** (até 5) · Setup **R$197** (isento pros 10 primeiros — Clube Fundador)
-- Ancoragem: "LP no Brasil custa R$2k-15k; cobro a partir de R$499 porque sou local de Palmas, sem overhead de SP."
+**Ofertas oficiais (política "a partir de" — NUNCA cravar valor fixo em msg de venda) — ATUALIZADO 07/07/2026 (reposicionamento software house):**
+- **Serviços (a partir de):** LP a partir de **R$1.497** · Site a partir de **R$1.997** · Loja Shopify/e-commerce (frete expresso + todas as funcionalidades) a partir de **R$1.199** · Sistema sob medida / fork dedicado a partir de **R$2.997**
+- **Manutenção:** plano OPCIONAL à parte (o cliente contrata se quiser) — NÃO embutido no valor do projeto. (Era +R$99/mês obrigatório no modelo antigo.)
+- **Recorrente (SaaS produto, separado do serviço):** AgendaPRO **Solo R$67/mês** (1+1) · **Equipe R$97/mês** (até 5) · **SEM setup** (não cobramos) · **7 dias grátis** no cadastro (trial automático). *(Clube Fundador ENCERRADO — já passamos de 10 negócios cadastrados.)*
+- Ancoragem: "site no Brasil custa R$2k-15k; começo a partir de R$1.497 porque sou local de Palmas, sem overhead de SP."
+- ⚠️ APOSENTADOS (não usar): entrada baixa LP R$499 / Shopify R$599 / Combo R$1.099 / Site R$799. O modelo "freelancer de LP low-ticket" morreu com o reposicionamento.
 
-**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (2 pagantes reais: Olímpio Barbearia R$67 + Studio MOOD/Izanara R$97 · ciclo de cobrança Asaas validado na prática) · EV Suplementos (Erlane). UrbanFeet (R$37.705 em 90d · +1.600 pares — prova pro **MPN-On**, não negócio ativo). Pausado: Criativos do Céu (permuta encerrada). GB Nutrition = trabalho de graça pra aprender (o R$1.000 era âncora, NÃO venda — não usar como case de R$1k). NÃO usar: Janaína, Irsnayra, LocaJV.
+**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (**9 pagantes · MRR R$693/mês**, lido do banco em 21/08/2026: Olímpio Barbearia R$67 · Rosy Borges R$67 · Gessica Batista R$67 · Wanessa Silva R$67 · Viva Cacheada R$67 · DN Diogo R$67 · CAF Fisioterapia R$97 · Studio Isis R$97 · Studio MOOD R$97 · cobrança PIX pelo próprio painel + Asaas validada. **28 negócios cadastrados**, 387 agendamentos/mês na base. 🔴 A recuperar: Realli R$97 vencido desde 05/08, usando o sistema) · EV Suplementos (Erlane). 🔴 **UrbanFeet — NÃO USAR NENHUM NÚMERO.** Os valores que circulavam (R$37.705,24 em 90d · 195 pedidos · +1.600 pares) são **inventados**, cravado por Eduardo em 31/07/2026: era argumento de venda, não venda real. Não citar faturamento nem volume do UrbanFeet em copy, LP, aula ou proposta. Limpeza dos demais arquivos pendente. Pausado: Criativos do Céu (permuta encerrada). GB Nutrition = trabalho de graça pra aprender (o R$1.000 era âncora, NÃO venda — não usar como case de R$1k). NÃO usar: Janaína, Irsnayra, LocaJV.
 
 **Meta 2026:** R$1M em faturamento — não precisa tudo dar certo, precisa 2-3 acertarem.
 

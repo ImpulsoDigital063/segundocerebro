@@ -2,6 +2,8 @@
 
 **Status:** lead morno-quente · primeira conversa 11/05 · próximo contato presencial 12/05 (retirada do PC do Eduardo)
 **Atualizado:** 12/05/2026 (madrugada · pós-CIC 1)
+
+> Revisado no update geral de 04/07/2026 — dormente desde 12/05/2026: lead morno-quente parado no pós-CIC 1, sem contato/nota nova registrada desde a retirada do PC (12/05). Nenhuma frente das 3 iniciada.
 **Valor potencial:** R$ 5.500 setup + R$ 497/mês recorrente (3 frentes)
 **Dono:** Júnior · @starteq_to · (63) 99252-8619 · starteqpalmas@gmail.com
 

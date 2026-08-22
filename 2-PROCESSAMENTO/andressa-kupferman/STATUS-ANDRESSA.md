@@ -1,5 +1,7 @@
 # STATUS-ANDRESSA · Raras Clinic Academy
 
+> Revisado no update geral de 04/07/2026 — dormente desde 09-12/05/2026: lead WARM de network, estudo proativo feito, sem negociação aberta nem contato novo desde então.
+
 **Última atualização:** 2026-05-09 (pós-adendo CIC cursos · correção factual)
 **Status do lead:** 🟡 **WARM · network · sem negociação aberta · estudo proativo Eduardo**
 **Origem:** Renato (cliente Aura) + esposa apresentaram durante encontro 08/05

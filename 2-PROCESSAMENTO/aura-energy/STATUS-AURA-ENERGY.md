@@ -1,5 +1,7 @@
 # STATUS-AURA-ENERGY
 
+> Revisado no update geral de 04/07/2026 — ativo: cliente fechado (R$1.497), site multi-segmento no ar. Última atividade 12/06 (doc de reunião de entrega/ativação + roteiro de reel de lançamento com Renato). Sem nota nova desde 12/06.
+
 **Última atualização:** 2026-06-10 (auditoria de reencaixe · 6 dias de trabalho não-commitado blindados no git · estado real reconciliado com o código)
 **Status do lead:** 🟢 **CLIENTE FECHADO — Frente 1 vendida em R$ 1.497**
 **Origem:** amigo do Eduardo, projeto pessoal do Renato

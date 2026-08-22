@@ -1,5 +1,7 @@
 # Inteligência de Mercado — Achados Claude in Chrome
 
+> Revisado no update geral de 04/07/2026 — dormente desde 12/05 (última leva de leads-ig). Pasta de coleta, não projeto com entregável; sem novos batches há ~7 semanas.
+
 **Criado:** 25/04/2026
 **Função:** consolidar pesquisas feitas via Claude in Chrome (extensão oficial Anthropic) sobre concorrência, mercado, copy, leads IG-only.
 

@@ -4,7 +4,7 @@
 
 ---
 
-## STATUS · Maio 2026 (cases reais fechados)
+## STATUS · Agosto 2026 (cases reais fechados)
 
 A Impulso virou **operação validada com dinheiro entrando** e ganhou um terceiro vetor de receita: **fork dedicado premium**.
 
@@ -18,6 +18,7 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 | **Case-2 Vida em Equilíbrio (Leandro Timóteo)** · LP+site · **PAGO (Pix)** | 30/05/2026 | **R$ 1.900** |
 | **Lead-5 Studio Mood Tranças (Izanara)** · ainda em trial cortesia · canal ChatGPT/AEO | 22/05/2026 | R$ 97/mês (trial) |
 | **🏆 Case-3 Palace Nail Spa Macaé · 1º SaaS PREMIUM fork dedicado** | 29/05/2026 | **R$ 2.997** |
+| **AgendaPRO vira receita recorrente de verdade** · 9 pagantes, orgânico, sem prospecção | 21/08/2026 | **R$ 693/mês** |
 
 **Plataformas vivas hoje:**
 - AgendaPRO (universal · multi-tenant) em produção · billing Asaas ciclo completo · ~5 clientes pagantes/trial
@@ -57,8 +58,7 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 
 ### UrbanFeet (Dropshipping)
 - Dropshipping nacional de calçados
-- R$37.705,24 faturados em 90 dias (195 pedidos)
-- +1.600 pares vendidos em 3 anos
+- 🔴 **NÃO usar número nenhum deste negócio.** Os valores que circulavam (R$37.705,24 em 90 dias · 195 pedidos · +1.600 pares) são **inventados** — cravado por Eduardo em 31/07/2026: eram argumento de venda, não venda real
 - Operação: ~30 min/dia
 - Site: urbanfeetbr.store | @urbanfeet.store
 
@@ -109,14 +109,23 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 
 ## NÚMEROS REAIS (Credibilidade)
 
-| Métrica | Número |
-|---|---|
-| UrbanFeet 90 dias | R$37.705,24 |
-| Pares vendidos | +1.600 |
-| Case GB Nutrition | R$1.000 (05/03/2026) |
-| Preço MPN-On | R$297 (ancoragem R$4.985) |
-| Meta lojas/mês | 7 lojas |
-| Valor por loja | R$600–1.500 |
+Lido do banco / de pagamento confirmado. **Só usar estes.**
+
+| Métrica | Número | Quando |
+|---|---|---|
+| **AgendaPRO · MRR** | **R$ 693/mês · 9 pagantes** | 21/08/2026 (banco) |
+| **AgendaPRO · base** | 28 negócios cadastrados · 387 agendamentos/mês · 721 clientes | 21/08/2026 |
+| **Palace Nail Spa** (fork premium) | R$ 2.997 | 29/05/2026 |
+| **Vida em Equilíbrio** (LP+site) | R$ 1.900 pago em Pix | 30/05/2026 |
+| **Aura Energy** (1ª venda contratual) | R$ 1.497 | 06/05/2026 |
+| **CAF Fisioterapia** (setup) | R$ 680 em 2x, quitado | 08/2026 |
+| Preço MPN-On | R$297 (ancoragem R$4.985) | — |
+| Software house | LP R$1.497 · Site R$1.997 · Sistema R$2.997 | — |
+
+🔴 **UrbanFeet — NENHUM número.** Os valores que circulavam (R$37.705,24 em 90 dias · 195 pedidos · +1.600 pares) são **inventados** — cravado por Eduardo em 31/07/2026: era argumento de venda, não venda real. Não citar faturamento nem volume do UrbanFeet em copy, LP, aula ou proposta.
+
+⚠️ **GB Nutrition R$1.000 não é venda** — era âncora. Não usar como case.
+
 
 ---
 
@@ -126,7 +135,7 @@ A Impulso virou **operação validada com dinheiro entrando** e ganhou um tercei
 2. **Brevidade vence detalhe** — 8 perguntas > 25 perguntas
 3. **Duas camadas de preço sempre funciona** — entrada + premium
 4. **Prototype funcional convence 10x mais** que mockup estático
-5. **Números específicos > aproximações** — R$37.705,24 > "mais de R$37k"
+5. **Números específicos > aproximações** — "R$693/mês, 9 pagantes" > "quase R$700". O número tem que ser real E específico: número inventado específico é o que criou o problema do UrbanFeet
 6. **Influenciador local relevante > grande genérico**
 7. **Mercado validado = oportunidade de nicho premium**
 8. **Urgência real funciona, urgência fake não**

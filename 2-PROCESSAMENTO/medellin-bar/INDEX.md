@@ -1,5 +1,7 @@
 # Medellín Bar — Sistema de Gestão (PDV de bar/petiscaria)
 
+> Revisado no update geral de 04/07/2026 — ATIVO: usa o produto ComandaPRO; fechado 23/06 (R$2.997, 50% entrada), go-live com sistema zerado no ar (medellin-bar-six.vercel.app). Sem STATUS-*.md próprio — este INDEX.md é o status; último marco na fonte é o GO-LIVE de 23/06, sem notas novas depois.
+
 > **FECHADO (23/06): R$2.997, 50% entrada** (padrão Palace). Mesa + balcão. Aberto em 2026-06-14.
 > **Agora é o NÚCLEO do modelo fork** → cada cliente novo clona daqui. Plano: [[MODELO-NUCLEO-FORK-COMANDAPRO]].
 

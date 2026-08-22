@@ -15,7 +15,7 @@ Dois trilhos rodando juntos, **de propósito**:
 - Os dois = fork dá fôlego E prova o produto no cliente real; cada fork melhora o núcleo que vira o ComandaPRO.
 
 ## Estado (23/06/2026)
-- **Medellín — FECHADO. R$2.997, 50% entrada (igual Palace).** **Case-zero do modelo**: valida que bar de Palmas paga premium por sistema próprio. Código: `C:/Users/Usuario/medellin-bar` (= o núcleo). Prod: medellin-bar-six.vercel.app.
+- **Medellín — NÃO fechou o fork R$2.997.** Se interessou em **R$219/mês** → decisão: entra **dentro do ComandaPRO** como tenant, ofertado por mensalidade (recorrência). Serviço pro começo da semana. (Puxa a tese pro lado SaaS, não o fork premium.) Código: `C:/Users/Usuario/medellin-bar` (= o núcleo). Prod: medellin-bar-six.vercel.app.
 - **Vidal (Cantinho do Açaí) — 1º da fila do ComandaPRO.** `acai-system` (multi-tenant). Ver [[INDEX]] (acaiteria-vidal).
 
 ## Eixo de venda — food service (validado em campo no Medellín)

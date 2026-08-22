@@ -1,5 +1,7 @@
 # MPN-On — Status e Processamento
 
+> Revisado no update geral de 04/07/2026 — DORMENTE desde ~16/04/2026: log Meta Ads parou em 16/04 (só 4 dias com gasto real, total R$140,72, zero purchase registrado); STATUS congelado em 01/05; nenhuma atividade nova.
+
 **Atualizado:** 01 de Maio de 2026 (refresh — sem mudanças significativas na semana 28/04→01/05; foco do Eduardo foi AgendaPRO + Aura Energy)
 
 ---

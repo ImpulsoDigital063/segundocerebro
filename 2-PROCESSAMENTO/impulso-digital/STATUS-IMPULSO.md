@@ -11,7 +11,37 @@
 
 ## Evolução 2026 — Software House (cravado 23/06)
 
-A Impulso virou **software house AI-first** (tese: [[softwarehouse]]). Modelo operacional em dois trilhos: **forks dedicados** (`medellin-bar` = núcleo · cada cliente clona pra contas próprias · R$2.997/50% · **caixa**) financiando o **ComandaPRO** (`acai-system` · SaaS food-service multi-tenant · **recorrência**). **Medellín FECHADO** (case-zero) · **Vidal = 1º ComandaPRO**. Plano completo: [[MODELO-NUCLEO-FORK-COMANDAPRO]].
+A Impulso virou **software house AI-first** (tese: [[softwarehouse]]). Modelo operacional em dois trilhos: **forks dedicados** (`medellin-bar` = núcleo · cada cliente clona pra contas próprias · R$2.997/50% · **caixa**) financiando o **ComandaPRO** (`acai-system` · SaaS food-service multi-tenant · **recorrência**). **Medellín NÃO fechou o fork R$2.997** — se interessou em **R$219/mês**. Decisão: colocá-lo **dentro do ComandaPRO** como tenant e oferecer por mensalidade (recorrência). **Serviço pro começo da semana.** · **Vidal = 1º ComandaPRO**. Plano completo: [[MODELO-NUCLEO-FORK-COMANDAPRO]].
+
+---
+
+## 🔵 ATUALIZAÇÃO 21/08/2026 — AgendaPRO virou o produto mais previsível da casa
+
+**MRR do AgendaPRO: R$693/mês, 9 pagantes** (lido do banco, contagem exata). Em 29/07 eram 7 pagantes e R$499; em maio eram 5 e R$365. **Quase dobrou em 3 semanas, sem prospecção nenhuma** — todo cadastro entrou orgânico.
+
+Isso muda o peso relativo dos negócios: o SaaS recorrente já é a receita mais estável do ecossistema, à frente de qualquer projeto pontual de agência.
+
+🔴 **Dois riscos de caixa abertos, e valem mais que qualquer feature:**
+- **Realli Studio Nails** — R$97 vencidos desde 05/08, carência estendida uma vez e expirada. Usa o sistema (37 agendamentos/30d) mas só tem 1 agendamento futuro. Entrou como cortesia e nunca pagou pelo Asaas
+- **Studio MOOD** — paga R$97 e teve **zero** agendamento em 30 dias, com a página pública sem horário desde maio. Perfil clássico de cancelamento na próxima cobrança (20/09)
+
+**CAF Fisioterapia:** pagou R$680 de setup em 2x (quitado, por fora do sistema) e ganhou 1 mês de mensalidade de bônus — cortesia até 22/09.
+
+**Lição de método:** o registro não estava acompanhando a execução. O status anterior dizia 7 pagantes/R$499 e a memória de trabalho dizia 5/R$365 — decisão de dinheiro dependendo de lembrança, não de leitura. Toda conversa sobre preço deve começar lendo o banco, não a anotação.
+
+**WhatsApp automático:** motor completo em produção e **desligado** — a entrega esbarra em restrição da Meta no número da plataforma. Detalhe e caminho em [[STATUS-AGENDAPRO]] e no padrão `aceite-nao-e-entrega.md`.
+
+---
+
+
+## 🔵 ATUALIZAÇÃO 04/07/2026 — dia de integridade financeira nos 3 sistemas
+
+Dia inteiro focado em **valor líquido + fuso** cross-produto:
+- **Palace:** líquido em TODAS as telas + reconciliação Marko (provar INTEGRIDADE do nosso lado, não reconciliar cego com a maquininha) + import de **555 clientes** da parceria com clínica (Magrass) tag `import_source='CLÍNICA'` + filtro/badge. Verificado ao vivo. Ver [[STATUS-PALACE]].
+- **AgendaPRO:** sweep líquido + fuso **portado do Palace e executado** (6 commits). Achado caro: comissão pagava sobre o BRUTO (Olímpio pagava a mais) → corrigido pro líquido. Fluxo-caixa (motor de data) migrado pra BR. Verificado ao vivo no Olímpio. Ver [[STATUS-AGENDAPRO]].
+- **ComandaPRO (acai-system):** estudado — NÃO tem esses bugs (total já nasce líquido; relatório client-side = browser BR). Não se replica.
+
+**λ reforçados:** `λ.valor-liquido` (receita E comissão sempre líquido) · `λ.fuso-vercel-utc` (server Vercel UTC bucketiza dia/hora errado; reporting client-side não sofre) · reconciliação-maquininha (é subconjunto — não vê dinheiro, relógio D+1). Playbook reutilizável: **`PLAYBOOK-FINANCEIRO-FUSO-E-LIQUIDO.md`** (no repo AgendaPRO).
 
 ---
 

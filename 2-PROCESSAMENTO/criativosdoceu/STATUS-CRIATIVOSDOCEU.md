@@ -1,5 +1,7 @@
 # STATUS-CRIATIVOSDOCEU
 
+> Revisado no update geral de 04/07/2026 — dormente desde 13/05: LP + Kiwify no ar, briefing v1 enviado ao Matheus, sem resposta registrada nem novos PSDs desde então (~7 semanas parado).
+
 **Última atualização:** 2026-05-13 (final da tarde · briefing v1 deployado + link enviado pro Matheus)
 **Status do projeto:** 🟢 **Briefing no ar · aguardando respostas do Matheus**
 **Tipo:** Projeto próprio Impulso · parceria por permuta com **Matheus Reis** (Ressil Design)

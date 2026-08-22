@@ -1,5 +1,7 @@
 # Açaiteria do Vidal — Sistema Próprio (fork do PalaceSystem)
 
+> Revisado no update geral de 04/07/2026 (sem STATUS-*.md dedicado; status vive aqui no INDEX) — ativo: última atividade 23/06, quando `acai-system` virou o produto ComandaPRO e Vidal ficou como 1º cliente da fila. Front pronto (mock), back Supabase ainda não plugado.
+
 > Cliente novo. Indicação do Lucas Teixeira. Açaiteria pequena, DDD 99 (Maranhão).
 > Quer: fidelidade por pontos + controle financeiro + delivery/cardápio via WhatsApp.
 > Decisão: **fork dedicado do palace-system**, banco próprio, sistema próprio (não mensalidade de terceiro).

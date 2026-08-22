@@ -1,9 +1,39 @@
 # STATUS-AGENDAPRO.md
 
 **Produto:** AgendaPRO — SaaS de agendamento + gestão financeira + fidelização + reativação
-**Fase:** 🟢 **EM PRODUÇÃO COM CLIENTES PAGANTES** · Asaas validado · 14 negócios ativos, 7 pagando em PIX recorrente · cadastro orgânico entrando sozinho, sem prospecção
-**Data:** 30/07/2026 (autonomia da equipe entregue pra Realli · antes 29/07)
+**Fase:** 🟢 **EM PRODUÇÃO COM CLIENTES PAGANTES** · Asaas validado · **9 pagantes, R$693/mês** · cadastro orgânico entrando sozinho, sem prospecção
+**Data:** 21/08/2026 (motor de WhatsApp pronto e travado pelo canal · antes 30/07)
 **Responsável:** Eduardo Barros
+
+---
+
+## 🔴 ATUALIZAÇÃO 21/08/2026 — o motor de mensagens ficou pronto, e o canal não entrega
+
+**O que foi construído e está em produção, DESLIGADO:** confirmação de agendamento disparada **na hora** que marca (não mais na varredura horária), lembrete 3h antes, botões "Confirmo"/"Preciso remarcar" com o webhook confirmando o agendamento sozinho, aba **WhatsApp** no Painel com preview da mensagem em bolha e edição de texto por aviso, alarme de canal morto no Telegram, e validação de número sem WhatsApp (v126). Tudo provado com print chegando no celular.
+
+**🔴 O que trava:** o WhatsApp **só entrega para quem já mandou mensagem para o número da instância antes.** Reproduzido com 5 envios: chegou nos números com conversa prévia, não chegou no número que nunca tinha falado — nos dois formatos (com e sem o nono dígito). A pessoa mandou um "oi" e o reenvio chegou na hora. **Os 5 foram aceitos com HTTP 200 e messageId, e o `message_log` gravou "enviado" nos 5.**
+
+Causa confirmada no painel da W-API (tela **Saúde do Chip**, e por API em `GET /v1/instance/health`): status **TIMELOCKED**, *"Número restrito pela Meta"*, `temperature: 2`, `daysOfLife: 13`, 16 enviadas contra 8 recebidas. Chip comprado há 3 meses mas **parado esse tempo todo** — primeiro movimento dele foi disparar pra desconhecido. Some a isso a política da Meta de out/2025, que limita mensagem para quem não é contato e não respondeu.
+
+**Isso derruba a premissa:** lembrete de salão vai justamente pra cliente que nunca falou com o número da plataforma. Ligar hoje faria a dona ver "enviado" no painel e a cliente não receber nada — falha silenciosa com cara de sucesso.
+
+**Decisões de Eduardo (21/08):**
+- **Nada vai pra negócio real sem teste e aprovação dele.** As 7 regras que estavam ligadas (Rosy, Isis, CAF) foram desligadas; hoje há **zero regra ligada no sistema inteiro**.
+- **Aba WhatsApp fora do menu** — nem "em breve", que já é promessa. Acessível só por URL (`/admin/whatsapp`), com aviso de "em ajustes finais".
+- **Escopo enxuto:** só confirmação + lembrete 3h. Sem véspera, sem aniversário.
+- **Não cobrar dos clientes.** Olímpio e Rosy já tinham recusado pagar por isso. Custo fica absorvido: **~R$24/mês, 3,5% da receita**.
+
+**Cloud API oficial — a conta, com dado do banco:** 361 agendamentos com telefone em 30 dias × 2 avisos = 722 mensagens. Utility no Brasil ≈ US$0,0074/mensagem entregue + IOF 3,5% = **R$30/mês**. Sem mensalidade (Cloud API direto da Meta; BSP come 27–100% da receita). Verificação de empresa **não** é exigida pra começar: 250 destinatários únicos/24h, e hoje se usa 12/dia. Utility dentro de janela de 24h aberta é grátis.
+
+**O que o mercado faz** (pesquisado): Trinks, AppBarber e AgendaPro LatAm mandam de **número único da plataforma com canal oficial e cobram à parte**. Simples Agenda, Avec e Belle usam **QR no número do salão** — grátis, entrega bem, mas queima o número do cliente e **nenhuma delas avisa disso**. O AgendaPRO está no meio: número único **sem** canal oficial — concentra risco e não entrega.
+
+**Política, ponto que decide a arquitetura:** o opt-in é para **quem envia**. Mandar "AgendaPRO: seu horário no Studio X" é permitido, mas o consentimento tem que **nomear o AgendaPRO** — e o remetente aparece como AgendaPRO, nunca como o salão (nome do salão exigiria número + verificação por salão). Para o balcão, a Meta aceita nominalmente opt-in **em papel assinado**. Guardar a prova não é exigência da Meta: é da LGPD (art. 8º §2º, ônus do controlador). ⚠️ O campo `customers.marketing_consent` existe mas está `true` em **721 de 721** — é default, não consentimento; não serve de prova.
+
+**Migrations:** **v126** (`customers.whatsapp_valido` + `whatsapp_checado_em`, com revalidação em 30 dias) e **v127** (`message_rules.com_botao` — cada negócio escolhe se o lembrete leva botão). As duas aplicadas no banco.
+
+**Achado de passagem:** a CSP do `next.config.ts` não liberava `challenges.cloudflare.com`, então o **Turnstile nunca desenharia** — o cadastro travaria pedindo verificação que não tem como aparecer, para todo cliente novo, no dia em que a chave fosse ligada em produção. Corrigido.
+
+**Formato de botão da W-API, que a doc pública não documenta** (descoberto testando): `POST /v1/message/send-button-actions` (não `send-button-list`), `buttonActions: [{ type: 'REPLAY', buttonId, buttonText }]` — `REPLAY` escrito assim por eles, e `buttonText` é string, não objeto.
 
 ---
 
@@ -201,53 +231,82 @@ Mesmo codebase, dois fronts. **Mobile** (agendapro.net.br) = dono opera no celul
 
 ## Clientes (estado real)
 
-Lido do banco em 29/07/2026.
+Lido do banco em **21/08/2026** (contagem exata por negócio — consulta única trunca em 1.000 linhas e distorce).
 
-**Pagando em PIX recorrente (Asaas):**
+**Pagando, assinatura em dia — 9 negócios, R$693/mês:**
 
-| Cliente | Plano | Vence |
-|---|---|---|
-| **Olímpio Barbearia** | Solo | 18/08 |
-| **Studio MOOD (Izanara)** | Equipe | 13/08 |
-| **Rosy Borges Beauty Studio** | Solo | 20/08 |
-| **Barbearia Guia Lopes** | Solo | 07/08 |
-| **K'F BEAUTY** | Solo | 07/08 |
-| **Gessica Batista Nails Designer** | Solo | 28/08 |
-| **Wanessa Silva Estética** | Solo | 31/08 |
+| Cliente | Plano | Agend. 30d | Clientes | Pago até |
+|---|---|---|---|---|
+| **Olímpio Barbearia** | Solo R$67 | **141** | 188 | 20/09 |
+| **Rosy Borges Beauty Studio** | Solo R$67 | 40 | 61 | 21/09 |
+| **Gessica Batista Nails** | Solo R$67 | 33 | 21 | 28/08 |
+| **Wanessa Silva Estética** | Solo R$67 | 26 | 153 | 31/08 |
+| **Viva Cacheada** | Solo R$67 | 21 | 53 | 16/09 |
+| **DN Diogo Nogueira** | Solo R$67 | 13 | 23 | 06/09 |
+| **CAF - Centro Avançado de Fisioterapia** | Equipe R$97 | 12 | 11 | 22/08 → **cortesia até 22/09** |
+| **Studio Isis Melo** | Equipe R$97 | 2 | 2 | 27/08 |
+| **Studio MOOD (Izanara)** | Equipe R$97 | **0** | 16 | 20/09 |
 
-**Em trial / cortesia ativa:** DN Diogo Nogueira (vence 04/08) · Realli Studio Nails (05/08, já no Equipe) · Studio Amanda Freitas (02/08) · Viva Cacheada (12/08, cortesia de divulgação).
+**CAF:** pagou **R$680 de setup em 2x, quitado** — correu por fora do sistema, então `setup_cents` está 0 no banco. Ganhou **1 mês de bônus**: `grace_ends_at = 23/09 03:00 UTC`, com `pago_ate` intacto em 22/08. Bloqueia sozinho no dia 23/09.
 
-**Atenção:** Lopes Studio de Beleza entrou em `past_due` (venceu 28/07, 3 dias de carência). Império Barbershop está em `mercado_pago`, legado, sem data de vencimento no banco — conferir se ainda paga.
+**🔴 Em atraso — 8, sendo um preocupante:**
 
-| Outros | Situação |
+| Cliente | Situação |
 |---|---|
-| **Palace Nail Spa** | ⚠️ Virou produto PRÓPRIO independente (fork) — não é mais o AgendaPRO multi-tenant. Ver STATUS-PALACE. |
-| 7 em `pending_payment` | trial vencido sem conversão (Cibely, Samuel, Vitoria, Anaelisa, Camila Prazeres, Espaço da Cura, Fernanda Souza) |
-| 3 demos internos | Studio Marcela Hair, Studio Larissa Nails, Studio Bella Lash — cortesia até 2030, usados pra gravação e teste |
+| **Realli Studio Nails** | **R$97, vencido desde 05/08**, carência estendida até 15/08 e expirada. **37 agendamentos em 30 dias** — usa o sistema. Só **1 agendamento futuro**, ritmo caiu junto com o bloqueio. Entrou como cortesia e **nunca pagou pelo Asaas**. É o cliente a recuperar. |
+| K'F BEAUTY · Studio Amanda Freitas · Serenity · Lopes · Guia Lopes · Espaço Essence | past_due, uso baixo ou zero |
+| Camila Delfino | cancelled |
+
+**Demos internos (não são receita) — 4:** Studio Larissa Nails (39 agendamentos/30d, usa bastante), Studio Bella Lash, Serenity (CÓPIA TESTE) e **Studio Marcela Hair**. ⚠️ O Marcela está **sem** `permanent_courtesy` **de propósito** desde 21/08 — foi tirado pra testar o canal de WhatsApp numa conta comum, e Eduardo decidiu manter assim. **Por isso ele aparece como pagante de R$97 em qualquer listagem; não é receita.**
+
+**Nunca converteram — 7** em `pending_payment`, todos com zero movimento: Cibely, Samuel, Vitoria, Anaelisa, Camila Prazeres, Espaço da Cura, Fernanda Souza.
 
 ---
 
 ## Números
 
-Lido do banco em 29/07/2026.
+Lido do banco em **21/08/2026**.
 
 | Métrica | Valor |
 |---|---|
-| Negócios cadastrados | 26 |
-| Ativos (`active` + `past_due`) | 14 |
-| **Pagando em PIX recorrente (Asaas)** | **7** — 6 Solo + 1 Equipe |
-| **MRR contratado em Asaas** | **R$ 499/mês** (6×67 + 1×97) |
-| Em trial / cortesia | 4 |
-| Trial vencido sem converter | 7 |
-| Migrations | base + até **v88** |
-| Preço Solo / Equipe | R$67 / R$97 mês (sem setup pro Clube Fundador 10) |
-| Setup (cliente 11+) | R$197 |
+| Negócios cadastrados | 28 |
+| **Pagantes com assinatura em dia** | **9** |
+| **MRR real** | **R$ 693/mês** (6×67 + 3×97) |
+| Em atraso (past_due/cancelled) | 8 — **R$97 recuperáveis no Realli** |
+| Demos internos | 4 |
+| Nunca converteram | 7 |
+| Negócios com movimento em 30d | 16 |
+| **Agendamentos ativos / 30 dias** | **387** (361 com telefone válido) |
+| Clientes cadastrados na base | 721 |
+| Clientes com aniversário preenchido | 300 |
+| Migrations | base + até **v127** |
+| Preço Solo / Equipe | R$67 / R$97 mês |
 
-O MRR acima **não inclui** Império Barbershop (Mercado Pago legado, sem data de vencimento no banco) nem o "Negócio Tutorial V8POG6" (conta de teste com Asaas até 2027).
+⚠️ **A versão anterior deste arquivo dizia 7 pagantes e R$499** (29/07). O MRR quase dobrou em 3 semanas, sem prospecção. E a memória de trabalho dizia "5 pagantes, R$365" — mais desatualizada ainda. **O registro não vem acompanhando a execução, e decisão de dinheiro estava dependendo de lembrança.**
+
+**Custo do WhatsApp, se ligado hoje na Cloud API oficial:** ~R$24–30/mês, 3,5% da receita — absorvido, sem cobrar do cliente.
 
 ---
 
+
 ## Pendências / próximos
+
+### 🔴 Dinheiro (21/08 — vale mais que qualquer feature na fila)
+- [ ] **Realli Studio Nails — R$97 vencidos desde 05/08.** Usa o sistema (37 agendamentos/30d) mas só tem 1 agendamento futuro. Carência já foi estendida uma vez, até 15/08, e expirou. Entrou como cortesia e **nunca pagou pelo Asaas**. Chamar antes de virar churn silencioso
+- [ ] **Vencimentos dos próximos 10 dias:** CAF 22/08 (coberto pela cortesia até 22/09) · Isis 27/08 · Gessica 28/08 · Wanessa 31/08 — **R$231 em renovação**
+- [ ] **Studio MOOD paga R$97 e tem ZERO agendamento em 30 dias.** Segue com a página pública sem horário configurado desde 22/05. É o perfil clássico de quem cancela na próxima cobrança (20/09). Virar conversa, não fix silencioso
+
+### 🔴 Canal de WhatsApp (o motor está pronto; falta entregar)
+- [ ] **Decidir o canal.** Cloud API oficial direto da Meta é o caminho que fecha: ~R$30/mês para o volume atual, sem mensalidade, e template entrega para quem nunca conversou. Alternativas: aquecer o chip atual (grátis, sem garantia — a literatura séria diz que aquecimento reduz risco de ban, não cura não-entrega) ou Evolution self-host com número do próprio salão (custo fixo, mas o risco de ban passa a ser do número do cliente)
+- [ ] **Testar a criação da WABA com o CNPJ MEI — custa R$0** e responde as duas dúvidas que travam o caminho oficial: se a conta abre em BRL ou USD, e se o CCMEI passa na verificação. A Meta nomeia "contrato social" e "alvará", que MEI não tem; não existe página oficial citando CCMEI
+- [ ] **Consentimento de verdade.** `customers.marketing_consent` está `true` em 721/721 — é default, não opt-in. Precisa de campo com data e origem (agendou online / assinou ficha no balcão), e a frase precisa **nomear o AgendaPRO** como remetente. Serve aos dois canais, então dá pra fazer antes da decisão
+- [ ] **Status de entrega no `message_log`.** Hoje grava "enviado" quando o provedor aceita — foi o que custou o dia 21/08. Na Cloud API existe webhook `delivered`/`read`/`failed`; na W-API é preciso confirmar com o suporte
+- [ ] **`instance/health` antes de enviar** (enquanto for W-API): se vier `TIMELOCKED`, segurar a fila e avisar, em vez de gravar "enviado" em mensagem que não sai
+- [ ] **Devolver a cortesia do Studio Marcela** quando os testes acabarem — `update subscriptions set permanent_courtesy = true where business_id = 'cd3c7f5a-e657-4ddb-96c7-0a4ff45b63eb'`
+- [ ] **Tirar a allowlist de teste** das envs da Vercel: `MENSAGENS_TESTE_BUSINESS_ID` e `MENSAGENS_TESTE_TELEFONE`
+- [ ] **Botões da W-API:** funcionam com `send-button-actions` + `type: REPLAY`. Se ficar nesse canal, o webhook já reconhece o clique pelo texto do rótulo
+
+### Fila anterior (30/07, ainda aberta)
 
 - [x] ~~**Varredura de fuso no sistema inteiro**~~ **FEITA em 30/07** (commit `8c995f1`). Corrigidos: `getFocoDoDia` (o pior — todo cliente na home, toda noite), `financeiro/despesas`, `financeiro/cancelados`, `financeiro/analises`, `clientes/reativar`, `clientes/campanhas`, `api/admin/expenses`, `api/admin/coupons/campaign`, `asaas.getNextDueDate` (cobrança vencia 1 dia depois do que o e-mail dizia) e `coupon-templates.formatValidity` (data de validade errada na mensagem que vai PRA CLIENTE). Novo helper **`monthBoundsBR(ym)`** em `date-br.ts` mata o padrão `new Date(y, m, 0).toISOString()` que estava repetido em cada tela financeira — testado em fevereiro bissexto e virada de ano. **Verificados e deixados como estão** (seguros por construção): admin/caixa, recepcao/caixa, recepcao/page (ancoram em `todayBR()` + `T12:00:00`), financeiro/page + fluxo-caixa + remuneracoes (sweep de 04/07), os 5 crons (`nowBRT`), webhook Asaas (instantes, não dia) e todos os componentes client (rodam no navegador, que já é BR)
 - [ ] **`api/admin/packages/sell` calcula `expires_at` com `new Date()` cru** — único caso de fuso deixado de fora na varredura de 30/07. Pacote é gated por `PACOTE_ENABLED`, uso baixo, e o desvio de 1 dia favorece a cliente. Fechar quando mexer em pacote

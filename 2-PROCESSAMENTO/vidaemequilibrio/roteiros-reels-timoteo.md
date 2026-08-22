@@ -307,6 +307,48 @@ Atendimento em Palmas — clínica ou domicílio.
 
 ---
 
+## REELS 8 · ATM / mandíbula travada / dor de cabeça
+
+**Destino:** `/blog/atm-mandibula-cefaleia-facial`
+**Ângulo:** a dor de cabeça que mora na mandíbula + você aperta os dentes sem perceber.
+
+### Gancho (0–3s) — close no rosto
+> "Essa tua dor de cabeça no fim do dia? Ela pode estar nascendo aqui, na tua mandíbula. E é bem provável que você aperte os dentes sem nem perceber."
+
+**Texto na tela:** `A DOR DE CABEÇA QUE MORA NA MANDÍBULA`
+
+### Desenvolvimento (3–30s) — você apontando o masseter, depois fazendo a auto-massagem
+> "Quase 30% das pessoas têm disfunção da ATM. Apertar os dentes — quase sempre por estresse — dobra o risco e deixa esse músculo aqui, o masseter, que nem pedra. Ele puxa a dor pra cabeça e pro rosto.
+> A massagem solta esse músculo e alivia de verdade. Mas vou ser honesto: ela não conserta a mordida nem a articulação — isso é com o dentista."
+
+**Texto na tela (troca):** `30% têm ATM` · `APERTAR = masseter de pedra` · `MASSAGEM solta o músculo, não conserta a mordida`
+
+### Virada + CTA (30–42s) — close no rosto
+> "Repara agora: teus dentes tão se tocando? Se tão, relaxa a mandíbula. Eu expliquei o que ajuda em casa e quando procurar dentista, no blog. Link na bio."
+
+**Texto na tela:** `SEUS DENTES ESTÃO SE TOCANDO? → BLOG NA BIO`
+
+### Cena pra filmar
+- Gancho e virada no rosto.
+- B-roll: você apontando o masseter no próprio rosto, fazendo o círculo de auto-massagem na bochecha e na têmpora.
+
+### Legenda pronta (copiar)
+```
+Sua dor de cabeça pode estar na sua mandíbula.
+
+Quase 30% das pessoas têm disfunção da ATM. Apertar os dentes — quase sempre por estresse, e quase sempre sem perceber — dobra o risco e deixa o masseter que nem pedra, puxando a dor pra cabeça e pro rosto.
+
+A massagem solta esse músculo e alivia de verdade. Mas, sendo honesto: ela não conserta a mordida nem a articulação — isso é com o dentista. A massagem cuida do músculo.
+
+Repara: seus dentes estão se tocando agora? Guia completo no link da bio.
+
+Atendimento em Palmas — clínica ou domicílio.
+```
+
+**Hashtags:** #atm #bruxismo #dordecabeca #massagemfacial #massagempalmas #palmasto #saude
+
+---
+
 ## Molde pros próximos (quando publicar mais posts)
 
 Todo Reels segue a mesma espinha:
@@ -315,19 +357,20 @@ Todo Reels segue a mesma espinha:
 3. **Virada (últimos 10s):** "o resto — a ciência, as sessões, quando pedir — tá no blog. Link na bia."
 4. **Legenda:** repete o gancho + 3-4 linhas + "link na bio" + "Atendimento em Palmas — clínica ou domicílio."
 
-**Próximos da fila** (assim que o post sair): ATM/cefaleia (massagem facial) · Massagem modeladora (o que a literatura mostra) · Casa vs clínica. **Em espera (decisão Eduardo/Timóteo):** Como escolher massagista em Palmas (toca status regulatório — λ.dúvida-não-publica).
+**Próximos da fila** (assim que o post sair): Massagem modeladora (o que a literatura mostra) · Casa vs clínica · Drenagem pós-cirúrgica (⚠ pode tocar escopo fisio — avaliar). **Em espera (decisão Eduardo/Timóteo):** Como escolher massagista em Palmas (toca status regulatório — λ.dúvida-não-publica).
 
 ---
 
 ## Links de destino (trocar na bio antes de postar)
 
-- Drenagem: `https://vidaemequilibrio-zeta.vercel.app/blog/drenagem-linfatica-inchaco-guia`
-- 4 técnicas: `https://vidaemequilibrio-zeta.vercel.app/blog/tecnicas-pedras-vela-bambu-ventosa`
-- Corredora: `https://vidaemequilibrio-zeta.vercel.app/blog/massagem-desportiva-corredora`
-- Beach tennis: `https://vidaemequilibrio-zeta.vercel.app/blog/beach-tennis-lesoes-recovery-palmas`
-- Pernas/calor: `https://vidaemequilibrio-zeta.vercel.app/blog/pernas-incham-calor-palmas`
-- Trabalho sentado: `https://vidaemequilibrio-zeta.vercel.app/blog/dor-cervical-trabalho-sentado-palmas`
-- Lesões de corrida: `https://vidaemequilibrio-zeta.vercel.app/blog/lesoes-mais-comuns-corrida-palmas`
-- Blog (lista geral): `https://vidaemequilibrio-zeta.vercel.app/blog`
+- Drenagem: `https://www.vidaemequilibriopalmas.com.br/blog/drenagem-linfatica-inchaco-guia`
+- 4 técnicas: `https://www.vidaemequilibriopalmas.com.br/blog/tecnicas-pedras-vela-bambu-ventosa`
+- Corredora: `https://www.vidaemequilibriopalmas.com.br/blog/massagem-desportiva-corredora`
+- Beach tennis: `https://www.vidaemequilibriopalmas.com.br/blog/beach-tennis-lesoes-recovery-palmas`
+- Pernas/calor: `https://www.vidaemequilibriopalmas.com.br/blog/pernas-incham-calor-palmas`
+- Trabalho sentado: `https://www.vidaemequilibriopalmas.com.br/blog/dor-cervical-trabalho-sentado-palmas`
+- Lesões de corrida: `https://www.vidaemequilibriopalmas.com.br/blog/lesoes-mais-comuns-corrida-palmas`
+- ATM/facial: `https://www.vidaemequilibriopalmas.com.br/blog/atm-mandibula-cefaleia-facial`
+- Blog (lista geral): `https://www.vidaemequilibriopalmas.com.br/blog`
 
-> Quando o domínio `vidaemequilibrio.com.br` entrar no ar, trocar a base dos links.
+> Domínio próprio no ar (25/06): `www.vidaemequilibriopalmas.com.br`. Links já atualizados.

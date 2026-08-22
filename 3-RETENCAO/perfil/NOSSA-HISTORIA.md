@@ -15,7 +15,7 @@
 
 ### A obra do dia (o chão real, pra não ser só sentimento)
 - **medellin-bar (fork do bar):** estoque **camada 2** (auto-86 por ingrediente), **guard anti-pedido-fantasma** (provado na fonte — `sendCartOrder` real, `order_items` intacto 821→821), **cardápio em realtime**, **aviso de auto-86 pro dono**, e **camada 3: export pro contador** (.xlsx multi-aba). No ar em medellin-bar-six.vercel.app.
-- **Medellín FECHADO — R$2.997, 50% entrada** (igual Palace). Case-zero do modelo.
+- **Medellín NÃO fechou o fork R$2.997** — se interessou em **R$219/mês** → vai entrar no ComandaPRO como tenant por mensalidade (recorrência).
 - **Modelo de negócio cravado:** **núcleo-fork** (medellin-bar = template → clone por cliente, caixa agora) financiando o **ComandaPRO** (acai-system = SaaS food-service multi-tenant, recorrência). Vidal = 1º ComandaPRO. Doc: [[MODELO-NUCLEO-FORK-COMANDAPRO]].
 
 ### A virada — o que ele me ensinou (em camadas)

@@ -1,6 +1,6 @@
 # 🏆 STATUS PALACE NAIL SPA · Primeiro SaaS Premium Entregue
 
-**Última atualização:** 16/06/2026 · Sessão grande de melhorias (Marko + Luana) — autorizações por profissional, bônus, auditoria fiscal InfinityPay, export/import de clientes, correções financeiras
+**Última atualização:** 04/07/2026 · Financeiro líquido em todas as telas + reconciliação Marko (prova de integridade) + import da lista da clínica (Magrass)
 **Cliente:** Palace Nail Spa Macaé — esmalteria + SPA dos pés alto padrão
 **Donos:** Marko (PT-EU · administra · não atende) + Luana (esposa · sócia · administra)
 **Localização:** Macaé · Rio de Janeiro
@@ -8,6 +8,14 @@
 **Status:** ✅ ENTREGUE e em **operação diária real** · evoluindo por demanda do Marko/Luana
 **Domínio:** **agendapalacemacae.com.br** (produção · Vercel)
 **Repo:** `github.com/systempalacemacae/systempalace` (conta gh `systempalacemacae` · checar Active antes de push)
+
+---
+
+## 🔵 ATUALIZAÇÃO 04/07/2026 — financeiro líquido + clínica
+
+- **λ.valor-liquido cravado:** todas as telas mostram o LÍQUIDO (cupom já abatido) — caixa, vendas, comandas, fluxo, remunerações, hub, cards, análises, a-receber. Verificado ao vivo (Vendas R$3.542,20, 56 vendas sem cancelada). Comissão da profissional já era líquida (`/profissional/financeiro`).
+- **Reconciliação Marko × maquininha:** provada a INTEGRIDADE do nosso lado (auditoria: 56 atend., R$3.542,20, 0 duplicata/furo). Maquininha é SUBCONJUNTO (não vê dinheiro; relógio D+1/D+2; transação ≠ atendimento). Não reconciliar ao centavo sem o extrato dela. Relatório-prova bilíngue PT/EN entregue (artifact).
+- **Import lista da clínica (Magrass):** 555 clientes novos gravados em prod com `import_source='CLÍNICA'` (dedup por telefone, 2 já existiam, read-after-write ✓ 555). Filtro "Clínica" + badge visual na tela de Clientes (mobile ClienteCard + tabela desktop). Commit `b5c2153`.
 
 ---
 

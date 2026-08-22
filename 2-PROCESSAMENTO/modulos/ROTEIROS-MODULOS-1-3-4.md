@@ -1,5 +1,7 @@
 # 🎬 ROTEIROS — MÓDULOS 1, 3 e 4
 
+> Revisado no update geral de 04/07/2026 — DORMENTE desde 09/04/2026: pasta é só roteiros de gravação do MPN-On (sem STATUS-*.md próprio); segue o MPN-On parado — módulos 1/3/4 ainda não gravados (só o Módulo 2 existe), roteiros prontos aguardando gravação.
+
 **Objetivo:** Estrutura pronta pra gravar agora  
 **Data:** 09 de Abril de 2026  
 **Tom:** Exatamente como você fala (não corporativo)

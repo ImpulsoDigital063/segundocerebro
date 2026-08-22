@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"caeaa7349b1f3428","x":-296,"y":-292,"width":250,"height":60,"type":"text","text":""},
+		{"id":"650c1d721a20d1a2","x":-80,"y":-210,"width":250,"height":110,"type":"text","text":""},
+		{"id":"dfee35be61d648c3","x":-446,"y":-60,"width":400,"height":400,"type":"file","file":"2-PROCESSAMENTO/app-entregas-b2b/doc-reuniao/APPDELYVERY.pdf"},
+		{"id":"d74ebf7f886863c5","x":-980,"y":-880,"width":380,"height":400,"type":"file","file":"2-PROCESSAMENTO/impulso-digital/PLANO-OFFLINE-FIRST-COMANDAPRO.md"}
+	],
+	"edges":[
+		{"id":"ab4ebea0f15dac93","fromNode":"caeaa7349b1f3428","fromSide":"left","toNode":"d74ebf7f886863c5","toSide":"right"},
+		{"id":"90708ef225f004a3","fromNode":"d74ebf7f886863c5","fromSide":"right","toNode":"dfee35be61d648c3","toSide":"left"}
+	]
+}

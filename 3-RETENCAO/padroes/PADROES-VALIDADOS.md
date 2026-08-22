@@ -193,6 +193,26 @@ Antes de lançar qualquer SaaS que lida com dados, rodar 3 auditorias simultâne
 
 ---
 
+## PADRÃO 10 — Aceite do provedor não é entrega
+
+**O que é:**
+Em qualquer integração que atravessa fronteira de sistema (WhatsApp, e-mail, SMS, push, gateway), `HTTP 200` significa "o provedor enfileirou" — nunca "chegou em quem devia". Marcar como entregue exige confirmação do outro lado: webhook de status, ou o aparelho do destinatário.
+
+**Casos reais:**
+- AgendaPRO (21/08/2026): 5 mensagens de WhatsApp com `HTTP 200`, `messageId` e `provider_id` gravado. O `message_log` dizia "enviado" nas cinco. **Nenhuma chegou** — o número estava `TIMELOCKED` pela Meta, e isso só aparecia numa tela do painel do provedor, nunca na resposta da API. Se as regras estivessem ligadas nos clientes, a dona veria "enviado" no painel e a cliente não receberia nada
+- No mesmo dia, dois erros de método custaram mais que o bug: **concluir por ausência de confirmação** (a mensagem tinha chegado, Eduardo só não tinha visto — e em cima dessa conclusão eu desconectei uma sessão que funcionava) e **generalizar de um teste com destinatário que já tinha conversa**, quando o caso real é sempre o cliente que nunca falou com o número
+
+**O que faz funcionar:**
+- Guardar o id do provedor junto do registro, sempre — sem ele não há como reconciliar depois
+- Só marcar "entregue" com webhook de status (`delivered`/`DELIVERY_ACK`/`RECEIVED`). Sem webhook, o status honesto é "aceito"
+- Varrer o que ficou parado em "aceito": ausência de entrega não gera evento, ninguém te avisa
+- Consultar a saúde do canal antes de disparar, quando o provedor expõe
+- Testar com destinatário virgem — quem já conversou é o caminho fácil, e esconde o problema
+
+**Detalhe completo:** `aceite-nao-e-entrega.md` (mesma pasta).
+
+---
+
 ## COMO USAR ESTES PADRÕES
 
 Antes de tomar qualquer decisão estratégica, consulte aqui:

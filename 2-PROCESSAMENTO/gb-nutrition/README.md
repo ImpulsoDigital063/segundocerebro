@@ -1,5 +1,8 @@
 # GB Nutrition — Operação de Lançamento
 
+> Revisado no update geral de 04/07/2026 — dormente desde 16/05: lançamento estava marcado pra 18/05 (3 reels gravados + edição/site em andamento), mas não há registro de execução do lançamento nem notas posteriores na pasta. Confirmar com Gabriel se saiu.
+
+
 **Cliente:** Gabriel Barros (personal trainer) · loja de e-commerce de suplementos
 **Status do site:** Entregue (projeto anterior, R$300 fechado em 15/04/2026)
 **Status atual (16/05/2026):** 🚀 **lançamento marcado segunda 18/05/2026**

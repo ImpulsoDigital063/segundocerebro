@@ -16,8 +16,19 @@
               "icon": "lucide-git-fork",
               "title": "Visualização em gráfico"
             }
+          },
+          {
+            "id": "2a0f79f4a9dc3358",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,6 +187,6 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "786fd43d1b23d16c",
+  "active": "2a0f79f4a9dc3358",
   "lastOpenFiles": []
 }

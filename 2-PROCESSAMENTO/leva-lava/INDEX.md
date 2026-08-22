@@ -1,5 +1,7 @@
 # Projeto Leva&Lava · Clube Fidelidade
 
+> Revisado no update geral de 04/07/2026 — DORMENTE desde 21/05/2026: idealização cravada, sem STATUS-*.md próprio e sem atividade nova; próximas ações (WhatsApp Beatriz, ligar Cicclo, visitar Tucunaré) seguem pendentes/não executadas.
+
 **Aliases reconhecidos:** "leva e lava", "lavaeleva", "lavanderia leva", "clube fidelidade", "projeto Beatriz"
 
 **Operador:** Eduardo Barros · Impulso Digital

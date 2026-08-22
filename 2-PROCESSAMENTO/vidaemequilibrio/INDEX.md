@@ -2,6 +2,8 @@
 
 > **Projeto FORA DA CURVA pra Eduardo.** Cliente importante, indicação direta do Renato (Brasfrio/Aura Energy). Calma > velocidade. Identidade do zero, não clonar `auraenergy/`.
 
+> Revisado no update geral de 04/07/2026 — dormente nos docs desde 24/05 (última entrada do DAILY): site entregue, reunião feita, sem log de follow-up nem de pagamento aqui. Nota: MEMORY do operador marca "PAGO 30/05" — divergência a confirmar na fonte antes de cravar como pago.
+
 ## STATUS (24/05/2026 22h) · ENTREGUE · aguardando pagamento
 
 - **Site no ar:** https://vidaemequilibrio-zeta.vercel.app

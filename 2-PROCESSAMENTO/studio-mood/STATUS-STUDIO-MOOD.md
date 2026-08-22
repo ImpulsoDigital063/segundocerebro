@@ -1,5 +1,7 @@
 # STATUS · Studio Mood Tranças (Izanara)
 
+> Revisado no update geral de 04/07/2026 — ativo/pagante (Equipe R$97, pago até 08/07), operando em balcão real; produto AgendaPRO recebeu hoje o sweep financeiro (receita líquida + fuso), que melhora o financeiro que ela usa. Sem novo ciclo de feedback registrado desde 09–16/06; pendências (login recep Marlia, depoimento) seguem abertas.
+
 **Última atualização:** 17/06/2026
 **Cliente:** Studio Mood Tranças
 **Localização:** Feira de Santana · Bahia

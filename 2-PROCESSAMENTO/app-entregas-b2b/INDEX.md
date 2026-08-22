@@ -1,5 +1,7 @@
 # Projeto APPDELYVERY — App de Entregas B2B (Palmas-TO)
 
+> Revisado no update geral de 04/07/2026 (sem STATUS-*.md dedicado; status vive aqui no INDEX) — ativo: protótipo validado + build-spec completo prontos pra construir. Última atividade nos docs 23/06 (INTEGRACAO-MAPBOX) e captação/copy 05-08/06. Ainda aguardando o "sim" pra iniciar o build Next.js.
+
 > **ABRIR PROJETO = ler este INDEX primeiro.**
 > **Nome oficial: APPDELYVERY** (batizado pelo Eduardo em 29/05/2026).
 > App de entrega de **encomendas de negócios** (NÃO comida, foco em empresas): estabelecimento pede, entregador verificado entrega, cliente final acompanha por link. **Análise de antecedentes = o diferencial.** Mercado: **Palmas-TO e região**.

@@ -1,5 +1,7 @@
 # BRIEFING V1 · Sistema Viva Cacheada
 
+> Revisado no update geral de 04/07/2026 — sem arquivo STATUS-*.md nem DAILY na pasta; só docs de briefing/pesquisa datados de 14/05. Dormente desde 14/05 (trial AgendaPRO 90d iniciado então); nada construído/registrado depois. Se retomar, criar STATUS próprio.
+
 **Cliente:** Leticia Hellen (@letticiahellen3) · Salão Viva Cacheada (@vivacacheadaa) · Palmas-TO
 **Data:** 14/05/2026
 **Origem:** 3 áudios WhatsApp + análise IG (CIC) + mapeamento Linktree (CIC) + pesquisa de mercado
