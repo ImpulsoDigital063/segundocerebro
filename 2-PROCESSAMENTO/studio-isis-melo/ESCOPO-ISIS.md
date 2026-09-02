@@ -123,5 +123,6 @@ Ficam em `audios/` nesta pasta, uma por conversa, no formato `AAAA-MM-DD-assunto
 
 - ~~Os pedidos da reunião~~ — **6 itens registrados 21/08** (digitados pelo Eduardo + áudios dela sobre o item 6).
 - ~~Valor do setup~~ — **FECHADO 21/08: R$640 + 1 mês de assinatura de bônus.** PIX à vista ou link Asaas. 🔴 **Produção só começa com o pagamento na conta** — regra fixa do Eduardo, cumprida no CAF (pagou em 20/08 e só aí começou).
-- **Trial vence 27/08 14h06.** Com o bônus de 1 mês, a 1ª mensalidade dela cai só ~30 dias depois de fechar. **Pagamento integral antes de começar a produção** — mesma regra do CAF.
+- ✅ **PAGO em 24-25/08** (setup R$640, cartão 2×). Bônus de 30 dias aplicado em 25/08: `pago_ate` 27/08 → **26/09/2026 14h06** (provado por releitura). Quando vencer, ela entra no fluxo normal de conversão pra pagante.
+- ~~Trial vence 27/08 14h06~~ Com o bônus de 1 mês, a 1ª mensalidade dela cai só ~30 dias depois de fechar. **Pagamento integral antes de começar a produção** — mesma regra do CAF.
 - Trava de escopo: quando a lista estiver fechada, mandar pra ela conferir e **guardar a resposta**. Pedido novo depois disso é orçamento novo.
