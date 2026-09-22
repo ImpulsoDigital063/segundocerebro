@@ -1,7 +1,7 @@
 # STATUS-COMANDAPRO.md
 
 **Produto:** ComandaPRO — SaaS de comanda, PDV e gestão para food service (bar, açaiteria, pizzaria) e assistência técnica
-**Fase:** 🟢 **DOIS CLIENTES PAGANTES EM OPERAÇÃO PESADA** · R$438/mês · 🔴 cobrança pelo app nunca funcionou fim-a-fim
+**Fase:** 🟢 **DOIS CLIENTES PAGANTES EM OPERAÇÃO PESADA** · R$438/mês · cobrança no Asaas OK (22/09)
 **Data:** 21/08/2026 (primeiro status lido do banco, não de memória)
 **Responsável:** Eduardo Barros
 **Repo:** `C:/Users/Usuario/acai-system` · projeto Supabase `iuslchqmdjmsmljoqipx`
@@ -69,8 +69,8 @@ Erro cometido nesta própria leitura: contei `orders` com `created_at` (coluna q
 ## Pendências / próximos
 
 ### 🔴 Dinheiro
-- [ ] **Medellín Music Bar — vencido em 21/08, carência até 24/08.** Cliente de uso mais intenso do produto. Cobrar antes do bloqueio
-- [ ] **Fechar a cobrança pelo app.** Dois clientes pagando por PIX na mão é o que trava crescer: cada novo cliente é mais cobrança manual. O Asaas está configurado e a rota responde — falta o fluxo fim-a-fim com cliente real
+- [x] ~~Medellín vencido em 21/08~~ — resolvido (22/09: os 2 no Asaas)
+- [x] ~~Fechar a cobrança pelo app~~ — OK em 22/09 (Eduardo)
 
 ### Produto
 - [ ] **Ficha técnica / CMV do Medellín parado** — sem ficha, não há custo por drink nem CMV (memória `project_medellin_ficha_tecnica_cmv_parado`)
