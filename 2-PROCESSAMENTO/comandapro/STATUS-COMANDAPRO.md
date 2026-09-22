@@ -96,12 +96,14 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 | 1 | ✅ **no ar 22/09** (`2713526`): llms.txt virou rota com preço/teste grátis de `billing.ts` e as páginas de nicho. Comparação com concorrente NÃO entrou (sem fonte citável) | P | provado em prod |
 | 2 | ✅ **no ar 22/09**: sitemap 7→10 páginas (irmãos incluídos). `/funcionalidades` (404) saiu do `MARKETING_ROUTES`. Cardápios de cliente no sitemap: ainda não | P | provado em prod |
 | 3 | sorveteria nasce com cardápio de açaí — **maior do que parecia**: o cardápio público (`AcaiBuilder`) tem "açaí" fixo no texto ("ganhe açaí grátis", "seu açaí") e não há foto de sorvete. Depende de decisão do Eduardo (pote/bola × peso) | M | sim |
-| 4 | /respostas com 5–8 perguntas de compra (o que funcionou no AgendaPRO) | M | não (dedução) |
+| 4 | ✅ **no ar 22/09** (`def9551`, `e487ab3`): `/respostas` + 5 respostas (preço de sistema, delivery sem comissão, comanda digital, venda por peso, pizza meio a meio). Article+FAQPage+Breadcrumb, link no rodapé da home e das segmentadas, sitemap 16 páginas, llms.txt lista as 5. Conteúdo em `src/lib/respostas.ts` — acrescentar pergunta = 1 objeto | M | provado em prod |
 | 5 | montador de pizza + 6 modelos de cardápio **só no disco, sem commit**; antes de subir: "publicar = substituir" e testar cardápio público | M | sim |
 | 6 | páginas "alternativa ao iFood/Anota AI/Goomer" + Organization no JSON-LD | M | não (dedução) |
 | 7 | marmita por peso não pode ser pedida online (TemplateGrid:268) | M | sim |
 | 8 | montador genérico pros outros nichos | G | não bloqueia venda |
 
 **Bug achado e corrigido 22/09:** "Clube Cantinho do Açaí" estava fixo no `AcaiBuilder` e aparecia no cardápio de TODA açaiteria/sorveteria nova. Agora "Clube {nome da loja}"; Cantinho idêntico (provado em prod).
+
+**Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
 Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
