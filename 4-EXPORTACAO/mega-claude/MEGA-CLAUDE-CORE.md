@@ -20,10 +20,12 @@
 
 ## 💼 OS 3 NEGÓCIOS
 
-**Marca-mãe: IMPULSO DIGITAL** (agência de criação digital). Tudo orbita ela. Sub-produtos ativos: **AgendaPRO** (SaaS agendamento universal), **SystemPalace** (fork dedicado premium — 1º produto próprio), **RadarPRO** (prospecção, interno), **ImpulsoDesign**/Verbo Design (conteúdo, interno), **MPN-On** (curso→plataforma).
+**Marca-mãe: IMPULSO DIGITAL** (agência de criação digital). Tudo orbita ela. Sub-produtos ativos: **AgendaPRO** (SaaS agendamento universal), **ComandaPRO** (SaaS food-service), **SystemPalace** (fork dedicado premium — 1º produto próprio), **LocaPRO** (SaaS locadora de moto · sociedade 60/40 com o Jay), **Baby Loop** (app de troca do Marko · proposta R$8.997, não assinada), **RadarPRO** (prospecção + kit), **ImpulsoDesign**/Verbo Design (conteúdo, interno), **MPN-On** (curso→plataforma).
+
+**Estado de TODAS as frentes, caixa e prazos: `2-PROCESSAMENTO/impulso-digital/STATUS-IMPULSO.md` (hub, 1 linha por frente).**
 *(UrbanFeet = passado operacional. Não é frente ativa — serve só como case/prova de conceito pro MPN-On.)*
 
-**Evolução 2026:** subiu de agência low-ticket pra **3 frentes premium** — SaaS fork ~R$3k · LP/site ~R$2k · **plataforma própria APPDELYVERY** (entregas B2B Palmas · em construção · maior build atual · de prestador a fundador).
+**Evolução 2026:** subiu de agência low-ticket pra **3 frentes premium** — SaaS fork ~R$3k · LP/site ~R$2k · **APPDELYVERY** (entregas B2B Palmas · produto do Tulio, Impulso é builder · **PAUSADO**, R$6k recebidos de R$15k, resto = crédito duvidoso).
 
 **Modelo cravado (23/06):** **núcleo-fork** (`medellin-bar` = template → cada cliente clona pra github/vercel/supabase próprios · R$2.997/50% · caixa agora) **financia** o **ComandaPRO** (`acai-system` = SaaS food-service multi-tenant · recorrência). **Medellín NÃO fechou o fork R$2.997** — se interessou em **R$219/mês (recorrência)**, o que puxa pro lado SaaS/ComandaPRO, não o fork. **Vidal = 1º ComandaPRO**. Detalhe: `2-PROCESSAMENTO/impulso-digital/MODELO-NUCLEO-FORK-COMANDAPRO.md`.
 
@@ -34,7 +36,7 @@
 - Ancoragem: "site no Brasil custa R$2k-15k; começo a partir de R$1.497 porque sou local de Palmas, sem overhead de SP."
 - ⚠️ APOSENTADOS (não usar): entrada baixa LP R$499 / Shopify R$599 / Combo R$1.099 / Site R$799. O modelo "freelancer de LP low-ticket" morreu com o reposicionamento.
 
-**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (**9 pagantes · MRR R$693/mês**, lido do banco em 21/08/2026: Olímpio Barbearia R$67 · Rosy Borges R$67 · Gessica Batista R$67 · Wanessa Silva R$67 · Viva Cacheada R$67 · DN Diogo R$67 · CAF Fisioterapia R$97 · Studio Isis R$97 · Studio MOOD R$97 · cobrança PIX pelo próprio painel + Asaas validada. **28 negócios cadastrados**, 387 agendamentos/mês na base. 🔴 A recuperar: Realli R$97 vencido desde 05/08, usando o sistema) · EV Suplementos (Erlane). 🔴 **UrbanFeet — NÃO USAR NENHUM NÚMERO.** Os valores que circulavam (R$37.705,24 em 90d · 195 pedidos · +1.600 pares) são **inventados**, cravado por Eduardo em 31/07/2026: era argumento de venda, não venda real. Não citar faturamento nem volume do UrbanFeet em copy, LP, aula ou proposta. Limpeza dos demais arquivos pendente. Pausado: Criativos do Céu (permuta encerrada). GB Nutrition = trabalho de graça pra aprender (o R$1.000 era âncora, NÃO venda — não usar como case de R$1k). NÃO usar: Janaína, Irsnayra, LocaJV.
+**Cases reais (usar SÓ estes):** 🏆 **Palace Nail Spa R$2.997** (1º SaaS premium fork) · **Vida em Equilíbrio R$1.900** (LP+site, pago 30/05) · **Aura Energy R$1.497** (1ª venda contratual) · **AgendaPRO** (**8 pagantes · MRR R$626** em 08/09/2026 — número de pagante só vale lido do banco) · **MRR total R$1.064** com ComandaPRO · EV Suplementos (Erlane). 🔴 **UrbanFeet — NÃO USAR NENHUM NÚMERO.** Os valores que circulavam (R$37.705,24 em 90d · 195 pedidos · +1.600 pares) são **inventados**, cravado por Eduardo em 31/07/2026: era argumento de venda, não venda real. Não citar faturamento nem volume do UrbanFeet em copy, LP, aula ou proposta. Limpeza dos demais arquivos pendente. Pausado: Criativos do Céu (permuta encerrada). GB Nutrition = trabalho de graça pra aprender (o R$1.000 era âncora, NÃO venda — não usar como case de R$1k). NÃO usar: Janaína, Irsnayra, LocaJV.
 
 **Meta 2026:** R$1M em faturamento — não precisa tudo dar certo, precisa 2-3 acertarem.
 
