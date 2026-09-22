@@ -7,15 +7,15 @@
 
 ---
 
-## Caixa (números do Eduardo, 08–09/09/2026)
+## Caixa (números do Eduardo, 08–09/09 + 22/09/2026)
 
 | | valor |
 |---|---|
 | Aporte do fundador (25/03→08/09) | **R$30.000** |
-| Faturado desde 25/03 | **R$17.679** |
+| Faturado desde 25/03 | **R$19.179** (R$17.679 em 08/09 + R$1.500 do Jay em 22/09) |
 | Serviços contratados · recebidos | R$21.394 · R$12.394 |
 | AppDelyvery R$9.000 | 🔴 **crédito duvidoso** ("Tulio tá quebrado") — não contar |
-| A receber de verdade | **R$1.997** (aporte do Jay, LocaPRO, sem data) |
+| A receber de verdade | **R$497** (resto do aporte do Jay, LocaPRO) |
 | MRR | **R$1.064** = AgendaPRO R$626 (8) + ComandaPRO R$438 (2) |
 | Burn médio · receita média | ~R$5.450/mês · ~R$2.960/mês → faltam ~R$2.500/mês pro break-even |
 

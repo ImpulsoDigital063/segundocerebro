@@ -10,7 +10,7 @@
 ## Sociedade (o ponto fraco)
 
 - **60% Jay (LocaJV, Goiânia) · 40% Eduardo** — mas quem banca desenvolvimento, token e infra é o Eduardo.
-- Aporte acordado do Jay R$2.497 · pago **R$500** · **a receber R$1.997, sem data**.
+- Aporte acordado do Jay R$2.497 · pago **R$2.000** (R$500 até 10/09 + **R$1.500 informado em 22/09**) · **a receber R$497**.
 - 🔴 Em aberto: dono do código, remuneração da Impulso na Fase 1, régua de valor por entrega (a tabela P/M/G do rascunho de 25/08 **nunca foi combinada**).
 - Saídas discutidas: Eduardo para de bancar custo · Impulso cobra a Fase 1 · virar 50/50.
 
