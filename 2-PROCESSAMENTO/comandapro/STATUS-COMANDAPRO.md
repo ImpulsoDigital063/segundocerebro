@@ -29,7 +29,9 @@ Os dois usam **fluxos diferentes do produto** — e isso importa pra ler qualque
 
 ---
 
-## 🔴 Cobrança: ninguém nunca pagou pelo app
+## Cobrança
+
+> ✅ **22/09/2026 (Eduardo): os 2 pagantes estão no Asaas, está tudo certo.** Um paga por fora por escolha dele. O texto abaixo (21/08) é histórico — não tratar como pendência.
 
 Confirmado no banco, de novo em 21/08: **1 loja de 14 tem `asaas_customer_id`** — e é a "Pizzaria Teste". A tabela `billing_events` tem **1 evento no total** desde sempre.
 
@@ -82,3 +84,22 @@ Erro cometido nesta própria leitura: contei `orders` com `created_at` (coluna q
 - Status correlatos: [[STATUS-AGENDAPRO]] · [[STATUS-IMPULSO]] · [[STATUS-STARTEQ]]
 - Estudos no repo: `COMANDAPRO-SAAS-BLUEPRINT.md` · `SAAS-PLANO.md` · `PDV-PLAN.md` · `OFFLINE-FIRST-PLANO.md`
 - Padrões: [[PADROES-VALIDADOS]] (PADRÃO 10 — aceite não é entrega)
+
+---
+
+## Plano 22/09/2026 — ComandaPRO achado pelas IAs + pronto pra vários nichos
+
+Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está quase igual à do AgendaPRO. **O que falta é o conteúdo que as IAs citam.**
+
+| # | gap | esforço | verificado? |
+|---|---|---|---|
+| 1 | llms.txt dinâmico com preço, teste grátis, comparação com iFood/Anota AI/Goomer (hoje: sem preço) | P | sim |
+| 2 | sitemap sem sorveteria/petiscaria/marmitaria (usa `NICHOS`, não `ALL_NICHO_SLUGS`) e sem cardápios de clientes | P | sim |
+| 3 | sorveteria nasce com cardápio de açaí | P–M | sim |
+| 4 | /respostas com 5–8 perguntas de compra (o que funcionou no AgendaPRO) | M | não (dedução) |
+| 5 | montador de pizza + 6 modelos de cardápio **só no disco, sem commit**; antes de subir: "publicar = substituir" e testar cardápio público | M | sim |
+| 6 | páginas "alternativa ao iFood/Anota AI/Goomer" + Organization no JSON-LD | M | não (dedução) |
+| 7 | marmita por peso não pode ser pedida online (TemplateGrid:268) | M | sim |
+| 8 | montador genérico pros outros nichos | G | não bloqueia venda |
+
+Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
