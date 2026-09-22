@@ -93,13 +93,15 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 | # | gap | esforço | verificado? |
 |---|---|---|---|
-| 1 | llms.txt dinâmico com preço, teste grátis, comparação com iFood/Anota AI/Goomer (hoje: sem preço) | P | sim |
-| 2 | sitemap sem sorveteria/petiscaria/marmitaria (usa `NICHOS`, não `ALL_NICHO_SLUGS`) e sem cardápios de clientes | P | sim |
-| 3 | sorveteria nasce com cardápio de açaí | P–M | sim |
+| 1 | ✅ **no ar 22/09** (`2713526`): llms.txt virou rota com preço/teste grátis de `billing.ts` e as páginas de nicho. Comparação com concorrente NÃO entrou (sem fonte citável) | P | provado em prod |
+| 2 | ✅ **no ar 22/09**: sitemap 7→10 páginas (irmãos incluídos). `/funcionalidades` (404) saiu do `MARKETING_ROUTES`. Cardápios de cliente no sitemap: ainda não | P | provado em prod |
+| 3 | sorveteria nasce com cardápio de açaí — **maior do que parecia**: o cardápio público (`AcaiBuilder`) tem "açaí" fixo no texto ("ganhe açaí grátis", "seu açaí") e não há foto de sorvete. Depende de decisão do Eduardo (pote/bola × peso) | M | sim |
 | 4 | /respostas com 5–8 perguntas de compra (o que funcionou no AgendaPRO) | M | não (dedução) |
 | 5 | montador de pizza + 6 modelos de cardápio **só no disco, sem commit**; antes de subir: "publicar = substituir" e testar cardápio público | M | sim |
 | 6 | páginas "alternativa ao iFood/Anota AI/Goomer" + Organization no JSON-LD | M | não (dedução) |
 | 7 | marmita por peso não pode ser pedida online (TemplateGrid:268) | M | sim |
 | 8 | montador genérico pros outros nichos | G | não bloqueia venda |
+
+**Bug achado e corrigido 22/09:** "Clube Cantinho do Açaí" estava fixo no `AcaiBuilder` e aparecia no cardápio de TODA açaiteria/sorveteria nova. Agora "Clube {nome da loja}"; Cantinho idêntico (provado em prod).
 
 Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
