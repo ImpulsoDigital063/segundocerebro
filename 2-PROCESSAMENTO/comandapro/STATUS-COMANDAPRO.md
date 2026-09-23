@@ -104,7 +104,7 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 **Bug achado e corrigido 22/09:** "Clube Cantinho do Açaí" estava fixo no `AcaiBuilder` e aparecia no cardápio de TODA açaiteria/sorveteria nova. Agora "Clube {nome da loja}"; Cantinho idêntico (provado em prod).
 
-**GA4 + Search Console (22/09):** código no ar (`c9a1799`) — GA4 só em página pública, liga com `NEXT_PUBLIC_GA_ID` na Vercel (team `projeto-acaiterias-projects`, NÃO o projeto homônimo da impulsodigitals). Verificação do GSC pelo próprio GA; plano B `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`. Lado UI (criar propriedade, env, sitemap, Bing) = prompt pro CIC, aguardando execução.
+**GA4 + Search Console (22/09):** GA4 `G-3VZXLSNN7V` (propriedade ComandaPRO, conta GA "Impulso Digital" em edubchaves5) **no ar e provado** (`9546c0f`): ID no código (é público), liga só com `VERCEL_ENV=production`; só páginas públicas (fora /admin, /garcom, /sistema, /entrar, /login, /meus-pontos, /doc). Não precisou de env na Vercel — o Chrome está logado na Vercel como edubchaves6 (time perigo), que não vê o time projeto-acaiterias. Falta (CIC): verificar GSC pelo GA, sitemap, solicitar indexação, Bing.
 
 **Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
