@@ -106,6 +106,8 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 **GA4 + Search Console + Bing (22/09) — ✅ TUDO FEITO:** GA4 `G-3VZXLSNN7V` (conta GA "Impulso Digital", propriedade ComandaPRO; Tempo real confirmou visita). GSC verificado por **tag HTML** (`cc5af5d`, meta no `<head>` — NÃO REMOVER); sitemap Processado, 16 URLs; indexação solicitada pra home, /respostas e as 5 respostas. Bing Webmaster importado do GSC, sitemap Success 16 URLs. Tudo na conta edubchaves5.
 
+**Site — cardápio montado por nós + análise da home (22/09, `2440f7f`):** modelo novo (dono cria conta → chama no WhatsApp → Impulso monta o cardápio, INCLUSO; função sob medida = estudada) em hero, seção "Como começar", preço, FAQ, segmentadas, llms.txt e resposta de preço. WhatsApp (msg pronta) no topo/CTA/rodapé. Corrigidos: foto do Restaurante, "Conhecer módulo"→"Ver preço", demo real `/burger-house-demo`, "~30%" sem fonte, jargão, título quebrado. **Pendente:** números reais dos clientes (R$47 mil/mês) só com autorização do Cantinho e do Medellín.
+
 **Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
 Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
