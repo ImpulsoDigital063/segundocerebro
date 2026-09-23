@@ -110,7 +110,7 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 **Prints de cardápio do site (22/09, `c4cbfc8`):** refeitos com Puppeteer (`puppeteer-core` do repo + Chrome local), viewport 390×844 **DPR 2**, recorte 780×1300, JPEG q72, `loading=lazy`. Esconder só o aviso de horário ("Fechado") e a barra fixa do carrinho na captura. Lojas: Cantinho e Medellín = **cliente real**; pizzaria/burger/sushi = **demo → legenda "Cardápio de exemplo"**, nunca "real". Toda mudança de site conferida a 390px (scrollWidth = clientWidth).
 
-**Serviço Medellín 23/09 — fotos da categoria nova "Copão 🥃"** (criada pelo dono, sem imagem): capa (whisky com gelo) + garrafa da marca em cada item (black label, red label, ballantine´s, old parr, chivas, gin), padrão Unsplash por URL igual às outras categorias. Backup antes, read-after-write ok, conferido no cardápio público no celular. Cardápio montado por nós = inclui esse tipo de ajuste quando o dono não consegue.
+**Serviço Medellín 23/09 — fotos da categoria nova "Copão 🥃"** (criada pelo dono, sem imagem): capa (lata de energético + copo de whisky no balcão — a 1ª tentativa, close de gelo, ficou abstrata demais; Eduardo pediu troca) + nome sem o emoji 🥃 (renderizava como paisagem) + garrafa da marca em cada item (black label, red label, ballantine´s, old parr, chivas, gin), padrão Unsplash por URL igual às outras categorias. Backup antes, read-after-write ok, conferido no cardápio público no celular. Cardápio montado por nós = inclui esse tipo de ajuste quando o dono não consegue.
 
 **Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
