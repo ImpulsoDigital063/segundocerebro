@@ -108,6 +108,8 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 **Site — cardápio montado por nós + análise da home (22/09, `2440f7f`):** modelo novo (dono cria conta → chama no WhatsApp → Impulso monta o cardápio, INCLUSO; função sob medida = estudada) em hero, seção "Como começar", preço, FAQ, segmentadas, llms.txt e resposta de preço. WhatsApp (msg pronta) no topo/CTA/rodapé. Corrigidos: foto do Restaurante, "Conhecer módulo"→"Ver preço", demo real `/burger-house-demo`, "~30%" sem fonte, jargão, título quebrado. **Pendente:** números reais dos clientes (R$47 mil/mês) só com autorização do Cantinho e do Medellín.
 
+**Prints de cardápio do site (22/09, `c4cbfc8`):** refeitos com Puppeteer (`puppeteer-core` do repo + Chrome local), viewport 390×844 **DPR 2**, recorte 780×1300, JPEG q72, `loading=lazy`. Esconder só o aviso de horário ("Fechado") e a barra fixa do carrinho na captura. Lojas: Cantinho e Medellín = **cliente real**; pizzaria/burger/sushi = **demo → legenda "Cardápio de exemplo"**, nunca "real". Toda mudança de site conferida a 390px (scrollWidth = clientWidth).
+
 **Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
 Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
