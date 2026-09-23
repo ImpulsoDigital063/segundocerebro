@@ -112,6 +112,8 @@ Diagnóstico (22/09, código + site no ar): a parte técnica de SEO já está qu
 
 **Serviço Medellín 23/09 — fotos da categoria nova "Copão 🥃"** (criada pelo dono, sem imagem): capa (lata de energético + copo de whisky no balcão — a 1ª tentativa, close de gelo, ficou abstrata demais; Eduardo pediu troca) + nome sem o emoji 🥃 (renderizava como paisagem) + garrafa da marca em cada item (black label, red label, ballantine´s, old parr, chivas, gin), padrão Unsplash por URL igual às outras categorias. Backup antes, read-after-write ok, conferido no cardápio público no celular. Cardápio montado por nós = inclui esse tipo de ajuste quando o dono não consegue.
 
+**Canal de aquisição (23/09, `e65ec5e` + mt-41):** cadastro pergunta "Como você descobriu o ComandaPRO?" (opcional) → `stores.acquisition_channel` (indicacao, google, chatgpt_ia, instagram, tiktok, whatsapp_organico, outro). As 14 lojas antigas ficam NULL. Ler: `select slug, acquisition_channel, created_at from stores where acquisition_channel is not null`. Provado ponta a ponta com loja de teste (apagada depois).
+
 **Slugs reservados no cadastro (22/09):** + respostas, segmentos, entrar, garcom, sistema, doc, meus-pontos (rotas que colidiriam com `/<loja>`; nenhuma loja usava).
 
 Referência pra copiar: `agendapro/src/app/llms.txt/route.ts`, `src/lib/respostas.ts`, `src/lib/jsonld.tsx`, `src/app/sitemap.ts`.
